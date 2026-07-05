@@ -1,0 +1,35 @@
+name: eval-gate
+
+on:
+  push:
+    paths:
+      - "prototype/**"
+      - "data/samples/sky-samples/**"
+      - "data/catalogs/**"
+      - ".github/workflows/eval-gate.yml"
+  pull_request:
+    paths:
+      - "prototype/**"
+      - "data/samples/sky-samples/**"
+      - "data/catalogs/**"
+      - ".github/workflows/eval-gate.yml"
+
+jobs:
+  gate:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: prototype
+
+    steps:
+      - uses: actions/checkout@v5
+      - uses: dtolnay/rust-toolchain@stable
+      - name: Cache cargo
+        uses: Swatinem/rust-cache@v2
+      - name: Install Pillow
+        run: pip install pillow
+      - name: Fetch CI sample frames
+        working-directory: data/samples/sky-samples
+        run: python3 fetch_sample.py tetra3_alt40 tetra3_alt60
+      - name: Run eval gate
+        run: make eval-gate

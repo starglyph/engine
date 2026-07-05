@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "generated_by": "starglyph-cli 0.1.0",
+  "dataset": {
+    "manifest": "../data/samples/sky-samples/manifest.json",
+    "tracks": [
+      "solver"
+    ],
+    "ids_filter": [
+      "tetra3_alt40",
+      "tetra3_alt60"
+    ],
+    "n_selected": 2
+  },
+  "config": {
+    "fov_hint_deg": null,
+    "catalog": "../data/catalogs/hyg_v42.csv.gz",
+    "blind": true
+  },
+  "solver_track": {
+    "n": 2,
+    "attempted": 2,
+    "solved": 1,
+    "solve_rate": 0.5,
+    "failures_by_code": {
+      "no_confident_match": 1
+    }
+  },
+  "pose_errors": {
+    "n_gt": 2,
+    "n_compared": 1,
+    "axis_angle_deg": {
+      "median": 0.008102748321104497,
+      "p95": 0.008102748321104497,
+      "max": 0.008102748321104497
+    },
+    "roll_error_deg": {
+      "median": 0.601211714628537,
+      "p95": 0.601211714628537,
+      "max": 0.601211714628537
+    },
+    "fov_error_rel": {
+      "median": 0.003848320485351125,
+      "p95": 0.003848320485351125,
+      "max": 0.003848320485351125
+    }
+  },
+  "timing_ms": {
+    "detect": {
+      "median": 346.0,
+      "p95": 402.7,
+      "max": 409.0
+    },
+    "solve": {
+      "median": 3351.5,
+      "p95": 6173.45,
+      "max": 6487.0
+    },
+    "total": {
+      "median": 3624.5,
+      "p95": 6432.95,
+      "max": 6745.0
+    }
+  },
+  "worst_cases": [
+    {
+      "id": "tetra3_alt60",
+      "axis_angle_deg": 0.008102748321104497
+    }
+  ]
+}
