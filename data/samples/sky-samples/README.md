@@ -62,3 +62,8 @@ See [`../../../docs/data-catalog.md`](../../../docs/data-catalog.md) for the ful
 ## Ground truth & attribution
 
 WCS sidecars for solved frames: `ground-truth/<id>.wcs.json` (facts only). Method + solve-status: [`GROUND-TRUTH.md`](GROUND-TRUTH.md). Required credit lines: [`ATTRIBUTION.md`](ATTRIBUTION.md).
+
+> Note: the ✅/❌ **Solve** column above records **astrometry.net** bootstrap results (upper
+> bound / GT source). The **live `starglyph-core` solver** is measured separately by the
+> eval harness — `cd prototype && make eval` (see [`docs/evaluation.md`](../../../docs/evaluation.md) §6);
+> its solve-rate counts only `track:solver`, `scene` is expected-unsolvable, `stress` is opt-in.
