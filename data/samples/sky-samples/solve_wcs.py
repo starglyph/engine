@@ -77,6 +77,9 @@ def solve(path, session, poll=5, timeout=600):
     if not jobid:
         print("  timed out waiting for job"); return None
     calib = _post(f"{BASE}/jobs/{jobid}/calibration", {})
+    if not isinstance(calib, dict) or calib.get("ra") is None:
+        print(f"  [no-solution] job {jobid}: astrometry.net could not calibrate this frame")
+        return None
     info = _post(f"{BASE}/jobs/{jobid}/info", {})
     out = {"jobid": jobid, "calibration": calib,
            "objects_in_field": info.get("objects_in_field"), "tags": info.get("tags")}

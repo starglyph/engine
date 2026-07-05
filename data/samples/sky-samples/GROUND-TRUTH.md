@@ -42,14 +42,38 @@ tetra3 (уже узкое поле), `flickr_orion_rahn`, `flickr_cygnus_fermion
 в [`../../../docs/evaluation.md`](../../../docs/evaluation.md). Плюс **синтетика симулятора**
 с точным `meta.json` — для кривых обучения и регрессий, где истина известна по построению.
 
-## Готовые сайдкары
+## Результаты bootstrap-прогона (2026-07-05)
 
-`ground-truth/tetra3_alt60.wcs.json`, `ground-truth/tetra3_alt40.wcs.json` — получены
-bootstrap-прогоном `solve_wcs.py` через astrometry.net API (2026-07-05) на Apache-2.0
-кадрах tetra3. Содержат только факты: центр RA/Dec, pixscale, orientation, parity,
-объекты в поле (поле ~11.5° в Corona Borealis). Отправка была приватной
-(`publicly_visible=n`). Остальные кадры пока без WCS — досоответить локальным солвером,
-без внешних загрузок.
+`solve_wcs.py` через astrometry.net API (приватно, `publicly_visible=n`) на 19 кадрах.
+Сайдкары — в `ground-truth/<id>.wcs.json` (только факты: RA/Dec/pixscale/orientation/
+parity + объекты в поле).
+
+**Решилось: 7 / 19.** Закономерность: привязались **чистые кадры с точечными звёздами**
+(сенсорные tetra3, любительские широкоугольные, звёздное скопление). **НЕ решились** кадры
+с ландшафтным передним планом, засветкой, градиентами и обработанные композиты — полезный
+сигнал о границах солвера.
+
+| id | RA° | Dec° | FOV | "/px |
+|---|---|---|---|---|
+| `tetra3_alt60` | 240.46 | +28.94 | 11.5° | 40.3 |
+| `tetra3_alt40` | 230.66 | +11.04 | 11.5° | 40.3 |
+| `flickr_orion_rahn` | 79.56 | +3.60 | 71.2° | 260.6 |
+| `wm_constellation_orion` | 83.50 | −2.61 | 27.5° | 58.7 |
+| `flickr_cygnus_fermion` | 304.48 | +34.58 | 36.3° | 127.8 |
+| `flickr_m41_donatiello` | 101.50 | −20.72 | 1.00° | 3.5 |
+| `eso_cerro_armazones` | 306.40 | +73.95 | 3.33° | 3.0 |
+
+Координаты сверены — совпадают с целевыми областями (Orion RA≈80°; Cygnus RA≈304°;
+M41 в Canis Major RA=101.5°/Dec−20.7°).
+
+**Не решилось (12):** `flickr_torchbearer_ladia`, `eso_vista_mw_1242b`, `noirlab_iotw2334a`,
+`noirlab_iotw2452a`, `wm_milkyway_arch`, `comet_neowise`, `mw_arc_of_creation`,
+`mw_first_attempt`, `mw_heart_valentine`, `mw_himalayas_tents`, `mw_searching_portrait`,
+`mw_sochi_ru` — кандидаты на ретрай с подсказками масштаба или на роль «трудных» кадров
+в стресс-наборе. (360°-панорама, сверхширокая панорама и 2 star-trails в прогон не
+включались — структурно нерешаемы.)
+
+Остальные WCS доопределять **локальным солвером движка**, без внешних загрузок.
 
 ## Итого
 

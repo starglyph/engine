@@ -1,0 +1,23 @@
+{
+  "jobid": 16258507,
+  "calibration": {
+    "ra": 101.49871394462282,
+    "dec": -20.715565056928153,
+    "width_arcsec": 3595.1846791440903,
+    "height_arcsec": 3595.1846791440903,
+    "radius": 0.7061609628446579,
+    "pixscale": 3.5109225382266507,
+    "orientation": 0.32476201682879946,
+    "parity": 1.0
+  },
+  "objects_in_field": [
+    "NGC 2287",
+    "M 41",
+    "The star 12 CMa"
+  ],
+  "tags": [
+    "The star 12 CMa",
+    "NGC 2287",
+    "M 41"
+  ]
+}
