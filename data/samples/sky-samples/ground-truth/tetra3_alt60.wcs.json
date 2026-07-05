@@ -1,0 +1,49 @@
+{
+  "jobid": 16258397,
+  "calibration": {
+    "ra": 240.46464333257455,
+    "dec": 28.939858000805142,
+    "width_arcsec": 41297.157807101576,
+    "height_arcsec": 30972.86835532618,
+    "radius": 7.169645452621801,
+    "pixscale": 40.32925567099763,
+    "orientation": -148.443789402455,
+    "parity": 1.0
+  },
+  "objects_in_field": [
+    "Part of the constellation Corona Borealis (CrB)",
+    "The star ι CrB",
+    "14 CrB",
+    "The star ε CrB",
+    "13 CrB",
+    "The star δ CrB",
+    "10 CrB",
+    "The star π CrB",
+    "9 CrB",
+    "The star ξ CrB",
+    "19 CrB",
+    "The star ρ CrB",
+    "15 CrB",
+    "The star υ CrB",
+    "18 CrB",
+    "The star 10 Her"
+  ],
+  "tags": [
+    "Part of the constellation Corona Borealis (CrB)",
+    "The star δ CrB",
+    "10 CrB",
+    "The star ε CrB",
+    "13 CrB",
+    "The star ι CrB",
+    "14 CrB",
+    "The star ξ CrB",
+    "19 CrB",
+    "The star π CrB",
+    "9 CrB",
+    "The star ρ CrB",
+    "15 CrB",
+    "The star υ CrB",
+    "18 CrB",
+    "The star 10 Her"
+  ]
+}
