@@ -1147,7 +1147,7 @@ fn is_image_ext(path: &Path) -> bool {
             .and_then(|e| e.to_str())
             .map(|e| e.to_ascii_lowercase())
             .as_deref(),
-        Some("bmp" | "png" | "jpg" | "jpeg")
+        Some("bmp" | "png" | "jpg" | "jpeg" | "tiff" | "tif")
     )
 }
 
@@ -1224,6 +1224,20 @@ fn render_report_overlay_png(frame: &FrameImage, report: &SolveReport, path: &Pa
     img.save(path)
         .with_context(|| format!("failed to write overlay PNG '{}'", path.display()))?;
     Ok(())
+}
+
+#[cfg(test)]
+mod image_ext_tests {
+    use super::*;
+    use std::path::Path;
+
+    #[test]
+    fn is_image_ext_recognizes_supported_formats() {
+        assert!(is_image_ext(Path::new("foo.tiff")));
+        assert!(is_image_ext(Path::new("foo.TIF")));
+        assert!(is_image_ext(Path::new("foo.png")));
+        assert!(!is_image_ext(Path::new("foo.txt")));
+    }
 }
 
 #[cfg(test)]
