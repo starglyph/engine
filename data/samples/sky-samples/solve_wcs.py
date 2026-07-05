@@ -56,10 +56,13 @@ def login():
         raise SystemExit(f"login failed: {r}")
     return r["session"]
 
-def solve(path, session, poll=5, timeout=600):
-    print(f"[submit] {path}")
-    sub = _post_file(f"{BASE}/upload", {"session": session, "publicly_visible": "n",
-                     "allow_modifications": "d", "allow_commercial_use": "d"}, path)
+def solve(path, session, poll=5, timeout=600, hints=None):
+    print(f"[submit] {path}" + (f"  hints={hints}" if hints else ""))
+    fields = {"session": session, "publicly_visible": "n",
+              "allow_modifications": "d", "allow_commercial_use": "d"}
+    if hints:
+        fields.update(hints)
+    sub = _post_file(f"{BASE}/upload", fields, path)
     if sub.get("status") != "success":
         print(f"  upload failed: {sub}"); return None
     subid = sub["subid"]; t0 = time.time()
@@ -94,12 +97,29 @@ def solve(path, session, poll=5, timeout=600):
           f"scale={c.get('pixscale'):.3f}\"/px orient={c.get('orientation'):.2f} -> {path}.wcs.json")
     return out
 
+def parse_hints(argv):
+    """Optional scale hints: --degwidth-low L --degwidth-high H --downsample N
+    (helps wide-field / noisy / landscape frames by constraining the search)."""
+    hints, paths, i = {}, [], 0
+    while i < len(argv):
+        a = argv[i]
+        if a == "--degwidth-low":
+            hints.update(scale_units="degwidth", scale_type="ul", scale_lower=float(argv[i+1])); i += 2
+        elif a == "--degwidth-high":
+            hints.update(scale_units="degwidth", scale_type="ul", scale_upper=float(argv[i+1])); i += 2
+        elif a == "--downsample":
+            hints["downsample_factor"] = int(argv[i+1]); i += 2
+        else:
+            paths.append(a); i += 1
+    return hints, paths
+
 if __name__ == "__main__":
     if not KEY:
         raise SystemExit("Set ASTROMETRY_API_KEY (free: https://nova.astrometry.net/api_help)")
-    if len(sys.argv) < 2:
+    hints, paths = parse_hints(sys.argv[1:])
+    if not paths:
         raise SystemExit(__doc__)
     sess = login()
-    for p in sys.argv[1:]:
-        try: solve(p, sess)
+    for p in paths:
+        try: solve(p, sess, hints=hints or None)
         except Exception as e: print(f"[FAIL] {p}: {e}")

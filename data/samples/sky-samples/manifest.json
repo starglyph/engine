@@ -25,7 +25,10 @@
     "retrieved": "2026-07-05",
     "verify_note": "local Apache-2.0 clone",
     "notes": "Real FLIR Blackfly S (IMX265) + 35mm, ~11.4deg FOV. Alt60 Azi-135. No personal PII.",
-    "status": "OK"
+    "status": "OK",
+    "track": "solver",
+    "solve_status": "solved",
+    "wcs": "ground-truth/tetra3_alt60.wcs.json"
   },
   {
     "id": "tetra3_alt40",
@@ -53,7 +56,10 @@
     "retrieved": "2026-07-05",
     "verify_note": "local Apache-2.0 clone",
     "notes": "Real FLIR Blackfly S (IMX265) + 35mm, ~11.4deg FOV. Alt40 Azi-135. No personal PII.",
-    "status": "OK"
+    "status": "OK",
+    "track": "solver",
+    "solve_status": "solved",
+    "wcs": "ground-truth/tetra3_alt40.wcs.json"
   },
   {
     "id": "flickr_orion_rahn",
@@ -81,7 +87,10 @@
     "retrieved": "2026-07-05",
     "verify_note": "flickr license link present on page",
     "notes": "Orion, Sirius, Jupiter, Pleiades. Wide-field DSLR.",
-    "status": "OK"
+    "status": "OK",
+    "track": "solver",
+    "solve_status": "solved",
+    "wcs": "ground-truth/flickr_orion_rahn.wcs.json"
   },
   {
     "id": "flickr_torchbearer_ladia",
@@ -109,7 +118,10 @@
     "retrieved": "2026-07-05",
     "verify_note": "flickr license link present on page",
     "notes": "Orion, Hyades, Pleiades, rising winter Milky Way.",
-    "status": "OK"
+    "status": "OK",
+    "track": "solver",
+    "solve_status": "unsolved",
+    "wcs": null
   },
   {
     "id": "flickr_cygnus_fermion",
@@ -137,7 +149,10 @@
     "retrieved": "2026-07-05",
     "verify_note": "flickr license link present on page",
     "notes": "Cygnus / Milky Way Dark Rift, stacked DSLR.",
-    "status": "OK"
+    "status": "OK",
+    "track": "solver",
+    "solve_status": "solved",
+    "wcs": "ground-truth/flickr_cygnus_fermion.wcs.json"
   },
   {
     "id": "flickr_m41_donatiello",
@@ -165,7 +180,10 @@
     "retrieved": "2026-07-05",
     "verify_note": "flickr license link present on page",
     "notes": "Messier 41 open cluster in Canis Major, denser starfield.",
-    "status": "OK"
+    "status": "OK",
+    "track": "solver",
+    "solve_status": "solved",
+    "wcs": "ground-truth/flickr_m41_donatiello.wcs.json"
   },
   {
     "id": "wm_constellation_orion",
@@ -193,7 +211,10 @@
     "retrieved": "2026-07-05",
     "verify_note": "API license=CC0 attr_req=false",
     "notes": "Named constellation Orion, medium FOV, no GPS (API-verified).",
-    "status": "OK"
+    "status": "OK",
+    "track": "solver",
+    "solve_status": "solved",
+    "wcs": "ground-truth/wm_constellation_orion.wcs.json"
   },
   {
     "id": "eso_mw_panorama_0932a",
@@ -221,7 +242,10 @@
     "retrieved": "2026-07-05",
     "verify_note": "archive-wide CC BY 4.0 (documented)",
     "notes": "360deg all-sky Milky Way panorama (GigaGalaxy Zoom). Very wide FOV.",
-    "status": "OK"
+    "status": "OK",
+    "track": "scene",
+    "solve_status": "not_attempted",
+    "wcs": null
   },
   {
     "id": "eso_vista_mw_1242b",
@@ -249,7 +273,10 @@
     "retrieved": "2026-07-05",
     "verify_note": "archive-wide CC BY 4.0 (documented)",
     "notes": "Wide-field VISTA view of Milky Way centre.",
-    "status": "OK"
+    "status": "OK",
+    "track": "scene",
+    "solve_status": "unsolved",
+    "wcs": null
   },
   {
     "id": "wm_milkyway_arch",
@@ -277,7 +304,10 @@
     "retrieved": "2026-07-05",
     "verify_note": "API license=CC BY 4.0 attr_req=true",
     "notes": "ESO Milky Way arch, CC BY 4.0, no GPS (API-verified).",
-    "status": "OK"
+    "status": "OK",
+    "track": "scene",
+    "solve_status": "unsolved",
+    "wcs": null
   },
   {
     "id": "noirlab_iotw2452a",
@@ -305,7 +335,10 @@
     "retrieved": "2026-07-05",
     "verify_note": "archive-wide CC BY 4.0 (documented)",
     "notes": "Milky Way arch over CTIO telescopes; wide-field w/ landscape. Screen size; verify exact credit on page.",
-    "status": "OK"
+    "status": "OK",
+    "track": "scene",
+    "solve_status": "unsolved",
+    "wcs": null
   },
   {
     "id": "noirlab_iotw2334a",
@@ -333,7 +366,10 @@
     "retrieved": "2026-07-05",
     "verify_note": "archive-wide CC BY 4.0 (documented)",
     "notes": "Full Milky Way arc from Cerro Tololo. Screen size; verify exact credit on page.",
-    "status": "OK"
+    "status": "OK",
+    "track": "scene",
+    "solve_status": "unsolved",
+    "wcs": null
   },
   {
     "id": "comet_neowise",
@@ -364,7 +400,10 @@
     "retrieved": "2026-07-05",
     "verify_note": "API license=CC BY 2.0 attr_req=true",
     "notes": "Комета NEOWISE — транзиентный объект в поле.",
-    "status": "OK"
+    "status": "OK",
+    "track": "scene",
+    "solve_status": "unsolved",
+    "wcs": null
   },
   {
     "id": "mw_first_attempt",
@@ -395,7 +434,10 @@
     "retrieved": "2026-07-05",
     "verify_note": "API license=CC BY 2.0 attr_req=true",
     "notes": "Шумный любительский первый кадр — реалистичный шум/градиент.",
-    "status": "OK"
+    "status": "OK",
+    "track": "scene",
+    "solve_status": "unsolved",
+    "wcs": null
   },
   {
     "id": "mw_himalayas_tents",
@@ -426,7 +468,10 @@
     "retrieved": "2026-07-05",
     "verify_note": "API license=CC BY 2.0 attr_req=true",
     "notes": "МП над Гималаями, ландшафтный передний план.",
-    "status": "OK"
+    "status": "OK",
+    "track": "scene",
+    "solve_status": "unsolved",
+    "wcs": null
   },
   {
     "id": "mw_searching_portrait",
@@ -457,7 +502,10 @@
     "retrieved": "2026-07-05",
     "verify_note": "API license=CC BY 2.0 attr_req=true",
     "notes": "Портретная ориентация, МП.",
-    "status": "OK"
+    "status": "OK",
+    "track": "scene",
+    "solve_status": "unsolved",
+    "wcs": null
   },
   {
     "id": "mw_heart_valentine",
@@ -488,7 +536,10 @@
     "retrieved": "2026-07-05",
     "verify_note": "API license=CC BY 3.0 attr_req=true",
     "notes": "Центр Млечного Пути крупно.",
-    "status": "OK"
+    "status": "OK",
+    "track": "scene",
+    "solve_status": "unsolved",
+    "wcs": null
   },
   {
     "id": "mw_arc_of_creation",
@@ -519,7 +570,10 @@
     "retrieved": "2026-07-05",
     "verify_note": "API license=CC BY 3.0 attr_req=true",
     "notes": "Дуга МП.",
-    "status": "OK"
+    "status": "OK",
+    "track": "scene",
+    "solve_status": "unsolved",
+    "wcs": null
   },
   {
     "id": "eso_cerro_armazones",
@@ -550,7 +604,10 @@
     "retrieved": "2026-07-05",
     "verify_note": "API license=CC BY 4.0 attr_req=true",
     "notes": "ESO, широкая панорамная полоса неба над горой.",
-    "status": "OK"
+    "status": "OK",
+    "track": "solver",
+    "solve_status": "solved",
+    "wcs": "ground-truth/eso_cerro_armazones.wcs.json"
   },
   {
     "id": "mw_sochi_ru",
@@ -581,7 +638,10 @@
     "retrieved": "2026-07-05",
     "verify_note": "API license=CC BY 4.0 attr_req=true",
     "notes": "Другой регион (Сочи, RU); ландшафт + МП.",
-    "status": "OK"
+    "status": "OK",
+    "track": "scene",
+    "solve_status": "unsolved",
+    "wcs": null
   },
   {
     "id": "mw_time_panorama",
@@ -612,7 +672,10 @@
     "retrieved": "2026-07-05",
     "verify_note": "API license=CC BY 2.0 attr_req=true",
     "notes": "Очень широкая панорама (даунскейл с 11589px).",
-    "status": "OK"
+    "status": "OK",
+    "track": "scene",
+    "solve_status": "not_attempted",
+    "wcs": null
   },
   {
     "id": "startrails_la_hague",
@@ -643,7 +706,10 @@
     "retrieved": "2026-07-05",
     "verify_note": "API license=CC BY-SA 4.0 attr_req=true",
     "notes": "Циркумполярные звёздные треки — стресс для детекции точечных источников.",
-    "status": "OK"
+    "status": "OK",
+    "track": "stress",
+    "solve_status": "not_attempted",
+    "wcs": null
   },
   {
     "id": "mw_satellite_trail",
@@ -674,6 +740,9 @@
     "retrieved": "2026-07-05",
     "verify_note": "API license=CC BY-SA 4.0 attr_req=true",
     "notes": "След спутника поверх МП — линейный артефакт.",
-    "status": "OK"
+    "status": "OK",
+    "track": "stress",
+    "solve_status": "not_attempted",
+    "wcs": null
   }
 ]
