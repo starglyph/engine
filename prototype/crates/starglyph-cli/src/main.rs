@@ -17,6 +17,8 @@ use starglyph_core::solve::{
     solve_frame_with_engine, SolveOptions, SolveStage, DEFAULT_BLIND_FOV_DEG,
 };
 
+mod eval_cmd;
+
 #[derive(Debug, Parser)]
 #[command(name = "starglyph")]
 #[command(about = "Starglyph recognition data inspection CLI")]
@@ -103,6 +105,38 @@ enum Command {
         /// Observer UTC offset in hours (positive east of Greenwich).
         #[arg(long, default_value_t = 0.0)]
         utc_offset: f64,
+    },
+    /// Evaluate the blind solver on a sky-samples manifest and write a report directory.
+    Eval {
+        #[arg(long)]
+        manifest: PathBuf,
+        #[arg(long)]
+        out_dir: PathBuf,
+        /// Comma-separated subset of solver, scene, stress (default: solver).
+        #[arg(long, default_value = "solver")]
+        tracks: String,
+        /// Explicit frame subset (within selected tracks); all listed ids must exist.
+        #[arg(long)]
+        ids: Option<String>,
+        #[arg(long)]
+        catalog: Option<PathBuf>,
+        #[arg(long)]
+        lines: Option<PathBuf>,
+        #[arg(long)]
+        names: Option<PathBuf>,
+        #[arg(long)]
+        cache_dir: Option<PathBuf>,
+        /// Passthrough to SolveOptions (default: fully blind).
+        #[arg(long)]
+        fov_hint: Option<f32>,
+        /// Regression gate vs a previous summary.json (timing is not gated).
+        #[arg(long)]
+        baseline: Option<PathBuf>,
+        #[arg(long, default_value_t = 10.0)]
+        max_axis_p95_regress_pct: f64,
+        /// Missing image files become status=missing_image instead of a hard error.
+        #[arg(long)]
+        allow_missing: bool,
     },
     /// Blind-solve every frame in a directory, using pass-2 hints for failures.
     BatchSolve {
@@ -376,11 +410,44 @@ fn main() -> Result<()> {
                 grid,
             })?;
         }
+        Command::Eval {
+            manifest,
+            out_dir,
+            tracks,
+            ids,
+            catalog,
+            lines,
+            names,
+            cache_dir,
+            fov_hint,
+            baseline,
+            max_axis_p95_regress_pct,
+            allow_missing,
+        } => {
+            match eval_cmd::run_eval(eval_cmd::EvalArgs {
+                manifest: &manifest,
+                out_dir: &out_dir,
+                tracks: &tracks,
+                ids: ids.as_deref(),
+                catalog_path: catalog.as_deref(),
+                lines_path: lines.as_deref(),
+                names_path: names.as_deref(),
+                cache_dir: cache_dir.as_deref(),
+                fov_hint,
+                baseline: baseline.as_deref(),
+                max_axis_p95_regress_pct,
+                allow_missing,
+            }) {
+                Ok(eval_cmd::EvalOutcome::Success) => {}
+                Ok(eval_cmd::EvalOutcome::GateFailed) => std::process::exit(2),
+                Err(e) => return Err(e),
+            }
+        }
     }
     Ok(())
 }
 
-fn data_root() -> PathBuf {
+pub(crate) fn data_root() -> PathBuf {
     PathBuf::from(env!("CARGO_MANIFEST_DIR")).join("../../../data")
 }
 
@@ -676,11 +743,11 @@ fn workspace_root() -> PathBuf {
     PathBuf::from(env!("CARGO_MANIFEST_DIR")).join("../..")
 }
 
-fn default_cache_dir() -> PathBuf {
+pub(crate) fn default_cache_dir() -> PathBuf {
     workspace_root().join("artifacts/cache")
 }
 
-fn load_catalog_and_cons(
+pub(crate) fn load_catalog_and_cons(
     catalog_path: Option<&Path>,
     lines_path: Option<&Path>,
     names_path: Option<&Path>,
@@ -748,7 +815,7 @@ fn round3(v: f64) -> f64 {
     (v * 1000.0).round() / 1000.0
 }
 
-fn print_engine_progress(p: EngineProgress) {
+pub(crate) fn print_engine_progress(p: EngineProgress) {
     match p {
         EngineProgress::Loading { kind, path } => {
             eprintln!("[db] loading {kind:?} from {}", path.display());

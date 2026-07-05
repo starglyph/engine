@@ -85,13 +85,18 @@
 //! single named constant [`ORIENTATION_CALIBRATION`] (`sign`, `offset_deg`), defaulting
 //! to identity so the pipeline's derived result is the primary hypothesis.
 //!
-//! **`EMPIRICAL CALIBRATION PENDING (S4)`**: S4 validates the pose against frames solved
-//! by BOTH astrometry.net AND our live solver (`tetra3_alt40` / `tetra3_alt60`); if the
-//! roll disagrees it flips `sign` and/or sets `offset_deg` (e.g. `offset_deg = -180` for
-//! the FITS `+y`-up alternative). The unit tests here deliberately lock **self
-//! consistency** (extract-then-reconstruct round trips for any value of the constant)
-//! plus the **definitional direction** of `orientation` (East of North) and parity
-//! handling, *not* a guessed absolute convention.
+//! **EMPIRICALLY VALIDATED (S4, 2026-07-05)** on `tetra3_alt60`, the one frame solved by
+//! BOTH astrometry.net and our live blind solver: predicted `roll = 30.955°` vs GT
+//! `roll = orientation + 180 = 31.556°` -> `roll_error = 0.60°` with `axis_angle = 0.008°`
+//! and `fov_error = 0.4%`. The alternative (FITS `+y`-up, `offset_deg = -180`) would have
+//! produced a ~179.4° roll error and is ruled out. The residual 0.60° is a genuine
+//! astrometry-vs-starglyph pose difference (axis agreement of 29 arcsec puts both on the
+//! same field; roll noise from rms 0.15 px over 17 inliers is ~0.03°, so the residual is
+//! systematic — plausibly astrometry's SIP distortion vs our k1-only model), recorded
+//! honestly by the harness rather than calibrated away. The unit tests deliberately lock
+//! **self consistency** (extract-then-reconstruct round trips for any value of the
+//! constant) plus the **definitional direction** of `orientation` (East of North) and
+//! parity handling, *not* a guessed absolute convention.
 
 use nalgebra::{Matrix3, RowVector3};
 use serde::{Deserialize, Serialize};
@@ -114,9 +119,10 @@ struct OrientationCalibration {
 /// (`+y`-down) pixel frame, so no correction is needed and the pipeline's derived
 /// `roll = orientation + 180` stands.
 ///
-/// `EMPIRICAL CALIBRATION PENDING (S4)`: flip `sign` and/or set `offset_deg` if the live
-/// solver disagrees on `tetra3_alt40`/`tetra3_alt60`. The known alternative (FITS
-/// `+y`-up frame) is `{ sign: 1.0, offset_deg: -180.0 }`.
+/// Empirically validated (S4, 2026-07-05) on `tetra3_alt60`: identity calibration gives
+/// `roll_error = 0.60°` vs the ~179.4° the FITS `+y`-up alternative
+/// (`{ sign: 1.0, offset_deg: -180.0 }`) would produce. Keep this knob: future GT frames
+/// with different cameras can strengthen or revise the calibration in one line.
 const ORIENTATION_CALIBRATION: OrientationCalibration = OrientationCalibration {
     sign: 1.0,
     offset_deg: 0.0,
