@@ -19,6 +19,17 @@ This project uses third-party astronomical datasets.
 - **Attribution text (template):**
   - "Contains constellation data from d3-celestial by Olaf Frohn, used under the BSD-3-Clause license."
 
+## Real sky photographs
+
+- **Dataset:** Acceptance frames in `data/input/` (real sky photographs)
+- **Source:** Original photography by the project author
+- **Rights holder:** Igor Lazarev
+- **License:** `CC BY 4.0`
+- **Attribution text (template):**
+  - "Contains real sky photographs by Igor Lazarev (Starglyph project), used under CC BY 4.0."
+- **Provenance / policy:** [`data/input/README.md`](data/input/README.md),
+  [`docs/data-sources.md`](docs/data-sources.md)
+
 ## Release checklist (attribution)
 
 - [ ] Attribution section is present in user-facing docs/site.
