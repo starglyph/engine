@@ -1,0 +1,46 @@
+# cargo-deny configuration for SkyTrace.
+# Run:  cargo install cargo-deny && cargo deny --manifest-path prototype/Cargo.toml check licenses
+#
+# Purpose: keep the dependency tree free of copyleft licenses that would be
+# incompatible with shipping closed-source web/mobile wrappers on top of the
+# Apache-2.0 engine. This is the automated guardrail behind the licensing plan.
+
+[licenses]
+# Fail the build on any license not explicitly allowed below.
+allow = [
+    "Apache-2.0",
+    "MIT",
+    "BSD-2-Clause",
+    "BSD-3-Clause",
+    "ISC",
+    "Zlib",
+    "Unicode-3.0",
+    "Unlicense",
+    "0BSD",
+    "BSL-1.0",
+    "CC0-1.0",
+    "MIT-0",
+    # MPL-2.0 is file-level (weak) copyleft. Allowed ONLY because the crates
+    # below (Tauri/webview CSS stack) are consumed unmodified, which does not
+    # trigger source disclosure. Do NOT modify these crates' sources in-tree.
+    "MPL-2.0",
+]
+# Any GPL / LGPL / AGPL / SSPL / EUPL / CDDL dependency is intentionally NOT in
+# the allow-list above, so cargo-deny will fail if one is ever introduced.
+confidence-threshold = 0.9
+
+# The Apache-2.0-WITH-LLVM-exception used by some crates is an accepted variant.
+[[licenses.exceptions]]
+name = "unicode-ident"
+allow = ["Unicode-3.0", "MIT", "Apache-2.0"]
+
+[bans]
+multiple-versions = "warn"
+
+[advisories]
+# Keep security-advisory checking on; unmaintained crates are a warning.
+unmaintained = "workspace"
+
+[sources]
+unknown-registry = "deny"
+unknown-git = "warn"

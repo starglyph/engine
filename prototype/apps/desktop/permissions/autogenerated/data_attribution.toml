@@ -1,0 +1,11 @@
+# Automatically generated - DO NOT EDIT!
+
+[[permission]]
+identifier = "allow-data-attribution"
+description = "Enables the data_attribution command without any pre-configured scope."
+commands.allow = ["data_attribution"]
+
+[[permission]]
+identifier = "deny-data-attribution"
+description = "Denies the data_attribution command without any pre-configured scope."
+commands.deny = ["data_attribution"]

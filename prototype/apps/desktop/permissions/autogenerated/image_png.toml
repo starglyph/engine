@@ -1,0 +1,11 @@
+# Automatically generated - DO NOT EDIT!
+
+[[permission]]
+identifier = "allow-image-png"
+description = "Enables the image_png command without any pre-configured scope."
+commands.allow = ["image_png"]
+
+[[permission]]
+identifier = "deny-image-png"
+description = "Denies the image_png command without any pre-configured scope."
+commands.deny = ["image_png"]

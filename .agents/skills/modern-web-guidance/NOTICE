@@ -1,0 +1,11 @@
+# NOTICE — vendored skill "modern-web-guidance"
+
+This skill is vendored from an external source. It is not affiliated with,
+endorsed by, or sponsored by the upstream project or its trademark holders.
+
+- Source:   GoogleChrome/modern-web-guidance/skills/modern-web-guidance
+- Upstream: https://github.com/GoogleChrome/modern-web-guidance.git
+- Ref:      v0.0.174
+- License:  Apache-2.0
+
+Do not edit vendored skill content in place; re-vendor from upstream instead.

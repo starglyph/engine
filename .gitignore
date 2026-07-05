@@ -1,0 +1,3 @@
+/data/catalogs/*.csv
+!/data/catalogs/hyg_v3.sample.csv
+!/data/catalogs/hyg_v42.csv.gz

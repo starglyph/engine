@@ -1,0 +1,21 @@
+[package]
+name = "starglyph-desktop"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Starglyph — night-sky photo recognition with constellation overlay"
+
+[dependencies]
+tauri = { version = "2", features = [] }
+tauri-plugin-dialog = "2"
+serde = { workspace = true }
+serde_json = { workspace = true }
+anyhow = { workspace = true }
+starglyph-core = { path = "../../crates/starglyph-core" }
+image = { workspace = true }
+
+[dev-dependencies]
+tempfile = { workspace = true }
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }

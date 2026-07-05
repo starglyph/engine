@@ -1,0 +1,26 @@
+name: simulator-validation
+
+on:
+  push:
+    paths:
+      - "prototype/**"
+      - ".github/workflows/simulator-validation.yml"
+  pull_request:
+    paths:
+      - "prototype/**"
+      - ".github/workflows/simulator-validation.yml"
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: prototype
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+      - name: Cache cargo
+        uses: Swatinem/rust-cache@v2
+      - name: Run simulator validation
+        run: make validate-simulator

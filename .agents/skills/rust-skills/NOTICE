@@ -1,0 +1,11 @@
+# NOTICE — vendored skill "rust-skills"
+
+This skill is vendored from an external source. It is not affiliated with,
+endorsed by, or sponsored by the upstream project or its trademark holders.
+
+- Source:   leonardomso/rust-skills
+- Upstream: https://github.com/leonardomso/rust-skills.git
+- Ref:      fd2a861ab0406a4ac536a55274d14ea6fd1ca9c9
+- License:  MIT
+
+Do not edit vendored skill content in place; re-vendor from upstream instead.

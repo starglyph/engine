@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Starglyph</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="tauri-error" class="tauri-error" hidden>
+    Tauri API недоступен — запустите приложение через Starglyph Desktop.
+  </div>
+
+  <div id="app" class="app">
+    <header class="topbar">
+      <div class="topbar-left">
+        <span class="brand" aria-hidden="true">✦</span>
+        <span class="brand-name">Starglyph</span>
+        <button type="button" id="btn-open" class="btn btn-secondary">Открыть снимок…</button>
+        <button type="button" id="btn-solve" class="btn btn-accent" disabled>Распознать ▶</button>
+      </div>
+      <div id="topbar-filename" class="topbar-filename">—</div>
+    </header>
+
+    <main class="main">
+      <section class="canvas-area" id="canvas-area" tabindex="0" aria-label="Просмотр снимка">
+        <canvas id="view" aria-label="Снимок ночного неба"></canvas>
+
+        <div id="empty-state" class="empty-state">
+          <div class="empty-icon" aria-hidden="true">✦</div>
+          <p class="empty-title">Перетащите снимок сюда или нажмите “Открыть снимок…”</p>
+          <p class="empty-caption">BMP · PNG · JPEG</p>
+        </div>
+
+        <div class="zoom-cluster" role="toolbar" aria-label="Масштаб">
+          <button type="button" id="zoom-out" class="btn btn-icon" aria-label="Уменьшить">−</button>
+          <button type="button" id="zoom-in" class="btn btn-icon" aria-label="Увеличить">+</button>
+          <button type="button" id="zoom-fit" class="btn btn-secondary btn-compact">Вписать</button>
+          <button type="button" id="zoom-11" class="btn btn-secondary btn-compact">1:1</button>
+        </div>
+      </section>
+
+      <aside class="sidebar" aria-label="Панель свойств">
+        <section class="card" aria-labelledby="meta-heading">
+          <h2 id="meta-heading" class="card-title">Снимок</h2>
+          <dl class="meta-list">
+            <div class="meta-row">
+              <dt>Файл</dt>
+              <dd id="meta-filename">—</dd>
+            </div>
+            <div class="meta-row">
+              <dt>Размер</dt>
+              <dd id="meta-size" class="tabular-nums">—</dd>
+            </div>
+            <div class="meta-row">
+              <dt>Дата из имени</dt>
+              <dd id="meta-timestamp" class="tabular-nums">—</dd>
+            </div>
+            <div class="meta-row">
+              <dt>Экспозиция</dt>
+              <dd id="meta-exposure">—</dd>
+            </div>
+            <div class="meta-row meta-row-stack">
+              <dt>Часовой пояс</dt>
+              <dd>
+                <select id="meta-timezone" class="meta-select" disabled aria-label="Часовой пояс для планет">
+                  <option value="-1">UTC−1</option>
+                  <option value="0" selected>UTC+0</option>
+                  <option value="1">UTC+1</option>
+                  <option value="2">UTC+2</option>
+                  <option value="3">UTC+3</option>
+                  <option value="4">UTC+4</option>
+                  <option value="5">UTC+5</option>
+                  <option value="6">UTC+6</option>
+                  <option value="7">UTC+7</option>
+                  <option value="8">UTC+8</option>
+                  <option value="9">UTC+9</option>
+                  <option value="10">UTC+10</option>
+                  <option value="11">UTC+11</option>
+                  <option value="12">UTC+12</option>
+                </select>
+                <p class="timezone-caption">Для планет. Кадры 2011 года из Москвы — UTC+4</p>
+              </dd>
+            </div>
+          </dl>
+        </section>
+
+        <section class="card" aria-labelledby="view-heading">
+          <h2 id="view-heading" class="card-title">Вид</h2>
+          <label class="toggle-row">
+            <input type="checkbox" id="stretch-toggle" checked />
+            <span>Усиление яркости</span>
+          </label>
+        </section>
+
+        <section class="card" aria-labelledby="solve-heading">
+          <h2 id="solve-heading" class="card-title">Распознавание</h2>
+          <div id="solve-empty" class="solve-empty">Нажмите «Распознать ▶» в верхней панели.</div>
+          <div id="solve-progress" class="solve-progress" hidden>
+            <ol id="solve-steps" class="solve-steps"></ol>
+          </div>
+          <div id="solve-result" class="solve-result" hidden></div>
+          <div id="solve-failure" class="solve-failure" hidden></div>
+        </section>
+
+        <section class="card" aria-labelledby="layers-heading">
+          <h2 id="layers-heading" class="card-title">Слои</h2>
+          <div class="layer-list">
+            <label class="toggle-row" title="Появится после распознавания">
+              <input type="checkbox" id="layer-constellations" disabled />
+              <span>Созвездия</span>
+            </label>
+            <label class="toggle-row" title="Появится после распознавания">
+              <input type="checkbox" id="layer-star-names" disabled />
+              <span>Названия звёзд</span>
+            </label>
+            <label class="toggle-row" title="Появится после распознавания">
+              <input type="checkbox" id="layer-planets" disabled />
+              <span>Планеты</span>
+            </label>
+            <label class="toggle-row" title="Появится после распознавания">
+              <input type="checkbox" id="layer-detections" disabled />
+              <span>Детекции</span>
+            </label>
+            <label class="toggle-row" title="Появится после распознавания">
+              <input type="checkbox" id="layer-grid" disabled />
+              <span>Сетка RA/Dec</span>
+            </label>
+          </div>
+        </section>
+      </aside>
+    </main>
+
+    <footer class="statusbar">
+      <span id="status-hint" class="status-hint">Готово</span>
+      <span id="status-attribution" class="status-attribution"></span>
+    </footer>
+  </div>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

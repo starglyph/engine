@@ -1,0 +1,47 @@
+[workspace]
+members = [
+  "crates/simulator-core",
+  "crates/dataset-cli",
+  "crates/solver-core",
+  "crates/solver-cli",
+  "crates/starglyph-core",
+  "crates/starglyph-cli",
+  "apps/desktop",
+]
+resolver = "2"
+
+[workspace.package]
+edition = "2021"
+license = "Apache-2.0"
+version = "0.1.0"
+
+[workspace.dependencies]
+anyhow = "1"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+clap = { version = "=4.5.4", features = ["derive"] }
+csv = "1"
+image = { version = "0.25.6", default-features = false, features = ["png", "jpeg", "bmp"] }
+thiserror = "2"
+rand = "0.9"
+rand_chacha = "0.9"
+nalgebra = "0.33"
+tempfile = "3"
+flate2 = "1"
+rayon = "1"
+tetra3 = { version = "=0.8.0", features = ["parallel"] }
+vsop87 = "=3.0.0"
+
+# The plate solver and its numeric backend are unusably slow unoptimized, which
+# dominates the integration test's runtime. Optimize just these two packages in
+# dev/test builds; starglyph crates stay debuggable.
+[profile.dev.package.starglyph-core]
+opt-level = 3
+[profile.dev.package.tetra3]
+opt-level = 3
+[profile.dev.package.numeris]
+opt-level = 3
+[profile.test.package.tetra3]
+opt-level = 3
+[profile.test.package.numeris]
+opt-level = 3

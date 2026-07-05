@@ -1,0 +1,1 @@
+{"default":{"identifier":"default","description":"Main window access to Starglyph desktop commands and events.","local":true,"windows":["main"],"permissions":["core:default","core:event:default","allow-pick-image","allow-load-image","allow-image-png","allow-solve-image","allow-startup-request","allow-data-attribution"]}}

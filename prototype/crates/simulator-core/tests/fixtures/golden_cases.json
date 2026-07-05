@@ -1,0 +1,14 @@
+[
+  {
+    "name": "clean-baseline",
+    "seed": 7,
+    "degraded": false,
+    "expected_sha256": "c413ed6a7a564d60c2667ef3a376d81082114940d809fac17647409da4c4f5a0"
+  },
+  {
+    "name": "degraded-baseline",
+    "seed": 11,
+    "degraded": true,
+    "expected_sha256": "4d7216aff5d9cb912eb174c956b6556250c7f2bc47444c24d805ab31f8617bf0"
+  }
+]

@@ -1,0 +1,17 @@
+[package]
+name = "starglyph-cli"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[[bin]]
+name = "starglyph"
+path = "src/main.rs"
+
+[dependencies]
+anyhow.workspace = true
+clap.workspace = true
+image.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+starglyph-core = { path = "../starglyph-core" }
