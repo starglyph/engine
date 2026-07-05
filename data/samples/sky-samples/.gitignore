@@ -1,0 +1,8 @@
+# Binary frames are NOT committed — this repo stores only provenance (manifest.json).
+# Reconstruct the images on demand:  python3 fetch_sample.py
+images/
+images-stress-tier-b/
+.tetra3_src/
+# WCS ground-truth: keep the small JSON sidecars, ignore the larger FITS headers.
+ground-truth/*.fits
+*.wcs.fits

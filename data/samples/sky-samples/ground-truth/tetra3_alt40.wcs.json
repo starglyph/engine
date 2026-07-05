@@ -1,0 +1,33 @@
+{
+  "jobid": 16258403,
+  "calibration": {
+    "ra": 230.66412078681722,
+    "dec": 11.039669830612274,
+    "width_arcsec": 41296.76627592411,
+    "height_arcsec": 30972.57470694308,
+    "radius": 7.169577478459046,
+    "pixscale": 40.328873316332135,
+    "orientation": -152.308338723914,
+    "parity": 1.0
+  },
+  "objects_in_field": [
+    "The star Nasak Yamani I (δ Ser",
+    "13 Ser)",
+    "The star 16 Ser",
+    "The star τ1 Ser",
+    "9 Ser",
+    "The star χ Ser",
+    "20 Ser",
+    "The star 7 Ser"
+  ],
+  "tags": [
+    "The star Nasak Yamani I (δ Ser",
+    "13 Ser)",
+    "The star τ1 Ser",
+    "9 Ser",
+    "The star χ Ser",
+    "20 Ser",
+    "The star 7 Ser",
+    "The star 16 Ser"
+  ]
+}

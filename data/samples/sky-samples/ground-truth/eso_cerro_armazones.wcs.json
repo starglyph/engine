@@ -1,0 +1,19 @@
+{
+  "jobid": 16258666,
+  "calibration": {
+    "ra": 306.39818221671135,
+    "dec": 73.94514191212056,
+    "width_arcsec": 12002.797223627771,
+    "height_arcsec": 2658.6195850335516,
+    "radius": 1.7074602516558826,
+    "pixscale": 3.000699305906943,
+    "orientation": 255.67491463772535,
+    "parity": -1.0
+  },
+  "objects_in_field": [
+    "The star 73 Dra"
+  ],
+  "tags": [
+    "The star 73 Dra"
+  ]
+}
