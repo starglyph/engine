@@ -1,0 +1,29 @@
+name: cargo-deny
+
+# License / dependency guardrail for the open-core engine: fails the build if a
+# dependency's license is not on the allow-list in prototype/deny.toml (e.g. any
+# GPL/AGPL/LGPL/SSPL), which would be incompatible with the closed web/mobile
+# wrappers built on top of the Apache-2.0 engine.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "prototype/**"
+      - ".github/workflows/cargo-deny.yml"
+  pull_request:
+    paths:
+      - "prototype/**"
+      - ".github/workflows/cargo-deny.yml"
+
+jobs:
+  cargo-deny:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: EmbarkStudios/cargo-deny-action@v2
+        with:
+          manifest-path: prototype/Cargo.toml
+          # Deterministic checks only. Advisories are intentionally omitted here
+          # (they depend on the live RustSec DB); add "advisories" to enable them.
+          command: check licenses bans sources

@@ -1,9 +1,9 @@
-# cargo-deny configuration for SkyTrace.
-# Run:  cargo install cargo-deny && cargo deny --manifest-path prototype/Cargo.toml check licenses
+# cargo-deny configuration for Starglyph.
+# Run (from prototype/):  cargo install cargo-deny && cargo deny check licenses bans sources
 #
 # Purpose: keep the dependency tree free of copyleft licenses that would be
 # incompatible with shipping closed-source web/mobile wrappers on top of the
-# Apache-2.0 engine. This is the automated guardrail behind the licensing plan.
+# Apache-2.0 engine. This is the automated license guardrail for the open-core engine.
 
 [licenses]
 # Fail the build on any license not explicitly allowed below.
