@@ -1,0 +1,32 @@
+name: serve-validation
+
+on:
+  push:
+    paths:
+      - "prototype/crates/starglyph-serve/**"
+      - "prototype/crates/starglyph-core/**"
+      - "prototype/Cargo.toml"
+      - "prototype/Cargo.lock"
+      - ".github/workflows/serve-validation.yml"
+  pull_request:
+    paths:
+      - "prototype/crates/starglyph-serve/**"
+      - "prototype/crates/starglyph-core/**"
+      - "prototype/Cargo.toml"
+      - "prototype/Cargo.lock"
+      - ".github/workflows/serve-validation.yml"
+
+jobs:
+  validate-serve:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: prototype
+
+    steps:
+      - uses: actions/checkout@v5
+      - uses: dtolnay/rust-toolchain@stable
+      - name: Cache cargo
+        uses: Swatinem/rust-cache@v2
+      - name: Run serve validation
+        run: make validate-serve

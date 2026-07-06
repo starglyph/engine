@@ -6,6 +6,7 @@ members = [
   "crates/solver-cli",
   "crates/starglyph-core",
   "crates/starglyph-cli",
+  "crates/starglyph-serve",
   "apps/desktop",
 ]
 resolver = "2"
@@ -19,8 +20,11 @@ version = "0.1.0"
 anyhow = "1"
 serde = { version = "1", features = ["derive"] }
 serde_json = "1"
-clap = { version = "=4.5.4", features = ["derive"] }
+clap = { version = "=4.5.4", features = ["derive", "env"] }
 csv = "1"
+axum = { version = "0.8", features = ["multipart"] }
+tokio = { version = "1", features = ["rt-multi-thread", "macros", "signal", "net", "time", "sync"] }
+base64 = "0.22"
 image = { version = "0.25.6", default-features = false, features = ["png", "jpeg", "bmp", "tiff"] }
 kamadak-exif = "0.6"
 thiserror = "2"

@@ -9,10 +9,19 @@
 //!   database is too sparse to match. Expensive to build the first time.
 
 use std::path::{Path, PathBuf};
+use std::sync::Mutex;
 
 use tetra3::{GenerateDatabaseConfig, SolverDatabase, Star as T3Star};
 
 use crate::catalog::Catalog;
+
+/// Process-wide single-flight lock for database *generation*. Engines pooled
+/// by the HTTP service share one disk cache; without this, N engines missing
+/// the same cache file would generate the same multi-hundred-MB database N
+/// times in parallel (generation is already rayon-parallel inside, so
+/// serializing concurrent builds also avoids oversubscribing the CPU).
+/// Loading an existing cache file stays lock-free.
+static GENERATION_LOCK: Mutex<()> = Mutex::new(());
 
 /// Faintest magnitude included in every generated database.
 pub const DB_MAG_LIMIT: f32 = 6.5;
@@ -148,6 +157,11 @@ pub enum EngineError {
     Load { path: String, source: tetra3::Error },
     #[error("failed to save solver database '{path}': {source}")]
     Save { path: String, source: tetra3::Error },
+    #[error("failed to publish solver database '{path}': {source}")]
+    Publish {
+        path: String,
+        source: std::io::Error,
+    },
     #[error("cache path '{path}' is not valid UTF-8 (tetra3 requires a string path)")]
     NonUtf8Path { path: String },
 }
@@ -194,35 +208,49 @@ impl Engine {
             source,
         })?;
         let cache_path = cache_dir.join(kind.cache_file_name());
-        let cache_str = path_to_str(&cache_path)?;
 
         let db = if cache_path.exists() {
-            progress(EngineProgress::Loading {
-                kind,
-                path: cache_path.clone(),
-            });
-            SolverDatabase::load_from_file(cache_str).map_err(|source| EngineError::Load {
-                path: cache_path.display().to_string(),
-                source,
-            })?
+            load_db(&cache_path, kind, progress)?
         } else {
-            let stars = build_star_list(catalog);
-            progress(EngineProgress::Generating {
-                kind,
-                star_count: stars.len(),
-            });
-            let cfg = kind.generate_config();
-            let db = SolverDatabase::generate_from_star_list(stars, &cfg, DEFAULT_PM_YEAR);
-            progress(EngineProgress::Saving {
-                kind,
-                path: cache_path.clone(),
-            });
-            db.save_to_file(cache_str)
-                .map_err(|source| EngineError::Save {
-                    path: cache_path.display().to_string(),
-                    source,
+            // Single-flight: only one thread generates at a time; the file is
+            // published atomically (tmp + rename), so the lock-free `exists`
+            // fast path above never observes a partially written database.
+            let _flight = GENERATION_LOCK
+                .lock()
+                .unwrap_or_else(std::sync::PoisonError::into_inner);
+            if cache_path.exists() {
+                // Another thread built it while we waited for the lock.
+                load_db(&cache_path, kind, progress)?
+            } else {
+                let stars = build_star_list(catalog);
+                progress(EngineProgress::Generating {
+                    kind,
+                    star_count: stars.len(),
+                });
+                let cfg = kind.generate_config();
+                let db = SolverDatabase::generate_from_star_list(stars, &cfg, DEFAULT_PM_YEAR);
+                progress(EngineProgress::Saving {
+                    kind,
+                    path: cache_path.clone(),
+                });
+                let tmp_path = cache_dir.join(format!("{}.tmp", kind.cache_file_name()));
+                let tmp_str = path_to_str(&tmp_path)?;
+                if let Err(source) = db.save_to_file(tmp_str) {
+                    let _ = std::fs::remove_file(&tmp_path);
+                    return Err(EngineError::Save {
+                        path: tmp_path.display().to_string(),
+                        source,
+                    });
+                }
+                std::fs::rename(&tmp_path, &cache_path).map_err(|source| {
+                    let _ = std::fs::remove_file(&tmp_path);
+                    EngineError::Publish {
+                        path: cache_path.display().to_string(),
+                        source,
+                    }
                 })?;
-            db
+                db
+            }
         };
 
         let bytes = std::fs::metadata(&cache_path).map(|m| m.len()).unwrap_or(0);
@@ -260,6 +288,22 @@ fn build_star_list(catalog: &Catalog) -> Vec<T3Star> {
             mag: s.mag,
         })
         .collect()
+}
+
+/// Load a cached database file, emitting the `Loading` progress event.
+fn load_db(
+    cache_path: &Path,
+    kind: DbKind,
+    progress: &mut dyn FnMut(EngineProgress),
+) -> Result<SolverDatabase, EngineError> {
+    progress(EngineProgress::Loading {
+        kind,
+        path: cache_path.to_path_buf(),
+    });
+    SolverDatabase::load_from_file(path_to_str(cache_path)?).map_err(|source| EngineError::Load {
+        path: cache_path.display().to_string(),
+        source,
+    })
 }
 
 fn path_to_str(path: &Path) -> Result<&str, EngineError> {

@@ -13,6 +13,8 @@
   зум/пан, диагностика качества решения — [docs/app.md](docs/app.md).
 - **`starglyph-cli`**: headless-решатель (`solve`, `batch-solve`, `detect`, `overlay`) для
   приёмки и отладки.
+- **`starglyph-serve`**: HTTP-сервис поверх того же солвера — `POST /solve` с фото →
+  `SolveReport` JSON + overlay-PNG, тёплый пул движков — [docs/serve.md](docs/serve.md).
 - **Симулятор синтетического неба** (фазы 1–2 дорожной карты) — генерация датасетов
   с эталонной разметкой.
 
@@ -29,6 +31,10 @@ cargo run -rq -p starglyph-cli -- solve ../data/input/<frame>.bmp \
 
 # пакетная приёмка по каталогу снимков
 cargo run -rq -p starglyph-cli -- batch-solve ../data/input --out-dir artifacts/batch
+
+# HTTP-сервис: тёплый пул движков, JSON-отчёт + overlay-PNG по HTTP (docs/serve.md)
+cargo run -rq -p starglyph-serve &
+curl -F image=@../data/input/CD_2011-09-19_0000.bmp 'http://127.0.0.1:8080/solve?overlay=png' -o overlay.png
 
 # GUI (нужны libwebkit2gtk-4.1-dev и libgtk-3-dev; см. docs/app.md)
 cargo run -p starglyph-desktop                       # пустое окно

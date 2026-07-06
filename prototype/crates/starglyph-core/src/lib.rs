@@ -10,4 +10,5 @@ pub mod eval;
 pub mod geom;
 pub mod image_input;
 pub mod overlay;
+pub mod render;
 pub mod solve;
