@@ -62,13 +62,39 @@ const BLIND_DENSE_CENTERS: [f32; 3] = [DEFAULT_BLIND_FOV_DEG, 40.0, 65.0];
 /// count; narrower hints still steer the bootstrap attempts, only the
 /// dense-band build is skipped.
 const MIN_DENSE_CENTER_DEG: f32 = 8.0;
-/// Soft prior weight on the radial-distortion term `k1` during refinement,
+/// Soft prior weight on the radial-distortion term `k1` for narrow fields,
 /// i.e. `1/σ` for `k1 ~ N(0, σ)` with σ ≈ 0.1. At ~22° FOV `k1` is only weakly
 /// identifiable — the same camera otherwise fits opposite signs frame to frame,
 /// proving it is absorbing centroid noise, not lens distortion. This prior
 /// de-rails those fits toward 0 while leaving a genuine, multi-point distortion
 /// signal (whose cost basin is sharp) essentially untouched.
-const K1_REG_WEIGHT: f64 = 10.0;
+const K1_REG_WEIGHT_NARROW: f64 = 10.0;
+/// Prior weight for wide fields (σ ≈ 0.4): real wide-angle barrel distortion
+/// (k1 ≈ −0.3…−0.05) is both significant and identifiable there — clamping it
+/// to 0 made LM shrink the FOV instead (orion_rahn 71°: −9.6% fov error).
+const K1_REG_WEIGHT_WIDE: f64 = 2.5;
+/// The prior tapers linearly between these initial-FOV bounds (degrees).
+const K1_TAPER_START_FOV_DEG: f64 = 30.0;
+const K1_TAPER_END_FOV_DEG: f64 = 70.0;
+/// Wide-field re-match radius ladder (px). The first verification match set is
+/// censored by the undistorted projection: with real barrel distortion the
+/// edge stars sit tens of pixels off and never enter the LM fit, leaving
+/// k1/focal degenerate on the central subset. Re-matching under the refined
+/// model starts wide enough to admit distortion-sized mismatch, then tightens.
+const WIDE_REMATCH_RADII_PX: [f64; 3] = [10.0, 5.0, FINAL_RADIUS_PX];
+/// Minimum matches to run a re-refine pass (k1 stays free ≥ 8 matches).
+const REMATCH_MIN_MATCHES: usize = 8;
+
+/// k1 prior weight as a function of the initial horizontal FOV: strong below
+/// [`K1_TAPER_START_FOV_DEG`], relaxed above [`K1_TAPER_END_FOV_DEG`], linear
+/// in between. Computed once from the pre-refine solution and held constant
+/// through the LM iterations.
+fn k1_reg_weight(fov_x_deg: f64) -> f64 {
+    let t = ((fov_x_deg - K1_TAPER_START_FOV_DEG)
+        / (K1_TAPER_END_FOV_DEG - K1_TAPER_START_FOV_DEG))
+        .clamp(0.0, 1.0);
+    K1_REG_WEIGHT_NARROW + t * (K1_REG_WEIGHT_WIDE - K1_REG_WEIGHT_NARROW)
+}
 
 /// Options controlling a single solve.
 #[derive(Debug, Clone)]
@@ -317,7 +343,19 @@ pub fn solve_frame_with_engine(
 
     // ── 5. Refine (Levenberg–Marquardt) ───────────────────────────────────────
     progress(SolveStage::Refine);
-    let refined = refine_pose(&chosen.pose, &chosen.verify.matches);
+    let mut refined = refine_pose(&chosen.pose, &chosen.verify.matches);
+    // Wide fields: break the censored-match degeneracy (see
+    // WIDE_REMATCH_RADII_PX) by alternating re-match and re-refine; each pass
+    // re-projects with the current k1, pulling displaced edge stars into the
+    // fit that the relaxed wide-field prior can now actually use.
+    if refined.fov_x_deg() > K1_TAPER_START_FOV_DEG {
+        for radius in WIDE_REMATCH_RADII_PX {
+            let rematch = match_predictions(&refined, &verify, &detections, radius);
+            if rematch.matches.len() >= REMATCH_MIN_MATCHES {
+                refined = refine_pose(&refined, &rematch.matches);
+            }
+        }
+    }
     let final_match = match_predictions(&refined, &verify, &detections, FINAL_RADIUS_PX);
     let final_log_odds = log_odds_stats(final_match.hits, detections.len(), width, height);
     let solve_ms = t_solve.elapsed().as_millis() as u64;
@@ -922,6 +960,7 @@ fn log_odds_stats(hits: u32, n_det: usize, width: u32, height: u32) -> f64 {
 fn refine_pose(initial: &CameraSolution, matches: &[Match]) -> CameraSolution {
     let free_k1 = matches.len() >= 8;
     let dim = if free_k1 { 5 } else { 4 };
+    let k1_weight = k1_reg_weight(initial.fov_x_deg());
     let mut params = vec![
         initial.ra_deg,
         initial.dec_deg,
@@ -934,14 +973,14 @@ fn refine_pose(initial: &CameraSolution, matches: &[Match]) -> CameraSolution {
 
     let width = initial.width;
     let height = initial.height;
-    let eval = |p: &[f64]| residuals(p, free_k1, width, height, matches).norm_squared();
+    let eval = |p: &[f64]| residuals(p, free_k1, k1_weight, width, height, matches).norm_squared();
 
     let mut lambda = 1e-3;
     let mut cost = eval(&params);
 
     for _ in 0..30 {
-        let r = residuals(&params, free_k1, width, height, matches);
-        let jac = numeric_jacobian(&params, free_k1, width, height, matches, &r);
+        let r = residuals(&params, free_k1, k1_weight, width, height, matches);
+        let jac = numeric_jacobian(&params, free_k1, k1_weight, width, height, matches, &r);
         let jt = jac.transpose();
         let jtj = &jt * &jac;
         let jtr = &jt * &r;
@@ -987,7 +1026,14 @@ fn refine_pose(initial: &CameraSolution, matches: &[Match]) -> CameraSolution {
     to_solution(&params, free_k1, initial)
 }
 
-fn residuals(p: &[f64], free_k1: bool, width: u32, height: u32, matches: &[Match]) -> DVector<f64> {
+fn residuals(
+    p: &[f64],
+    free_k1: bool,
+    k1_weight: f64,
+    width: u32,
+    height: u32,
+    matches: &[Match],
+) -> DVector<f64> {
     let rot = geom::pose_to_rotation(p[0], p[1], p[2]);
     let focal = p[3];
     let k1 = if free_k1 { p[4] } else { 0.0 };
@@ -1007,7 +1053,7 @@ fn residuals(p: &[f64], free_k1: bool, width: u32, height: u32, matches: &[Match
         }
     }
     if free_k1 {
-        r[matches.len() * 2] = K1_REG_WEIGHT * k1;
+        r[matches.len() * 2] = k1_weight * k1;
     }
     r
 }
@@ -1015,6 +1061,7 @@ fn residuals(p: &[f64], free_k1: bool, width: u32, height: u32, matches: &[Match
 fn numeric_jacobian(
     p: &[f64],
     free_k1: bool,
+    k1_weight: f64,
     width: u32,
     height: u32,
     matches: &[Match],
@@ -1030,7 +1077,7 @@ fn numeric_jacobian(
         };
         let mut pp = p.to_vec();
         pp[j] += step;
-        let r1 = residuals(&pp, free_k1, width, height, matches);
+        let r1 = residuals(&pp, free_k1, k1_weight, width, height, matches);
         for i in 0..rows {
             jac[(i, j)] = (r1[i] - r0[i]) / step;
         }
@@ -1121,6 +1168,132 @@ mod tests {
         assert_eq!(ladder_prefixes(6), vec![6]);
         assert_eq!(ladder_prefixes(40), vec![8, 10, 12, 16, 20, 30]);
         assert_eq!(ladder_prefixes(4), vec![4]);
+    }
+
+    #[test]
+    fn k1_prior_weight_tapers_with_fov() {
+        assert_eq!(k1_reg_weight(22.0), K1_REG_WEIGHT_NARROW);
+        assert_eq!(k1_reg_weight(30.0), K1_REG_WEIGHT_NARROW);
+        assert_eq!(k1_reg_weight(70.0), K1_REG_WEIGHT_WIDE);
+        assert_eq!(k1_reg_weight(90.0), K1_REG_WEIGHT_WIDE);
+        let mid = k1_reg_weight(50.0);
+        assert!(
+            mid < K1_REG_WEIGHT_NARROW && mid > K1_REG_WEIGHT_WIDE,
+            "50° sits inside the taper, got {mid}"
+        );
+    }
+
+    /// Exact synthetic correspondences for a camera with the given truth
+    /// intrinsics: sky directions are picked through the pinhole model, then
+    /// projected through the distorted one, so (world ↔ pixel) is exact.
+    fn synthetic_matches(truth: &CameraSolution, noise_px: f64) -> Vec<Match> {
+        let rot = truth.rotation();
+        let (w, h) = (truth.width, truth.height);
+        let mut matches = Vec::new();
+        let (nx, ny) = (7, 5);
+        for iy in 0..ny {
+            for ix in 0..nx {
+                let ideal_x = (0.08 + 0.84 * f64::from(ix) / f64::from(nx - 1)) * f64::from(w);
+                let ideal_y = (0.08 + 0.84 * f64::from(iy) / f64::from(ny - 1)) * f64::from(h);
+                let world = geom::unproject(&rot, truth.focal_px, 0.0, w, h, ideal_x, ideal_y);
+                let Some((px, py)) = geom::project(&rot, truth.focal_px, truth.k1, w, h, world)
+                else {
+                    continue;
+                };
+                // Deterministic hash-based jitter (no RNG in tests); a
+                // structured pattern would alias into a fake radial trend
+                // that k1 could legitimately fit.
+                let jitter = |seed: u32| {
+                    let h = (ix * 73_856_093) ^ (iy * 19_349_663) ^ (seed * 83_492_791);
+                    f64::from(h % 2000) / 999.5 - 1.0
+                };
+                matches.push(Match {
+                    world,
+                    px: px + noise_px * jitter(1),
+                    py: py + noise_px * jitter(2),
+                });
+            }
+        }
+        matches
+    }
+
+    /// Wide field with real barrel distortion: the relaxed prior must let LM
+    /// recover k1 instead of shrinking the focal length (the pre-B5 failure
+    /// mode measured on orion_rahn: −9.6% fov with k1 pinned to 0).
+    #[test]
+    fn refine_recovers_wide_field_barrel_distortion() {
+        let (width, height) = (4000_u32, 3000_u32);
+        // 70° horizontal FOV.
+        let focal = f64::from(width) / (2.0 * (35.0_f64).to_radians().tan());
+        let truth = CameraSolution {
+            ra_deg: 30.0,
+            dec_deg: 20.0,
+            roll_deg: 15.0,
+            focal_px: focal,
+            k1: -0.2,
+            width,
+            height,
+        };
+        let matches = synthetic_matches(&truth, 0.0);
+        assert!(matches.len() >= 30, "grid mostly visible");
+
+        let initial = CameraSolution {
+            ra_deg: truth.ra_deg + 0.3,
+            dec_deg: truth.dec_deg - 0.2,
+            roll_deg: truth.roll_deg + 0.5,
+            focal_px: focal * 1.06, // the "absorbed into fov" wrong answer
+            k1: 0.0,
+            width,
+            height,
+        };
+        let refined = refine_pose(&initial, &matches);
+        assert!(
+            (refined.k1 - truth.k1).abs() < 0.04,
+            "k1 not recovered: {}",
+            refined.k1
+        );
+        assert!(
+            (refined.focal_px / truth.focal_px - 1.0).abs() < 0.01,
+            "focal off by {:.2}%",
+            (refined.focal_px / truth.focal_px - 1.0) * 100.0
+        );
+        assert!(
+            (refined.fov_x_deg() - truth.fov_x_deg()).abs() < 0.7,
+            "fov {} vs truth {}",
+            refined.fov_x_deg(),
+            truth.fov_x_deg()
+        );
+    }
+
+    /// Narrow field with a distortion-free lens and noisy centroids: the
+    /// strong prior must keep k1 pinned near zero (its historical job).
+    #[test]
+    fn refine_keeps_k1_pinned_on_narrow_noisy_fields() {
+        let (width, height) = (740_u32, 576_u32);
+        // 22° horizontal FOV.
+        let focal = f64::from(width) / (2.0 * (11.0_f64).to_radians().tan());
+        let truth = CameraSolution {
+            ra_deg: 16.4,
+            dec_deg: 60.2,
+            roll_deg: -40.0,
+            focal_px: focal,
+            k1: 0.0,
+            width,
+            height,
+        };
+        let matches = synthetic_matches(&truth, 0.8);
+
+        let initial = CameraSolution {
+            focal_px: focal * 1.02,
+            k1: 0.0,
+            ..truth.clone()
+        };
+        let refined = refine_pose(&initial, &matches);
+        assert!(
+            refined.k1.abs() < 0.02,
+            "prior should pin k1 on a 22° field, got {}",
+            refined.k1
+        );
     }
 
     /// End-to-end blind solve on the real g128 frame (skips silently if the
