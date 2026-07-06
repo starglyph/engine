@@ -75,28 +75,37 @@
 //!   geometric consequence and is *not* the tunable constant below - it emerges from the
 //!   pipeline via `rotation_to_pose`.
 //!
-//! ## What is still uncertain -> [`ORIENTATION_CALIBRATION`]
+//! ## The reported frame depends on how nova ingested the file -> [`WcsRowConvention`]
 //!
-//! The one thing we cannot pin from static analysis alone is whether astrometry's
-//! *reported* `orientation`/`parity` really live in our `+y`-down frame (primary
-//! hypothesis, supported by the parity data above) or in the FITS `+y`-up frame (the
-//! plausible alternative, which would give `roll = orientation` with an extra `-180`
-//! offset), or whether a global sign flip is needed. That residual is isolated in the
-//! single named constant [`ORIENTATION_CALIBRATION`] (`sign`, `offset_deg`), defaulting
-//! to identity so the pipeline's derived result is the primary hypothesis.
+//! Whether astrometry's *reported* `orientation` lives in our `+y`-down frame or in a
+//! vertically flipped one turns out to depend on the **source container** the frame was
+//! uploaded as. nova.astrometry.net converts non-FITS uploads internally, and the row
+//! order of that conversion differs between the pipeline used for 16-bit TIFFs and the
+//! one used for consumer JPEGs (the committed sidecars have no TIFF `Orientation` tags,
+//! so the flip is nova's, not the files'). A vertical flip maps the position angle
+//! `theta -> 180 - theta`, i.e. `roll = orientation + 180` becomes `roll = -orientation`.
 //!
-//! **EMPIRICALLY VALIDATED (S4, 2026-07-05)** on `tetra3_alt60`, the one frame solved by
-//! BOTH astrometry.net and our live blind solver: predicted `roll = 30.955°` vs GT
-//! `roll = orientation + 180 = 31.556°` -> `roll_error = 0.60°` with `axis_angle = 0.008°`
-//! and `fov_error = 0.4%`. The alternative (FITS `+y`-up, `offset_deg = -180`) would have
-//! produced a ~179.4° roll error and is ruled out. The residual 0.60° is a genuine
-//! astrometry-vs-starglyph pose difference (axis agreement of 29 arcsec puts both on the
-//! same field; roll noise from rms 0.15 px over 17 inliers is ~0.03°, so the residual is
-//! systematic — plausibly astrometry's SIP distortion vs our k1-only model), recorded
-//! honestly by the harness rather than calibrated away. The unit tests deliberately lock
-//! **self consistency** (extract-then-reconstruct round trips for any value of the
-//! constant) plus the **definitional direction** of `orientation` (East of North) and
-//! parity handling, *not* a guessed absolute convention.
+//! **EMPIRICALLY CALIBRATED (2026-07-05/06)** against inlier-certified poses of the live
+//! blind solver (a pose backed by 16-34 verified star matches at sub-pixel rms *is* the
+//! image-frame truth up to arcminutes):
+//!
+//! | frame (source)                  | astrometry `orientation` | solver roll | rule |
+//! |---------------------------------|--------------------------|-------------|------|
+//! | `tetra3_alt60` (16-bit TIFF)    | −148.444°                | 30.954°     | `θ+180` (err 0.60°) |
+//! | `tetra3_alt40` (16-bit TIFF)    | −152.308°                | ≈ `θ+180`   | `θ+180` |
+//! | `wm_constellation_orion` (JPEG) | 37.985°                  | −37.806°    | `−θ` (err 0.18°) |
+//! | `flickr_orion_rahn` (JPEG)      | 21.724°                  | −22.217°    | `−θ` (err 0.49°) |
+//! | `flickr_cygnus_fermion` (JPEG)  | 68.443°                  | −71.250°    | `−θ` (err 2.81°) |
+//!
+//! For the TIFF frames the flipped rule would produce ~180° errors and vice versa — the
+//! two families are mutually exclusive and internally consistent. The per-convention
+//! residual mapping is isolated in [`OrientationCalibration`]; [`WcsRowConvention`]
+//! selects it from the ground-truth source container. Residual sub-3° differences are
+//! genuine astrometry-vs-starglyph pose differences (SIP distortion vs our k1-only
+//! model), recorded honestly by the harness rather than calibrated away. The unit tests
+//! lock **self consistency** (extract-then-reconstruct round trips), the **definitional
+//! direction** of `orientation` (East of North), parity handling, and the algebraic
+//! `-θ` identity of the flipped branch.
 
 use nalgebra::{Matrix3, RowVector3};
 use serde::{Deserialize, Serialize};
@@ -107,26 +116,60 @@ use crate::geom::{angular_sep, radec_to_unit, rotation_to_pose};
 /// Residual mapping from astrometry.net's reported `orientation` to the internal
 /// orientation that our reconstruction consumes: `internal = sign * reported + offset`.
 ///
-/// See the module docs. Kept as a single named constant so `EMPIRICAL CALIBRATION
-/// PENDING (S4)` is a one-line change.
+/// See the module docs; selected per ground-truth source by [`WcsRowConvention`].
 #[derive(Debug, Clone, Copy)]
 struct OrientationCalibration {
     sign: f64,
     offset_deg: f64,
 }
 
-/// Primary hypothesis: astrometry reports `orientation`/`parity` in our displayed
-/// (`+y`-down) pixel frame, so no correction is needed and the pipeline's derived
-/// `roll = orientation + 180` stands.
-///
-/// Empirically validated (S4, 2026-07-05) on `tetra3_alt60`: identity calibration gives
-/// `roll_error = 0.60°` vs the ~179.4° the FITS `+y`-up alternative
-/// (`{ sign: 1.0, offset_deg: -180.0 }`) would produce. Keep this knob: future GT frames
-/// with different cameras can strengthen or revise the calibration in one line.
-const ORIENTATION_CALIBRATION: OrientationCalibration = OrientationCalibration {
-    sign: 1.0,
-    offset_deg: 0.0,
-};
+/// Pixel-row convention of the astrometry solve that produced a WCS sidecar,
+/// relative to our top-down (`+y` down) pixel frame. See the module docs for the
+/// empirical calibration table.
+#[derive(Debug, Clone, Copy, PartialEq, Eq)]
+pub enum WcsRowConvention {
+    /// Rows reached astrometry in our top-down order (observed for the dataset's
+    /// 16-bit TIFF frames): identity calibration, `roll = orientation + 180`.
+    TopDown,
+    /// Rows were vertically flipped during ingestion (observed for consumer JPEG
+    /// frames): the reported angle describes the mirrored frame, and in our frame
+    /// `roll = -orientation` (equivalently `sign = -1`, `offset = -180`).
+    Flipped,
+}
+
+impl WcsRowConvention {
+    /// Convention for a ground-truth sidecar, keyed by the source frame's container.
+    ///
+    /// 16-bit TIFFs went through nova's FITS-like path (no flip); everything else
+    /// (JPEG in the committed dataset) went through the flipping image path. If a
+    /// future GT frame violates this mapping, its roll error will sit near 180° —
+    /// exactly the signal to extend this function, not to tune thresholds.
+    #[must_use]
+    pub fn for_image_path(path: &std::path::Path) -> WcsRowConvention {
+        match path
+            .extension()
+            .and_then(|e| e.to_str())
+            .map(|e| e.to_ascii_lowercase())
+            .as_deref()
+        {
+            Some("tif" | "tiff") => WcsRowConvention::TopDown,
+            _ => WcsRowConvention::Flipped,
+        }
+    }
+
+    fn calibration(self) -> OrientationCalibration {
+        match self {
+            WcsRowConvention::TopDown => OrientationCalibration {
+                sign: 1.0,
+                offset_deg: 0.0,
+            },
+            WcsRowConvention::Flipped => OrientationCalibration {
+                sign: -1.0,
+                offset_deg: -180.0,
+            },
+        }
+    }
+}
 
 /// Errors from parsing or validating a WCS calibration sidecar.
 #[derive(Debug, thiserror::Error)]
@@ -222,8 +265,8 @@ pub struct GroundTruthPose {
     pub ra_deg: f64,
     /// Boresight Dec in degrees.
     pub dec_deg: f64,
-    /// Camera roll in degrees, in [`crate::geom`]'s convention, under the primary
-    /// hypothesis (`ORIENTATION_CALIBRATION`).
+    /// Camera roll in degrees, in [`crate::geom`]'s convention, decoded per the
+    /// sidecar's [`WcsRowConvention`].
     pub roll_deg: f64,
     /// Horizontal FoV in degrees: `width_arcsec/3600` when present, else
     /// `pixscale_arcsec * width_px / 3600`.
@@ -236,13 +279,20 @@ pub struct GroundTruthPose {
 /// Convert a WCS calibration into a ground-truth pose in our camera convention.
 ///
 /// `width_px`/`height_px` are the pixel dimensions of the frame the calibration
-/// describes (needed for the field-of-view fallback).
+/// describes (needed for the field-of-view fallback); `convention` says which
+/// pixel-row order the astrometry solve saw (see [`WcsRowConvention`]).
 #[must_use]
-pub fn ground_truth_pose(calib: &WcsCalibration, width_px: u32, height_px: u32) -> GroundTruthPose {
+pub fn ground_truth_pose(
+    calib: &WcsCalibration,
+    width_px: u32,
+    height_px: u32,
+    convention: WcsRowConvention,
+) -> GroundTruthPose {
     let parity_sign = if calib.parity >= 0.0 { 1.0 } else { -1.0 };
     let parity_physical = parity_sign > 0.0;
 
-    let internal_orientation_deg = reported_orientation_to_internal(calib.orientation_deg);
+    let internal_orientation_deg =
+        reported_orientation_to_internal(calib.orientation_deg, convention.calibration());
     let roll_deg = roll_from_orientation(
         calib.ra_deg,
         calib.dec_deg,
@@ -362,9 +412,9 @@ pub fn percentile(values: &[f64], p: f64) -> Option<f64> {
 // Internal geometry
 // ---------------------------------------------------------------------------
 
-/// Apply the (S4-pending) calibration to map a reported orientation to the internal one.
-fn reported_orientation_to_internal(reported_deg: f64) -> f64 {
-    ORIENTATION_CALIBRATION.sign * reported_deg + ORIENTATION_CALIBRATION.offset_deg
+/// Apply a convention's calibration to map a reported orientation to the internal one.
+fn reported_orientation_to_internal(reported_deg: f64, cal: OrientationCalibration) -> f64 {
+    cal.sign * reported_deg + cal.offset_deg
 }
 
 /// Reconstruct the roll from an internal orientation, via the transparent
@@ -451,10 +501,12 @@ mod tests {
         (orient, parity)
     }
 
-    /// Inverse of [`reported_orientation_to_internal`]; used by the test-only extractor
-    /// so the round trip is independent of the calibration constant's value.
+    /// Inverse of [`reported_orientation_to_internal`] for the top-down convention;
+    /// used by the test-only extractor so the round trip is independent of the
+    /// calibration values.
     fn internal_orientation_to_reported(internal_deg: f64) -> f64 {
-        (internal_deg - ORIENTATION_CALIBRATION.offset_deg) / ORIENTATION_CALIBRATION.sign
+        let cal = WcsRowConvention::TopDown.calibration();
+        (internal_deg - cal.offset_deg) / cal.sign
     }
 
     fn dot(a: [f64; 3], b: [f64; 3]) -> f64 {
@@ -523,6 +575,114 @@ mod tests {
         }
     }
 
+    /// Algebraic identity of the flipped branch: for any reported orientation θ
+    /// and any boresight, the reconstructed roll equals `-θ` (mod 360). The
+    /// top-down branch analogously yields `θ + 180`.
+    #[test]
+    fn flipped_convention_reconstructs_minus_orientation() {
+        let thetas = [-170.0, -148.444, -30.0, 0.0, 21.724, 68.443, 179.0];
+        for &(ra, dec) in &[
+            (0.0, 0.0),
+            (83.497, -2.61),
+            (304.484, 34.584),
+            (240.0, 70.0),
+        ] {
+            for &theta in &thetas {
+                let calib = WcsCalibration {
+                    ra_deg: ra,
+                    dec_deg: dec,
+                    pixscale_arcsec: 60.0,
+                    orientation_deg: theta,
+                    parity: 1.0,
+                    width_arcsec: None,
+                    height_arcsec: None,
+                    radius_deg: None,
+                };
+                let flipped = ground_truth_pose(&calib, 1000, 800, WcsRowConvention::Flipped);
+                let d_flip = normalize_angle_deg(flipped.roll_deg - (-theta)).abs();
+                assert!(
+                    d_flip < 1e-6,
+                    "flipped: theta={theta} ra={ra} dec={dec} roll={} want {}",
+                    flipped.roll_deg,
+                    -theta
+                );
+
+                let topdown = ground_truth_pose(&calib, 1000, 800, WcsRowConvention::TopDown);
+                let d_top = normalize_angle_deg(topdown.roll_deg - (theta + 180.0)).abs();
+                assert!(
+                    d_top < 1e-6,
+                    "topdown: theta={theta} roll={} want {}",
+                    topdown.roll_deg,
+                    theta + 180.0
+                );
+            }
+        }
+    }
+
+    /// Dataset-grounded check of the two conventions against inlier-certified
+    /// solver rolls (see the module-docs calibration table).
+    #[test]
+    fn convention_matches_dataset_solver_rolls() {
+        // tetra3_alt60 (16-bit TIFF, top-down): orientation -148.444 -> roll 31.556.
+        let alt60 = WcsCalibration {
+            ra_deg: 240.465,
+            dec_deg: 28.94,
+            pixscale_arcsec: 40.329,
+            orientation_deg: -148.443_789_402_455,
+            parity: 1.0,
+            width_arcsec: Some(41_297.157_807),
+            height_arcsec: Some(30_972.868_355),
+            radius_deg: None,
+        };
+        let gt = ground_truth_pose(&alt60, 1024, 768, WcsRowConvention::TopDown);
+        let solver_roll = 30.954_36;
+        assert!(
+            normalize_angle_deg(gt.roll_deg - solver_roll).abs() < 1.0,
+            "alt60 gt roll {} vs solver {solver_roll}",
+            gt.roll_deg
+        );
+
+        // wm_constellation_orion (JPEG, flipped): orientation 37.985 -> roll -37.985.
+        let wm = WcsCalibration {
+            ra_deg: 83.497,
+            dec_deg: -2.61,
+            pixscale_arcsec: 58.687,
+            orientation_deg: 37.985,
+            parity: 1.0,
+            width_arcsec: Some(99_122.98),
+            height_arcsec: Some(68_722.918),
+            radius_deg: None,
+        };
+        let gt = ground_truth_pose(&wm, 1689, 1171, WcsRowConvention::Flipped);
+        let solver_roll = -37.805_6;
+        assert!(
+            normalize_angle_deg(gt.roll_deg - solver_roll).abs() < 1.0,
+            "wm_orion gt roll {} vs solver {solver_roll}",
+            gt.roll_deg
+        );
+    }
+
+    #[test]
+    fn convention_from_path_extension() {
+        use std::path::Path;
+        assert_eq!(
+            WcsRowConvention::for_image_path(Path::new("images/a.tiff")),
+            WcsRowConvention::TopDown
+        );
+        assert_eq!(
+            WcsRowConvention::for_image_path(Path::new("images/a.TIF")),
+            WcsRowConvention::TopDown
+        );
+        assert_eq!(
+            WcsRowConvention::for_image_path(Path::new("images/a.jpg")),
+            WcsRowConvention::Flipped
+        );
+        assert_eq!(
+            WcsRowConvention::for_image_path(Path::new("images/noext")),
+            WcsRowConvention::Flipped
+        );
+    }
+
     #[test]
     fn round_trip_self_consistency() {
         let ras = [0.0, 90.0, 250.3];
@@ -544,7 +704,7 @@ mod tests {
                         height,
                     };
                     let calib = extract_calibration(&sol, false);
-                    let gt = ground_truth_pose(&calib, width, height);
+                    let gt = ground_truth_pose(&calib, width, height, WcsRowConvention::TopDown);
 
                     let sep =
                         angular_sep(radec_to_unit(ra, dec), radec_to_unit(gt.ra_deg, gt.dec_deg));
@@ -581,7 +741,7 @@ mod tests {
         assert!(normal.parity > 0.0, "normal parity {}", normal.parity);
         assert!(mirrored.parity < 0.0, "mirror parity {}", mirrored.parity);
 
-        let gt = ground_truth_pose(&mirrored, width, height);
+        let gt = ground_truth_pose(&mirrored, width, height, WcsRowConvention::TopDown);
         assert!(!gt.parity_physical);
 
         let pred = SolvePose {
@@ -708,7 +868,7 @@ mod tests {
                 height_arcsec: None,
                 radius_deg: None,
             };
-            let gt = ground_truth_pose(&calib, width, height);
+            let gt = ground_truth_pose(&calib, width, height, WcsRowConvention::TopDown);
             let expected = normalize_angle_deg(orient + 180.0);
             assert!(
                 normalize_angle_deg(gt.roll_deg - expected).abs() < 1e-9,
@@ -731,7 +891,7 @@ mod tests {
             height_arcsec: Some(3600.0),
             radius_deg: None,
         };
-        let gt = ground_truth_pose(&calib_with, 1000, 500);
+        let gt = ground_truth_pose(&calib_with, 1000, 500, WcsRowConvention::TopDown);
         assert!((gt.fov_x_deg.unwrap() - 2.0).abs() < 1e-12);
 
         let calib_without = WcsCalibration {
@@ -739,7 +899,7 @@ mod tests {
             ..calib_with.clone()
         };
         // pixscale 40"/px * 1000 px / 3600 = 11.111... deg
-        let gt2 = ground_truth_pose(&calib_without, 1000, 500);
+        let gt2 = ground_truth_pose(&calib_without, 1000, 500, WcsRowConvention::TopDown);
         assert!((gt2.fov_x_deg.unwrap() - 40.0 * 1000.0 / 3600.0).abs() < 1e-12);
     }
 

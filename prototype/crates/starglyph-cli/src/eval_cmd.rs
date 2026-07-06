@@ -8,7 +8,7 @@ use starglyph_core::contracts::SolveStatus;
 use starglyph_core::engine::{DbKind, Engine};
 use starglyph_core::eval::{
     compare_pose, ground_truth_pose, median, percentile, GroundTruthPose, PoseErrors,
-    WcsCalibration,
+    WcsCalibration, WcsRowConvention,
 };
 use starglyph_core::image_input::FrameImage;
 use starglyph_core::solve::{solve_frame_with_engine, SolveOptions, SolveStage};
@@ -132,7 +132,7 @@ impl FrameRecord {
             id: self.id.clone(),
             file: self.file.clone(),
             track: self.track.clone(),
-            status: self.status.clone(),
+            status: self.status,
             failure: self.failure.clone(),
             pose: self.pose.clone(),
             fov: self.fov.clone(),
@@ -244,11 +244,20 @@ pub struct DatasetInfo {
     pub n_selected: usize,
 }
 
+fn default_true() -> bool {
+    true
+}
+
 #[derive(Debug, Clone, Serialize, Deserialize, PartialEq)]
 pub struct ConfigInfo {
     pub fov_hint_deg: Option<f32>,
     pub catalog: String,
+    /// No *global* FOV hint. Per-frame EXIF priors may still apply when
+    /// `exif_hints` is on; sky-samples images are EXIF-stripped, so on the
+    /// committed dataset `blind` means fully blind.
     pub blind: bool,
+    #[serde(default = "default_true")]
+    pub exif_hints: bool,
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize, PartialEq)]
@@ -296,6 +305,7 @@ pub(crate) fn build_summary(
     ids_filter: Option<Vec<String>>,
     catalog_path: &str,
     fov_hint_deg: Option<f32>,
+    exif_hints: bool,
     frames: &[FrameRecord],
 ) -> Summary {
     let solver_frames: Vec<&FrameRecord> = frames.iter().filter(|f| f.track == "solver").collect();
@@ -331,6 +341,7 @@ pub(crate) fn build_summary(
             fov_hint_deg,
             catalog: catalog_path.to_owned(),
             blind: fov_hint_deg.is_none(),
+            exif_hints,
         },
         solver_track,
         scene_track,
@@ -551,6 +562,7 @@ pub struct EvalArgs<'a> {
     pub baseline: Option<&'a Path>,
     pub max_axis_p95_regress_pct: f64,
     pub allow_missing: bool,
+    pub no_exif: bool,
 }
 
 pub enum EvalOutcome {
@@ -664,7 +676,12 @@ pub fn run_eval(args: EvalArgs<'_>) -> Result<EvalOutcome> {
             match fs::read_to_string(&wcs_path) {
                 Ok(text) => match WcsCalibration::from_json_str(&text) {
                     Ok(calib) => {
-                        gt = Some(ground_truth_pose(&calib, frame.width, frame.height));
+                        gt = Some(ground_truth_pose(
+                            &calib,
+                            frame.width,
+                            frame.height,
+                            WcsRowConvention::for_image_path(&image_path),
+                        ));
                     }
                     Err(e) => {
                         gt_error = Some(e.to_string());
@@ -686,6 +703,7 @@ pub fn run_eval(args: EvalArgs<'_>) -> Result<EvalOutcome> {
             epoch_years,
             utc_offset_hours: 0.0,
             include_grid: false,
+            allow_exif_hints: !args.no_exif,
         };
         let mut stage = |_s: SolveStage| {};
         let (report, _extras) =
@@ -742,6 +760,7 @@ pub fn run_eval(args: EvalArgs<'_>) -> Result<EvalOutcome> {
         ids_list,
         &catalog_display,
         args.fov_hint,
+        !args.no_exif,
         &frames,
     );
 
@@ -864,6 +883,7 @@ mod tests {
                 fov_hint_deg: None,
                 catalog: "cat.csv".to_owned(),
                 blind: true,
+                exif_hints: true,
             },
             solver_track: TrackStats {
                 n: 8,

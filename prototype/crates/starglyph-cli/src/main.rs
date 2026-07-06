@@ -105,6 +105,9 @@ enum Command {
         /// Observer UTC offset in hours (positive east of Greenwich).
         #[arg(long, default_value_t = 0.0)]
         utc_offset: f64,
+        /// Ignore EXIF metadata (no FOV prior / epoch fallback): pure-blind solve.
+        #[arg(long)]
+        no_exif: bool,
     },
     /// Evaluate the blind solver on a sky-samples manifest and write a report directory.
     Eval {
@@ -137,6 +140,9 @@ enum Command {
         /// Missing image files become status=missing_image instead of a hard error.
         #[arg(long)]
         allow_missing: bool,
+        /// Ignore EXIF metadata (no per-frame FOV prior / epoch fallback).
+        #[arg(long)]
+        no_exif: bool,
     },
     /// Blind-solve every frame in a directory, using pass-2 hints for failures.
     BatchSolve {
@@ -156,6 +162,9 @@ enum Command {
         fov_hint: Option<f32>,
         #[arg(long)]
         grid: bool,
+        /// Ignore EXIF metadata (no per-frame FOV prior / epoch fallback).
+        #[arg(long)]
+        no_exif: bool,
     },
 }
 
@@ -212,6 +221,7 @@ struct DetectStatsJson {
     rejected_large: u32,
     rejected_elongated: u32,
     rejected_faint: u32,
+    rejected_diffuse: u32,
     accepted: u32,
 }
 
@@ -247,6 +257,7 @@ impl From<DetectStats> for DetectStatsJson {
             rejected_large: s.rejected_large,
             rejected_elongated: s.rejected_elongated,
             rejected_faint: s.rejected_faint,
+            rejected_diffuse: s.rejected_diffuse,
             accepted: s.accepted,
         }
     }
@@ -373,6 +384,7 @@ fn main() -> Result<()> {
             json,
             overlay_png,
             utc_offset,
+            no_exif,
         } => {
             let attitude = attitude_hint.as_deref().map(parse_quat).transpose()?;
             run_solve(SolveRun {
@@ -387,6 +399,7 @@ fn main() -> Result<()> {
                 json_path: json.as_deref(),
                 overlay_png: overlay_png.as_deref(),
                 utc_offset,
+                no_exif,
             })?;
         }
         Command::BatchSolve {
@@ -398,6 +411,7 @@ fn main() -> Result<()> {
             cache_dir,
             fov_hint,
             grid,
+            no_exif,
         } => {
             run_batch_solve(BatchRun {
                 input: &input,
@@ -408,6 +422,7 @@ fn main() -> Result<()> {
                 cache_dir: cache_dir.as_deref(),
                 fov_hint,
                 grid,
+                no_exif,
             })?;
         }
         Command::Eval {
@@ -423,6 +438,7 @@ fn main() -> Result<()> {
             baseline,
             max_axis_p95_regress_pct,
             allow_missing,
+            no_exif,
         } => {
             match eval_cmd::run_eval(eval_cmd::EvalArgs {
                 manifest: &manifest,
@@ -437,6 +453,7 @@ fn main() -> Result<()> {
                 baseline: baseline.as_deref(),
                 max_axis_p95_regress_pct,
                 allow_missing,
+                no_exif,
             }) {
                 Ok(eval_cmd::EvalOutcome::Success) => {}
                 Ok(eval_cmd::EvalOutcome::GateFailed) => std::process::exit(2),
@@ -858,6 +875,7 @@ struct SolveRun<'a> {
     json_path: Option<&'a Path>,
     overlay_png: Option<&'a Path>,
     utc_offset: f64,
+    no_exif: bool,
 }
 
 fn parse_quat(s: &str) -> Result<[f64; 4]> {
@@ -895,6 +913,7 @@ fn run_solve(args: SolveRun<'_>) -> Result<()> {
         epoch_years: epoch,
         utc_offset_hours: args.utc_offset,
         include_grid: args.grid,
+        allow_exif_hints: !args.no_exif,
     };
 
     let mut engine = Engine::default();
@@ -943,6 +962,7 @@ struct BatchRun<'a> {
     cache_dir: Option<&'a Path>,
     fov_hint: Option<f32>,
     grid: bool,
+    no_exif: bool,
 }
 
 struct FrameState {
@@ -1028,6 +1048,7 @@ fn run_batch_solve(args: BatchRun<'_>) -> Result<()> {
             epoch_years: epoch,
             utc_offset_hours: 0.0,
             include_grid: args.grid,
+            allow_exif_hints: !args.no_exif,
         };
         let mut stage = |_s: SolveStage| {};
         let (report, extras) =
@@ -1072,6 +1093,7 @@ fn run_batch_solve(args: BatchRun<'_>) -> Result<()> {
             median_f32,
             hint,
             args.grid,
+            !args.no_exif,
         );
     }
 
@@ -1123,6 +1145,7 @@ fn resolve_failed_frame(
     fov_hint: f32,
     attitude_hint: Option<[f64; 4]>,
     grid: bool,
+    allow_exif_hints: bool,
 ) {
     let Ok(frame) = FrameImage::load(&states[i].path) else {
         return;
@@ -1142,6 +1165,7 @@ fn resolve_failed_frame(
         epoch_years: states[i].epoch,
         utc_offset_hours: 0.0,
         include_grid: grid,
+        allow_exif_hints,
     };
     let mut stage = |_s: SolveStage| {};
     let (report, extras) =

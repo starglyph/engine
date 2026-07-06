@@ -4,6 +4,33 @@ use crate::image_input::FrameImage;
 
 const MAD_TO_SIGMA: f32 = 1.4826;
 
+/// Noise floor for MAD-based sigma estimates, in normalized gray units.
+///
+/// Heavily denoised consumer JPEGs (phone Night mode, processed DSLR exports)
+/// clip the sky to exact black: ~90% of pixels equal 0, the MAD collapses and
+/// the detection threshold drops to ~0, turning residual JPEG noise into
+/// thousands of merged candidate blobs. All inputs are normalized through
+/// 8-bit luma, so one quantization step (1/255) is the smallest scale at which
+/// signal is distinguishable at all; sigma is never estimated below it.
+const RAW_SIGMA_FLOOR: f32 = 1.0 / 255.0;
+
+/// Blobs at least this large are screened by the peak-concentration test;
+/// smaller point sources have too few pixels for the statistic to be stable.
+const CONCENTRATION_MIN_AREA: u32 = 25;
+
+/// Maximum fraction of pixels the threshold mask may select.
+///
+/// Gaussian noise puts ~0.6% of pixels above 2.5σ; real starfields add well
+/// under 1%. When the mask covers more, the threshold is not separating
+/// sources from background — on denoised JPEGs the faint PSF skirts of dense
+/// starfields (or Milky-Way texture) connect into big merged networks and
+/// per-blob reasoning breaks down. The threshold is then doubled (up to
+/// [`MAX_THRESHOLD_DOUBLINGS`]) until the mask is sparse: star cores are far
+/// brighter than the junk floor, so they survive every doubling.
+const MAX_MASK_FILL: f32 = 0.02;
+/// Upper bound on adaptive threshold doublings (16× total).
+const MAX_THRESHOLD_DOUBLINGS: u32 = 4;
+
 /// Configuration for the star-detection pipeline.
 #[derive(Debug, Clone)]
 pub struct DetectConfig {
@@ -25,6 +52,19 @@ pub struct DetectConfig {
     pub max_elongation: f32,
     /// Maximum number of detections to return.
     pub max_detections: u32,
+    /// Peak residual (normalized units) above which a blob counts as a
+    /// saturated source rather than diffuse structure.
+    pub sat_min_peak: f32,
+    /// Area cap for saturated round blobs. Bright-star cores with bloom/halo
+    /// on consumer JPEGs far exceed `max_area` (a mag −1 star can span
+    /// hundreds of pixels at 12 MP); round saturated blobs are stars, and
+    /// dropping them removes exactly the anchors pattern matching needs.
+    pub sat_max_area: u32,
+    /// Minimum peak-to-mean concentration (`peak · area / flux`) for blobs of
+    /// area ≥ [`CONCENTRATION_MIN_AREA`] that are not saturated. Point sources
+    /// are strongly peaked; Milky-Way star clouds and nebulosity are flat and
+    /// otherwise dominate the flux ranking on dense-field frames.
+    pub min_concentration: f32,
 }
 
 impl Default for DetectConfig {
@@ -39,6 +79,9 @@ impl Default for DetectConfig {
             max_area: 150,
             max_elongation: 2.5,
             max_detections: 40,
+            sat_min_peak: 0.7,
+            sat_max_area: 1500,
+            min_concentration: 2.5,
         }
     }
 }
@@ -78,6 +121,8 @@ pub struct DetectStats {
     pub rejected_large: u32,
     pub rejected_elongated: u32,
     pub rejected_faint: u32,
+    /// Large low-concentration blobs (star clouds, nebulosity).
+    pub rejected_diffuse: u32,
     pub accepted: u32,
 }
 
@@ -105,16 +150,39 @@ pub fn detect_stars(frame: &FrameImage, config: &DetectConfig) -> DetectResult {
         *r -= b;
     }
 
-    // Step 3: noise estimate
-    let sigma_raw = noise_sigma(&resid, width, height, config.border_px).max(1e-6);
+    // Step 3: noise estimate. When the MAD collapses (clipped-black denoised
+    // JPEGs: most pixels exactly 0) fall back to an upper-quantile spread that
+    // still sees the residual junk level (JPEG artifacts, haze plateaus), and
+    // never go below the 8-bit quantization step; see robust_noise_sigma.
+    let sigma_raw = robust_noise_sigma(&resid, width, height, config.border_px, RAW_SIGMA_FLOOR);
 
     // Step 4: matched filter + threshold + connected components
     let kernel = gaussian_kernel_7x7(config.sigma_px);
     let conv = convolve_7x7(&resid, width, height, &kernel);
-    let sigma_conv = noise_sigma(&conv, width, height, config.border_px).max(1e-6);
-    let threshold = config.k_sigma * sigma_conv;
+    // Convolving i.i.d. noise scales sigma by the kernel L2 norm; floor the
+    // convolved estimate consistently with the raw floor.
+    let kernel_l2 = kernel.iter().flatten().map(|v| v * v).sum::<f32>().sqrt();
+    let sigma_conv = robust_noise_sigma(
+        &conv,
+        width,
+        height,
+        config.border_px,
+        RAW_SIGMA_FLOOR * kernel_l2,
+    );
+    let mut threshold = config.k_sigma * sigma_conv;
 
-    let mask: Vec<bool> = conv.iter().map(|&v| v > threshold).collect();
+    // Adaptive threshold: keep the mask sparse (see MAX_MASK_FILL).
+    let mut mask: Vec<bool> = conv.iter().map(|&v| v > threshold).collect();
+    for _ in 0..MAX_THRESHOLD_DOUBLINGS {
+        let fill = mask.iter().filter(|&&m| m).count() as f32 / n.max(1) as f32;
+        if fill <= MAX_MASK_FILL {
+            break;
+        }
+        threshold *= 2.0;
+        for (m, &v) in mask.iter_mut().zip(conv.iter()) {
+            *m = v > threshold;
+        }
+    }
     let blobs = label_components(&mask, width, height);
 
     let mut stats = DetectStats {
@@ -126,6 +194,7 @@ pub fn detect_stars(frame: &FrameImage, config: &DetectConfig) -> DetectResult {
         rejected_large: 0,
         rejected_elongated: 0,
         rejected_faint: 0,
+        rejected_diffuse: 0,
         accepted: 0,
     };
 
@@ -172,21 +241,56 @@ pub fn detect_stars(frame: &FrameImage, config: &DetectConfig) -> DetectResult {
             continue;
         }
 
-        // Area
-        if area > config.max_area {
-            stats.rejected_large += 1;
-            continue;
-        }
+        let saturated = peak >= config.sat_min_peak;
 
-        // Elongation
-        let elongation = blob_elongation(&blob, &resid, width);
-        if area >= 6 && elongation > config.max_elongation {
+        // Oversized blob: a bright star on a consumer JPEG (bloom, diffusion
+        // halo) can far exceed max_area, but its *half-peak core* stays
+        // compact — while flat extended structure (clouds, nebulosity) keeps
+        // most of its footprint at half peak. Re-segment and judge the core.
+        let measured: Blob = if area > config.max_area {
+            let half_peak = 0.5 * peak;
+            let core_pixels: Vec<(i32, i32)> = blob
+                .pixels
+                .iter()
+                .copied()
+                .filter(|&(x, y)| resid[y as usize * width + x as usize] >= half_peak)
+                .collect();
+            let core_cap = if saturated {
+                config.sat_max_area
+            } else {
+                config.max_area
+            };
+            if core_pixels.is_empty() || core_pixels.len() as u32 > core_cap {
+                stats.rejected_large += 1;
+                continue;
+            }
+            blob_from_pixels(core_pixels)
+        } else {
+            blob
+        };
+
+        let elongation = blob_elongation(&measured, &resid, width);
+        if measured.pixels.len() >= 6 && elongation > config.max_elongation {
             stats.rejected_elongated += 1;
             continue;
         }
 
-        let (cx, cy, flux) = refine_centroid(&blob, &resid, width, height);
+        let (cx, cy, flux) = refine_centroid(&measured, &resid, width, height);
         let snr = flux / (sigma_raw * (area as f32).sqrt());
+
+        // Diffuse-structure screen for mid-size blobs that never went through
+        // core re-segmentation: a point source concentrates its light (high
+        // peak relative to mean surface brightness); star-cloud and nebulosity
+        // fragments are flat. Saturated blobs are exempt — a clipped flat core
+        // legitimately has concentration ≈ 1, and so does a re-segmented
+        // half-peak core (its compactness at half peak is already the test).
+        if area <= config.max_area && area >= CONCENTRATION_MIN_AREA && !saturated {
+            let concentration = peak * area as f32 / flux.max(1e-9);
+            if concentration < config.min_concentration {
+                stats.rejected_diffuse += 1;
+                continue;
+            }
+        }
 
         detections.push(Detection {
             x: cx,
@@ -319,6 +423,42 @@ fn noise_sigma(data: &[f32], width: usize, height: usize, border_px: u32) -> f32
     mad_to_sigma(mad_f32(&samples))
 }
 
+/// MAD-based sigma with two fallbacks for clipped data, never below `floor`.
+///
+/// On denoised consumer JPEGs the sky is clipped to exact black: with > 50% of
+/// pixels identical the MAD is 0 and says nothing. The upper-quantile spread
+/// `(Q(97.72%) − median) / 2` — equal to sigma for Gaussian noise — still sees
+/// the residual junk level (JPEG artifacts, haze plateaus) as long as < 97.7%
+/// of pixels are clipped. It is only consulted when the MAD collapses below
+/// `floor`, so frames with healthy noise keep today's MAD behavior.
+fn robust_noise_sigma(
+    data: &[f32],
+    width: usize,
+    height: usize,
+    border_px: u32,
+    floor: f32,
+) -> f32 {
+    let mad_sigma = noise_sigma(data, width, height, border_px);
+    if mad_sigma >= floor {
+        return mad_sigma;
+    }
+    let b = border_px as usize;
+    let mut samples: Vec<f32> =
+        Vec::with_capacity(height.saturating_sub(2 * b) * width.saturating_sub(2 * b));
+    for y in b..height.saturating_sub(b) {
+        for x in b..width.saturating_sub(b) {
+            samples.push(data[y * width + x]);
+        }
+    }
+    if samples.is_empty() {
+        return floor;
+    }
+    samples.sort_unstable_by(|a, b| a.partial_cmp(b).unwrap_or(std::cmp::Ordering::Equal));
+    let q = |p: f64| samples[((samples.len() - 1) as f64 * p) as usize];
+    let quantile_sigma = (q(0.9772) - q(0.5)) / 2.0;
+    quantile_sigma.max(floor)
+}
+
 fn gaussian_kernel_7x7(sigma: f32) -> [[f32; 7]; 7] {
     let mut kernel = [[0.0f32; 7]; 7];
     let mut sum = 0.0f32;
@@ -429,28 +569,27 @@ fn label_components(mask: &[bool], width: usize, height: usize) -> Vec<Blob> {
         }
     }
 
-    groups
-        .into_values()
-        .map(|pixels| {
-            let mut min_x = i32::MAX;
-            let mut min_y = i32::MAX;
-            let mut max_x = i32::MIN;
-            let mut max_y = i32::MIN;
-            for &(x, y) in &pixels {
-                min_x = min_x.min(x);
-                min_y = min_y.min(y);
-                max_x = max_x.max(x);
-                max_y = max_y.max(y);
-            }
-            Blob {
-                pixels,
-                min_x,
-                min_y,
-                max_x,
-                max_y,
-            }
-        })
-        .collect()
+    groups.into_values().map(blob_from_pixels).collect()
+}
+
+fn blob_from_pixels(pixels: Vec<(i32, i32)>) -> Blob {
+    let mut min_x = i32::MAX;
+    let mut min_y = i32::MAX;
+    let mut max_x = i32::MIN;
+    let mut max_y = i32::MIN;
+    for &(x, y) in &pixels {
+        min_x = min_x.min(x);
+        min_y = min_y.min(y);
+        max_x = max_x.max(x);
+        max_y = max_y.max(y);
+    }
+    Blob {
+        pixels,
+        min_x,
+        min_y,
+        max_x,
+        max_y,
+    }
 }
 
 fn blob_elongation(blob: &Blob, resid: &[f32], width: usize) -> f32 {
@@ -665,6 +804,7 @@ mod tests {
             height,
             gray,
             source_name: "test".to_string(),
+            exif: None,
         }
     }
 
@@ -818,6 +958,128 @@ mod tests {
         assert_eq!(result.detections[1].rank, 1);
     }
 
+    /// Clipped-black denoised sky (phone Night mode / processed JPEG): ~90% of
+    /// pixels are exactly 0, MAD = 0. Without the quantization sigma floor the
+    /// threshold collapses to ~0 and stars drown in merged JPEG-noise blobs.
+    #[test]
+    fn clipped_black_sky_recovers_stars_via_sigma_floor() {
+        let width = 128u32;
+        let height = 128u32;
+        let mut gray = vec![0.0f32; (width * height) as usize];
+        // Sparse 1-DN noise specks; must stay below the floored threshold.
+        for i in (0..gray.len()).step_by(97) {
+            gray[i] = 1.0 / 255.0;
+        }
+        let truth = [(30.2f64, 40.7f64), (80.5, 90.1), (100.3, 30.9)];
+        for &(cx, cy) in &truth {
+            gaussian_bump(width, height, cx, cy, 0.5, 1.2, &mut gray);
+        }
+
+        let frame = make_frame(width, height, gray);
+        let result = detect_stars(&frame, &DetectConfig::default());
+
+        assert!(
+            result.stats.sigma >= 1.0 / 255.0,
+            "sigma not floored: {}",
+            result.stats.sigma
+        );
+        assert_eq!(
+            result.detections.len(),
+            3,
+            "expected exactly the 3 stars, got {:?}",
+            result.detections
+        );
+        for &(cx, cy) in &truth {
+            let hit = result
+                .detections
+                .iter()
+                .any(|d| (d.x - cx).abs() < 0.5 && (d.y - cy).abs() < 0.5);
+            assert!(hit, "no detection near ({cx},{cy})");
+        }
+    }
+
+    /// A saturated star blooming past `max_area` must be kept (round + at
+    /// peak), while an equally large dim patch stays rejected as extended.
+    #[test]
+    fn saturated_round_star_above_max_area_kept() {
+        let width = 128u32;
+        let height = 128u32;
+        let mut gray = flat_background(width, height, 0.15);
+        // Saturated disk, radius 12 → area ~450 > max_area 150.
+        for y in 0..height as i32 {
+            for x in 0..width as i32 {
+                if (x - 64) * (x - 64) + (y - 64) * (y - 64) <= 12 * 12 {
+                    gray[y as usize * width as usize + x as usize] = 1.0;
+                }
+            }
+        }
+        let frame = make_frame(width, height, gray);
+        let result = detect_stars(&frame, &DetectConfig::default());
+        assert_eq!(result.detections.len(), 1, "saturated star kept");
+        let det = &result.detections[0];
+        assert!(
+            (det.x - 64.0).abs() < 1.0 && (det.y - 64.0).abs() < 1.0,
+            "centroid at disk center: ({}, {})",
+            det.x,
+            det.y
+        );
+        assert!(det.area > 150, "area above point-source cap: {}", det.area);
+
+        // Same footprint at low amplitude: extended object, still rejected.
+        let mut dim = flat_background(width, height, 0.15);
+        for y in 0..height as i32 {
+            for x in 0..width as i32 {
+                if (x - 64) * (x - 64) + (y - 64) * (y - 64) <= 12 * 12 {
+                    dim[y as usize * width as usize + x as usize] = 0.45;
+                }
+            }
+        }
+        let frame = make_frame(width, height, dim);
+        let result = detect_stars(&frame, &DetectConfig::default());
+        assert!(result.detections.is_empty(), "dim patch must not pass");
+        assert!(result.stats.rejected_large >= 1);
+    }
+
+    /// Milky-Way star clouds / nebulosity fragments that fit under `max_area`
+    /// (the cygnus failure mode: flat blobs of area ~110–150 dominate the
+    /// flux-ranked top-N) must be screened by peak concentration. The
+    /// statistic is shape-only — a flat disk scores ≈ 2 regardless of
+    /// amplitude, a PSF-like peak scores ≫ 2.5.
+    #[test]
+    fn diffuse_cloud_rejected_compact_star_kept() {
+        let width = 128u32;
+        let height = 128u32;
+        let mut gray = flat_background(width, height, 0.15);
+        // Flat dim disk r=4: thresholded blob lands between
+        // CONCENTRATION_MIN_AREA and max_area with concentration ≈ 2.
+        for y in 0..height as i32 {
+            for x in 0..width as i32 {
+                if (x - 90) * (x - 90) + (y - 90) * (y - 90) <= 4 * 4 {
+                    gray[y as usize * width as usize + x as usize] += 0.1;
+                }
+            }
+        }
+        // Compact star elsewhere.
+        gaussian_bump(width, height, 32.0, 32.0, 0.5, 1.2, &mut gray);
+
+        let frame = make_frame(width, height, gray);
+        let result = detect_stars(&frame, &DetectConfig::default());
+
+        assert!(
+            result.stats.rejected_diffuse >= 1,
+            "flat blob not screened: {:?}",
+            result.stats
+        );
+        assert_eq!(result.detections.len(), 1, "only the star survives");
+        let det = &result.detections[0];
+        assert!(
+            (det.x - 32.0).abs() < 0.5 && (det.y - 32.0).abs() < 0.5,
+            "star centroid: ({}, {})",
+            det.x,
+            det.y
+        );
+    }
+
     #[test]
     fn real_data_smoke_if_present() {
         let repo_root = Path::new(env!("CARGO_MANIFEST_DIR"))
@@ -858,10 +1120,21 @@ mod tests {
         if blob_path.exists() {
             let frame = FrameImage::load(&blob_path).expect("load frame");
             let result = detect_stars(&frame, &DetectConfig::default());
+            // The frame's big defocused blob must be screened out by one of
+            // the extended-object filters (which bucket depends on where the
+            // adaptive threshold lands), and never accepted as a star.
+            let screened = result.stats.rejected_large + result.stats.rejected_diffuse;
             assert!(
-                result.stats.rejected_large >= 1,
-                "g128_40ms_4.bmp: expected rejected_large >= 1, got {}",
-                result.stats.rejected_large
+                screened >= 1,
+                "g128_40ms_4.bmp: expected the big blob screened (large+diffuse), stats {:?}",
+                result.stats
+            );
+            assert!(
+                result
+                    .detections
+                    .iter()
+                    .all(|d| d.area <= DetectConfig::default().max_area),
+                "g128_40ms_4.bmp: no oversized blob may pass on this frame"
             );
         }
     }

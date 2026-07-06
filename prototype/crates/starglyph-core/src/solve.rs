@@ -52,6 +52,16 @@ const CONFIDENCE_FULL_LOG_ODDS: f64 = 40.0;
 /// Default FOV (degrees) assumed for the dense-band fallback when nothing else
 /// is known — the narrow-field regime the dense band exists to crack.
 pub const DEFAULT_BLIND_FOV_DEG: f32 = 22.0;
+/// Dense-band centers tried in order when solving fully blind (no FOV hint,
+/// no usable EXIF). Together the generated bands cover ≈16–88°: the narrow
+/// analog regime first (the historical workhorse), then the compact/DSLR
+/// mid-range, then the phone main-camera wide-angle zone (~60–75°).
+const BLIND_DENSE_CENTERS: [f32; 3] = [DEFAULT_BLIND_FOV_DEG, 40.0, 65.0];
+/// Below this band center the mag ≤ 6.5 catalog cannot populate a dense band
+/// (too few stars per field) while generation cost explodes with the field
+/// count; narrower hints still steer the bootstrap attempts, only the
+/// dense-band build is skipped.
+const MIN_DENSE_CENTER_DEG: f32 = 8.0;
 /// Soft prior weight on the radial-distortion term `k1` during refinement,
 /// i.e. `1/σ` for `k1 ~ N(0, σ)` with σ ≈ 0.1. At ~22° FOV `k1` is only weakly
 /// identifiable — the same camera otherwise fits opposite signs frame to frame,
@@ -77,6 +87,10 @@ pub struct SolveOptions {
     pub utc_offset_hours: f64,
     /// Whether to include the RA/Dec grid in the overlay.
     pub include_grid: bool,
+    /// Whether EXIF metadata may seed hints that were not given explicitly:
+    /// `FocalLengthIn35mmFilm` → FOV prior, `DateTimeOriginal` → epoch.
+    /// Explicit hints always win. Disable for pure-blind measurements.
+    pub allow_exif_hints: bool,
 }
 
 impl Default for SolveOptions {
@@ -89,7 +103,21 @@ impl Default for SolveOptions {
             epoch_years: None,
             utc_offset_hours: 0.0,
             include_grid: false,
+            allow_exif_hints: true,
         }
+    }
+}
+
+impl SolveOptions {
+    /// Options with EXIF-derived fallbacks applied for `frame`: an explicit
+    /// FOV hint wins; otherwise the EXIF 35 mm-equivalent focal (when present,
+    /// parseable and in the rectilinear sanity range) becomes the hint.
+    fn resolved_for(&self, frame: &FrameImage) -> SolveOptions {
+        let mut resolved = self.clone();
+        if self.allow_exif_hints && resolved.fov_hint_deg.is_none() {
+            resolved.fov_hint_deg = frame.exif_fov_deg().map(|f| f as f32);
+        }
+        resolved
     }
 }
 
@@ -144,9 +172,25 @@ pub fn solve_frame_with_engine(
         camera: None,
     };
 
+    // Fill hints the caller left open from frame metadata (B1: EXIF FOV/epoch).
+    let explicit_hint = opts.fov_hint_deg.is_some();
+    let opts = &opts.resolved_for(frame);
+    if debug {
+        if let Some(fov) = opts.fov_hint_deg {
+            let source = if explicit_hint { "explicit" } else { "exif" };
+            eprintln!("  fov hint: {fov:.2} deg ({source})");
+        } else {
+            eprintln!("  fov hint: none (blind band ladder)");
+        }
+    }
+
     let width = frame.width;
     let height = frame.height;
-    let timestamp = frame.timestamp_from_name();
+    let timestamp = if opts.allow_exif_hints {
+        frame.acquisition_timestamp()
+    } else {
+        frame.timestamp_from_name()
+    };
     let jd_utc = timestamp.map(|t| t.to_jd_utc(opts.utc_offset_hours));
     let epoch = opts.epoch_years.or_else(|| {
         jd_utc
@@ -439,22 +483,37 @@ fn run_matching(
         }
     }
 
-    // Dense-band fallback (the workhorse for narrow-field frames).
+    // Dense-band fallback. With a FOV hint (explicit or EXIF) one band is
+    // generated around it; fully blind, a fixed ladder of default bands covers
+    // the narrow→phone-wide range. The bootstrap's own FOV guess is *not* used
+    // to pick bands — a spurious wide-field bootstrap match would derail the
+    // band choice and make the blind result depend on solve order.
     if accepted.is_none() && opts.allow_dense_band {
-        // Prefer a confident FOV hint; otherwise assume the narrow-field regime
-        // the dense band exists for. The bootstrap's own FOV guess is *not* used
-        // here — a spurious wide-field bootstrap match would derail the band and
-        // make the blind result depend on solve order.
-        let center = opts.fov_hint_deg.unwrap_or(DEFAULT_BLIND_FOV_DEG);
-        let kind = DbKind::dense_for_center(center);
-        let (bmin, bmax) = dense_band_bounds(kind);
-        let fov_est = 0.5 * (bmin + bmax);
-        let fov_err = 0.5 * (bmax - bmin) + 1.0;
-        let mut ep2 = |_p: EngineProgress| {};
-        if engine
-            .ensure_kind(catalog, kind, &opts.cache_dir, &mut ep2)
-            .is_ok()
-        {
+        let centers: &[f32] = match opts.fov_hint_deg {
+            Some(ref f) => std::slice::from_ref(f),
+            None => &BLIND_DENSE_CENTERS,
+        };
+        'bands: for &center in centers {
+            if center < MIN_DENSE_CENTER_DEG {
+                if debug {
+                    eprintln!(
+                        "  [dense] center {center:.1} < {MIN_DENSE_CENTER_DEG} deg: band skipped \
+                         (mag-limited catalog cannot fill it)"
+                    );
+                }
+                continue;
+            }
+            let kind = DbKind::dense_for_center(center);
+            let (bmin, bmax) = dense_band_bounds(kind);
+            let fov_est = 0.5 * (bmin + bmax);
+            let fov_err = 0.5 * (bmax - bmin) + 1.0;
+            let mut ep2 = |_p: EngineProgress| {};
+            if engine
+                .ensure_kind(catalog, kind, &opts.cache_dir, &mut ep2)
+                .is_err()
+            {
+                continue;
+            }
             let dense = engine.get(kind).expect("dense ensured");
             let mut cfg = fov_solve_config(fov_est, fov_err, width, height);
             if let Some(q) = opts.attitude_hint {
@@ -467,22 +526,29 @@ fn run_matching(
                 cfg.hint_uncertainty_rad = 5.0_f32.to_radians();
             }
             for &k in &ladder {
-                if let Ok(sol) = dense.solve_from_centroids(&centroids[..k], &cfg) {
-                    if let Some(cand) = make_candidate(&sol, detections, verify, "dense") {
-                        let is_hard =
-                            sol.num_matches >= HARD_MIN_MATCHES && sol.prob < HARD_MAX_PROB;
+                match dense.solve_from_centroids(&centroids[..k], &cfg) {
+                    Ok(sol) => {
+                        if let Some(cand) = make_candidate(&sol, detections, verify, "dense") {
+                            let is_hard =
+                                sol.num_matches >= HARD_MIN_MATCHES && sol.prob < HARD_MAX_PROB;
+                            if debug {
+                                eprintln!(
+                                    "  [dense {bmin:.0}-{bmax:.0}] k={k} fov={:.2} matches={} prob={:.2e} -> logodds={:.1} H={} M={}",
+                                    sol.fov_rad.to_degrees(), sol.num_matches, sol.prob,
+                                    cand.verify.log_odds, cand.verify.hits, cand.verify.predicted,
+                                );
+                            }
+                            if is_hard && cand.verify.hits >= VERIFY_MIN_HITS {
+                                accepted = Some(cand);
+                                break 'bands;
+                            }
+                            softs.push(cand);
+                        }
+                    }
+                    Err(e) => {
                         if debug {
-                            eprintln!(
-                                "  [dense] k={k} fov={:.2} matches={} prob={:.2e} -> logodds={:.1} H={} M={}",
-                                sol.fov_rad.to_degrees(), sol.num_matches, sol.prob,
-                                cand.verify.log_odds, cand.verify.hits, cand.verify.predicted,
-                            );
+                            eprintln!("  [dense {bmin:.0}-{bmax:.0}] k={k} err={:?}", e.status);
                         }
-                        if is_hard && cand.verify.hits >= VERIFY_MIN_HITS {
-                            accepted = Some(cand);
-                            break;
-                        }
-                        softs.push(cand);
                     }
                 }
             }
@@ -533,12 +599,16 @@ impl Attempt {
 }
 
 fn build_attempts(opts: &SolveOptions) -> Vec<Attempt> {
+    // Hinted attempts get ±5° or ±12% of the hint, whichever is wider: EXIF
+    // priors on wide phone lenses are good to a few percent, but exports may
+    // be mildly cropped; below ~42° this reduces to the historical ±5°.
+    let hint_err = |fov: f32| (0.12 * fov).max(5.0);
     let mut out = Vec::new();
     if let (Some(q), Some(fov)) = (opts.attitude_hint, opts.fov_hint_deg) {
         out.push(Attempt {
             label: "track",
             fov_deg: fov,
-            fov_err_deg: 5.0,
+            fov_err_deg: hint_err(fov),
             attitude_hint: Some(q),
         });
     }
@@ -546,7 +616,7 @@ fn build_attempts(opts: &SolveOptions) -> Vec<Attempt> {
         out.push(Attempt {
             label: "fov-hint",
             fov_deg: fov,
-            fov_err_deg: 5.0,
+            fov_err_deg: hint_err(fov),
             attitude_hint: None,
         });
     } else {
@@ -1103,6 +1173,40 @@ mod tests {
         assert!((fov.fov_x_deg - 22.0).abs() < 1.5, "fov {}", fov.fov_x_deg);
         assert!(quality.n_inliers >= 8, "inliers {}", quality.n_inliers);
         assert!(quality.rms_px <= 2.5, "rms {}", quality.rms_px);
+    }
+
+    #[test]
+    fn exif_fov_seeds_hint_only_when_allowed_and_unset() {
+        use crate::image_input::ExifMeta;
+
+        let frame = FrameImage {
+            width: 4032,
+            height: 3024,
+            gray: Vec::new(),
+            source_name: "phone".to_string(),
+            exif: Some(ExifMeta {
+                focal_length_35mm: Some(26.0),
+                ..ExifMeta::default()
+            }),
+        };
+
+        let resolved = SolveOptions::default().resolved_for(&frame);
+        let hint = resolved.fov_hint_deg.expect("exif hint");
+        assert!((hint - 67.31).abs() < 0.05, "hint {hint}");
+
+        let explicit = SolveOptions {
+            fov_hint_deg: Some(22.0),
+            ..SolveOptions::default()
+        }
+        .resolved_for(&frame);
+        assert_eq!(explicit.fov_hint_deg, Some(22.0), "explicit hint wins");
+
+        let disabled = SolveOptions {
+            allow_exif_hints: false,
+            ..SolveOptions::default()
+        }
+        .resolved_for(&frame);
+        assert_eq!(disabled.fov_hint_deg, None, "exif disabled");
     }
 
     #[test]

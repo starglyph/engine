@@ -26,6 +26,15 @@ jobs:
       - uses: dtolnay/rust-toolchain@stable
       - name: Cache cargo
         uses: Swatinem/rust-cache@v2
+      # Generated tetra3 pattern databases are deterministic for a given
+      # catalog + generation parameters (both hashed into the key). The blind
+      # dense-band ladder can build up to three bands on a failing frame —
+      # cached, that cost is paid once per parameter change, not per CI run.
+      - name: Cache solver pattern databases
+        uses: actions/cache@v4
+        with:
+          path: prototype/artifacts/cache
+          key: tetra3-dbs-${{ hashFiles('data/catalogs/hyg_v42.csv.gz', 'prototype/crates/starglyph-core/src/engine.rs') }}
       - name: Install Pillow
         run: pip install pillow
       - name: Fetch CI sample frames
