@@ -1,0 +1,35 @@
+name: docker-validation
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "Dockerfile"
+      - ".dockerignore"
+      - "scripts/docker-smoke.sh"
+      - ".github/workflows/docker-validation.yml"
+      - "prototype/crates/starglyph-serve/**"
+      - "prototype/crates/starglyph-core/**"
+      - "prototype/Cargo.toml"
+      - "prototype/Cargo.lock"
+  pull_request:
+    paths:
+      - "Dockerfile"
+      - ".dockerignore"
+      - "scripts/docker-smoke.sh"
+      - ".github/workflows/docker-validation.yml"
+      - "prototype/crates/starglyph-serve/**"
+      - "prototype/crates/starglyph-core/**"
+      - "prototype/Cargo.toml"
+      - "prototype/Cargo.lock"
+  workflow_dispatch:
+
+jobs:
+  docker-smoke:
+    name: build image + container smoke
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v5
+      - name: Build image and run the container smoke
+        run: bash scripts/docker-smoke.sh

@@ -1,6 +1,6 @@
 # "eval" collides with the checked-in eval/ directory (baseline-ci.json);
 # without .PHONY make considers the target permanently up to date.
-.PHONY: fetch-catalog validate-simulator validate-solver validate-serve eval eval-gate serve-smoke
+.PHONY: fetch-catalog validate-simulator validate-solver validate-serve eval eval-gate serve-smoke docker-build docker-smoke
 
 fetch-catalog:
 	bash ../scripts/fetch-hyg-catalog.sh
@@ -21,6 +21,14 @@ validate-serve:
 # parallel, assert no pattern database is rebuilt. See scripts/serve-smoke.sh.
 serve-smoke:
 	bash ../scripts/serve-smoke.sh
+
+docker-build:
+	docker build -t starglyph-serve ..
+
+# Container end-to-end: cold start on a fresh volume, solve, restart on the
+# same volume with zero regeneration. See scripts/docker-smoke.sh.
+docker-smoke:
+	bash ../scripts/docker-smoke.sh
 
 eval:
 	cargo run --release -p starglyph-cli -- eval \
