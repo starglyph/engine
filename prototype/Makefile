@@ -1,3 +1,7 @@
+# "eval" collides with the checked-in eval/ directory (baseline-ci.json);
+# without .PHONY make considers the target permanently up to date.
+.PHONY: fetch-catalog validate-simulator validate-solver eval eval-gate
+
 fetch-catalog:
 	bash ../scripts/fetch-hyg-catalog.sh
 
