@@ -3,7 +3,7 @@ use std::path::{Path, PathBuf};
 
 use anyhow::{Context, Result};
 use clap::{Parser, Subcommand};
-use image::{ImageBuffer, Rgb, RgbImage};
+use image::Rgb;
 use serde::Serialize;
 use starglyph_core::catalog::Catalog;
 use starglyph_core::constellations::ConstellationSet;
@@ -13,6 +13,7 @@ use starglyph_core::engine::{DbKind, Engine, EngineProgress};
 use starglyph_core::geom::CameraSolution;
 use starglyph_core::image_input::FrameImage;
 use starglyph_core::overlay::{build_overlay, OverlayOptions};
+use starglyph_core::render;
 use starglyph_core::solve::{
     solve_frame_with_engine, SolveOptions, SolveStage, DEFAULT_BLIND_FOV_DEG,
 };
@@ -563,95 +564,11 @@ fn overlay_summary(overlay: &SolveOverlay, pose: &CameraSolution) -> OverlaySumm
 }
 
 fn write_overlay_png(frame: &FrameImage, overlay: &SolveOverlay, path: &Path) -> Result<()> {
-    let p10 = percentile(&frame.gray, 0.10);
-    let p9995 = percentile(&frame.gray, 0.9995);
-    let span = (p9995 - p10).max(1e-6);
-
-    let mut img: RgbImage = ImageBuffer::new(frame.width, frame.height);
-    for y in 0..frame.height {
-        for x in 0..frame.width {
-            let v = frame.gray[(y * frame.width + x) as usize];
-            let stretched = ((v - p10) / span).clamp(0.0, 1.0);
-            let byte = (stretched * 255.0).round() as u8;
-            img.put_pixel(x, y, Rgb([byte, byte, byte]));
-        }
-    }
-
-    let cyan = Rgb([0, 255, 255]);
-    for constellation in &overlay.constellations {
-        for line in &constellation.lines {
-            for window in line.windows(2) {
-                draw_line_bresenham(
-                    &mut img,
-                    window[0][0],
-                    window[0][1],
-                    window[1][0],
-                    window[1][1],
-                    cyan,
-                );
-            }
-        }
-    }
-
-    let gold = Rgb([255, 215, 0]);
-    for star in &overlay.stars {
-        draw_circle_outline(&mut img, star.x, star.y, 4.0, gold);
-    }
-
-    let planet_color = Rgb([255, 194, 77]);
-    for planet in &overlay.planets {
-        draw_diamond(&mut img, planet.x, planet.y, 7.0, planet_color);
-    }
-
-    let gray = Rgb([80, 80, 80]);
-    for grid_line in &overlay.grid {
-        for window in grid_line.points.windows(2) {
-            draw_line_bresenham(
-                &mut img,
-                window[0][0],
-                window[0][1],
-                window[1][0],
-                window[1][1],
-                gray,
-            );
-        }
-    }
-
+    let mut img = render::stretched_base(frame);
+    render::draw_overlay(&mut img, overlay);
     img.save(path)
         .with_context(|| format!("failed to write overlay PNG '{}'", path.display()))?;
     Ok(())
-}
-
-fn draw_line_bresenham(img: &mut RgbImage, x0: f64, y0: f64, x1: f64, y1: f64, color: Rgb<u8>) {
-    let width = img.width() as i32;
-    let height = img.height() as i32;
-    let mut x0 = x0.round() as i32;
-    let mut y0 = y0.round() as i32;
-    let x1 = x1.round() as i32;
-    let y1 = y1.round() as i32;
-    let dx = (x1 - x0).abs();
-    let dy = -(y1 - y0).abs();
-    let sx = if x0 < x1 { 1 } else { -1 };
-    let sy = if y0 < y1 { 1 } else { -1 };
-    let mut err = dx + dy;
-
-    loop {
-        if x0 >= 0 && y0 >= 0 && x0 < width && y0 < height {
-            img.put_pixel(x0 as u32, y0 as u32, color);
-        }
-        if x0 == x1 && y0 == y1 {
-            break;
-        }
-        let e2 = 2 * err;
-        if e2 >= dy {
-            err += dy;
-            x0 += sx;
-        }
-        if e2 <= dx {
-            err += dx;
-            y0 += sy;
-        }
-    }
 }
 
 fn inspect_output(path: &Path, frame: &FrameImage) -> Result<InspectOutput> {
@@ -692,68 +609,14 @@ fn write_debug_png(
     detections: &[starglyph_core::detect::Detection],
     path: &Path,
 ) -> Result<()> {
-    let p10 = percentile(&frame.gray, 0.10);
-    let p9995 = percentile(&frame.gray, 0.9995);
-    let span = (p9995 - p10).max(1e-6);
-
-    let mut img: RgbImage = ImageBuffer::new(frame.width, frame.height);
-    for y in 0..frame.height {
-        for x in 0..frame.width {
-            let v = frame.gray[(y * frame.width + x) as usize];
-            let stretched = ((v - p10) / span).clamp(0.0, 1.0);
-            let byte = (stretched * 255.0).round() as u8;
-            img.put_pixel(x, y, Rgb([byte, byte, byte]));
-        }
-    }
-
+    let mut img = render::stretched_base(frame);
     for det in detections {
-        draw_circle_outline(&mut img, det.x, det.y, 6.0, Rgb([0, 255, 0]));
+        render::draw_circle_outline(&mut img, det.x, det.y, 6.0, Rgb([0, 255, 0]));
     }
 
     img.save(path)
         .with_context(|| format!("failed to write debug PNG '{}'", path.display()))?;
     Ok(())
-}
-
-fn percentile(values: &[f32], p: f64) -> f32 {
-    let mut sorted: Vec<f32> = values.to_vec();
-    sorted.sort_unstable_by(|a, b| a.partial_cmp(b).unwrap_or(std::cmp::Ordering::Equal));
-    let idx = ((sorted.len() as f64 - 1.0) * p).round() as usize;
-    sorted[idx.min(sorted.len() - 1)]
-}
-
-fn draw_circle_outline(img: &mut RgbImage, cx: f64, cy: f64, radius: f64, color: Rgb<u8>) {
-    let width = img.width() as i32;
-    let height = img.height() as i32;
-    let r = radius;
-    let steps = (2.0 * std::f64::consts::PI * r).ceil() as i32;
-    let steps = steps.max(32);
-    for i in 0..steps {
-        let theta = 2.0 * std::f64::consts::PI * f64::from(i) / f64::from(steps);
-        let x = (cx + r * theta.cos()).round() as i32;
-        let y = (cy + r * theta.sin()).round() as i32;
-        if x >= 0 && y >= 0 && x < width && y < height {
-            img.put_pixel(x as u32, y as u32, color);
-        }
-    }
-}
-
-fn draw_diamond(img: &mut RgbImage, cx: f64, cy: f64, radius: f64, color: Rgb<u8>) {
-    let r = radius;
-    let edges = [
-        (cx, cy - r, cx + r, cy),
-        (cx + r, cy, cx, cy + r),
-        (cx, cy + r, cx - r, cy),
-        (cx - r, cy, cx, cy - r),
-    ];
-    for (x0, y0, x1, y1) in edges {
-        draw_line_bresenham(img, x0, y0, x1, y1, color);
-    }
-    let cx_i = cx.round() as i32;
-    let cy_i = cy.round() as i32;
-    if cx_i >= 0 && cy_i >= 0 && cx_i < img.width() as i32 && cy_i < img.height() as i32 {
-        img.put_pixel(cx_i as u32, cy_i as u32, color);
-    }
 }
 
 fn workspace_root() -> PathBuf {
@@ -1252,67 +1115,8 @@ fn file_name(path: &Path) -> String {
 /// Render a solved frame: overlay geometry plus detection markers
 /// (green = matched inlier, gray = unmatched).
 fn render_report_overlay_png(frame: &FrameImage, report: &SolveReport, path: &Path) -> Result<()> {
-    let p10 = percentile(&frame.gray, 0.10);
-    let p9995 = percentile(&frame.gray, 0.9995);
-    let span = (p9995 - p10).max(1e-6);
-
-    let mut img: RgbImage = ImageBuffer::new(frame.width, frame.height);
-    for y in 0..frame.height {
-        for x in 0..frame.width {
-            let v = frame.gray[(y * frame.width + x) as usize];
-            let stretched = ((v - p10) / span).clamp(0.0, 1.0);
-            let byte = (stretched * 255.0).round() as u8;
-            img.put_pixel(x, y, Rgb([byte, byte, byte]));
-        }
-    }
-
-    if let Some(overlay) = &report.overlay {
-        let cyan = Rgb([0, 255, 255]);
-        for constellation in &overlay.constellations {
-            for line in &constellation.lines {
-                for window in line.windows(2) {
-                    draw_line_bresenham(
-                        &mut img,
-                        window[0][0],
-                        window[0][1],
-                        window[1][0],
-                        window[1][1],
-                        cyan,
-                    );
-                }
-            }
-        }
-        let gray = Rgb([80, 80, 80]);
-        for grid_line in &overlay.grid {
-            for window in grid_line.points.windows(2) {
-                draw_line_bresenham(
-                    &mut img,
-                    window[0][0],
-                    window[0][1],
-                    window[1][0],
-                    window[1][1],
-                    gray,
-                );
-            }
-        }
-        let gold = Rgb([255, 215, 0]);
-        for star in &overlay.stars {
-            draw_circle_outline(&mut img, star.x, star.y, 4.0, gold);
-        }
-        let planet_color = Rgb([255, 194, 77]);
-        for planet in &overlay.planets {
-            draw_diamond(&mut img, planet.x, planet.y, 7.0, planet_color);
-        }
-    }
-
-    let green = Rgb([0, 255, 0]);
-    let gray = Rgb([140, 140, 140]);
-    for det in &report.detections {
-        let color = if det.inlier { green } else { gray };
-        draw_circle_outline(&mut img, det.x, det.y, 6.0, color);
-    }
-
-    img.save(path)
+    render::render_report(frame, report)
+        .save(path)
         .with_context(|| format!("failed to write overlay PNG '{}'", path.display()))?;
     Ok(())
 }

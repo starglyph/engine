@@ -280,11 +280,25 @@ impl FrameImage {
             path: path.display().to_string(),
             source,
         })?;
-        let image = image::load_from_memory(&bytes).map_err(|source| ImageInputError::Open {
-            path: path.display().to_string(),
+        let source_name = path
+            .file_stem()
+            .and_then(|stem| stem.to_str())
+            .ok_or_else(|| ImageInputError::MissingStem {
+                path: path.display().to_string(),
+            })?;
+        Self::from_bytes(&bytes, source_name)
+    }
+
+    /// Decode a frame from encoded image bytes already in memory (e.g. an HTTP
+    /// upload). Same format sniffing and EXIF handling as [`FrameImage::load`];
+    /// `source_name` labels the frame the way a file stem does (report `file`
+    /// field, filename-timestamp parsing).
+    pub fn from_bytes(bytes: &[u8], source_name: &str) -> Result<Self, ImageInputError> {
+        let image = image::load_from_memory(bytes).map_err(|source| ImageInputError::Open {
+            path: source_name.to_string(),
             source,
         })?;
-        let exif = ExifMeta::from_bytes(&bytes);
+        let exif = ExifMeta::from_bytes(bytes);
         let (width, height) = image.dimensions();
         let gray = image
             .to_luma8()
@@ -293,19 +307,11 @@ impl FrameImage {
             .map(|value| f32::from(value) / 255.0)
             .collect();
 
-        let source_name = path
-            .file_stem()
-            .and_then(|stem| stem.to_str())
-            .ok_or_else(|| ImageInputError::MissingStem {
-                path: path.display().to_string(),
-            })?
-            .to_string();
-
         Ok(Self {
             width,
             height,
             gray,
-            source_name,
+            source_name: source_name.to_string(),
             exif,
         })
     }
@@ -708,6 +714,21 @@ mod tests {
                 .atan()
                 .to_degrees();
         assert!((fov - expect).abs() < 1e-9, "fov {fov} vs {expect}");
+    }
+
+    #[test]
+    fn from_bytes_matches_load_and_captures_exif() {
+        let tiff = exif_tiff_blob(26, (3, 2), b"2024:11:30 22:15:07");
+        let bytes = jpeg_with_exif(64, 48, &tiff);
+
+        let frame = FrameImage::from_bytes(&bytes, "upload").expect("decode from memory");
+        assert_eq!((frame.width, frame.height), (64, 48));
+        assert_eq!(frame.source_name, "upload");
+        let exif = frame.exif.expect("exif parsed");
+        assert_eq!(exif.focal_length_35mm, Some(26.0));
+
+        let err = FrameImage::from_bytes(b"not an image", "junk");
+        assert!(matches!(err, Err(ImageInputError::Open { .. })));
     }
 
     #[test]
