@@ -173,10 +173,14 @@ pub fn solve_frame_with_engine(
     };
 
     // Fill hints the caller left open from frame metadata (B1: EXIF FOV/epoch).
+    let explicit_hint = opts.fov_hint_deg.is_some();
     let opts = &opts.resolved_for(frame);
     if debug {
         if let Some(fov) = opts.fov_hint_deg {
-            eprintln!("  fov hint: {fov:.2} deg");
+            let source = if explicit_hint { "explicit" } else { "exif" };
+            eprintln!("  fov hint: {fov:.2} deg ({source})");
+        } else {
+            eprintln!("  fov hint: none (blind band ladder)");
         }
     }
 
