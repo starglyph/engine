@@ -82,7 +82,7 @@ bootstrap-база прогрета на весь пул; до того `503 war
 | Флаг | env | Умолчание | Описание |
 | --- | --- | --- | --- |
 | `--addr` | `STARGLYPH_SERVE_ADDR` | `127.0.0.1:8080` | адрес слушателя |
-| `--catalog` | `STARGLYPH_SERVE_CATALOG` | `data/catalogs/hyg_v3.csv` | каталог HYG |
+| `--catalog` | `STARGLYPH_SERVE_CATALOG` | первый существующий из `hyg_v42.csv.gz` → `hyg_v42.csv` → `hyg_v3.csv.gz` → `hyg_v3.csv` в `data/catalogs/` | каталог HYG (закоммиченный `hyg_v42.csv.gz` работает на свежем клоне) |
 | `--lines` / `--names` | `STARGLYPH_SERVE_LINES/_NAMES` | репо-копии | геометрия/имена созвездий |
 | `--cache-dir` | `STARGLYPH_SERVE_CACHE_DIR` | `prototype/artifacts/cache` | кэш баз (персистентный) |
 | `--pool-size` | `STARGLYPH_SERVE_POOL_SIZE` | `2` | прогретых движков = параллельных solve |

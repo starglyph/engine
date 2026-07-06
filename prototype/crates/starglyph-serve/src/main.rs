@@ -80,6 +80,31 @@ fn data_root() -> PathBuf {
     PathBuf::from(env!("CARGO_MANIFEST_DIR")).join("../../../data")
 }
 
+/// Committed-first catalog candidates (mirrors the desktop resolver): the repo
+/// ships `hyg_v42.csv.gz`; `hyg_v3.csv` is a local `make fetch-catalog`
+/// artifact, so a fresh clone must not default to it.
+const CATALOG_CANDIDATES: &[&str] = &[
+    "hyg_v42.csv.gz",
+    "hyg_v42.csv",
+    "hyg_v3.csv.gz",
+    "hyg_v3.csv",
+];
+
+fn default_catalog_path() -> Result<PathBuf> {
+    let dir = data_root().join("catalogs");
+    CATALOG_CANDIDATES
+        .iter()
+        .map(|name| dir.join(name))
+        .find(|path| path.exists())
+        .with_context(|| {
+            format!(
+                "no HYG catalog found in '{}' (tried {}); pass --catalog",
+                dir.display(),
+                CATALOG_CANDIDATES.join(", ")
+            )
+        })
+}
+
 #[tokio::main]
 async fn main() -> Result<()> {
     let cfg = Config::parse();
@@ -91,9 +116,10 @@ async fn main() -> Result<()> {
     );
     let prewarm = parse_prewarm(&cfg.prewarm_dense)?;
 
-    let catalog_path = cfg
-        .catalog
-        .unwrap_or_else(|| data_root().join("catalogs/hyg_v3.csv"));
+    let catalog_path = match cfg.catalog {
+        Some(path) => path,
+        None => default_catalog_path()?,
+    };
     let lines_path = cfg
         .lines
         .unwrap_or_else(|| data_root().join("celestial/constellations.lines.json"));

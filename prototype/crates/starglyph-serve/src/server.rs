@@ -404,7 +404,8 @@ mod tests {
     static CATALOG_AND_CONS: LazyLock<(Arc<Catalog>, Arc<ConstellationSet>)> =
         LazyLock::new(|| {
             let data = Path::new(env!("CARGO_MANIFEST_DIR")).join("../../../data");
-            let catalog = Catalog::load(&data.join("catalogs/hyg_v3.csv")).expect("catalog");
+            // The committed catalog (hyg_v3.csv is a local fetch artifact, absent in CI).
+            let catalog = Catalog::load(&data.join("catalogs/hyg_v42.csv.gz")).expect("catalog");
             let cons = ConstellationSet::load(
                 &data.join("celestial/constellations.lines.json"),
                 &data.join("celestial/constellations.json"),
