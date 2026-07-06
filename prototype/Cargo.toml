@@ -22,6 +22,7 @@ serde_json = "1"
 clap = { version = "=4.5.4", features = ["derive"] }
 csv = "1"
 image = { version = "0.25.6", default-features = false, features = ["png", "jpeg", "bmp", "tiff"] }
+kamadak-exif = "0.6"
 thiserror = "2"
 rand = "0.9"
 rand_chacha = "0.9"

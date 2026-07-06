@@ -43,13 +43,17 @@ impl DbKind {
     /// with the center rounded to a whole degree. Rounding matches the cache
     /// [`key`](DbKind::key) granularity, so nearby FOV hints (e.g. a blind 22.0
     /// and a batch median 22.32) resolve to a single shared band rather than two
-    /// near-identical multi-hundred-MB databases.
+    /// near-identical multi-hundred-MB databases. The band top is capped at 90°:
+    /// past that the rectilinear projection tetra3 patterns assume degenerates
+    /// (tan → ∞ at the hemisphere edge), and no realistic non-fisheye camera
+    /// reaches it.
     #[must_use]
     pub fn dense_for_center(center_deg: f32) -> DbKind {
         let c = center_deg.round();
+        let max_fov_deg = ((c * 1.35).ceil()).min(90.0);
         DbKind::DenseBand {
-            min_fov_deg: (c * 0.75).floor(),
-            max_fov_deg: (c * 1.35).ceil(),
+            min_fov_deg: (c * 0.75).floor().min(max_fov_deg - 1.0),
+            max_fov_deg,
         }
     }
 
@@ -296,6 +300,29 @@ mod tests {
         };
         assert_eq!(a.key(), b.key());
         assert_ne!(a.key(), DbKind::Bootstrap.key());
+    }
+
+    #[test]
+    fn dense_band_caps_at_90_degrees() {
+        let DbKind::DenseBand {
+            min_fov_deg,
+            max_fov_deg,
+        } = DbKind::dense_for_center(95.0)
+        else {
+            panic!("expected dense band");
+        };
+        assert_eq!(max_fov_deg, 90.0);
+        assert!(min_fov_deg < max_fov_deg);
+
+        // Phone wide-angle default band stays under the cap.
+        let DbKind::DenseBand {
+            min_fov_deg,
+            max_fov_deg,
+        } = DbKind::dense_for_center(65.0)
+        else {
+            panic!("expected dense band");
+        };
+        assert_eq!((min_fov_deg, max_fov_deg), (48.0, 88.0));
     }
 
     #[test]
