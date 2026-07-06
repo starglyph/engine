@@ -24,6 +24,7 @@ cd "$PROTO"
 cargo build --release -p starglyph-serve
 
 ./target/release/starglyph-serve --addr "$ADDR" --pool-size 2 --prewarm-dense "" \
+  --telemetry-log "$OUT/telemetry.jsonl" \
   >"$OUT/serve.log" 2>&1 &
 SERVE_PID=$!
 cleanup() {
@@ -85,6 +86,22 @@ for i in range(1, n + 1):
     assert r["status"] == "solved", (i, r.get("failure"))
     totals.append(r["timing_ms"]["total"])
 print(f"[smoke] {n} parallel solves ok; total_ms median={statistics.median(totals):.0f} max={max(totals)}")
+EOF
+
+# ── 4. telemetry: one anonymous record per request (Stage 0 · D1) ────────────
+python3 - "$OUT/telemetry.jsonl" "$((2 + PARALLEL))" <<'EOF'
+import json, sys
+path, expected = sys.argv[1], int(sys.argv[2])
+records = [json.loads(line) for line in open(path)]
+assert len(records) == expected, f"expected {expected} records, got {len(records)}"
+assert all(r["outcome"] == "solved" for r in records), [r["outcome"] for r in records]
+last = records[-1]
+assert last["source"] and last["image"]["width"] > 0, last
+assert last["timing"]["wall_ms"] > 0 and last["timing"]["total_ms"] > 0, last["timing"]
+forbidden = {"user", "user_id", "ip", "client", "gps"}
+assert all(not (forbidden & set(r)) for r in records), "telemetry must stay anonymous"
+print(f"[smoke] telemetry ok: {len(records)} records, "
+      f"last wall={last['timing']['wall_ms']}ms queue={last['timing']['queue_ms']}ms")
 EOF
 
 if grep -qi "generating" "$OUT/serve.log"; then
