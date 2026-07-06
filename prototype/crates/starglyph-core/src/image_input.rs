@@ -348,4 +348,67 @@ mod tests {
         let expect = crate::ephem::julian_day_utc(2011, 9, 21, 0, 0, 0.0);
         assert!((jd - expect).abs() < 1e-6, "jd={jd} expect={expect}");
     }
+
+    #[test]
+    fn loads_16_bit_grayscale_tiff() {
+        use image::{DynamicImage, ImageBuffer, Luma};
+
+        let mut buffer: ImageBuffer<Luma<u16>, Vec<u16>> = ImageBuffer::new(4, 3);
+        for (x, y, pixel) in buffer.enumerate_pixels_mut() {
+            *pixel = if x == 0 && y == 0 {
+                Luma([u16::MAX])
+            } else {
+                Luma([0])
+            };
+        }
+
+        let dir = tempfile::tempdir().expect("tempdir");
+        let path = dir.path().join("frame.tiff");
+        DynamicImage::ImageLuma16(buffer)
+            .save(&path)
+            .expect("save 16-bit tiff");
+
+        let frame = FrameImage::load(&path).expect("load 16-bit tiff");
+        assert_eq!(frame.width, 4);
+        assert_eq!(frame.height, 3);
+        assert!(
+            (frame.gray[0] - 1.0).abs() < 1e-3,
+            "bright pixel: {}",
+            frame.gray[0]
+        );
+        assert!(
+            (frame.gray[1] - 0.0).abs() < 1e-3,
+            "dark pixel: {}",
+            frame.gray[1]
+        );
+    }
+
+    #[test]
+    fn loads_8_bit_rgb_tiff() {
+        use image::{DynamicImage, ImageBuffer, Rgb};
+
+        let buffer: ImageBuffer<Rgb<u8>, Vec<u8>> =
+            ImageBuffer::from_fn(2, 2, |x, _| Rgb([if x == 0 { 255 } else { 0 }; 3]));
+
+        let dir = tempfile::tempdir().expect("tempdir");
+        let path = dir.path().join("frame.tiff");
+        DynamicImage::ImageRgb8(buffer)
+            .save(&path)
+            .expect("save rgb tiff");
+
+        let frame = FrameImage::load(&path).expect("load rgb tiff");
+        assert_eq!(frame.width, 2);
+        assert_eq!(frame.height, 2);
+        assert_eq!(frame.gray.len(), 4);
+        assert!(
+            (frame.gray[0] - 1.0).abs() < 1e-3,
+            "white pixel: {}",
+            frame.gray[0]
+        );
+        assert!(
+            (frame.gray[1] - 0.0).abs() < 1e-3,
+            "black pixel: {}",
+            frame.gray[1]
+        );
+    }
 }
