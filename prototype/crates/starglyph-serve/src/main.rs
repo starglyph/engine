@@ -19,9 +19,11 @@ use starglyph_core::engine::{DbKind, Engine, EngineProgress};
 
 mod pool;
 mod server;
+mod telemetry;
 
 use pool::EnginePool;
 use server::AppState;
+use telemetry::TelemetrySink;
 
 /// Dense-band centers below this cannot be populated by the mag ≤ 6.5
 /// catalog (mirrors the solver's own skip threshold).
@@ -70,6 +72,11 @@ struct Config {
         env = "STARGLYPH_SERVE_PREWARM_DENSE"
     )]
     prewarm_dense: String,
+    /// Append-only JSONL solve-telemetry log: one anonymous record per /solve
+    /// request (no user identity). Defaults to artifacts/telemetry/ in the
+    /// repo; an empty string disables telemetry.
+    #[arg(long, env = "STARGLYPH_SERVE_TELEMETRY_LOG")]
+    telemetry_log: Option<PathBuf>,
 }
 
 fn workspace_root() -> PathBuf {
@@ -129,6 +136,23 @@ async fn main() -> Result<()> {
     let cache_dir = cfg
         .cache_dir
         .unwrap_or_else(|| workspace_root().join("artifacts/cache"));
+    let telemetry_path = match cfg.telemetry_log {
+        Some(path) if path.as_os_str().is_empty() => None,
+        Some(path) => Some(path),
+        None => Some(workspace_root().join("artifacts/telemetry/solve-log.jsonl")),
+    };
+    let telemetry = match telemetry_path {
+        Some(path) => {
+            let sink = TelemetrySink::open(&path)
+                .with_context(|| format!("failed to open telemetry log '{}'", path.display()))?;
+            eprintln!("[serve] telemetry → '{}'", path.display());
+            Some(Arc::new(sink))
+        }
+        None => {
+            eprintln!("[serve] telemetry disabled");
+            None
+        }
+    };
 
     eprintln!("[serve] loading catalog '{}'", catalog_path.display());
     let (catalog, cons) = tokio::task::spawn_blocking(move || -> Result<_> {
@@ -154,6 +178,7 @@ async fn main() -> Result<()> {
         cache_dir: cache_dir.clone(),
         queue_timeout: Duration::from_secs(cfg.queue_timeout_s),
         solve_timeout: Duration::from_secs(cfg.solve_timeout_s),
+        telemetry,
     };
 
     // Warm in the background so the listener is up immediately: /readyz turns

@@ -90,10 +90,44 @@ bootstrap-база прогрета на весь пул; до того `503 war
 | `--solve-timeout-s` | `STARGLYPH_SERVE_SOLVE_TIMEOUT_S` | `120` | таймаут одного solve |
 | `--queue-timeout-s` | `STARGLYPH_SERVE_QUEUE_TIMEOUT_S` | `30` | ожидание свободного движка |
 | `--prewarm-dense` | `STARGLYPH_SERVE_PREWARM_DENSE` | `22,40,65` | центры dense-полос для фонового прогрева диск-кэша (пусто — выключить) |
+| `--telemetry-log` | `STARGLYPH_SERVE_TELEMETRY_LOG` | `prototype/artifacts/telemetry/solve-log.jsonl` | обезличенный JSONL-лог solve-запросов (пусто — выключить), см. «Телеметрия» |
 
 Пути по умолчанию считаются от репозитория (как у CLI) — вне репозитория
 задавайте `--catalog/--lines/--names/--cache-dir` явно. Контейнеризация и
 ресурс-бюджет — C3.
+
+## Телеметрия (обезличенный лог solve-запросов)
+
+Каждый запрос `POST /solve` добавляет ровно одну JSON-строку в append-only лог
+(`--telemetry-log`). Записи **анонимны по построению**: ни идентичности
+пользователя, ни адреса клиента, ни сырого EXIF (GPS не парсится вовсе);
+единственный клиентский текст — имя файла без пути. Привязка к
+пользователям/аккаунтам — территория закрытых обёрток поверх HTTP-API, не
+этого сервиса.
+
+Поля записи (`schema: 1`; новые поля только добавляются):
+
+- `ts` (RFC3339 UTC), `outcome` — `solved` | `failed` (solve выполнялся) |
+  `rejected` (запрос не дошёл до solve), `http_status`;
+- `reject_code` (код из конверта ошибки) / `failure_code`
+  (`SolveReport.failure.code`);
+- `source` (стем имени файла), `image {width,height}`,
+  `exif {present, fov_prior_deg, has_timestamp}`;
+- `hints {fov_hint_deg, epoch, utc_offset_hours, no_exif, grid, overlay}`;
+- `n_detections`, `result {ra,dec,roll,fov_x,fov_y,n_inliers,rms_px,log_odds,
+  confidence}` (только для решённых);
+- `timing {wall_ms, queue_ms, detect_ms, solve_ms, total_ms}` — `wall_ms`
+  меряет весь обработчик (ожидание движка + solve + рендер), `queue_ms` —
+  ожидание свободного движка.
+
+Ошибка записи телеметрии никогда не роняет запрос (best-effort, предупреждение
+в лог один раз). Сводка по логу — `scripts/telemetry-rollup.py`:
+
+```bash
+python3 scripts/telemetry-rollup.py            # дефолтный лог
+python3 scripts/telemetry-rollup.py path/*.jsonl
+# → solve-rate, разбивка отказов/фейлов, p50/p95 latency, FOV решённых
+```
 
 ## Модель конкурентности (почему пул, а не мьютекс)
 
