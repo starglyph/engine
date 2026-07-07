@@ -1,5 +1,7 @@
 //! Star detection for grayscale frame images.
 
+use rayon::prelude::*;
+
 use crate::image_input::FrameImage;
 
 const MAD_TO_SIGMA: f32 = 1.4826;
@@ -324,29 +326,28 @@ pub fn detect_stars(frame: &FrameImage, config: &DetectConfig) -> DetectResult {
 // --- Pipeline helpers ---
 
 fn remove_column_row_artifacts(gray: &[f32], width: usize, height: usize) -> Vec<f32> {
-    let mut out = gray.to_vec();
+    // Column medians first, then row medians of the column-subtracted data —
+    // the same math as the sequential version; columns and rows are
+    // independent, so each level parallelizes bit-exactly.
+    let col_medians: Vec<f32> = (0..width)
+        .into_par_iter()
+        .map(|x| {
+            let col: Vec<f32> = (0..height).map(|y| gray[y * width + x]).collect();
+            median_f32(&col)
+        })
+        .collect();
 
-    // Per-column median subtraction
-    for x in 0..width {
-        let mut col: Vec<f32> = (0..height).map(|y| gray[y * width + x]).collect();
-        let med = median_f32(&col);
-        for v in col.iter_mut().take(height) {
+    let mut out = vec![0.0f32; width * height];
+    out.par_chunks_mut(width).enumerate().for_each(|(y, row)| {
+        let src = &gray[y * width..(y + 1) * width];
+        for (x, (dst, &g)) in row.iter_mut().zip(src.iter()).enumerate() {
+            *dst = g - col_medians[x];
+        }
+        let med = median_f32(row);
+        for v in row.iter_mut() {
             *v -= med;
         }
-        for y in 0..height {
-            out[y * width + x] = col[y];
-        }
-    }
-
-    // Per-row median subtraction
-    for y in 0..height {
-        let row_start = y * width;
-        let med = median_f32(&out[row_start..row_start + width]);
-        for x in 0..width {
-            out[row_start + x] -= med;
-        }
-    }
-
+    });
     out
 }
 
@@ -355,33 +356,39 @@ fn mesh_background(data: &[f32], width: usize, height: usize, mesh_px: u32) -> V
     let n_cols = width.div_ceil(mesh);
     let n_rows = height.div_ceil(mesh);
 
+    // Mesh cells and interpolated rows are independent — both levels run in
+    // parallel with per-cell/per-pixel arithmetic unchanged.
     let mut grid = vec![0.0f32; n_cols * n_rows];
-    for row in 0..n_rows {
-        for col in 0..n_cols {
-            let x0 = col * mesh;
-            let y0 = row * mesh;
-            let x1 = ((col + 1) * mesh).min(width);
-            let y1 = ((row + 1) * mesh).min(height);
+    grid.par_chunks_mut(n_cols)
+        .enumerate()
+        .for_each(|(row, grid_row)| {
+            for (col, cell_median) in grid_row.iter_mut().enumerate() {
+                let x0 = col * mesh;
+                let y0 = row * mesh;
+                let x1 = ((col + 1) * mesh).min(width);
+                let y1 = ((row + 1) * mesh).min(height);
 
-            let mut cell = Vec::new();
-            for y in y0..y1 {
-                for x in x0..x1 {
-                    cell.push(data[y * width + x]);
+                let mut cell = Vec::with_capacity((x1 - x0) * (y1 - y0));
+                for y in y0..y1 {
+                    for x in x0..x1 {
+                        cell.push(data[y * width + x]);
+                    }
                 }
+                *cell_median = sigma_clipped_median(&cell, 3, 3.0);
             }
-            grid[row * n_cols + col] = sigma_clipped_median(&cell, 3, 3.0);
-        }
-    }
+        });
 
     // Bilinear interpolation from cell centers
     let mut bg = vec![0.0f32; width * height];
-    for y in 0..height {
-        for x in 0..width {
-            let fx = (x as f64 + 0.5) / mesh as f64 - 0.5;
+    bg.par_chunks_mut(width)
+        .enumerate()
+        .for_each(|(y, bg_row)| {
             let fy = (y as f64 + 0.5) / mesh as f64 - 0.5;
-            bg[y * width + x] = bilinear_grid(&grid, n_cols, n_rows, fx, fy);
-        }
-    }
+            for (x, v) in bg_row.iter_mut().enumerate() {
+                let fx = (x as f64 + 0.5) / mesh as f64 - 0.5;
+                *v = bilinear_grid(&grid, n_cols, n_rows, fx, fy);
+            }
+        });
     bg
 }
 
@@ -453,9 +460,13 @@ fn robust_noise_sigma(
     if samples.is_empty() {
         return floor;
     }
-    samples.sort_unstable_by(|a, b| a.partial_cmp(b).unwrap_or(std::cmp::Ordering::Equal));
-    let q = |p: f64| samples[((samples.len() - 1) as f64 * p) as usize];
-    let quantile_sigma = (q(0.9772) - q(0.5)) / 2.0;
+    // Selection instead of a full sort: the same order statistics in O(n).
+    let last = samples.len() - 1;
+    let i_median = (last as f64 * 0.5) as usize;
+    let i_upper = (last as f64 * 0.9772) as usize;
+    let median = *samples.select_nth_unstable_by(i_median, cmp_f32).1;
+    let upper = *samples.select_nth_unstable_by(i_upper, cmp_f32).1;
+    let quantile_sigma = (upper - median) / 2.0;
     quantile_sigma.max(floor)
 }
 
@@ -479,9 +490,11 @@ fn gaussian_kernel_7x7(sigma: f32) -> [[f32; 7]; 7] {
 }
 
 fn convolve_7x7(data: &[f32], width: usize, height: usize, kernel: &[[f32; 7]; 7]) -> Vec<f32> {
+    // The dominant O(49·n) pass of the pipeline. Output rows are independent
+    // and per-pixel arithmetic is unchanged → parallel result is bit-exact.
     let mut out = vec![0.0f32; width * height];
-    for y in 0..height {
-        for x in 0..width {
+    out.par_chunks_mut(width).enumerate().for_each(|(y, row)| {
+        for (x, out_px) in row.iter_mut().enumerate() {
             let mut sum = 0.0f32;
             for dy in -3i32..=3 {
                 for dx in -3i32..=3 {
@@ -493,9 +506,9 @@ fn convolve_7x7(data: &[f32], width: usize, height: usize, kernel: &[[f32; 7]; 7
                     }
                 }
             }
-            out[y * width + x] = sum;
+            *out_px = sum;
         }
-    }
+    });
     out
 }
 
@@ -747,17 +760,26 @@ fn deduplicate_detections(detections: &mut Vec<Detection>, min_dist: f64) {
 
 // --- Statistics helpers ---
 
+fn cmp_f32(a: &f32, b: &f32) -> std::cmp::Ordering {
+    a.partial_cmp(b).unwrap_or(std::cmp::Ordering::Equal)
+}
+
 fn median_f32(values: &[f32]) -> f32 {
     if values.is_empty() {
         return 0.0;
     }
-    let mut sorted = values.to_vec();
-    sorted.sort_unstable_by(|a, b| a.partial_cmp(b).unwrap_or(std::cmp::Ordering::Equal));
-    let mid = sorted.len() / 2;
-    if sorted.len().is_multiple_of(2) {
-        (sorted[mid - 1] + sorted[mid]) / 2.0
+    // Selection instead of a full sort: this runs over whole frames and every
+    // column/row/mesh-cell, and picks exactly the values a sort would.
+    let mut work = values.to_vec();
+    let mid = work.len() / 2;
+    let (below, upper, _) = work.select_nth_unstable_by(mid, cmp_f32);
+    let upper = *upper;
+    if values.len().is_multiple_of(2) {
+        // `sorted[mid - 1]` is the maximum of the left partition.
+        let lower = below.iter().copied().max_by(cmp_f32).unwrap_or(upper);
+        (lower + upper) / 2.0
     } else {
-        sorted[mid]
+        upper
     }
 }
 
@@ -837,6 +859,134 @@ mod tests {
                 base[(y * width + x) as usize] += amp * (-r2 / (2.0 * sigma * sigma)).exp();
             }
         }
+    }
+
+    /// Deterministic xorshift noise (tests must not depend on an RNG crate).
+    struct XorShift(u32);
+    impl XorShift {
+        fn next_f32(&mut self) -> f32 {
+            let mut x = self.0;
+            x ^= x << 13;
+            x ^= x >> 17;
+            x ^= x << 5;
+            self.0 = x;
+            (x as f32 / u32::MAX as f32) * 2.0 - 1.0
+        }
+    }
+
+    /// Star field with known truth: windowed Gaussian PSFs (beyond ±8 px a
+    /// σ≈1.3 kernel is ~e⁻¹⁹) over a noisy pedestal; positions follow a
+    /// low-discrepancy sequence so spacing stays star-like without an RNG.
+    fn synthetic_star_field(
+        width: u32,
+        height: u32,
+        n_stars: usize,
+        noise_sigma: f32,
+        seed: u32,
+    ) -> (Vec<f32>, Vec<(f64, f64)>) {
+        let mut rng = XorShift(seed);
+        let mut gray = vec![0.08f32; (width as usize) * (height as usize)];
+        for v in gray.iter_mut() {
+            *v += noise_sigma * rng.next_f32();
+        }
+        let sigma = 1.3f32;
+        let win = 8i64;
+        let margin = 16.0;
+        let mut truth = Vec::with_capacity(n_stars);
+        for i in 0..n_stars {
+            let hx = (i as f64 * 0.754_877_666_2).fract();
+            let hy = (i as f64 * 0.569_840_290_998).fract();
+            let cx = margin + hx * (f64::from(width) - 2.0 * margin);
+            let cy = margin + hy * (f64::from(height) - 2.0 * margin);
+            let amp = 0.15 + 0.075 * ((i % 10) as f32);
+            let (icx, icy) = (cx.round() as i64, cy.round() as i64);
+            for y in (icy - win).max(0)..=(icy + win).min(i64::from(height) - 1) {
+                for x in (icx - win).max(0)..=(icx + win).min(i64::from(width) - 1) {
+                    let dx = x as f64 - cx;
+                    let dy = y as f64 - cy;
+                    let r2 = (dx * dx + dy * dy) as f32;
+                    gray[y as usize * width as usize + x as usize] +=
+                        amp * (-r2 / (2.0 * sigma * sigma)).exp();
+                }
+            }
+            truth.push((cx, cy));
+        }
+        (gray, truth)
+    }
+
+    /// Direct detection-quality harness (B3): precision, recall and centroid
+    /// RMS against injected truth — regressions in the detector surface here
+    /// before they show up as solve-rate.
+    #[test]
+    fn detection_precision_recall_on_synthetic_field() {
+        let (width, height) = (1024u32, 768u32);
+        let (gray, truth) = synthetic_star_field(width, height, 60, 0.02, 0xC0FF_EE01);
+        let frame = make_frame(width, height, gray);
+        let config = DetectConfig {
+            max_detections: 100,
+            ..DetectConfig::default()
+        };
+        let result = detect_stars(&frame, &config);
+
+        let mut truth_hit = vec![false; truth.len()];
+        let mut true_positives = 0u32;
+        let mut centroid_sq = 0.0f64;
+        for det in &result.detections {
+            let mut best: Option<(usize, f64)> = None;
+            for (ti, &(tx, ty)) in truth.iter().enumerate() {
+                if truth_hit[ti] {
+                    continue;
+                }
+                let d2 = (det.x - tx).powi(2) + (det.y - ty).powi(2);
+                if d2 <= 4.0 && best.is_none_or(|(_, bd)| d2 < bd) {
+                    best = Some((ti, d2));
+                }
+            }
+            if let Some((ti, d2)) = best {
+                truth_hit[ti] = true;
+                true_positives += 1;
+                centroid_sq += d2;
+            }
+        }
+        let precision = f64::from(true_positives) / result.detections.len().max(1) as f64;
+        let recall = f64::from(true_positives) / truth.len() as f64;
+        let centroid_rms = (centroid_sq / f64::from(true_positives.max(1))).sqrt();
+        assert!(
+            precision >= 0.95,
+            "precision {precision:.3} ({true_positives}/{})",
+            result.detections.len()
+        );
+        assert!(recall >= 0.90, "recall {recall:.3}");
+        assert!(centroid_rms <= 0.35, "centroid rms {centroid_rms:.3}px");
+    }
+
+    /// Perf budget (B3): full detection on a 12 Mpx frame within 2.0 s.
+    /// Meaningless in debug builds, hence ignored:
+    /// `cargo test -p starglyph-core --release -- --ignored detect_12mp`
+    #[test]
+    #[ignore = "perf benchmark; run with --release"]
+    fn detect_12mp_within_two_seconds() {
+        let (width, height) = (4000u32, 3000u32);
+        let (gray, _) = synthetic_star_field(width, height, 300, 0.02, 0xBEEF_0001);
+        let frame = make_frame(width, height, gray);
+        let started = std::time::Instant::now();
+        let result = detect_stars(&frame, &DetectConfig::default());
+        let elapsed = started.elapsed();
+        eprintln!(
+            "12 Mpx detect: {} ms, {} detections",
+            elapsed.as_millis(),
+            result.detections.len()
+        );
+        assert!(
+            result.detections.len() >= 40,
+            "a rich field should saturate the default cap, got {}",
+            result.detections.len()
+        );
+        assert!(
+            elapsed.as_secs_f64() <= 2.0,
+            "12 Mpx detect took {:.2}s (budget 2.0s)",
+            elapsed.as_secs_f64()
+        );
     }
 
     #[test]
