@@ -3,8 +3,12 @@ schema: spec-driven
 # Project context (optional)
 # This is shown to AI when creating artifacts.
 context: |
-  starglyph: synthetic star-sky images and sky-region recognition (Rust desktop prototype planned).
+  starglyph: synthetic star-sky images and sky-region recognition.
+  Prototype stack: starglyph-core (detect/solve/overlay/eval), starglyph-serve (HTTP API),
+  simulator-core (dataset v1), solver-core (legacy phase-2 crate — superseded by starglyph-core).
+  OpenSpec tracks engine capabilities and requirements aligned with prototype/crates/starglyph-*.
   Human-oriented docs live in docs/ when present; agent notes in AGENTS.md.
+  Do not reference private repositories or external backlog locations in artifacts.
 
 # Per-artifact rules (optional)
 # Add custom rules for specific artifacts.
