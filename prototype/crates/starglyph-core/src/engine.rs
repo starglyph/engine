@@ -23,8 +23,13 @@ use crate::catalog::Catalog;
 /// Loading an existing cache file stays lock-free.
 static GENERATION_LOCK: Mutex<()> = Mutex::new(());
 
-/// Faintest magnitude included in every generated database.
+/// Faintest magnitude included in every generated database (default).
 pub const DB_MAG_LIMIT: f32 = 6.5;
+/// Env override for [`DB_MAG_LIMIT`] — the B4 sweep knob. The effective value
+/// lands in the cache file names (`mag65`/`mag70`/…), so databases built at
+/// different depths coexist in one cache directory instead of clobbering the
+/// default set.
+const MAG_LIMIT_ENV: &str = "STARGLYPH_DB_MAG_LIMIT";
 /// Patterns per lattice field for the dense band.
 const DENSE_PATTERNS_PER_FIELD: u32 = 1200;
 /// Verification (and pattern-pool) stars per FOV for the dense band. Raising this
@@ -41,9 +46,10 @@ const DEFAULT_PM_YEAR: f64 = 2000.0;
 /// Which pattern database to build or load.
 #[derive(Debug, Clone, Copy, PartialEq)]
 pub enum DbKind {
-    /// Broad multiscale database (10–70°, mag 6.5, patterns/field 50).
+    /// Broad multiscale database (10–70°, mag ≤ [`db_mag_limit`], patterns/field 50).
     Bootstrap,
-    /// Narrow multiscale band tuned to a known FOV (mag 6.5, patterns/field 1200).
+    /// Narrow multiscale band tuned to a known FOV (mag ≤ [`db_mag_limit`],
+    /// patterns/field 1200).
     DenseBand { min_fov_deg: f32, max_fov_deg: f32 },
 }
 
@@ -81,9 +87,13 @@ impl DbKind {
         }
     }
 
-    /// Cache file name: `tetra3-{params}-mag65-{version}.bin`.
+    /// Cache file name: `tetra3-{params}-{mag}-{version}.bin` (e.g. `mag65`).
     fn cache_file_name(&self) -> String {
-        format!("tetra3-{}-mag65-{DB_VERSION_TAG}.bin", self.params_tag())
+        format!(
+            "tetra3-{}-{}-{DB_VERSION_TAG}.bin",
+            self.params_tag(),
+            mag_tag(db_mag_limit())
+        )
     }
 
     /// tetra3 generation config for this kind.
@@ -104,7 +114,7 @@ impl DbKind {
         GenerateDatabaseConfig {
             max_fov_deg: max_fov,
             min_fov_deg: Some(min_fov),
-            star_max_magnitude: Some(DB_MAG_LIMIT),
+            star_max_magnitude: Some(db_mag_limit()),
             pattern_max_error: pmax_err,
             lattice_field_oversampling: 100,
             patterns_per_lattice_field: ppf,
@@ -179,7 +189,7 @@ impl Engine {
     /// Build or load the database for `kind`, returning an `Engine` that holds it.
     ///
     /// If a cache file exists it is loaded; otherwise the database is generated
-    /// from `catalog` (stars up to magnitude 6.5) and written to `cache_dir`.
+    /// from `catalog` (stars up to [`db_mag_limit`]) and written to `cache_dir`.
     pub fn ensure(
         catalog: &Catalog,
         kind: DbKind,
@@ -275,12 +285,41 @@ impl Engine {
     }
 }
 
-/// Convert catalog stars (mag ≤ 6.5, finite) into tetra3 `Star`s.
+/// Effective database depth: [`MAG_LIMIT_ENV`] (validated) or [`DB_MAG_LIMIT`].
+/// Read once per process — sweeps run one eval process per magnitude.
+pub fn db_mag_limit() -> f32 {
+    static LIMIT: std::sync::OnceLock<f32> = std::sync::OnceLock::new();
+    *LIMIT.get_or_init(|| match std::env::var(MAG_LIMIT_ENV) {
+        Ok(raw) => parse_mag_limit(&raw).unwrap_or_else(|| {
+            eprintln!(
+                "[engine] ignoring invalid {MAG_LIMIT_ENV}='{raw}' \
+                 (want a number in [5.0, 9.0]); using {DB_MAG_LIMIT}"
+            );
+            DB_MAG_LIMIT
+        }),
+        Err(_) => DB_MAG_LIMIT,
+    })
+}
+
+/// Parse and validate a magnitude limit. Below 5 the bootstrap range starves;
+/// past 9 HYG completeness drops off and databases balloon for no gain.
+fn parse_mag_limit(raw: &str) -> Option<f32> {
+    let mag: f32 = raw.trim().parse().ok()?;
+    (5.0..=9.0).contains(&mag).then_some(mag)
+}
+
+/// `6.5 → "mag65"`: tenth-of-magnitude resolution keeps names filesystem-safe.
+fn mag_tag(mag: f32) -> String {
+    format!("mag{}", (mag * 10.0).round() as i32)
+}
+
+/// Convert catalog stars (mag ≤ [`db_mag_limit`], finite) into tetra3 `Star`s.
 fn build_star_list(catalog: &Catalog) -> Vec<T3Star> {
+    let mag_limit = db_mag_limit();
     catalog
         .stars()
         .iter()
-        .filter(|s| s.mag.is_finite() && s.mag <= DB_MAG_LIMIT)
+        .filter(|s| s.mag.is_finite() && s.mag <= mag_limit)
         .map(|s| T3Star {
             id: i64::from(s.id),
             ra_rad: s.ra_deg.to_radians() as f32,
@@ -384,5 +423,22 @@ mod tests {
         .generate_config();
         assert_eq!(dense.patterns_per_lattice_field, 1200);
         assert_eq!(dense.min_fov_deg, Some(16.0));
+    }
+
+    #[test]
+    fn mag_tags_are_filesystem_safe_and_distinct() {
+        assert_eq!(mag_tag(6.5), "mag65");
+        assert_eq!(mag_tag(7.0), "mag70");
+        assert_eq!(mag_tag(7.5), "mag75");
+    }
+
+    #[test]
+    fn mag_limit_parsing_validates_the_sane_band() {
+        assert_eq!(parse_mag_limit("7.0"), Some(7.0));
+        assert_eq!(parse_mag_limit(" 6.5 "), Some(6.5));
+        assert_eq!(parse_mag_limit("4.9"), None, "starves the bootstrap range");
+        assert_eq!(parse_mag_limit("9.5"), None, "beyond HYG completeness");
+        assert_eq!(parse_mag_limit("abc"), None);
+        assert_eq!(parse_mag_limit(""), None);
     }
 }
