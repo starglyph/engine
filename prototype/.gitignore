@@ -1,6 +1,2 @@
 /target
-/artifacts/simulator
-/artifacts/cache
-/artifacts/cache-mag-sweep
-/artifacts/batch
-/artifacts/eval
+/artifacts/
