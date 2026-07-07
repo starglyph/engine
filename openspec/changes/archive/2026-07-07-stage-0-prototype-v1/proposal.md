@@ -1,6 +1,6 @@
 ## Why
 
-Stage 0 prototype work (B1–B5 partial, C1, C3, D1) was executed outside OpenSpec via the private `planning` repo. The implementation in `prototype/crates/starglyph-core` and `starglyph-serve` has outpaced the archived phase-1/2 specs. This change retroactively documents the shipped prototype capabilities so OpenSpec main specs match the code.
+Stage 0 prototype work (B1–B5 partial, C1, C3, D1) was implemented in `prototype/crates/starglyph-core` and `starglyph-serve` ahead of the archived phase-1/2 OpenSpec changes. This change retroactively documents the shipped prototype capabilities so OpenSpec main specs match the code.
 
 ## What Changes
 
@@ -29,4 +29,4 @@ Stage 0 prototype work (B1–B5 partial, C1, C3, D1) was executed outside OpenSp
 
 - `openspec/specs/` becomes the authoritative requirement set for the prototype solver stack.
 - No code changes required — documentation-only sync.
-- Strategic backlog (`planning/stage-0-backlog.md`) remains the execution tracker; OpenSpec tracks *what the code does*.
+- OpenSpec tracks *what the code does*; product backlog and strategy are maintained outside this repository.

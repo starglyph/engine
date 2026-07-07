@@ -18,12 +18,12 @@ The prototype solver lives in `starglyph-core` (library) and `starglyph-serve` (
 
 ## Risks / Trade-offs
 
-- Specs may drift again if Stage 0 remainder (B5 k2, B6 stacking, E1) continues via `planning` only → mitigate by requiring OpenSpec changes for new engine capabilities.
-- Public repo means all synced specs are Apache 2.0 → strategic content stays in private `planning`.
+- Specs may drift if new engine work ships without an OpenSpec change → mitigate by requiring OpenSpec changes for new capabilities.
+- All specs in this public repository are Apache 2.0 — keep strategic and product-only content out of `openspec/`.
 
-## OpenSpec ↔ Planning boundary
+## Documentation boundary
 
 | Layer | Location | Content |
 |-------|----------|---------|
-| Strategy / backlog | `starglyph/planning` (private) | Epics, gates, blockers, task briefs |
-| Engine requirements | `engine/openspec/specs` (public) | Capability requirements aligned with code |
+| Product / backlog | outside this repo | Epics, gates, blockers (not referenced in public docs) |
+| Engine requirements | `openspec/specs/` | Capability requirements aligned with code |
