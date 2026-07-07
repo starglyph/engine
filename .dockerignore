@@ -1,0 +1,11 @@
+# Keep the build context lean: only prototype/ sources and the committed
+# catalog/constellation data are COPY'd; everything heavy stays out.
+.git
+docs
+data/input
+data/samples
+data/catalogs/hyg_v3.csv
+prototype/target
+prototype/artifacts
+prototype/apps/desktop/node_modules
+Dockerfile
