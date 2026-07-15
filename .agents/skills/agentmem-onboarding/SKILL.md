@@ -59,6 +59,7 @@ fails with an unknown slug, read the error's list of valid values and retry once
 |--------------|-------------------|------------|--------------|-----------|
 | Web app | `web-app` | `web-app` | `important` | One-line product summary |
 | Desktop app | `desktop-app` | `desktop-app` | `important` | Platform + UI stack |
+| Mobile app | `mobile-app` | `mobile-app` | `important` | Platform + UI stack |
 | CLI tool | `devtool` | `devtool` | `normal` | What the CLI does |
 | Library / package | `library` | `library` | `normal` | Package purpose + language |
 | Backend service | `infrastructure` | `infrastructure` | `important` | Service role + runtime |
