@@ -1,16 +1,19 @@
-version: 3
+version: 4
 hub:
     repo: https://github.com/muonsoft/skills.git
     ref: main
-    commit: 0417bb62bf8b5e18fdbc92ec7e1689b80b786673
+    commit: 3261575c5b6926dc943625e6890749aa95f49ba3
 preset: experimental
 include:
     - id: rust-skills
     - id: ui-ux-pro-max
     - id: web-static-frontend
     - id: modern-web-guidance
-target_path: .agents/skills
-selected_paths:
+providers:
+    - claude
+    - codex
+    - cursor
+selected_packages:
     - agent-memory-usage
     - agentmem-onboarding
     - banner-design
@@ -23,43 +26,190 @@ selected_paths:
     - mcp-tool-input-schema
     - modern-web-guidance
     - rust-skills
+    - skill-authoring
     - slides
     - task-delegation
     - ui-styling
     - ui-ux-pro-max
     - web-static-frontend
-skills:
+packages:
     agent-memory-usage:
-        upstream_hash: sha256:ad73f95434d1de4f2cd1abbf93865f61a6ff4eb9f0f2d02f6e3f7d92da1360f4
+        hub_path: devtools/agent-memory-usage
+        upstream_hash: sha256:78d0a36fb2d7bdf1341dcd977332a2af077d6a65122a6216ef498d2b6e78060c
+        artifacts:
+            - id: skill
+              kind: skill
+              mode: tree
+              src: .
+              dest: .agents/skills/agent-memory-usage
+              installed_hash: sha256:78d0a36fb2d7bdf1341dcd977332a2af077d6a65122a6216ef498d2b6e78060c
     agentmem-onboarding:
-        upstream_hash: sha256:54d2e1681d8b076b308c7f3651cfda4d3eae1ba2e8e11b0c3fd21957b5864940
+        hub_path: devtools/agentmem-onboarding
+        upstream_hash: sha256:ffe3203eac7725247536cd61ae569ba2a2daffabcf85fdfc947473dd90896798
+        artifacts:
+            - id: skill
+              kind: skill
+              mode: tree
+              src: .
+              dest: .agents/skills/agentmem-onboarding
+              installed_hash: sha256:ffe3203eac7725247536cd61ae569ba2a2daffabcf85fdfc947473dd90896798
     banner-design:
-        upstream_hash: sha256:1177010a0d04ccc290b7edd6af1f2d50e935fb0446dcac7b4755fbe1f6057fa4
+        hub_path: frontend/design/banner-design
+        upstream_hash: sha256:8eaffdff06bd5fca67554fed470ea2472299e9fc4afa6393b4ebcbd9d809e8e5
+        artifacts:
+            - id: skill
+              kind: skill
+              mode: tree
+              src: .
+              dest: .agents/skills/banner-design
+              installed_hash: sha256:8eaffdff06bd5fca67554fed470ea2472299e9fc4afa6393b4ebcbd9d809e8e5
     brand:
-        upstream_hash: sha256:2306f9b0c0998b0fe8852f1a0e5c95cf862e118bedb7ded02d13d08116872ee0
+        hub_path: frontend/design/brand
+        upstream_hash: sha256:c8147a97089bb75c27c31155ab38fe764f176d72ac7abd714626a99c13ee301e
+        artifacts:
+            - id: skill
+              kind: skill
+              mode: tree
+              src: .
+              dest: .agents/skills/brand
+              installed_hash: sha256:c8147a97089bb75c27c31155ab38fe764f176d72ac7abd714626a99c13ee301e
     closeout:
-        upstream_hash: sha256:6457b351aa4e6d3a922bd2d6cf66fa4cec35fa72124bb4963802316aa31ee180
+        hub_path: devtools/closeout
+        upstream_hash: sha256:5a27c7df3ffe03131b5a986696d097a562dc54e2a16542dfe0139fcd18474a87
+        artifacts:
+            - id: skill
+              kind: skill
+              mode: tree
+              src: .
+              dest: .agents/skills/closeout
+              installed_hash: sha256:5a27c7df3ffe03131b5a986696d097a562dc54e2a16542dfe0139fcd18474a87
     database-migrations:
-        upstream_hash: sha256:118ce23f4e0e7ccea54c898798d1678dc05e2b9127ad3b44a863be9a59f8bd57
+        hub_path: databases/database-migrations
+        upstream_hash: sha256:f22b97a00e2ebd47d4c5242304a4dfa7cdbc6844b5e661e816f4bc4e9ee0fe27
+        artifacts:
+            - id: skill
+              kind: skill
+              mode: tree
+              src: .
+              dest: .agents/skills/database-migrations
+              installed_hash: sha256:f22b97a00e2ebd47d4c5242304a4dfa7cdbc6844b5e661e816f4bc4e9ee0fe27
     design:
-        upstream_hash: sha256:a297d99f681ecda7194135b109e81ebd4ed1edf5fd31439511f2c0743fa7e00a
+        hub_path: frontend/design/design
+        upstream_hash: sha256:abf12bf2bcfb2cf73106808e106b9706b193bda419bb9ea884d4c6279d821a59
+        artifacts:
+            - id: skill
+              kind: skill
+              mode: tree
+              src: .
+              dest: .agents/skills/design
+              installed_hash: sha256:abf12bf2bcfb2cf73106808e106b9706b193bda419bb9ea884d4c6279d821a59
     design-system:
-        upstream_hash: sha256:0e932aef72b09d7bbff9868dbd81828cb34746e57181a48c986b9be9e7041742
+        hub_path: frontend/design/design-system
+        upstream_hash: sha256:6b6848e27394d51319aa26b6339a7e6aa3e9dd6c9c3c6d1dc6d7d7b1583715a8
+        artifacts:
+            - id: skill
+              kind: skill
+              mode: tree
+              src: .
+              dest: .agents/skills/design-system
+              installed_hash: sha256:6b6848e27394d51319aa26b6339a7e6aa3e9dd6c9c3c6d1dc6d7d7b1583715a8
     improve:
-        upstream_hash: sha256:1a40d27e3ae48041a701c198234c5e60a6586a0992693d737f161af982f1b0cd
+        hub_path: frontend/design/improve
+        upstream_hash: sha256:20fe2dad0e22ab6409aece8a1222408ecbd81ac80279110016573ef5bdddc9fc
+        artifacts:
+            - id: skill
+              kind: skill
+              mode: tree
+              src: .
+              dest: .agents/skills/improve
+              installed_hash: sha256:20fe2dad0e22ab6409aece8a1222408ecbd81ac80279110016573ef5bdddc9fc
     mcp-tool-input-schema:
-        upstream_hash: sha256:313b1ce465ff6894ac82292d194155846c27b4fadab89e1b71899acdb65ad452
+        hub_path: integration/mcp-tool-input-schema
+        upstream_hash: sha256:557f6ec7f118bd436d12a443bde3be17aa0201209ff1140630e53c4824d43c3f
+        artifacts:
+            - id: skill
+              kind: skill
+              mode: tree
+              src: .
+              dest: .agents/skills/mcp-tool-input-schema
+              installed_hash: sha256:557f6ec7f118bd436d12a443bde3be17aa0201209ff1140630e53c4824d43c3f
     modern-web-guidance:
-        upstream_hash: sha256:6919dab483514c10226ebad4b446b3ce1cc38f6a9339b5fd35552a9b06b05553
+        hub_path: frontend/web/modern-web-guidance
+        upstream_hash: sha256:ad754389a1f7d6ca8e9e08119c1738305448327ad85447e3e6b81fbbc321136e
+        artifacts:
+            - id: skill
+              kind: skill
+              mode: tree
+              src: .
+              dest: .agents/skills/modern-web-guidance
+              installed_hash: sha256:ad754389a1f7d6ca8e9e08119c1738305448327ad85447e3e6b81fbbc321136e
     rust-skills:
-        upstream_hash: sha256:1113ca93f8bc715820348509c5d388027771adf9bc6f11008fe727bd0a267a5e
+        hub_path: languages/rust/rust-skills
+        upstream_hash: sha256:55af41748010d6ed728cce540e086bd47dc2fa4a88fb2e7cc606f9f4d001cfdd
+        artifacts:
+            - id: skill
+              kind: skill
+              mode: tree
+              src: .
+              dest: .agents/skills/rust-skills
+              installed_hash: sha256:55af41748010d6ed728cce540e086bd47dc2fa4a88fb2e7cc606f9f4d001cfdd
+    skill-authoring:
+        hub_path: devtools/skill-authoring
+        upstream_hash: sha256:c9c83732555c674095cf70d291810513c98c42436115955ae95a494c4fddc265
+        artifacts:
+            - id: skill
+              kind: skill
+              mode: tree
+              src: .
+              dest: .agents/skills/skill-authoring
+              installed_hash: sha256:c9c83732555c674095cf70d291810513c98c42436115955ae95a494c4fddc265
     slides:
-        upstream_hash: sha256:c8476d4e9f23cb39a87a053ecfc4cb62aaa7697d366a438107686ba467ad2e65
+        hub_path: frontend/design/slides
+        upstream_hash: sha256:cf265eda682febc515b73ec146b264c37e38efb27b8b9442c5246ebde84cb55b
+        artifacts:
+            - id: skill
+              kind: skill
+              mode: tree
+              src: .
+              dest: .agents/skills/slides
+              installed_hash: sha256:cf265eda682febc515b73ec146b264c37e38efb27b8b9442c5246ebde84cb55b
     task-delegation:
-        upstream_hash: sha256:c54da2806cfa9e85461f679eaad120b029b82ea501005923b3b695d70e2eedaf
+        hub_path: devtools/task-delegation
+        upstream_hash: sha256:66fe4e4ab7ce0b7e86261ec208ccbb119256e263df07e6379cbd39c8c08431ad
+        artifacts:
+            - id: skill
+              kind: skill
+              mode: tree
+              src: .
+              dest: .agents/skills/task-delegation
+              installed_hash: sha256:66fe4e4ab7ce0b7e86261ec208ccbb119256e263df07e6379cbd39c8c08431ad
     ui-styling:
-        upstream_hash: sha256:d17d754f5f37144d1a78096bb389f09d0aefdd7b202823746f6a25433548d5dc
+        hub_path: frontend/design/ui-styling
+        upstream_hash: sha256:0f5f1dfb5b62c2eb5e14046583e703f453a516f66f7d0f5620bb70f6e38e64b1
+        artifacts:
+            - id: skill
+              kind: skill
+              mode: tree
+              src: .
+              dest: .agents/skills/ui-styling
+              installed_hash: sha256:0f5f1dfb5b62c2eb5e14046583e703f453a516f66f7d0f5620bb70f6e38e64b1
     ui-ux-pro-max:
-        upstream_hash: sha256:d793d7740063f535595e2bc4b4b26fe7cd5ed6543982ce8a8be8a7ae5af3b724
+        hub_path: frontend/design/ui-ux-pro-max
+        upstream_hash: sha256:845bd0a1875a683db344ca2f3bc44c7859c79553e92bed06996ebd6ea5e40c67
+        artifacts:
+            - id: skill
+              kind: skill
+              mode: tree
+              src: .
+              dest: .agents/skills/ui-ux-pro-max
+              installed_hash: sha256:845bd0a1875a683db344ca2f3bc44c7859c79553e92bed06996ebd6ea5e40c67
     web-static-frontend:
-        upstream_hash: sha256:87f308edc1270d25cf4ee0621e055f1c1f983609f019a8e9ee1af7fd5500bb56
+        hub_path: frontend/web/web-static-frontend
+        upstream_hash: sha256:442d2be25eede4bb75e16859818c39461665772559198cb814047b0fe80ccbe8
+        artifacts:
+            - id: skill
+              kind: skill
+              mode: tree
+              src: .
+              dest: .agents/skills/web-static-frontend
+              installed_hash: sha256:442d2be25eede4bb75e16859818c39461665772559198cb814047b0fe80ccbe8
