@@ -42,6 +42,7 @@ Admin or operator UI served as static HTML:
 - Show connection state (connected / reconnecting / error) for each integration.
 - Link to OAuth or setup URLs when the backend exposes them.
 - Keep layout usable at desktop widths (~1280px); avoid marketing chrome.
+- Height-capped dialogs, drawers, and split panes: follow [web-constrained-layout](../web-constrained-layout/SKILL.md). Do not clip overflowing chrome with `overflow: hidden` unless a descendant can scroll.
 
 ## JavaScript style
 
@@ -57,6 +58,7 @@ Admin or operator UI served as static HTML:
 ## Related
 
 - Forms: [ux-form-practices](../../ux/ux-form-practices/SKILL.md)
+- Capped overlays and split panes: [web-constrained-layout](../web-constrained-layout/SKILL.md)
 - API shape: [api-conventions](../../../backend/go/api-conventions/SKILL.md)
 
 ## Checklist
@@ -66,3 +68,4 @@ Admin or operator UI served as static HTML:
 - [ ] Message limit and TTL behavior documented
 - [ ] XSS-safe text rendering
 - [ ] API field names snake_case
+- [ ] Capped overlays follow `web-constrained-layout` (scroll the body, do not clip)
