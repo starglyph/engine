@@ -28,6 +28,12 @@
 - Продуктовый бэклог и стратегические заметки ведутся вне этого репозитория; здесь документировать только код, публичные спецификации (`openspec/specs/`) и материалы в `docs/`.
 - OpenSpec в `openspec/` описывает **требования к реализации** в этом репозитории; не ссылаться на внешние трекеры задач и закрытые документы.
 
+## Агентские workflows
+
+- Управляемые скиллы находятся в `.agents/skills/`; их версии и источник зафиксированы в `skills.lock.yaml`.
+- Для недостаточно определённых задач сначала использовать `work-intake`.
+- `codex-orchestration` использовать только по явному запросу на оркестрацию Codex; для OpenSpec changes соблюдать выбранный хост и его каноническое хранилище артефактов.
+
 <!-- agentmem:closeout:start -->
 This repository is registered in agentmem as `starglyph/engine`.
 Run `@closeout for starglyph/engine` after non-trivial work (skill: `.agents/skills/closeout/SKILL.md`).

@@ -2,7 +2,7 @@ version: 4
 hub:
     repo: https://github.com/muonsoft/skills.git
     ref: main
-    commit: 3261575c5b6926dc943625e6890749aa95f49ba3
+    commit: bb97a06ed3b49e14a83ae3e87d2be5124c1da597
 preset: experimental
 include:
     - id: rust-skills
@@ -19,6 +19,7 @@ selected_packages:
     - banner-design
     - brand
     - closeout
+    - codex-orchestration
     - database-migrations
     - design
     - design-system
@@ -32,6 +33,7 @@ selected_packages:
     - ui-styling
     - ui-ux-pro-max
     - web-static-frontend
+    - work-intake
 packages:
     agent-memory-usage:
         hub_path: devtools/agent-memory-usage
@@ -83,6 +85,16 @@ packages:
               src: .
               dest: .agents/skills/closeout
               installed_hash: sha256:5a27c7df3ffe03131b5a986696d097a562dc54e2a16542dfe0139fcd18474a87
+    codex-orchestration:
+        hub_path: process/codex-orchestration
+        upstream_hash: sha256:85f8d5f1885821408d7dade68485ffe685cabfdd1e42231ea0e5405a09a3fb31
+        artifacts:
+            - id: skill
+              kind: skill
+              mode: tree
+              src: .
+              dest: .agents/skills/codex-orchestration
+              installed_hash: sha256:85f8d5f1885821408d7dade68485ffe685cabfdd1e42231ea0e5405a09a3fb31
     database-migrations:
         hub_path: databases/database-migrations
         upstream_hash: sha256:f22b97a00e2ebd47d4c5242304a4dfa7cdbc6844b5e661e816f4bc4e9ee0fe27
@@ -175,14 +187,14 @@ packages:
               installed_hash: sha256:cf265eda682febc515b73ec146b264c37e38efb27b8b9442c5246ebde84cb55b
     task-delegation:
         hub_path: devtools/task-delegation
-        upstream_hash: sha256:66fe4e4ab7ce0b7e86261ec208ccbb119256e263df07e6379cbd39c8c08431ad
+        upstream_hash: sha256:48ce6d31dc71188a9ecd65dd2db53fd3080662bec2980680c49df49d490f755f
         artifacts:
             - id: skill
               kind: skill
               mode: tree
               src: .
               dest: .agents/skills/task-delegation
-              installed_hash: sha256:66fe4e4ab7ce0b7e86261ec208ccbb119256e263df07e6379cbd39c8c08431ad
+              installed_hash: sha256:48ce6d31dc71188a9ecd65dd2db53fd3080662bec2980680c49df49d490f755f
     ui-styling:
         hub_path: frontend/design/ui-styling
         upstream_hash: sha256:0f5f1dfb5b62c2eb5e14046583e703f453a516f66f7d0f5620bb70f6e38e64b1
@@ -213,3 +225,13 @@ packages:
               src: .
               dest: .agents/skills/web-static-frontend
               installed_hash: sha256:442d2be25eede4bb75e16859818c39461665772559198cb814047b0fe80ccbe8
+    work-intake:
+        hub_path: process/work-intake
+        upstream_hash: sha256:771dece6998a5f85a18b77f56930ddadc6eb9400117e10002192439c23356bc9
+        artifacts:
+            - id: skill
+              kind: skill
+              mode: tree
+              src: .
+              dest: .agents/skills/work-intake
+              installed_hash: sha256:771dece6998a5f85a18b77f56930ddadc6eb9400117e10002192439c23356bc9
