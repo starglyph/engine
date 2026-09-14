@@ -4,6 +4,7 @@ use std::path::Path;
 
 use anyhow::{bail, Context, Result};
 use serde::{Deserialize, Serialize};
+use sha2::{Digest, Sha256};
 use starglyph_core::contracts::SolveStatus;
 use starglyph_core::engine::{DbKind, Engine};
 use starglyph_core::eval::{
@@ -611,6 +612,9 @@ pub fn run_eval(args: EvalArgs<'_>) -> Result<EvalOutcome> {
     let per_frame_dir = args.out_dir.join("per-frame");
     fs::create_dir_all(&per_frame_dir)
         .with_context(|| format!("failed to create '{}'", per_frame_dir.display()))?;
+    let reports_dir = args.out_dir.join("solve-reports");
+    fs::create_dir_all(&reports_dir)
+        .with_context(|| format!("failed to create '{}'", reports_dir.display()))?;
     let worst_dir = args.out_dir.join("worst-cases");
     fs::create_dir_all(&worst_dir)
         .with_context(|| format!("failed to create '{}'", worst_dir.display()))?;
@@ -627,6 +631,12 @@ pub fn run_eval(args: EvalArgs<'_>) -> Result<EvalOutcome> {
 
     let mut frames: Vec<FrameRecord> = Vec::new();
     for entry in entries {
+        let report_path = reports_dir.join(format!("{}.json", entry.id));
+        match fs::remove_file(&report_path) {
+            Ok(()) => {}
+            Err(e) if e.kind() == std::io::ErrorKind::NotFound => {}
+            Err(e) => return Err(e).context("failed to remove previous solve report"),
+        }
         let image_path = manifest_dir.join(&entry.file);
         if !image_path.is_file() {
             let rec = FrameRecord {
@@ -648,8 +658,23 @@ pub fn run_eval(args: EvalArgs<'_>) -> Result<EvalOutcome> {
             continue;
         }
 
-        let frame = match FrameImage::load(&image_path) {
-            Ok(f) => f,
+        // Hash the exact bytes decoded below, so a reference cannot silently be
+        // compared with a different revision of the same image filename.
+        let load = || -> Result<(FrameImage, String)> {
+            let image_bytes = fs::read(&image_path)
+                .with_context(|| format!("failed to read '{}'", image_path.display()))?;
+            let source_sha256 = format!("{:x}", Sha256::digest(&image_bytes));
+            let source_name = image_path
+                .file_stem()
+                .and_then(|stem| stem.to_str())
+                .context("image filename must have a UTF-8 stem")?;
+            Ok((
+                FrameImage::from_bytes(&image_bytes, source_name)?,
+                source_sha256,
+            ))
+        };
+        let (frame, source_sha256) = match load() {
+            Ok(loaded) => loaded,
             Err(e) => {
                 eprintln!("[eval] {}: load_error ({e})", entry.id);
                 frames.push(FrameRecord {
@@ -706,8 +731,27 @@ pub fn run_eval(args: EvalArgs<'_>) -> Result<EvalOutcome> {
             allow_exif_hints: !args.no_exif,
         };
         let mut stage = |_s: SolveStage| {};
-        let (report, _extras) =
+        let (report, extras) =
             solve_frame_with_engine(&frame, &catalog, &cons, &mut engine, &opts, &mut stage);
+
+        let camera = extras.camera.as_ref().map(|c| {
+            let rotation = c.rotation();
+            let rows: Vec<Vec<f64>> = (0..3)
+                .map(|i| (0..3).map(|j| rotation[(i, j)]).collect())
+                .collect();
+            serde_json::json!({
+                "world_to_camera": rows, "focal_px": c.focal_px, "k1": c.k1,
+                "width": c.width, "height": c.height,
+            })
+        });
+        let artifact = serde_json::json!({
+            "id": entry.id, "source_sha256": source_sha256,
+            "width": frame.width, "height": frame.height,
+            "pixel_convention": "top_left_zero_based",
+            "report": report, "camera": camera,
+        });
+        fs::write(&report_path, serde_json::to_string_pretty(&artifact)?)
+            .with_context(|| format!("failed to write '{}'", report_path.display()))?;
 
         let ms = report.timing_ms.as_ref().map(|t| t.total).unwrap_or(0);
         let status = if report.status == SolveStatus::Solved {

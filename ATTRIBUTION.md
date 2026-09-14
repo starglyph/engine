@@ -24,9 +24,13 @@ This project uses third-party astronomical datasets.
 - **Dataset:** Acceptance frames in `data/input/` (real sky photographs)
 - **Source:** Original photography by the project author
 - **Rights holder:** Igor Lazarev
+- **Smartphone series:** 17 original photographs taken by the project author on
+  2026-08-29 and 2026-08-31; see [`data/input/smartphone/README.md`](data/input/smartphone/README.md)
+  and its manifest for provenance and checksums.
 - **License:** `CC BY 4.0`
 - **Attribution text (template):**
   - "Contains real sky photographs by Igor Lazarev (Starglyph project), used under CC BY 4.0."
+  - Smartphone series: "Photographs © 2026 Igor Lazarev (Starglyph project), licensed under CC BY 4.0."
 - **Provenance / policy:** [`data/input/README.md`](data/input/README.md),
   [`docs/data-sources.md`](docs/data-sources.md)
 

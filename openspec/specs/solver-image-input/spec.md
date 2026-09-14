@@ -6,6 +6,16 @@ Load real photo frames (PNG, JPEG, BMP, TIFF) into a normalized grayscale repres
 
 ## Requirements
 
+### Requirement: Normalize image orientation before solving
+The system SHALL apply valid EXIF Orientation transforms before reporting dimensions,
+deriving dimension-dependent FOV hints, detecting stars or displaying the image.
+Missing or invalid orientation SHALL preserve the decoded row order.
+
+#### Scenario: A phone portrait is encoded as landscape pixels
+- **WHEN** a 4000 by 2252 image has EXIF Orientation 6
+- **THEN** the loaded frame is rotated clockwise and reports 2252 by 4000 pixels
+- **AND** detections and overlays use that same displayed coordinate system
+
 ### Requirement: Frame loader supports common photo formats
 The system SHALL decode PNG, JPEG, BMP, and TIFF images into an 8-bit-normalized grayscale [`FrameImage`] suitable for detection.
 

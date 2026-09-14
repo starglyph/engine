@@ -6,6 +6,25 @@ Match detected star patterns against a tetra3 pattern database built from the HY
 
 ## Requirements
 
+### Requirement: Large frames support bounded working images
+The solver SHALL try a working image with longest edge at most 1600 pixels before
+retrying at original resolution. It SHALL NOT upscale smaller inputs. Reports and
+cached overlay cameras SHALL use the full EXIF-oriented image coordinates, and RMS
+SHALL be expressed in those pixels. Rescaling SHALL NOT increase match confidence.
+
+#### Scenario: The working image cannot be solved
+- **WHEN** matching the reduced frame fails
+- **THEN** the original frame is also attempted before returning failure
+
+#### Scenario: Automatic EXIF FOV is misleading
+- **WHEN** an EXIF-derived FOV hint yields no accepted solution
+- **THEN** the solver retries without that automatic FOV hint
+- **AND** explicit caller hints and the acquisition epoch remain unchanged
+
+#### Scenario: A different photo is opened in the desktop app
+- **WHEN** a new image is loaded after a successful solve
+- **THEN** the previous image's inferred FOV is cleared
+
 ### Requirement: Solver matches detected patterns to catalog hypotheses
 The system SHALL generate catalog match hypotheses from detected stars using a tetra3 pattern-matching algorithm backed by on-disk pattern databases.
 

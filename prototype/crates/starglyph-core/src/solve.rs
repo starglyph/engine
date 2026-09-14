@@ -52,6 +52,8 @@ const CONFIDENCE_FULL_LOG_ODDS: f64 = 40.0;
 /// Default FOV (degrees) assumed for the dense-band fallback when nothing else
 /// is known — the narrow-field regime the dense band exists to crack.
 pub const DEFAULT_BLIND_FOV_DEG: f32 = 22.0;
+/// Large consumer photos are tried at this working size before full resolution.
+const WORKING_MAX_EDGE: u32 = 1600;
 /// Dense-band centers tried in order when solving fully blind (no FOV hint,
 /// no usable EXIF). Together the generated bands cover ≈16–88°: the narrow
 /// analog regime first (the historical workhorse), then the compact/DSLR
@@ -190,6 +192,63 @@ pub fn solve_frame_with_engine(
     opts: &SolveOptions,
     progress: &mut dyn FnMut(SolveStage),
 ) -> (SolveReport, SolveExtras) {
+    let start = Instant::now();
+    let working = frame.resized(WORKING_MAX_EDGE);
+    let mut detect_ms = 0;
+    let mut solve_ms = 0;
+    let mut last = None;
+    for current in working.iter().chain(std::iter::once(frame)) {
+        let auto_hint = opts.allow_exif_hints
+            && opts.fov_hint_deg.is_none()
+            && current.exif_fov_deg().is_some();
+        for use_exif_fov in [true, false]
+            .into_iter()
+            .take(if auto_hint { 2 } else { 1 })
+        {
+            let (mut report, extras) = solve_single_scale(
+                current,
+                frame,
+                catalog,
+                cons,
+                engine,
+                opts,
+                use_exif_fov,
+                progress,
+            );
+            if let Some(timing) = &report.timing_ms {
+                detect_ms += timing.detect;
+                solve_ms += timing.solve;
+            }
+            report.timing_ms = Some(SolveTimingMs {
+                detect: detect_ms,
+                solve: solve_ms,
+                total: start.elapsed().as_millis() as u64,
+            });
+            if report.status == SolveStatus::Solved
+                || report
+                    .failure
+                    .as_ref()
+                    .is_some_and(|f| f.code == "index_error")
+            {
+                return (report, extras);
+            }
+            last = Some((report, extras));
+        }
+    }
+    last.expect("the original frame is always attempted")
+}
+
+#[allow(clippy::too_many_arguments)]
+fn solve_single_scale(
+    frame: &FrameImage,
+    original: &FrameImage,
+    catalog: &Catalog,
+    cons: &ConstellationSet,
+    engine: &mut Engine,
+    opts: &SolveOptions,
+    use_exif_fov: bool,
+    progress: &mut dyn FnMut(SolveStage),
+) -> (SolveReport, SolveExtras) {
     let debug = std::env::var_os("STARGLYPH_SOLVE_DEBUG").is_some();
     let t_start = Instant::now();
     let no_extras = SolveExtras {
@@ -200,7 +259,11 @@ pub fn solve_frame_with_engine(
 
     // Fill hints the caller left open from frame metadata (B1: EXIF FOV/epoch).
     let explicit_hint = opts.fov_hint_deg.is_some();
-    let opts = &opts.resolved_for(frame);
+    let opts = &if use_exif_fov {
+        opts.resolved_for(frame)
+    } else {
+        opts.clone()
+    };
     if debug {
         if let Some(fov) = opts.fov_hint_deg {
             let source = if explicit_hint { "explicit" } else { "exif" };
@@ -335,7 +398,7 @@ pub fn solve_frame_with_engine(
         });
         return (report, no_extras);
     };
-    let detections = if used_deep {
+    let mut detections = if used_deep {
         deep_detections
     } else {
         default_detections
@@ -356,7 +419,44 @@ pub fn solve_frame_with_engine(
             }
         }
     }
-    let final_match = match_predictions(&refined, &verify, &detections, FINAL_RADIUS_PX);
+    let mut final_match = match_predictions(&refined, &verify, &detections, FINAL_RADIUS_PX);
+    if (width, height) != (original.width, original.height) {
+        // Refit verified correspondences in original pixel coordinates. This
+        // accounts for half-pixel sampling offsets and rounded resize dimensions;
+        // simply multiplying overlay coordinates would disagree with recompute.
+        let sx = f64::from(original.width) / f64::from(width);
+        let sy = f64::from(original.height) / f64::from(height);
+        for d in &mut detections {
+            d.x = (d.x + 0.5) * sx - 0.5;
+            d.y = (d.y + 0.5) * sy - 0.5;
+        }
+        let lifted: Vec<Match> = final_match
+            .matches
+            .iter()
+            .map(|m| Match {
+                world: m.world,
+                px: (m.px + 0.5) * sx - 0.5,
+                py: (m.py + 0.5) * sy - 0.5,
+            })
+            .collect();
+        refined.width = original.width;
+        refined.height = original.height;
+        refined.focal_px *= sx;
+        refined = refine_pose_with_scale(&refined, &lifted, sx.max(sy));
+        final_match =
+            match_predictions(&refined, &verify, &detections, FINAL_RADIUS_PX * sx.max(sy));
+        if final_match.hits < VERIFY_MIN_HITS {
+            return (
+                SolveReport::failed(
+                    "no_confident_match",
+                    "insufficient verified stars after mapping to original pixels",
+                ),
+                no_extras,
+            );
+        }
+    }
+    // Confidence remains calibrated in working-image pixels and verification
+    // radii; changing the reporting scale must not inflate the evidence.
     let final_log_odds = log_odds_stats(final_match.hits, detections.len(), width, height);
     let solve_ms = t_solve.elapsed().as_millis() as u64;
 
@@ -958,9 +1058,17 @@ fn log_odds_stats(hits: u32, n_det: usize, width: u32, height: u32) -> f64 {
 
 /// Refine {ra, dec, roll, focal, k1} minimizing pixel reprojection residuals.
 fn refine_pose(initial: &CameraSolution, matches: &[Match]) -> CameraSolution {
+    refine_pose_with_scale(initial, matches, 1.0)
+}
+
+fn refine_pose_with_scale(
+    initial: &CameraSolution,
+    matches: &[Match],
+    scale: f64,
+) -> CameraSolution {
     let free_k1 = matches.len() >= 8;
     let dim = if free_k1 { 5 } else { 4 };
-    let k1_weight = k1_reg_weight(initial.fov_x_deg());
+    let k1_weight = k1_reg_weight(initial.fov_x_deg()) * scale;
     let mut params = vec![
         initial.ra_deg,
         initial.dec_deg,
@@ -1471,6 +1579,28 @@ mod tests {
             height: 576,
         };
         let refined = refine_pose(&start, &matches);
+        // The same physical constraints in a larger pixel grid must preserve
+        // the distortion prior and pose; otherwise resizing changes the fit
+        // purely through the units used by the reporting path.
+        let scale = 3.0;
+        let mut large_start = start.clone();
+        large_start.width *= 3;
+        large_start.height *= 3;
+        large_start.focal_px *= scale;
+        let large_matches: Vec<Match> = matches
+            .iter()
+            .map(|m| Match {
+                world: m.world,
+                px: m.px * scale,
+                py: m.py * scale,
+            })
+            .collect();
+        let large = refine_pose_with_scale(&large_start, &large_matches, scale);
+        assert!((large.ra_deg - refined.ra_deg).abs() < 1e-4);
+        assert!((large.dec_deg - refined.dec_deg).abs() < 1e-4);
+        assert!((large.roll_deg - refined.roll_deg).abs() < 1e-4);
+        assert!((large.k1 - refined.k1).abs() < 1e-4);
+        assert!((large.focal_px / scale - refined.focal_px).abs() < 0.01);
         assert!(
             (refined.ra_deg - truth.ra_deg).abs() < 0.05,
             "ra {}",
