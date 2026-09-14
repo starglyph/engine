@@ -219,7 +219,7 @@ Use the profile schema and the outer orchestrator selected by the user or
 project:
 
 - **cursor-orchestration** for the Cursor-native Grok + Composer workflow;
-- **codex-orchestration** for the Codex-native Sol + Terra workflow;
+- **codex-orchestration** for the Codex-native session-model parent + Terra workflow;
 - **change-orchestration** for a Codex/Claude parent with Cursor workers.
 
 An explicit invocation of any of these orchestration skills confirms its full
