@@ -1,46 +1,46 @@
-# Инструкции для агентов (AGENTS)
+# Agent Instructions (AGENTS)
 
-Репозиторий **starglyph** — симулятор звёздного неба и распознаватель снимков с визуализацией созвездий и объектов. Код находится в Rust workspace `prototype/`: движки, CLI, HTTP-сервис и десктоп-приложение на Tauri 2 с HTML/CSS/vanilla JS.
+**starglyph** simulates star fields and recognizes sky images, with constellation and object overlays. Code lives in the `prototype/` Rust workspace: engines, CLIs, an HTTP service, and a Tauri 2 desktop application with HTML/CSS/vanilla JS.
 
-## Где искать контекст
+## Where to Find Context
 
-- [README.md](README.md) — текущие компоненты и быстрый старт; [docs/README.md](docs/README.md) — навигация по документации.
-- Для десктопа — [docs/app.md](docs/app.md), для HTTP API — [docs/serve.md](docs/serve.md), для данных — [docs/data-sources.md](docs/data-sources.md). Читать по задаче.
-- `docs/stack.md` описывает первоначальный выбор прототипа; текущий стек сверять с README и `prototype/Cargo.toml`.
+- [README.md](README.md) describes current components and quick-start commands; [docs/README.md](docs/README.md) indexes the documentation.
+- Use [docs/app.md](docs/app.md) for the desktop application, [docs/serve.md](docs/serve.md) for the HTTP API, and [docs/data-sources.md](docs/data-sources.md) for data. Read what the task needs.
+- `docs/stack.md` describes the initial prototype choices; check README and `prototype/Cargo.toml` for the current stack.
 
-## Принципы работы в коде
+## Code Principles
 
-- Две явные подсистемы: **симулятор** (данные + рендер/шум) и **распознаватель** (matching, оверлеи). По возможности разделять интерфейсы и артефакты (датасеты, веса, конфиги).
-- Публичные каталоги и форматы данных документировать в `docs/` при их появлении.
-- Не смешивать в одном модуле генерацию «истины» (каталог звёзд, камера) и эвристики распознавания без необходимости.
+- Keep two explicit subsystems: the **simulator** (data, rendering, noise) and the **recognizer** (matching, overlays). Separate their interfaces and artifacts (datasets, weights, configurations) where practical.
+- Document public catalogs and data formats in `docs/` as they are introduced.
+- Avoid combining ground-truth generation (star catalog, camera) and recognition heuristics in one module unless necessary.
 
-## Язык документации
+## Documentation Language
 
-- Концептуальные документы в `docs/` могут быть на **русском** (как сейчас), технические API/CI — по соглашению команды; при расхождении приоритет у ясности для человека, читающего репозиторий.
+- Conceptual documents in `docs/` may be in **Russian**, as they are now. Follow team conventions for technical API/CI documentation; when conventions differ, prioritize clarity for the repository's readers.
 
-## Что уточнять у постановщика
+## When to Ask the User
 
-- При добавлении данных сначала сверять происхождение и лицензии с `docs/data-sources.md`, `THIRD_PARTY_LICENSES.md` и `ATTRIBUTION.md`; уточнять только незафиксированные права и условия использования.
-- Целевая мобильная платформа и ограничения по производительности — когда задача затрагивает мобильный клиент.
+- When adding data, first check provenance and licensing in `docs/data-sources.md`, `THIRD_PARTY_LICENSES.md`, and `ATTRIBUTION.md`; ask only about rights and usage terms that are not already documented.
+- Clarify the target mobile platform and performance constraints when the task involves the mobile client.
 
-## Публичная документация
+## Public Documentation
 
-- Репозиторий **публичный**. В коммитах, PR, `docs/`, `openspec/` и любых других файлах, попадающих в git, **не упоминать** закрытые или приватные репозитории — их имена, организацию, URL и пути к артефактам в них.
-- Продуктовый бэклог и стратегические заметки ведутся вне этого репозитория; здесь документировать только код, публичные спецификации (`openspec/specs/`) и материалы в `docs/`.
-- OpenSpec в `openspec/` описывает **требования к реализации** в этом репозитории; не ссылаться на внешние трекеры задач и закрытые документы.
+- This repository is **public**. Do **not mention** private or restricted repositories in commits, PRs, `docs/`, `openspec/`, or any other files added to Git. This includes their names, organizations, URLs, and artifact paths.
+- The product backlog and strategic notes are maintained outside this repository. Keep documentation here focused on code, public specifications (`openspec/specs/`), and materials in `docs/`.
+- OpenSpec in `openspec/` describes **implementation requirements** for this repository; do not reference external task trackers or private documents.
 
-## Агентские workflows
+## Agent Workflows
 
-- Управляемые скиллы находятся в `.agents/skills/`; их версии и источник зафиксированы в `skills.lock.yaml`.
-- Рабочие среды — Codex (Sol или Astra) и Cursor. По умолчанию текущий агент выполняет задачу напрямую в выбранной пользователем среде и модели. `task-delegation` и оркестрацию включать только по явному запросу; наличие скилла не требует Composer, Terra или смены модели.
-- Основной скилл оркестрации — `codex-orchestration`, явно включённый в `skills.lock.yaml`. Родитель остаётся на модели текущей сессии; маршрутизация дочерних ролей описана в [model-routing.md](.agents/skills/codex-orchestration/references/model-routing.md).
-- Для недостаточно определённых задач использовать `work-intake`; ясные локальные изменения выполнять напрямую. Не создавать OpenSpec change или полный change brief только ради процедуры.
-- Явный запрос пользователя имеет приоритет над процедурными ограничениями скиллов. Если запрошены планирование и реализация, после готового плана продолжать без повторного разрешения, если нет нерешённого существенного вопроса. Запрос только на анализ или предложение остаётся в этих границах.
-- Для OpenSpec changes соблюдать выбранный хост и каноническое хранилище артефактов. Cursor-команды и скиллы находятся в `.cursor/`; их наличие само по себе не означает доступность в Codex.
-- Выбирать скиллы по конкретной задаче. `improve` нужен для отдельного аудита и планов; дизайн-скиллы — для соответствующих визуальных задач. Рекомендации shadcn/Tailwind не меняют существующий vanilla JS стек. `modern-web-guidance` использовать для выбора или проверки web API и совместимости, без обязательного сетевого запуска для каждой косметической правки.
-- Проверки выбирать по затронутому поведению; после успешных проверок расширять или повторять их только при новых изменениях, сбоях или нерешённых рисках. Cargo запускать из `prototype/`; при проверке изменённого встроенного UI пересобирать и перезапускать Tauri-приложение.
-- Если инструкция скилла вызывает остановку или дополнительное согласование, указать конкретный файл, пункт и причину. Недоступность вспомогательного инструмента не блокирует независимую работу.
-- Проектные исключения хранить здесь или в локальном скилле вне lock-файла; управляемые копии не править вручную. Для проверки установки — `agentmem skills verify`, для просмотра обновления — `agentmem skills pull --dry-run`.
+- Managed skills live in `.agents/skills/`; their versions and source are pinned in `skills.lock.yaml`.
+- Working environments are Codex (Sol or Astra) and Cursor. By default, the current agent performs the task directly in the user's chosen environment and model. Activate `task-delegation` and orchestration only on explicit request; an installed skill alone does not require Composer, Terra, or a model switch.
+- The primary orchestration skill is `codex-orchestration`, explicitly included in `skills.lock.yaml`. The parent stays on the current session model; child-role routing is defined in [model-routing.md](.agents/skills/codex-orchestration/references/model-routing.md).
+- Use `work-intake` for underspecified tasks; perform clear local changes directly. Do not create an OpenSpec change or a full change brief solely to satisfy a procedure.
+- Explicit user requests take precedence over procedural skill restrictions. When both planning and implementation are requested, continue after the plan without asking for permission again unless a material question remains unresolved. Requests limited to analysis or proposals stay within those boundaries.
+- For OpenSpec changes, respect the selected host and canonical artifact store. Cursor commands and skills live in `.cursor/`; their presence alone does not make them available in Codex.
+- Select skills for the specific task. Use `improve` for a dedicated audit and plans, and design skills for relevant visual work. shadcn/Tailwind recommendations do not change the existing vanilla JS stack. Use `modern-web-guidance` to select or verify web APIs and compatibility, without requiring a network call for every cosmetic edit.
+- Select checks based on the affected behavior. After they pass, broaden or repeat them only for new changes, failures, or unresolved risks. Run Cargo from `prototype/`; rebuild and relaunch the Tauri application when verifying changes to its embedded UI.
+- If a skill instruction causes a pause or additional approval request, identify the exact file, instruction, and reason. An unavailable supporting tool does not block independent work.
+- Keep project-specific overrides here or in a local skill outside the lock file; do not hand-edit managed copies. Verify the installation with `agentmem skills verify` and preview updates with `agentmem skills pull --dry-run`.
 
 <!-- agentmem:closeout:start -->
 This repository is registered in agentmem as `starglyph/engine`.
@@ -48,4 +48,4 @@ Run `@closeout for starglyph/engine` after non-trivial work (skill: `.agents/ski
 Consult `.agents/skills/agent-memory-usage/SKILL.md` for MCP usage.
 <!-- agentmem:closeout:end -->
 
-В рамках проекта: получать контекст памяти один раз на содержательную задачу. При недоступности MCP кратко сообщить и продолжать по репозиторию. Closeout выполнять по завершении задачи; в Codex использовать текущий разговор, если путь к его транскрипту не дан, без поиска чужих Cursor-сессий. Записывать только полезные решения и уроки, кратко и без целевого объёма в 500–800 слов; отсутствие таких уроков не требует записи или черновика памяти.
+For this project, retrieve memory context once per substantive task. If MCP is unavailable, report it briefly and continue using repository context. Run closeout when the task is complete. In Codex, use the current conversation unless its transcript path is provided; do not search unrelated Cursor sessions. Record only useful decisions and lessons, concisely and without a 500–800-word target. If there are no such lessons, no event or memory draft is required.
