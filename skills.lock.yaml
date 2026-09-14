@@ -2,9 +2,10 @@ version: 4
 hub:
     repo: https://github.com/muonsoft/skills.git
     ref: main
-    commit: bb97a06ed3b49e14a83ae3e87d2be5124c1da597
+    commit: 9abcbf072824ef3ea2c0d5e2ef04050a3836c3b0
 preset: experimental
 include:
+    - id: codex-orchestration
     - id: rust-skills
     - id: ui-ux-pro-max
     - id: web-static-frontend
@@ -87,14 +88,14 @@ packages:
               installed_hash: sha256:5a27c7df3ffe03131b5a986696d097a562dc54e2a16542dfe0139fcd18474a87
     codex-orchestration:
         hub_path: process/codex-orchestration
-        upstream_hash: sha256:85f8d5f1885821408d7dade68485ffe685cabfdd1e42231ea0e5405a09a3fb31
+        upstream_hash: sha256:b3c6f6c917a12a4d92df7cac59528e3f01df70afea7324dfd00bb7086f8672ae
         artifacts:
             - id: skill
               kind: skill
               mode: tree
               src: .
               dest: .agents/skills/codex-orchestration
-              installed_hash: sha256:85f8d5f1885821408d7dade68485ffe685cabfdd1e42231ea0e5405a09a3fb31
+              installed_hash: sha256:b3c6f6c917a12a4d92df7cac59528e3f01df70afea7324dfd00bb7086f8672ae
     database-migrations:
         hub_path: databases/database-migrations
         upstream_hash: sha256:f22b97a00e2ebd47d4c5242304a4dfa7cdbc6844b5e661e816f4bc4e9ee0fe27
@@ -227,11 +228,11 @@ packages:
               installed_hash: sha256:442d2be25eede4bb75e16859818c39461665772559198cb814047b0fe80ccbe8
     work-intake:
         hub_path: process/work-intake
-        upstream_hash: sha256:771dece6998a5f85a18b77f56930ddadc6eb9400117e10002192439c23356bc9
+        upstream_hash: sha256:ac71a3550fd6a0b0c12448b7787ca5423868d2aaee9896bc65f67df2fda80031
         artifacts:
             - id: skill
               kind: skill
               mode: tree
               src: .
               dest: .agents/skills/work-intake
-              installed_hash: sha256:771dece6998a5f85a18b77f56930ddadc6eb9400117e10002192439c23356bc9
+              installed_hash: sha256:ac71a3550fd6a0b0c12448b7787ca5423868d2aaee9896bc65f67df2fda80031

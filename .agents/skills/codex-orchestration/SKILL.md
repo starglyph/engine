@@ -2,12 +2,12 @@
 name: codex-orchestration
 description: >-
   Opt-in Codex-native outer loop for one substantial project change. Uses
-  work-intake, fresh Sol design and review agents, Terra implementation of
+  work-intake, fresh parent-model design and review agents, Terra implementation of
   broad semantic slices, profile-specific QA, and evidence-gated OpenSpec
   closeout. Use only when the user explicitly invokes $codex-orchestration or
   names codex-orchestration.
 metadata:
-  short-description: Orchestrate changes with Codex Sol and Terra
+  short-description: Orchestrate with the session model and Terra workers
 ---
 
 # Codex orchestration
@@ -15,12 +15,13 @@ metadata:
 Run one change as an explicit Codex-native outer loop:
 
 ```text
-work-intake → Sol design → broad Terra slices → profile QA
-            → fresh Sol review → corrections → OpenSpec closeout
+work-intake → parent-model design → broad Terra slices → profile QA
+            → fresh parent-model review → corrections → OpenSpec closeout
 ```
 
-The parent is the orchestrator. It owns scope, decisions, worker boundaries,
-acceptance, durable checklist state, STOP/continue decisions, and closeout. It
+The parent is the orchestrator and stays on the current session model (for
+example Astra or Sol). It owns scope, decisions, worker boundaries, acceptance,
+durable checklist state, STOP/continue decisions, and closeout. It
 may inspect files, run checks, update checkboxes after evidence exists, and make
 a tiny mechanical correction. It must not absorb a normal implementation
 slice.
@@ -45,13 +46,15 @@ unresolved product decisions.
 At the start announce the task, Tier, process, schema/change when known, and
 model policy:
 
-- design: `gpt-5.6-sol`, `xhigh`;
+- parent: current session model, unchanged;
+- design: parent model, `xhigh`, fresh context;
 - implementation and profile QA: `gpt-5.6-terra`, normally `high`;
-- review: fresh `gpt-5.6-sol`, `xhigh`.
+- review: parent model, `xhigh`, fresh context.
 
-If collaboration subagents or either required model are unavailable, stop with
-`BLOCKED@runtime`. Do not silently substitute a model or implement a normal
-slice on the parent.
+These are defaults; explicit user role assignments take precedence, followed
+by project role defaults. Resolve inheritance and capability failures through
+[model routing](references/model-routing.md). Only a required resolved role
+can block the run; do not require Sol when the parent is Astra.
 
 ## Project and OpenSpec context
 
@@ -104,11 +107,11 @@ when planned work overlaps an unrelated dirty path and cannot be isolated.
 
 ## Design
 
-Tier 1 may skip a separate design agent. For Tier 2, start a fresh Sol agent to
+Tier 1 may skip a separate design agent. For Tier 2, start a fresh design agent to
 return a compact implementation plan and acceptance criteria without editing
 application code.
 
-For Tier 2.5 and Tier 3, start a fresh Sol agent to create or revise the
+For Tier 2.5 and Tier 3, start a fresh design agent to create or revise the
 OpenSpec planning artifacts. The parent retains decision ownership. The design
 agent must:
 
@@ -131,7 +134,7 @@ agent must:
   apply-ready.
 
 For a new change, resolve material ambiguity before scaffolding it. For an
-existing change, preserve `openspec-update-change` confirmation semantics: Sol
+existing change, preserve `openspec-update-change` confirmation semantics: the designer
 may prepare proposed revisions, but the parent shows each revision and obtains
 the required user confirmation before it is written.
 
@@ -227,7 +230,7 @@ the slice. On failure:
 1. send the same Terra agent one correction task with exact failing evidence;
 2. rerun acceptance;
 3. only when requirements and environment are sound and stronger reasoning is
-   plausibly useful, allow one fresh Sol `high` stuck-implementation pass;
+   plausibly useful, allow one fresh parent-model `high` stuck-implementation pass;
 4. rerun acceptance and stop at `STOPPED@implement-<slice>` if it still fails.
 
 Do not start the next writer before the current slice is reviewed and green.
@@ -263,7 +266,7 @@ or archive merely to make the review easier; the reviewer compares the
 accepted implementation with the active change artifacts and authoritative
 requirements.
 
-Read [review](references/review.md), then start a fresh Sol `xhigh` agent with
+Read [review](references/review.md), then start a fresh reviewer on the resolved review model with
 clean context and read-only instructions. Give it:
 
 - baseline and current status plus exact run-owned tracked and untracked paths;
@@ -275,7 +278,7 @@ clean context and read-only instructions. Give it:
 Never reuse an implementer for review. Require `CRITICAL=0`, `HIGH=0`, and no
 blocking evidence gap. The parent adjudicates findings, then may send one
 batched, bounded repair pass to Terra. Rerun affected acceptance and QA, update
-artifacts when behavior changed, and start one more fresh Sol review. Stop at
+artifacts when behavior changed, and start one more fresh independent review. Stop at
 `STOPPED@review` if a blocker remains.
 
 ## Verify and close out
@@ -306,8 +309,8 @@ Status: <DONE | BLOCKED@design | BLOCKED@runtime | STOPPED@<step>>
 Tier: <n> Process: <direct | plan+implement | profile-design+broad-apply | profile-design+orchestrated-slices | product-foundation>
 Schema: <schema or —>
 Change: <slug or —>
-Models: design=sol/xhigh implement=terra/high review=sol/xhigh
-Run: <slice count; retries; Sol escalations>
+Models: parent=<session model> design=<resolved model/effort> implement=<resolved model/effort> review=<resolved model/effort>
+Run: <slice count; retries; parent-model escalations>
 QA: <Pass | Partial | Fail | skipped>
 Review: CRITICAL=<n> HIGH=<n> gaps=<n>
 Notes: <one concise line; include QA gaps and routing deviations>
@@ -320,7 +323,7 @@ Notes: <one concise line; include QA gaps and routing deviations>
   preferences.
 - No implementation with blocking product decisions.
 - No parallel writers in the shared working tree.
-- Every subagent has an explicit supported model, effort, bounded task, clean
+- Every subagent has a resolved supported model (explicit or inherited), effort, bounded task, clean
   context, permissions, acceptance, and stopping condition.
 - No invisible model substitution, parent implementation fallback, or nested
   delegation.

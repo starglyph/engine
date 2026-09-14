@@ -3,27 +3,41 @@
 Use this reference for every collaboration subagent started by
 **`codex-orchestration`**.
 
-## Fixed roles
+## Session-aware roles
+
+The parent stays on the current session model (for example Astra or Sol).
+Never switch or re-create it to satisfy a default. Resolve `parent_model` from
+runtime session metadata; do not infer an exact model ID from prose.
+Explicit user role assignments override the defaults below. Project role
+defaults apply next; this table supplies the remaining defaults.
 
 | Role | Model | Effort | Context |
 |---|---|---|---|
-| Design and OpenSpec authoring | `gpt-5.6-sol` | `xhigh` | fresh |
+| Design and OpenSpec authoring | parent model | `xhigh` | fresh |
 | Read-only fact gathering | `gpt-5.6-terra` | `medium` | fresh |
 | Implementation slice | `gpt-5.6-terra` | `high` | fresh |
 | Profile QA | `gpt-5.6-terra` | `high` | fresh |
-| Stuck implementation escalation | `gpt-5.6-sol` | `high` | fresh |
-| Independent review | `gpt-5.6-sol` | `xhigh` | fresh |
+| Stuck implementation escalation | parent model | `high` | fresh |
+| Independent review | parent model | `xhigh` | fresh |
 
-Reserve Sol `max` for an explicitly justified, high-risk follow-up review. Do
+Reserve `max` for an explicitly justified, high-risk follow-up review. Do
 not raise effort merely because a task is large; first improve semantic
 boundaries and acceptance evidence.
 
 ## Spawn contract
 
+Model inheritance and conversation inheritance are separate. For a parent-model
+role, omit `model` when the runtime supports inheriting the model with
+`fork_turns: "none"`; otherwise pass the runtime-reported exact parent model ID.
+Do not use a literal `inherit` model ID unless the tool explicitly supports it.
+If no model ID is exposed but isolated model inheritance is supported, use that
+mechanism without asking the user to repeat their selection. Report the model
+as session-inherited when its exact ID is unavailable.
+
 Every `spawn_agent` call includes:
 
-- the exact model and reasoning effort from the table;
-- `fork_turns: "none"` for model override and role isolation;
+- the resolved role model (explicit or inherited as above) and supported effort;
+- `fork_turns: "none"` for role isolation, including inherited-model roles;
 - a unique lowercase task name;
 - a self-contained bounded prompt with files/artifacts to read, outcome,
   non-goals, permissions, acceptance, expected report, and stopping conditions;
@@ -34,7 +48,7 @@ Do not rely on inherited conversation context. Pass only the relevant OpenSpec
 context paths and project evidence from disk.
 
 Use `followup_task` only for the single correction retry of the same semantic
-slice. Never use it to turn an implementer into a reviewer. Review and Sol
+slice. Never use it to turn an implementer into a reviewer. Review and parent-model
 escalation always use a fresh `spawn_agent` call.
 
 Use `wait_agent` with a long bounded wait instead of frequent polling. Check
@@ -51,14 +65,16 @@ and write ownership visible to the parent.
 
 ## Failure policy
 
-If `gpt-5.6-terra` or `gpt-5.6-sol` cannot start, report `BLOCKED@runtime`. Do
-not silently use `inherit`, Luna, an older GPT model, another provider, or the
-parent as implementation fallback.
+If a required resolved role cannot start, report the role and runtime error.
+Use an already authorized alternative when available; otherwise report
+`BLOCKED@runtime` for the dependent work. Do not silently substitute models or
+make the parent an implementation fallback. An unavailable unused model is
+not a blocker: an Astra-parent run does not require Sol.
 
 For failed slice acceptance:
 
 1. one correction retry on the same Terra agent;
-2. one fresh Sol `high` escalation only when requirements and environment are
+2. one fresh parent-model `high` escalation only when requirements and environment are
    sound and stronger implementation reasoning is plausibly useful;
 3. rerun acceptance and stop when it still fails.
 
