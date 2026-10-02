@@ -219,13 +219,14 @@ Use the profile schema and the outer orchestrator selected by the user or
 project:
 
 - **cursor-orchestration** for the Cursor-native Grok + Composer workflow;
-- **codex-orchestration** for the Codex-native session-model parent + Terra workflow;
-- **change-orchestration** for a Codex/Claude parent with Cursor workers.
+- **codex-orchestration** for the Codex-native session-capped GPT-6 workflow.
 
 An explicit invocation of any of these orchestration skills confirms its full
 cycle.
-Ambient “start this task” language does not auto-select a provider-specific
-orchestrator.
+Ambient “start this task” or “delegate this task” language does not auto-select
+a provider-specific orchestrator. Start Cursor only when the user explicitly
+requests Cursor execution or invokes its orchestration workflow; availability,
+project defaults, and use of Herdr alone do not authorize that choice.
 
 ### Tier 4 — Product foundation
 
