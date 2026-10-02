@@ -11,4 +11,5 @@ pub mod geom;
 pub mod image_input;
 pub mod overlay;
 pub mod render;
+pub mod sky_mask;
 pub mod solve;

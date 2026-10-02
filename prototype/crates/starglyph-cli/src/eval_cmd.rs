@@ -12,7 +12,7 @@ use starglyph_core::eval::{
     WcsCalibration, WcsRowConvention,
 };
 use starglyph_core::image_input::FrameImage;
-use starglyph_core::solve::{solve_frame_with_engine, SolveOptions, SolveStage};
+use starglyph_core::solve::{solve_frame_with_engine_and_mask, SolveOptions, SolveStage};
 
 use crate::{default_cache_dir, load_catalog_and_cons, print_engine_progress};
 
@@ -259,6 +259,12 @@ pub struct ConfigInfo {
     pub blind: bool,
     #[serde(default = "default_true")]
     pub exif_hints: bool,
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub sky_masks: Option<String>,
+    #[serde(default, skip_serializing_if = "std::ops::Not::not")]
+    pub sky_statistics: bool,
+    #[serde(default, skip_serializing_if = "std::ops::Not::not")]
+    pub sky_fill: bool,
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize, PartialEq)]
@@ -343,6 +349,9 @@ pub(crate) fn build_summary(
             catalog: catalog_path.to_owned(),
             blind: fov_hint_deg.is_none(),
             exif_hints,
+            sky_masks: None,
+            sky_statistics: false,
+            sky_fill: false,
         },
         solver_track,
         scene_track,
@@ -514,6 +523,12 @@ pub fn gate_violations(
     max_axis_regress_pct: f64,
 ) -> Vec<String> {
     let mut out = Vec::new();
+    if current.config.sky_masks != baseline.config.sky_masks
+        || current.config.sky_statistics != baseline.config.sky_statistics
+        || current.config.sky_fill != baseline.config.sky_fill
+    {
+        out.push("experimental sky mask configuration differs from baseline".into());
+    }
 
     if let (Some(cur), Some(base)) = (
         current.solver_track.solve_rate,
@@ -552,6 +567,10 @@ pub fn gate_violations(
 
 pub struct EvalArgs<'a> {
     pub manifest: &'a Path,
+    pub sky_masks: Option<&'a Path>,
+    pub sky_statistics: bool,
+    pub sky_fill: bool,
+    pub detection_diagnostics: bool,
     pub out_dir: &'a Path,
     pub tracks: &'a str,
     pub ids: Option<&'a str>,
@@ -572,9 +591,20 @@ pub enum EvalOutcome {
 }
 
 pub fn run_eval(args: EvalArgs<'_>) -> Result<EvalOutcome> {
+    if args.sky_fill && !args.sky_statistics {
+        bail!("sky fill requires sky statistics");
+    }
+    if args.sky_statistics && args.sky_masks.is_none() {
+        bail!("sky statistics require sky masks");
+    }
     let manifest_text = fs::read_to_string(args.manifest)
         .with_context(|| format!("failed to read manifest '{}'", args.manifest.display()))?;
     let manifest = parse_manifest(&manifest_text)?;
+    let masks = args
+        .sky_masks
+        .map(|path| crate::sky_masks::load(path, &manifest.iter().map(|e| e.id.as_str()).collect()))
+        .transpose()?
+        .unwrap_or_default();
     let tracks_set = parse_tracks(args.tracks)?;
     let ids_list: Option<Vec<String>> = args.ids.map(parse_ids);
     let ids_ref = ids_list.as_deref();
@@ -727,9 +757,29 @@ pub fn run_eval(args: EvalArgs<'_>) -> Result<EvalOutcome> {
             include_grid: false,
             allow_exif_hints: !args.no_exif,
         };
+        let annotation = masks.get(&entry.id);
+        let sky_mask = annotation
+            .map(|a| a.for_image(&source_sha256, frame.width, frame.height))
+            .transpose()?;
+        let sky_mask = sky_mask.map(|mask| {
+            if args.sky_fill {
+                mask.with_sky_fill()
+            } else if args.sky_statistics {
+                mask.with_sky_statistics()
+            } else {
+                mask
+            }
+        });
         let mut stage = |_s: SolveStage| {};
-        let (report, extras) =
-            solve_frame_with_engine(&frame, &catalog, &cons, &mut engine, &opts, &mut stage);
+        let (report, extras) = solve_frame_with_engine_and_mask(
+            &frame,
+            &catalog,
+            &cons,
+            &mut engine,
+            &opts,
+            sky_mask.as_ref(),
+            &mut stage,
+        );
 
         let camera = extras.camera.as_ref().map(|c| {
             let rotation = c.rotation();
@@ -741,11 +791,23 @@ pub fn run_eval(args: EvalArgs<'_>) -> Result<EvalOutcome> {
                 "width": c.width, "height": c.height,
             })
         });
+        let diagnostics = if args.detection_diagnostics {
+            Some(starglyph_core::solve::detection_diagnostics(
+                &frame,
+                sky_mask.as_ref(),
+            ))
+        } else {
+            None
+        };
         let artifact = serde_json::json!({
             "id": entry.id, "source_sha256": source_sha256,
             "width": frame.width, "height": frame.height,
             "pixel_convention": "top_left_zero_based",
             "report": report, "camera": camera,
+            "sky_mask": annotation,
+            "sky_statistics": args.sky_statistics && annotation.is_some(),
+            "sky_fill": args.sky_fill && annotation.is_some(),
+            "detection_diagnostics": diagnostics,
         });
         fs::write(&report_path, serde_json::to_string_pretty(&artifact)?)
             .with_context(|| format!("failed to write '{}'", report_path.display()))?;
@@ -795,7 +857,7 @@ pub fn run_eval(args: EvalArgs<'_>) -> Result<EvalOutcome> {
         v.sort();
         v
     };
-    let summary = build_summary(
+    let mut summary = build_summary(
         &args.manifest.display().to_string(),
         &tracks_vec,
         ids_list,
@@ -804,6 +866,10 @@ pub fn run_eval(args: EvalArgs<'_>) -> Result<EvalOutcome> {
         !args.no_exif,
         &frames,
     );
+
+    summary.config.sky_masks = args.sky_masks.map(|p| p.display().to_string());
+    summary.config.sky_statistics = args.sky_statistics;
+    summary.config.sky_fill = args.sky_fill;
 
     for rec in &frames {
         let path = per_frame_dir.join(format!("{}.json", rec.id));
@@ -925,6 +991,9 @@ mod tests {
                 catalog: "cat.csv".to_owned(),
                 blind: true,
                 exif_hints: true,
+                sky_masks: None,
+                sky_statistics: false,
+                sky_fill: false,
             },
             solver_track: TrackStats {
                 n: 8,

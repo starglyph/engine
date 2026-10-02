@@ -1,0 +1,248 @@
+{
+  "schema_version": 1,
+  "coordinates": "exif_oriented_top_left_zero_based",
+  "review_status": "diagnostic_correspondences_not_full_field_ground_truth",
+  "reviewer": "Codex, 2026-10-02",
+  "source_review_sha256": "ec55aaa207f43d990b811f36df5bba4e7f3062ea50ea60b46cea9c6f8ef5a0d6",
+  "external_catalog": "Astrometry.net Tycho-2 index 17; index_id is local to this index",
+  "primary_frame": "20260829_220101",
+  "external_correspondences_sha256": "a1be30bc94a1a1b64d310e4bfeea6115deaa9caf1b1f3d04fc2d1a4d983e580f",
+  "method": "Primary identities from blind Astrometry.net on frozen visual source selection. Secondary identities transferred by visual recognition of the same Big Dipper pattern, before computing engine projection errors. No engine camera, detections or projected catalog were used for selecting correspondences. Primary external WCS remains pending; these sparse points do not certify the whole frame.",
+  "stars": {
+    "tycho2-index-17:0": {
+      "ra_deg": 193.50680542478943,
+      "dec_deg": 55.95984270438987,
+      "external_match_weight": 0.9927733009138623,
+      "primary_source_id": 0
+    },
+    "tycho2-index-17:2": {
+      "ra_deg": 200.98091125614917,
+      "dec_deg": 54.925415031257394,
+      "external_match_weight": 0.9867794991746521,
+      "primary_source_id": 1
+    },
+    "tycho2-index-17:1": {
+      "ra_deg": 206.8856048503581,
+      "dec_deg": 49.31330108152383,
+      "external_match_weight": 0.9752229802988277,
+      "primary_source_id": 2
+    },
+    "tycho2-index-17:214": {
+      "ra_deg": 165.93264770931052,
+      "dec_deg": 61.75111769767466,
+      "external_match_weight": 0.9934909125359072,
+      "primary_source_id": 3
+    },
+    "tycho2-index-17:215": {
+      "ra_deg": 178.45768739204087,
+      "dec_deg": 53.69475554548459,
+      "external_match_weight": 0.9944881172412717,
+      "primary_source_id": 4
+    },
+    "tycho2-index-17:18": {
+      "ra_deg": 165.45996092823466,
+      "dec_deg": 56.38234327343014,
+      "external_match_weight": 0.9926650322925434,
+      "primary_source_id": 5
+    },
+    "tycho2-index-17:33": {
+      "ra_deg": 188.68338015990858,
+      "dec_deg": 70.02177426862734,
+      "external_match_weight": 0.9884480996803234,
+      "primary_source_id": 10
+    },
+    "tycho2-index-17:39": {
+      "ra_deg": 172.85092166233275,
+      "dec_deg": 69.3310776000218,
+      "external_match_weight": 0.9888834462889641,
+      "primary_source_id": 11
+    },
+    "tycho2-index-17:216": {
+      "ra_deg": 176.51255796479506,
+      "dec_deg": 47.779403705822766,
+      "external_match_weight": 0.988081981192553,
+      "primary_source_id": 12
+    },
+    "tycho2-index-17:12": {
+      "ra_deg": 143.62025451115312,
+      "dec_deg": 69.83034518417489,
+      "external_match_weight": 0.9772624189805839,
+      "primary_source_id": 13
+    },
+    "tycho2-index-17:31": {
+      "ra_deg": 156.03268433476464,
+      "dec_deg": 65.56642149610967,
+      "external_match_weight": 0.9878064563186807,
+      "primary_source_id": 14
+    },
+    "tycho2-index-17:30": {
+      "ra_deg": 186.00624082830194,
+      "dec_deg": 51.56225966964046,
+      "external_match_weight": 0.990628748932247,
+      "primary_source_id": 17
+    }
+  },
+  "frames": [
+    {
+      "id": "20260829_215839",
+      "source_sha256": "93198d4c1fc7923838ed1985d3ce3825269bd1a85f71899c8171c48a98c60ddc",
+      "width": 4000,
+      "height": 2252,
+      "matches": [
+        {
+          "source_id": 2,
+          "star_id": "tycho2-index-17:0",
+          "method": "visual_pattern_transfer",
+          "primary_source_id": 0
+        },
+        {
+          "source_id": 4,
+          "star_id": "tycho2-index-17:1",
+          "method": "visual_pattern_transfer",
+          "primary_source_id": 2
+        },
+        {
+          "source_id": 6,
+          "star_id": "tycho2-index-17:2",
+          "method": "visual_pattern_transfer",
+          "primary_source_id": 1
+        },
+        {
+          "source_id": 7,
+          "star_id": "tycho2-index-17:214",
+          "method": "visual_pattern_transfer",
+          "primary_source_id": 3
+        },
+        {
+          "source_id": 8,
+          "star_id": "tycho2-index-17:215",
+          "method": "visual_pattern_transfer",
+          "primary_source_id": 4
+        },
+        {
+          "source_id": 9,
+          "star_id": "tycho2-index-17:18",
+          "method": "visual_pattern_transfer",
+          "primary_source_id": 5
+        }
+      ]
+    },
+    {
+      "id": "20260829_215934",
+      "source_sha256": "1eac83b3f2555990d148383a4566d1322845752ece2875ede81b93be86942f61",
+      "width": 2252,
+      "height": 4000,
+      "matches": []
+    },
+    {
+      "id": "20260829_220020",
+      "source_sha256": "d29aec433629753d32eff6bbe15b8c7d23f88c6982946d7f1aaeafecd8973d30",
+      "width": 4000,
+      "height": 2252,
+      "matches": [
+        {
+          "source_id": 1,
+          "star_id": "tycho2-index-17:0",
+          "method": "visual_pattern_transfer",
+          "primary_source_id": 0
+        },
+        {
+          "source_id": 0,
+          "star_id": "tycho2-index-17:214",
+          "method": "visual_pattern_transfer",
+          "primary_source_id": 3
+        },
+        {
+          "source_id": 3,
+          "star_id": "tycho2-index-17:215",
+          "method": "visual_pattern_transfer",
+          "primary_source_id": 4
+        },
+        {
+          "source_id": 4,
+          "star_id": "tycho2-index-17:18",
+          "method": "visual_pattern_transfer",
+          "primary_source_id": 5
+        }
+      ]
+    },
+    {
+      "id": "20260829_220101",
+      "source_sha256": "51c806b2028a0ee84b4c3f808a58a5fa0239a2f9cf6dd12900d5a4624531730b",
+      "width": 4000,
+      "height": 2252,
+      "matches": [
+        {
+          "source_id": 0,
+          "star_id": "tycho2-index-17:0",
+          "method": "blind_external_correspondence"
+        },
+        {
+          "source_id": 1,
+          "star_id": "tycho2-index-17:2",
+          "method": "blind_external_correspondence"
+        },
+        {
+          "source_id": 2,
+          "star_id": "tycho2-index-17:1",
+          "method": "blind_external_correspondence"
+        },
+        {
+          "source_id": 3,
+          "star_id": "tycho2-index-17:214",
+          "method": "blind_external_correspondence"
+        },
+        {
+          "source_id": 4,
+          "star_id": "tycho2-index-17:215",
+          "method": "blind_external_correspondence"
+        },
+        {
+          "source_id": 5,
+          "star_id": "tycho2-index-17:18",
+          "method": "blind_external_correspondence"
+        },
+        {
+          "source_id": 10,
+          "star_id": "tycho2-index-17:33",
+          "method": "blind_external_correspondence"
+        },
+        {
+          "source_id": 11,
+          "star_id": "tycho2-index-17:39",
+          "method": "blind_external_correspondence"
+        },
+        {
+          "source_id": 12,
+          "star_id": "tycho2-index-17:216",
+          "method": "blind_external_correspondence"
+        },
+        {
+          "source_id": 13,
+          "star_id": "tycho2-index-17:12",
+          "method": "blind_external_correspondence"
+        },
+        {
+          "source_id": 14,
+          "star_id": "tycho2-index-17:31",
+          "method": "blind_external_correspondence"
+        },
+        {
+          "source_id": 17,
+          "star_id": "tycho2-index-17:30",
+          "method": "blind_external_correspondence"
+        }
+      ]
+    }
+  ],
+  "catalog_provenance": {
+    "package": "astrometry-data-tycho2-10-19-littleendian",
+    "version": "2-4",
+    "source": "https://deb.debian.org/debian/pool/main/a/astrometry-data-tycho2/astrometry-data-tycho2-10-19-littleendian_2-4_all.deb",
+    "index_file": "index-tycho2-17.littleendian.fits",
+    "index_sha256": "725c060dd659884512184019ce07bbff36b49327ebe14ee572377fc1d32bbda7",
+    "license": "BSD-2-Clause",
+    "license_file": "LICENSE.tycho2",
+    "annotation_license": "CC BY 4.0"
+  }
+}

@@ -27,6 +27,12 @@ This project uses third-party astronomical datasets.
 - **Smartphone series:** 17 original photographs taken by the project author on
   2026-08-29 and 2026-08-31; see [`data/input/smartphone/README.md`](data/input/smartphone/README.md)
   and its manifest for provenance and checksums.
+- **Derived annotations:** `data/input/smartphone/point-source-probes.json`,
+  `docs/images/smartphone-sky-fill.jpg`, `docs/images/smartphone-point-probes.jpg`, `docs/images/smartphone-cloud-candidates.jpg`, `data/input/smartphone/sky-masks.json` and
+  `docs/images/smartphone-sky-masks.jpg`, annotated by Codex on 2026-10-02;
+  polygon boundaries, point-source labels and foreground tint added to the original photographs;
+  diagnostic previews additionally use brightness ×3 (point sources), ×1.5 (cloud crops), and cropping.
+  These derivatives also use CC BY 4.0.
 - **License:** `CC BY 4.0`
 - **Attribution text (template):**
   - "Contains real sky photographs by Igor Lazarev (Starglyph project), used under CC BY 4.0."
@@ -40,3 +46,24 @@ This project uses third-party astronomical datasets.
 - [ ] `THIRD_PARTY_LICENSES.md` is up to date.
 - [ ] License names and links are verified against upstream.
 - [ ] If dataset snapshots are bundled, source version and checksum are recorded.
+
+## Diagnostic external star correspondences
+
+- `data/input/smartphone/external-star-correspondences.json` includes 12 positions
+  from the Tycho-2 catalog by E. Høg and coauthors, via Astrometry.net index 17
+  (Debian data package 2-4), under BSD-2-Clause.
+- Copyright and license: [`LICENSE.tycho2`](data/input/smartphone/LICENSE.tycho2).
+- `data/input/smartphone/external-source-review.json` and visual cross-frame
+  labels are annotations by Codex, 2026-10-02, derived from photographs by
+  Igor Lazarev under CC BY 4.0. Reproducible diagnostic previews use brightness
+  ×3, source crops, source labels and projected-point markers.
+
+- `data/input/smartphone/external-star-correspondences-215934.json` adds eight
+  positions from Tycho-2 index 19 (Debian data package 2-4), under BSD-2-Clause;
+  source index checksum is embedded in the file. Visual registration annotations
+  and `docs/images/smartphone-215934-transfer.jpg` derive from Igor Lazarev's
+  CC BY 4.0 photographs; annotated by Codex on 2026-10-02, cropped and brightened ×3.
+- `docs/experiments/sky-edge-review-2026-10-02.json` includes HYG-derived positions
+  and uses CC BY-SA 4.0, with attribution to the HYG Database, Astronexus;
+  Tycho-2 and photograph attribution above is retained. Experimental HYG FITS
+  indices are local artifacts, not bundled datasets.

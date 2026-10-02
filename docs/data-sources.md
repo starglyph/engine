@@ -113,6 +113,7 @@ Public Domain). Лицензия проверяется **на странице 
 | ------------- | -------- | --------------- | -------- | -------- | ------------ |
 | `data/input/*.bmp` (серия 2011-09-20 и др.) | Собственная съёмка | Igor Lazarev | **CC BY 4.0** | н/п (автор) | параметры в имени файла; привязка — по решателю. Детали: [`../data/input/README.md`](../data/input/README.md) |
 | `data/input/smartphone/*.jpg` (17 кадров, 2026-08-29 и 2026-08-31) | Авторские фото, собственная съёмка | Igor Lazarev | **CC BY 4.0** | публикация разрешена автором | 3 независимых WCS-кандидата, точные эталоны ещё не приняты; [провенанс и очистка EXIF](../data/input/smartphone/README.md), [SHA-256](../data/input/smartphone/manifest.json) |
+| `data/input/smartphone/sky-masks.json`, `point-source-probes.json`; диагностические превью в `docs/images/` | Производные аннотации по авторским смартфонным фото | Фото: Igor Lazarev; разметка: Codex | **CC BY 4.0** | на основании лицензии исходных фото | Ручные диагностические выборки, не астрометрический ground truth; [форматы](../data/input/smartphone/README.md) |
 
 > Новые источники добавляются строками сюда **до** коммита данных.
 
@@ -162,3 +163,23 @@ Public Domain). Лицензия проверяется **на странице 
 
 Дата: [ДАТА]        Подпись: __________________ ([ИМЯ ДОНОРА])
 ```
+
+### Внешние диагностические соответствия смартфона
+
+`data/input/smartphone/external-source-review.json` — производная визуальная
+разметка авторских фото (Igor Lazarev; разметка Codex), CC BY 4.0.
+`external-star-correspondences.json` содержит 12 каталоговых позиций из Tycho-2
+через Astrometry.net index 17, пакет Debian `astrometry-data-tycho2-10-19-littleendian`
+2-4, BSD-2-Clause. Имя и хеш индекса находятся в `catalog_provenance`, текст
+лицензии и опубликованное подтверждение автора — в `LICENSE.tycho2` рядом с данными.
+Полные индексы не включаются в Git. Формат и ограничения описаны в
+[README набора](../data/input/smartphone/README.md); разметка не подтверждает WCS
+на всём кадре.
+
+Продолжение `external-star-correspondences-215934.json` содержит восемь позиций
+из Tycho-2 index 19 с хешем индекса, на тех же условиях BSD-2-Clause, и аннотации
+совмещения авторских фото (CC BY 4.0). Превью:
+`docs/images/smartphone-215934-transfer.jpg`. Снимок исследования
+`docs/experiments/sky-edge-review-2026-10-02.json` включает производные позиции HYG
+и распространяется под CC BY-SA 4.0 с атрибуцией HYG/Astronexus, Tycho-2 и фото.
+Локальные HYG FITS-индексы не добавляются в Git.

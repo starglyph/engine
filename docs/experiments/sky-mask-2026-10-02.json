@@ -1,0 +1,611 @@
+{
+  "schema_version": 1,
+  "mask_sha256": "bf5ad69b0f7d3f5a22f0b72e342f8e61452926ce45f1dbdcfb3c8275dde89cf7",
+  "required_successes_preserved": true,
+  "unannotated_reports_identical_except_timing_and_equal_flux_order": true,
+  "solved": {
+    "unmasked": 8,
+    "masked": 8
+  },
+  "frames": [
+    {
+      "id": "20260829_215809",
+      "mask_applied": false,
+      "unmasked": {
+        "status": "solved",
+        "detections": 26,
+        "inliers": 14,
+        "rms_px": 2.88,
+        "log_odds": 81.1,
+        "failure": null,
+        "timing_ms": {
+          "detect": 289,
+          "solve": 28,
+          "total": 796
+        }
+      },
+      "masked": {
+        "status": "solved",
+        "detections": 26,
+        "inliers": 14,
+        "rms_px": 2.88,
+        "log_odds": 81.1,
+        "failure": null,
+        "timing_ms": {
+          "detect": 116,
+          "solve": 7,
+          "total": 351
+        }
+      }
+    },
+    {
+      "id": "20260829_215839",
+      "mask_applied": true,
+      "unmasked": {
+        "status": "failed",
+        "detections": 50,
+        "inliers": 0,
+        "rms_px": null,
+        "log_odds": null,
+        "failure": "no_confident_match",
+        "timing_ms": {
+          "detect": 9666,
+          "solve": 11242,
+          "total": 16603
+        },
+        "detections_in_sky": 6
+      },
+      "masked": {
+        "status": "failed",
+        "detections": 8,
+        "inliers": 0,
+        "rms_px": null,
+        "log_odds": null,
+        "failure": "no_confident_match",
+        "timing_ms": {
+          "detect": 4742,
+          "solve": 4482,
+          "total": 7246
+        },
+        "detections_in_sky": 8
+      }
+    },
+    {
+      "id": "20260829_215908",
+      "mask_applied": false,
+      "unmasked": {
+        "status": "solved",
+        "detections": 40,
+        "inliers": 28,
+        "rms_px": 2.82,
+        "log_odds": 172.91,
+        "failure": null,
+        "timing_ms": {
+          "detect": 327,
+          "solve": 358,
+          "total": 1248
+        }
+      },
+      "masked": {
+        "status": "solved",
+        "detections": 40,
+        "inliers": 28,
+        "rms_px": 2.82,
+        "log_odds": 172.91,
+        "failure": null,
+        "timing_ms": {
+          "detect": 134,
+          "solve": 138,
+          "total": 475
+        }
+      }
+    },
+    {
+      "id": "20260829_215934",
+      "mask_applied": true,
+      "unmasked": {
+        "status": "failed",
+        "detections": 50,
+        "inliers": 0,
+        "rms_px": null,
+        "log_odds": null,
+        "failure": "no_confident_match",
+        "timing_ms": {
+          "detect": 6034,
+          "solve": 28275,
+          "total": 31947
+        },
+        "detections_in_sky": 3
+      },
+      "masked": {
+        "status": "failed",
+        "detections": 3,
+        "inliers": 0,
+        "rms_px": null,
+        "log_odds": null,
+        "failure": "no_confident_match",
+        "timing_ms": {
+          "detect": 5026,
+          "solve": 2782,
+          "total": 5535
+        },
+        "detections_in_sky": 3
+      }
+    },
+    {
+      "id": "20260829_215950",
+      "mask_applied": true,
+      "unmasked": {
+        "status": "failed",
+        "detections": 50,
+        "inliers": 0,
+        "rms_px": null,
+        "log_odds": null,
+        "failure": "no_confident_match",
+        "timing_ms": {
+          "detect": 5592,
+          "solve": 10836,
+          "total": 13832
+        },
+        "detections_in_sky": 3
+      },
+      "masked": {
+        "status": "failed",
+        "detections": 3,
+        "inliers": 0,
+        "rms_px": null,
+        "log_odds": null,
+        "failure": "too_few_stars",
+        "timing_ms": {
+          "detect": 5354,
+          "solve": 0,
+          "total": 5734
+        },
+        "detections_in_sky": 3
+      }
+    },
+    {
+      "id": "20260829_220020",
+      "mask_applied": true,
+      "unmasked": {
+        "status": "failed",
+        "detections": 50,
+        "inliers": 0,
+        "rms_px": null,
+        "log_odds": null,
+        "failure": "no_confident_match",
+        "timing_ms": {
+          "detect": 5649,
+          "solve": 4422,
+          "total": 7837
+        },
+        "detections_in_sky": 0
+      },
+      "masked": {
+        "status": "failed",
+        "detections": 4,
+        "inliers": 0,
+        "rms_px": null,
+        "log_odds": null,
+        "failure": "no_confident_match",
+        "timing_ms": {
+          "detect": 9227,
+          "solve": 4196,
+          "total": 9489
+        },
+        "detections_in_sky": 4
+      }
+    },
+    {
+      "id": "20260829_220101",
+      "mask_applied": true,
+      "unmasked": {
+        "status": "failed",
+        "detections": 50,
+        "inliers": 0,
+        "rms_px": null,
+        "log_odds": null,
+        "failure": "no_confident_match",
+        "timing_ms": {
+          "detect": 8188,
+          "solve": 4875,
+          "total": 8800
+        },
+        "detections_in_sky": 0
+      },
+      "masked": {
+        "status": "failed",
+        "detections": 6,
+        "inliers": 0,
+        "rms_px": null,
+        "log_odds": null,
+        "failure": "no_confident_match",
+        "timing_ms": {
+          "detect": 7228,
+          "solve": 2880,
+          "total": 7911
+        },
+        "detections_in_sky": 6
+      }
+    },
+    {
+      "id": "20260829_220657",
+      "mask_applied": false,
+      "unmasked": {
+        "status": "failed",
+        "detections": 43,
+        "inliers": 0,
+        "rms_px": null,
+        "log_odds": null,
+        "failure": "no_confident_match",
+        "timing_ms": {
+          "detect": 10166,
+          "solve": 23134,
+          "total": 28688
+        }
+      },
+      "masked": {
+        "status": "failed",
+        "detections": 43,
+        "inliers": 0,
+        "rms_px": null,
+        "log_odds": null,
+        "failure": "no_confident_match",
+        "timing_ms": {
+          "detect": 9492,
+          "solve": 18250,
+          "total": 24086
+        }
+      }
+    },
+    {
+      "id": "20260829_220706",
+      "mask_applied": false,
+      "unmasked": {
+        "status": "failed",
+        "detections": 50,
+        "inliers": 0,
+        "rms_px": null,
+        "log_odds": null,
+        "failure": "no_confident_match",
+        "timing_ms": {
+          "detect": 5984,
+          "solve": 7112,
+          "total": 10143
+        }
+      },
+      "masked": {
+        "status": "failed",
+        "detections": 50,
+        "inliers": 0,
+        "rms_px": null,
+        "log_odds": null,
+        "failure": "no_confident_match",
+        "timing_ms": {
+          "detect": 5063,
+          "solve": 6473,
+          "total": 9498
+        }
+      }
+    },
+    {
+      "id": "20260829_220732",
+      "mask_applied": false,
+      "unmasked": {
+        "status": "failed",
+        "detections": 50,
+        "inliers": 0,
+        "rms_px": null,
+        "log_odds": null,
+        "failure": "no_confident_match",
+        "timing_ms": {
+          "detect": 9455,
+          "solve": 64831,
+          "total": 70175
+        }
+      },
+      "masked": {
+        "status": "failed",
+        "detections": 50,
+        "inliers": 0,
+        "rms_px": null,
+        "log_odds": null,
+        "failure": "no_confident_match",
+        "timing_ms": {
+          "detect": 4944,
+          "solve": 43431,
+          "total": 46283
+        }
+      }
+    },
+    {
+      "id": "20260829_220801",
+      "mask_applied": false,
+      "unmasked": {
+        "status": "solved",
+        "detections": 40,
+        "inliers": 20,
+        "rms_px": 2.07,
+        "log_odds": 101.83,
+        "failure": null,
+        "timing_ms": {
+          "detect": 188,
+          "solve": 257,
+          "total": 641
+        }
+      },
+      "masked": {
+        "status": "solved",
+        "detections": 40,
+        "inliers": 20,
+        "rms_px": 2.07,
+        "log_odds": 101.83,
+        "failure": null,
+        "timing_ms": {
+          "detect": 111,
+          "solve": 118,
+          "total": 427
+        }
+      }
+    },
+    {
+      "id": "20260829_220853",
+      "mask_applied": false,
+      "unmasked": {
+        "status": "solved",
+        "detections": 40,
+        "inliers": 28,
+        "rms_px": 2.27,
+        "log_odds": 172.91,
+        "failure": null,
+        "timing_ms": {
+          "detect": 139,
+          "solve": 3,
+          "total": 501
+        }
+      },
+      "masked": {
+        "status": "solved",
+        "detections": 40,
+        "inliers": 28,
+        "rms_px": 2.27,
+        "log_odds": 172.91,
+        "failure": null,
+        "timing_ms": {
+          "detect": 143,
+          "solve": 1,
+          "total": 338
+        }
+      }
+    },
+    {
+      "id": "20260829_220910",
+      "mask_applied": false,
+      "unmasked": {
+        "status": "solved",
+        "detections": 40,
+        "inliers": 25,
+        "rms_px": 3.22,
+        "log_odds": 146.25,
+        "failure": null,
+        "timing_ms": {
+          "detect": 150,
+          "solve": 19,
+          "total": 547
+        }
+      },
+      "masked": {
+        "status": "solved",
+        "detections": 40,
+        "inliers": 25,
+        "rms_px": 3.22,
+        "log_odds": 146.25,
+        "failure": null,
+        "timing_ms": {
+          "detect": 141,
+          "solve": 13,
+          "total": 360
+        }
+      }
+    },
+    {
+      "id": "20260829_221011",
+      "mask_applied": false,
+      "unmasked": {
+        "status": "solved",
+        "detections": 40,
+        "inliers": 17,
+        "rms_px": 2.44,
+        "log_odds": 75.18,
+        "failure": null,
+        "timing_ms": {
+          "detect": 150,
+          "solve": 20,
+          "total": 543
+        }
+      },
+      "masked": {
+        "status": "solved",
+        "detections": 40,
+        "inliers": 17,
+        "rms_px": 2.44,
+        "log_odds": 75.18,
+        "failure": null,
+        "timing_ms": {
+          "detect": 138,
+          "solve": 21,
+          "total": 379
+        }
+      }
+    },
+    {
+      "id": "20260831_214642",
+      "mask_applied": false,
+      "unmasked": {
+        "status": "solved",
+        "detections": 42,
+        "inliers": 22,
+        "rms_px": 2.09,
+        "log_odds": 114.73,
+        "failure": null,
+        "timing_ms": {
+          "detect": 351,
+          "solve": 1227,
+          "total": 1822
+        }
+      },
+      "masked": {
+        "status": "solved",
+        "detections": 42,
+        "inliers": 22,
+        "rms_px": 2.09,
+        "log_odds": 114.73,
+        "failure": null,
+        "timing_ms": {
+          "detect": 236,
+          "solve": 863,
+          "total": 1180
+        }
+      }
+    },
+    {
+      "id": "20260831_214709",
+      "mask_applied": false,
+      "unmasked": {
+        "status": "solved",
+        "detections": 50,
+        "inliers": 12,
+        "rms_px": 2.48,
+        "log_odds": 9.12,
+        "failure": null,
+        "timing_ms": {
+          "detect": 343,
+          "solve": 1358,
+          "total": 1902
+        }
+      },
+      "masked": {
+        "status": "solved",
+        "detections": 50,
+        "inliers": 12,
+        "rms_px": 2.48,
+        "log_odds": 9.12,
+        "failure": null,
+        "timing_ms": {
+          "detect": 303,
+          "solve": 1190,
+          "total": 1749
+        }
+      }
+    },
+    {
+      "id": "20260831_214748",
+      "mask_applied": true,
+      "unmasked": {
+        "status": "failed",
+        "detections": 50,
+        "inliers": 0,
+        "rms_px": null,
+        "log_odds": null,
+        "failure": "no_confident_match",
+        "timing_ms": {
+          "detect": 5388,
+          "solve": 2686,
+          "total": 5761
+        },
+        "detections_in_sky": 1
+      },
+      "masked": {
+        "status": "failed",
+        "detections": 50,
+        "inliers": 0,
+        "rms_px": null,
+        "log_odds": null,
+        "failure": "no_confident_match",
+        "timing_ms": {
+          "detect": 5992,
+          "solve": 7514,
+          "total": 10844
+        },
+        "detections_in_sky": 50
+      }
+    }
+  ],
+  "provenance": {
+    "binary_sha256": "406924a4fc477c27ef0b427ffeae44879e80e94a762de58f06429c202509c458",
+    "mask_sha256": "bf5ad69b0f7d3f5a22f0b72e342f8e61452926ce45f1dbdcfb3c8275dde89cf7",
+    "catalog_sha256": "5ca9431ff364c8002a4a3efa91b2b9296746aea1543374db4cb6b4fab049d601",
+    "platform": "Linux-5.15.0-181-generic-x86_64-with-glibc2.35",
+    "cpu_count": 4,
+    "available_cpus": 4,
+    "rayon_num_threads": null,
+    "cache_before": [
+      "artifacts/cache/tetra3-bootstrap-10-70-mag65-v0.8.0.bin",
+      "artifacts/cache/tetra3-dense-16-30-mag65-v0.8.0.bin",
+      "artifacts/cache/tetra3-dense-17-32-mag65-v0.8.0.bin",
+      "artifacts/cache/tetra3-dense-30-54-mag65-v0.8.0.bin",
+      "artifacts/cache/tetra3-dense-37-68-mag65-v0.8.0.bin",
+      "artifacts/cache/tetra3-dense-48-88-mag65-v0.8.0.bin",
+      "artifacts/cache/tetra3-dense-59-90-mag65-v0.8.0.bin"
+    ],
+    "runs": {
+      "unmasked": {
+        "command": [
+          "target/release/starglyph",
+          "eval",
+          "--manifest",
+          "../data/input/smartphone/manifest.json",
+          "--catalog",
+          "../data/catalogs/hyg_v42.csv.gz",
+          "--out-dir",
+          "artifacts/sky-mask-experiment/final/unmasked"
+        ],
+        "wall_seconds": 205.655615394935,
+        "exit_code": 0
+      },
+      "masked": {
+        "command": [
+          "target/release/starglyph",
+          "eval",
+          "--manifest",
+          "../data/input/smartphone/manifest.json",
+          "--catalog",
+          "../data/catalogs/hyg_v42.csv.gz",
+          "--out-dir",
+          "artifacts/sky-mask-experiment/final/masked",
+          "--sky-masks",
+          "../data/input/smartphone/sky-masks.json"
+        ],
+        "wall_seconds": 135.17273189872503,
+        "exit_code": 0
+      }
+    },
+    "source_base_commit": "79be2b711a1e454453692edc6360ad44822a7f92",
+    "working_tree_changes_present": true,
+    "implementation_sha256": {
+      "prototype/crates/starglyph-core/src/ephem.rs": "68091771cc86bad1c08d57d5b1337d0a8984f59d952cea46cfa4ad00a9096515",
+      "prototype/crates/starglyph-core/src/lib.rs": "87fd4fe1e39a3535be1abd95b74e1d31aa7e33df9d824e19ab025713322bc70c",
+      "prototype/crates/starglyph-core/src/eval.rs": "adbb4fd469aef3e70cfa8e02fcb2cfa0ae516c32ff224421ddfeaa5c744ddd00",
+      "prototype/crates/starglyph-core/src/catalog.rs": "42652f59e641f0e0fa5cfe9e9120925bc92773b1f1ebaf4d242d346fbb0d58d9",
+      "prototype/crates/starglyph-core/src/contracts.rs": "8373569d33bf3c3d8a82f2c626035a99f1617995fb45b587c1f439f3288dd581",
+      "prototype/crates/starglyph-core/src/overlay.rs": "c6a28dae451b3253e41530b39bbc4cab35e68ae41de5f3a17db60e4e01a622ea",
+      "prototype/crates/starglyph-core/src/detect.rs": "61c4c11607994589343320aca8349d786617e9d1fb74697b5850486cae82914c",
+      "prototype/crates/starglyph-core/src/geom.rs": "31c5a253674025564ab839c7f58ffa2c59e1c7e2f5f31a50f3e9e705477ff528",
+      "prototype/crates/starglyph-core/src/solve.rs": "c8cb509da2f1af54eccafb8c8e9cd8e72ecd51acc55bb2a92877f83018a83b14",
+      "prototype/crates/starglyph-core/src/engine.rs": "e48f2069648a6bf0f373d44870ea1acad157c2a3ca760327e67e2f014fefa017",
+      "prototype/crates/starglyph-core/src/constellations.rs": "a44c2290e116721b3260a1bcaf3efb4dcda71df98f66e19b4b473b82305f545b",
+      "prototype/crates/starglyph-core/src/image_input.rs": "0acc60b8fbf4cb91ffb1b2659136a3af2489921651bd448c8bbc967619d95f82",
+      "prototype/crates/starglyph-core/src/render.rs": "bb3ba3641d5f6b2580a4339ac8b9fa78c3abc89375eb767e612b0c3b4c091985",
+      "prototype/crates/starglyph-core/src/sky_mask.rs": "f12e2211ea8c52e7fe61c556cb10677843ca562ee35a90582ff2866a49e10dcd",
+      "prototype/crates/starglyph-cli/src/main.rs": "3a0640ee38e2a420976ee63781e19e69ed7a80eecee9e88a016d3d168265374c",
+      "prototype/crates/starglyph-cli/src/eval_cmd.rs": "c7309f0ee4178ed400bd772455e24f69c94f81c927656d81f8f08cf71a84f618",
+      "prototype/crates/starglyph-cli/src/sky_masks.rs": "5e418e9ef18161f55b95a1ff03cc5eeb22012f5031a13a56bb3bf17aa949b62f",
+      "prototype/eval/sky_mask_experiment.py": "3094a855297161acdb2944dfd1c1c0963383cff2678b6ae182f2356b9cb9117c"
+    }
+  },
+  "repeat_metrics_identical_except_timing": true,
+  "first_pair_wall_seconds": {
+    "unmasked": 191.54063635692,
+    "masked": 137.94893863797188
+  }
+}

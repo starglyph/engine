@@ -3,6 +3,7 @@
 use rayon::prelude::*;
 
 use crate::image_input::FrameImage;
+use crate::sky_mask::SkyMask;
 
 const MAD_TO_SIGMA: f32 = 1.4826;
 
@@ -89,7 +90,7 @@ impl Default for DetectConfig {
 }
 
 /// A single star detection with sub-pixel centroid and photometry.
-#[derive(Debug, Clone, PartialEq)]
+#[derive(Debug, Clone, PartialEq, serde::Serialize)]
 pub struct Detection {
     /// Sub-pixel x coordinate (column).
     pub x: f64,
@@ -110,12 +111,22 @@ pub struct Detection {
 }
 
 /// Per-run detection statistics.
-#[derive(Debug, Clone, PartialEq)]
+#[derive(Debug, Clone, PartialEq, serde::Serialize)]
 pub struct DetectStats {
     /// Raw noise sigma (MAD-based).
     pub sigma: f32,
     /// Median of the input frame gray values.
     pub background_median: f32,
+    /// Number of image pixels eligible for background statistics.
+    pub statistics_pixels: usize,
+    pub sigma_convolved: f32,
+    pub threshold: f32,
+    pub threshold_doublings: u32,
+    /// Fraction of all image pixels above the final adaptive threshold.
+    pub threshold_fill: f32,
+    /// Size and final occupancy of the region driving adaptive thresholding.
+    pub threshold_region_pixels: usize,
+    pub threshold_region_fill: f32,
     /// Total connected-component candidates before filtering.
     pub candidates: u32,
     pub rejected_border: u32,
@@ -125,11 +136,13 @@ pub struct DetectStats {
     pub rejected_faint: u32,
     /// Large low-concentration blobs (star clouds, nebulosity).
     pub rejected_diffuse: u32,
+    /// Otherwise accepted centroids outside the experimental sky polygon.
+    pub rejected_mask: u32,
     pub accepted: u32,
 }
 
 /// Result of star detection.
-#[derive(Debug, Clone, PartialEq)]
+#[derive(Debug, Clone, PartialEq, serde::Serialize)]
 pub struct DetectResult {
     pub detections: Vec<Detection>,
     pub stats: DetectStats,
@@ -137,17 +150,33 @@ pub struct DetectResult {
 
 /// Run the full star-detection pipeline on a frame.
 pub fn detect_stars(frame: &FrameImage, config: &DetectConfig) -> DetectResult {
+    detect_stars_with_mask(frame, config, None)
+}
+
+/// Filter centroids before deduplication and top-K selection. By default image
+/// preprocessing is unchanged; mask flags explicitly enable statistics/fill
+/// experiments. The mask must refer to the same oriented image.
+pub fn detect_stars_with_mask(
+    frame: &FrameImage,
+    config: &DetectConfig,
+    sky_mask: Option<&SkyMask>,
+) -> DetectResult {
     let width = frame.width as usize;
     let height = frame.height as usize;
     let n = width * height;
 
-    let background_median = median_f32(&frame.gray);
+    let selection = sky_mask
+        .filter(|mask| mask.uses_sky_statistics())
+        .map(|mask| mask.rasterize(frame.width, frame.height));
+    let selected = selection.as_deref();
+    let background_median = selected_median(&frame.gray, selected);
+    let statistics_pixels = selected.map_or(n, |mask| mask.iter().filter(|&&v| v).count());
 
     // Step 1: column/row artifact removal
-    let mut resid = remove_column_row_artifacts(&frame.gray, width, height);
+    let mut resid = remove_column_row_artifacts(&frame.gray, width, height, selected);
 
     // Step 2: mesh background subtraction
-    let bg = mesh_background(&resid, width, height, config.mesh_px);
+    let bg = mesh_background(&resid, width, height, config.mesh_px, selected);
     for (r, b) in resid.iter_mut().zip(bg.iter()) {
         *r -= b;
     }
@@ -156,7 +185,14 @@ pub fn detect_stars(frame: &FrameImage, config: &DetectConfig) -> DetectResult {
     // JPEGs: most pixels exactly 0) fall back to an upper-quantile spread that
     // still sees the residual junk level (JPEG artifacts, haze plateaus), and
     // never go below the 8-bit quantization step; see robust_noise_sigma.
-    let sigma_raw = robust_noise_sigma(&resid, width, height, config.border_px, RAW_SIGMA_FLOOR);
+    let sigma_raw = robust_noise_sigma(
+        &resid,
+        width,
+        height,
+        config.border_px,
+        RAW_SIGMA_FLOOR,
+        selected,
+    );
 
     // Step 4: matched filter + threshold + connected components
     let kernel = gaussian_kernel_7x7(config.sigma_px);
@@ -170,17 +206,22 @@ pub fn detect_stars(frame: &FrameImage, config: &DetectConfig) -> DetectResult {
         height,
         config.border_px,
         RAW_SIGMA_FLOOR * kernel_l2,
+        selected,
     );
     let mut threshold = config.k_sigma * sigma_conv;
+    let fill_region = selected.filter(|_| sky_mask.is_some_and(SkyMask::uses_sky_fill));
+    let threshold_region_pixels = fill_region.map_or(n, |mask| mask.iter().filter(|&&v| v).count());
 
     // Adaptive threshold: keep the mask sparse (see MAX_MASK_FILL).
     let mut mask: Vec<bool> = conv.iter().map(|&v| v > threshold).collect();
+    let mut threshold_doublings = 0;
     for _ in 0..MAX_THRESHOLD_DOUBLINGS {
-        let fill = mask.iter().filter(|&&m| m).count() as f32 / n.max(1) as f32;
+        let fill = threshold_occupancy(&mask, fill_region, threshold_region_pixels);
         if fill <= MAX_MASK_FILL {
             break;
         }
         threshold *= 2.0;
+        threshold_doublings += 1;
         for (m, &v) in mask.iter_mut().zip(conv.iter()) {
             *m = v > threshold;
         }
@@ -190,6 +231,13 @@ pub fn detect_stars(frame: &FrameImage, config: &DetectConfig) -> DetectResult {
     let mut stats = DetectStats {
         sigma: sigma_raw,
         background_median,
+        statistics_pixels,
+        sigma_convolved: sigma_conv,
+        threshold,
+        threshold_doublings,
+        threshold_fill: mask.iter().filter(|&&v| v).count() as f32 / n.max(1) as f32,
+        threshold_region_pixels,
+        threshold_region_fill: threshold_occupancy(&mask, fill_region, threshold_region_pixels),
         candidates: blobs.len() as u32,
         rejected_border: 0,
         rejected_small: 0,
@@ -197,6 +245,7 @@ pub fn detect_stars(frame: &FrameImage, config: &DetectConfig) -> DetectResult {
         rejected_elongated: 0,
         rejected_faint: 0,
         rejected_diffuse: 0,
+        rejected_mask: 0,
         accepted: 0,
     };
 
@@ -294,6 +343,11 @@ pub fn detect_stars(frame: &FrameImage, config: &DetectConfig) -> DetectResult {
             }
         }
 
+        if sky_mask.is_some_and(|mask| !mask.contains(cx, cy, frame.width, frame.height)) {
+            stats.rejected_mask += 1;
+            continue;
+        }
+
         detections.push(Detection {
             x: cx,
             y: cy,
@@ -325,15 +379,55 @@ pub fn detect_stars(frame: &FrameImage, config: &DetectConfig) -> DetectResult {
 
 // --- Pipeline helpers ---
 
-fn remove_column_row_artifacts(gray: &[f32], width: usize, height: usize) -> Vec<f32> {
+fn threshold_occupancy(mask: &[bool], region: Option<&[bool]>, count: usize) -> f32 {
+    let selected = match region {
+        None => mask.iter().filter(|&&v| v).count(),
+        Some(region) => mask
+            .iter()
+            .zip(region)
+            .filter(|(v, keep)| **v && **keep)
+            .count(),
+    };
+    selected as f32 / count.max(1) as f32
+}
+
+fn selected_median(data: &[f32], selected: Option<&[bool]>) -> f32 {
+    match selected {
+        None => median_f32(data),
+        Some(mask) => median_f32(
+            &data
+                .iter()
+                .zip(mask)
+                .filter_map(|(&v, &keep)| keep.then_some(v))
+                .collect::<Vec<_>>(),
+        ),
+    }
+}
+
+fn remove_column_row_artifacts(
+    gray: &[f32],
+    width: usize,
+    height: usize,
+    selected: Option<&[bool]>,
+) -> Vec<f32> {
+    let fallback = selected
+        .map(|_| selected_median(gray, selected))
+        .unwrap_or(0.);
     // Column medians first, then row medians of the column-subtracted data —
     // the same math as the sequential version; columns and rows are
     // independent, so each level parallelizes bit-exactly.
     let col_medians: Vec<f32> = (0..width)
         .into_par_iter()
         .map(|x| {
-            let col: Vec<f32> = (0..height).map(|y| gray[y * width + x]).collect();
-            median_f32(&col)
+            let col: Vec<f32> = (0..height)
+                .filter(|&y| selected.is_none_or(|mask| mask[y * width + x]))
+                .map(|y| gray[y * width + x])
+                .collect();
+            if col.is_empty() {
+                fallback
+            } else {
+                median_f32(&col)
+            }
         })
         .collect();
 
@@ -343,7 +437,7 @@ fn remove_column_row_artifacts(gray: &[f32], width: usize, height: usize) -> Vec
         for (x, (dst, &g)) in row.iter_mut().zip(src.iter()).enumerate() {
             *dst = g - col_medians[x];
         }
-        let med = median_f32(row);
+        let med = selected_median(row, selected.map(|mask| &mask[y * width..(y + 1) * width]));
         for v in row.iter_mut() {
             *v -= med;
         }
@@ -351,7 +445,17 @@ fn remove_column_row_artifacts(gray: &[f32], width: usize, height: usize) -> Vec
     out
 }
 
-fn mesh_background(data: &[f32], width: usize, height: usize, mesh_px: u32) -> Vec<f32> {
+fn mesh_background(
+    data: &[f32],
+    width: usize,
+    height: usize,
+    mesh_px: u32,
+    selected: Option<&[bool]>,
+) -> Vec<f32> {
+    // Empty sky cells use the global sky residual median, never foreground samples.
+    let fallback = selected
+        .map(|_| selected_median(data, selected))
+        .unwrap_or(0.);
     let mesh = mesh_px as usize;
     let n_cols = width.div_ceil(mesh);
     let n_rows = height.div_ceil(mesh);
@@ -371,10 +475,16 @@ fn mesh_background(data: &[f32], width: usize, height: usize, mesh_px: u32) -> V
                 let mut cell = Vec::with_capacity((x1 - x0) * (y1 - y0));
                 for y in y0..y1 {
                     for x in x0..x1 {
-                        cell.push(data[y * width + x]);
+                        if selected.is_none_or(|mask| mask[y * width + x]) {
+                            cell.push(data[y * width + x]);
+                        }
                     }
                 }
-                *cell_median = sigma_clipped_median(&cell, 3, 3.0);
+                *cell_median = if cell.is_empty() {
+                    fallback
+                } else {
+                    sigma_clipped_median(&cell, 3, 3.0)
+                };
             }
         });
 
@@ -416,16 +526,28 @@ fn bilinear_grid(grid: &[f32], n_cols: usize, n_rows: usize, fx: f64, fy: f64) -
     top * (1.0 - ty) + bot * ty
 }
 
-fn noise_sigma(data: &[f32], width: usize, height: usize, border_px: u32) -> f32 {
+fn noise_sigma(
+    data: &[f32],
+    width: usize,
+    height: usize,
+    border_px: u32,
+    selected: Option<&[bool]>,
+) -> f32 {
     let b = border_px as usize;
     let mut samples = Vec::new();
     for y in b..height.saturating_sub(b) {
         for x in b..width.saturating_sub(b) {
-            samples.push(data[y * width + x]);
+            if selected.is_none_or(|mask| mask[y * width + x]) {
+                samples.push(data[y * width + x]);
+            }
         }
     }
     if samples.is_empty() {
-        return mad_to_sigma(mad_f32(data));
+        return if selected.is_some() {
+            0.
+        } else {
+            mad_to_sigma(mad_f32(data))
+        };
     }
     mad_to_sigma(mad_f32(&samples))
 }
@@ -444,8 +566,9 @@ fn robust_noise_sigma(
     height: usize,
     border_px: u32,
     floor: f32,
+    selected: Option<&[bool]>,
 ) -> f32 {
-    let mad_sigma = noise_sigma(data, width, height, border_px);
+    let mad_sigma = noise_sigma(data, width, height, border_px, selected);
     if mad_sigma >= floor {
         return mad_sigma;
     }
@@ -454,7 +577,9 @@ fn robust_noise_sigma(
         Vec::with_capacity(height.saturating_sub(2 * b) * width.saturating_sub(2 * b));
     for y in b..height.saturating_sub(b) {
         for x in b..width.saturating_sub(b) {
-            samples.push(data[y * width + x]);
+            if selected.is_none_or(|mask| mask[y * width + x]) {
+                samples.push(data[y * width + x]);
+            }
         }
     }
     if samples.is_empty() {
@@ -1090,6 +1215,84 @@ mod tests {
 
         assert!(result.detections.is_empty());
         assert!(result.stats.rejected_large >= 1);
+    }
+
+    #[test]
+    fn adaptive_occupancy_uses_sky_numerator_and_denominator() {
+        let mut pixels = vec![false; 1000];
+        let region: Vec<bool> = (0..1000).map(|i| i < 100).collect();
+        pixels[0] = true;
+        pixels[100..].fill(true);
+        assert_eq!(threshold_occupancy(&pixels, Some(&region), 100), 0.01);
+        assert!(threshold_occupancy(&pixels, None, 1000) > MAX_MASK_FILL);
+        pixels[1..3].fill(true);
+        assert!(threshold_occupancy(&pixels, Some(&region), 100) > MAX_MASK_FILL);
+        assert_eq!(
+            threshold_occupancy(&pixels, Some(&vec![false; 1000]), 0),
+            0.
+        );
+    }
+
+    #[test]
+    fn selected_background_ignores_foreground_and_handles_empty_cells() {
+        let w = 64;
+        let h = 64;
+        let mask: Vec<bool> = (0..w * h).map(|i| i / w < 32).collect();
+        let sky = vec![0.1; w * h];
+        let contaminated: Vec<f32> = sky
+            .iter()
+            .enumerate()
+            .map(|(i, &v)| if mask[i] { v } else { 0.9 })
+            .collect();
+        let clean = remove_column_row_artifacts(&sky, w, h, Some(&mask));
+        let dirty = remove_column_row_artifacts(&contaminated, w, h, Some(&mask));
+        for i in 0..w * h {
+            if mask[i] {
+                assert_eq!(clean[i], dirty[i]);
+            }
+        }
+        let bg = mesh_background(&dirty, w, h, 16, Some(&mask));
+        assert!(bg.iter().all(|v| v.is_finite() && v.abs() < 1e-6));
+        let none = vec![false; w * h];
+        assert_eq!(
+            robust_noise_sigma(&dirty, w, h, 8, RAW_SIGMA_FLOOR, Some(&none)),
+            RAW_SIGMA_FLOOR
+        );
+    }
+
+    #[test]
+    fn mask_recovers_faint_star_before_top_k() {
+        let mut gray = flat_background(128, 128, 0.05);
+        gaussian_bump(128, 128, 35.0, 35.0, 0.7, 1.5, &mut gray);
+        gaussian_bump(128, 128, 90.0, 90.0, 0.3, 1.5, &mut gray);
+        let frame = make_frame(128, 128, gray);
+        let config = DetectConfig {
+            max_detections: 1,
+            ..Default::default()
+        };
+        let plain = detect_stars(&frame, &config);
+        assert!((plain.detections[0].x - 35.).abs() < 1.);
+        let mask = SkyMask::new(vec![[0.5, 0.5], [1., 0.5], [1., 1.], [0.5, 1.]]).unwrap();
+        let masked = detect_stars_with_mask(&frame, &config, Some(&mask));
+        assert_eq!(masked.detections.len(), 1);
+        assert!((masked.detections[0].x - 90.).abs() < 1.);
+        assert_eq!(masked.detections[0].rank, 0);
+        assert_eq!(masked.stats.rejected_mask, 1);
+        let all = SkyMask::new(vec![[0., 0.], [1., 0.], [1., 1.], [0., 1.]]).unwrap();
+        assert_eq!(plain, detect_stars_with_mask(&frame, &config, Some(&all)));
+        assert_eq!(
+            plain,
+            detect_stars_with_mask(&frame, &config, Some(&all.with_sky_statistics()))
+        );
+        assert_eq!(plain.stats.sigma, masked.stats.sigma);
+        assert_eq!(
+            plain.stats.background_median,
+            masked.stats.background_median
+        );
+        let all = SkyMask::new(vec![[0., 0.], [1., 0.], [1., 1.], [0., 1.]])
+            .unwrap()
+            .with_sky_fill();
+        assert_eq!(plain, detect_stars_with_mask(&frame, &config, Some(&all)));
     }
 
     #[test]

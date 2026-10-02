@@ -19,6 +19,7 @@ use starglyph_core::solve::{
 };
 
 mod eval_cmd;
+mod sky_masks;
 
 #[derive(Debug, Parser)]
 #[command(name = "starglyph")]
@@ -114,6 +115,18 @@ enum Command {
     Eval {
         #[arg(long)]
         manifest: PathBuf,
+        /// Experimental manual sky polygons, applied before detection top-K.
+        #[arg(long)]
+        sky_masks: Option<PathBuf>,
+        /// Experimental sky-only background/noise statistics; requires manual masks.
+        #[arg(long, requires = "sky_masks")]
+        sky_statistics: bool,
+        /// Count adaptive threshold occupancy only in sky; requires sky statistics.
+        #[arg(long, requires = "sky_statistics")]
+        sky_fill: bool,
+        /// Export both detector scales/tiers before top-K, outside solve timing.
+        #[arg(long)]
+        detection_diagnostics: bool,
         #[arg(long)]
         out_dir: PathBuf,
         /// Comma-separated subset of solver, scene, stress (default: solver).
@@ -428,6 +441,10 @@ fn main() -> Result<()> {
         }
         Command::Eval {
             manifest,
+            sky_masks,
+            sky_statistics,
+            sky_fill,
+            detection_diagnostics,
             out_dir,
             tracks,
             ids,
@@ -443,6 +460,10 @@ fn main() -> Result<()> {
         } => {
             match eval_cmd::run_eval(eval_cmd::EvalArgs {
                 manifest: &manifest,
+                sky_masks: sky_masks.as_deref(),
+                sky_statistics,
+                sky_fill,
+                detection_diagnostics,
                 out_dir: &out_dir,
                 tracks: &tracks,
                 ids: ids.as_deref(),

@@ -1,0 +1,2461 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-02",
+  "protocol": "Frozen external source visual selection followed by three blind Astrometry.net variants; manual cross-frame constellation identities fixed before engine projection comparison. No WCS accepted as full-field truth.",
+  "blind_runs": {
+    "wcs-reviewed": {
+      "solver": "Astrometry.net with manual sky point selection",
+      "version": "0.89",
+      "raw_summary_sha256": "74d568782e0a621623a3c2a18feba38cbd134a7f781c837635bd8aacc59eb646",
+      "mask_sha256": "bf5ad69b0f7d3f5a22f0b72e342f8e61452926ce45f1dbdcfb3c8275dde89cf7",
+      "source_review_sha256": "ec55aaa207f43d990b811f36df5bba4e7f3062ea50ea60b46cea9c6f8ef5a0d6",
+      "provenance": {
+        "config": {
+          "path": "/tmp/starglyph-astrometry/backend.cfg",
+          "sha256": "4dd87c4884ff53bd9487259754acf83fc4cfb8a4e23169e3870ae4ed09644dbf",
+          "text": "cpulimit 30\nadd_path /tmp/starglyph-astrometry/root/usr/share/astrometry\nautoindex\n"
+        },
+        "indices": [
+          {
+            "path": "/tmp/starglyph-astrometry/root/usr/share/astrometry/index-tycho2-10.littleendian.fits",
+            "sha256": "42617bb214e1782f1ba4dbab9b7e6b1b0ec635416b500bab6f0be9e9704dccc8"
+          },
+          {
+            "path": "/tmp/starglyph-astrometry/root/usr/share/astrometry/index-tycho2-11.littleendian.fits",
+            "sha256": "2b216e715a96afb79ac4e7b679474dae0208c37f1f1352be895edbbb336231d9"
+          },
+          {
+            "path": "/tmp/starglyph-astrometry/root/usr/share/astrometry/index-tycho2-12.littleendian.fits",
+            "sha256": "911c9bf4e5dce89f6b7a6fae803bf0951cb33389c8f040a553f5007e6de5d44e"
+          },
+          {
+            "path": "/tmp/starglyph-astrometry/root/usr/share/astrometry/index-tycho2-13.littleendian.fits",
+            "sha256": "5446d29abd35a9626777de8235fbed5d2daf76c074adabf8db4688b38333f8b2"
+          },
+          {
+            "path": "/tmp/starglyph-astrometry/root/usr/share/astrometry/index-tycho2-14.littleendian.fits",
+            "sha256": "c8efbcaf24eaf4f0cf1af43f20740d4edf29ce8190fcae6f94256ffbea020e55"
+          },
+          {
+            "path": "/tmp/starglyph-astrometry/root/usr/share/astrometry/index-tycho2-15.littleendian.fits",
+            "sha256": "3c646bb3aecf8dfee021dcb23d7f1c32f31588fdd2b8cc33a2bf4b121e7acfa5"
+          },
+          {
+            "path": "/tmp/starglyph-astrometry/root/usr/share/astrometry/index-tycho2-16.littleendian.fits",
+            "sha256": "ca85f6683c7edfd060d6854526cfc53367e34dd75a1ef750063a9606be888ed8"
+          },
+          {
+            "path": "/tmp/starglyph-astrometry/root/usr/share/astrometry/index-tycho2-17.littleendian.fits",
+            "sha256": "725c060dd659884512184019ce07bbff36b49327ebe14ee572377fc1d32bbda7"
+          },
+          {
+            "path": "/tmp/starglyph-astrometry/root/usr/share/astrometry/index-tycho2-18.littleendian.fits",
+            "sha256": "e24837c414636b8c7481c17f3421be8b01e2922637975631d984a4476a7d7004"
+          },
+          {
+            "path": "/tmp/starglyph-astrometry/root/usr/share/astrometry/index-tycho2-19.littleendian.fits",
+            "sha256": "c761ac93f92dbe8184bff87e293d2465c667bace2b8ad76e51c33e778b2d144f"
+          }
+        ]
+      },
+      "frames": [
+        {
+          "source": "/home/agent/work/starglyph/engine/data/input/smartphone/20260829_215839.jpg",
+          "source_sha256": "93198d4c1fc7923838ed1985d3ce3825269bd1a85f71899c8171c48a98c60ddc",
+          "width": 4000,
+          "height": 2252,
+          "pixel_convention": "top_left_zero_based",
+          "status": "unresolved",
+          "attempts": [
+            {
+              "extraction_sha256": "d5683268d31303b5b1120ad1f70fdba1bfc056ccb8f37b4749dc924eb23ef511",
+              "selected_xy_sha256": "e0e316b87ae902227534a68cd2d97e0831cf0bb79d18bffc1f3af5321584df40",
+              "n_extracted": 1110,
+              "n_in_sky": 634,
+              "n_selected": 10,
+              "command": [
+                "solve-field",
+                "/home/agent/work/starglyph/engine/prototype/artifacts/sky-fill-review/wcs-reviewed/20260829_215839/downsample-2/sky.xyls",
+                "--width",
+                "4000",
+                "--height",
+                "2252",
+                "--x-column",
+                "X",
+                "--y-column",
+                "Y",
+                "--sort-column",
+                "FLUX",
+                "--dir",
+                "/home/agent/work/starglyph/engine/prototype/artifacts/sky-fill-review/wcs-reviewed/20260829_215839/downsample-2",
+                "--out",
+                "field",
+                "--overwrite",
+                "--no-plots",
+                "--no-verify",
+                "--new-fits",
+                "none",
+                "--uniformize",
+                "0",
+                "--resort",
+                "--pixel-error",
+                "4",
+                "--depth",
+                "10,20,30,50",
+                "--cpulimit",
+                "30",
+                "--tweak-order",
+                "2",
+                "--crpix-center",
+                "--config",
+                "/tmp/starglyph-astrometry/backend.cfg"
+              ],
+              "reviewed_rows": [
+                76,
+                88,
+                98,
+                156,
+                228,
+                248,
+                286,
+                341,
+                472,
+                494
+              ],
+              "exit_code": 0
+            }
+          ]
+        },
+        {
+          "source": "/home/agent/work/starglyph/engine/data/input/smartphone/20260829_215934.jpg",
+          "source_sha256": "1eac83b3f2555990d148383a4566d1322845752ece2875ede81b93be86942f61",
+          "width": 2252,
+          "height": 4000,
+          "pixel_convention": "top_left_zero_based",
+          "status": "unresolved",
+          "attempts": [
+            {
+              "extraction_sha256": "0a715c9fdef81e90165848f0bbb68ade0cb688e0ac9c71cea70bd421363c8fa1",
+              "selected_xy_sha256": "29435ff424a7823c0e29f7231b1b882324d698729f97e981e678a97745ca8598",
+              "n_extracted": 476,
+              "n_in_sky": 241,
+              "n_selected": 16,
+              "command": [
+                "solve-field",
+                "/home/agent/work/starglyph/engine/prototype/artifacts/sky-fill-review/wcs-reviewed/20260829_215934/downsample-2/sky.xyls",
+                "--width",
+                "2252",
+                "--height",
+                "4000",
+                "--x-column",
+                "X",
+                "--y-column",
+                "Y",
+                "--sort-column",
+                "FLUX",
+                "--dir",
+                "/home/agent/work/starglyph/engine/prototype/artifacts/sky-fill-review/wcs-reviewed/20260829_215934/downsample-2",
+                "--out",
+                "field",
+                "--overwrite",
+                "--no-plots",
+                "--no-verify",
+                "--new-fits",
+                "none",
+                "--uniformize",
+                "0",
+                "--resort",
+                "--pixel-error",
+                "4",
+                "--depth",
+                "10,20,30,50",
+                "--cpulimit",
+                "30",
+                "--tweak-order",
+                "2",
+                "--crpix-center",
+                "--config",
+                "/tmp/starglyph-astrometry/backend.cfg"
+              ],
+              "reviewed_rows": [
+                51,
+                160,
+                161,
+                172,
+                182,
+                187,
+                192,
+                193,
+                196,
+                209,
+                216,
+                220,
+                228,
+                233,
+                237,
+                242
+              ],
+              "exit_code": 0
+            }
+          ]
+        },
+        {
+          "source": "/home/agent/work/starglyph/engine/data/input/smartphone/20260829_220020.jpg",
+          "source_sha256": "d29aec433629753d32eff6bbe15b8c7d23f88c6982946d7f1aaeafecd8973d30",
+          "width": 4000,
+          "height": 2252,
+          "pixel_convention": "top_left_zero_based",
+          "status": "unresolved",
+          "attempts": [
+            {
+              "extraction_sha256": "3591a8e9f9eeca3f7f84218ecb6907cb0f088595e4423b31d248b62d3a1947e3",
+              "selected_xy_sha256": "ec7f30cb56f8d0306f7c4576e0bf1abf5bc2a3974c78204688e7def8ddff6e0d",
+              "n_extracted": 508,
+              "n_in_sky": 130,
+              "n_selected": 17,
+              "command": [
+                "solve-field",
+                "/home/agent/work/starglyph/engine/prototype/artifacts/sky-fill-review/wcs-reviewed/20260829_220020/downsample-2/sky.xyls",
+                "--width",
+                "4000",
+                "--height",
+                "2252",
+                "--x-column",
+                "X",
+                "--y-column",
+                "Y",
+                "--sort-column",
+                "FLUX",
+                "--dir",
+                "/home/agent/work/starglyph/engine/prototype/artifacts/sky-fill-review/wcs-reviewed/20260829_220020/downsample-2",
+                "--out",
+                "field",
+                "--overwrite",
+                "--no-plots",
+                "--no-verify",
+                "--new-fits",
+                "none",
+                "--uniformize",
+                "0",
+                "--resort",
+                "--pixel-error",
+                "4",
+                "--depth",
+                "10,20,30,50",
+                "--cpulimit",
+                "30",
+                "--tweak-order",
+                "2",
+                "--crpix-center",
+                "--config",
+                "/tmp/starglyph-astrometry/backend.cfg"
+              ],
+              "reviewed_rows": [
+                279,
+                287,
+                309,
+                328,
+                358,
+                365,
+                369,
+                371,
+                372,
+                373,
+                377,
+                383,
+                386,
+                390,
+                391,
+                394,
+                399
+              ],
+              "exit_code": 0
+            }
+          ]
+        },
+        {
+          "source": "/home/agent/work/starglyph/engine/data/input/smartphone/20260829_220101.jpg",
+          "source_sha256": "51c806b2028a0ee84b4c3f808a58a5fa0239a2f9cf6dd12900d5a4624531730b",
+          "width": 4000,
+          "height": 2252,
+          "pixel_convention": "top_left_zero_based",
+          "status": "solved_candidate",
+          "attempts": [
+            {
+              "extraction_sha256": "6664dead8bd6933612a2f63d79be240b00b5e7ff23dc0d36a9b0d8adce2186cb",
+              "selected_xy_sha256": "9f2190faae16cd3d02158d38cf1e831d48f1c5bd68ffd79ed58a5d77acd92681",
+              "n_extracted": 614,
+              "n_in_sky": 288,
+              "n_selected": 19,
+              "command": [
+                "solve-field",
+                "/home/agent/work/starglyph/engine/prototype/artifacts/sky-fill-review/wcs-reviewed/20260829_220101/downsample-2/sky.xyls",
+                "--width",
+                "4000",
+                "--height",
+                "2252",
+                "--x-column",
+                "X",
+                "--y-column",
+                "Y",
+                "--sort-column",
+                "FLUX",
+                "--dir",
+                "/home/agent/work/starglyph/engine/prototype/artifacts/sky-fill-review/wcs-reviewed/20260829_220101/downsample-2",
+                "--out",
+                "field",
+                "--overwrite",
+                "--no-plots",
+                "--no-verify",
+                "--new-fits",
+                "none",
+                "--uniformize",
+                "0",
+                "--resort",
+                "--pixel-error",
+                "4",
+                "--depth",
+                "10,20,30,50",
+                "--cpulimit",
+                "30",
+                "--tweak-order",
+                "2",
+                "--crpix-center",
+                "--config",
+                "/tmp/starglyph-astrometry/backend.cfg"
+              ],
+              "reviewed_rows": [
+                194,
+                212,
+                232,
+                237,
+                285,
+                289,
+                317,
+                326,
+                328,
+                330,
+                331,
+                332,
+                333,
+                335,
+                338,
+                342,
+                343,
+                348,
+                350
+              ],
+              "exit_code": 0
+            }
+          ],
+          "review_status": "pending",
+          "wcs_file": "/home/agent/work/starglyph/engine/prototype/artifacts/sky-fill-review/wcs-reviewed/20260829_220101/downsample-2/field.wcs",
+          "wcs_sha256": "06afe7f82432f737263d0455a566574a96367014532e491dd269a77bfbe17a9d",
+          "center_ra_deg": 170.666341671057,
+          "center_dec_deg": 52.651041624142934,
+          "reference_points": [
+            {
+              "x": 0.0,
+              "y": 0.0,
+              "ra_deg": 220.7700898531091,
+              "dec_deg": 35.334598728258115
+            },
+            {
+              "x": 499.875,
+              "y": 0.0,
+              "ra_deg": 219.09161144087005,
+              "dec_deg": 42.481772575075155
+            },
+            {
+              "x": 999.75,
+              "y": 0.0,
+              "ra_deg": 216.5348891558791,
+              "dec_deg": 50.49099652125595
+            },
+            {
+              "x": 1499.625,
+              "y": 0.0,
+              "ra_deg": 212.35973109843488,
+              "dec_deg": 59.11639054043854
+            },
+            {
+              "x": 1999.5,
+              "y": 0.0,
+              "ra_deg": 204.76340213965855,
+              "dec_deg": 67.84701461371655
+            },
+            {
+              "x": 2499.375,
+              "y": 0.0,
+              "ra_deg": 188.56570034914694,
+              "dec_deg": 75.71865699651507
+            },
+            {
+              "x": 2999.25,
+              "y": 0.0,
+              "ra_deg": 151.32932560992282,
+              "dec_deg": 80.42416767665202
+            },
+            {
+              "x": 3499.125,
+              "y": 0.0,
+              "ra_deg": 106.58542106900052,
+              "dec_deg": 78.87437936828023
+            },
+            {
+              "x": 3999.0,
+              "y": 0.0,
+              "ra_deg": 84.83910604326448,
+              "dec_deg": 73.94542920592713
+            },
+            {
+              "x": 0.0,
+              "y": 281.375,
+              "ra_deg": 216.16201010805153,
+              "dec_deg": 33.11732939745779
+            },
+            {
+              "x": 499.875,
+              "y": 281.375,
+              "ra_deg": 213.6047103536477,
+              "dec_deg": 40.19403439316272
+            },
+            {
+              "x": 999.75,
+              "y": 281.375,
+              "ra_deg": 209.81852230874236,
+              "dec_deg": 48.146262530073486
+            },
+            {
+              "x": 1499.625,
+              "y": 281.375,
+              "ra_deg": 203.8607743685473,
+              "dec_deg": 56.66444009211717
+            },
+            {
+              "x": 1999.5,
+              "y": 281.375,
+              "ra_deg": 193.71752085233635,
+              "dec_deg": 65.07042865073014
+            },
+            {
+              "x": 2499.375,
+              "y": 281.375,
+              "ra_deg": 175.199851579214,
+              "dec_deg": 72.09657190983323
+            },
+            {
+              "x": 2999.25,
+              "y": 281.375,
+              "ra_deg": 144.41628308099015,
+              "dec_deg": 75.60551020068456
+            },
+            {
+              "x": 3499.125,
+              "y": 281.375,
+              "ra_deg": 112.78267545193364,
+              "dec_deg": 74.28129566947037
+            },
+            {
+              "x": 3999.0,
+              "y": 281.375,
+              "ra_deg": 93.24529784002152,
+              "dec_deg": 70.19277935625445
+            },
+            {
+              "x": 0.0,
+              "y": 562.75,
+              "ra_deg": 211.65601115398897,
+              "dec_deg": 30.713247602692313
+            },
+            {
+              "x": 499.875,
+              "y": 562.75,
+              "ra_deg": 208.28921173512975,
+              "dec_deg": 37.6150410567696
+            },
+            {
+              "x": 999.75,
+              "y": 562.75,
+              "ra_deg": 203.4293930355425,
+              "dec_deg": 45.366556612475165
+            },
+            {
+              "x": 1499.625,
+              "y": 562.75,
+              "ra_deg": 196.07829714008062,
+              "dec_deg": 53.592525981411725
+            },
+            {
+              "x": 1999.5,
+              "y": 562.75,
+              "ra_deg": 184.43848022831642,
+              "dec_deg": 61.48075523875453
+            },
+            {
+              "x": 2499.375,
+              "y": 562.75,
+              "ra_deg": 165.95678187731025,
+              "dec_deg": 67.65683494801878
+            },
+            {
+              "x": 2999.25,
+              "y": 562.75,
+              "ra_deg": 140.64197359655915,
+              "dec_deg": 70.4410109695468
+            },
+            {
+              "x": 3499.125,
+              "y": 562.75,
+              "ra_deg": 116.18157008979745,
+              "dec_deg": 69.3728050170654
+            },
+            {
+              "x": 3999.0,
+              "y": 562.75,
+              "ra_deg": 99.06331077431409,
+              "dec_deg": 66.00317378963977
+            },
+            {
+              "x": 0.0,
+              "y": 844.125,
+              "ra_deg": 207.28897167834148,
+              "dec_deg": 28.159076662983406
+            },
+            {
+              "x": 499.875,
+              "y": 844.125,
+              "ra_deg": 203.2052552469905,
+              "dec_deg": 34.79192797780128
+            },
+            {
+              "x": 999.75,
+              "y": 844.125,
+              "ra_deg": 197.46326834308596,
+              "dec_deg": 42.21600782711871
+            },
+            {
+              "x": 1499.625,
+              "y": 844.125,
+              "ra_deg": 189.13406347022888,
+              "dec_deg": 50.00338363162989
+            },
+            {
+              "x": 1999.5,
+              "y": 844.125,
+              "ra_deg": 176.8517915314402,
+              "dec_deg": 57.2728090976526
+            },
+            {
+              "x": 2499.375,
+              "y": 844.125,
+              "ra_deg": 159.42141711864653,
+              "dec_deg": 62.70450440932368
+            },
+            {
+              "x": 2999.25,
+              "y": 844.125,
+              "ra_deg": 138.205335660126,
+              "dec_deg": 65.0619550604863
+            },
+            {
+              "x": 3499.125,
+              "y": 844.125,
+              "ra_deg": 118.24400261404818,
+              "dec_deg": 64.27750698357241
+            },
+            {
+              "x": 3999.0,
+              "y": 844.125,
+              "ra_deg": 103.2003343896958,
+              "dec_deg": 61.54864771281987
+            },
+            {
+              "x": 0.0,
+              "y": 1125.5,
+              "ra_deg": 203.09005286309764,
+              "dec_deg": 25.498927087580263
+            },
+            {
+              "x": 499.875,
+              "y": 1125.5,
+              "ra_deg": 198.39527256942938,
+              "dec_deg": 31.78643162106142
+            },
+            {
+              "x": 999.75,
+              "y": 1125.5,
+              "ra_deg": 191.97159301333937,
+              "dec_deg": 38.78399563340386
+            },
+            {
+              "x": 1499.625,
+              "y": 1125.5,
+              "ra_deg": 183.03786362104447,
+              "dec_deg": 46.033730247855544
+            },
+            {
+              "x": 1999.5,
+              "y": 1125.5,
+              "ra_deg": 170.69048043,
+              "dec_deg": 52.6535802528
+            },
+            {
+              "x": 2499.375,
+              "y": 1125.5,
+              "ra_deg": 154.61636405932114,
+              "dec_deg": 57.46768497371096
+            },
+            {
+              "x": 2999.25,
+              "y": 1125.5,
+              "ra_deg": 136.45545616369816,
+              "dec_deg": 59.58522221444928
+            },
+            {
+              "x": 3499.125,
+              "y": 1125.5,
+              "ra_deg": 119.57328952914226,
+              "dec_deg": 59.10464104204764
+            },
+            {
+              "x": 3999.0,
+              "y": 1125.5,
+              "ra_deg": 106.22555840939606,
+              "dec_deg": 56.96319165390165
+            },
+            {
+              "x": 0.0,
+              "y": 1406.875,
+              "ra_deg": 199.08014235405997,
+              "dec_deg": 22.780788834655734
+            },
+            {
+              "x": 499.875,
+              "y": 1406.875,
+              "ra_deg": 193.88402807280588,
+              "dec_deg": 28.668830227034043
+            },
+            {
+              "x": 999.75,
+              "y": 1406.875,
+              "ra_deg": 186.96768965016417,
+              "dec_deg": 35.174221956030074
+            },
+            {
+              "x": 1499.625,
+              "y": 1406.875,
+              "ra_deg": 177.7296032898927,
+              "dec_deg": 41.834418507466985
+            },
+            {
+              "x": 1999.5,
+              "y": 1406.875,
+              "ra_deg": 165.66034311216205,
+              "dec_deg": 47.82004810218922
+            },
+            {
+              "x": 2499.375,
+              "y": 1406.875,
+              "ra_deg": 150.94186163002155,
+              "dec_deg": 52.13157872860541
+            },
+            {
+              "x": 2999.25,
+              "y": 1406.875,
+              "ra_deg": 135.1034138687741,
+              "dec_deg": 54.126423770257254
+            },
+            {
+              "x": 3499.125,
+              "y": 1406.875,
+              "ra_deg": 120.45936988505524,
+              "dec_deg": 53.957153640519394
+            },
+            {
+              "x": 3999.0,
+              "y": 1406.875,
+              "ra_deg": 108.4919598120076,
+              "dec_deg": 52.358089524181054
+            },
+            {
+              "x": 0.0,
+              "y": 1688.25,
+              "ra_deg": 195.27214015230976,
+              "dec_deg": 20.05267870934067
+            },
+            {
+              "x": 499.875,
+              "y": 1688.25,
+              "ra_deg": 189.68078926791426,
+              "dec_deg": 25.510936110028073
+            },
+            {
+              "x": 999.75,
+              "y": 1688.25,
+              "ra_deg": 182.43715914678972,
+              "dec_deg": 31.49247365760566
+            },
+            {
+              "x": 1499.625,
+              "y": 1688.25,
+              "ra_deg": 173.11715054911818,
+              "dec_deg": 37.55229271656647
+            },
+            {
+              "x": 1999.5,
+              "y": 1688.25,
+              "ra_deg": 161.50725569668944,
+              "dec_deg": 42.94662391851619
+            },
+            {
+              "x": 2499.375,
+              "y": 1688.25,
+              "ra_deg": 148.0321299918022,
+              "dec_deg": 46.850750188373695
+            },
+            {
+              "x": 2999.25,
+              "y": 1688.25,
+              "ra_deg": 134.00206323785613,
+              "dec_deg": 48.794149968806195
+            },
+            {
+              "x": 3499.125,
+              "y": 1688.25,
+              "ra_deg": 121.05787639262847,
+              "dec_deg": 48.929054378317225
+            },
+            {
+              "x": 3999.0,
+              "y": 1688.25,
+              "ra_deg": 110.22325734619197,
+              "dec_deg": 47.82648897537022
+            },
+            {
+              "x": 0.0,
+              "y": 1969.625,
+              "ra_deg": 191.67185008600637,
+              "dec_deg": 17.359104877145228
+            },
+            {
+              "x": 499.875,
+              "y": 1969.625,
+              "ra_deg": 185.78260496629522,
+              "dec_deg": 22.37956375302044
+            },
+            {
+              "x": 999.75,
+              "y": 1969.625,
+              "ra_deg": 178.34843970953946,
+              "dec_deg": 27.835685658477196
+            },
+            {
+              "x": 1499.625,
+              "y": 1969.625,
+              "ra_deg": 169.10127093923833,
+              "dec_deg": 33.316057288363425
+            },
+            {
+              "x": 1999.5,
+              "y": 1969.625,
+              "ra_deg": 158.031186888778,
+              "dec_deg": 38.176649294592174
+            },
+            {
+              "x": 2499.375,
+              "y": 1969.625,
+              "ra_deg": 145.65820039253322,
+              "dec_deg": 41.74924702196985
+            },
+            {
+              "x": 2999.25,
+              "y": 1969.625,
+              "ra_deg": 133.06876840255617,
+              "dec_deg": 43.681006921702306
+            },
+            {
+              "x": 3499.125,
+              "y": 1969.625,
+              "ra_deg": 121.45953582588689,
+              "dec_deg": 44.09961632170077
+            },
+            {
+              "x": 3999.0,
+              "y": 1969.625,
+              "ra_deg": 111.5656859563932,
+              "dec_deg": 43.443493917589294
+            },
+            {
+              "x": 0.0,
+              "y": 2251.0,
+              "ra_deg": 188.2792089052261,
+              "dec_deg": 14.738376182865851
+            },
+            {
+              "x": 499.875,
+              "y": 2251.0,
+              "ra_deg": 182.17780601256933,
+              "dec_deg": 19.331623888197097
+            },
+            {
+              "x": 999.75,
+              "y": 2251.0,
+              "ra_deg": 174.66135539751366,
+              "dec_deg": 24.284236413172625
+            },
+            {
+              "x": 1499.625,
+              "y": 2251.0,
+              "ra_deg": 165.5887905233473,
+              "dec_deg": 29.227583906075303
+            },
+            {
+              "x": 1999.5,
+              "y": 2251.0,
+              "ra_deg": 155.08038319279297,
+              "dec_deg": 33.617694685396216
+            },
+            {
+              "x": 2499.375,
+              "y": 2251.0,
+              "ra_deg": 143.6718097579087,
+              "dec_deg": 36.91828382498335
+            },
+            {
+              "x": 2999.25,
+              "y": 2251.0,
+              "ra_deg": 132.25360950286054,
+              "dec_deg": 38.85697433942966
+            },
+            {
+              "x": 3499.125,
+              "y": 2251.0,
+              "ra_deg": 121.72070918122506,
+              "dec_deg": 39.528952695080974
+            },
+            {
+              "x": 3999.0,
+              "y": 2251.0,
+              "ra_deg": 112.617895613954,
+              "dec_deg": 39.26555684279476
+            }
+          ],
+          "correspondences_file": "/home/agent/work/starglyph/engine/prototype/artifacts/sky-fill-review/wcs-reviewed/20260829_220101/downsample-2/field.corr",
+          "correspondences_sha256": "a1be30bc94a1a1b64d310e4bfeea6115deaa9caf1b1f3d04fc2d1a4d983e580f",
+          "n_correspondences": 12
+        }
+      ]
+    },
+    "wcs-reviewed-wide": {
+      "solver": "Astrometry.net with manual sky point selection",
+      "version": "0.89",
+      "raw_summary_sha256": "74d568782e0a621623a3c2a18feba38cbd134a7f781c837635bd8aacc59eb646",
+      "mask_sha256": "bf5ad69b0f7d3f5a22f0b72e342f8e61452926ce45f1dbdcfb3c8275dde89cf7",
+      "source_review_sha256": "ec55aaa207f43d990b811f36df5bba4e7f3062ea50ea60b46cea9c6f8ef5a0d6",
+      "provenance": {
+        "config": {
+          "path": "/tmp/starglyph-astrometry/backend.cfg",
+          "sha256": "4dd87c4884ff53bd9487259754acf83fc4cfb8a4e23169e3870ae4ed09644dbf",
+          "text": "cpulimit 30\nadd_path /tmp/starglyph-astrometry/root/usr/share/astrometry\nautoindex\n"
+        },
+        "indices": [
+          {
+            "path": "/tmp/starglyph-astrometry/root/usr/share/astrometry/index-tycho2-10.littleendian.fits",
+            "sha256": "42617bb214e1782f1ba4dbab9b7e6b1b0ec635416b500bab6f0be9e9704dccc8"
+          },
+          {
+            "path": "/tmp/starglyph-astrometry/root/usr/share/astrometry/index-tycho2-11.littleendian.fits",
+            "sha256": "2b216e715a96afb79ac4e7b679474dae0208c37f1f1352be895edbbb336231d9"
+          },
+          {
+            "path": "/tmp/starglyph-astrometry/root/usr/share/astrometry/index-tycho2-12.littleendian.fits",
+            "sha256": "911c9bf4e5dce89f6b7a6fae803bf0951cb33389c8f040a553f5007e6de5d44e"
+          },
+          {
+            "path": "/tmp/starglyph-astrometry/root/usr/share/astrometry/index-tycho2-13.littleendian.fits",
+            "sha256": "5446d29abd35a9626777de8235fbed5d2daf76c074adabf8db4688b38333f8b2"
+          },
+          {
+            "path": "/tmp/starglyph-astrometry/root/usr/share/astrometry/index-tycho2-14.littleendian.fits",
+            "sha256": "c8efbcaf24eaf4f0cf1af43f20740d4edf29ce8190fcae6f94256ffbea020e55"
+          },
+          {
+            "path": "/tmp/starglyph-astrometry/root/usr/share/astrometry/index-tycho2-15.littleendian.fits",
+            "sha256": "3c646bb3aecf8dfee021dcb23d7f1c32f31588fdd2b8cc33a2bf4b121e7acfa5"
+          },
+          {
+            "path": "/tmp/starglyph-astrometry/root/usr/share/astrometry/index-tycho2-16.littleendian.fits",
+            "sha256": "ca85f6683c7edfd060d6854526cfc53367e34dd75a1ef750063a9606be888ed8"
+          },
+          {
+            "path": "/tmp/starglyph-astrometry/root/usr/share/astrometry/index-tycho2-17.littleendian.fits",
+            "sha256": "725c060dd659884512184019ce07bbff36b49327ebe14ee572377fc1d32bbda7"
+          },
+          {
+            "path": "/tmp/starglyph-astrometry/root/usr/share/astrometry/index-tycho2-18.littleendian.fits",
+            "sha256": "e24837c414636b8c7481c17f3421be8b01e2922637975631d984a4476a7d7004"
+          },
+          {
+            "path": "/tmp/starglyph-astrometry/root/usr/share/astrometry/index-tycho2-19.littleendian.fits",
+            "sha256": "c761ac93f92dbe8184bff87e293d2465c667bace2b8ad76e51c33e778b2d144f"
+          }
+        ]
+      },
+      "frames": [
+        {
+          "source": "/home/agent/work/starglyph/engine/data/input/smartphone/20260829_215839.jpg",
+          "source_sha256": "93198d4c1fc7923838ed1985d3ce3825269bd1a85f71899c8171c48a98c60ddc",
+          "width": 4000,
+          "height": 2252,
+          "pixel_convention": "top_left_zero_based",
+          "status": "unresolved",
+          "attempts": [
+            {
+              "extraction_sha256": "d5683268d31303b5b1120ad1f70fdba1bfc056ccb8f37b4749dc924eb23ef511",
+              "selected_xy_sha256": "e0e316b87ae902227534a68cd2d97e0831cf0bb79d18bffc1f3af5321584df40",
+              "n_extracted": 1110,
+              "n_in_sky": 634,
+              "n_selected": 10,
+              "command": [
+                "solve-field",
+                "/home/agent/work/starglyph/engine/prototype/artifacts/sky-fill-review/wcs-reviewed-wide/20260829_215839/downsample-2/sky.xyls",
+                "--width",
+                "4000",
+                "--height",
+                "2252",
+                "--x-column",
+                "X",
+                "--y-column",
+                "Y",
+                "--sort-column",
+                "FLUX",
+                "--dir",
+                "/home/agent/work/starglyph/engine/prototype/artifacts/sky-fill-review/wcs-reviewed-wide/20260829_215839/downsample-2",
+                "--out",
+                "field",
+                "--overwrite",
+                "--no-plots",
+                "--no-verify",
+                "--new-fits",
+                "none",
+                "--uniformize",
+                "0",
+                "--resort",
+                "--pixel-error",
+                "16.0",
+                "--depth",
+                "10,20,30,50",
+                "--cpulimit",
+                "30",
+                "--tweak-order",
+                "3",
+                "--crpix-center",
+                "--config",
+                "/tmp/starglyph-astrometry/backend.cfg"
+              ],
+              "reviewed_rows": [
+                76,
+                88,
+                98,
+                156,
+                228,
+                248,
+                286,
+                341,
+                472,
+                494
+              ],
+              "exit_code": 0
+            }
+          ]
+        },
+        {
+          "source": "/home/agent/work/starglyph/engine/data/input/smartphone/20260829_215934.jpg",
+          "source_sha256": "1eac83b3f2555990d148383a4566d1322845752ece2875ede81b93be86942f61",
+          "width": 2252,
+          "height": 4000,
+          "pixel_convention": "top_left_zero_based",
+          "status": "unresolved",
+          "attempts": [
+            {
+              "extraction_sha256": "0a715c9fdef81e90165848f0bbb68ade0cb688e0ac9c71cea70bd421363c8fa1",
+              "selected_xy_sha256": "29435ff424a7823c0e29f7231b1b882324d698729f97e981e678a97745ca8598",
+              "n_extracted": 476,
+              "n_in_sky": 241,
+              "n_selected": 16,
+              "command": [
+                "solve-field",
+                "/home/agent/work/starglyph/engine/prototype/artifacts/sky-fill-review/wcs-reviewed-wide/20260829_215934/downsample-2/sky.xyls",
+                "--width",
+                "2252",
+                "--height",
+                "4000",
+                "--x-column",
+                "X",
+                "--y-column",
+                "Y",
+                "--sort-column",
+                "FLUX",
+                "--dir",
+                "/home/agent/work/starglyph/engine/prototype/artifacts/sky-fill-review/wcs-reviewed-wide/20260829_215934/downsample-2",
+                "--out",
+                "field",
+                "--overwrite",
+                "--no-plots",
+                "--no-verify",
+                "--new-fits",
+                "none",
+                "--uniformize",
+                "0",
+                "--resort",
+                "--pixel-error",
+                "16.0",
+                "--depth",
+                "10,20,30,50",
+                "--cpulimit",
+                "30",
+                "--tweak-order",
+                "3",
+                "--crpix-center",
+                "--config",
+                "/tmp/starglyph-astrometry/backend.cfg"
+              ],
+              "reviewed_rows": [
+                51,
+                160,
+                161,
+                172,
+                182,
+                187,
+                192,
+                193,
+                196,
+                209,
+                216,
+                220,
+                228,
+                233,
+                237,
+                242
+              ],
+              "exit_code": 0
+            }
+          ]
+        },
+        {
+          "source": "/home/agent/work/starglyph/engine/data/input/smartphone/20260829_220020.jpg",
+          "source_sha256": "d29aec433629753d32eff6bbe15b8c7d23f88c6982946d7f1aaeafecd8973d30",
+          "width": 4000,
+          "height": 2252,
+          "pixel_convention": "top_left_zero_based",
+          "status": "unresolved",
+          "attempts": [
+            {
+              "extraction_sha256": "3591a8e9f9eeca3f7f84218ecb6907cb0f088595e4423b31d248b62d3a1947e3",
+              "selected_xy_sha256": "ec7f30cb56f8d0306f7c4576e0bf1abf5bc2a3974c78204688e7def8ddff6e0d",
+              "n_extracted": 508,
+              "n_in_sky": 130,
+              "n_selected": 17,
+              "command": [
+                "solve-field",
+                "/home/agent/work/starglyph/engine/prototype/artifacts/sky-fill-review/wcs-reviewed-wide/20260829_220020/downsample-2/sky.xyls",
+                "--width",
+                "4000",
+                "--height",
+                "2252",
+                "--x-column",
+                "X",
+                "--y-column",
+                "Y",
+                "--sort-column",
+                "FLUX",
+                "--dir",
+                "/home/agent/work/starglyph/engine/prototype/artifacts/sky-fill-review/wcs-reviewed-wide/20260829_220020/downsample-2",
+                "--out",
+                "field",
+                "--overwrite",
+                "--no-plots",
+                "--no-verify",
+                "--new-fits",
+                "none",
+                "--uniformize",
+                "0",
+                "--resort",
+                "--pixel-error",
+                "16.0",
+                "--depth",
+                "10,20,30,50",
+                "--cpulimit",
+                "30",
+                "--tweak-order",
+                "3",
+                "--crpix-center",
+                "--config",
+                "/tmp/starglyph-astrometry/backend.cfg"
+              ],
+              "reviewed_rows": [
+                279,
+                287,
+                309,
+                328,
+                358,
+                365,
+                369,
+                371,
+                372,
+                373,
+                377,
+                383,
+                386,
+                390,
+                391,
+                394,
+                399
+              ],
+              "exit_code": 0
+            }
+          ]
+        },
+        {
+          "source": "/home/agent/work/starglyph/engine/data/input/smartphone/20260829_220101.jpg",
+          "source_sha256": "51c806b2028a0ee84b4c3f808a58a5fa0239a2f9cf6dd12900d5a4624531730b",
+          "width": 4000,
+          "height": 2252,
+          "pixel_convention": "top_left_zero_based",
+          "status": "unresolved",
+          "attempts": [
+            {
+              "extraction_sha256": "6664dead8bd6933612a2f63d79be240b00b5e7ff23dc0d36a9b0d8adce2186cb",
+              "selected_xy_sha256": "9f2190faae16cd3d02158d38cf1e831d48f1c5bd68ffd79ed58a5d77acd92681",
+              "n_extracted": 614,
+              "n_in_sky": 288,
+              "n_selected": 19,
+              "command": [
+                "solve-field",
+                "/home/agent/work/starglyph/engine/prototype/artifacts/sky-fill-review/wcs-reviewed-wide/20260829_220101/downsample-2/sky.xyls",
+                "--width",
+                "4000",
+                "--height",
+                "2252",
+                "--x-column",
+                "X",
+                "--y-column",
+                "Y",
+                "--sort-column",
+                "FLUX",
+                "--dir",
+                "/home/agent/work/starglyph/engine/prototype/artifacts/sky-fill-review/wcs-reviewed-wide/20260829_220101/downsample-2",
+                "--out",
+                "field",
+                "--overwrite",
+                "--no-plots",
+                "--no-verify",
+                "--new-fits",
+                "none",
+                "--uniformize",
+                "0",
+                "--resort",
+                "--pixel-error",
+                "16.0",
+                "--depth",
+                "10,20,30,50",
+                "--cpulimit",
+                "30",
+                "--tweak-order",
+                "3",
+                "--crpix-center",
+                "--config",
+                "/tmp/starglyph-astrometry/backend.cfg"
+              ],
+              "reviewed_rows": [
+                194,
+                212,
+                232,
+                237,
+                285,
+                289,
+                317,
+                326,
+                328,
+                330,
+                331,
+                332,
+                333,
+                335,
+                338,
+                342,
+                343,
+                348,
+                350
+              ],
+              "exit_code": 0
+            }
+          ]
+        }
+      ]
+    },
+    "wcs-reviewed-quads": {
+      "solver": "Astrometry.net with manual sky point selection",
+      "version": "0.89",
+      "raw_summary_sha256": "74d568782e0a621623a3c2a18feba38cbd134a7f781c837635bd8aacc59eb646",
+      "mask_sha256": "bf5ad69b0f7d3f5a22f0b72e342f8e61452926ce45f1dbdcfb3c8275dde89cf7",
+      "source_review_sha256": "ec55aaa207f43d990b811f36df5bba4e7f3062ea50ea60b46cea9c6f8ef5a0d6",
+      "provenance": {
+        "config": {
+          "path": "/tmp/starglyph-astrometry/backend.cfg",
+          "sha256": "4dd87c4884ff53bd9487259754acf83fc4cfb8a4e23169e3870ae4ed09644dbf",
+          "text": "cpulimit 30\nadd_path /tmp/starglyph-astrometry/root/usr/share/astrometry\nautoindex\n"
+        },
+        "indices": [
+          {
+            "path": "/tmp/starglyph-astrometry/root/usr/share/astrometry/index-tycho2-10.littleendian.fits",
+            "sha256": "42617bb214e1782f1ba4dbab9b7e6b1b0ec635416b500bab6f0be9e9704dccc8"
+          },
+          {
+            "path": "/tmp/starglyph-astrometry/root/usr/share/astrometry/index-tycho2-11.littleendian.fits",
+            "sha256": "2b216e715a96afb79ac4e7b679474dae0208c37f1f1352be895edbbb336231d9"
+          },
+          {
+            "path": "/tmp/starglyph-astrometry/root/usr/share/astrometry/index-tycho2-12.littleendian.fits",
+            "sha256": "911c9bf4e5dce89f6b7a6fae803bf0951cb33389c8f040a553f5007e6de5d44e"
+          },
+          {
+            "path": "/tmp/starglyph-astrometry/root/usr/share/astrometry/index-tycho2-13.littleendian.fits",
+            "sha256": "5446d29abd35a9626777de8235fbed5d2daf76c074adabf8db4688b38333f8b2"
+          },
+          {
+            "path": "/tmp/starglyph-astrometry/root/usr/share/astrometry/index-tycho2-14.littleendian.fits",
+            "sha256": "c8efbcaf24eaf4f0cf1af43f20740d4edf29ce8190fcae6f94256ffbea020e55"
+          },
+          {
+            "path": "/tmp/starglyph-astrometry/root/usr/share/astrometry/index-tycho2-15.littleendian.fits",
+            "sha256": "3c646bb3aecf8dfee021dcb23d7f1c32f31588fdd2b8cc33a2bf4b121e7acfa5"
+          },
+          {
+            "path": "/tmp/starglyph-astrometry/root/usr/share/astrometry/index-tycho2-16.littleendian.fits",
+            "sha256": "ca85f6683c7edfd060d6854526cfc53367e34dd75a1ef750063a9606be888ed8"
+          },
+          {
+            "path": "/tmp/starglyph-astrometry/root/usr/share/astrometry/index-tycho2-17.littleendian.fits",
+            "sha256": "725c060dd659884512184019ce07bbff36b49327ebe14ee572377fc1d32bbda7"
+          },
+          {
+            "path": "/tmp/starglyph-astrometry/root/usr/share/astrometry/index-tycho2-18.littleendian.fits",
+            "sha256": "e24837c414636b8c7481c17f3421be8b01e2922637975631d984a4476a7d7004"
+          },
+          {
+            "path": "/tmp/starglyph-astrometry/root/usr/share/astrometry/index-tycho2-19.littleendian.fits",
+            "sha256": "c761ac93f92dbe8184bff87e293d2465c667bace2b8ad76e51c33e778b2d144f"
+          }
+        ]
+      },
+      "frames": [
+        {
+          "source": "/home/agent/work/starglyph/engine/data/input/smartphone/20260829_215839.jpg",
+          "source_sha256": "93198d4c1fc7923838ed1985d3ce3825269bd1a85f71899c8171c48a98c60ddc",
+          "width": 4000,
+          "height": 2252,
+          "pixel_convention": "top_left_zero_based",
+          "status": "unresolved",
+          "attempts": [
+            {
+              "extraction_sha256": "d5683268d31303b5b1120ad1f70fdba1bfc056ccb8f37b4749dc924eb23ef511",
+              "selected_xy_sha256": "e0e316b87ae902227534a68cd2d97e0831cf0bb79d18bffc1f3af5321584df40",
+              "n_extracted": 1110,
+              "n_in_sky": 634,
+              "n_selected": 10,
+              "command": [
+                "solve-field",
+                "/home/agent/work/starglyph/engine/prototype/artifacts/sky-fill-review/wcs-reviewed-quads/20260829_215839/downsample-2/sky.xyls",
+                "--width",
+                "4000",
+                "--height",
+                "2252",
+                "--x-column",
+                "X",
+                "--y-column",
+                "Y",
+                "--sort-column",
+                "FLUX",
+                "--dir",
+                "/home/agent/work/starglyph/engine/prototype/artifacts/sky-fill-review/wcs-reviewed-quads/20260829_215839/downsample-2",
+                "--out",
+                "field",
+                "--overwrite",
+                "--no-plots",
+                "--no-verify",
+                "--new-fits",
+                "none",
+                "--uniformize",
+                "0",
+                "--resort",
+                "--pixel-error",
+                "4",
+                "--code-tolerance",
+                "0.03",
+                "--depth",
+                "10,20,30,50",
+                "--cpulimit",
+                "30",
+                "--tweak-order",
+                "2",
+                "--crpix-center",
+                "--config",
+                "/tmp/starglyph-astrometry/backend.cfg"
+              ],
+              "reviewed_rows": [
+                76,
+                88,
+                98,
+                156,
+                228,
+                248,
+                286,
+                341,
+                472,
+                494
+              ],
+              "exit_code": 0
+            }
+          ]
+        },
+        {
+          "source": "/home/agent/work/starglyph/engine/data/input/smartphone/20260829_215934.jpg",
+          "source_sha256": "1eac83b3f2555990d148383a4566d1322845752ece2875ede81b93be86942f61",
+          "width": 2252,
+          "height": 4000,
+          "pixel_convention": "top_left_zero_based",
+          "status": "unresolved",
+          "attempts": [
+            {
+              "extraction_sha256": "0a715c9fdef81e90165848f0bbb68ade0cb688e0ac9c71cea70bd421363c8fa1",
+              "selected_xy_sha256": "29435ff424a7823c0e29f7231b1b882324d698729f97e981e678a97745ca8598",
+              "n_extracted": 476,
+              "n_in_sky": 241,
+              "n_selected": 16,
+              "command": [
+                "solve-field",
+                "/home/agent/work/starglyph/engine/prototype/artifacts/sky-fill-review/wcs-reviewed-quads/20260829_215934/downsample-2/sky.xyls",
+                "--width",
+                "2252",
+                "--height",
+                "4000",
+                "--x-column",
+                "X",
+                "--y-column",
+                "Y",
+                "--sort-column",
+                "FLUX",
+                "--dir",
+                "/home/agent/work/starglyph/engine/prototype/artifacts/sky-fill-review/wcs-reviewed-quads/20260829_215934/downsample-2",
+                "--out",
+                "field",
+                "--overwrite",
+                "--no-plots",
+                "--no-verify",
+                "--new-fits",
+                "none",
+                "--uniformize",
+                "0",
+                "--resort",
+                "--pixel-error",
+                "4",
+                "--code-tolerance",
+                "0.03",
+                "--depth",
+                "10,20,30,50",
+                "--cpulimit",
+                "30",
+                "--tweak-order",
+                "2",
+                "--crpix-center",
+                "--config",
+                "/tmp/starglyph-astrometry/backend.cfg"
+              ],
+              "reviewed_rows": [
+                51,
+                160,
+                161,
+                172,
+                182,
+                187,
+                192,
+                193,
+                196,
+                209,
+                216,
+                220,
+                228,
+                233,
+                237,
+                242
+              ],
+              "exit_code": 0
+            }
+          ]
+        },
+        {
+          "source": "/home/agent/work/starglyph/engine/data/input/smartphone/20260829_220020.jpg",
+          "source_sha256": "d29aec433629753d32eff6bbe15b8c7d23f88c6982946d7f1aaeafecd8973d30",
+          "width": 4000,
+          "height": 2252,
+          "pixel_convention": "top_left_zero_based",
+          "status": "unresolved",
+          "attempts": [
+            {
+              "extraction_sha256": "3591a8e9f9eeca3f7f84218ecb6907cb0f088595e4423b31d248b62d3a1947e3",
+              "selected_xy_sha256": "ec7f30cb56f8d0306f7c4576e0bf1abf5bc2a3974c78204688e7def8ddff6e0d",
+              "n_extracted": 508,
+              "n_in_sky": 130,
+              "n_selected": 17,
+              "command": [
+                "solve-field",
+                "/home/agent/work/starglyph/engine/prototype/artifacts/sky-fill-review/wcs-reviewed-quads/20260829_220020/downsample-2/sky.xyls",
+                "--width",
+                "4000",
+                "--height",
+                "2252",
+                "--x-column",
+                "X",
+                "--y-column",
+                "Y",
+                "--sort-column",
+                "FLUX",
+                "--dir",
+                "/home/agent/work/starglyph/engine/prototype/artifacts/sky-fill-review/wcs-reviewed-quads/20260829_220020/downsample-2",
+                "--out",
+                "field",
+                "--overwrite",
+                "--no-plots",
+                "--no-verify",
+                "--new-fits",
+                "none",
+                "--uniformize",
+                "0",
+                "--resort",
+                "--pixel-error",
+                "4",
+                "--code-tolerance",
+                "0.03",
+                "--depth",
+                "10,20,30,50",
+                "--cpulimit",
+                "30",
+                "--tweak-order",
+                "2",
+                "--crpix-center",
+                "--config",
+                "/tmp/starglyph-astrometry/backend.cfg"
+              ],
+              "reviewed_rows": [
+                279,
+                287,
+                309,
+                328,
+                358,
+                365,
+                369,
+                371,
+                372,
+                373,
+                377,
+                383,
+                386,
+                390,
+                391,
+                394,
+                399
+              ],
+              "exit_code": 0
+            }
+          ]
+        },
+        {
+          "source": "/home/agent/work/starglyph/engine/data/input/smartphone/20260829_220101.jpg",
+          "source_sha256": "51c806b2028a0ee84b4c3f808a58a5fa0239a2f9cf6dd12900d5a4624531730b",
+          "width": 4000,
+          "height": 2252,
+          "pixel_convention": "top_left_zero_based",
+          "status": "solved_candidate",
+          "attempts": [
+            {
+              "extraction_sha256": "6664dead8bd6933612a2f63d79be240b00b5e7ff23dc0d36a9b0d8adce2186cb",
+              "selected_xy_sha256": "9f2190faae16cd3d02158d38cf1e831d48f1c5bd68ffd79ed58a5d77acd92681",
+              "n_extracted": 614,
+              "n_in_sky": 288,
+              "n_selected": 19,
+              "command": [
+                "solve-field",
+                "/home/agent/work/starglyph/engine/prototype/artifacts/sky-fill-review/wcs-reviewed-quads/20260829_220101/downsample-2/sky.xyls",
+                "--width",
+                "4000",
+                "--height",
+                "2252",
+                "--x-column",
+                "X",
+                "--y-column",
+                "Y",
+                "--sort-column",
+                "FLUX",
+                "--dir",
+                "/home/agent/work/starglyph/engine/prototype/artifacts/sky-fill-review/wcs-reviewed-quads/20260829_220101/downsample-2",
+                "--out",
+                "field",
+                "--overwrite",
+                "--no-plots",
+                "--no-verify",
+                "--new-fits",
+                "none",
+                "--uniformize",
+                "0",
+                "--resort",
+                "--pixel-error",
+                "4",
+                "--code-tolerance",
+                "0.03",
+                "--depth",
+                "10,20,30,50",
+                "--cpulimit",
+                "30",
+                "--tweak-order",
+                "2",
+                "--crpix-center",
+                "--config",
+                "/tmp/starglyph-astrometry/backend.cfg"
+              ],
+              "reviewed_rows": [
+                194,
+                212,
+                232,
+                237,
+                285,
+                289,
+                317,
+                326,
+                328,
+                330,
+                331,
+                332,
+                333,
+                335,
+                338,
+                342,
+                343,
+                348,
+                350
+              ],
+              "exit_code": 0
+            }
+          ],
+          "review_status": "pending",
+          "wcs_file": "/home/agent/work/starglyph/engine/prototype/artifacts/sky-fill-review/wcs-reviewed-quads/20260829_220101/downsample-2/field.wcs",
+          "wcs_sha256": "7a3efae75b30c1867af6f70f5c47899458860c17f5af6a1cf22943ae135e3ca0",
+          "center_ra_deg": 170.66634302072663,
+          "center_dec_deg": 52.65104311519598,
+          "reference_points": [
+            {
+              "x": 0.0,
+              "y": 0.0,
+              "ra_deg": 220.77009818188628,
+              "dec_deg": 35.33459516454588
+            },
+            {
+              "x": 499.875,
+              "y": 0.0,
+              "ra_deg": 219.0916190103012,
+              "dec_deg": 42.481769015317425
+            },
+            {
+              "x": 999.75,
+              "y": 0.0,
+              "ra_deg": 216.53489603448304,
+              "dec_deg": 50.490993760107415
+            },
+            {
+              "x": 1499.625,
+              "y": 0.0,
+              "ra_deg": 212.35973722151232,
+              "dec_deg": 59.11638943695882
+            },
+            {
+              "x": 1999.5,
+              "y": 0.0,
+              "ra_deg": 204.76340668234954,
+              "dec_deg": 67.8470158215346
+            },
+            {
+              "x": 2499.375,
+              "y": 0.0,
+              "ra_deg": 188.56569813890508,
+              "dec_deg": 75.71866047641322
+            },
+            {
+              "x": 2999.25,
+              "y": 0.0,
+              "ra_deg": 151.329296702772,
+              "dec_deg": 80.42417082975048
+            },
+            {
+              "x": 3499.125,
+              "y": 0.0,
+              "ra_deg": 106.58538238520447,
+              "dec_deg": 78.87437774776912
+            },
+            {
+              "x": 3999.0,
+              "y": 0.0,
+              "ra_deg": 84.83907825143194,
+              "dec_deg": 73.9454245294052
+            },
+            {
+              "x": 0.0,
+              "y": 281.375,
+              "ra_deg": 216.16201634757567,
+              "dec_deg": 33.11732916314463
+            },
+            {
+              "x": 499.875,
+              "y": 281.375,
+              "ra_deg": 213.60471524133814,
+              "dec_deg": 40.194033592204235
+            },
+            {
+              "x": 999.75,
+              "y": 281.375,
+              "ra_deg": 209.81852565638468,
+              "dec_deg": 48.14626164330892
+            },
+            {
+              "x": 1499.625,
+              "y": 281.375,
+              "ra_deg": 203.8607757211198,
+              "dec_deg": 56.664439646862995
+            },
+            {
+              "x": 1999.5,
+              "y": 281.375,
+              "ra_deg": 193.71751901347542,
+              "dec_deg": 65.07042896497326
+            },
+            {
+              "x": 2499.375,
+              "y": 281.375,
+              "ra_deg": 175.19984360682983,
+              "dec_deg": 72.09657262610914
+            },
+            {
+              "x": 2999.25,
+              "y": 281.375,
+              "ra_deg": 144.41626679197077,
+              "dec_deg": 75.60550982504601
+            },
+            {
+              "x": 3499.125,
+              "y": 281.375,
+              "ra_deg": 112.78265849556081,
+              "dec_deg": 74.28129319447652
+            },
+            {
+              "x": 3999.0,
+              "y": 281.375,
+              "ra_deg": 93.24528408275691,
+              "dec_deg": 70.19277558164922
+            },
+            {
+              "x": 0.0,
+              "y": 562.75,
+              "ra_deg": 211.65601607868552,
+              "dec_deg": 30.71325091352286
+            },
+            {
+              "x": 499.875,
+              "y": 562.75,
+              "ra_deg": 208.28921499572513,
+              "dec_deg": 37.61504323633679
+            },
+            {
+              "x": 999.75,
+              "y": 562.75,
+              "ra_deg": 203.4293944146939,
+              "dec_deg": 45.36655777458453
+            },
+            {
+              "x": 1499.625,
+              "y": 562.75,
+              "ra_deg": 196.07829630609658,
+              "dec_deg": 53.59252628235944
+            },
+            {
+              "x": 1999.5,
+              "y": 562.75,
+              "ra_deg": 184.43847677537912,
+              "dec_deg": 61.48075476993179
+            },
+            {
+              "x": 2499.375,
+              "y": 562.75,
+              "ra_deg": 165.95677589915292,
+              "dec_deg": 67.656833610854
+            },
+            {
+              "x": 2999.25,
+              "y": 562.75,
+              "ra_deg": 140.64196710962744,
+              "dec_deg": 70.44100867167768
+            },
+            {
+              "x": 3499.125,
+              "y": 562.75,
+              "ra_deg": 116.18156524067027,
+              "dec_deg": 69.37280214844893
+            },
+            {
+              "x": 3999.0,
+              "y": 562.75,
+              "ra_deg": 99.06330692256493,
+              "dec_deg": 66.0031708929135
+            },
+            {
+              "x": 0.0,
+              "y": 844.125,
+              "ra_deg": 207.28897612059905,
+              "dec_deg": 28.15908383175166
+            },
+            {
+              "x": 499.875,
+              "y": 844.125,
+              "ra_deg": 203.20525799015766,
+              "dec_deg": 34.79193354973189
+            },
+            {
+              "x": 999.75,
+              "y": 844.125,
+              "ra_deg": 197.46326931559162,
+              "dec_deg": 42.21601156150645
+            },
+            {
+              "x": 1499.625,
+              "y": 844.125,
+              "ra_deg": 189.1340627402716,
+              "dec_deg": 50.003385361425046
+            },
+            {
+              "x": 1999.5,
+              "y": 844.125,
+              "ra_deg": 176.8517896417942,
+              "dec_deg": 57.27280885042759
+            },
+            {
+              "x": 2499.375,
+              "y": 844.125,
+              "ra_deg": 159.42141562042232,
+              "dec_deg": 62.70450257977851
+            },
+            {
+              "x": 2999.25,
+              "y": 844.125,
+              "ra_deg": 138.20533647623452,
+              "dec_deg": 65.0619525318869
+            },
+            {
+              "x": 3499.125,
+              "y": 844.125,
+              "ra_deg": 118.24400553163134,
+              "dec_deg": 64.27750472200141
+            },
+            {
+              "x": 3999.0,
+              "y": 844.125,
+              "ra_deg": 103.20033760010179,
+              "dec_deg": 61.5486461790145
+            },
+            {
+              "x": 0.0,
+              "y": 1125.5,
+              "ra_deg": 203.09005764910336,
+              "dec_deg": 25.49893848198874
+            },
+            {
+              "x": 499.875,
+              "y": 1125.5,
+              "ra_deg": 198.39527584859306,
+              "dec_deg": 31.786441124823174
+            },
+            {
+              "x": 999.75,
+              "y": 1125.5,
+              "ra_deg": 191.97159494231093,
+              "dec_deg": 38.784002715907775
+            },
+            {
+              "x": 1499.625,
+              "y": 1125.5,
+              "ra_deg": 183.03786469022577,
+              "dec_deg": 46.03373450647962
+            },
+            {
+              "x": 1999.5,
+              "y": 1125.5,
+              "ra_deg": 170.690481772,
+              "dec_deg": 52.6535817418
+            },
+            {
+              "x": 2499.375,
+              "y": 1125.5,
+              "ra_deg": 154.61636743505744,
+              "dec_deg": 57.46768449890936
+            },
+            {
+              "x": 2999.25,
+              "y": 1125.5,
+              "ra_deg": 136.45546261091732,
+              "dec_deg": 59.58522116393627
+            },
+            {
+              "x": 3499.125,
+              "y": 1125.5,
+              "ra_deg": 119.57329793855706,
+              "dec_deg": 59.10464058261879
+            },
+            {
+              "x": 3999.0,
+              "y": 1125.5,
+              "ra_deg": 106.2255668228718,
+              "dec_deg": 56.963192215624034
+            },
+            {
+              "x": 0.0,
+              "y": 1406.875,
+              "ra_deg": 199.08014825122012,
+              "dec_deg": 22.780804823231527
+            },
+            {
+              "x": 499.875,
+              "y": 1406.875,
+              "ra_deg": 193.8840328065728,
+              "dec_deg": 28.66884423814718
+            },
+            {
+              "x": 999.75,
+              "y": 1406.875,
+              "ra_deg": 186.9676936003073,
+              "dec_deg": 35.17423325900151
+            },
+            {
+              "x": 1499.625,
+              "y": 1406.875,
+              "ra_deg": 177.72960723830937,
+              "dec_deg": 41.834426549083965
+            },
+            {
+              "x": 1999.5,
+              "y": 1406.875,
+              "ra_deg": 165.6603483624405,
+              "dec_deg": 47.820052960548914
+            },
+            {
+              "x": 2499.375,
+              "y": 1406.875,
+              "ra_deg": 150.94186958826168,
+              "dec_deg": 52.13158140037817
+            },
+            {
+              "x": 2999.25,
+              "y": 1406.875,
+              "ra_deg": 135.1034248135932,
+              "dec_deg": 54.12642578082932
+            },
+            {
+              "x": 3499.125,
+              "y": 1406.875,
+              "ra_deg": 120.45938244392303,
+              "dec_deg": 53.95715616038594
+            },
+            {
+              "x": 3999.0,
+              "y": 1406.875,
+              "ra_deg": 108.4919721947116,
+              "dec_deg": 52.35809296998651
+            },
+            {
+              "x": 0.0,
+              "y": 1688.25,
+              "ra_deg": 195.27214783253223,
+              "dec_deg": 20.052699607325852
+            },
+            {
+              "x": 499.875,
+              "y": 1688.25,
+              "ra_deg": 189.68079619846154,
+              "dec_deg": 25.510955143853884
+            },
+            {
+              "x": 999.75,
+              "y": 1688.25,
+              "ra_deg": 182.4371658681384,
+              "dec_deg": 31.492489984075938
+            },
+            {
+              "x": 1499.625,
+              "y": 1688.25,
+              "ra_deg": 173.11715796048352,
+              "dec_deg": 37.55230569121852
+            },
+            {
+              "x": 1999.5,
+              "y": 1688.25,
+              "ra_deg": 161.50726498263808,
+              "dec_deg": 42.94663358392824
+            },
+            {
+              "x": 2499.375,
+              "y": 1688.25,
+              "ra_deg": 148.032142061924,
+              "dec_deg": 46.85075750525208
+            },
+            {
+              "x": 2999.25,
+              "y": 1688.25,
+              "ra_deg": 134.00207787528876,
+              "dec_deg": 48.79415634859067
+            },
+            {
+              "x": 3499.125,
+              "y": 1688.25,
+              "ra_deg": 121.05789223126938,
+              "dec_deg": 48.9290608837866
+            },
+            {
+              "x": 3999.0,
+              "y": 1688.25,
+              "ra_deg": 110.22327284893935,
+              "dec_deg": 47.82649601445283
+            },
+            {
+              "x": 0.0,
+              "y": 1969.625,
+              "ra_deg": 191.67186010526262,
+              "dec_deg": 17.35913090346369
+            },
+            {
+              "x": 499.875,
+              "y": 1969.625,
+              "ra_deg": 185.78261464919495,
+              "dec_deg": 22.37958818764366
+            },
+            {
+              "x": 999.75,
+              "y": 1969.625,
+              "ra_deg": 178.34844967182786,
+              "dec_deg": 27.835707612418204
+            },
+            {
+              "x": 1499.625,
+              "y": 1969.625,
+              "ra_deg": 169.10128204743745,
+              "dec_deg": 33.316076056076845
+            },
+            {
+              "x": 1999.5,
+              "y": 1969.625,
+              "ra_deg": 158.03120006452153,
+              "dec_deg": 38.176664812251644
+            },
+            {
+              "x": 2499.375,
+              "y": 1969.625,
+              "ra_deg": 145.65821609346014,
+              "dec_deg": 41.74926004670015
+            },
+            {
+              "x": 2999.25,
+              "y": 1969.625,
+              "ra_deg": 133.06878613290326,
+              "dec_deg": 43.68101860305751
+            },
+            {
+              "x": 3499.125,
+              "y": 1969.625,
+              "ra_deg": 121.45955433676932,
+              "dec_deg": 44.0996275537797
+            },
+            {
+              "x": 3999.0,
+              "y": 1969.625,
+              "ra_deg": 111.5657039693558,
+              "dec_deg": 43.44350509608103
+            },
+            {
+              "x": 0.0,
+              "y": 2251.0,
+              "ra_deg": 188.279221697092,
+              "dec_deg": 14.738407435089973
+            },
+            {
+              "x": 499.875,
+              "y": 2251.0,
+              "ra_deg": 182.1778188281913,
+              "dec_deg": 19.33165392093658
+            },
+            {
+              "x": 999.75,
+              "y": 2251.0,
+              "ra_deg": 174.6613688453299,
+              "dec_deg": 24.284264331366266
+            },
+            {
+              "x": 1499.625,
+              "y": 2251.0,
+              "ra_deg": 165.58880533649906,
+              "dec_deg": 29.227608952087216
+            },
+            {
+              "x": 1999.5,
+              "y": 2251.0,
+              "ra_deg": 155.08039999039465,
+              "dec_deg": 33.61771663652515
+            },
+            {
+              "x": 2499.375,
+              "y": 2251.0,
+              "ra_deg": 143.6718286483041,
+              "dec_deg": 36.918303144539
+            },
+            {
+              "x": 2999.25,
+              "y": 2251.0,
+              "ra_deg": 132.25362985957022,
+              "dec_deg": 38.85699185050932
+            },
+            {
+              "x": 3499.125,
+              "y": 2251.0,
+              "ra_deg": 121.72072991281402,
+              "dec_deg": 39.528969096216045
+            },
+            {
+              "x": 3999.0,
+              "y": 2251.0,
+              "ra_deg": 112.61791568001715,
+              "dec_deg": 39.26557250769269
+            }
+          ],
+          "correspondences_file": "/home/agent/work/starglyph/engine/prototype/artifacts/sky-fill-review/wcs-reviewed-quads/20260829_220101/downsample-2/field.corr",
+          "correspondences_sha256": "ddda6cf2f34ecb9514aa09dca0c0822248d6bbf52b69182a9514bca1743a42be",
+          "n_correspondences": 12
+        }
+      ]
+    }
+  },
+  "reviewed_wcs_comparison": {
+    "frames": [
+      {
+        "id": "20260829_215839",
+        "reference_status": "unresolved",
+        "review_status": "unresolved",
+        "solver_status": "solved"
+      },
+      {
+        "id": "20260829_215934",
+        "reference_status": "unresolved",
+        "review_status": "unresolved",
+        "solver_status": "solved"
+      },
+      {
+        "id": "20260829_220020",
+        "reference_status": "unresolved",
+        "review_status": "unresolved",
+        "solver_status": "solved"
+      },
+      {
+        "id": "20260829_220101",
+        "reference_status": "solved_candidate",
+        "review_status": "pending",
+        "solver_status": "solved",
+        "full_field_wcs_difference": {
+          "count": 81,
+          "rms_px": 75.40807827960431,
+          "median_px": 28.178968504286534,
+          "p95_px": 164.37545182868612,
+          "max_px": 265.0196517819939
+        },
+        "external_star_error": {
+          "count": 12,
+          "rms_px": 4.378029006848198,
+          "median_px": 1.3064207550799725,
+          "p95_px": 8.369283502929747,
+          "max_px": 13.831185997641537
+        },
+        "external_wcs_fit": {
+          "count": 12,
+          "rms_px": 2.691154251728258,
+          "median_px": 2.019047328620994,
+          "p95_px": 4.3368709409787645,
+          "max_px": 4.546949715324028
+        }
+      }
+    ]
+  },
+  "external_points": {
+    "schema_version": 1,
+    "review_status": "diagnostic_only",
+    "source_review_sha256": "ec55aaa207f43d990b811f36df5bba4e7f3062ea50ea60b46cea9c6f8ef5a0d6",
+    "correspondences_sha256": "0dd8e07696ec5b026a948ba6e4d3ffbac15a728e4d7b567ce8093416f9c3a831",
+    "report_sha256": {
+      "20260829_215839": "26f5bc6cf60ba1dcda37c25d338627e05955a398748ff3d6ff6dc983e8d3890e",
+      "20260829_215934": "8c1088de7749ca8c36023cdbefe4489a88128213078052d36741e4a44b930acf",
+      "20260829_220020": "dcff9cfd5600d685548576e8c0170c2a803a5c66693ab3a719eda92e94a33810",
+      "20260829_220101": "1b4d5506947a147d203aa85feb1645d20e6f6706327895e333354147f3cfc458"
+    },
+    "frames": [
+      {
+        "id": "20260829_215839",
+        "solver_status": "solved",
+        "review_status": "diagnostic_only",
+        "points": [
+          {
+            "source_id": 2,
+            "star_id": "tycho2-index-17:0",
+            "method": "visual_pattern_transfer",
+            "primary_source_id": 0,
+            "x": 1378.235107421875,
+            "y": 958.3643188476562,
+            "ra_deg": 193.50680542478943,
+            "dec_deg": 55.95984270438987,
+            "predicted_x": 1377.6059262563729,
+            "predicted_y": 958.3167563543952,
+            "error_px": 0.6309763306082289
+          },
+          {
+            "source_id": 4,
+            "star_id": "tycho2-index-17:1",
+            "method": "visual_pattern_transfer",
+            "primary_source_id": 2,
+            "x": 853.3734130859375,
+            "y": 727.094482421875,
+            "ra_deg": 206.8856048503581,
+            "dec_deg": 49.31330108152383,
+            "predicted_x": 853.5904134164412,
+            "predicted_y": 727.6845017005144,
+            "error_px": 0.6286588046029594
+          },
+          {
+            "source_id": 6,
+            "star_id": "tycho2-index-17:2",
+            "method": "visual_pattern_transfer",
+            "primary_source_id": 1,
+            "x": 1221.402099609375,
+            "y": 794.377197265625,
+            "ra_deg": 200.98091125614917,
+            "dec_deg": 54.925415031257394,
+            "predicted_x": 1221.8055080341658,
+            "predicted_y": 794.8651891794717,
+            "error_px": 0.6331464800280793
+          },
+          {
+            "source_id": 7,
+            "star_id": "tycho2-index-17:214",
+            "method": "visual_pattern_transfer",
+            "primary_source_id": 3,
+            "x": 2055.97021484375,
+            "y": 1261.56982421875,
+            "ra_deg": 165.93264770931052,
+            "dec_deg": 61.75111769767466,
+            "predicted_x": 2058.0416918134924,
+            "predicted_y": 1262.1609330308577,
+            "error_px": 2.1541649110327294
+          },
+          {
+            "source_id": 8,
+            "star_id": "tycho2-index-17:215",
+            "method": "visual_pattern_transfer",
+            "primary_source_id": 4,
+            "x": 1560.820068359375,
+            "y": 1357.423095703125,
+            "ra_deg": 178.45768739204087,
+            "dec_deg": 53.69475554548459,
+            "predicted_x": 1560.4453291818909,
+            "predicted_y": 1358.781789449775,
+            "error_px": 1.4094247579517596
+          },
+          {
+            "source_id": 9,
+            "star_id": "tycho2-index-17:18",
+            "method": "visual_pattern_transfer",
+            "primary_source_id": 5,
+            "x": 1922.4580078125,
+            "y": 1483.443359375,
+            "ra_deg": 165.45996092823466,
+            "dec_deg": 56.38234327343014,
+            "predicted_x": 1923.9632921143193,
+            "predicted_y": 1485.1575754158293,
+            "error_px": 2.2813192376211284
+          }
+        ],
+        "coverage": {
+          "x_min": 853.3734130859375,
+          "x_max": 2055.97021484375,
+          "y_min": 727.094482421875,
+          "y_max": 1483.443359375,
+          "width_fraction": 0.30064920043945315,
+          "height_fraction": 0.3358565172971248
+        },
+        "external_star_error": {
+          "count": 6,
+          "rms_px": 1.4734053280160704,
+          "median_px": 1.0212856189899195,
+          "p95_px": 2.249530655974029,
+          "max_px": 2.2813192376211284
+        }
+      },
+      {
+        "id": "20260829_215934",
+        "solver_status": "solved",
+        "review_status": "diagnostic_only",
+        "points": [],
+        "reason": "no independently identified stars"
+      },
+      {
+        "id": "20260829_220020",
+        "solver_status": "solved",
+        "review_status": "diagnostic_only",
+        "points": [
+          {
+            "source_id": 1,
+            "star_id": "tycho2-index-17:0",
+            "method": "visual_pattern_transfer",
+            "primary_source_id": 0,
+            "x": 1582.486083984375,
+            "y": 86.90757751464844,
+            "ra_deg": 193.50680542478943,
+            "dec_deg": 55.95984270438987,
+            "predicted_x": 1580.6385111594966,
+            "predicted_y": 89.69496871207411,
+            "error_px": 3.344110499178413
+          },
+          {
+            "source_id": 0,
+            "star_id": "tycho2-index-17:214",
+            "method": "visual_pattern_transfer",
+            "primary_source_id": 3,
+            "x": 2330.704833984375,
+            "y": 344.49566650390625,
+            "ra_deg": 165.93264770931052,
+            "dec_deg": 61.75111769767466,
+            "predicted_x": 2328.2449887983953,
+            "predicted_y": 345.89861851703404,
+            "error_px": 2.8318037873636
+          },
+          {
+            "source_id": 3,
+            "star_id": "tycho2-index-17:215",
+            "method": "visual_pattern_transfer",
+            "primary_source_id": 4,
+            "x": 1829.200439453125,
+            "y": 505.4216613769531,
+            "ra_deg": 178.45768739204087,
+            "dec_deg": 53.69475554548459,
+            "predicted_x": 1827.0837177537687,
+            "predicted_y": 505.2671805152056,
+            "error_px": 2.1223513114402093
+          },
+          {
+            "source_id": 4,
+            "star_id": "tycho2-index-17:18",
+            "method": "visual_pattern_transfer",
+            "primary_source_id": 5,
+            "x": 2208.332763671875,
+            "y": 598.6973876953125,
+            "ra_deg": 165.45996092823466,
+            "dec_deg": 56.38234327343014,
+            "predicted_x": 2207.088746598547,
+            "predicted_y": 597.7748360503259,
+            "error_px": 1.5487672570141076
+          }
+        ],
+        "coverage": {
+          "x_min": 1582.486083984375,
+          "x_max": 2330.704833984375,
+          "y_min": 86.90757751464844,
+          "y_max": 598.6973876953125,
+          "width_fraction": 0.1870546875,
+          "height_fraction": 0.22726012885464655
+        },
+        "external_star_error": {
+          "count": 4,
+          "rms_px": 2.5546644998127004,
+          "median_px": 2.477077549401905,
+          "p95_px": 3.267264492406191,
+          "max_px": 3.344110499178413
+        }
+      },
+      {
+        "id": "20260829_220101",
+        "solver_status": "solved",
+        "review_status": "diagnostic_only",
+        "points": [
+          {
+            "source_id": 0,
+            "star_id": "tycho2-index-17:0",
+            "method": "blind_external_correspondence",
+            "x": 1641.0433349609375,
+            "y": 556.73046875,
+            "ra_deg": 193.50680542478943,
+            "dec_deg": 55.95984270438987,
+            "predicted_x": 1640.8651386928175,
+            "predicted_y": 557.7943950399969,
+            "error_px": 1.0787460593292464
+          },
+          {
+            "source_id": 1,
+            "star_id": "tycho2-index-17:2",
+            "method": "blind_external_correspondence",
+            "x": 1471.724853515625,
+            "y": 397.9241638183594,
+            "ra_deg": 200.98091125614917,
+            "dec_deg": 54.925415031257394,
+            "predicted_x": 1472.7122918152677,
+            "predicted_y": 400.79689767614855,
+            "error_px": 3.037702127149649
+          },
+          {
+            "source_id": 2,
+            "star_id": "tycho2-index-17:1",
+            "method": "blind_external_correspondence",
+            "x": 1110.00537109375,
+            "y": 357.6156005859375,
+            "ra_deg": 206.8856048503581,
+            "dec_deg": 49.31330108152383,
+            "predicted_x": 1112.1823597923392,
+            "predicted_y": 360.8519972067621,
+            "error_px": 3.9004541890746594
+          },
+          {
+            "source_id": 3,
+            "star_id": "tycho2-index-17:214",
+            "method": "blind_external_correspondence",
+            "x": 2342.99755859375,
+            "y": 819.6317138671875,
+            "ra_deg": 165.93264770931052,
+            "dec_deg": 61.75111769767466,
+            "predicted_x": 2344.226865118033,
+            "predicted_y": 819.0969831164261,
+            "error_px": 1.3405713358320108
+          },
+          {
+            "source_id": 4,
+            "star_id": "tycho2-index-17:215",
+            "method": "blind_external_correspondence",
+            "x": 1855.099609375,
+            "y": 947.971923828125,
+            "ra_deg": 178.45768739204087,
+            "dec_deg": 53.69475554548459,
+            "predicted_x": 1854.0223879128441,
+            "predicted_y": 948.12063417181,
+            "error_px": 1.0874377429757354
+          },
+          {
+            "source_id": 5,
+            "star_id": "tycho2-index-17:18",
+            "method": "blind_external_correspondence",
+            "x": 2219.72509765625,
+            "y": 1050.7598876953125,
+            "ra_deg": 165.45996092823466,
+            "dec_deg": 56.38234327343014,
+            "predicted_x": 2220.9232809980754,
+            "predicted_y": 1051.187705502161,
+            "error_px": 1.2722701743279339
+          },
+          {
+            "source_id": 10,
+            "star_id": "tycho2-index-17:33",
+            "method": "blind_external_correspondence",
+            "x": 2259.560546875,
+            "y": 204.9214324951172,
+            "ra_deg": 188.68338015990858,
+            "dec_deg": 70.02177426862734,
+            "predicted_x": 2264.6504924097285,
+            "predicted_y": 192.06086638958152,
+            "error_px": 13.831185997641537
+          },
+          {
+            "source_id": 11,
+            "star_id": "tycho2-index-17:39",
+            "method": "blind_external_correspondence",
+            "x": 2440.680419921875,
+            "y": 416.9556579589844,
+            "ra_deg": 172.85092166233275,
+            "dec_deg": 69.3310776000218,
+            "predicted_x": 2440.134673720601,
+            "predicted_y": 417.30782058901593,
+            "error_px": 0.6495055305352676
+          },
+          {
+            "source_id": 12,
+            "star_id": "tycho2-index-17:216",
+            "method": "blind_external_correspondence",
+            "x": 1717.443115234375,
+            "y": 1205.3349609375,
+            "ra_deg": 176.51255796479506,
+            "dec_deg": 47.779403705822766,
+            "predicted_x": 1716.4597484113083,
+            "predicted_y": 1205.5198084876622,
+            "error_px": 1.0005892891238126
+          },
+          {
+            "source_id": 13,
+            "star_id": "tycho2-index-17:12",
+            "method": "blind_external_correspondence",
+            "x": 2938.519287109375,
+            "y": 588.4583740234375,
+            "ra_deg": 143.62025451115312,
+            "dec_deg": 69.83034518417489,
+            "predicted_x": 2937.871399589539,
+            "predicted_y": 588.6552075132176,
+            "error_px": 0.6771275072378277
+          },
+          {
+            "source_id": 14,
+            "star_id": "tycho2-index-17:31",
+            "method": "blind_external_correspondence",
+            "x": 2626.90380859375,
+            "y": 740.6972045898438,
+            "ra_deg": 156.03268433476464,
+            "dec_deg": 65.56642149610967,
+            "predicted_x": 2628.154290193658,
+            "predicted_y": 741.2938213006599,
+            "error_px": 1.3855164132315791
+          },
+          {
+            "source_id": 17,
+            "star_id": "tycho2-index-17:30",
+            "method": "blind_external_correspondence",
+            "x": 1620.529052734375,
+            "y": 870.1725463867188,
+            "ra_deg": 186.00624082830194,
+            "dec_deg": 51.56225966964046,
+            "predicted_x": 1620.1595113208084,
+            "predicted_y": 868.0364281303499,
+            "error_px": 2.167847333539199
+          }
+        ],
+        "coverage": {
+          "x_min": 1110.00537109375,
+          "x_max": 2938.519287109375,
+          "y_min": 204.9214324951172,
+          "y_max": 1205.3349609375,
+          "width_fraction": 0.45712847900390624,
+          "height_fraction": 0.4442333607648236
+        },
+        "external_star_error": {
+          "count": 12,
+          "rms_px": 4.378029006848198,
+          "median_px": 1.3064207550799725,
+          "p95_px": 8.369283502929747,
+          "max_px": 13.831185997641537
+        }
+      }
+    ]
+  }
+}
