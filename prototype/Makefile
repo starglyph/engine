@@ -1,6 +1,6 @@
 # "eval" collides with the checked-in eval/ directory (baseline-ci.json);
 # without .PHONY make considers the target permanently up to date.
-.PHONY: fetch-catalog validate-simulator validate-solver validate-serve eval eval-gate eval-smartphone-gate eval-smartphone-sky-fill-gate serve-smoke docker-build docker-smoke
+.PHONY: fetch-catalog validate-simulator validate-solver validate-serve eval eval-gate eval-smartphone-gate eval-smartphone-sky-fill-gate test-automatic-sky serve-smoke docker-build docker-smoke
 
 fetch-catalog:
 	bash ../scripts/fetch-hyg-catalog.sh
@@ -53,3 +53,10 @@ eval-smartphone-gate:
 eval-smartphone-sky-fill-gate:
 	cargo build --release -p starglyph-cli --locked
 	python3 eval/sky_fill_gate.py
+	cargo test --release -p starglyph-core --test extended_dense -- --ignored
+
+# Python-only research baseline; full three-arm runs require a fresh --out-dir.
+test-automatic-sky:
+	python3 -m unittest discover -s eval -p 'test_automatic_sky.py'
+	python3 -m unittest discover -s eval -p 'test_gradient_sky.py'
+	python3 -m unittest discover -s eval -p 'test_matching_search.py'

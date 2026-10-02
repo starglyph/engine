@@ -1,0 +1,252 @@
+{
+  "cases": [
+    {
+      "chosen_before_refinement": {
+        "attitude_quat": [
+          0.8472862243652344,
+          0.2456982433795929,
+          0.29413214325904846,
+          -0.3677290976047516
+        ],
+        "hits": 12,
+        "label": "fov-hint",
+        "log_odds": 9.123937078300258,
+        "rms_px": 1.7266342482231711
+      },
+      "name": "manual"
+    },
+    {
+      "chosen_before_refinement": null,
+      "name": "automatic"
+    },
+    {
+      "chosen_before_refinement": {
+        "attitude_quat": [
+          0.8472671508789062,
+          0.245696559548378,
+          0.2941277027130127,
+          -0.36777782440185547
+        ],
+        "hits": 11,
+        "label": "fov-hint",
+        "log_odds": 0.46303046493359545,
+        "rms_px": 1.581764683636099
+      },
+      "name": "manual_swapped_common_coordinates"
+    },
+    {
+      "chosen_before_refinement": null,
+      "name": "manual_swapped_common_order"
+    },
+    {
+      "chosen_before_refinement": null,
+      "name": "automatic_swapped_common_coordinates"
+    },
+    {
+      "chosen_before_refinement": null,
+      "name": "automatic_swapped_common_order"
+    },
+    {
+      "chosen_before_refinement": {
+        "attitude_quat": [
+          0.8472506403923035,
+          0.24571603536605835,
+          0.2941456437110901,
+          -0.3677884638309479
+        ],
+        "hits": 12,
+        "label": "fov-hint",
+        "log_odds": 55.47257161454621,
+        "rms_px": 1.7379627440112704
+      },
+      "name": "common_coordinates_0_order_0"
+    },
+    {
+      "chosen_before_refinement": {
+        "attitude_quat": [
+          0.8472506403923035,
+          0.24571603536605835,
+          0.2941456437110901,
+          -0.3677884638309479
+        ],
+        "hits": 12,
+        "label": "fov-hint",
+        "log_odds": 55.47257161454621,
+        "rms_px": 1.7379627440112704
+      },
+      "name": "common_coordinates_0_order_1"
+    },
+    {
+      "chosen_before_refinement": {
+        "attitude_quat": [
+          0.8472351431846619,
+          0.24571555852890015,
+          0.29414230585098267,
+          -0.3678271174430847
+        ],
+        "hits": 12,
+        "label": "fov-hint",
+        "log_odds": 55.47257161454621,
+        "rms_px": 1.749514303154631
+      },
+      "name": "common_coordinates_1_order_0"
+    },
+    {
+      "chosen_before_refinement": {
+        "attitude_quat": [
+          0.8472351431846619,
+          0.24571555852890015,
+          0.29414230585098267,
+          -0.3678271174430847
+        ],
+        "hits": 12,
+        "label": "fov-hint",
+        "log_odds": 55.47257161454621,
+        "rms_px": 1.749514303154631
+      },
+      "name": "common_coordinates_1_order_1"
+    }
+  ],
+  "epoch_years": 2026.6595945509162,
+  "fov_hint_deg": 78.67678833007812,
+  "provenance": {
+    "source_sha256": {
+      "prototype/artifacts/automatic-sky/gradient-v2-run-1/manual/solve-reports/20260829_220020.json": "f01b53401f805a5483456f3eeb1eda86096cb50f817f39ae0d72b5e4d51b5af8",
+      "prototype/artifacts/automatic-sky/gradient-v2-run-1/automatic/solve-reports/20260829_220020.json": "4655e1c9d6bdfdf5d7b3eb7355c2fe902aeba3989fe3c79b6cca4006336a55f0"
+    },
+    "radius_working_px": 4.8,
+    "pairs": [
+      [
+        24,
+        29
+      ],
+      [
+        3,
+        2
+      ],
+      [
+        2,
+        1
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        7,
+        5
+      ],
+      [
+        16,
+        18
+      ],
+      [
+        17,
+        23
+      ],
+      [
+        34,
+        36
+      ],
+      [
+        26,
+        34
+      ],
+      [
+        23,
+        28
+      ],
+      [
+        8,
+        4
+      ],
+      [
+        18,
+        19
+      ],
+      [
+        35,
+        39
+      ],
+      [
+        10,
+        13
+      ],
+      [
+        13,
+        14
+      ],
+      [
+        12,
+        12
+      ],
+      [
+        33,
+        42
+      ],
+      [
+        42,
+        44
+      ],
+      [
+        45,
+        47
+      ],
+      [
+        41,
+        43
+      ],
+      [
+        37,
+        37
+      ],
+      [
+        25,
+        35
+      ],
+      [
+        11,
+        9
+      ],
+      [
+        21,
+        20
+      ],
+      [
+        14,
+        24
+      ],
+      [
+        30,
+        33
+      ],
+      [
+        44,
+        41
+      ],
+      [
+        27,
+        46
+      ],
+      [
+        5,
+        10
+      ]
+    ],
+    "counts": [
+      50,
+      49
+    ],
+    "note": "0=manual, 1=automatic; matching only, before refinement; observed research frame"
+  },
+  "repeat_identical": true,
+  "source_sha256": {
+    "prototype/eval/centroid_replay.py": "de31f498ba7538754f178917e0d1b8090d40efcc05f6384fd171b30168ea39ea",
+    "prototype/crates/starglyph-core/src/solve.rs": "227ac92f538444b40ffabf3b34eca12be3e37e0f74e9c3ce92c344ab992efc08",
+    "prototype/crates/starglyph-core/src/solve/replay.rs": "a103464f35a8b0914cb9ed9ba95a435fcdfeddb6b0320dea386e3b7c23f1d52b",
+    "prototype/Cargo.lock": "59694debace1f5f18e2de398a77ce4d6a1a8f7dd237af646906aa49bfa3b677a",
+    "data/input/smartphone/20260829_220020.jpg": "d29aec433629753d32eff6bbe15b8c7d23f88c6982946d7f1aaeafecd8973d30",
+    "data/catalogs/hyg_v42.csv.gz": "5ca9431ff364c8002a4a3efa91b2b9296746aea1543374db4cb6b4fab049d601",
+    "prototype/target/release/deps/starglyph_core-489a3082372897ca": "1924851be5b0898c380e79f78ca3d874f9008a8e94814412c333c4fc9c54c5d2"
+  }
+}

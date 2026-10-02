@@ -17,6 +17,21 @@ on:
       - ".github/workflows/eval-gate.yml"
 
 jobs:
+  automatic-sky-unit:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: prototype
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+      - name: Install experimental image dependencies
+        run: python3 -m pip install -r eval/requirements-automatic-sky.txt
+      - name: Test automatic skyline and comparison integrity
+        run: make test-automatic-sky
+
   gate:
     runs-on: ubuntu-latest
     defaults:
