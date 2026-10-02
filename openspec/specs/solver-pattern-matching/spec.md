@@ -36,6 +36,28 @@ The system SHALL generate catalog match hypotheses from detected stars using a t
 - **WHEN** no FOV hint is available and the bootstrap database does not yield an accepted match
 - **THEN** the pipeline retries matching using dense-band databases centered at configured blind FOV values
 
+### Requirement: Deep matching has a bounded extended dense retry
+At each attempted image resolution, the solver SHALL preserve the ordinary
+default and deep detection retry ladders before trying longer deep prefixes.
+If neither produces an accepted candidate, a FOV hint is present, and dense matching is enabled, it
+SHALL try prefixes of 40 and 50 deep detections against the configured dense
+hinted band, capped to the available count, deduplicated, and excluding counts of 30
+or less. It SHALL NOT extend the bootstrap ladder for this fallback.
+
+#### Scenario: A useful pattern lies beyond the original deep prefixes
+- **WHEN** the ordinary default and deep attempts fail, a FOV hint is present, and more than 30 deep detections are available
+- **THEN** the dense fallback tries at most two additional prefixes per band
+- **AND** each hypothesis is verified against the entire deep detection list using the existing hard and soft acceptance criteria
+- **AND** only a verified candidate proceeds to pose refinement
+
+#### Scenario: An ordinary attempt succeeds
+- **WHEN** either ordinary detection tier supplies an accepted candidate at the current resolution
+- **THEN** the extended dense fallback is skipped at that resolution
+
+#### Scenario: No FOV hint is available
+- **WHEN** solving without an explicit or EXIF-derived FOV hint
+- **THEN** the original blind ladders remain unchanged and extended prefixes are not attempted
+
 ### Requirement: Matcher provides confidence and ambiguity signals
 The system MUST assign confidence to each hypothesis and MUST flag ambiguous cases where multiple hypotheses are similarly likely.
 

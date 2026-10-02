@@ -373,6 +373,36 @@ fn solve_single_scale(
         }
     }
 
+    // Preserve both original detection tiers before trying longer prefixes.
+    // Limit this fallback to a hinted band: extending all blind bands multiplies
+    // worst-case failure latency without a demonstrated recovery benefit.
+    // Verification still uses the complete deep list, never just the prefix.
+    if chosen.is_none() {
+        let prefixes = extended_dense_prefixes(deep_detections.len(), opts);
+        if !prefixes.is_empty() {
+            if debug {
+                eprintln!("  extended deep prefixes: {prefixes:?}");
+            }
+            let outcome = run_matching_prefixes(
+                engine,
+                catalog,
+                &verify,
+                &deep_detections,
+                opts,
+                width,
+                height,
+                debug,
+                &[],
+                &prefixes,
+            );
+            best_fov_guess = best_fov_guess.or(outcome.best_fov);
+            if let Some(c) = outcome.into_chosen() {
+                chosen = Some(c);
+                used_deep = true;
+            }
+        }
+    }
+
     if default_detections.len() < MIN_DETECTIONS && deep_detections.len() < MIN_DETECTIONS {
         let report_dets = if deep_detections.len() > default_detections.len() {
             &deep_detections
@@ -590,6 +620,24 @@ fn run_matching(
     debug: bool,
 ) -> MatchOutcome {
     let ladder = ladder_prefixes(detections.len());
+    run_matching_prefixes(
+        engine, catalog, verify, detections, opts, width, height, debug, &ladder, &ladder,
+    )
+}
+
+#[allow(clippy::too_many_arguments)]
+fn run_matching_prefixes(
+    engine: &mut Engine,
+    catalog: &Catalog,
+    verify: &VerifyStars,
+    detections: &[Detection],
+    opts: &SolveOptions,
+    width: u32,
+    height: u32,
+    debug: bool,
+    bootstrap_prefixes: &[usize],
+    dense_prefixes: &[usize],
+) -> MatchOutcome {
     let centroids: Vec<Centroid> = detections
         .iter()
         .map(|d| detection_to_centroid(d, width, height))
@@ -602,7 +650,7 @@ fn run_matching(
     {
         let boot = engine.get(DbKind::Bootstrap).expect("bootstrap ensured");
         'attempts: for attempt in build_attempts(opts) {
-            for &k in &ladder {
+            for &k in bootstrap_prefixes {
                 let cfg = attempt.solve_config(width, height);
                 match boot.solve_from_centroids(&centroids[..k], &cfg) {
                     Ok(sol) => {
@@ -682,7 +730,7 @@ fn run_matching(
                 ));
                 cfg.hint_uncertainty_rad = 5.0_f32.to_radians();
             }
-            for &k in &ladder {
+            for &k in dense_prefixes {
                 match dense.solve_from_centroids(&centroids[..k], &cfg) {
                     Ok(sol) => {
                         if let Some(cand) = make_candidate(&sol, detections, verify, "dense") {
@@ -1277,6 +1325,20 @@ fn ladder_prefixes(n: usize) -> Vec<usize> {
     out
 }
 
+/// At most two new prefixes, beyond the original ladder's maximum of 30.
+fn extended_dense_prefixes(n: usize, opts: &SolveOptions) -> Vec<usize> {
+    if !opts.allow_dense_band || opts.fov_hint_deg.is_none() {
+        return Vec::new();
+    }
+    let mut out = Vec::new();
+    for k in [40.min(n), 50.min(n)] {
+        if k > 30 && !out.contains(&k) {
+            out.push(k);
+        }
+    }
+    out
+}
+
 /// Convert a detection to a tetra3 centroid (center-origin, +X right, +Y down).
 fn detection_to_centroid(det: &Detection, width: u32, height: u32) -> Centroid {
     let cx = (width - 1) as f32 / 2.0;
@@ -1321,8 +1383,39 @@ fn round4(v: f64) -> f64 {
 }
 
 #[cfg(test)]
+mod replay;
+
+#[cfg(test)]
 mod tests {
     use super::*;
+
+    #[test]
+    fn extended_search_is_bounded_and_never_repeats_original_prefixes() {
+        let opts = SolveOptions {
+            fov_hint_deg: Some(78.0),
+            ..SolveOptions::default()
+        };
+        for n in 0..=100 {
+            let prefixes = extended_dense_prefixes(n, &opts);
+            assert!(prefixes.len() <= 2);
+            assert!(prefixes.iter().all(|&k| k > 30 && k <= n && k <= 50));
+            assert!(prefixes.windows(2).all(|p| p[0] < p[1]));
+        }
+        assert_eq!(extended_dense_prefixes(31, &opts), vec![31]);
+        assert_eq!(extended_dense_prefixes(45, &opts), vec![40, 45]);
+        assert_eq!(extended_dense_prefixes(80, &opts), vec![40, 50]);
+    }
+
+    #[test]
+    fn extended_search_does_not_expand_blind_or_disabled_dense_search() {
+        assert!(extended_dense_prefixes(50, &SolveOptions::default()).is_empty());
+        let disabled = SolveOptions {
+            fov_hint_deg: Some(78.0),
+            allow_dense_band: false,
+            ..SolveOptions::default()
+        };
+        assert!(extended_dense_prefixes(50, &disabled).is_empty());
+    }
 
     #[test]
     fn ladder_dedupes_and_caps() {

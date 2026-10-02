@@ -1,0 +1,3 @@
+# Experimental mask generation and diagnostic rasterization only.
+numpy>=1.23,<3
+Pillow>=10,<13
