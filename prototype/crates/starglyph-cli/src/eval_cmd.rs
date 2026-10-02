@@ -594,10 +594,7 @@ pub fn run_eval(args: EvalArgs<'_>) -> Result<EvalOutcome> {
         bail!("missing image files for ids: {}", missing.join(", "));
     }
 
-    let catalog_file = args
-        .catalog_path
-        .map(Path::to_path_buf)
-        .unwrap_or_else(|| crate::data_root().join("catalogs/hyg_v3.csv"));
+    let catalog_file = crate::resolve_catalog(args.catalog_path, &crate::data_root())?;
     let catalog_display = catalog_file.display().to_string();
 
     let (catalog, cons) =

@@ -499,10 +499,7 @@ fn run_overlay(args: OverlayRun<'_>) -> Result<()> {
         height: frame.height,
     };
 
-    let catalog_file = args
-        .catalog_path
-        .map(Path::to_path_buf)
-        .unwrap_or_else(|| data_root().join("catalogs/hyg_v3.csv"));
+    let catalog_file = resolve_catalog(args.catalog_path, &data_root())?;
     let lines_file = args
         .lines_path
         .map(Path::to_path_buf)
@@ -627,14 +624,35 @@ pub(crate) fn default_cache_dir() -> PathBuf {
     workspace_root().join("artifacts/cache")
 }
 
+fn resolve_catalog(explicit: Option<&Path>, root: &Path) -> Result<PathBuf> {
+    if let Some(path) = explicit {
+        return Ok(path.to_path_buf());
+    }
+    let candidates = [
+        "hyg_v42.csv.gz",
+        "hyg_v42.csv",
+        "hyg_v3.csv.gz",
+        "hyg_v3.csv",
+    ];
+    candidates
+        .iter()
+        .map(|name| root.join("catalogs").join(name))
+        .find(|path| path.is_file())
+        .with_context(|| {
+            format!(
+                "could not locate catalog in '{}'; tried {}; use --catalog",
+                root.join("catalogs").display(),
+                candidates.join(", ")
+            )
+        })
+}
+
 pub(crate) fn load_catalog_and_cons(
     catalog_path: Option<&Path>,
     lines_path: Option<&Path>,
     names_path: Option<&Path>,
 ) -> Result<(Catalog, ConstellationSet)> {
-    let catalog_file = catalog_path
-        .map(Path::to_path_buf)
-        .unwrap_or_else(|| data_root().join("catalogs/hyg_v3.csv"));
+    let catalog_file = resolve_catalog(catalog_path, &data_root())?;
     let lines_file = lines_path
         .map(Path::to_path_buf)
         .unwrap_or_else(|| data_root().join("celestial/constellations.lines.json"));
@@ -1125,6 +1143,38 @@ fn render_report_overlay_png(frame: &FrameImage, report: &SolveReport, path: &Pa
 mod image_ext_tests {
     use super::*;
     use std::path::Path;
+
+    #[test]
+    fn catalog_resolution_prefers_committed_files_and_honors_explicit_paths() {
+        let dir = tempfile::tempdir().unwrap();
+        let catalogs = dir.path().join("catalogs");
+        fs::create_dir(&catalogs).unwrap();
+        assert!(resolve_catalog(None, dir.path())
+            .unwrap_err()
+            .to_string()
+            .contains("--catalog"));
+        for name in [
+            "hyg_v3.csv",
+            "hyg_v3.csv.gz",
+            "hyg_v42.csv",
+            "hyg_v42.csv.gz",
+        ] {
+            fs::write(catalogs.join(name), "").unwrap();
+            assert_eq!(
+                resolve_catalog(None, dir.path()).unwrap(),
+                catalogs.join(name)
+            );
+        }
+        let missing = dir.path().join("explicit-missing.csv");
+        assert_eq!(
+            resolve_catalog(Some(&missing), dir.path()).unwrap(),
+            missing
+        );
+        let error = load_catalog_and_cons(Some(&missing), None, None)
+            .err()
+            .unwrap();
+        assert!(error.to_string().contains("explicit-missing.csv"));
+    }
 
     #[test]
     fn is_image_ext_recognizes_supported_formats() {

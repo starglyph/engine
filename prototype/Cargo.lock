@@ -3502,6 +3502,7 @@ dependencies = [
  "serde_json",
  "sha2",
  "starglyph-core",
+ "tempfile",
 ]
 
 [[package]]

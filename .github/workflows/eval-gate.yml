@@ -6,12 +6,14 @@ on:
       - "prototype/**"
       - "data/samples/sky-samples/**"
       - "data/catalogs/**"
+      - "data/input/smartphone/**"
       - ".github/workflows/eval-gate.yml"
   pull_request:
     paths:
       - "prototype/**"
       - "data/samples/sky-samples/**"
       - "data/catalogs/**"
+      - "data/input/smartphone/**"
       - ".github/workflows/eval-gate.yml"
 
 jobs:
@@ -42,3 +44,29 @@ jobs:
         run: python3 fetch_sample.py tetra3_alt40 tetra3_alt60
       - name: Run eval gate
         run: make eval-gate
+
+  smartphone:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    defaults:
+      run:
+        working-directory: prototype
+    steps:
+      - uses: actions/checkout@v5
+      - uses: dtolnay/rust-toolchain@stable
+      - uses: Swatinem/rust-cache@v2
+      - uses: actions/cache@v4
+        with:
+          path: prototype/artifacts/cache
+          key: tetra3-smartphone-dbs-${{ hashFiles('data/catalogs/hyg_v42.csv.gz', 'prototype/crates/starglyph-core/src/engine.rs', 'prototype/crates/starglyph-core/src/solve.rs', 'prototype/eval/baseline-smartphone.json', 'prototype/Cargo.lock') }}
+      - name: Test smartphone gate
+        run: python3 -m unittest discover -s eval -p 'test_smartphone_gate.py'
+      - name: Evaluate all smartphone frames
+        run: make eval-smartphone-gate
+      - name: Preserve diagnostic reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: smartphone-eval
+          path: prototype/artifacts/eval/smartphone/
+          if-no-files-found: warn

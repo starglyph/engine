@@ -16,3 +16,6 @@ serde.workspace = true
 serde_json.workspace = true
 sha2 = "0.10"
 starglyph-core = { path = "../starglyph-core" }
+
+[dev-dependencies]
+tempfile.workspace = true

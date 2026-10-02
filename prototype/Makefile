@@ -1,6 +1,6 @@
 # "eval" collides with the checked-in eval/ directory (baseline-ci.json);
 # without .PHONY make considers the target permanently up to date.
-.PHONY: fetch-catalog validate-simulator validate-solver validate-serve eval eval-gate serve-smoke docker-build docker-smoke
+.PHONY: fetch-catalog validate-simulator validate-solver validate-serve eval eval-gate eval-smartphone-gate serve-smoke docker-build docker-smoke
 
 fetch-catalog:
 	bash ../scripts/fetch-hyg-catalog.sh
@@ -43,3 +43,8 @@ eval-gate:
 		--catalog ../data/catalogs/hyg_v42.csv.gz \
 		--out-dir artifacts/eval/ci \
 		--baseline eval/baseline-ci.json
+
+# Fresh run directories prevent stale solve reports from passing the gate.
+eval-smartphone-gate:
+	cargo build --release -p starglyph-cli --locked
+	python3 eval/smartphone_gate.py
