@@ -70,3 +70,29 @@ jobs:
           name: smartphone-eval
           path: prototype/artifacts/eval/smartphone/
           if-no-files-found: warn
+
+  smartphone-sky-fill:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    defaults:
+      run:
+        working-directory: prototype
+    steps:
+      - uses: actions/checkout@v5
+      - uses: dtolnay/rust-toolchain@stable
+      - uses: Swatinem/rust-cache@v2
+      - uses: actions/cache@v4
+        with:
+          path: prototype/artifacts/cache
+          key: tetra3-sky-fill-dbs-${{ hashFiles('data/catalogs/hyg_v42.csv.gz', 'prototype/crates/starglyph-core/src/engine.rs', 'prototype/crates/starglyph-core/src/solve.rs', 'prototype/eval/baseline-smartphone-sky-fill.json', 'prototype/Cargo.lock') }}
+      - name: Test experimental gate isolation
+        run: python3 -m unittest discover -s eval -p 'test_sky_fill_gate.py'
+      - name: Evaluate experimental sky-fill acceptance
+        run: make eval-smartphone-sky-fill-gate
+      - name: Preserve experimental reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: smartphone-sky-fill-eval
+          path: prototype/artifacts/eval/smartphone-sky-fill/
+          if-no-files-found: warn

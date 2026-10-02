@@ -1,0 +1,189 @@
+{
+  "schema_version": 1,
+  "description": "Codex visual review 2026-10-02 before sky-statistics A/B. Non-exhaustive visible compact-source probes, no catalog identity asserted. Reviewed brightness x3 preview at 1600x901; coordinates approximate. Derived from Igor Lazarev photographs, CC BY 4.0. Two conservative cloud-interior regions are diagnostic location labels, not proof that no stars are superposed. One ambiguous diffuse probe excluded from primary recovery.",
+  "coordinates": "exif_oriented_top_left_zero_based",
+  "match_radius_original_px": 12,
+  "frames": [
+    {
+      "id": "20260829_215839",
+      "source_sha256": "93198d4c1fc7923838ed1985d3ce3825269bd1a85f71899c8171c48a98c60ddc",
+      "width": 4000,
+      "height": 2252,
+      "points": [
+        {
+          "id": "P01",
+          "x": 2028.25,
+          "y": 88.23,
+          "label": "visible_compact_source"
+        },
+        {
+          "id": "P02",
+          "x": 2925.75,
+          "y": 28.24,
+          "label": "visible_compact_source"
+        },
+        {
+          "id": "P03",
+          "x": 853.25,
+          "y": 728.09,
+          "label": "visible_compact_source"
+        },
+        {
+          "id": "P04",
+          "x": 1223.25,
+          "y": 793.07,
+          "label": "visible_compact_source"
+        },
+        {
+          "id": "P05",
+          "x": 1378.25,
+          "y": 960.54,
+          "label": "visible_compact_source"
+        },
+        {
+          "id": "P06",
+          "x": 2055.75,
+          "y": 1262.97,
+          "label": "visible_compact_source"
+        },
+        {
+          "id": "P07",
+          "x": 1923.25,
+          "y": 1485.42,
+          "label": "visible_compact_source"
+        }
+      ]
+    },
+    {
+      "id": "20260831_214748",
+      "source_sha256": "09bd7b0b93e6cb2f7aff1fb5fced161c3aa7a25269fd9d943a77b864dd60eaba",
+      "width": 4000,
+      "height": 2252,
+      "points": [
+        {
+          "id": "P01",
+          "x": 1815.75,
+          "y": 465.65,
+          "label": "visible_compact_source"
+        },
+        {
+          "id": "P02",
+          "x": 3910.75,
+          "y": 288.19,
+          "label": "visible_compact_source"
+        },
+        {
+          "id": "P03",
+          "x": 663.25,
+          "y": 815.57,
+          "label": "visible_compact_source"
+        },
+        {
+          "id": "P04",
+          "x": 1628.25,
+          "y": 945.54,
+          "label": "visible_compact_source"
+        },
+        {
+          "id": "P05",
+          "x": 2283.25,
+          "y": 1058.01,
+          "label": "visible_compact_source"
+        },
+        {
+          "id": "P06",
+          "x": 2793.25,
+          "y": 1290.46,
+          "label": "visible_compact_source"
+        },
+        {
+          "id": "P07",
+          "x": 2980.75,
+          "y": 1815.35,
+          "label": "visible_compact_source"
+        },
+        {
+          "id": "P08",
+          "x": 1038.25,
+          "y": 1770.36,
+          "label": "uncertain_diffuse_source",
+          "note": "Less compact in full-resolution crop; excluded from primary probe recovery."
+        },
+        {
+          "id": "P09",
+          "x": 238.25,
+          "y": 1090.51,
+          "label": "visible_compact_source"
+        }
+      ],
+      "cloud_regions": [
+        {
+          "id": "C01",
+          "polygon": [
+            [
+              2247.5,
+              1392.19
+            ],
+            [
+              2337.5,
+              1359.7
+            ],
+            [
+              2435.0,
+              1364.7
+            ],
+            [
+              2550.0,
+              1382.19
+            ],
+            [
+              2520.0,
+              1469.67
+            ],
+            [
+              2402.5,
+              1507.17
+            ],
+            [
+              2262.5,
+              1452.18
+            ]
+          ]
+        },
+        {
+          "id": "C02",
+          "polygon": [
+            [
+              552.5,
+              2089.54
+            ],
+            [
+              767.5,
+              2037.05
+            ],
+            [
+              967.5,
+              2109.53
+            ],
+            [
+              1107.5,
+              2174.52
+            ],
+            [
+              1140.0,
+              2252.0
+            ],
+            [
+              917.5,
+              2252.0
+            ],
+            [
+              630.0,
+              2152.02
+            ]
+          ]
+        }
+      ]
+    }
+  ]
+}

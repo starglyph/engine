@@ -51,3 +51,24 @@ first-party material. Their CC BY 4.0 license and attribution are documented in
   - attribution section;
   - third-party license list;
   - links to full license texts.
+
+## 4) Tycho-2 positions for diagnostic correspondences
+
+- **Purpose:** independent sparse star correspondences for smartphone solve review.
+- **File:** `data/input/smartphone/external-star-correspondences.json` (`stars` positions).
+- **Source:** Astrometry.net Tycho-2 index 17, Debian package
+  [`astrometry-data-tycho2-10-19-littleendian`, version 2-4](https://deb.debian.org/debian/pool/main/a/astrometry-data-tycho2/astrometry-data-tycho2-10-19-littleendian_2-4_all.deb).
+- **Provenance:** exact index name and SHA-256 in the correspondence file's `catalog_provenance`.
+- **License:** BSD-2-Clause; original packaging copyright and permission record
+  vendored in `data/input/smartphone/LICENSE.tycho2`.
+- **Copyright:** 2000 Høg E., Fabricius C., Makarov V.V., Urban S., Corbin T.,
+  Wycoff G., Bastian U., Schwekendiek P., Wicenec A.; Debian files © 2015 Ole Streicher.
+- **Obligations:** retain copyright, license conditions and disclaimer.
+  The full indices are local dependencies and are not bundled.
+
+The same Tycho-2 terms cover eight positions from index 19 in
+`data/input/smartphone/external-star-correspondences-215934.json`; its provenance
+includes the exact index SHA-256. The mixed research snapshot
+`docs/experiments/sky-edge-review-2026-10-02.json` additionally contains positions
+derived from HYG v4.2 and is distributed under CC BY-SA 4.0 with HYG/Astronexus
+attribution; original Tycho-2 notices are retained. No complete indices are vendored.

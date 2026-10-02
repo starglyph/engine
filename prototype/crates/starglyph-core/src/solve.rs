@@ -18,11 +18,12 @@ use crate::constellations::ConstellationSet;
 use crate::contracts::{
     SolveDetection, SolveFov, SolvePose, SolveQuality, SolveReport, SolveStatus, SolveTimingMs,
 };
-use crate::detect::{detect_stars, DetectConfig, Detection};
+use crate::detect::{detect_stars_with_mask, DetectConfig, Detection};
 use crate::engine::{DbKind, Engine, EngineProgress};
 use crate::geom::{self, CameraSolution};
 use crate::image_input::FrameImage;
 use crate::overlay::{build_overlay, OverlayOptions};
+use crate::sky_mask::SkyMask;
 
 // ── Tunable constants ───────────────────────────────────────────────────────
 
@@ -192,6 +193,21 @@ pub fn solve_frame_with_engine(
     opts: &SolveOptions,
     progress: &mut dyn FnMut(SolveStage),
 ) -> (SolveReport, SolveExtras) {
+    solve_frame_with_engine_and_mask(frame, catalog, cons, engine, opts, None, progress)
+}
+
+/// Experimental sky selection at both scales and both detection tiers.
+/// Callers must validate mask provenance against the EXIF-oriented frame.
+#[allow(clippy::too_many_arguments)]
+pub fn solve_frame_with_engine_and_mask(
+    frame: &FrameImage,
+    catalog: &Catalog,
+    cons: &ConstellationSet,
+    engine: &mut Engine,
+    opts: &SolveOptions,
+    sky_mask: Option<&SkyMask>,
+    progress: &mut dyn FnMut(SolveStage),
+) -> (SolveReport, SolveExtras) {
     let start = Instant::now();
     let working = frame.resized(WORKING_MAX_EDGE);
     let mut detect_ms = 0;
@@ -213,6 +229,7 @@ pub fn solve_frame_with_engine(
                 engine,
                 opts,
                 use_exif_fov,
+                sky_mask,
                 progress,
             );
             if let Some(timing) = &report.timing_ms {
@@ -247,6 +264,7 @@ fn solve_single_scale(
     engine: &mut Engine,
     opts: &SolveOptions,
     use_exif_fov: bool,
+    sky_mask: Option<&SkyMask>,
     progress: &mut dyn FnMut(SolveStage),
 ) -> (SolveReport, SolveExtras) {
     let debug = std::env::var_os("STARGLYPH_SOLVE_DEBUG").is_some();
@@ -290,7 +308,8 @@ fn solve_single_scale(
     // ── 1. Detect (clean default first) ───────────────────────────────────────
     progress(SolveStage::Detect);
     let t_detect = Instant::now();
-    let default_detections = detect_stars(frame, &DetectConfig::default()).detections;
+    let default_detections =
+        detect_stars_with_mask(frame, &DetectConfig::default(), sky_mask).detections;
     let mut detect_ms = t_detect.elapsed().as_millis() as u64;
 
     let verify = VerifyStars::build(catalog, epoch);
@@ -330,7 +349,7 @@ fn solve_single_scale(
     let mut deep_detections: Vec<Detection> = Vec::new();
     if chosen.is_none() {
         let t_deep = Instant::now();
-        deep_detections = detect_stars(frame, &deep_detect_config()).detections;
+        deep_detections = detect_stars_with_mask(frame, &deep_detect_config(), sky_mask).detections;
         detect_ms += t_deep.elapsed().as_millis() as u64;
         if debug {
             eprintln!("  deep re-detect: {} centroids", deep_detections.len());
@@ -698,6 +717,42 @@ fn run_matching(
         softs,
         best_fov,
     }
+}
+
+/// Diagnostic detections at the exact solver scales/tiers, before top-K.
+/// Run separately from solve timing; these are candidates, not catalog matches.
+#[derive(Debug, serde::Serialize)]
+pub struct DetectionDiagnostic {
+    pub width: u32,
+    pub height: u32,
+    pub tier: &'static str,
+    pub max_detections: u32,
+    pub result: crate::detect::DetectResult,
+}
+
+pub fn detection_diagnostics(
+    frame: &FrameImage,
+    mask: Option<&SkyMask>,
+) -> Vec<DetectionDiagnostic> {
+    let working = frame.resized(WORKING_MAX_EDGE);
+    let mut results = Vec::new();
+    for current in working.iter().chain(std::iter::once(frame)) {
+        for (tier, mut config) in [
+            ("default", DetectConfig::default()),
+            ("deep", deep_detect_config()),
+        ] {
+            let max_detections = config.max_detections;
+            config.max_detections = u32::MAX;
+            results.push(DetectionDiagnostic {
+                width: current.width,
+                height: current.height,
+                tier,
+                max_detections,
+                result: detect_stars_with_mask(current, &config, mask),
+            });
+        }
+    }
+    results
 }
 
 /// Deeper detection preset for the retry tier: lowers the peak-SNR floor to

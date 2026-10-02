@@ -81,6 +81,32 @@ class SmartphoneGateTests(unittest.TestCase):
             self.assertEqual(provenance['exit_code'], 0)
             self.assertEqual(provenance['generated_by'], 'test solver')
 
+    def test_experimental_fill_cannot_satisfy_default_gate(self):
+        self.summary['config']['sky_fill'] = True
+        self.save_summary()
+        with self.assertRaisesRegex(ValueError, 'experimental sky fill'):
+            self.check()
+
+    def test_experimental_statistics_cannot_satisfy_default_gate(self):
+        self.summary['config']['sky_statistics'] = True
+        self.save_summary()
+        with self.assertRaisesRegex(ValueError, 'experimental sky statistics'):
+            self.check()
+
+    def test_experimental_mask_cannot_satisfy_default_gate(self):
+        self.summary['config']['sky_masks'] = 'masks.json'
+        self.save_summary()
+        with self.assertRaisesRegex(ValueError, 'experimental sky masks'):
+            self.check()
+        self.summary['config'].pop('sky_masks')
+        self.save_summary()
+        path = self.run / 'solve-reports' / 'a.json'
+        artifact = json.loads(path.read_text())
+        artifact['sky_mask'] = {'id': 'a'}
+        path.write_text(json.dumps(artifact))
+        with self.assertRaisesRegex(ValueError, 'experimental mask'):
+            self.check()
+
     def test_pass_and_additional_success(self):
         self.assertEqual(self.check(), ['a'])
         self.write_status('b', 'solved')

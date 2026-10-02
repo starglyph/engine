@@ -55,9 +55,39 @@ def check_inputs(manifest_path, baseline):
     return entries
 
 
-def check_reports(manifest_path, baseline, run_dir):
+def check_sky_fill_masks(baseline, masks_path):
+    require(baseline.get('mode') == 'sky_fill', 'sky-fill gate requires its experimental baseline')
+    require(sha256(masks_path) == baseline['masks_sha256'], 'mask file SHA-256 mismatch')
+    document = read_json(masks_path)
+    require(document['schema_version'] == 1 and
+            document['coordinates'] == 'exif_oriented_normalized_image_edges', 'unsupported mask format')
+    masks = {mask['id']: mask for mask in document['masks']}
+    require(len(masks) == len(document['masks']) and set(masks) == set(baseline['mask_ids']),
+            'mask membership mismatch')
+    for frame_id, mask in masks.items():
+        pinned = baseline['frames'][frame_id]
+        require(mask['source_sha256'] == pinned['sha256'], f'{frame_id}: mask source SHA-256 mismatch')
+        require([mask['width'], mask['height']] == pinned['dimensions'], f'{frame_id}: mask dimensions mismatch')
+        require(finite_numbers(mask), f'{frame_id}: non-finite mask')
+    return masks
+
+
+def check_reports(manifest_path, baseline, run_dir, *, sky_fill_masks=None):
     entries = check_inputs(manifest_path, baseline)
     summary = read_json(run_dir / 'summary.json')
+    masks = None
+    if sky_fill_masks is not None:
+        masks = check_sky_fill_masks(baseline, sky_fill_masks)
+        require(summary['config'].get('sky_fill') is True and summary['config'].get('sky_statistics') is True,
+                'sky-fill gate requires both experimental flags')
+        require(isinstance(summary['config'].get('sky_masks'), str), 'sky-fill mask configuration missing')
+        require(sha256(Path(summary['config']['sky_masks'])) == baseline['masks_sha256'],
+                'reported mask file SHA-256 mismatch')
+    else:
+        require(baseline.get('mode', 'default') == 'default', 'experimental baseline cannot satisfy the default gate')
+        require(not summary['config'].get('sky_fill', False), 'experimental sky fill cannot satisfy the default baseline')
+        require(not summary['config'].get('sky_statistics', False), 'experimental sky statistics cannot satisfy the default baseline')
+        require(summary['config'].get('sky_masks') is None, 'experimental sky masks cannot satisfy the default baseline')
     require(summary['dataset']['n_selected'] == len(entries), 'selected count mismatch')
     require(summary['dataset']['tracks'] == ['solver'], 'selected tracks mismatch')
     for key, value in baseline['config'].items():
@@ -70,6 +100,15 @@ def check_reports(manifest_path, baseline, run_dir):
         pinned = baseline['frames'][frame_id]
         record = read_json(run_dir / 'per-frame' / f'{frame_id}.json')
         artifact = read_json(run_dir / 'solve-reports' / f'{frame_id}.json')
+        if masks is not None:
+            applied = frame_id in masks
+            require(artifact.get('sky_mask') == masks.get(frame_id), f'{frame_id}: mask provenance mismatch')
+            require(artifact.get('sky_fill') is applied and artifact.get('sky_statistics') is applied,
+                    f'{frame_id}: per-frame experimental flags mismatch')
+        else:
+            require(not artifact.get('sky_fill', False), f'{frame_id}: experimental sky fill in default baseline')
+            require(not artifact.get('sky_statistics', False), f'{frame_id}: experimental sky statistics in default baseline')
+            require(artifact.get('sky_mask') is None, f'{frame_id}: experimental mask in default baseline')
         require(record['id'] == artifact['id'] == frame_id, f'{frame_id}: report ID mismatch')
         require(artifact['source_sha256'] == pinned['sha256'], f'{frame_id}: report SHA-256 mismatch')
         require([artifact['width'], artifact['height']] == pinned['dimensions'],
@@ -104,23 +143,32 @@ def check_reports(manifest_path, baseline, run_dir):
     return solved
 
 
-def main():
-    parser = argparse.ArgumentParser(description=__doc__)
+def main(*, sky_fill=False):
+    label = 'SMARTPHONE SKY-FILL GATE' if sky_fill else 'SMARTPHONE GATE'
+    parser = argparse.ArgumentParser(description=('Experimental manual-mask acceptance regression; not astrometric ground truth.' if sky_fill else __doc__))
     parser.add_argument('--manifest', type=Path, default=Path('../data/input/smartphone/manifest.json'))
-    parser.add_argument('--baseline', type=Path, default=Path('eval/baseline-smartphone.json'))
+    parser.add_argument('--baseline', type=Path, default=Path('eval/baseline-smartphone-sky-fill.json' if sky_fill else 'eval/baseline-smartphone.json'))
     parser.add_argument('--run-dir', type=Path, help='check an existing run instead of executing')
     parser.add_argument('--binary', type=Path, default=Path('target/release/starglyph'))
-    parser.add_argument('--out-dir', type=Path, default=Path('artifacts/eval/smartphone'))
+    parser.add_argument('--out-dir', type=Path, default=Path('artifacts/eval/smartphone-sky-fill' if sky_fill else 'artifacts/eval/smartphone'))
+    if sky_fill:
+        parser.add_argument('--masks', type=Path, default=Path('../data/input/smartphone/sky-masks.json'))
     args = parser.parse_args()
-    baseline = read_json(args.baseline)
     try:
+        baseline = read_json(args.baseline)
         check_inputs(args.manifest, baseline)
+        if sky_fill:
+            check_sky_fill_masks(baseline, args.masks)
+        else:
+            require(baseline.get('mode', 'default') == 'default', 'experimental baseline cannot satisfy the default gate')
         run_dir = args.run_dir
         if run_dir is None:
             args.out_dir.mkdir(parents=True, exist_ok=True)
             run_dir = Path(tempfile.mkdtemp(prefix='run-', dir=args.out_dir)).resolve()
             command = [str(args.binary.resolve()), 'eval', '--manifest', str(args.manifest.resolve()),
                        '--catalog', '../data/catalogs/hyg_v42.csv.gz', '--out-dir', str(run_dir)]
+            if sky_fill:
+                command += ['--sky-masks', str(args.masks.resolve()), '--sky-statistics', '--sky-fill']
             provenance = {'commit': subprocess.check_output(['git', 'rev-parse', 'HEAD'], text=True).strip(),
                           'working_tree_diff_sha256': hashlib.sha256(subprocess.check_output(['git', 'diff', 'HEAD'])).hexdigest(),
                           'binary_sha256': sha256(args.binary),
@@ -134,6 +182,9 @@ def main():
                           'cache_before': sorted(str(p) for p in Path('artifacts/cache').glob('*.bin')),
                           'command': command,
                           'baseline_sha256': sha256(args.baseline), 'started_unix': time.time()}
+            if sky_fill:
+                provenance.update(mode='sky_fill', masks_sha256=sha256(args.masks),
+                                  scope='solver_acceptance_not_astrometric_truth')
             (run_dir / 'provenance.json').write_text(json.dumps(provenance, indent=2) + '\n')
             print(f'Artifacts: {run_dir}', flush=True)
             started = time.monotonic()
@@ -145,10 +196,11 @@ def main():
             outcome.check_returncode()
             provenance['generated_by'] = read_json(run_dir / 'summary.json')['generated_by']
             (run_dir / 'provenance.json').write_text(json.dumps(provenance, indent=2) + '\n')
-        solved = check_reports(args.manifest, baseline, run_dir)
-        print(f'SMARTPHONE GATE PASS: {len(solved)}/{len(baseline["frames"])}; {run_dir}')
+        solved = check_reports(args.manifest, baseline, run_dir,
+                               sky_fill_masks=args.masks if sky_fill else None)
+        print(f'{label} PASS: {len(solved)}/{len(baseline["frames"])}; {run_dir}')
     except (ValueError, KeyError, TypeError, OSError, subprocess.CalledProcessError) as error:
-        raise SystemExit(f'SMARTPHONE GATE FAIL: {error}') from error
+        raise SystemExit(f'{label} FAIL: {error}') from error
 
 
 if __name__ == '__main__':

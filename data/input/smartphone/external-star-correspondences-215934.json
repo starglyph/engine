@@ -1,0 +1,202 @@
+{
+  "schema_version": 1,
+  "coordinates": "exif_oriented_top_left_zero_based",
+  "review_status": "diagnostic_correspondences_not_full_field_ground_truth",
+  "reviewer": "Codex, 2026-10-02",
+  "source_review_sha256": "ec55aaa207f43d990b811f36df5bba4e7f3062ea50ea60b46cea9c6f8ef5a0d6",
+  "method": "Unblinded image-to-image pattern check. Initial identities were suggested by engine-guided HYG lookup, then checked against a prior independently blind-solved Tycho-2 frame and source crops. Four fixed anchors fit an image homography; four other stars test it. No engine camera is used in that fit. This is not a blind or held-out accuracy evaluation of Starglyph.",
+  "catalog_provenance": {
+    "index_file": "index-tycho2-19.littleendian.fits",
+    "index_sha256": "c761ac93f92dbe8184bff87e293d2465c667bace2b8ad76e51c33e778b2d144f",
+    "package": "astrometry-data-tycho2-10-19-littleendian",
+    "version": "2-4",
+    "license": "BSD-2-Clause",
+    "license_file": "LICENSE.tycho2",
+    "annotation_license": "CC BY 4.0"
+  },
+  "primary_reference": {
+    "source_sha256": "58017256429cb019f20fb52cca1ad99ca889d622821995df0b80d54a3c91e4c5",
+    "width": 4000,
+    "height": 2252,
+    "correspondences_sha256": "7a536ec0736ee5d4c19b2436a417afbfb11fa712f90a72fab0e6bfe63dc6f69a",
+    "wcs_sha256": "e5c8ac257d683c50faf7c46670ad0f57e1c9e25379861bbf24dd302722344c65"
+  },
+  "stars": {
+    "tycho2-index-19:0": {
+      "ra_deg": 297.6945190396195,
+      "dec_deg": 8.867384921130217,
+      "external_match_weight": 0.996781364806092,
+      "primary_corr_row": 0,
+      "display_name": "Altair"
+    },
+    "tycho2-index-19:76": {
+      "ra_deg": 296.5649108866756,
+      "dec_deg": 10.613263126352551,
+      "external_match_weight": 0.9968726848696845,
+      "primary_corr_row": 5,
+      "display_name": "Tarazed"
+    },
+    "tycho2-index-19:13": {
+      "ra_deg": 311.5528564330241,
+      "dec_deg": 33.97025300431832,
+      "external_match_weight": 0.9953843669543722,
+      "primary_corr_row": 3,
+      "display_name": "Aljanah"
+    },
+    "tycho2-index-19:8": {
+      "ra_deg": 286.35253906164957,
+      "dec_deg": 13.863476755365408,
+      "external_match_weight": 0.9960338938780369,
+      "primary_corr_row": 34,
+      "display_name": "Okab"
+    },
+    "tycho2-index-19:77": {
+      "ra_deg": 292.68035888628214,
+      "dec_deg": 27.959678647772076,
+      "external_match_weight": 0.9971051561840532,
+      "primary_corr_row": 6,
+      "display_name": "Albireo"
+    },
+    "tycho2-index-19:14": {
+      "ra_deg": 298.8283080948776,
+      "dec_deg": 6.406763082257005,
+      "external_match_weight": 0.9945544992168869,
+      "primary_corr_row": 18,
+      "display_name": "Alshain"
+    },
+    "tycho2-index-19:7": {
+      "ra_deg": 309.3872375462432,
+      "dec_deg": 14.595109938244535,
+      "external_match_weight": 0.9976135253629143,
+      "primary_corr_row": 11,
+      "display_name": "Rotanev"
+    },
+    "tycho2-index-19:21": {
+      "ra_deg": 318.2340698238358,
+      "dec_deg": 30.226940150216322,
+      "external_match_weight": 0.9959231701107363,
+      "primary_corr_row": 4,
+      "display_name": "xi Cyg"
+    }
+  },
+  "frames": [
+    {
+      "id": "20260829_215934",
+      "source_sha256": "1eac83b3f2555990d148383a4566d1322845752ece2875ede81b93be86942f61",
+      "width": 2252,
+      "height": 4000,
+      "matches": [
+        {
+          "source_id": 0,
+          "star_id": "tycho2-index-19:0",
+          "method": "image_registration_transfer"
+        },
+        {
+          "source_id": 1,
+          "star_id": "tycho2-index-19:76",
+          "method": "image_registration_transfer"
+        },
+        {
+          "source_id": 2,
+          "star_id": "tycho2-index-19:13",
+          "method": "image_registration_transfer"
+        },
+        {
+          "source_id": 3,
+          "star_id": "tycho2-index-19:8",
+          "method": "image_registration_transfer"
+        },
+        {
+          "source_id": 6,
+          "star_id": "tycho2-index-19:77",
+          "method": "image_registration_transfer"
+        },
+        {
+          "source_id": 10,
+          "star_id": "tycho2-index-19:14",
+          "method": "image_registration_transfer"
+        },
+        {
+          "source_id": 13,
+          "star_id": "tycho2-index-19:7",
+          "method": "image_registration_transfer"
+        },
+        {
+          "source_id": 26,
+          "star_id": "tycho2-index-19:21",
+          "method": "image_registration_transfer"
+        }
+      ]
+    }
+  ],
+  "registration": {
+    "target_frame": "20260829_215934",
+    "primary_frame": "20260831_214709",
+    "points": [
+      {
+        "source_id": 0,
+        "primary_xy": [
+          2054.5,
+          2028.5
+        ],
+        "role": "anchor"
+      },
+      {
+        "source_id": 1,
+        "primary_xy": [
+          2105.6982421875,
+          1931.065673828125
+        ],
+        "role": "held_out"
+      },
+      {
+        "source_id": 2,
+        "primary_xy": [
+          1439.22998046875,
+          767.1471557617188
+        ],
+        "role": "anchor"
+      },
+      {
+        "source_id": 3,
+        "primary_xy": [
+          2594.744384765625,
+          1730.7491455078125
+        ],
+        "role": "held_out"
+      },
+      {
+        "source_id": 6,
+        "primary_xy": [
+          2225.235107421875,
+          1060.2459716796875
+        ],
+        "role": "anchor"
+      },
+      {
+        "source_id": 10,
+        "primary_xy": [
+          1997.5015869140625,
+          2174.978759765625
+        ],
+        "role": "held_out"
+      },
+      {
+        "source_id": 13,
+        "primary_xy": [
+          1472.69384765625,
+          1741.66357421875
+        ],
+        "role": "held_out"
+      },
+      {
+        "source_id": 26,
+        "primary_xy": [
+          1125.6123046875,
+          922.4319458007812
+        ],
+        "role": "anchor"
+      }
+    ]
+  }
+}
