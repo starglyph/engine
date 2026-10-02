@@ -22,9 +22,10 @@ OUTPUT (sidecars next to each frame):
   <frame>.wcs.json  -> {ra, dec, pixscale, orientation, parity, radius, fields...}
   <frame>.wcs.fits  -> full WCS header (if solved)
 
-ALTERNATIVE (canonical for this project): run the engine's own blind solver to
-  produce pose/WCS in-house — no external dependency, no rate limits. See the
-  engine eval-harness (Epic A). This script is a bootstrap / cross-check.
+LOCAL ALTERNATIVE: prototype/eval/solve_local_wcs.py runs Astrometry.net without
+  uploading images. Inspect external star correspondences before accepting a WCS
+  candidate as a reference. The engine's own solver is a regression baseline,
+  never independent ground truth for evaluating that same solver.
 """
 import os, sys, json, time, urllib.request, urllib.parse, mimetypes, io
 

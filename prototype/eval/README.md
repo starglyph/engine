@@ -24,3 +24,17 @@ cp artifacts/eval/ci/summary.json eval/baseline-ci.json
 ```
 
 Updating the committed baseline is a deliberate act — review the diff like any code change.
+
+## Independent local WCS
+
+`solve_local_wcs.py` runs installed Astrometry.net against EXIF-oriented FITS pixels
+without uploading photos. `compare_local_wcs.py` compares its full WCS and external
+star correspondences with `starglyph eval` outputs in `solve-reports/` (full report,
+refined camera, normalized dimensions and source SHA-256). These artifacts are
+written alongside the existing `per-frame/` summaries.
+
+Setup, commands, coordinate conventions and reference-review criteria:
+[docs/local-wcs.md](../../docs/local-wcs.md).
+
+Python checks: `python3 -m unittest discover -s eval -p 'test_local_wcs.py'`
+from `prototype/`, with Astropy, NumPy and Pillow installed.

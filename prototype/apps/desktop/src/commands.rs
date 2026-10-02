@@ -100,6 +100,9 @@ pub fn load_image(
     let id = guard.next_id;
     guard.next_id = guard.next_id.saturating_add(1);
     guard.last_solved = None;
+    // A newly selected photo can use a different lens, zoom or orientation.
+    // A previous automatic solution is not an explicit hint for this image.
+    guard.fov_hint_deg = None;
     guard.frames.insert(
         id,
         LoadedFrame {

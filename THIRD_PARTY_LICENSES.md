@@ -2,6 +2,11 @@
 
 This file tracks third-party datasets and data files used by `starglyph`.
 
+Original photographs by the project author, including the smartphone series, are
+first-party material. Their CC BY 4.0 license and attribution are documented in
+[`ATTRIBUTION.md`](ATTRIBUTION.md) and
+[`data/input/smartphone/README.md`](data/input/smartphone/README.md).
+
 ## 1) HYG catalog
 
 - **Purpose:** baseline star catalog for synthetic generation and matching.

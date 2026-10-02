@@ -294,10 +294,23 @@ impl FrameImage {
     /// `source_name` labels the frame the way a file stem does (report `file`
     /// field, filename-timestamp parsing).
     pub fn from_bytes(bytes: &[u8], source_name: &str) -> Result<Self, ImageInputError> {
-        let image = image::load_from_memory(bytes).map_err(|source| ImageInputError::Open {
+        let mut image = image::load_from_memory(bytes).map_err(|source| ImageInputError::Open {
             path: source_name.to_string(),
             source,
         })?;
+        // Apply the display transform once, before detection and dimension-based
+        // FOV hints. Every consumer (CLI, HTTP and GUI) uses these same pixels.
+        let orientation = exif::Reader::new()
+            .read_from_container(&mut std::io::Cursor::new(bytes))
+            .ok()
+            .and_then(|meta| {
+                meta.get_field(exif::Tag::Orientation, exif::In::PRIMARY)
+                    .and_then(|field| field.value.get_uint(0))
+            })
+            .and_then(|value| u8::try_from(value).ok())
+            .and_then(image::metadata::Orientation::from_exif)
+            .unwrap_or(image::metadata::Orientation::NoTransforms);
+        image.apply_orientation(orientation);
         let exif = ExifMeta::from_bytes(bytes);
         let (width, height) = image.dimensions();
         let gray = image
@@ -313,6 +326,41 @@ impl FrameImage {
             gray,
             source_name: source_name.to_string(),
             exif,
+        })
+    }
+
+    /// A bounded working image, preserving the source name and acquisition
+    /// metadata. Pixel centres map back as `(x + 0.5) * original/working - 0.5`.
+    pub(crate) fn resized(&self, max_edge: u32) -> Option<Self> {
+        let longest = self.width.max(self.height);
+        if longest <= max_edge || max_edge == 0 {
+            return None;
+        }
+        let scale = f64::from(max_edge) / f64::from(longest);
+        let width = (f64::from(self.width) * scale).round().max(1.0) as u32;
+        let height = (f64::from(self.height) * scale).round().max(1.0) as u32;
+        let pixels: Vec<u8> = self
+            .gray
+            .iter()
+            .map(|value| (value.clamp(0.0, 1.0) * 255.0).round() as u8)
+            .collect();
+        let source = image::GrayImage::from_raw(self.width, self.height, pixels)?;
+        let small = image::imageops::resize(
+            &source,
+            width,
+            height,
+            image::imageops::FilterType::Lanczos3,
+        );
+        Some(Self {
+            width,
+            height,
+            gray: small
+                .into_raw()
+                .into_iter()
+                .map(|value| f32::from(value) / 255.0)
+                .collect(),
+            source_name: self.source_name.clone(),
+            exif: self.exif.clone(),
         })
     }
 
@@ -677,6 +725,51 @@ mod tests {
         out.extend_from_slice(tiff);
         out.extend_from_slice(&jpeg[2..]);
         out
+    }
+
+    #[test]
+    fn orientation_rotates_pixels_and_dimensions_before_solving() {
+        // IFD0 contains just Orientation=6. The fixture has a bright left
+        // column; after clockwise rotation that must be the top row.
+        let mut tiff = b"II\x2a\x00\x08\x00\x00\x00".to_vec();
+        tiff.extend_from_slice(&1u16.to_le_bytes());
+        tiff.extend_from_slice(&0x0112u16.to_le_bytes());
+        tiff.extend_from_slice(&3u16.to_le_bytes());
+        tiff.extend_from_slice(&1u32.to_le_bytes());
+        tiff.extend_from_slice(&6u32.to_le_bytes());
+        tiff.extend_from_slice(&0u32.to_le_bytes());
+        let bytes = jpeg_with_exif(64, 48, &tiff);
+        let frame = FrameImage::from_bytes(&bytes, "portrait").expect("decode");
+        assert_eq!((frame.width, frame.height), (48, 64));
+        assert!(frame.gray[24] > 0.5, "bright column must become top row");
+        assert!(frame.gray[32 * 48 + 24] < 0.15, "interior remains dark");
+
+        // Invalid orientation must not break an otherwise valid JPEG.
+        tiff[18..22].copy_from_slice(&99u32.to_le_bytes());
+        let bytes = jpeg_with_exif(64, 48, &tiff);
+        let frame = FrameImage::from_bytes(&bytes, "invalid").expect("decode");
+        assert_eq!((frame.width, frame.height), (64, 48));
+    }
+
+    #[test]
+    fn working_image_preserves_metadata_and_never_upscales() {
+        let frame = FrameImage {
+            width: 100,
+            height: 61,
+            gray: vec![0.5; 6100],
+            source_name: "capture".into(),
+            exif: Some(ExifMeta {
+                focal_length_35mm: Some(23.0),
+                ..ExifMeta::default()
+            }),
+        };
+        assert!(frame.resized(100).is_none());
+        let small = frame.resized(40).expect("resize");
+        assert_eq!((small.width, small.height), (40, 24));
+        assert_eq!(small.gray.len(), 40 * 24);
+        assert_eq!(small.source_name, frame.source_name);
+        assert_eq!(small.exif, frame.exif);
+        assert!(small.gray.iter().all(|v| (*v - 0.5).abs() < 1.0 / 255.0));
     }
 
     #[test]
