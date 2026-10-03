@@ -1,0 +1,54 @@
+--- a/src/solver/solve.rs
++++ b/src/solver/solve.rs
+@@ -523,6 +523,7 @@
+                         match_centroid_count,
+                         fov,
+                         config,
++                        pixel_scale,
+                         star_vectors,
+                     );
+ 
+@@ -583,6 +584,7 @@
+     /// Returns the matches `(centroid_local_idx, catalog_star_idx)` and the
+     /// binomial false-positive probability of the match count (before any
+     /// Bonferroni correction for the number of pattern trials).
++    #[allow(clippy::too_many_arguments)]
+     pub(super) fn verify_attitude(
+         &self,
+         rotation_matrix: &Matrix3<f32>,
+@@ -590,6 +592,7 @@
+         match_centroid_count: usize,
+         fov: f32,
+         config: &SolveConfig,
++        pixel_scale: f32,
+         star_vectors: &[[f32; 3]],
+     ) -> (Vec<(usize, usize)>, f64) {
+         let fov_diagonal = fov * diagonal_factor(config);
+@@ -618,6 +621,17 @@
+                 nearby_cam_positions.push((cat_idx, cam_v[0] / cam_v[2], cam_v[1] / cam_v[2]));
+             }
+         }
++        // Use the same projection scale as centroid_vectors. The pattern-refined
++        // FOV can differ from that scale during the lost-in-space sweep.
++        // Clip before the brightness budget so off-image stars cannot exhaust it.
++        // Preserve the existing matching tolerance at the sensor boundary.
++        let half_width = config.image_width() as f32 * pixel_scale / 2.0;
++        let half_height = config.image_height() as f32 * pixel_scale / 2.0;
++        nearby_cam_positions.retain(|&(_, x, y)| {
++            x.abs() <= half_width + match_radius_rad
++                && y.abs() <= half_height + match_radius_rad
++        });
++
+         // Limit to 2x the number of image centroids (like tetra3)
+         nearby_cam_positions.truncate(2 * match_centroid_count);
+         let num_nearby = nearby_cam_positions.len();
+--- a/src/solver/track.rs
++++ b/src/solver/track.rs
+@@ -170,6 +170,7 @@
+             match_centroid_count,
+             fov_rad,
+             config,
++            pixel_scale,
+             star_vectors,
+         );
+ 

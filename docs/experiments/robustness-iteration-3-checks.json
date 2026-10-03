@@ -1,0 +1,119 @@
+{
+  "iteration": 3,
+  "scope": "research-only cfg(test) and evaluation tools; production path unchanged from iteration 2",
+  "checks": [
+    {
+      "command": "cargo test -p starglyph-core --release --lib",
+      "result": "passed",
+      "passed": 97,
+      "ignored": 6
+    },
+    {
+      "command": "python3 -m unittest discover -s prototype/eval -p 'test_robustness*.py'",
+      "result": "passed",
+      "passed": 11
+    },
+    {
+      "command": "cargo clippy -p starglyph-core --all-targets -- -D warnings",
+      "result": "blocked_by_existing_dependency_lint",
+      "detail": "simulator-core/src/dataset.rs:289 clippy::too_many_arguments"
+    },
+    {
+      "command": "cargo clippy -p starglyph-core --all-targets --no-deps -- -D warnings",
+      "result": "passed"
+    },
+    {
+      "command": "cargo fmt --all --check",
+      "result": "passed"
+    },
+    {
+      "command": "git diff --check",
+      "result": "passed"
+    },
+    {
+      "test": "control_matches_production",
+      "result": "passed",
+      "cases": {
+        "wm_r_112929230": 1,
+        "wm_r_161606532": 4
+      }
+    },
+    {
+      "test": "separate_verification_preserves_pose_and_uses_full_list",
+      "result": "passed",
+      "cases": [
+        "same list",
+        "reversed verification",
+        "empty verification"
+      ]
+    },
+    {
+      "test": "source_traces instrumentation preserves detector output",
+      "result": "passed",
+      "tiers": 12,
+      "probes_per_tier": 107
+    }
+  ],
+  "source_sha256": {
+    "prototype/crates/starglyph-core/src/solve/catalog_replay.rs": "bb26cb945ad8a9a62cdadfe5c74c413a53973da66bc499146eb5861d6daa69fc",
+    "prototype/eval/robustness_catalog.py": "7f66052b252bea9cbb68a8273c31423135aec59ae11e741aebcedd6acc007008",
+    "prototype/eval/robustness_catalog_report.py": "16e8ab180eecf1e0f141f610411b4f021ee1f42a23f1e759132c976189288ab0",
+    "prototype/eval/test_robustness_catalog.py": "73085f0475f99b4f8f5afb5d30d3af54b56b80f756c4e9a28246007f61e362b5"
+  },
+  "result_sha256": "ad9e27dc8d981d395d88620ca43b743beb520507152d4a49e04260ed2b6c7cbc",
+  "protected_files": {
+    "data/samples/sky-samples/manifest.json": {
+      "sha256": "97e229270c7b0f97fce4e1f738917cd91cdff01df3508db29584af70a0ea4871",
+      "equals_HEAD": true
+    },
+    "data/samples/sky-samples/robustness-results.json": {
+      "sha256": "09e6efe61468b4afe896967d583553751d80fe82e65e0ac064528523bbc525e8",
+      "equals_HEAD": true
+    },
+    "data/samples/sky-samples/collection-wcs-review.json": {
+      "sha256": "97c182c51955baee9adce93cde8e93fb98ece6a69bdc606cf871d3a1eef19841",
+      "equals_HEAD": true
+    }
+  },
+  "production_regression_gates": "not repeated: no new production behavior; iteration-2 gate results retained",
+  "holdout": "not run or used for diagnosis",
+  "new_external_wcs_runs": 0,
+  "raw_final_runs": {
+    ".": {
+      "status": "completed",
+      "exit_code": 0,
+      "elapsed_s": 35.781294010579586,
+      "command": [
+        "/home/agent/work/starglyph/engine/prototype/target/release/deps/starglyph_core-489a3082372897ca",
+        "--ignored",
+        "--exact",
+        "solve::catalog_replay::catalog_patterns_and_replay",
+        "--nocapture"
+      ]
+    },
+    "expanded": {
+      "status": "completed",
+      "exit_code": 0,
+      "elapsed_s": 33.153393717482686,
+      "command": [
+        "/home/agent/work/starglyph/engine/prototype/target/release/deps/starglyph_core-489a3082372897ca",
+        "--ignored",
+        "--exact",
+        "solve::catalog_replay::catalog_patterns_and_replay",
+        "--nocapture"
+      ]
+    },
+    "restore": {
+      "status": "completed",
+      "exit_code": 0,
+      "elapsed_s": 19.55104731582105,
+      "command": [
+        "/home/agent/work/starglyph/engine/prototype/target/release/deps/starglyph_core-489a3082372897ca",
+        "--ignored",
+        "--exact",
+        "solve::catalog_replay::catalog_patterns_and_replay",
+        "--nocapture"
+      ]
+    }
+  }
+}

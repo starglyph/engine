@@ -1,0 +1,372 @@
+{
+  "iteration": 4,
+  "scope": "isolated tetra3 patch; production dependency and defaults unchanged",
+  "checks": [
+    {
+      "status": "completed",
+      "exit_code": 0,
+      "elapsed_s": 5.791707249358296,
+      "command": [
+        "cargo",
+        "build",
+        "--release",
+        "--offline",
+        "--manifest-path",
+        "artifacts/robustness-iteration-4/final/fixture-control-v2/Cargo.toml",
+        "--target-dir",
+        "artifacts/robustness-iteration-4/harness/target"
+      ],
+      "name": "fixture-control-build",
+      "log_sha256": "4b10c7d5fcb747379d5f0e4cf40744edd817adc67d21a5c9f78cd8e93c772661"
+    },
+    {
+      "status": "completed",
+      "exit_code": 0,
+      "elapsed_s": 3.1840208638459444,
+      "command": [
+        "artifacts/robustness-iteration-4/harness/target/release/starglyph-footprint-fixture",
+        "artifacts/cache/tetra3-bootstrap-10-70-mag65-v0.8.0.bin",
+        "control"
+      ],
+      "name": "fixture-control",
+      "log_sha256": "f1652ce401c4814d66f39d39e156dc3aa04a5d631703d0b8442a67d769d049cc"
+    },
+    {
+      "status": "completed",
+      "exit_code": 0,
+      "elapsed_s": 0.13340015150606632,
+      "command": [
+        "cargo",
+        "clean",
+        "--release",
+        "--manifest-path",
+        "artifacts/robustness-iteration-4/final/fixture-patched-v2/Cargo.toml",
+        "--target-dir",
+        "artifacts/robustness-iteration-4/harness/target",
+        "-p",
+        "tetra3"
+      ],
+      "name": "fixture-patched-clean",
+      "log_sha256": "601a06f02ac645cbf93e653f30890868496b5c3ff16b5c05f41c243f9da05897"
+    },
+    {
+      "status": "completed",
+      "exit_code": 0,
+      "elapsed_s": 5.361258754506707,
+      "command": [
+        "cargo",
+        "build",
+        "--release",
+        "--offline",
+        "--manifest-path",
+        "artifacts/robustness-iteration-4/final/fixture-patched-v2/Cargo.toml",
+        "--target-dir",
+        "artifacts/robustness-iteration-4/harness/target"
+      ],
+      "name": "fixture-patched-build",
+      "log_sha256": "de971052f10e839621548b3c96657906baf31130f09638d2835942d30c67e9ad"
+    },
+    {
+      "status": "completed",
+      "exit_code": 0,
+      "elapsed_s": 2.5221526715904474,
+      "command": [
+        "artifacts/robustness-iteration-4/harness/target/release/starglyph-footprint-fixture",
+        "artifacts/cache/tetra3-bootstrap-10-70-mag65-v0.8.0.bin",
+        "patched"
+      ],
+      "name": "fixture-patched",
+      "log_sha256": "25a06dd3ee083e37c17d300756f7bb3179619a6355c2160c53a7cb227fadcbc0"
+    },
+    {
+      "status": "completed",
+      "exit_code": 0,
+      "elapsed_s": 0.1164396833628416,
+      "command": [
+        "cargo",
+        "clean",
+        "--release",
+        "--manifest-path",
+        "artifacts/robustness-iteration-4/final/harness/Cargo.toml",
+        "--target-dir",
+        "artifacts/robustness-iteration-4/harness/target",
+        "-p",
+        "tetra3"
+      ],
+      "name": "trace-clean",
+      "log_sha256": "9b828545d6466ad70a47b572f0fb6b20829b2a335f10b8778c4cd911de92803a"
+    },
+    {
+      "status": "completed",
+      "exit_code": 0,
+      "elapsed_s": 7.176286241039634,
+      "command": [
+        "cargo",
+        "build",
+        "--release",
+        "--offline",
+        "--manifest-path",
+        "artifacts/robustness-iteration-4/final/harness/Cargo.toml",
+        "--target-dir",
+        "artifacts/robustness-iteration-4/harness/target"
+      ],
+      "name": "trace-build",
+      "log_sha256": "5a819be50548cc8a600d4c24187d0c2c9a8c75149ea2740099ef5a7799a9ac58"
+    },
+    {
+      "status": "completed",
+      "exit_code": 0,
+      "elapsed_s": 12.339295538142323,
+      "command": [
+        "artifacts/robustness-iteration-4/harness/target/release/starglyph-tetra3-internal-trace",
+        "artifacts/robustness-iteration-3/expanded/input.json",
+        "artifacts/robustness-iteration-4/final/footprint-trace-result.json"
+      ],
+      "name": "footprint-trace",
+      "log_sha256": "fcb3980ed637d5976cf909c652492ffe6ae2000b2a7bd386f555e4108ac13e2a"
+    },
+    {
+      "status": "completed",
+      "exit_code": 0,
+      "elapsed_s": 27.993349082767963,
+      "command": [
+        "cargo",
+        "test",
+        "--release",
+        "--offline",
+        "--manifest-path",
+        "artifacts/robustness-iteration-4/pipeline/Cargo.toml",
+        "-p",
+        "starglyph-core",
+        "-p",
+        "starglyph-cli"
+      ],
+      "name": "rust-tests",
+      "log_sha256": "2600b6a4f3112e3f456af9bf8f821ddb0508d4d4185676f3365fe0533c2e6873"
+    },
+    {
+      "status": "completed",
+      "exit_code": 0,
+      "elapsed_s": 2.4250761177390814,
+      "command": [
+        "cargo",
+        "test",
+        "--release",
+        "--offline",
+        "--manifest-path",
+        "artifacts/robustness-iteration-4/pipeline/Cargo.toml",
+        "-p",
+        "starglyph-core",
+        "--test",
+        "extended_dense",
+        "--",
+        "--ignored"
+      ],
+      "name": "extended-dense",
+      "log_sha256": "d04598e305f29d43594a0266171702bc92aac18b9db461f2e5f572cafa8e5cd1"
+    },
+    {
+      "status": "completed",
+      "exit_code": 0,
+      "elapsed_s": 1.2691770046949387,
+      "command": [
+        "artifacts/robustness-iteration-4/pipeline/target/release/starglyph",
+        "eval",
+        "--manifest",
+        "../data/samples/sky-samples/manifest.json",
+        "--ids",
+        "tetra3_alt40,tetra3_alt60",
+        "--catalog",
+        "../data/catalogs/hyg_v42.csv.gz",
+        "--out-dir",
+        "artifacts/robustness-iteration-4/final/gate-ci",
+        "--baseline",
+        "eval/baseline-ci.json"
+      ],
+      "name": "gate-ci",
+      "log_sha256": "ee4cbe9b1774d7d3490c65052647a3eb0671200c9a1662d57623a6180a007b71"
+    },
+    {
+      "status": "completed",
+      "exit_code": 0,
+      "elapsed_s": 176.31860246509314,
+      "command": [
+        "python3",
+        "eval/smartphone_gate.py",
+        "--binary",
+        "artifacts/robustness-iteration-4/pipeline/target/release/starglyph",
+        "--out-dir",
+        "artifacts/robustness-iteration-4/final/gate-smartphone"
+      ],
+      "name": "gate-smartphone",
+      "log_sha256": "4c1647f74cec1bdb02abdacdcf4a4799ad3d4ea23bc9b2cdf367cd1198d34387"
+    },
+    {
+      "status": "completed",
+      "exit_code": 0,
+      "elapsed_s": 129.3869385458529,
+      "command": [
+        "python3",
+        "eval/sky_fill_gate.py",
+        "--binary",
+        "artifacts/robustness-iteration-4/pipeline/target/release/starglyph",
+        "--out-dir",
+        "artifacts/robustness-iteration-4/final/gate-sky-fill"
+      ],
+      "name": "gate-sky-fill",
+      "log_sha256": "bb616e0621a7a2e4ac185fd112e7e4e35c322dbb012abd3abe7914033ebd8995"
+    },
+    {
+      "status": "completed",
+      "exit_code": 0,
+      "elapsed_s": 36.02100317366421,
+      "command": [
+        "cargo",
+        "clippy",
+        "--offline",
+        "--manifest-path",
+        "artifacts/robustness-iteration-4/pipeline/Cargo.toml",
+        "-p",
+        "starglyph-core",
+        "-p",
+        "starglyph-cli",
+        "--all-targets",
+        "--no-deps",
+        "--",
+        "-D",
+        "warnings"
+      ],
+      "name": "clippy",
+      "log_sha256": "88dff31b013a6f002aee168de649802b4f7711ed5d22a05cb1be91180b7bd348"
+    },
+    {
+      "status": "completed",
+      "exit_code": 0,
+      "elapsed_s": 0.6850337106734514,
+      "command": [
+        "cargo",
+        "fmt",
+        "--all",
+        "--check"
+      ],
+      "name": "format",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "status": "completed",
+      "exit_code": 0,
+      "elapsed_s": 4.492561848834157,
+      "command": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "eval",
+        "-p",
+        "test_*.py"
+      ],
+      "name": "python-tests",
+      "log_sha256": "a9c07edbdcf80050e21c490a94b672f269de9547ab8e9a8ea72c4e62b4b0d964"
+    }
+  ],
+  "counts": {
+    "rust_unit": 108,
+    "extended_dense": 1,
+    "python": 92,
+    "private_verification_fixture_cases": 32
+  },
+  "gates": {
+    "ci": "passed",
+    "smartphone": {
+      "solved": 8,
+      "total": 17
+    },
+    "sky_fill": {
+      "solved": 13,
+      "total": 17
+    }
+  },
+  "observer_control": {
+    "compared_attempts": 30,
+    "status": "identical outcomes, match counts, probability, IDs and input indices",
+    "original_sha256": "98ffe4bc362cae323a9783d1012be7735926e2ce942dbace98dbbd9a92a8b05c",
+    "traced_sha256": "4f28de4f87f23ad650fc5efa818e680b2ffbc96f4caad7a56277063ac2a604d9"
+  },
+  "protected_files": {
+    "data/samples/sky-samples/manifest.json": {
+      "sha256": "97e229270c7b0f97fce4e1f738917cd91cdff01df3508db29584af70a0ea4871",
+      "equals_HEAD": true
+    },
+    "data/samples/sky-samples/robustness-results.json": {
+      "sha256": "09e6efe61468b4afe896967d583553751d80fe82e65e0ac064528523bbc525e8",
+      "equals_HEAD": true
+    },
+    "data/samples/sky-samples/collection-wcs-review.json": {
+      "sha256": "97c182c51955baee9adce93cde8e93fb98ece6a69bdc606cf871d3a1eef19841",
+      "equals_HEAD": true
+    },
+    "prototype/Cargo.toml": {
+      "sha256": "ea0b115c3ff3465b164e9f35f3f4cef373dbc1dcc25074f77e751eacc55e2840",
+      "equals_HEAD": true
+    },
+    "prototype/Cargo.lock": {
+      "sha256": "59694debace1f5f18e2de398a77ce4d6a1a8f7dd237af646906aa49bfa3b677a",
+      "equals_HEAD": true
+    }
+  },
+  "source_sha256": {
+    "prototype/eval/tetra3_footprint.py": "cad2cd5dcfa5953fe56b1fda8dc4aed0afb372eda4fc6b588534da4786c47fe5",
+    "prototype/eval/tetra3_footprint_fixture.py": "6ce45924e0b437a0f378b49a3523bb8e90be95fef325aef116c05f7302946dee",
+    "prototype/eval/tetra3_footprint_fixture.rs": "6545f8c548482983aa012a23464f74b15e2f552ac9df05f1e0a4c43fab9e04e2",
+    "prototype/eval/tetra3_footprint_geometry.py": "45fb78c50ea11774850e4c0d9720450fe698f6ff223ba7944b51635a07a8b73c",
+    "prototype/eval/tetra3_footprint_report.py": "df885d2701bf1646a7137d5842fb8f6bce69456cb0de081107fb5b0c77545002",
+    "prototype/eval/tetra3_internal.py": "1f76e947796458b3001410eb969a78c1732fda8ef8ce5c3dc553ba36601828c5",
+    "prototype/eval/tetra3_internal.rs": "75df6437798f80691683e175e02e96acaf0dc70fdc6d51467dbcf7a97dcbb1df",
+    "prototype/eval/tetra3_internal_report.py": "d1973940c1440a8d12b24b8079adf3ce52244192e6517aa1caf9ae173e3daccb",
+    "prototype/eval/tetra3_internal_trace.rs": "da1b49f14b4eab18baaf539b893794152094e93846a66f9ab3c0c7654e705411",
+    "prototype/eval/tetra3_verify_footprint.patch": "703546a9dd0952891b0ac49df476d300ffc807893c14aaf5475fb2af40f33e68",
+    "prototype/eval/test_tetra3_footprint.py": "d6e894c3255838bcbf6c2f562909941c9c97852dacae90ab6bd4f56aa17ac255"
+  },
+  "development_protocol_sha256": "f778d25662bd550797675ad76ad98fa883c176cbe42ff49d14785e2ce05b31ab",
+  "binaries": {
+    "control": {
+      "sha256": "f7c1ba5ed86250236efd2cb0e3a3ef603bfc33cc800c6f75497c78ae9acf8ef1"
+    },
+    "footprint": {
+      "sha256": "f9847d2004d11961a91c1a7942af0e46e123c81a00b493ace1e67c938be51ab0"
+    }
+  },
+  "result_sha256": {
+    "robustness-iteration-4-geometry.json": "2a681b6e2c6187226263e2034508ebd36d3ff79f2b068b688732d711b272c165",
+    "robustness-iteration-4-trace.json": "e66a817b2b1cde57cbccffc7b59bfff68b8e68fb1b0754d96d7fb7bf7f4bd6be",
+    "robustness-iteration-4-development.json": "9cc2656283fe4bd4d1e13b1142a19a60cbc2fdcc3a4891349ee9041ec3f5b814",
+    "robustness-iteration-4-holdout.json": "d5d38eefd5e9bdf96c63609513b6ff64fa6d3a848282115d9a58496225f7d54b"
+  },
+  "new_external_wcs_runs": 0,
+  "ground_truth_promotions": 0,
+  "excluded_discovery": [
+    "cold isolated cache run",
+    "preliminary crop using refined FOV rather than vector scale",
+    "fixture corner outside unchanged circular query; corrected to mid-edge",
+    "shared Cargo target reused unpatched fixture; clean rebuild then 16 patched cases passed"
+  ],
+  "trace_metadata_note": "scope label corrected after measurements; trace source and original preparation hashes preserved",
+  "holdout": "completed once after freeze; 7/20 -> 9/20, no lost successes, negative rejected, no tuning",
+  "toolchain": {
+    "rustc": "1.98.1 (48a229cea 2026-09-01)",
+    "python": "3.10.12",
+    "numpy": "1.26.4",
+    "astropy": "6.1.7",
+    "pillow": "12.3.0"
+  },
+  "holdout_protocol_sha256": "0f1529a1ccb28f2fa240e8c8e5b00a4d0e5a18aaee472e7a0f79064f90b4ea79",
+  "holdout_protocol_written_utc": "2026-10-03T12:22:33.553231+00:00",
+  "archived_executors": {
+    "prototype/artifacts/robustness-iteration-4/final/heldout-executor.py": "2f11a6874d4ddecf404edc4a9fc13a03e8c0fe42972f966aad295f11f78ebc41",
+    "prototype/artifacts/robustness-iteration-4/final/checks-executor.py": "507eb0182b738051692005b79ce88b9b91109deb0511770881b10363aa748577"
+  },
+  "final_frozen_inputs_verified": true,
+  "git_diff_check": "passed",
+  "report_sha256": "f0703354e6dd0fc5af964a0efc7237ea7f575648eb569f2f520c1813213bb6bd"
+}

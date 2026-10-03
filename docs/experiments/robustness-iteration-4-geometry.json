@@ -1,0 +1,895 @@
+{
+  "id": "wm_r_161606532",
+  "split": "development",
+  "external_status": "pending",
+  "report_sha256": "ff29ee8b60f7aabd6e6ec370ace4c34ad77fe57b8164a337115c7590aa5b1ff1",
+  "corr_sha256": "fe400743193b63e7e3759114ece0d0925f99d534b0e2c0600f32396e949e6fea",
+  "geometry": "conditional on reviewed stellar identities; no global ground truth",
+  "groups": {
+    "all_reviewed_56": {
+      "count": 56,
+      "rms_px": 3.027639433606229,
+      "median_px": 1.260803553458551,
+      "p95_px": 6.278839620777273,
+      "max_px": 7.876471055225505
+    },
+    "outside_solver_input": {
+      "count": 26,
+      "rms_px": 2.7880352590535704,
+      "median_px": 1.4234150924051852,
+      "p95_px": 5.845526325300688,
+      "max_px": 6.378277791590619
+    },
+    "left_10pct": {
+      "count": 5,
+      "rms_px": 5.599927406276614,
+      "median_px": 5.5641166504544906,
+      "p95_px": 7.716687951992979,
+      "max_px": 7.876471055225505
+    },
+    "right_10pct": {
+      "count": 9,
+      "rms_px": 3.360071762273273,
+      "median_px": 2.380492850889021,
+      "p95_px": 5.627012784114786,
+      "max_px": 6.245693563839491
+    },
+    "top_10pct": {
+      "count": 14,
+      "rms_px": 2.486645292551757,
+      "median_px": 1.1229235244752582,
+      "p95_px": 5.133109892030321,
+      "max_px": 5.939329550249421
+    }
+  },
+  "withheld_extent_fraction": [
+    0.9481576395969765,
+    0.4206104129552841
+  ],
+  "sources": [
+    {
+      "hyg_id": 80519,
+      "corr_row": 0,
+      "measured_xy": [
+        1736.136474609375,
+        556.947509765625
+      ],
+      "predicted_xy": [
+        1736.8839831343491,
+        557.010343721143
+      ],
+      "error_px": 0.7501447199541256,
+      "withheld_from_solver": true,
+      "nearest_solver_detection_px": 154.48939913468766
+    },
+    {
+      "hyg_id": 79870,
+      "corr_row": 2,
+      "measured_xy": [
+        1968.476806640625,
+        537.3065185546875
+      ],
+      "predicted_xy": [
+        1968.5051341620651,
+        536.8975017982337
+      ],
+      "error_px": 0.4099965311205564,
+      "withheld_from_solver": true,
+      "nearest_solver_detection_px": 166.18435988199462
+    },
+    {
+      "hyg_id": 81020,
+      "corr_row": 3,
+      "measured_xy": [
+        1516.5169677734375,
+        698.8097534179688
+      ],
+      "predicted_xy": [
+        1516.2599797702192,
+        699.5033186235598
+      ],
+      "error_px": 0.7396455422732926,
+      "withheld_from_solver": false,
+      "nearest_solver_detection_px": 0.24274276533508582
+    },
+    {
+      "hyg_id": 73486,
+      "corr_row": 4,
+      "measured_xy": [
+        3834.201416015625,
+        1333.0537109375
+      ],
+      "predicted_xy": [
+        3828.470254967886,
+        1335.5361454559243
+      ],
+      "error_px": 6.245693563839491,
+      "withheld_from_solver": false,
+      "nearest_solver_detection_px": 0.6936536777057405
+    },
+    {
+      "hyg_id": 85164,
+      "corr_row": 5,
+      "measured_xy": [
+        157.59544372558594,
+        530.2543334960938
+      ],
+      "predicted_xy": [
+        162.63119885758329,
+        532.6208846471208
+      ],
+      "error_px": 5.5641166504544906,
+      "withheld_from_solver": true,
+      "nearest_solver_detection_px": 233.04044451777622
+    },
+    {
+      "hyg_id": 80232,
+      "corr_row": 6,
+      "measured_xy": [
+        1943.3948974609375,
+        260.7574157714844
+      ],
+      "predicted_xy": [
+        1942.9490815639874,
+        260.0853277183917
+      ],
+      "error_px": 0.8065073868746221,
+      "withheld_from_solver": false,
+      "nearest_solver_detection_px": 0.40265148944761936
+    },
+    {
+      "hyg_id": 78750,
+      "corr_row": 7,
+      "measured_xy": [
+        2504.69287109375,
+        147.79107666015625
+      ],
+      "predicted_xy": [
+        2505.278785200673,
+        146.57763912650967
+      ],
+      "error_px": 1.347488771290456,
+      "withheld_from_solver": false,
+      "nearest_solver_detection_px": 0.5956659285793299
+    },
+    {
+      "hyg_id": 79837,
+      "corr_row": 8,
+      "measured_xy": [
+        2037.534423828125,
+        386.25634765625
+      ],
+      "predicted_xy": [
+        2037.7398249165303,
+        385.5349012051588
+      ],
+      "error_px": 0.7501163835766914,
+      "withheld_from_solver": false,
+      "nearest_solver_detection_px": 0.3074236117437941
+    },
+    {
+      "hyg_id": 76644,
+      "corr_row": 9,
+      "measured_xy": [
+        3206.257080078125,
+        284.34698486328125
+      ],
+      "predicted_xy": [
+        3206.3115331653953,
+        284.6385862206846
+      ],
+      "error_px": 0.29664202391560157,
+      "withheld_from_solver": false,
+      "nearest_solver_detection_px": 0.23660716181970123
+    },
+    {
+      "hyg_id": 80570,
+      "corr_row": 11,
+      "measured_xy": [
+        1766.1553955078125,
+        405.42156982421875
+      ],
+      "predicted_xy": [
+        1765.4532913930998,
+        404.6844600282502
+      ],
+      "error_px": 1.017978899196489,
+      "withheld_from_solver": false,
+      "nearest_solver_detection_px": 0.17324872517425358
+    },
+    {
+      "hyg_id": 83317,
+      "corr_row": 12,
+      "measured_xy": [
+        630.6145629882812,
+        1152.81689453125
+      ],
+      "predicted_xy": [
+        636.2462406979639,
+        1155.053422898186
+      ],
+      "error_px": 6.05952580338148,
+      "withheld_from_solver": false,
+      "nearest_solver_detection_px": 0.5135301631549881
+    },
+    {
+      "hyg_id": 78411,
+      "corr_row": 13,
+      "measured_xy": [
+        2385.74365234375,
+        732.7318725585938
+      ],
+      "predicted_xy": [
+        2386.123183162168,
+        732.4510806977329
+      ],
+      "error_px": 0.4721098508343024,
+      "withheld_from_solver": false,
+      "nearest_solver_detection_px": 0.17769891582204225
+    },
+    {
+      "hyg_id": 77399,
+      "corr_row": 14,
+      "measured_xy": [
+        2684.38037109375,
+        842.3705444335938
+      ],
+      "predicted_xy": [
+        2684.708865087938,
+        843.3901704988633
+      ],
+      "error_px": 1.0712355563529448,
+      "withheld_from_solver": false,
+      "nearest_solver_detection_px": 0.43902918527677104
+    },
+    {
+      "hyg_id": 76506,
+      "corr_row": 15,
+      "measured_xy": [
+        3035.9208984375,
+        749.9424438476562
+      ],
+      "predicted_xy": [
+        3034.9268087835417,
+        751.5655006194304
+      ],
+      "error_px": 1.903293861837655,
+      "withheld_from_solver": false,
+      "nearest_solver_detection_px": 0.051462424581433276
+    },
+    {
+      "hyg_id": 79164,
+      "corr_row": 16,
+      "measured_xy": [
+        2087.508056640625,
+        869.1260375976562
+      ],
+      "predicted_xy": [
+        2087.6640749588532,
+        869.0923921909235
+      ],
+      "error_px": 0.159604915391026,
+      "withheld_from_solver": false,
+      "nearest_solver_detection_px": 0.2817107246027903
+    },
+    {
+      "hyg_id": 84825,
+      "corr_row": 17,
+      "measured_xy": [
+        304.5149841308594,
+        350.0130615234375
+      ],
+      "predicted_xy": [
+        307.6483607947198,
+        351.80708403420726
+      ],
+      "error_px": 3.6106185185884274,
+      "withheld_from_solver": false,
+      "nearest_solver_detection_px": 0.5150704031006225
+    },
+    {
+      "hyg_id": 77604,
+      "corr_row": 18,
+      "measured_xy": [
+        2641.4013671875,
+        770.7506103515625
+      ],
+      "predicted_xy": [
+        2641.961760573021,
+        771.4911234636966
+      ],
+      "error_px": 0.9286551651598508,
+      "withheld_from_solver": false,
+      "nearest_solver_detection_px": 0.3621086189073427
+    },
+    {
+      "hyg_id": 76392,
+      "corr_row": 19,
+      "measured_xy": [
+        3303.823974609375,
+        276.8290710449219
+      ],
+      "predicted_xy": [
+        3303.690291042253,
+        277.1410327122826
+      ],
+      "error_px": 0.3393985533570981,
+      "withheld_from_solver": false,
+      "nearest_solver_detection_px": 0.21029447203704374
+    },
+    {
+      "hyg_id": 79062,
+      "corr_row": 20,
+      "measured_xy": [
+        2056.741455078125,
+        1038.6263427734375
+      ],
+      "predicted_xy": [
+        2056.354566075345,
+        1039.2445894100795
+      ],
+      "error_px": 0.7293229765963585,
+      "withheld_from_solver": true,
+      "nearest_solver_detection_px": 172.43910893924877
+    },
+    {
+      "hyg_id": 79639,
+      "corr_row": 21,
+      "measured_xy": [
+        1920.0809326171875,
+        889.4073486328125
+      ],
+      "predicted_xy": [
+        1919.6876886254465,
+        889.5939172683417
+      ],
+      "error_px": 0.43525704222170986,
+      "withheld_from_solver": false,
+      "nearest_solver_detection_px": 0.3174915247260088
+    },
+    {
+      "hyg_id": 75894,
+      "corr_row": 23,
+      "measured_xy": [
+        3593.31201171875,
+        73.46048736572266
+      ],
+      "predicted_xy": [
+        3594.717996133507,
+        71.63267333391491
+      ],
+      "error_px": 2.306013076591822,
+      "withheld_from_solver": false,
+      "nearest_solver_detection_px": 0.727261445475221
+    },
+    {
+      "hyg_id": 83081,
+      "corr_row": 24,
+      "measured_xy": [
+        757.9036865234375,
+        946.8963012695312
+      ],
+      "predicted_xy": [
+        762.2439997295724,
+        949.4539395572671
+      ],
+      "error_px": 5.03784004690907,
+      "withheld_from_solver": false,
+      "nearest_solver_detection_px": 0.47896375120498597
+    },
+    {
+      "hyg_id": 75501,
+      "corr_row": 25,
+      "measured_xy": [
+        3724.722900390625,
+        113.38719940185547
+      ],
+      "predicted_xy": [
+        3726.357134784905,
+        111.65629670161911
+      ],
+      "error_px": 2.380492850889021,
+      "withheld_from_solver": false,
+      "nearest_solver_detection_px": 0.930885121208377
+    },
+    {
+      "hyg_id": 82704,
+      "corr_row": 26,
+      "measured_xy": [
+        840.64892578125,
+        1102.194091796875
+      ],
+      "predicted_xy": [
+        844.1093557686047,
+        1104.4603448251871
+      ],
+      "error_px": 4.136481413679689,
+      "withheld_from_solver": false,
+      "nearest_solver_detection_px": 0.7906390353680212
+    },
+    {
+      "hyg_id": 74011,
+      "corr_row": 27,
+      "measured_xy": [
+        3621.078369140625,
+        1361.4927978515625
+      ],
+      "predicted_xy": [
+        3615.254938872684,
+        1364.0947370324668
+      ],
+      "error_px": 6.378277791590619,
+      "withheld_from_solver": true,
+      "nearest_solver_detection_px": 215.70573355390135
+    },
+    {
+      "hyg_id": 75874,
+      "corr_row": 28,
+      "measured_xy": [
+        3445.088134765625,
+        389.3656005859375
+      ],
+      "predicted_xy": [
+        3444.5982938955103,
+        390.1396404799193
+      ],
+      "error_px": 0.9160141022441038,
+      "withheld_from_solver": false,
+      "nearest_solver_detection_px": 0.46212863253214936
+    },
+    {
+      "hyg_id": 80157,
+      "corr_row": 29,
+      "measured_xy": [
+        1729.8214111328125,
+        952.3605346679688
+      ],
+      "predicted_xy": [
+        1729.0984855503225,
+        952.8529804033931
+      ],
+      "error_px": 0.8747137818487373,
+      "withheld_from_solver": true,
+      "nearest_solver_detection_px": 200.67473359384533
+    },
+    {
+      "hyg_id": 74503,
+      "corr_row": 30,
+      "measured_xy": [
+        3702.048583984375,
+        876.5338134765625
+      ],
+      "predicted_xy": [
+        3698.547363546585,
+        878.5497792410963
+      ],
+      "error_px": 4.040131497583988,
+      "withheld_from_solver": true,
+      "nearest_solver_detection_px": 346.3764074338805
+    },
+    {
+      "hyg_id": 75713,
+      "corr_row": 32,
+      "measured_xy": [
+        3666.614013671875,
+        72.47296905517578
+      ],
+      "predicted_xy": [
+        3668.339757243082,
+        70.56256460314012
+      ],
+      "error_px": 2.574458398172454,
+      "withheld_from_solver": false,
+      "nearest_solver_detection_px": 0.9046593316787866
+    },
+    {
+      "hyg_id": 77622,
+      "corr_row": 33,
+      "measured_xy": [
+        2671.830810546875,
+        683.5872192382812
+      ],
+      "predicted_xy": [
+        2671.960372873812,
+        683.8362105913073
+      ],
+      "error_px": 0.28068325643527453,
+      "withheld_from_solver": true,
+      "nearest_solver_detection_px": 92.40006241775838
+    },
+    {
+      "hyg_id": 76334,
+      "corr_row": 34,
+      "measured_xy": [
+        3229.78515625,
+        471.5659484863281
+      ],
+      "predicted_xy": [
+        3228.975682680458,
+        472.5891673188946
+      ],
+      "error_px": 1.3046931589864914,
+      "withheld_from_solver": true,
+      "nearest_solver_detection_px": 188.80355121242707
+    },
+    {
+      "hyg_id": 77932,
+      "corr_row": 35,
+      "measured_xy": [
+        2744.416015625,
+        258.958984375
+      ],
+      "predicted_xy": [
+        2744.848509658201,
+        258.95762217791867
+      ],
+      "error_px": 0.43249617840527577,
+      "withheld_from_solver": true,
+      "nearest_solver_detection_px": 154.99708031937817
+    },
+    {
+      "hyg_id": 76297,
+      "corr_row": 36,
+      "measured_xy": [
+        3130.794921875,
+        704.8150024414062
+      ],
+      "predicted_xy": [
+        3129.8240275973135,
+        706.8419935222668
+      ],
+      "error_px": 2.2475160823301086,
+      "withheld_from_solver": true,
+      "nearest_solver_detection_px": 105.0153141705213
+    },
+    {
+      "hyg_id": 77703,
+      "corr_row": 37,
+      "measured_xy": [
+        2888.3125,
+        109.7658920288086
+      ],
+      "predicted_xy": [
+        2888.588048741281,
+        108.91083619073788
+      ],
+      "error_px": 0.8983582776600605,
+      "withheld_from_solver": false,
+      "nearest_solver_detection_px": 0.31538728546295974
+    },
+    {
+      "hyg_id": 78858,
+      "corr_row": 38,
+      "measured_xy": [
+        2350.1484375,
+        445.3802795410156
+      ],
+      "predicted_xy": [
+        2350.113317621435,
+        444.6767247056632
+      ],
+      "error_px": 0.7044308427505037,
+      "withheld_from_solver": true,
+      "nearest_solver_detection_px": 289.5478767712337
+    },
+    {
+      "hyg_id": 84293,
+      "corr_row": 39,
+      "measured_xy": [
+        363.7048034667969,
+        915.7396850585938
+      ],
+      "predicted_xy": [
+        370.2733886616734,
+        918.3751130971045
+      ],
+      "error_px": 7.0775555390628755,
+      "withheld_from_solver": false,
+      "nearest_solver_detection_px": 0.5140147476119766
+    },
+    {
+      "hyg_id": 78637,
+      "corr_row": 40,
+      "measured_xy": [
+        2417.1201171875,
+        461.712890625
+      ],
+      "predicted_xy": [
+        2417.705538619242,
+        461.593544215046
+      ],
+      "error_px": 0.5974628175139044,
+      "withheld_from_solver": true,
+      "nearest_solver_detection_px": 272.7872442071283
+    },
+    {
+      "hyg_id": 81478,
+      "corr_row": 41,
+      "measured_xy": [
+        1503.2508544921875,
+        234.1084442138672
+      ],
+      "predicted_xy": [
+        1502.7219118704168,
+        234.73614209802759
+      ],
+      "error_px": 0.8208440356761709,
+      "withheld_from_solver": false,
+      "nearest_solver_detection_px": 0.6387052131914043
+    },
+    {
+      "hyg_id": 84143,
+      "corr_row": 42,
+      "measured_xy": [
+        385.4798583984375,
+        1027.4686279296875
+      ],
+      "predicted_xy": [
+        392.89534233147333,
+        1030.1236974810727
+      ],
+      "error_px": 7.876471055225505,
+      "withheld_from_solver": false,
+      "nearest_solver_detection_px": 0.9915280526492422
+    },
+    {
+      "hyg_id": 82941,
+      "corr_row": 43,
+      "measured_xy": [
+        1005.6941528320312,
+        150.4865264892578
+      ],
+      "predicted_xy": [
+        1007.2146329788648,
+        144.7451176351915
+      ],
+      "error_px": 5.939329550249421,
+      "withheld_from_solver": true,
+      "nearest_solver_detection_px": 458.1642307421091
+    },
+    {
+      "hyg_id": 75802,
+      "corr_row": 44,
+      "measured_xy": [
+        3441.17041015625,
+        453.7393493652344
+      ],
+      "predicted_xy": [
+        3439.9279415196897,
+        454.65283625270513
+      ],
+      "error_px": 1.542137025823879,
+      "withheld_from_solver": true,
+      "nearest_solver_detection_px": 64.53812143901995
+    },
+    {
+      "hyg_id": 74889,
+      "corr_row": 45,
+      "measured_xy": [
+        3988.21728515625,
+        69.37760925292969
+      ],
+      "predicted_xy": [
+        3991.8975617076167,
+        66.45595104245012
+      ],
+      "error_px": 4.6989916145277295,
+      "withheld_from_solver": true,
+      "nearest_solver_detection_px": 266.25179421838993
+    },
+    {
+      "hyg_id": 80664,
+      "corr_row": 46,
+      "measured_xy": [
+        1685.2144775390625,
+        551.9931030273438
+      ],
+      "predicted_xy": [
+        1684.9285160831164,
+        551.8974211358666
+      ],
+      "error_px": 0.3015443228506661,
+      "withheld_from_solver": true,
+      "nearest_solver_detection_px": 167.40077470013236
+    },
+    {
+      "hyg_id": 83639,
+      "corr_row": 47,
+      "measured_xy": [
+        632.2747802734375,
+        705.1519775390625
+      ],
+      "predicted_xy": [
+        636.4342957282454,
+        707.8280490540551
+      ],
+      "error_px": 4.94600116984827,
+      "withheld_from_solver": false,
+      "nearest_solver_detection_px": 0.07819686666442291
+    },
+    {
+      "hyg_id": 74881,
+      "corr_row": 48,
+      "measured_xy": [
+        3834.43310546875,
+        363.4225158691406
+      ],
+      "predicted_xy": [
+        3835.1925846863337,
+        363.16210880187487
+      ],
+      "error_px": 0.8028826331559972,
+      "withheld_from_solver": false,
+      "nearest_solver_detection_px": 1.4339583687878177
+    },
+    {
+      "hyg_id": 83483,
+      "corr_row": 50,
+      "measured_xy": [
+        785.9739379882812,
+        270.0302429199219
+      ],
+      "predicted_xy": [
+        787.927502643982,
+        271.6964292335949
+      ],
+      "error_px": 2.5676042716654734,
+      "withheld_from_solver": true,
+      "nearest_solver_detection_px": 208.11015247161342
+    },
+    {
+      "hyg_id": 81742,
+      "corr_row": 51,
+      "measured_xy": [
+        1284.2550048828125,
+        659.5313110351562
+      ],
+      "predicted_xy": [
+        1284.549133104198,
+        660.6371004857983
+      ],
+      "error_px": 1.1442384890252308,
+      "withheld_from_solver": true,
+      "nearest_solver_detection_px": 235.75883019766616
+    },
+    {
+      "hyg_id": 75708,
+      "corr_row": 52,
+      "measured_xy": [
+        3438.48095703125,
+        527.693359375
+      ],
+      "predicted_xy": [
+        3437.156151645354,
+        529.0674323452912
+      ],
+      "error_px": 1.908713136692914,
+      "withheld_from_solver": true,
+      "nearest_solver_detection_px": 138.52384795281435
+    },
+    {
+      "hyg_id": 85521,
+      "corr_row": 53,
+      "measured_xy": [
+        112.13970184326172,
+        72.54366302490234
+      ],
+      "predicted_xy": [
+        112.74852522033848,
+        71.99711019634765
+      ],
+      "error_px": 0.8181600692262418,
+      "withheld_from_solver": false,
+      "nearest_solver_detection_px": 0.3276604126292113
+    },
+    {
+      "hyg_id": 74372,
+      "corr_row": 54,
+      "measured_xy": [
+        4026.07861328125,
+        399.2937316894531
+      ],
+      "predicted_xy": [
+        4026.743658781962,
+        398.73243465026235
+      ],
+      "error_px": 0.8702527703039273,
+      "withheld_from_solver": true,
+      "nearest_solver_detection_px": 193.84063531455232
+    },
+    {
+      "hyg_id": 83916,
+      "corr_row": 55,
+      "measured_xy": [
+        606.776123046875,
+        377.09844970703125
+      ],
+      "predicted_xy": [
+        609.7727592376752,
+        378.60487912061353
+      ],
+      "error_px": 3.3539764516346358,
+      "withheld_from_solver": false,
+      "nearest_solver_detection_px": 0.8192075907558114
+    },
+    {
+      "hyg_id": 74265,
+      "corr_row": 56,
+      "measured_xy": [
+        3943.41162109375,
+        620.0859985351562
+      ],
+      "predicted_xy": [
+        3942.3868987121546,
+        621.2967833045683
+      ],
+      "error_px": 1.5862079678222536,
+      "withheld_from_solver": true,
+      "nearest_solver_detection_px": 35.54279335133686
+    },
+    {
+      "hyg_id": 73699,
+      "corr_row": 57,
+      "measured_xy": [
+        3973.655517578125,
+        963.1347045898438
+      ],
+      "predicted_xy": [
+        3970.632596477285,
+        965.1334976127314
+      ],
+      "error_px": 3.623979239765039,
+      "withheld_from_solver": true,
+      "nearest_solver_detection_px": 313.91772544431683
+    },
+    {
+      "hyg_id": 82479,
+      "corr_row": 58,
+      "measured_xy": [
+        982.3211669921875,
+        821.0474243164062
+      ],
+      "predicted_xy": [
+        985.1942085612277,
+        822.7049060980637
+      ],
+      "error_px": 3.316868057966629,
+      "withheld_from_solver": true,
+      "nearest_solver_detection_px": 256.8226893559169
+    },
+    {
+      "hyg_id": 81640,
+      "corr_row": 59,
+      "measured_xy": [
+        1200.173095703125,
+        1065.807861328125
+      ],
+      "predicted_xy": [
+        1200.7419166734126,
+        1067.7193380875358
+      ],
+      "error_px": 1.9943171006654015,
+      "withheld_from_solver": true,
+      "nearest_solver_detection_px": 296.4238984942549
+    },
+    {
+      "hyg_id": 74163,
+      "corr_row": 60,
+      "measured_xy": [
+        4005.943115234375,
+        575.420166015625
+      ],
+      "predicted_xy": [
+        4005.2677444855653,
+        576.4324673088773
+      ],
+      "error_px": 1.2169139479306106,
+      "withheld_from_solver": true,
+      "nearest_solver_detection_px": 85.25304231859411
+    }
+  ],
+  "limitations": [
+    "sky covers upper portion only; lower field occluded",
+    "external centroids and identities are reviewed candidates, not accepted ground truth"
+  ]
+}

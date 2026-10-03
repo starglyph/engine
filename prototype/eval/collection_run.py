@@ -115,6 +115,7 @@ def main():
     parser.add_argument("--ids", help="comma-separated subset within the selected split")
     parser.add_argument("--detection-diagnostics", action="store_true")
     parser.add_argument("--quantile-threshold", action="store_true", help="opt-in detector experiment")
+    parser.add_argument("--blob-concentration", action="store_true", help="opt-in detector experiment")
     parser.add_argument("--sky-masks", type=Path, help="experimental masks; enables existing sky-statistics and sky-fill")
     args = parser.parse_args()
     if args.batch_size is not None and args.batch_size < 1:
@@ -161,6 +162,8 @@ def main():
             plan["detection_diagnostics"] = True
         if args.quantile_threshold:
             plan["quantile_threshold"] = True
+        if args.blob_concentration:
+            plan["blob_concentration"] = True
         if args.sky_masks:
             plan.update(sky_masks_sha256=digest(args.sky_masks), sky_statistics=True, sky_fill=True,
                         cache="prewarmed; individual CLI processes; experimental masks")
@@ -232,6 +235,8 @@ def main():
                 command += ["--detection-diagnostics"]
             if args.quantile_threshold:
                 command += ["--quantile-threshold"]
+            if args.blob_concentration:
+                command += ["--blob-concentration"]
             if args.sky_masks:
                 command += ["--sky-masks", str(args.sky_masks.resolve()), "--sky-statistics", "--sky-fill"]
             row.update(bounded(command, args.out_dir / f"{rid}.log", 120))

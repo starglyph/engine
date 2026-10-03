@@ -1,0 +1,101 @@
+{
+  "schema_version": 1,
+  "checks": {
+    "rust_unit": {
+      "status": "passed",
+      "log_sha256": "9257473cdb772ba1338c9082db980dd5582ccc8b3c266bd6220512d73613c50f",
+      "passed": 108
+    },
+    "python": {
+      "status": "passed",
+      "log_sha256": "ac855f196a87aeaa260537874e2b857ffec2987c17e99debba6e954c5d87cd21",
+      "passed": 84
+    },
+    "clippy": {
+      "status": "passed",
+      "log_sha256": "dafd01da667f50fd883d14ff4a97e192fe0bf893641d57e9da6ff2840c347cbc"
+    },
+    "collection_contract": {
+      "status": "passed",
+      "log_sha256": "83160d08cb86595ad6d0542285e998341d0ed8ff894af70ae0efbab07238bf60",
+      "check_files": false,
+      "reason": "Metadata/results contract only; no holdout image access."
+    },
+    "collection_unit": {
+      "status": "passed",
+      "log_sha256": "ee735eda57196b9ff5695e0b71aca0c32a5efb6fec16ca5fa08ab5c975d1ff52",
+      "passed": 17
+    },
+    "eval_gate": {
+      "status": "passed",
+      "log_sha256": "9f4e12eae0b4400084723da03ba2d35a89994a3f068ae9f0cbdf02f09f654b06"
+    },
+    "smartphone_gate": {
+      "status": "passed",
+      "log_sha256": "84279229806f65c3991a1ca23955e6b05ea4c3e97d8556185ffe45e2ff7866a0"
+    },
+    "sky_fill_gate": {
+      "status": "passed",
+      "log_sha256": "6e513957bc87e3a95ba1416896f99d405b72210bebe950c6401b10966da5fcb0",
+      "extended_dense_integration": true
+    },
+    "trace_112929230": {
+      "status": "passed",
+      "log_sha256": "f8f4dd14b73ac7ac44a81a6cf5d3b107242abf5dc3df564423bc8996a1e861ce"
+    },
+    "trace_161606532": {
+      "status": "passed",
+      "log_sha256": "883271adfeaf193080edb1c4676e83f7031cea33bc0ff1cd947bf86ccddf8de5"
+    },
+    "replay_112929230": {
+      "status": "passed",
+      "log_sha256": "629d81cea671e6f58e0881d2f2249ed5756c350828bc6ff3c13ffbbf132800e7"
+    },
+    "replay_161606532": {
+      "status": "passed",
+      "log_sha256": "086fde10bc308ac49ea79274d19c79b232905d791ddea7d1e88d001d5528aa04"
+    }
+  },
+  "holdout_run": false,
+  "holdout_diagnosis": false,
+  "measurements": {
+    "control": 45,
+    "variant": 45,
+    "paired_status_changes": 0,
+    "solver_solved_each": 24,
+    "solver_count": 34,
+    "negative_rejected_each": 8,
+    "process_errors": 0,
+    "wall_timeouts": 0
+  },
+  "protocol_sha256": "8a5e3a6347c6788bfdbbc9274b615da40e5e0876e76b99c361c50d78f54cab45",
+  "research_binary_sha256": "b351c845353052a4242267a7701b4aa949e170aa6ad7c356e906acf34c3ad53e",
+  "all_measured_rust_runner_binary_catalog_and_data_hashes_unchanged": true,
+  "postprocessing_changes": {
+    "prototype/eval/robustness_trace_report.py": {
+      "frozen": "1a0ea0ea79d5681c3239859982aeaf313e0929b4cffa7724aeeedd4f26b721df",
+      "current": "1bba571273f2ce31d9a8f7f239fbe56a8491ebeab0bd7f95434fb196edf2c8c2"
+    }
+  },
+  "postprocessing_reason": "After measurements, fix duplicate tier keyword in trace formatter and publish rounded compact JSON; raw measurements and frozen protocol retained.",
+  "original_data_unchanged": {
+    "manifest.json": "97e229270c7b0f97fce4e1f738917cd91cdff01df3508db29584af70a0ea4871",
+    "robustness-results.json": "09e6efe61468b4afe896967d583553751d80fe82e65e0ac064528523bbc525e8",
+    "collection-wcs-review.json": "97c182c51955baee9adce93cde8e93fb98ece6a69bdc606cf871d3a1eef19841"
+  },
+  "frozen_cache_hashes_unchanged": true,
+  "snapshot_sha256": {
+    "docs/experiments/robustness-iteration-2-development.json": "cce09d1b2bd9275beb2391c47e030d3f64ddfeeb9eb9429b931755c400484eda",
+    "docs/experiments/robustness-iteration-2-diagnosis.json": "25232827c4d6d5e6166d18db6ed5893883d2df2b9be5d543471300f3bc5417e6"
+  },
+  "git_diff_check": "passed",
+  "environment": {
+    "python": "3.10.12",
+    "rustc": "rustc 1.98.1 (48a229cea 2026-09-01)"
+  },
+  "notes": [
+    "Incomplete preliminary 12 control / 6 variant run retained separately, excluded from final A/B.",
+    "Before final freeze corrected replay tier metadata erroneously routed to debug; CLI binary remained identical.",
+    "No automatic improvement claimed; experimental flag remains disabled."
+  ]
+}

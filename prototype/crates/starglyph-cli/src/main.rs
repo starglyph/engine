@@ -130,6 +130,9 @@ enum Command {
         /// Experimental occupancy-quantile detector; disabled by default.
         #[arg(long)]
         quantile_threshold: bool,
+        /// Experimental concentration measured over component pixels only.
+        #[arg(long)]
+        blob_concentration: bool,
         #[arg(long)]
         out_dir: PathBuf,
         /// Comma-separated subset of solver, scene, stress (default: solver).
@@ -449,6 +452,7 @@ fn main() -> Result<()> {
             sky_fill,
             detection_diagnostics,
             quantile_threshold,
+            blob_concentration,
             out_dir,
             tracks,
             ids,
@@ -469,6 +473,7 @@ fn main() -> Result<()> {
                 sky_fill,
                 detection_diagnostics,
                 quantile_threshold,
+                blob_concentration,
                 out_dir: &out_dir,
                 tracks: &tracks,
                 ids: ids.as_deref(),
@@ -814,6 +819,7 @@ fn run_solve(args: SolveRun<'_>) -> Result<()> {
 
     let opts = SolveOptions {
         quantile_threshold: false,
+        blob_concentration: false,
         fov_hint_deg: args.fov_hint,
         attitude_hint: args.attitude_hint,
         cache_dir,
@@ -950,6 +956,7 @@ fn run_batch_solve(args: BatchRun<'_>) -> Result<()> {
         let epoch = frame.timestamp_from_name().map(|t| t.to_epoch_years());
         let opts = SolveOptions {
             quantile_threshold: false,
+            blob_concentration: false,
             fov_hint_deg: args.fov_hint,
             attitude_hint: None,
             cache_dir: cache_dir.clone(),
@@ -1068,6 +1075,7 @@ fn resolve_failed_frame(
     }
     let opts = SolveOptions {
         quantile_threshold: false,
+        blob_concentration: false,
         fov_hint_deg: Some(fov_hint),
         attitude_hint,
         cache_dir: cache_dir.to_path_buf(),

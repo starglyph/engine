@@ -1,0 +1,3513 @@
+{
+  "protocol": {
+    "schema_version": 1,
+    "experiment": "component_concentration_v1",
+    "created_utc": "2026-10-03T09:57:24.703136+00:00",
+    "split": "development",
+    "base_commit": "b94369a05495a7b2520099aefc4bb7c2983e6b67",
+    "hashes": {
+      "prototype/crates/dataset-cli/src/main.rs": "aea70102e05b1543fc9b3eef8276bc05563270f93d4eba27b006357bccc41781",
+      "prototype/crates/simulator-core/src/camera.rs": "b2ae4a3c044164b03d0a678dff94fab3fa4fa8a7664ef27a15ad1543187b1564",
+      "prototype/crates/simulator-core/src/catalog.rs": "d319ab601d300d56ea603ae5c48ccbd2a37e3fd0bf983b709dad3eee303c9aa8",
+      "prototype/crates/simulator-core/src/config.rs": "847c308f080284acbf783401743fc2253014c76bb9ecba89fadc7dee87fc45b0",
+      "prototype/crates/simulator-core/src/dataset.rs": "0f66bd63f241d98a92b25bfd1cbe035d85bb19a2f9c15c0d9ee613018134d33f",
+      "prototype/crates/simulator-core/src/degradations.rs": "564b6b68b340c06bd6d014fb4e31f51aaec980d143c04ec81e39b6e6bb9c435e",
+      "prototype/crates/simulator-core/src/lib.rs": "e860b5cb366bd90fe99b19011fc567f3404f9bd2a8c885a843f8e5f7339cdd05",
+      "prototype/crates/simulator-core/src/projection.rs": "7c1f706c4eb2cd271a2b255eb1806c2718efdad4862355da78cbf2883b5640a2",
+      "prototype/crates/simulator-core/src/rendering.rs": "ac1ad60b48c7bb2df4035285c4b3ca1e8ff28b55c166f5c37b4bb2f7203387d6",
+      "prototype/crates/simulator-core/src/rng.rs": "eb35643afa794d11c58aac136466997e940915ce50d594499551b870d0016e67",
+      "prototype/crates/simulator-core/src/sampling.rs": "324023a6ab0adb96930498cd8fa748ea609bfd6a9c0e448034efe97eff1b972a",
+      "prototype/crates/solver-cli/src/main.rs": "6f701e9447d964235ca4e84d5812291af75cdb906eeb59fbcae7909c5b47150c",
+      "prototype/crates/solver-core/src/benchmark.rs": "5c6e2aecda540a639831768d0942bb7a6364c5d075938585fb825bfeff310d90",
+      "prototype/crates/solver-core/src/config.rs": "f47b8489b7be0385fd5765b9e16d495ee8db5b9d5c2a97afe7e9df6a3a3fe75f",
+      "prototype/crates/solver-core/src/contracts.rs": "59288bc7cbbfb0e1d67c6bb30d705886349a9b0706b52055b65480c83eecabc5",
+      "prototype/crates/solver-core/src/detection.rs": "0d0718ed000a9e7adc6239808aaeb1a26d1077903f92f595f379362c75ea32f4",
+      "prototype/crates/solver-core/src/io.rs": "b51e3269ca4a89da73fe599289d04b76973e23fef857ee266929b994a0ef307f",
+      "prototype/crates/solver-core/src/lib.rs": "7213408ea6a96ac787927e9c93a055d4bd52f19cf87790f4f44e65de48a8390d",
+      "prototype/crates/solver-core/src/matching.rs": "0c7a3ec584290d9c6de1b058393a74adacd6354c5e8d08b89e6c115e73ee00a4",
+      "prototype/crates/solver-core/src/overlay.rs": "39d44da1fe2a661f536220fbbabfa98dbc8165f8625fe7fe12f7ca77f61dc9e7",
+      "prototype/crates/solver-core/src/pipeline.rs": "d1e650948d790cb6f76fa956f3e68cb777a3d34cd0cf097cac1ee91f78fef886",
+      "prototype/crates/solver-core/src/pose.rs": "1019fc70879c2ff35f8cbffb790407ce33371b28a6a377243b0159b044a8742a",
+      "prototype/crates/starglyph-cli/src/eval_cmd.rs": "fe4359aae79ff2f720b5986baccea0cd8da5b6269f882e77e7cfc35eae4031cd",
+      "prototype/crates/starglyph-cli/src/main.rs": "e88f7b78cb5cdad0689946c7aed698625ee5a801006e931d4915b25ba7077644",
+      "prototype/crates/starglyph-cli/src/sky_masks.rs": "98a58102055e6e646901b67d3a79416f0d88f24d6fb71e7157d32e12c60a0bfa",
+      "prototype/crates/starglyph-core/src/catalog.rs": "42652f59e641f0e0fa5cfe9e9120925bc92773b1f1ebaf4d242d346fbb0d58d9",
+      "prototype/crates/starglyph-core/src/constellations.rs": "a44c2290e116721b3260a1bcaf3efb4dcda71df98f66e19b4b473b82305f545b",
+      "prototype/crates/starglyph-core/src/contracts.rs": "8373569d33bf3c3d8a82f2c626035a99f1617995fb45b587c1f439f3288dd581",
+      "prototype/crates/starglyph-core/src/detect/trace.rs": "c914c89eec3e83e998982d3ede631b27a172ea4eecaadf6acb52e501648f1181",
+      "prototype/crates/starglyph-core/src/detect.rs": "9a622b14303bf01c3993a76c5d1bc65b9c1da1ea565def48bebdfdafa1a7a8c8",
+      "prototype/crates/starglyph-core/src/engine.rs": "e48f2069648a6bf0f373d44870ea1acad157c2a3ca760327e67e2f014fefa017",
+      "prototype/crates/starglyph-core/src/ephem.rs": "68091771cc86bad1c08d57d5b1337d0a8984f59d952cea46cfa4ad00a9096515",
+      "prototype/crates/starglyph-core/src/eval.rs": "adbb4fd469aef3e70cfa8e02fcb2cfa0ae516c32ff224421ddfeaa5c744ddd00",
+      "prototype/crates/starglyph-core/src/geom.rs": "31c5a253674025564ab839c7f58ffa2c59e1c7e2f5f31a50f3e9e705477ff528",
+      "prototype/crates/starglyph-core/src/image_input.rs": "0acc60b8fbf4cb91ffb1b2659136a3af2489921651bd448c8bbc967619d95f82",
+      "prototype/crates/starglyph-core/src/lib.rs": "87fd4fe1e39a3535be1abd95b74e1d31aa7e33df9d824e19ab025713322bc70c",
+      "prototype/crates/starglyph-core/src/overlay.rs": "c6a28dae451b3253e41530b39bbc4cab35e68ae41de5f3a17db60e4e01a622ea",
+      "prototype/crates/starglyph-core/src/render.rs": "bb3ba3641d5f6b2580a4339ac8b9fa78c3abc89375eb767e612b0c3b4c091985",
+      "prototype/crates/starglyph-core/src/sky_mask.rs": "4442221e88941432c4745579d3dd7481603a6aaf53c2d6106d331c8255275b41",
+      "prototype/crates/starglyph-core/src/solve/replay.rs": "06dfb8d26877d75e8fe9af34644fbaa5bb817c45c0abea48f61994ebb495431a",
+      "prototype/crates/starglyph-core/src/solve.rs": "5eca02d14b60fef2dc36e938dd75ea925c5f3b02436f82dd715c9968a8384942",
+      "prototype/crates/starglyph-serve/src/main.rs": "b8f417caa8d35723d4f81db86caee5ebd9a3830b9ef607a48cfbb86c8ca4a180",
+      "prototype/crates/starglyph-serve/src/pool.rs": "68335aaee0c3484a0bbd25f6ac24fbd941033fd343469e4dc55a9eb5f9d3cb0b",
+      "prototype/crates/starglyph-serve/src/server.rs": "d54b4d356b933a28cf1069a7f6b3aa13b796972ac6372a046291bfe881488188",
+      "prototype/crates/starglyph-serve/src/telemetry.rs": "3d6af5b185392ab18ec61f007ae847b583052dab47256a2ef4e4ec0df8f1cb10",
+      "prototype/Cargo.lock": "59694debace1f5f18e2de398a77ce4d6a1a8f7dd237af646906aa49bfa3b677a",
+      "prototype/target/release/starglyph": "f7c1ba5ed86250236efd2cb0e3a3ef603bfc33cc800c6f75497c78ae9acf8ef1",
+      "data/catalogs/hyg_v42.csv.gz": "5ca9431ff364c8002a4a3efa91b2b9296746aea1543374db4cb6b4fab049d601",
+      "data/samples/sky-samples/manifest.json": "97e229270c7b0f97fce4e1f738917cd91cdff01df3508db29584af70a0ea4871",
+      "data/samples/sky-samples/robustness-results.json": "09e6efe61468b4afe896967d583553751d80fe82e65e0ac064528523bbc525e8",
+      "data/samples/sky-samples/collection-wcs-review.json": "97c182c51955baee9adce93cde8e93fb98ece6a69bdc606cf871d3a1eef19841",
+      "prototype/eval/collection_run.py": "6bf1108b48c21a40bdd00023eae564c27c5062fd63beb45d32ddde86154bd5b5",
+      "prototype/eval/robustness_concentration.py": "4d6da3257cdc879716f5d204ff056d4db7fad3c60ff7addf89a9f4ab18277ae8",
+      "prototype/eval/robustness_source_trace.py": "c9a0909e8b693e56aa743e43a8a9e06855944842fcdc76adbda7705f614e819f",
+      "prototype/eval/centroid_replay.py": "c13993cd1c286f48ba14940d7b3b1602175b571fd26f54e7b3b9fee9b1779c61",
+      "prototype/eval/robustness_iteration.py": "970f315071331d75307c6e0a75312a24efd5f023db45c56790674017beca057d",
+      "prototype/eval/compare_local_wcs.py": "1a8c83f6d0a19f3cbbe2a96f0db79a0ab60ac33fd09ad6c5c69472672ef31a3b",
+      "prototype/eval/robustness_trace_report.py": "1a0ea0ea79d5681c3239859982aeaf313e0929b4cffa7724aeeedd4f26b721df"
+    },
+    "inputs": [
+      {
+        "id": "wm_r_112929230",
+        "source_sha256": "01de14e5cd4724f40f46c760627d9f5c7373979274364db40f76a6e5be38f6b3",
+        "track": "solver",
+        "negative": false
+      },
+      {
+        "id": "wm_r_113343122",
+        "source_sha256": "28c65b20ad39c16bd1013b11d4d146a21c19738fba0ee31df6c24af5034ed7fc",
+        "track": "solver",
+        "negative": false
+      },
+      {
+        "id": "wm_r_113343124",
+        "source_sha256": "2736e16473752e7a3123836c8748b84988728cb5f68952a84a95505f15962a3a",
+        "track": "solver",
+        "negative": false
+      },
+      {
+        "id": "wm_r_117865777",
+        "source_sha256": "0ea16bb8500c45e1390be323faea68d5b06001ac7cd6698242171e21d7ad07fa",
+        "track": "solver",
+        "negative": false
+      },
+      {
+        "id": "wm_r_118484591",
+        "source_sha256": "a40183436c91907492d56af35e1a907fd5a8b85e458e641ec0efb753995a9dc9",
+        "track": "solver",
+        "negative": false
+      },
+      {
+        "id": "wm_r_124355480",
+        "source_sha256": "f95266fa221aab6431af9326b96323eee59fc5c5d56210f8e726c3851060a610",
+        "track": "stress",
+        "negative": true
+      },
+      {
+        "id": "wm_r_132162731",
+        "source_sha256": "58dfbce4f8a236cab8158a4a0f9ed677c68aa8873afd9568df48d370f01ef188",
+        "track": "solver",
+        "negative": false
+      },
+      {
+        "id": "wm_r_134291495",
+        "source_sha256": "efe2f4460cb419479ff3bd251815db7f7c78cd30258afc9a88cc1f7818cc145d",
+        "track": "solver",
+        "negative": false
+      },
+      {
+        "id": "wm_r_140736786",
+        "source_sha256": "8efae48632099d8eeb619315fc1ea4fd2b7ab4062c66af4c94b6c147a35d01e5",
+        "track": "solver",
+        "negative": false
+      },
+      {
+        "id": "wm_r_142048359",
+        "source_sha256": "5c5f6016a8755ad21ab6a260eec136697897398f6501437bdd498ce67bed9fd4",
+        "track": "solver",
+        "negative": false
+      },
+      {
+        "id": "wm_r_143159342",
+        "source_sha256": "94f3d61426e03e4fda29b95a1b91038332a09491587acf77df3681c5b919c54d",
+        "track": "solver",
+        "negative": false
+      },
+      {
+        "id": "wm_r_148245316",
+        "source_sha256": "a00f51721cc4f29fb967d2304d548c84076500ec0af8510790c1266334bac2c3",
+        "track": "solver",
+        "negative": false
+      },
+      {
+        "id": "wm_r_148266565",
+        "source_sha256": "be7292e499ead98eb6a514d4d3e3e18bbc5ffb6a58be4581ea9679e94737cc76",
+        "track": "solver",
+        "negative": false
+      },
+      {
+        "id": "wm_r_149276071",
+        "source_sha256": "07ae25603db00a53060aaac710635df8ec71ca14eeb758e604cadb211cbd25a2",
+        "track": "solver",
+        "negative": false
+      },
+      {
+        "id": "wm_r_152165509",
+        "source_sha256": "53078e0dd7291d31321860f76d247d814175621ccb73d8beb62455bacde41c26",
+        "track": "stress",
+        "negative": false
+      },
+      {
+        "id": "wm_r_153414920",
+        "source_sha256": "556c7aecacb5402969a5e013a45434c51d12c022d1e420c189fd6bf86b33cbee",
+        "track": "stress",
+        "negative": true
+      },
+      {
+        "id": "wm_r_154107562",
+        "source_sha256": "fb7381b92a199ec618208febb092f51cc7d3b533d57526a0297e1f8940367305",
+        "track": "stress",
+        "negative": false
+      },
+      {
+        "id": "wm_r_154807046",
+        "source_sha256": "da420889b2818f3176320feb2d8fd4c4794f4c0f0800cf10e82de7473c262cb9",
+        "track": "solver",
+        "negative": false
+      },
+      {
+        "id": "wm_r_156873262",
+        "source_sha256": "7577861fd6448be23879c11c4ac23463c84cb34d3e83670beaa46d1330bc889e",
+        "track": "solver",
+        "negative": false
+      },
+      {
+        "id": "wm_r_16053617",
+        "source_sha256": "1e294faf829dcb2ea61a2ff39ef7ab20919781d7eeecfd8824a02e7c4520034f",
+        "track": "solver",
+        "negative": false
+      },
+      {
+        "id": "wm_r_161606532",
+        "source_sha256": "985afe7d1142a2ece7545bc8846cb7c610ac5d307f85bf9f45056d7249921c63",
+        "track": "solver",
+        "negative": false
+      },
+      {
+        "id": "wm_r_162210628",
+        "source_sha256": "182f67e9c900e7cad333e16c73ac43206a350832dfe46f61ba45f647ac8cdc82",
+        "track": "solver",
+        "negative": false
+      },
+      {
+        "id": "wm_r_163971318",
+        "source_sha256": "908b43c0b68aba1e321f38f4ee5227d9919c6c0ad5cc967c2118e356bf417ba1",
+        "track": "solver",
+        "negative": false
+      },
+      {
+        "id": "wm_r_170376698",
+        "source_sha256": "e0d64620d4b09c5854274ce2af269b112628652ef739f1070ea6fb0cd8e1d9ae",
+        "track": "solver",
+        "negative": false
+      },
+      {
+        "id": "wm_r_170711707",
+        "source_sha256": "da2915dd724a0781a7a885204abda8a35b897bcf1ed4494d21bedbc63ac69815",
+        "track": "solver",
+        "negative": false
+      },
+      {
+        "id": "wm_r_174305244",
+        "source_sha256": "50f6a4930959619674464c5811f4d01b271af56939c3001c1c9c3bd0808a8228",
+        "track": "solver",
+        "negative": false
+      },
+      {
+        "id": "wm_r_176021058",
+        "source_sha256": "c950aff831b9e748548d681cffb26e9102547687e90861861ddaa1a5eecd5dc0",
+        "track": "solver",
+        "negative": false
+      },
+      {
+        "id": "wm_r_176481855",
+        "source_sha256": "a2c97f072a339d1444db3a1ec8935fe5ed70cc484fc0e212d113c5ee0399327d",
+        "track": "solver",
+        "negative": false
+      },
+      {
+        "id": "wm_r_178297645",
+        "source_sha256": "8c4fef84dd0c0a307522b4bfb9c9af6b68031e1e86b8bda020d25660eb4ac2b4",
+        "track": "solver",
+        "negative": false
+      },
+      {
+        "id": "wm_r_179619449",
+        "source_sha256": "60aa033d5614c48727d8b74dce5b4b52e45105c0990a9560d7bf0d1f40534dc2",
+        "track": "solver",
+        "negative": false
+      },
+      {
+        "id": "wm_r_179696785",
+        "source_sha256": "d2b8e3a238a1eed6292933aeaeaf4c2088f44997acd3c95124b350bf1439c38c",
+        "track": "stress",
+        "negative": true
+      },
+      {
+        "id": "wm_r_180011612",
+        "source_sha256": "0e97e36fdbb80e831e003614916ce29fca817eb171a4f0350ac27b2975506a8a",
+        "track": "solver",
+        "negative": false
+      },
+      {
+        "id": "wm_r_180231845",
+        "source_sha256": "8899f829284d747557f10ac913cd6e48c30ac2ea030b85f0e781f07bf96cb7a7",
+        "track": "solver",
+        "negative": false
+      },
+      {
+        "id": "wm_r_49541180",
+        "source_sha256": "ee899364984d433f9e317779ed1bd11abdc48dcfa31b8d6bf942392ac05a31d3",
+        "track": "solver",
+        "negative": false
+      },
+      {
+        "id": "wm_r_64398618",
+        "source_sha256": "752f7483d46d4ad69b61319cc98ee43ac0d8d60177e7a435a75bc2a6d44d9620",
+        "track": "scene",
+        "negative": false
+      },
+      {
+        "id": "wm_r_64919627",
+        "source_sha256": "96a9a993f9d0d84fe816b3a23d040bb813dc9ccd97bc176dc22f275ff10b8cb6",
+        "track": "stress",
+        "negative": true
+      },
+      {
+        "id": "wm_r_68938641",
+        "source_sha256": "c5de1900b46fee8338629be7c4f1a8b3e6f14de5d10c25a8ca3f7cec2b599fd6",
+        "track": "solver",
+        "negative": false
+      },
+      {
+        "id": "wm_r_82991013",
+        "source_sha256": "c6f565a340a0150df3e6a11e013d0f9d3397026172d4ba7e6eb6b5d0220e43fd",
+        "track": "solver",
+        "negative": false
+      },
+      {
+        "id": "wm_r_88363556",
+        "source_sha256": "7ea7a06b597177da6358339719e1b6bbf325c30821357c5129f4779533a0061c",
+        "track": "solver",
+        "negative": false
+      },
+      {
+        "id": "wm_r_88363557",
+        "source_sha256": "496c238a248c80c6afc0970a638566c4cafdc6712e433eb24df48a2cc21cb34b",
+        "track": "solver",
+        "negative": false
+      },
+      {
+        "id": "wm_r_88363564",
+        "source_sha256": "fa21b12b2982c24c2f47061a751204338c2b630505e7c3da2adb802bd07a74e8",
+        "track": "solver",
+        "negative": false
+      },
+      {
+        "id": "wm_r_92627738",
+        "source_sha256": "921f0423e54c5fafbd97e6b6e43e42cfb41ef4d85ac315fe62a1baf97dca5c71",
+        "track": "stress",
+        "negative": true
+      },
+      {
+        "id": "wm_r_92627740",
+        "source_sha256": "4866f2d2ec4af42cc0298ead0cf676262b1348650b1e30fab9e56c45ee2f03ea",
+        "track": "stress",
+        "negative": true
+      },
+      {
+        "id": "wm_r_98339111",
+        "source_sha256": "846c77f331570987a1d9f682ecd46e5ede707984a1fbf7f8ef710deeec69818e",
+        "track": "stress",
+        "negative": true
+      },
+      {
+        "id": "wm_r_99644775",
+        "source_sha256": "7db56658f5fb75e1367ed267797d800e3433eb1c47487d53f815f35d71ee1454",
+        "track": "stress",
+        "negative": true
+      }
+    ],
+    "parameters": {
+      "concentration": "peak * component_area / sum_positive_residual_in_component",
+      "min_concentration": 2.5,
+      "min_area": 25,
+      "max_area": 150,
+      "quantile_threshold": false,
+      "masks": false,
+      "wall_limit_s": 120
+    },
+    "unchanged": [
+      "saturation exemption",
+      "core resegmentation",
+      "centroid and flux ranking",
+      "matching search budget",
+      "acceptance and refinement"
+    ],
+    "criteria": [
+      "Retain every previous success; no accepted development negative.",
+      "No new process errors or wall timeouts; report attempt timeouts and elapsed time.",
+      "New solutions remain provisional pending independent identity and edge verification.",
+      "A detection proxy gain alone is insufficient; no default activation on regressions.",
+      "One fixed variant, no parameter sweep, no holdout access."
+    ],
+    "cache_hashes": {
+      "tetra3-bootstrap-10-70-mag65-v0.8.0.bin": "3dab6ebaa5c8dea2a5a5b2690a8c42c4b79fca7ed3129ed4f7decd1ea2d3d3fe",
+      "tetra3-dense-16-30-mag65-v0.8.0.bin": "9666a53166adb3c9411b87ce5d995c12acecc4e72963c50fc9870c28334f15d9",
+      "tetra3-dense-17-32-mag65-v0.8.0.bin": "b30da6edf2dc95b106eff4b9bb90202fe4a911e6a442c7d255614c4a6f58f57b",
+      "tetra3-dense-30-54-mag65-v0.8.0.bin": "27c39a71201c72f9bb58e04daf4f526b4ad8da11eeafc05fbcf2ac0b95334893",
+      "tetra3-dense-37-68-mag65-v0.8.0.bin": "732939f14218d45a40de66184c36d8887b3d4983db16009f2b34e8dcb007b705",
+      "tetra3-dense-48-88-mag65-v0.8.0.bin": "8238a8f7e15052a5e2a5de9d8671178815f07c86478df23fab2ec5ce1c125b20",
+      "tetra3-dense-59-90-mag65-v0.8.0.bin": "1b1df82113802746d1356f9907d6647c4bef0a72a9212cc16aba805f89c4e434"
+    }
+  },
+  "protocol_sha256": "8a5e3a6347c6788bfdbbc9274b615da40e5e0876e76b99c361c50d78f54cab45",
+  "totals": {
+    "solver": {
+      "count": 34,
+      "control": 24,
+      "blob": 24
+    },
+    "stress": {
+      "count": 10,
+      "control": 0,
+      "blob": 0
+    },
+    "scene": {
+      "count": 1,
+      "control": 0,
+      "blob": 0
+    }
+  },
+  "gained": [],
+  "lost": [],
+  "negative_accepts": {
+    "control": [],
+    "blob": []
+  },
+  "frames": [
+    {
+      "id": "wm_r_112929230",
+      "source_sha256": "01de14e5cd4724f40f46c760627d9f5c7373979274364db40f76a6e5be38f6b3",
+      "track": "solver",
+      "negative": false,
+      "published_status": "solved",
+      "ground_truth": "unconfirmed",
+      "control": {
+        "status": "completed",
+        "solve_status": "solved",
+        "elapsed_s": 2.6258221734315157,
+        "exit_code": 0,
+        "report_sha256": "64db8d626389e1a4b4a632412c57b26561f08a360222e5ab55f5a296d953e045",
+        "detections": 40,
+        "quality": {
+          "confidence": 1.0,
+          "log_odds": 114.26,
+          "n_detections": 40,
+          "n_inliers": 21,
+          "rms_px": 2.74
+        },
+        "failure": null,
+        "timing_ms": {
+          "detect": 224,
+          "solve": 792,
+          "total": 1424
+        },
+        "pending_external_geometry": {
+          "reference_status": "solved_candidate",
+          "review_status": "pending",
+          "solver_status": "solved",
+          "full_field_wcs_difference": {
+            "count": 81,
+            "rms_px": 43.98074068876845,
+            "median_px": 13.118263905617988,
+            "p95_px": 96.37651131541354,
+            "max_px": 160.58405510208033
+          },
+          "external_star_error": {
+            "count": 82,
+            "rms_px": 8.5129002156084,
+            "median_px": 2.1876525657248505,
+            "p95_px": 4.010028604960316,
+            "max_px": 73.78731115737946
+          },
+          "external_wcs_fit": {
+            "count": 82,
+            "rms_px": 7.121984497184975,
+            "median_px": 6.5294704232488066,
+            "p95_px": 11.74138513328045,
+            "max_px": 16.360093319528914
+          }
+        },
+        "attempt_timeouts": 0
+      },
+      "blob": {
+        "status": "completed",
+        "solve_status": "solved",
+        "elapsed_s": 2.2738280463963747,
+        "exit_code": 0,
+        "report_sha256": "2d1fca10d6a7a613ea022093e33e3ec176f875effdc80477f979298e82c958d9",
+        "detections": 40,
+        "quality": {
+          "confidence": 1.0,
+          "log_odds": 114.26,
+          "n_detections": 40,
+          "n_inliers": 21,
+          "rms_px": 2.74
+        },
+        "failure": null,
+        "timing_ms": {
+          "detect": 227,
+          "solve": 399,
+          "total": 1179
+        },
+        "pending_external_geometry": {
+          "reference_status": "solved_candidate",
+          "review_status": "pending",
+          "solver_status": "solved",
+          "full_field_wcs_difference": {
+            "count": 81,
+            "rms_px": 43.98074068878263,
+            "median_px": 13.118263905624175,
+            "p95_px": 96.37651131543501,
+            "max_px": 160.58405510212282
+          },
+          "external_star_error": {
+            "count": 82,
+            "rms_px": 8.512900215612326,
+            "median_px": 2.1876525657368853,
+            "p95_px": 4.010028604957658,
+            "max_px": 73.78731115740666
+          },
+          "external_wcs_fit": {
+            "count": 82,
+            "rms_px": 7.121984497184975,
+            "median_px": 6.5294704232488066,
+            "p95_px": 11.74138513328045,
+            "max_px": 16.360093319528914
+          }
+        },
+        "attempt_timeouts": 0
+      }
+    },
+    {
+      "id": "wm_r_113343122",
+      "source_sha256": "28c65b20ad39c16bd1013b11d4d146a21c19738fba0ee31df6c24af5034ed7fc",
+      "track": "solver",
+      "negative": false,
+      "published_status": "solved",
+      "ground_truth": "unconfirmed",
+      "control": {
+        "status": "completed",
+        "solve_status": "solved",
+        "elapsed_s": 7.038312463089824,
+        "exit_code": 0,
+        "report_sha256": "d82bb56a93f83cd1a665724b670ac67544fc1b2ced5cdac83fe9051199aaec96",
+        "detections": 40,
+        "quality": {
+          "confidence": 1.0,
+          "log_odds": 263.5,
+          "n_detections": 40,
+          "n_inliers": 37,
+          "rms_px": 1.77
+        },
+        "failure": null,
+        "timing_ms": {
+          "detect": 365,
+          "solve": 4977,
+          "total": 5753
+        },
+        "pending_external_geometry": {
+          "reference_status": "unresolved",
+          "review_status": "unresolved",
+          "solver_status": "solved"
+        },
+        "attempt_timeouts": 0
+      },
+      "blob": {
+        "status": "completed",
+        "solve_status": "solved",
+        "elapsed_s": 5.837551893666387,
+        "exit_code": 0,
+        "report_sha256": "9b7f7928e50330efee0f98483075e023904624cb3f3f8a8da0b05bc6cbc5a86b",
+        "detections": 40,
+        "quality": {
+          "confidence": 1.0,
+          "log_odds": 263.5,
+          "n_detections": 40,
+          "n_inliers": 37,
+          "rms_px": 1.77
+        },
+        "failure": null,
+        "timing_ms": {
+          "detect": 186,
+          "solve": 4461,
+          "total": 4936
+        },
+        "pending_external_geometry": {
+          "reference_status": "unresolved",
+          "review_status": "unresolved",
+          "solver_status": "solved"
+        },
+        "attempt_timeouts": 0
+      }
+    },
+    {
+      "id": "wm_r_113343124",
+      "source_sha256": "2736e16473752e7a3123836c8748b84988728cb5f68952a84a95505f15962a3a",
+      "track": "solver",
+      "negative": false,
+      "published_status": "solved",
+      "ground_truth": "unconfirmed",
+      "control": {
+        "status": "completed",
+        "solve_status": "solved",
+        "elapsed_s": 3.177832605317235,
+        "exit_code": 0,
+        "report_sha256": "ce68da25b16be31c1b2a6d9e3a2029837434876b2e9d79de742e06264d337607",
+        "detections": 40,
+        "quality": {
+          "confidence": 1.0,
+          "log_odds": 272.67,
+          "n_detections": 40,
+          "n_inliers": 38,
+          "rms_px": 2.7
+        },
+        "failure": null,
+        "timing_ms": {
+          "detect": 391,
+          "solve": 1151,
+          "total": 2192
+        },
+        "pending_external_geometry": {
+          "reference_status": "solved_candidate",
+          "review_status": "pending",
+          "solver_status": "solved",
+          "full_field_wcs_difference": {
+            "count": 81,
+            "rms_px": 22.46730804334355,
+            "median_px": 6.163474924664153,
+            "p95_px": 48.183365553398126,
+            "max_px": 67.83207010076693
+          },
+          "external_star_error": {
+            "count": 148,
+            "rms_px": 1.9609301219770447,
+            "median_px": 1.807757831454483,
+            "p95_px": 2.9448464068924745,
+            "max_px": 7.561490215741949
+          },
+          "external_wcs_fit": {
+            "count": 148,
+            "rms_px": 5.289947579114479,
+            "median_px": 5.316565738185504,
+            "p95_px": 7.821713460778524,
+            "max_px": 8.19546055543854
+          }
+        },
+        "attempt_timeouts": 0
+      },
+      "blob": {
+        "status": "completed",
+        "solve_status": "solved",
+        "elapsed_s": 2.9797452948987484,
+        "exit_code": 0,
+        "report_sha256": "1ba73750607b1fb919be330026a69190e762fbba40e2a193cca27dd262216f2c",
+        "detections": 40,
+        "quality": {
+          "confidence": 1.0,
+          "log_odds": 272.67,
+          "n_detections": 40,
+          "n_inliers": 38,
+          "rms_px": 2.7
+        },
+        "failure": null,
+        "timing_ms": {
+          "detect": 277,
+          "solve": 869,
+          "total": 1656
+        },
+        "pending_external_geometry": {
+          "reference_status": "solved_candidate",
+          "review_status": "pending",
+          "solver_status": "solved",
+          "full_field_wcs_difference": {
+            "count": 81,
+            "rms_px": 22.46730804334355,
+            "median_px": 6.163474924664153,
+            "p95_px": 48.183365553398126,
+            "max_px": 67.83207010076693
+          },
+          "external_star_error": {
+            "count": 148,
+            "rms_px": 1.9609301219770447,
+            "median_px": 1.807757831454483,
+            "p95_px": 2.9448464068924745,
+            "max_px": 7.561490215741949
+          },
+          "external_wcs_fit": {
+            "count": 148,
+            "rms_px": 5.289947579114479,
+            "median_px": 5.316565738185504,
+            "p95_px": 7.821713460778524,
+            "max_px": 8.19546055543854
+          }
+        },
+        "attempt_timeouts": 0
+      }
+    },
+    {
+      "id": "wm_r_117865777",
+      "source_sha256": "0ea16bb8500c45e1390be323faea68d5b06001ac7cd6698242171e21d7ad07fa",
+      "track": "solver",
+      "negative": false,
+      "published_status": "solved",
+      "ground_truth": "unconfirmed",
+      "control": {
+        "status": "completed",
+        "solve_status": "solved",
+        "elapsed_s": 18.949606833979487,
+        "exit_code": 0,
+        "report_sha256": "b1f23df9b9bd229af317ab87733b50d02ade8549d661d8e4cf3517926db1f80a",
+        "detections": 40,
+        "quality": {
+          "confidence": 1.0,
+          "log_odds": 262.73,
+          "n_detections": 40,
+          "n_inliers": 30,
+          "rms_px": 1.34
+        },
+        "failure": null,
+        "timing_ms": {
+          "detect": 2746,
+          "solve": 14839,
+          "total": 17821
+        },
+        "pending_external_geometry": {
+          "reference_status": "solved_candidate",
+          "review_status": "pending",
+          "solver_status": "solved",
+          "full_field_wcs_difference": {
+            "count": 81,
+            "rms_px": 4.400340327154035,
+            "median_px": 2.5187485786153276,
+            "p95_px": 9.337197371786093,
+            "max_px": 14.8731026283179
+          },
+          "external_star_error": {
+            "count": 40,
+            "rms_px": 3.6389411705354764,
+            "median_px": 2.416487245401994,
+            "p95_px": 7.124413752908516,
+            "max_px": 9.388003590079867
+          },
+          "external_wcs_fit": {
+            "count": 40,
+            "rms_px": 1.6875577210145827,
+            "median_px": 1.091812583626916,
+            "p95_px": 3.7680984842983896,
+            "max_px": 4.36578355197469
+          }
+        },
+        "attempt_timeouts": 0
+      },
+      "blob": {
+        "status": "completed",
+        "solve_status": "solved",
+        "elapsed_s": 15.111320897936821,
+        "exit_code": 0,
+        "report_sha256": "828288b9f11a6e3fb5d903348f2d79ccb9cf6e0c5e375459c98e4e9e351bccf8",
+        "detections": 40,
+        "quality": {
+          "confidence": 1.0,
+          "log_odds": 262.73,
+          "n_detections": 40,
+          "n_inliers": 30,
+          "rms_px": 1.34
+        },
+        "failure": null,
+        "timing_ms": {
+          "detect": 2225,
+          "solve": 12017,
+          "total": 14366
+        },
+        "pending_external_geometry": {
+          "reference_status": "solved_candidate",
+          "review_status": "pending",
+          "solver_status": "solved",
+          "full_field_wcs_difference": {
+            "count": 81,
+            "rms_px": 4.400340327154035,
+            "median_px": 2.5187485786153276,
+            "p95_px": 9.337197371786093,
+            "max_px": 14.8731026283179
+          },
+          "external_star_error": {
+            "count": 40,
+            "rms_px": 3.6389411705354764,
+            "median_px": 2.416487245401994,
+            "p95_px": 7.124413752908516,
+            "max_px": 9.388003590079867
+          },
+          "external_wcs_fit": {
+            "count": 40,
+            "rms_px": 1.6875577210145827,
+            "median_px": 1.091812583626916,
+            "p95_px": 3.7680984842983896,
+            "max_px": 4.36578355197469
+          }
+        },
+        "attempt_timeouts": 0
+      }
+    },
+    {
+      "id": "wm_r_118484591",
+      "source_sha256": "a40183436c91907492d56af35e1a907fd5a8b85e458e641ec0efb753995a9dc9",
+      "track": "solver",
+      "negative": false,
+      "published_status": "solved",
+      "ground_truth": "unconfirmed",
+      "control": {
+        "status": "completed",
+        "solve_status": "solved",
+        "elapsed_s": 2.2826952878385782,
+        "exit_code": 0,
+        "report_sha256": "2387ac9a7f3d462a8df068b2d4a730da85e265ffef4acdf21731e6588e5344b8",
+        "detections": 40,
+        "quality": {
+          "confidence": 1.0,
+          "log_odds": 286.17,
+          "n_detections": 40,
+          "n_inliers": 40,
+          "rms_px": 1.27
+        },
+        "failure": null,
+        "timing_ms": {
+          "detect": 278,
+          "solve": 236,
+          "total": 1038
+        },
+        "pending_external_geometry": {
+          "reference_status": "solved_candidate",
+          "review_status": "pending",
+          "solver_status": "solved",
+          "full_field_wcs_difference": {
+            "count": 81,
+            "rms_px": 35.834950431388236,
+            "median_px": 11.930840058130924,
+            "p95_px": 81.21201607619066,
+            "max_px": 105.71466750623281
+          },
+          "external_star_error": {
+            "count": 138,
+            "rms_px": 1.087050954206232,
+            "median_px": 0.8790773082020881,
+            "p95_px": 1.7546132478950325,
+            "max_px": 4.293464409942225
+          },
+          "external_wcs_fit": {
+            "count": 138,
+            "rms_px": 4.919070937166638,
+            "median_px": 4.047533353680253,
+            "p95_px": 8.793162970092158,
+            "max_px": 13.268106991911916
+          }
+        },
+        "attempt_timeouts": 0
+      },
+      "blob": {
+        "status": "completed",
+        "solve_status": "solved",
+        "elapsed_s": 1.9756522048264742,
+        "exit_code": 0,
+        "report_sha256": "a74c547157b5c1cdb3271f229ab9ea39f8278d62be4b34449ef21c2917c08f80",
+        "detections": 40,
+        "quality": {
+          "confidence": 1.0,
+          "log_odds": 286.17,
+          "n_detections": 40,
+          "n_inliers": 40,
+          "rms_px": 1.27
+        },
+        "failure": null,
+        "timing_ms": {
+          "detect": 276,
+          "solve": 231,
+          "total": 865
+        },
+        "pending_external_geometry": {
+          "reference_status": "solved_candidate",
+          "review_status": "pending",
+          "solver_status": "solved",
+          "full_field_wcs_difference": {
+            "count": 81,
+            "rms_px": 35.834950431388236,
+            "median_px": 11.930840058130924,
+            "p95_px": 81.21201607619066,
+            "max_px": 105.71466750623281
+          },
+          "external_star_error": {
+            "count": 138,
+            "rms_px": 1.087050954206232,
+            "median_px": 0.8790773082020881,
+            "p95_px": 1.7546132478950325,
+            "max_px": 4.293464409942225
+          },
+          "external_wcs_fit": {
+            "count": 138,
+            "rms_px": 4.919070937166638,
+            "median_px": 4.047533353680253,
+            "p95_px": 8.793162970092158,
+            "max_px": 13.268106991911916
+          }
+        },
+        "attempt_timeouts": 0
+      }
+    },
+    {
+      "id": "wm_r_124355480",
+      "source_sha256": "f95266fa221aab6431af9326b96323eee59fc5c5d56210f8e726c3851060a610",
+      "track": "stress",
+      "negative": true,
+      "published_status": "failed",
+      "ground_truth": "unconfirmed",
+      "control": {
+        "status": "completed",
+        "solve_status": "failed",
+        "elapsed_s": 3.5880510192364454,
+        "exit_code": 0,
+        "report_sha256": "17674859e520a47131f564ac9f60d49550f4337ca151f91407eac84c205c843a",
+        "detections": 50,
+        "quality": null,
+        "failure": {
+          "code": "no_confident_match",
+          "message": "no tetra3 pattern match found across the retry ladder"
+        },
+        "timing_ms": {
+          "detect": 900,
+          "solve": 2149,
+          "total": 2766
+        },
+        "attempt_timeouts": 0
+      },
+      "blob": {
+        "status": "completed",
+        "solve_status": "failed",
+        "elapsed_s": 3.9344104882329702,
+        "exit_code": 0,
+        "report_sha256": "e053f94561eb3b110d9d146801fa2e89070c6ec1c84a524e2b1e70cef3b494c0",
+        "detections": 50,
+        "quality": null,
+        "failure": {
+          "code": "no_confident_match",
+          "message": "no tetra3 pattern match found across the retry ladder"
+        },
+        "timing_ms": {
+          "detect": 1212,
+          "solve": 2244,
+          "total": 3051
+        },
+        "attempt_timeouts": 0
+      }
+    },
+    {
+      "id": "wm_r_132162731",
+      "source_sha256": "58dfbce4f8a236cab8158a4a0f9ed677c68aa8873afd9568df48d370f01ef188",
+      "track": "solver",
+      "negative": false,
+      "published_status": "solved",
+      "ground_truth": "unconfirmed",
+      "control": {
+        "status": "completed",
+        "solve_status": "solved",
+        "elapsed_s": 42.00875621475279,
+        "exit_code": 0,
+        "report_sha256": "3112c9c02559148ac519aea79fc84398107ef57921691184ff38c13eff680c84",
+        "detections": 40,
+        "quality": {
+          "confidence": 0.1177,
+          "log_odds": 4.71,
+          "n_detections": 40,
+          "n_inliers": 7,
+          "rms_px": 1.53
+        },
+        "failure": null,
+        "timing_ms": {
+          "detect": 3333,
+          "solve": 36598,
+          "total": 40413
+        },
+        "pending_external_geometry": {
+          "reference_status": "unresolved",
+          "review_status": "unresolved",
+          "solver_status": "solved"
+        },
+        "attempt_timeouts": 6
+      },
+      "blob": {
+        "status": "completed",
+        "solve_status": "solved",
+        "elapsed_s": 42.859749767929316,
+        "exit_code": 0,
+        "report_sha256": "8fa73946ef9b521c59e07d61884ea20cc22868d3a3e1d0a2d4a5f663f7b56b0f",
+        "detections": 40,
+        "quality": {
+          "confidence": 0.1177,
+          "log_odds": 4.71,
+          "n_detections": 40,
+          "n_inliers": 7,
+          "rms_px": 1.53
+        },
+        "failure": null,
+        "timing_ms": {
+          "detect": 3109,
+          "solve": 37997,
+          "total": 41385
+        },
+        "pending_external_geometry": {
+          "reference_status": "unresolved",
+          "review_status": "unresolved",
+          "solver_status": "solved"
+        },
+        "attempt_timeouts": 6
+      }
+    },
+    {
+      "id": "wm_r_134291495",
+      "source_sha256": "efe2f4460cb419479ff3bd251815db7f7c78cd30258afc9a88cc1f7818cc145d",
+      "track": "solver",
+      "negative": false,
+      "published_status": "failed",
+      "ground_truth": "unconfirmed",
+      "control": {
+        "status": "completed",
+        "solve_status": "failed",
+        "elapsed_s": 14.42556625790894,
+        "exit_code": 0,
+        "report_sha256": "7cb1d7e27b621ba02bc547853b02cc39fc7162291006089b4471f19a7183daa4",
+        "detections": 50,
+        "quality": null,
+        "failure": {
+          "code": "no_confident_match",
+          "message": "no tetra3 pattern match found across the retry ladder"
+        },
+        "timing_ms": {
+          "detect": 7272,
+          "solve": 8853,
+          "total": 13288
+        },
+        "pending_external_geometry": {
+          "reference_status": "unresolved",
+          "review_status": "unresolved",
+          "solver_status": "failed"
+        },
+        "attempt_timeouts": 0
+      },
+      "blob": {
+        "status": "completed",
+        "solve_status": "failed",
+        "elapsed_s": 17.233255844563246,
+        "exit_code": 0,
+        "report_sha256": "07aa1f904abe6c4768e465082f8b9d2fd9212a3549c515d27a7689b02c4a83d3",
+        "detections": 50,
+        "quality": null,
+        "failure": {
+          "code": "no_confident_match",
+          "message": "no tetra3 pattern match found across the retry ladder"
+        },
+        "timing_ms": {
+          "detect": 9207,
+          "solve": 9730,
+          "total": 15605
+        },
+        "pending_external_geometry": {
+          "reference_status": "unresolved",
+          "review_status": "unresolved",
+          "solver_status": "failed"
+        },
+        "attempt_timeouts": 0
+      }
+    },
+    {
+      "id": "wm_r_140736786",
+      "source_sha256": "8efae48632099d8eeb619315fc1ea4fd2b7ab4062c66af4c94b6c147a35d01e5",
+      "track": "solver",
+      "negative": false,
+      "published_status": "solved",
+      "ground_truth": "unconfirmed",
+      "control": {
+        "status": "completed",
+        "solve_status": "solved",
+        "elapsed_s": 2.9156914725899696,
+        "exit_code": 0,
+        "report_sha256": "8b1fa97c807cf81fd88ddd03a3261adc30a43047f07dafcb62d2858a1dbcb647",
+        "detections": 40,
+        "quality": {
+          "confidence": 1.0,
+          "log_odds": 231.96,
+          "n_detections": 40,
+          "n_inliers": 34,
+          "rms_px": 2.15
+        },
+        "failure": null,
+        "timing_ms": {
+          "detect": 243,
+          "solve": 588,
+          "total": 1511
+        },
+        "pending_external_geometry": {
+          "reference_status": "solved_candidate",
+          "review_status": "pending",
+          "solver_status": "solved",
+          "full_field_wcs_difference": {
+            "count": 81,
+            "rms_px": 6.285164674716625,
+            "median_px": 3.0496589507536624,
+            "p95_px": 13.377517300701664,
+            "max_px": 21.0278314687458
+          },
+          "external_star_error": {
+            "count": 40,
+            "rms_px": 4.32725739368519,
+            "median_px": 1.9799966908660775,
+            "p95_px": 7.850544589212261,
+            "max_px": 18.674906876353297
+          },
+          "external_wcs_fit": {
+            "count": 40,
+            "rms_px": 2.4771274789253193,
+            "median_px": 1.3241784774094638,
+            "p95_px": 3.065691398920622,
+            "max_px": 12.204216653033567
+          }
+        },
+        "attempt_timeouts": 0
+      },
+      "blob": {
+        "status": "completed",
+        "solve_status": "solved",
+        "elapsed_s": 2.4264657851308584,
+        "exit_code": 0,
+        "report_sha256": "142d682ee38276d9dd7d1adc9d566111e8d5818d6103575fe9fd33d6a72c3955",
+        "detections": 40,
+        "quality": {
+          "confidence": 1.0,
+          "log_odds": 222.91,
+          "n_detections": 40,
+          "n_inliers": 33,
+          "rms_px": 2.13
+        },
+        "failure": null,
+        "timing_ms": {
+          "detect": 190,
+          "solve": 268,
+          "total": 947
+        },
+        "pending_external_geometry": {
+          "reference_status": "solved_candidate",
+          "review_status": "pending",
+          "solver_status": "solved",
+          "full_field_wcs_difference": {
+            "count": 81,
+            "rms_px": 6.25249105427006,
+            "median_px": 3.1369008247537464,
+            "p95_px": 13.43561733038371,
+            "max_px": 20.944573132847125
+          },
+          "external_star_error": {
+            "count": 40,
+            "rms_px": 4.318849642210507,
+            "median_px": 1.9505737258979168,
+            "p95_px": 7.84268917099566,
+            "max_px": 18.630279890870007
+          },
+          "external_wcs_fit": {
+            "count": 40,
+            "rms_px": 2.4771274789253193,
+            "median_px": 1.3241784774094638,
+            "p95_px": 3.065691398920622,
+            "max_px": 12.204216653033567
+          }
+        },
+        "attempt_timeouts": 0
+      }
+    },
+    {
+      "id": "wm_r_142048359",
+      "source_sha256": "5c5f6016a8755ad21ab6a260eec136697897398f6501437bdd498ce67bed9fd4",
+      "track": "solver",
+      "negative": false,
+      "published_status": "solved",
+      "ground_truth": "unconfirmed",
+      "control": {
+        "status": "completed",
+        "solve_status": "solved",
+        "elapsed_s": 2.626133343204856,
+        "exit_code": 0,
+        "report_sha256": "be831aa961ac1fe8f06587086a9829ffe74df69a2cd868ae703f66d90e61a760",
+        "detections": 40,
+        "quality": {
+          "confidence": 1.0,
+          "log_odds": 263.47,
+          "n_detections": 40,
+          "n_inliers": 37,
+          "rms_px": 2.74
+        },
+        "failure": null,
+        "timing_ms": {
+          "detect": 309,
+          "solve": 817,
+          "total": 1648
+        },
+        "pending_external_geometry": {
+          "reference_status": "unresolved",
+          "review_status": "unresolved",
+          "solver_status": "solved"
+        },
+        "attempt_timeouts": 0
+      },
+      "blob": {
+        "status": "completed",
+        "solve_status": "solved",
+        "elapsed_s": 3.525509539991617,
+        "exit_code": 0,
+        "report_sha256": "d4767f3ef2812753661022940bde4330495d2fcf3af96430c0c55ba74304e2e6",
+        "detections": 40,
+        "quality": {
+          "confidence": 1.0,
+          "log_odds": 263.47,
+          "n_detections": 40,
+          "n_inliers": 37,
+          "rms_px": 2.74
+        },
+        "failure": null,
+        "timing_ms": {
+          "detect": 345,
+          "solve": 1658,
+          "total": 2559
+        },
+        "pending_external_geometry": {
+          "reference_status": "unresolved",
+          "review_status": "unresolved",
+          "solver_status": "solved"
+        },
+        "attempt_timeouts": 0
+      }
+    },
+    {
+      "id": "wm_r_143159342",
+      "source_sha256": "94f3d61426e03e4fda29b95a1b91038332a09491587acf77df3681c5b919c54d",
+      "track": "solver",
+      "negative": false,
+      "published_status": "solved",
+      "ground_truth": "unconfirmed",
+      "control": {
+        "status": "completed",
+        "solve_status": "solved",
+        "elapsed_s": 21.273660009726882,
+        "exit_code": 0,
+        "report_sha256": "5aaf655a8221ff404fe7be35dd8998e925d3ee23e40845695335d6cf7dddee77",
+        "detections": 50,
+        "quality": {
+          "confidence": 1.0,
+          "log_odds": 146.77,
+          "n_detections": 50,
+          "n_inliers": 27,
+          "rms_px": 3.0
+        },
+        "failure": null,
+        "timing_ms": {
+          "detect": 472,
+          "solve": 19601,
+          "total": 20387
+        },
+        "pending_external_geometry": {
+          "reference_status": "unresolved",
+          "review_status": "unresolved",
+          "solver_status": "solved"
+        },
+        "attempt_timeouts": 2
+      },
+      "blob": {
+        "status": "completed",
+        "solve_status": "solved",
+        "elapsed_s": 2.5733544565737247,
+        "exit_code": 0,
+        "report_sha256": "3840a5b62917feaf0ed303df9e601f17f81646f065e2faa7fe44ddc69abc5ef2",
+        "detections": 40,
+        "quality": {
+          "confidence": 1.0,
+          "log_odds": 89.22,
+          "n_detections": 40,
+          "n_inliers": 18,
+          "rms_px": 3.06
+        },
+        "failure": null,
+        "timing_ms": {
+          "detect": 353,
+          "solve": 978,
+          "total": 1872
+        },
+        "pending_external_geometry": {
+          "reference_status": "unresolved",
+          "review_status": "unresolved",
+          "solver_status": "solved"
+        },
+        "attempt_timeouts": 0
+      }
+    },
+    {
+      "id": "wm_r_148245316",
+      "source_sha256": "a00f51721cc4f29fb967d2304d548c84076500ec0af8510790c1266334bac2c3",
+      "track": "solver",
+      "negative": false,
+      "published_status": "failed",
+      "ground_truth": "unconfirmed",
+      "control": {
+        "status": "completed",
+        "solve_status": "failed",
+        "elapsed_s": 9.386646039783955,
+        "exit_code": 0,
+        "report_sha256": "0ab359e6450da015d1296aa3b3c6b30b3ba20747961cd9869f2f0c71079f78f5",
+        "detections": 50,
+        "quality": null,
+        "failure": {
+          "code": "no_confident_match",
+          "message": "no tetra3 pattern match found across the retry ladder"
+        },
+        "timing_ms": {
+          "detect": 3339,
+          "solve": 6232,
+          "total": 8306
+        },
+        "pending_external_geometry": {
+          "reference_status": "unresolved",
+          "review_status": "unresolved",
+          "solver_status": "failed"
+        },
+        "attempt_timeouts": 0
+      },
+      "blob": {
+        "status": "completed",
+        "solve_status": "failed",
+        "elapsed_s": 8.902784116566181,
+        "exit_code": 0,
+        "report_sha256": "285f1bddcdbce7049976fb1a88da9c2a73411f55bed55d8c2352acaae91ef508",
+        "detections": 50,
+        "quality": null,
+        "failure": {
+          "code": "no_confident_match",
+          "message": "no tetra3 pattern match found across the retry ladder"
+        },
+        "timing_ms": {
+          "detect": 3852,
+          "solve": 5686,
+          "total": 8235
+        },
+        "pending_external_geometry": {
+          "reference_status": "unresolved",
+          "review_status": "unresolved",
+          "solver_status": "failed"
+        },
+        "attempt_timeouts": 0
+      }
+    },
+    {
+      "id": "wm_r_148266565",
+      "source_sha256": "be7292e499ead98eb6a514d4d3e3e18bbc5ffb6a58be4581ea9679e94737cc76",
+      "track": "solver",
+      "negative": false,
+      "published_status": "solved",
+      "ground_truth": "unconfirmed",
+      "control": {
+        "status": "completed",
+        "solve_status": "solved",
+        "elapsed_s": 1.725730488076806,
+        "exit_code": 0,
+        "report_sha256": "dbc9dd1f371b4892699704c124d56b7b0b87f26fc2fa739c2d13c828dae8006c",
+        "detections": 40,
+        "quality": {
+          "confidence": 1.0,
+          "log_odds": 172.87,
+          "n_detections": 40,
+          "n_inliers": 28,
+          "rms_px": 1.18
+        },
+        "failure": null,
+        "timing_ms": {
+          "detect": 205,
+          "solve": 318,
+          "total": 746
+        },
+        "pending_external_geometry": {
+          "reference_status": "solved_candidate",
+          "review_status": "pending",
+          "solver_status": "solved",
+          "full_field_wcs_difference": {
+            "count": 81,
+            "rms_px": 1.7046560876634518,
+            "median_px": 1.1287086803050466,
+            "p95_px": 3.8941164626032236,
+            "max_px": 4.148860157028903
+          },
+          "external_star_error": {
+            "count": 62,
+            "rms_px": 2.0169122072705505,
+            "median_px": 0.9775849300004829,
+            "p95_px": 2.3488985316313453,
+            "max_px": 12.26786561966304
+          },
+          "external_wcs_fit": {
+            "count": 62,
+            "rms_px": 1.351543493775997,
+            "median_px": 0.6730192229370853,
+            "p95_px": 1.6872331760321952,
+            "max_px": 8.337381020965891
+          }
+        },
+        "attempt_timeouts": 0
+      },
+      "blob": {
+        "status": "completed",
+        "solve_status": "solved",
+        "elapsed_s": 1.8289838135242462,
+        "exit_code": 0,
+        "report_sha256": "6025064a0c6379735a60f1ff0d49de099ce4a3587a47977fb6f9ac3e4e23db7a",
+        "detections": 40,
+        "quality": {
+          "confidence": 1.0,
+          "log_odds": 172.87,
+          "n_detections": 40,
+          "n_inliers": 28,
+          "rms_px": 1.18
+        },
+        "failure": null,
+        "timing_ms": {
+          "detect": 224,
+          "solve": 283,
+          "total": 929
+        },
+        "pending_external_geometry": {
+          "reference_status": "solved_candidate",
+          "review_status": "pending",
+          "solver_status": "solved",
+          "full_field_wcs_difference": {
+            "count": 81,
+            "rms_px": 1.7046560876634518,
+            "median_px": 1.1287086803050466,
+            "p95_px": 3.8941164626032236,
+            "max_px": 4.148860157028903
+          },
+          "external_star_error": {
+            "count": 62,
+            "rms_px": 2.0169122072705505,
+            "median_px": 0.9775849300004829,
+            "p95_px": 2.3488985316313453,
+            "max_px": 12.26786561966304
+          },
+          "external_wcs_fit": {
+            "count": 62,
+            "rms_px": 1.351543493775997,
+            "median_px": 0.6730192229370853,
+            "p95_px": 1.6872331760321952,
+            "max_px": 8.337381020965891
+          }
+        },
+        "attempt_timeouts": 0
+      }
+    },
+    {
+      "id": "wm_r_149276071",
+      "source_sha256": "07ae25603db00a53060aaac710635df8ec71ca14eeb758e604cadb211cbd25a2",
+      "track": "solver",
+      "negative": false,
+      "published_status": "solved",
+      "ground_truth": "unconfirmed",
+      "control": {
+        "status": "completed",
+        "solve_status": "solved",
+        "elapsed_s": 2.2695629112422466,
+        "exit_code": 0,
+        "report_sha256": "920f511c7cecc8bcca595c6d7c1af5c23a2c54d4c59ea3c1254722fc3d636cb5",
+        "detections": 40,
+        "quality": {
+          "confidence": 1.0,
+          "log_odds": 208.57,
+          "n_detections": 40,
+          "n_inliers": 31,
+          "rms_px": 1.63
+        },
+        "failure": null,
+        "timing_ms": {
+          "detect": 305,
+          "solve": 846,
+          "total": 1410
+        },
+        "pending_external_geometry": {
+          "reference_status": "solved_candidate",
+          "review_status": "pending",
+          "solver_status": "solved",
+          "full_field_wcs_difference": {
+            "count": 81,
+            "rms_px": 13.952634154095797,
+            "median_px": 5.301166271363686,
+            "p95_px": 28.77551225769273,
+            "max_px": 50.71564446698015
+          },
+          "external_star_error": {
+            "count": 4,
+            "rms_px": 2.5001510301108407,
+            "median_px": 2.5090297192158872,
+            "p95_px": 2.9416156714749366,
+            "max_px": 2.9826750731538842
+          },
+          "external_wcs_fit": {
+            "count": 4,
+            "rms_px": 2.5343046576424855,
+            "median_px": 2.6239558042708335,
+            "p95_px": 3.2386561915760788,
+            "max_px": 3.2751501014461333
+          }
+        },
+        "attempt_timeouts": 0
+      },
+      "blob": {
+        "status": "completed",
+        "solve_status": "solved",
+        "elapsed_s": 1.6686037331819534,
+        "exit_code": 0,
+        "report_sha256": "4b63fc7cea77ee9c39303127d72cc18d02f59bd3717686a2171c5d0fb1da0f82",
+        "detections": 40,
+        "quality": {
+          "confidence": 1.0,
+          "log_odds": 190.22,
+          "n_detections": 40,
+          "n_inliers": 29,
+          "rms_px": 1.37
+        },
+        "failure": null,
+        "timing_ms": {
+          "detect": 276,
+          "solve": 326,
+          "total": 814
+        },
+        "pending_external_geometry": {
+          "reference_status": "solved_candidate",
+          "review_status": "pending",
+          "solver_status": "solved",
+          "full_field_wcs_difference": {
+            "count": 81,
+            "rms_px": 16.467818166064742,
+            "median_px": 5.693371828580589,
+            "p95_px": 33.21404785088713,
+            "max_px": 57.21486898498827
+          },
+          "external_star_error": {
+            "count": 4,
+            "rms_px": 2.9333630687038945,
+            "median_px": 2.8393164755548437,
+            "p95_px": 3.530718994636808,
+            "max_px": 3.6270076538635627
+          },
+          "external_wcs_fit": {
+            "count": 4,
+            "rms_px": 2.5343046576424855,
+            "median_px": 2.6239558042708335,
+            "p95_px": 3.2386561915760788,
+            "max_px": 3.2751501014461333
+          }
+        },
+        "attempt_timeouts": 0
+      }
+    },
+    {
+      "id": "wm_r_152165509",
+      "source_sha256": "53078e0dd7291d31321860f76d247d814175621ccb73d8beb62455bacde41c26",
+      "track": "stress",
+      "negative": false,
+      "published_status": "failed",
+      "ground_truth": "unconfirmed",
+      "control": {
+        "status": "completed",
+        "solve_status": "failed",
+        "elapsed_s": 20.623163053765893,
+        "exit_code": 0,
+        "report_sha256": "3133c01825bfe13596a4042ec323e2140f74070a5b1f0f2aea337f24a32d15e7",
+        "detections": 50,
+        "quality": null,
+        "failure": {
+          "code": "no_confident_match",
+          "message": "no tetra3 pattern match found across the retry ladder"
+        },
+        "timing_ms": {
+          "detect": 7156,
+          "solve": 14277,
+          "total": 18881
+        },
+        "attempt_timeouts": 0
+      },
+      "blob": {
+        "status": "completed",
+        "solve_status": "failed",
+        "elapsed_s": 15.384638888761401,
+        "exit_code": 0,
+        "report_sha256": "60bd42e126dd0b9c412da86a84c7323519fd2da2bdfd906384b9d58645aad034",
+        "detections": 50,
+        "quality": null,
+        "failure": {
+          "code": "no_confident_match",
+          "message": "no tetra3 pattern match found across the retry ladder"
+        },
+        "timing_ms": {
+          "detect": 6339,
+          "solve": 9882,
+          "total": 13753
+        },
+        "attempt_timeouts": 0
+      }
+    },
+    {
+      "id": "wm_r_153414920",
+      "source_sha256": "556c7aecacb5402969a5e013a45434c51d12c022d1e420c189fd6bf86b33cbee",
+      "track": "stress",
+      "negative": true,
+      "published_status": "failed",
+      "ground_truth": "unconfirmed",
+      "control": {
+        "status": "completed",
+        "solve_status": "failed",
+        "elapsed_s": 11.190608290955424,
+        "exit_code": 0,
+        "report_sha256": "3654b88c9fff2150e96c1cba59c558bc52aa2ceef9010d4817a693359700b511",
+        "detections": 50,
+        "quality": null,
+        "failure": {
+          "code": "no_confident_match",
+          "message": "no tetra3 pattern match found across the retry ladder"
+        },
+        "timing_ms": {
+          "detect": 4065,
+          "solve": 7426,
+          "total": 9949
+        },
+        "attempt_timeouts": 0
+      },
+      "blob": {
+        "status": "completed",
+        "solve_status": "failed",
+        "elapsed_s": 9.612703699618578,
+        "exit_code": 0,
+        "report_sha256": "22d5af29e6df18057f031d3106e1a50743dd259be31fef1da45eb9e7462e21af",
+        "detections": 50,
+        "quality": null,
+        "failure": {
+          "code": "no_confident_match",
+          "message": "no tetra3 pattern match found across the retry ladder"
+        },
+        "timing_ms": {
+          "detect": 4379,
+          "solve": 6790,
+          "total": 8977
+        },
+        "attempt_timeouts": 0
+      }
+    },
+    {
+      "id": "wm_r_154107562",
+      "source_sha256": "fb7381b92a199ec618208febb092f51cc7d3b533d57526a0297e1f8940367305",
+      "track": "stress",
+      "negative": false,
+      "published_status": "failed",
+      "ground_truth": "unconfirmed",
+      "control": {
+        "status": "completed",
+        "solve_status": "failed",
+        "elapsed_s": 2.6727178059518337,
+        "exit_code": 0,
+        "report_sha256": "512a7fec18d9cff9abff8c44a13661d5261190725b87543195dec4d707fdee00",
+        "detections": 47,
+        "quality": null,
+        "failure": {
+          "code": "no_confident_match",
+          "message": "no tetra3 pattern match found across the retry ladder"
+        },
+        "timing_ms": {
+          "detect": 104,
+          "solve": 1830,
+          "total": 1893
+        },
+        "attempt_timeouts": 0
+      },
+      "blob": {
+        "status": "completed",
+        "solve_status": "failed",
+        "elapsed_s": 4.614589048549533,
+        "exit_code": 0,
+        "report_sha256": "630594a0e0288a29045acb26e6d5188c2de58bb8642c149ef051b90bfc0038fd",
+        "detections": 48,
+        "quality": null,
+        "failure": {
+          "code": "no_confident_match",
+          "message": "no tetra3 pattern match found across the retry ladder"
+        },
+        "timing_ms": {
+          "detect": 196,
+          "solve": 3532,
+          "total": 3624
+        },
+        "attempt_timeouts": 0
+      }
+    },
+    {
+      "id": "wm_r_154807046",
+      "source_sha256": "da420889b2818f3176320feb2d8fd4c4794f4c0f0800cf10e82de7473c262cb9",
+      "track": "solver",
+      "negative": false,
+      "published_status": "solved",
+      "ground_truth": "unconfirmed",
+      "control": {
+        "status": "completed",
+        "solve_status": "solved",
+        "elapsed_s": 5.78062603995204,
+        "exit_code": 0,
+        "report_sha256": "9c20eef5f4f59a4a1104aa6e0f610313106ee8b09fb16eef2c002eca934d27a1",
+        "detections": 40,
+        "quality": {
+          "confidence": 1.0,
+          "log_odds": 77.65,
+          "n_detections": 40,
+          "n_inliers": 17,
+          "rms_px": 3.66
+        },
+        "failure": null,
+        "timing_ms": {
+          "detect": 213,
+          "solve": 3788,
+          "total": 4497
+        },
+        "pending_external_geometry": {
+          "reference_status": "solved_candidate",
+          "review_status": "pending",
+          "solver_status": "solved",
+          "full_field_wcs_difference": {
+            "count": 81,
+            "rms_px": 115.88756510814248,
+            "median_px": 32.77334309493036,
+            "p95_px": 265.2325666145358,
+            "max_px": 325.0234171379408
+          },
+          "external_star_error": {
+            "count": 107,
+            "rms_px": 69.9974456018283,
+            "median_px": 19.29404257473665,
+            "p95_px": 169.4290671077654,
+            "max_px": 237.43579302875847
+          },
+          "external_wcs_fit": {
+            "count": 107,
+            "rms_px": 5.2748218051473,
+            "median_px": 3.502412736956531,
+            "p95_px": 11.150005779186003,
+            "max_px": 13.656411603235176
+          }
+        },
+        "attempt_timeouts": 0
+      },
+      "blob": {
+        "status": "completed",
+        "solve_status": "solved",
+        "elapsed_s": 9.057242823764682,
+        "exit_code": 0,
+        "report_sha256": "29289d3a9a24a5c32f7ff76498bee87904697f649c84c3c701a095e66f5de812",
+        "detections": 40,
+        "quality": {
+          "confidence": 1.0,
+          "log_odds": 68.62,
+          "n_detections": 40,
+          "n_inliers": 16,
+          "rms_px": 2.58
+        },
+        "failure": null,
+        "timing_ms": {
+          "detect": 388,
+          "solve": 5811,
+          "total": 7002
+        },
+        "pending_external_geometry": {
+          "reference_status": "solved_candidate",
+          "review_status": "pending",
+          "solver_status": "solved",
+          "full_field_wcs_difference": {
+            "count": 81,
+            "rms_px": 107.53521804184635,
+            "median_px": 45.22581189364194,
+            "p95_px": 240.4513858756672,
+            "max_px": 274.9017340884425
+          },
+          "external_star_error": {
+            "count": 107,
+            "rms_px": 73.15628253865881,
+            "median_px": 34.312668988828584,
+            "p95_px": 167.91067557537562,
+            "max_px": 223.01739348377288
+          },
+          "external_wcs_fit": {
+            "count": 107,
+            "rms_px": 5.2748218051473,
+            "median_px": 3.502412736956531,
+            "p95_px": 11.150005779186003,
+            "max_px": 13.656411603235176
+          }
+        },
+        "attempt_timeouts": 0
+      }
+    },
+    {
+      "id": "wm_r_156873262",
+      "source_sha256": "7577861fd6448be23879c11c4ac23463c84cb34d3e83670beaa46d1330bc889e",
+      "track": "solver",
+      "negative": false,
+      "published_status": "solved",
+      "ground_truth": "unconfirmed",
+      "control": {
+        "status": "completed",
+        "solve_status": "solved",
+        "elapsed_s": 1.0665865167975426,
+        "exit_code": 0,
+        "report_sha256": "2faeb7dc80bf34787348ad49685c8fccca64ddb229962e5bf01697de643840e3",
+        "detections": 40,
+        "quality": {
+          "confidence": 1.0,
+          "log_odds": 213.82,
+          "n_detections": 40,
+          "n_inliers": 32,
+          "rms_px": 0.94
+        },
+        "failure": null,
+        "timing_ms": {
+          "detect": 231,
+          "solve": 128,
+          "total": 503
+        },
+        "pending_external_geometry": {
+          "reference_status": "solved_candidate",
+          "review_status": "pending",
+          "solver_status": "solved",
+          "full_field_wcs_difference": {
+            "count": 81,
+            "rms_px": 20.398338935528404,
+            "median_px": 5.790839878089978,
+            "p95_px": 44.85308763744126,
+            "max_px": 72.20818191334217
+          },
+          "external_star_error": {
+            "count": 78,
+            "rms_px": 1.940062623812676,
+            "median_px": 0.7299302560076664,
+            "p95_px": 2.4181003219268264,
+            "max_px": 12.493937914527205
+          },
+          "external_wcs_fit": {
+            "count": 78,
+            "rms_px": 4.154816524539749,
+            "median_px": 3.9400646815415916,
+            "p95_px": 6.251696918860759,
+            "max_px": 9.364723677515975
+          }
+        },
+        "attempt_timeouts": 0
+      },
+      "blob": {
+        "status": "completed",
+        "solve_status": "solved",
+        "elapsed_s": 1.0166950672864914,
+        "exit_code": 0,
+        "report_sha256": "a79e81070708169b0152fa1b160e351a6e4efcb83f681ff88f80ba6940347ba0",
+        "detections": 40,
+        "quality": {
+          "confidence": 1.0,
+          "log_odds": 213.82,
+          "n_detections": 40,
+          "n_inliers": 32,
+          "rms_px": 0.94
+        },
+        "failure": null,
+        "timing_ms": {
+          "detect": 198,
+          "solve": 93,
+          "total": 438
+        },
+        "pending_external_geometry": {
+          "reference_status": "solved_candidate",
+          "review_status": "pending",
+          "solver_status": "solved",
+          "full_field_wcs_difference": {
+            "count": 81,
+            "rms_px": 20.49999609548088,
+            "median_px": 5.914297595395509,
+            "p95_px": 44.98028832911183,
+            "max_px": 72.53422474012348
+          },
+          "external_star_error": {
+            "count": 78,
+            "rms_px": 1.9796520938431879,
+            "median_px": 0.7439417409146254,
+            "p95_px": 2.5308554791772977,
+            "max_px": 12.543964990703074
+          },
+          "external_wcs_fit": {
+            "count": 78,
+            "rms_px": 4.154816524539749,
+            "median_px": 3.9400646815415916,
+            "p95_px": 6.251696918860759,
+            "max_px": 9.364723677515975
+          }
+        },
+        "attempt_timeouts": 0
+      }
+    },
+    {
+      "id": "wm_r_16053617",
+      "source_sha256": "1e294faf829dcb2ea61a2ff39ef7ab20919781d7eeecfd8824a02e7c4520034f",
+      "track": "solver",
+      "negative": false,
+      "published_status": "failed",
+      "ground_truth": "unconfirmed",
+      "control": {
+        "status": "completed",
+        "solve_status": "failed",
+        "elapsed_s": 25.219383103772998,
+        "exit_code": 0,
+        "report_sha256": "a1293a1ac74bd1d877ea869c7cfce32d67a74818b01ad2475521637a81b8962d",
+        "detections": 50,
+        "quality": null,
+        "failure": {
+          "code": "no_confident_match",
+          "message": "no tetra3 pattern match found across the retry ladder"
+        },
+        "timing_ms": {
+          "detect": 2347,
+          "solve": 22968,
+          "total": 24382
+        },
+        "pending_external_geometry": {
+          "reference_status": "unresolved",
+          "review_status": "unresolved",
+          "solver_status": "failed"
+        },
+        "attempt_timeouts": 1
+      },
+      "blob": {
+        "status": "completed",
+        "solve_status": "failed",
+        "elapsed_s": 16.91536445170641,
+        "exit_code": 0,
+        "report_sha256": "93b14c4ca5e36e3f05830c67b21c0b4ee7c65828d43362e9308605e1fbf4ecb4",
+        "detections": 50,
+        "quality": null,
+        "failure": {
+          "code": "no_confident_match",
+          "message": "no tetra3 pattern match found across the retry ladder"
+        },
+        "timing_ms": {
+          "detect": 1951,
+          "solve": 14862,
+          "total": 16093
+        },
+        "pending_external_geometry": {
+          "reference_status": "unresolved",
+          "review_status": "unresolved",
+          "solver_status": "failed"
+        },
+        "attempt_timeouts": 0
+      }
+    },
+    {
+      "id": "wm_r_161606532",
+      "source_sha256": "985afe7d1142a2ece7545bc8846cb7c610ac5d307f85bf9f45056d7249921c63",
+      "track": "solver",
+      "negative": false,
+      "published_status": "failed",
+      "ground_truth": "unconfirmed",
+      "control": {
+        "status": "completed",
+        "solve_status": "failed",
+        "elapsed_s": 22.691725831478834,
+        "exit_code": 0,
+        "report_sha256": "86d624824dcd9c6623969b10474cf9a2137a4c97a5bbd230e744b14abd203435",
+        "detections": 50,
+        "quality": null,
+        "failure": {
+          "code": "no_confident_match",
+          "message": "no tetra3 pattern match found across the retry ladder"
+        },
+        "timing_ms": {
+          "detect": 3836,
+          "solve": 18930,
+          "total": 21409
+        },
+        "pending_external_geometry": {
+          "reference_status": "solved_candidate",
+          "review_status": "pending",
+          "solver_status": "failed"
+        },
+        "attempt_timeouts": 0
+      },
+      "blob": {
+        "status": "completed",
+        "solve_status": "failed",
+        "elapsed_s": 22.475907810032368,
+        "exit_code": 0,
+        "report_sha256": "66c6e4e73c960b6be886465d868e5ee647d07da79a6a8eb6405629e6b3d7c9e6",
+        "detections": 50,
+        "quality": null,
+        "failure": {
+          "code": "no_confident_match",
+          "message": "no tetra3 pattern match found across the retry ladder"
+        },
+        "timing_ms": {
+          "detect": 3743,
+          "solve": 18840,
+          "total": 21460
+        },
+        "pending_external_geometry": {
+          "reference_status": "solved_candidate",
+          "review_status": "pending",
+          "solver_status": "failed"
+        },
+        "attempt_timeouts": 0
+      }
+    },
+    {
+      "id": "wm_r_162210628",
+      "source_sha256": "182f67e9c900e7cad333e16c73ac43206a350832dfe46f61ba45f647ac8cdc82",
+      "track": "solver",
+      "negative": false,
+      "published_status": "solved",
+      "ground_truth": "unconfirmed",
+      "control": {
+        "status": "completed",
+        "solve_status": "solved",
+        "elapsed_s": 1.2731146216392517,
+        "exit_code": 0,
+        "report_sha256": "21bea90f5f7e4a8b896f0953f7e99c27a63e29f9b74657755c5050e44450060e",
+        "detections": 40,
+        "quality": {
+          "confidence": 1.0,
+          "log_odds": 286.28,
+          "n_detections": 40,
+          "n_inliers": 40,
+          "rms_px": 1.24
+        },
+        "failure": null,
+        "timing_ms": {
+          "detect": 205,
+          "solve": 2,
+          "total": 573
+        },
+        "pending_external_geometry": {
+          "reference_status": "solved_candidate",
+          "review_status": "pending",
+          "solver_status": "solved",
+          "full_field_wcs_difference": {
+            "count": 81,
+            "rms_px": 5.9456963404703105,
+            "median_px": 2.743980716771807,
+            "p95_px": 12.087115241751171,
+            "max_px": 24.053489343196585
+          },
+          "external_star_error": {
+            "count": 23,
+            "rms_px": 0.9097610752822567,
+            "median_px": 0.7516158993640549,
+            "p95_px": 1.496796367231452,
+            "max_px": 1.9776269551757046
+          },
+          "external_wcs_fit": {
+            "count": 23,
+            "rms_px": 1.0524692965299467,
+            "median_px": 0.6784361623872487,
+            "p95_px": 1.948664260814446,
+            "max_px": 2.103103844607352
+          }
+        },
+        "attempt_timeouts": 0
+      },
+      "blob": {
+        "status": "completed",
+        "solve_status": "solved",
+        "elapsed_s": 1.2195815481245518,
+        "exit_code": 0,
+        "report_sha256": "d1944905d067436492fc20edbd3895eb1aaee172c06c29ccab42e55a8dd1740e",
+        "detections": 40,
+        "quality": {
+          "confidence": 1.0,
+          "log_odds": 286.28,
+          "n_detections": 40,
+          "n_inliers": 40,
+          "rms_px": 1.24
+        },
+        "failure": null,
+        "timing_ms": {
+          "detect": 169,
+          "solve": 2,
+          "total": 487
+        },
+        "pending_external_geometry": {
+          "reference_status": "solved_candidate",
+          "review_status": "pending",
+          "solver_status": "solved",
+          "full_field_wcs_difference": {
+            "count": 81,
+            "rms_px": 5.9456963404703105,
+            "median_px": 2.743980716771807,
+            "p95_px": 12.087115241751171,
+            "max_px": 24.053489343196585
+          },
+          "external_star_error": {
+            "count": 23,
+            "rms_px": 0.9097610752822567,
+            "median_px": 0.7516158993640549,
+            "p95_px": 1.496796367231452,
+            "max_px": 1.9776269551757046
+          },
+          "external_wcs_fit": {
+            "count": 23,
+            "rms_px": 1.0524692965299467,
+            "median_px": 0.6784361623872487,
+            "p95_px": 1.948664260814446,
+            "max_px": 2.103103844607352
+          }
+        },
+        "attempt_timeouts": 0
+      }
+    },
+    {
+      "id": "wm_r_163971318",
+      "source_sha256": "908b43c0b68aba1e321f38f4ee5227d9919c6c0ad5cc967c2118e356bf417ba1",
+      "track": "solver",
+      "negative": false,
+      "published_status": "solved",
+      "ground_truth": "unconfirmed",
+      "control": {
+        "status": "completed",
+        "solve_status": "solved",
+        "elapsed_s": 1.3780750054866076,
+        "exit_code": 0,
+        "report_sha256": "30916d424dde254943b4b24d851fc5dc56c2fda91360f294e9f1b1149c177878",
+        "detections": 40,
+        "quality": {
+          "confidence": 1.0,
+          "log_odds": 231.96,
+          "n_detections": 40,
+          "n_inliers": 34,
+          "rms_px": 1.81
+        },
+        "failure": null,
+        "timing_ms": {
+          "detect": 175,
+          "solve": 401,
+          "total": 798
+        },
+        "pending_external_geometry": {
+          "reference_status": "solved_candidate",
+          "review_status": "pending",
+          "solver_status": "solved",
+          "full_field_wcs_difference": {
+            "count": 81,
+            "rms_px": 5.076464096165226,
+            "median_px": 1.8788205841927657,
+            "p95_px": 11.636089762635686,
+            "max_px": 17.038692950873013
+          },
+          "external_star_error": {
+            "count": 85,
+            "rms_px": 2.5414265113338756,
+            "median_px": 1.44014076921436,
+            "p95_px": 5.539735854455475,
+            "max_px": 9.18005902333592
+          },
+          "external_wcs_fit": {
+            "count": 85,
+            "rms_px": 1.4903802353143933,
+            "median_px": 1.2248376143545976,
+            "p95_px": 2.2163828015280482,
+            "max_px": 5.140924961169897
+          }
+        },
+        "attempt_timeouts": 0
+      },
+      "blob": {
+        "status": "completed",
+        "solve_status": "solved",
+        "elapsed_s": 1.4185704123228788,
+        "exit_code": 0,
+        "report_sha256": "5ee8caeed02d9b2a8d539f310f76a902394b9aff1fbd69413612f5a0bd90054a",
+        "detections": 40,
+        "quality": {
+          "confidence": 1.0,
+          "log_odds": 231.96,
+          "n_detections": 40,
+          "n_inliers": 34,
+          "rms_px": 2.02
+        },
+        "failure": null,
+        "timing_ms": {
+          "detect": 188,
+          "solve": 370,
+          "total": 787
+        },
+        "pending_external_geometry": {
+          "reference_status": "solved_candidate",
+          "review_status": "pending",
+          "solver_status": "solved",
+          "full_field_wcs_difference": {
+            "count": 81,
+            "rms_px": 5.0117518152547005,
+            "median_px": 1.9738201928679249,
+            "p95_px": 11.487600209125508,
+            "max_px": 16.936504382504136
+          },
+          "external_star_error": {
+            "count": 85,
+            "rms_px": 2.4890957273626775,
+            "median_px": 1.461372448254318,
+            "p95_px": 5.285760052525195,
+            "max_px": 9.068337766361095
+          },
+          "external_wcs_fit": {
+            "count": 85,
+            "rms_px": 1.4903802353143933,
+            "median_px": 1.2248376143545976,
+            "p95_px": 2.2163828015280482,
+            "max_px": 5.140924961169897
+          }
+        },
+        "attempt_timeouts": 0
+      }
+    },
+    {
+      "id": "wm_r_170376698",
+      "source_sha256": "e0d64620d4b09c5854274ce2af269b112628652ef739f1070ea6fb0cd8e1d9ae",
+      "track": "solver",
+      "negative": false,
+      "published_status": "failed",
+      "ground_truth": "unconfirmed",
+      "control": {
+        "status": "completed",
+        "solve_status": "failed",
+        "elapsed_s": 8.60421434044838,
+        "exit_code": 0,
+        "report_sha256": "37e7aa4586058a2e36b3332bfa39889eec99a27f5537d44fd6110a5456e6b39e",
+        "detections": 50,
+        "quality": null,
+        "failure": {
+          "code": "no_confident_match",
+          "message": "no tetra3 pattern match found across the retry ladder"
+        },
+        "timing_ms": {
+          "detect": 3837,
+          "solve": 5563,
+          "total": 7908
+        },
+        "pending_external_geometry": {
+          "reference_status": "unresolved",
+          "review_status": "unresolved",
+          "solver_status": "failed"
+        },
+        "attempt_timeouts": 0
+      },
+      "blob": {
+        "status": "completed",
+        "solve_status": "failed",
+        "elapsed_s": 8.450959643349051,
+        "exit_code": 0,
+        "report_sha256": "d3cadcedfc74935b655b895901294d444751a49b139b3e11e30097d15d4e9f07",
+        "detections": 50,
+        "quality": null,
+        "failure": {
+          "code": "no_confident_match",
+          "message": "no tetra3 pattern match found across the retry ladder"
+        },
+        "timing_ms": {
+          "detect": 3688,
+          "solve": 5546,
+          "total": 7752
+        },
+        "pending_external_geometry": {
+          "reference_status": "unresolved",
+          "review_status": "unresolved",
+          "solver_status": "failed"
+        },
+        "attempt_timeouts": 0
+      }
+    },
+    {
+      "id": "wm_r_170711707",
+      "source_sha256": "da2915dd724a0781a7a885204abda8a35b897bcf1ed4494d21bedbc63ac69815",
+      "track": "solver",
+      "negative": false,
+      "published_status": "failed",
+      "ground_truth": "unconfirmed",
+      "control": {
+        "status": "completed",
+        "solve_status": "failed",
+        "elapsed_s": 32.563075045123696,
+        "exit_code": 0,
+        "report_sha256": "911ae98057a0eebd82488e4487c0c2cfb6f9a70512be4a4c9953db066ac6ca64",
+        "detections": 50,
+        "quality": null,
+        "failure": {
+          "code": "no_confident_match",
+          "message": "no tetra3 pattern match found across the retry ladder"
+        },
+        "timing_ms": {
+          "detect": 3641,
+          "solve": 29379,
+          "total": 31504
+        },
+        "pending_external_geometry": {
+          "reference_status": "unresolved",
+          "review_status": "unresolved",
+          "solver_status": "failed"
+        },
+        "attempt_timeouts": 3
+      },
+      "blob": {
+        "status": "completed",
+        "solve_status": "failed",
+        "elapsed_s": 34.59558502025902,
+        "exit_code": 0,
+        "report_sha256": "1b0ba91e029d84c759026eae56bca3fdb5b515e15c2326b5aff34b5281ae0af9",
+        "detections": 50,
+        "quality": null,
+        "failure": {
+          "code": "no_confident_match",
+          "message": "no tetra3 pattern match found across the retry ladder"
+        },
+        "timing_ms": {
+          "detect": 3918,
+          "solve": 30957,
+          "total": 33441
+        },
+        "pending_external_geometry": {
+          "reference_status": "unresolved",
+          "review_status": "unresolved",
+          "solver_status": "failed"
+        },
+        "attempt_timeouts": 4
+      }
+    },
+    {
+      "id": "wm_r_174305244",
+      "source_sha256": "50f6a4930959619674464c5811f4d01b271af56939c3001c1c9c3bd0808a8228",
+      "track": "solver",
+      "negative": false,
+      "published_status": "failed",
+      "ground_truth": "unconfirmed",
+      "control": {
+        "status": "completed",
+        "solve_status": "failed",
+        "elapsed_s": 18.050845868885517,
+        "exit_code": 0,
+        "report_sha256": "774e59f819bea060146ca44185f329e3f32e61bc7a54b2d702836677f117c974",
+        "detections": 50,
+        "quality": null,
+        "failure": {
+          "code": "no_confident_match",
+          "message": "no tetra3 pattern match found across the retry ladder"
+        },
+        "timing_ms": {
+          "detect": 8566,
+          "solve": 10761,
+          "total": 16074
+        },
+        "pending_external_geometry": {
+          "reference_status": "unresolved",
+          "review_status": "unresolved",
+          "solver_status": "failed"
+        },
+        "attempt_timeouts": 0
+      },
+      "blob": {
+        "status": "completed",
+        "solve_status": "failed",
+        "elapsed_s": 11.178901270031929,
+        "exit_code": 0,
+        "report_sha256": "7093697a317a209d86ab48e9fb7fd229e8ad77afdf1bc20465f010b681685624",
+        "detections": 50,
+        "quality": null,
+        "failure": {
+          "code": "no_confident_match",
+          "message": "no tetra3 pattern match found across the retry ladder"
+        },
+        "timing_ms": {
+          "detect": 4929,
+          "solve": 6658,
+          "total": 9965
+        },
+        "pending_external_geometry": {
+          "reference_status": "unresolved",
+          "review_status": "unresolved",
+          "solver_status": "failed"
+        },
+        "attempt_timeouts": 0
+      }
+    },
+    {
+      "id": "wm_r_176021058",
+      "source_sha256": "c950aff831b9e748548d681cffb26e9102547687e90861861ddaa1a5eecd5dc0",
+      "track": "solver",
+      "negative": false,
+      "published_status": "solved",
+      "ground_truth": "unconfirmed",
+      "control": {
+        "status": "completed",
+        "solve_status": "solved",
+        "elapsed_s": 2.5038642194122076,
+        "exit_code": 0,
+        "report_sha256": "c38a92cae01dcfd243b22173476e184c88ee6c3c86019841a3321533ff8cbb96",
+        "detections": 40,
+        "quality": {
+          "confidence": 1.0,
+          "log_odds": 261.71,
+          "n_detections": 40,
+          "n_inliers": 38,
+          "rms_px": 1.94
+        },
+        "failure": null,
+        "timing_ms": {
+          "detect": 371,
+          "solve": 57,
+          "total": 1186
+        },
+        "pending_external_geometry": {
+          "reference_status": "solved_candidate",
+          "review_status": "pending",
+          "solver_status": "solved",
+          "full_field_wcs_difference": {
+            "count": 81,
+            "rms_px": 2.8470713661837213,
+            "median_px": 1.8832510723720677,
+            "p95_px": 5.734458672972794,
+            "max_px": 9.701190063667328
+          },
+          "external_star_error": {
+            "count": 32,
+            "rms_px": 1.91120554925836,
+            "median_px": 1.8207373225294496,
+            "p95_px": 3.148012473900878,
+            "max_px": 3.296287028076433
+          },
+          "external_wcs_fit": {
+            "count": 32,
+            "rms_px": 0.9748954657751432,
+            "median_px": 0.6650655191833964,
+            "p95_px": 1.7695544398080354,
+            "max_px": 2.257283076107899
+          }
+        },
+        "attempt_timeouts": 0
+      },
+      "blob": {
+        "status": "completed",
+        "solve_status": "solved",
+        "elapsed_s": 2.0219975002110004,
+        "exit_code": 0,
+        "report_sha256": "7ab001fa3c99ba351c78088b3c64e3d3f59d17a685a70471429c6f5738f645a7",
+        "detections": 40,
+        "quality": {
+          "confidence": 1.0,
+          "log_odds": 261.71,
+          "n_detections": 40,
+          "n_inliers": 38,
+          "rms_px": 1.94
+        },
+        "failure": null,
+        "timing_ms": {
+          "detect": 225,
+          "solve": 53,
+          "total": 780
+        },
+        "pending_external_geometry": {
+          "reference_status": "solved_candidate",
+          "review_status": "pending",
+          "solver_status": "solved",
+          "full_field_wcs_difference": {
+            "count": 81,
+            "rms_px": 2.8470713661837213,
+            "median_px": 1.8832510723720677,
+            "p95_px": 5.734458672972794,
+            "max_px": 9.701190063667328
+          },
+          "external_star_error": {
+            "count": 32,
+            "rms_px": 1.91120554925836,
+            "median_px": 1.8207373225294496,
+            "p95_px": 3.148012473900878,
+            "max_px": 3.296287028076433
+          },
+          "external_wcs_fit": {
+            "count": 32,
+            "rms_px": 0.9748954657751432,
+            "median_px": 0.6650655191833964,
+            "p95_px": 1.7695544398080354,
+            "max_px": 2.257283076107899
+          }
+        },
+        "attempt_timeouts": 0
+      }
+    },
+    {
+      "id": "wm_r_176481855",
+      "source_sha256": "a2c97f072a339d1444db3a1ec8935fe5ed70cc484fc0e212d113c5ee0399327d",
+      "track": "solver",
+      "negative": false,
+      "published_status": "failed",
+      "ground_truth": "unconfirmed",
+      "control": {
+        "status": "completed",
+        "solve_status": "failed",
+        "elapsed_s": 16.855893902480602,
+        "exit_code": 0,
+        "report_sha256": "9957a76d59c6203b91510299ac05a91fe46f38c7933268ea2bd83b3f002cfe72",
+        "detections": 50,
+        "quality": null,
+        "failure": {
+          "code": "no_confident_match",
+          "message": "no tetra3 pattern match found across the retry ladder"
+        },
+        "timing_ms": {
+          "detect": 6284,
+          "solve": 11033,
+          "total": 14648
+        },
+        "pending_external_geometry": {
+          "reference_status": "unresolved",
+          "review_status": "unresolved",
+          "solver_status": "failed"
+        },
+        "attempt_timeouts": 0
+      },
+      "blob": {
+        "status": "completed",
+        "solve_status": "failed",
+        "elapsed_s": 14.22757082246244,
+        "exit_code": 0,
+        "report_sha256": "6bae77b4c167a7ce91dfbc90e719eb036a2f5d6933ff4fbf0ca4dd733e824e12",
+        "detections": 50,
+        "quality": null,
+        "failure": {
+          "code": "no_confident_match",
+          "message": "no tetra3 pattern match found across the retry ladder"
+        },
+        "timing_ms": {
+          "detect": 6014,
+          "solve": 9168,
+          "total": 12583
+        },
+        "pending_external_geometry": {
+          "reference_status": "unresolved",
+          "review_status": "unresolved",
+          "solver_status": "failed"
+        },
+        "attempt_timeouts": 0
+      }
+    },
+    {
+      "id": "wm_r_178297645",
+      "source_sha256": "8c4fef84dd0c0a307522b4bfb9c9af6b68031e1e86b8bda020d25660eb4ac2b4",
+      "track": "solver",
+      "negative": false,
+      "published_status": "solved",
+      "ground_truth": "unconfirmed",
+      "control": {
+        "status": "completed",
+        "solve_status": "solved",
+        "elapsed_s": 1.5732368007302284,
+        "exit_code": 0,
+        "report_sha256": "533e2b56d0b2b946a539e4aebb67d79c361557436f05694e45f8fa2b25fb63ee",
+        "detections": 40,
+        "quality": {
+          "confidence": 0.8548,
+          "log_odds": 34.19,
+          "n_detections": 40,
+          "n_inliers": 12,
+          "rms_px": 1.3
+        },
+        "failure": null,
+        "timing_ms": {
+          "detect": 210,
+          "solve": 381,
+          "total": 868
+        },
+        "pending_external_geometry": {
+          "reference_status": "solved_candidate",
+          "review_status": "pending",
+          "solver_status": "solved",
+          "full_field_wcs_difference": {
+            "count": 81,
+            "rms_px": 31.58322464566594,
+            "median_px": 17.749796495280588,
+            "p95_px": 63.93526064804173,
+            "max_px": 81.08749065890194
+          },
+          "external_star_error": {
+            "count": 12,
+            "rms_px": 3.1890160788858655,
+            "median_px": 3.312883547038732,
+            "p95_px": 4.412215381939759,
+            "max_px": 4.697359582337156
+          },
+          "external_wcs_fit": {
+            "count": 12,
+            "rms_px": 0.7099912556371938,
+            "median_px": 0.6991046425398618,
+            "p95_px": 1.0884849182027447,
+            "max_px": 1.2416490054863614
+          }
+        },
+        "attempt_timeouts": 0
+      },
+      "blob": {
+        "status": "completed",
+        "solve_status": "solved",
+        "elapsed_s": 2.428443767130375,
+        "exit_code": 0,
+        "report_sha256": "fe73974f4ecf8d0d987d7e975d2a13a307274b6f1563787a7dc495d4a351ae4e",
+        "detections": 40,
+        "quality": {
+          "confidence": 0.8548,
+          "log_odds": 34.19,
+          "n_detections": 40,
+          "n_inliers": 12,
+          "rms_px": 1.3
+        },
+        "failure": null,
+        "timing_ms": {
+          "detect": 254,
+          "solve": 322,
+          "total": 1134
+        },
+        "pending_external_geometry": {
+          "reference_status": "solved_candidate",
+          "review_status": "pending",
+          "solver_status": "solved",
+          "full_field_wcs_difference": {
+            "count": 81,
+            "rms_px": 31.58322464576683,
+            "median_px": 17.749796495064967,
+            "p95_px": 63.935260649044366,
+            "max_px": 81.08749066001248
+          },
+          "external_star_error": {
+            "count": 12,
+            "rms_px": 3.1890160787359463,
+            "median_px": 3.312883546884001,
+            "p95_px": 4.412215381755283,
+            "max_px": 4.69735958214813
+          },
+          "external_wcs_fit": {
+            "count": 12,
+            "rms_px": 0.7099912556371938,
+            "median_px": 0.6991046425398618,
+            "p95_px": 1.0884849182027447,
+            "max_px": 1.2416490054863614
+          }
+        },
+        "attempt_timeouts": 0
+      }
+    },
+    {
+      "id": "wm_r_179619449",
+      "source_sha256": "60aa033d5614c48727d8b74dce5b4b52e45105c0990a9560d7bf0d1f40534dc2",
+      "track": "solver",
+      "negative": false,
+      "published_status": "solved",
+      "ground_truth": "unconfirmed",
+      "control": {
+        "status": "completed",
+        "solve_status": "solved",
+        "elapsed_s": 1.685953637585044,
+        "exit_code": 0,
+        "report_sha256": "7d62d353c6b5577b6c7417efef612d18588ec58b4f2527d553a5121fbef245c7",
+        "detections": 40,
+        "quality": {
+          "confidence": 1.0,
+          "log_odds": 88.18,
+          "n_detections": 40,
+          "n_inliers": 19,
+          "rms_px": 2.8
+        },
+        "failure": null,
+        "timing_ms": {
+          "detect": 238,
+          "solve": 154,
+          "total": 732
+        },
+        "pending_external_geometry": {
+          "reference_status": "solved_candidate",
+          "review_status": "pending",
+          "solver_status": "solved",
+          "full_field_wcs_difference": {
+            "count": 81,
+            "rms_px": 17.191155175722518,
+            "median_px": 6.766144747591418,
+            "p95_px": 36.66859202800556,
+            "max_px": 54.44612128406012
+          },
+          "external_star_error": {
+            "count": 37,
+            "rms_px": 7.728670717498634,
+            "median_px": 2.635986614525135,
+            "p95_px": 18.736197332336033,
+            "max_px": 31.379901570725306
+          },
+          "external_wcs_fit": {
+            "count": 37,
+            "rms_px": 2.900297942423543,
+            "median_px": 2.6079397586047106,
+            "p95_px": 4.6523044069097965,
+            "max_px": 5.160536171462384
+          }
+        },
+        "attempt_timeouts": 0
+      },
+      "blob": {
+        "status": "completed",
+        "solve_status": "solved",
+        "elapsed_s": 1.269734201952815,
+        "exit_code": 0,
+        "report_sha256": "b4c8d7737febb1150b5bd2064e5c3c49c6a034138c67db67926d17591aeb405d",
+        "detections": 40,
+        "quality": {
+          "confidence": 1.0,
+          "log_odds": 70.92,
+          "n_detections": 40,
+          "n_inliers": 17,
+          "rms_px": 2.33
+        },
+        "failure": null,
+        "timing_ms": {
+          "detect": 135,
+          "solve": 74,
+          "total": 443
+        },
+        "pending_external_geometry": {
+          "reference_status": "solved_candidate",
+          "review_status": "pending",
+          "solver_status": "solved",
+          "full_field_wcs_difference": {
+            "count": 81,
+            "rms_px": 18.470328291280026,
+            "median_px": 7.304451185898362,
+            "p95_px": 40.16056092832412,
+            "max_px": 59.61514081106091
+          },
+          "external_star_error": {
+            "count": 37,
+            "rms_px": 8.223951077991059,
+            "median_px": 2.9779583668954155,
+            "p95_px": 18.49361041408843,
+            "max_px": 33.87491889818632
+          },
+          "external_wcs_fit": {
+            "count": 37,
+            "rms_px": 2.900297942423543,
+            "median_px": 2.6079397586047106,
+            "p95_px": 4.6523044069097965,
+            "max_px": 5.160536171462384
+          }
+        },
+        "attempt_timeouts": 0
+      }
+    },
+    {
+      "id": "wm_r_179696785",
+      "source_sha256": "d2b8e3a238a1eed6292933aeaeaf4c2088f44997acd3c95124b350bf1439c38c",
+      "track": "stress",
+      "negative": true,
+      "published_status": "failed",
+      "ground_truth": "unconfirmed",
+      "control": {
+        "status": "completed",
+        "solve_status": "failed",
+        "elapsed_s": 8.808780547231436,
+        "exit_code": 0,
+        "report_sha256": "b91c37bceea60c43013482549a4db7dc5acb225cd44c39d4418bc7aa639b8ee5",
+        "detections": 50,
+        "quality": null,
+        "failure": {
+          "code": "no_confident_match",
+          "message": "no tetra3 pattern match found across the retry ladder"
+        },
+        "timing_ms": {
+          "detect": 3373,
+          "solve": 5749,
+          "total": 7739
+        },
+        "attempt_timeouts": 0
+      },
+      "blob": {
+        "status": "completed",
+        "solve_status": "failed",
+        "elapsed_s": 9.00198533013463,
+        "exit_code": 0,
+        "report_sha256": "cde73af7a37d369413ab128fc95cde85909cd071fef585f3311fcc4ad3140e53",
+        "detections": 50,
+        "quality": null,
+        "failure": {
+          "code": "no_confident_match",
+          "message": "no tetra3 pattern match found across the retry ladder"
+        },
+        "timing_ms": {
+          "detect": 3715,
+          "solve": 5586,
+          "total": 7935
+        },
+        "attempt_timeouts": 0
+      }
+    },
+    {
+      "id": "wm_r_180011612",
+      "source_sha256": "0e97e36fdbb80e831e003614916ce29fca817eb171a4f0350ac27b2975506a8a",
+      "track": "solver",
+      "negative": false,
+      "published_status": "solved",
+      "ground_truth": "unconfirmed",
+      "control": {
+        "status": "completed",
+        "solve_status": "solved",
+        "elapsed_s": 11.65684107132256,
+        "exit_code": 0,
+        "report_sha256": "4ac0e0d06c52eaa2571877403ba33411a707da3f45bf713aa8fbb8007a83cdc8",
+        "detections": 40,
+        "quality": {
+          "confidence": 1.0,
+          "log_odds": 229.09,
+          "n_detections": 40,
+          "n_inliers": 27,
+          "rms_px": 0.99
+        },
+        "failure": null,
+        "timing_ms": {
+          "detect": 2851,
+          "solve": 7358,
+          "total": 10399
+        },
+        "pending_external_geometry": {
+          "reference_status": "unresolved",
+          "review_status": "unresolved",
+          "solver_status": "solved"
+        },
+        "attempt_timeouts": 0
+      },
+      "blob": {
+        "status": "completed",
+        "solve_status": "solved",
+        "elapsed_s": 12.922351837158203,
+        "exit_code": 0,
+        "report_sha256": "f825767c5900c2099a581a6e187efcabaa9439e0b11acfb8562c20b51d7f84bc",
+        "detections": 40,
+        "quality": {
+          "confidence": 1.0,
+          "log_odds": 229.09,
+          "n_detections": 40,
+          "n_inliers": 27,
+          "rms_px": 0.99
+        },
+        "failure": null,
+        "timing_ms": {
+          "detect": 2642,
+          "solve": 8646,
+          "total": 11611
+        },
+        "pending_external_geometry": {
+          "reference_status": "unresolved",
+          "review_status": "unresolved",
+          "solver_status": "solved"
+        },
+        "attempt_timeouts": 0
+      }
+    },
+    {
+      "id": "wm_r_180231845",
+      "source_sha256": "8899f829284d747557f10ac913cd6e48c30ac2ea030b85f0e781f07bf96cb7a7",
+      "track": "solver",
+      "negative": false,
+      "published_status": "solved",
+      "ground_truth": "unconfirmed",
+      "control": {
+        "status": "completed",
+        "solve_status": "solved",
+        "elapsed_s": 6.841482974588871,
+        "exit_code": 0,
+        "report_sha256": "7d0da56d89000b2ad52e29cdbded11d29dc6474136fa024560173a23edb2bb1b",
+        "detections": 40,
+        "quality": {
+          "confidence": 1.0,
+          "log_odds": 177.45,
+          "n_detections": 40,
+          "n_inliers": 28,
+          "rms_px": 3.79
+        },
+        "failure": null,
+        "timing_ms": {
+          "detect": 236,
+          "solve": 4708,
+          "total": 5468
+        },
+        "pending_external_geometry": {
+          "reference_status": "unresolved",
+          "review_status": "unresolved",
+          "solver_status": "solved"
+        },
+        "attempt_timeouts": 0
+      },
+      "blob": {
+        "status": "completed",
+        "solve_status": "solved",
+        "elapsed_s": 5.787800814956427,
+        "exit_code": 0,
+        "report_sha256": "7e4830f8ea72e7b14f66b997f20a86a4529495f4a764502b2d4682b53e8892d8",
+        "detections": 40,
+        "quality": {
+          "confidence": 1.0,
+          "log_odds": 177.45,
+          "n_detections": 40,
+          "n_inliers": 28,
+          "rms_px": 3.82
+        },
+        "failure": null,
+        "timing_ms": {
+          "detect": 170,
+          "solve": 3961,
+          "total": 4585
+        },
+        "pending_external_geometry": {
+          "reference_status": "unresolved",
+          "review_status": "unresolved",
+          "solver_status": "solved"
+        },
+        "attempt_timeouts": 0
+      }
+    },
+    {
+      "id": "wm_r_49541180",
+      "source_sha256": "ee899364984d433f9e317779ed1bd11abdc48dcfa31b8d6bf942392ac05a31d3",
+      "track": "solver",
+      "negative": false,
+      "published_status": "failed",
+      "ground_truth": "unconfirmed",
+      "control": {
+        "status": "completed",
+        "solve_status": "failed",
+        "elapsed_s": 17.533204218372703,
+        "exit_code": 0,
+        "report_sha256": "71a0ba0fe9e29f70d0c08441a58f28f65d71444c940e3e046d86778e4cec9755",
+        "detections": 50,
+        "quality": null,
+        "failure": {
+          "code": "no_confident_match",
+          "message": "no tetra3 pattern match found across the retry ladder"
+        },
+        "timing_ms": {
+          "detect": 4699,
+          "solve": 13091,
+          "total": 16011
+        },
+        "pending_external_geometry": {
+          "reference_status": "unresolved",
+          "review_status": "unresolved",
+          "solver_status": "failed"
+        },
+        "attempt_timeouts": 0
+      },
+      "blob": {
+        "status": "completed",
+        "solve_status": "failed",
+        "elapsed_s": 14.45217465609312,
+        "exit_code": 0,
+        "report_sha256": "cbfdcfd94d891169dae4c38b7afcb49eb7664c502d2634eee5263d752286f4ee",
+        "detections": 50,
+        "quality": null,
+        "failure": {
+          "code": "no_confident_match",
+          "message": "no tetra3 pattern match found across the retry ladder"
+        },
+        "timing_ms": {
+          "detect": 5168,
+          "solve": 10784,
+          "total": 13488
+        },
+        "pending_external_geometry": {
+          "reference_status": "unresolved",
+          "review_status": "unresolved",
+          "solver_status": "failed"
+        },
+        "attempt_timeouts": 0
+      }
+    },
+    {
+      "id": "wm_r_64398618",
+      "source_sha256": "752f7483d46d4ad69b61319cc98ee43ac0d8d60177e7a435a75bc2a6d44d9620",
+      "track": "scene",
+      "negative": false,
+      "published_status": null,
+      "ground_truth": "unconfirmed",
+      "control": {
+        "status": "not_attempted",
+        "reason": "projection outside the single-pose evaluation",
+        "attempt_timeouts": 0
+      },
+      "blob": {
+        "status": "not_attempted",
+        "reason": "projection outside the single-pose evaluation",
+        "attempt_timeouts": 0
+      }
+    },
+    {
+      "id": "wm_r_64919627",
+      "source_sha256": "96a9a993f9d0d84fe816b3a23d040bb813dc9ccd97bc176dc22f275ff10b8cb6",
+      "track": "stress",
+      "negative": true,
+      "published_status": "failed",
+      "ground_truth": "unconfirmed",
+      "control": {
+        "status": "completed",
+        "solve_status": "failed",
+        "elapsed_s": 6.899317845702171,
+        "exit_code": 0,
+        "report_sha256": "a9798586a13b74c3ed295e16687d21edc3201bd91545e94ddc271cb07dbaab9b",
+        "detections": 50,
+        "quality": null,
+        "failure": {
+          "code": "no_confident_match",
+          "message": "no tetra3 pattern match found across the retry ladder"
+        },
+        "timing_ms": {
+          "detect": 3370,
+          "solve": 3329,
+          "total": 5734
+        },
+        "attempt_timeouts": 0
+      },
+      "blob": {
+        "status": "completed",
+        "solve_status": "failed",
+        "elapsed_s": 9.824165437370539,
+        "exit_code": 0,
+        "report_sha256": "d5f3f02c11896a4affd5b435988f1d4f8cd056a7bf89e55ab2662971c2a4e8c1",
+        "detections": 50,
+        "quality": null,
+        "failure": {
+          "code": "no_confident_match",
+          "message": "no tetra3 pattern match found across the retry ladder"
+        },
+        "timing_ms": {
+          "detect": 4509,
+          "solve": 5478,
+          "total": 8750
+        },
+        "attempt_timeouts": 0
+      }
+    },
+    {
+      "id": "wm_r_68938641",
+      "source_sha256": "c5de1900b46fee8338629be7c4f1a8b3e6f14de5d10c25a8ca3f7cec2b599fd6",
+      "track": "solver",
+      "negative": false,
+      "published_status": "solved",
+      "ground_truth": "unconfirmed",
+      "control": {
+        "status": "completed",
+        "solve_status": "solved",
+        "elapsed_s": 2.4298163317143917,
+        "exit_code": 0,
+        "report_sha256": "7ca0e1fc93f4538140f32df1b39270c15d8b58eb35a3ce83b74c2e712769beb7",
+        "detections": 40,
+        "quality": {
+          "confidence": 1.0,
+          "log_odds": 250.07,
+          "n_detections": 40,
+          "n_inliers": 36,
+          "rms_px": 3.2
+        },
+        "failure": null,
+        "timing_ms": {
+          "detect": 169,
+          "solve": 348,
+          "total": 1123
+        },
+        "pending_external_geometry": {
+          "reference_status": "unresolved",
+          "review_status": "unresolved",
+          "solver_status": "solved"
+        },
+        "attempt_timeouts": 0
+      },
+      "blob": {
+        "status": "completed",
+        "solve_status": "solved",
+        "elapsed_s": 1.9723107255995274,
+        "exit_code": 0,
+        "report_sha256": "1b54a85664586d44faefcd6327e88203a1ceb06d8d6dee9357519b115d148b14",
+        "detections": 40,
+        "quality": {
+          "confidence": 1.0,
+          "log_odds": 250.07,
+          "n_detections": 40,
+          "n_inliers": 36,
+          "rms_px": 3.2
+        },
+        "failure": null,
+        "timing_ms": {
+          "detect": 216,
+          "solve": 435,
+          "total": 1094
+        },
+        "pending_external_geometry": {
+          "reference_status": "unresolved",
+          "review_status": "unresolved",
+          "solver_status": "solved"
+        },
+        "attempt_timeouts": 0
+      }
+    },
+    {
+      "id": "wm_r_82991013",
+      "source_sha256": "c6f565a340a0150df3e6a11e013d0f9d3397026172d4ba7e6eb6b5d0220e43fd",
+      "track": "solver",
+      "negative": false,
+      "published_status": "failed",
+      "ground_truth": "unconfirmed",
+      "control": {
+        "status": "completed",
+        "solve_status": "failed",
+        "elapsed_s": 10.439249886199832,
+        "exit_code": 0,
+        "report_sha256": "d2894fbda7a2d791fd63203978b3cf5616e1a9dc478873682adb579d00ee8727",
+        "detections": 50,
+        "quality": null,
+        "failure": {
+          "code": "no_confident_match",
+          "message": "no tetra3 pattern match found across the retry ladder"
+        },
+        "timing_ms": {
+          "detect": 5061,
+          "solve": 7238,
+          "total": 9666
+        },
+        "pending_external_geometry": {
+          "reference_status": "unresolved",
+          "review_status": "unresolved",
+          "solver_status": "failed"
+        },
+        "attempt_timeouts": 0
+      },
+      "blob": {
+        "status": "completed",
+        "solve_status": "failed",
+        "elapsed_s": 14.734098710119724,
+        "exit_code": 0,
+        "report_sha256": "19829cd334c5a63e5e729613900ff602d6286ddfe78d4988f7cf50138bb6c694",
+        "detections": 50,
+        "quality": null,
+        "failure": {
+          "code": "no_confident_match",
+          "message": "no tetra3 pattern match found across the retry ladder"
+        },
+        "timing_ms": {
+          "detect": 6675,
+          "solve": 10368,
+          "total": 13918
+        },
+        "pending_external_geometry": {
+          "reference_status": "unresolved",
+          "review_status": "unresolved",
+          "solver_status": "failed"
+        },
+        "attempt_timeouts": 0
+      }
+    },
+    {
+      "id": "wm_r_88363556",
+      "source_sha256": "7ea7a06b597177da6358339719e1b6bbf325c30821357c5129f4779533a0061c",
+      "track": "solver",
+      "negative": false,
+      "published_status": "solved",
+      "ground_truth": "unconfirmed",
+      "control": {
+        "status": "completed",
+        "solve_status": "solved",
+        "elapsed_s": 2.8157337084412575,
+        "exit_code": 0,
+        "report_sha256": "ba27c838e8295120dd21144eacd3d66b4229824172b9b694135712d49c1c244b",
+        "detections": 40,
+        "quality": {
+          "confidence": 1.0,
+          "log_odds": 268.17,
+          "n_detections": 40,
+          "n_inliers": 38,
+          "rms_px": 1.84
+        },
+        "failure": null,
+        "timing_ms": {
+          "detect": 302,
+          "solve": 92,
+          "total": 936
+        },
+        "pending_external_geometry": {
+          "reference_status": "unresolved",
+          "review_status": "unresolved",
+          "solver_status": "solved"
+        },
+        "attempt_timeouts": 0
+      },
+      "blob": {
+        "status": "completed",
+        "solve_status": "solved",
+        "elapsed_s": 9.04769841954112,
+        "exit_code": 0,
+        "report_sha256": "6b8c92491a9f65afe50b0696d9d1622f748476cb1994f2437ccdbabbc553307e",
+        "detections": 40,
+        "quality": {
+          "confidence": 1.0,
+          "log_odds": 268.17,
+          "n_detections": 40,
+          "n_inliers": 38,
+          "rms_px": 1.95
+        },
+        "failure": null,
+        "timing_ms": {
+          "detect": 337,
+          "solve": 6245,
+          "total": 7247
+        },
+        "pending_external_geometry": {
+          "reference_status": "unresolved",
+          "review_status": "unresolved",
+          "solver_status": "solved"
+        },
+        "attempt_timeouts": 0
+      }
+    },
+    {
+      "id": "wm_r_88363557",
+      "source_sha256": "496c238a248c80c6afc0970a638566c4cafdc6712e433eb24df48a2cc21cb34b",
+      "track": "solver",
+      "negative": false,
+      "published_status": "solved",
+      "ground_truth": "unconfirmed",
+      "control": {
+        "status": "completed",
+        "solve_status": "solved",
+        "elapsed_s": 3.2388728130608797,
+        "exit_code": 0,
+        "report_sha256": "29bc42110a00e21d97db99259101386727d55b5483b4b4a09a32fbbf3e57af4d",
+        "detections": 40,
+        "quality": {
+          "confidence": 1.0,
+          "log_odds": 268.17,
+          "n_detections": 40,
+          "n_inliers": 38,
+          "rms_px": 1.45
+        },
+        "failure": null,
+        "timing_ms": {
+          "detect": 220,
+          "solve": 375,
+          "total": 1367
+        },
+        "pending_external_geometry": {
+          "reference_status": "unresolved",
+          "review_status": "unresolved",
+          "solver_status": "solved"
+        },
+        "attempt_timeouts": 0
+      },
+      "blob": {
+        "status": "completed",
+        "solve_status": "solved",
+        "elapsed_s": 2.584712367504835,
+        "exit_code": 0,
+        "report_sha256": "409220b2435d5c9af502ee2e276bce2b58919b55ae618c3e12dd169225a6ac12",
+        "detections": 40,
+        "quality": {
+          "confidence": 1.0,
+          "log_odds": 268.17,
+          "n_detections": 40,
+          "n_inliers": 38,
+          "rms_px": 1.45
+        },
+        "failure": null,
+        "timing_ms": {
+          "detect": 305,
+          "solve": 348,
+          "total": 1024
+        },
+        "pending_external_geometry": {
+          "reference_status": "unresolved",
+          "review_status": "unresolved",
+          "solver_status": "solved"
+        },
+        "attempt_timeouts": 0
+      }
+    },
+    {
+      "id": "wm_r_88363564",
+      "source_sha256": "fa21b12b2982c24c2f47061a751204338c2b630505e7c3da2adb802bd07a74e8",
+      "track": "solver",
+      "negative": false,
+      "published_status": "solved",
+      "ground_truth": "unconfirmed",
+      "control": {
+        "status": "completed",
+        "solve_status": "solved",
+        "elapsed_s": 22.537078203633428,
+        "exit_code": 0,
+        "report_sha256": "622c44f42df6fb9d9fa0770449fbd7b0df9721be1b48e9a6a244845fc4c35c35",
+        "detections": 40,
+        "quality": {
+          "confidence": 1.0,
+          "log_odds": 60.84,
+          "n_detections": 40,
+          "n_inliers": 15,
+          "rms_px": 3.78
+        },
+        "failure": null,
+        "timing_ms": {
+          "detect": 253,
+          "solve": 20469,
+          "total": 21299
+        },
+        "pending_external_geometry": {
+          "reference_status": "unresolved",
+          "review_status": "unresolved",
+          "solver_status": "solved"
+        },
+        "attempt_timeouts": 3
+      },
+      "blob": {
+        "status": "completed",
+        "solve_status": "solved",
+        "elapsed_s": 23.205099558457732,
+        "exit_code": 0,
+        "report_sha256": "f8214f24b29ce2df496cbd09e893fc371791c3defc2848e6be53a401c5eceea0",
+        "detections": 40,
+        "quality": {
+          "confidence": 1.0,
+          "log_odds": 42.62,
+          "n_detections": 40,
+          "n_inliers": 13,
+          "rms_px": 3.82
+        },
+        "failure": null,
+        "timing_ms": {
+          "detect": 224,
+          "solve": 21757,
+          "total": 22379
+        },
+        "pending_external_geometry": {
+          "reference_status": "unresolved",
+          "review_status": "unresolved",
+          "solver_status": "solved"
+        },
+        "attempt_timeouts": 3
+      }
+    },
+    {
+      "id": "wm_r_92627738",
+      "source_sha256": "921f0423e54c5fafbd97e6b6e43e42cfb41ef4d85ac315fe62a1baf97dca5c71",
+      "track": "stress",
+      "negative": true,
+      "published_status": "failed",
+      "ground_truth": "unconfirmed",
+      "control": {
+        "status": "completed",
+        "solve_status": "failed",
+        "elapsed_s": 9.177693480625749,
+        "exit_code": 0,
+        "report_sha256": "b610717d8426e3f59f1d19b03964f7a46550d929bd70255373bf7e76d0d2a7a2",
+        "detections": 50,
+        "quality": null,
+        "failure": {
+          "code": "no_confident_match",
+          "message": "no tetra3 pattern match found across the retry ladder"
+        },
+        "timing_ms": {
+          "detect": 5565,
+          "solve": 4509,
+          "total": 7911
+        },
+        "attempt_timeouts": 0
+      },
+      "blob": {
+        "status": "completed",
+        "solve_status": "failed",
+        "elapsed_s": 8.647983951494098,
+        "exit_code": 0,
+        "report_sha256": "c795e778fe279113700a79f17639025f9222f6e2efda33f67c6dc8d69a8abf3c",
+        "detections": 50,
+        "quality": null,
+        "failure": {
+          "code": "no_confident_match",
+          "message": "no tetra3 pattern match found across the retry ladder"
+        },
+        "timing_ms": {
+          "detect": 5189,
+          "solve": 4260,
+          "total": 7515
+        },
+        "attempt_timeouts": 0
+      }
+    },
+    {
+      "id": "wm_r_92627740",
+      "source_sha256": "4866f2d2ec4af42cc0298ead0cf676262b1348650b1e30fab9e56c45ee2f03ea",
+      "track": "stress",
+      "negative": true,
+      "published_status": "failed",
+      "ground_truth": "unconfirmed",
+      "control": {
+        "status": "completed",
+        "solve_status": "failed",
+        "elapsed_s": 13.050235107541084,
+        "exit_code": 0,
+        "report_sha256": "7aa62a0ea6ac626d8f1c62d2ad1f01d796f465361218050b35c514178e14bcf4",
+        "detections": 50,
+        "quality": null,
+        "failure": {
+          "code": "no_confident_match",
+          "message": "no tetra3 pattern match found across the retry ladder"
+        },
+        "timing_ms": {
+          "detect": 4666,
+          "solve": 8669,
+          "total": 11682
+        },
+        "attempt_timeouts": 0
+      },
+      "blob": {
+        "status": "completed",
+        "solve_status": "failed",
+        "elapsed_s": 13.342324731871486,
+        "exit_code": 0,
+        "report_sha256": "d50069792dd481669dc4491103690c4ada368b7c2a81a3b65d2632be7b26e99c",
+        "detections": 50,
+        "quality": null,
+        "failure": {
+          "code": "no_confident_match",
+          "message": "no tetra3 pattern match found across the retry ladder"
+        },
+        "timing_ms": {
+          "detect": 5036,
+          "solve": 9105,
+          "total": 12095
+        },
+        "attempt_timeouts": 0
+      }
+    },
+    {
+      "id": "wm_r_98339111",
+      "source_sha256": "846c77f331570987a1d9f682ecd46e5ede707984a1fbf7f8ef710deeec69818e",
+      "track": "stress",
+      "negative": true,
+      "published_status": "failed",
+      "ground_truth": "unconfirmed",
+      "control": {
+        "status": "completed",
+        "solve_status": "failed",
+        "elapsed_s": 6.953650219365954,
+        "exit_code": 0,
+        "report_sha256": "8610a58ef64677caeb69368ed0a6ebe8c1374448917428e7b2876459ce358bbf",
+        "detections": 50,
+        "quality": null,
+        "failure": {
+          "code": "no_confident_match",
+          "message": "no tetra3 pattern match found across the retry ladder"
+        },
+        "timing_ms": {
+          "detect": 3977,
+          "solve": 3282,
+          "total": 5697
+        },
+        "attempt_timeouts": 0
+      },
+      "blob": {
+        "status": "completed",
+        "solve_status": "failed",
+        "elapsed_s": 11.002841025590897,
+        "exit_code": 0,
+        "report_sha256": "8978ff15b90214d2d75f8bf9e3f36dcfa33bae8c15e86e63c72665434099492c",
+        "detections": 50,
+        "quality": null,
+        "failure": {
+          "code": "no_confident_match",
+          "message": "no tetra3 pattern match found across the retry ladder"
+        },
+        "timing_ms": {
+          "detect": 5837,
+          "solve": 5985,
+          "total": 9707
+        },
+        "attempt_timeouts": 0
+      }
+    },
+    {
+      "id": "wm_r_99644775",
+      "source_sha256": "7db56658f5fb75e1367ed267797d800e3433eb1c47487d53f815f35d71ee1454",
+      "track": "stress",
+      "negative": true,
+      "published_status": "failed",
+      "ground_truth": "unconfirmed",
+      "control": {
+        "status": "completed",
+        "solve_status": "failed",
+        "elapsed_s": 10.226775361225009,
+        "exit_code": 0,
+        "report_sha256": "8d4711433f451cfdc446ffc9a49a7743d63d737317da3f5ed9cb2c51a738da16",
+        "detections": 50,
+        "quality": null,
+        "failure": {
+          "code": "no_confident_match",
+          "message": "no tetra3 pattern match found across the retry ladder"
+        },
+        "timing_ms": {
+          "detect": 5892,
+          "solve": 6007,
+          "total": 8863
+        },
+        "attempt_timeouts": 0
+      },
+      "blob": {
+        "status": "completed",
+        "solve_status": "failed",
+        "elapsed_s": 12.248765936121345,
+        "exit_code": 0,
+        "report_sha256": "2ea673be1efa1c60422f91a3eb5296f991b70400ac6a3cc1cc642cd3dc4b62a4",
+        "detections": 50,
+        "quality": null,
+        "failure": {
+          "code": "no_confident_match",
+          "message": "no tetra3 pattern match found across the retry ladder"
+        },
+        "timing_ms": {
+          "detect": 7608,
+          "solve": 6827,
+          "total": 10824
+        },
+        "attempt_timeouts": 0
+      }
+    }
+  ]
+}

@@ -90,7 +90,7 @@ class SmartphoneGateTests(unittest.TestCase):
     def test_experimental_quantile_cannot_satisfy_default_gate(self):
         self.summary['config']['quantile_threshold'] = True
         self.save_summary()
-        with self.assertRaisesRegex(ValueError, 'experimental quantile'):
+        with self.assertRaisesRegex(ValueError, 'experimental detector'):
             self.check()
         self.summary['config'].pop('quantile_threshold')
         self.save_summary()
@@ -98,7 +98,21 @@ class SmartphoneGateTests(unittest.TestCase):
         artifact = json.loads(path.read_text())
         artifact['quantile_threshold'] = True
         path.write_text(json.dumps(artifact))
-        with self.assertRaisesRegex(ValueError, 'experimental quantile'):
+        with self.assertRaisesRegex(ValueError, 'experimental detector'):
+            self.check()
+
+    def test_experimental_blob_concentration_cannot_satisfy_default_gate(self):
+        self.summary['config']['blob_concentration'] = True
+        self.save_summary()
+        with self.assertRaisesRegex(ValueError, 'experimental detector'):
+            self.check()
+        self.summary['config'].pop('blob_concentration')
+        self.save_summary()
+        path = self.run / 'solve-reports' / 'a.json'
+        artifact = json.loads(path.read_text())
+        artifact['blob_concentration'] = True
+        path.write_text(json.dumps(artifact))
+        with self.assertRaisesRegex(ValueError, 'experimental detector'):
             self.check()
 
     def test_experimental_statistics_cannot_satisfy_default_gate(self):

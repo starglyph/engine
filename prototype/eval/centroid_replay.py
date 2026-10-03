@@ -7,14 +7,8 @@ import json
 from pathlib import Path
 
 
-def prepare(run, frame_id, radius=4.8):
-    sources = [run / mode / 'solve-reports' / f'{frame_id}.json'
-               for mode in ('manual', 'automatic')]
-    reports = [json.loads(p.read_text()) for p in sources]
-    diagnostics = [next(d for d in r['detection_diagnostics']
-                        if d['width'] == 1600 and d['tier'] == 'deep') for r in reports]
-    assert diagnostics[0]['height'] == diagnostics[1]['height']
-    lists = [d['result']['detections'][:d['max_detections']] for d in diagnostics]
+def prepare_cases(lists, radius, names=('control', 'variant')):
+    """Factor membership, common coordinates and common order without pose labels."""
     # Greedy one-to-one geometric correspondence, independent of solved inlier labels.
     edges = sorted(((a['x']-b['x'])**2 + (a['y']-b['y'])**2, i, j)
                    for i, a in enumerate(lists[0]) for j, b in enumerate(lists[1]))
@@ -24,8 +18,8 @@ def prepare(run, frame_id, radius=4.8):
             pairs.append((i, j))
             used_a.add(i)
             used_b.add(j)
-    cases = [dict(name=mode, detections=ds) for mode, ds in zip(('manual', 'automatic'), lists)]
-    for side, mode in enumerate(('manual', 'automatic')):
+    cases = [dict(name=mode, detections=ds) for mode, ds in zip(names, lists)]
+    for side, mode in enumerate(names):
         ds = copy.deepcopy(lists[side])
         for pair in pairs:
             other = lists[1-side][pair[1-side]]
@@ -50,6 +44,18 @@ def prepare(run, frame_id, radius=4.8):
                 d.update(rank=rank, flux=lists[ordering][pair[ordering]]['flux'])
                 ds.append(d)
             cases.append(dict(name=f'common_coordinates_{coordinates}_order_{ordering}', detections=ds))
+    return cases, pairs
+
+
+def prepare(run, frame_id, radius=4.8):
+    sources = [run / mode / 'solve-reports' / f'{frame_id}.json'
+               for mode in ('manual', 'automatic')]
+    reports = [json.loads(p.read_text()) for p in sources]
+    diagnostics = [next(d for d in r['detection_diagnostics']
+                        if d['width'] == 1600 and d['tier'] == 'deep') for r in reports]
+    assert diagnostics[0]['height'] == diagnostics[1]['height']
+    lists = [d['result']['detections'][:d['max_detections']] for d in diagnostics]
+    cases, pairs = prepare_cases(lists, radius, ('manual', 'automatic'))
     root = Path(__file__).resolve().parents[2]
     return dict(image=str(root / 'data/input/smartphone' / f'{frame_id}.jpg'),
                 catalog=str(root / 'data/catalogs/hyg_v42.csv.gz'),

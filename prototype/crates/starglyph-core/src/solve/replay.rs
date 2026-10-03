@@ -15,6 +15,8 @@ struct Input {
     extra_offsets: Vec<usize>,
     #[serde(default)]
     extra_dense: bool,
+    #[serde(default)]
+    tier: Option<String>,
     cases: Vec<Case>,
 }
 
@@ -171,8 +173,68 @@ fn saved_detections() -> Result<(), Box<dyn std::error::Error>> {
     std::fs::write(
         std::env::var("STARGLYPH_REPLAY_OUTPUT")?,
         serde_json::to_vec_pretty(&serde_json::json!({
-            "fov_hint_deg": opts.fov_hint_deg, "epoch_years": epoch, "cases": results,
+            "fov_hint_deg": opts.fov_hint_deg, "epoch_years": epoch, "tier": input.tier, "cases": results,
         }))?,
+    )?;
+    Ok(())
+}
+
+#[derive(Deserialize)]
+struct TraceInput {
+    image: PathBuf,
+    probes: Vec<[f64; 2]>,
+    radius_original_px: f64,
+}
+
+#[test]
+#[ignore = "research tracing: requires STARGLYPH_TRACE_INPUT and STARGLYPH_TRACE_OUTPUT"]
+fn source_traces() -> Result<(), Box<dyn std::error::Error>> {
+    let input: TraceInput =
+        serde_json::from_slice(&std::fs::read(std::env::var("STARGLYPH_TRACE_INPUT")?)?)?;
+    let frame = FrameImage::load(&input.image)?;
+    assert!(input.radius_original_px.is_finite() && input.radius_original_px > 0.0);
+    assert!(input.probes.iter().all(|p| p[0].is_finite()
+        && p[1].is_finite()
+        && p[0] >= 0.0
+        && p[0] < frame.width as f64
+        && p[1] >= 0.0
+        && p[1] < frame.height as f64));
+    let working = frame.resized(WORKING_MAX_EDGE);
+    let mut tiers = Vec::new();
+    for (quantile, blob_concentration) in [(false, false), (true, false), (false, true)] {
+        for current in working.iter().chain(std::iter::once(&frame)) {
+            let sx = current.width as f64 / frame.width as f64;
+            let sy = current.height as f64 / frame.height as f64;
+            let probes: Vec<_> = input
+                .probes
+                .iter()
+                .map(|p| [(p[0] + 0.5) * sx - 0.5, (p[1] + 0.5) * sy - 0.5])
+                .collect();
+            for (tier, mut config) in [
+                ("default", DetectConfig::default()),
+                ("deep", deep_detect_config()),
+            ] {
+                config.quantile_threshold = quantile;
+                config.blob_concentration = blob_concentration;
+                let (result, trace) = crate::detect::trace::detect_stars_with_trace(
+                    current,
+                    &config,
+                    None,
+                    &probes,
+                    input.radius_original_px * sx.max(sy),
+                );
+                // Instrumentation must preserve the exact solver input.
+                assert_eq!(result, detect_stars_with_mask(current, &config, None));
+                tiers.push(
+                    serde_json::json!({"quantile": quantile, "blob_concentration": blob_concentration, "width": current.width,
+                    "height": current.height, "tier": tier, "result": result, "probes": trace}),
+                );
+            }
+        }
+    }
+    std::fs::write(
+        std::env::var("STARGLYPH_TRACE_OUTPUT")?,
+        serde_json::to_vec_pretty(&serde_json::json!({"tiers": tiers}))?,
     )?;
     Ok(())
 }

@@ -93,3 +93,9 @@ The image-derived annotations in `docs/experiments/robustness-iteration-1-*.json
 use the same per-image media licenses and credits. Codex added diagnostic sky
 rectangles, visual source labels and source-recovery measurements; these are not
 certified astrometric ground truth. No new photographs are redistributed by this iteration.
+
+The image-derived source probes and traces in
+`docs/experiments/robustness-iteration-2-*.json` inherit the same per-image
+licenses and credits. Codex reused iteration 1 annotations to measure detector
+rejections and controlled centroid replays; these measurements do not certify
+stellar identities or astrometric ground truth. No new photographs were added.

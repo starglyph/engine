@@ -24,7 +24,7 @@ class CollectionRunTests(unittest.TestCase):
         prior = {"inputs": [{"id": "a"}], "input_count": 1,
                  "selection": {"split": "development"}, "sky_masks_sha256": "original"}
         summary = {"plan_sha256": "plan", "input_count": 1, "completed": 0, "frames": []}
-        for key, value in [("selection", {"split": "holdout"}), ("sky_masks_sha256", "changed")]:
+        for key, value in [("selection", {"split": "holdout"}), ("sky_masks_sha256", "changed"), ("blob_concentration", True)]:
             with self.assertRaisesRegex(ValueError, "settings"):
                 resume_rows(prior, {**prior, key: value}, summary, "plan")
 

@@ -35,11 +35,15 @@ const MAX_MASK_FILL: f32 = 1.0 / MASK_FILL_DENOMINATOR as f32;
 /// Upper bound on adaptive threshold doublings (16× total).
 const MAX_THRESHOLD_DOUBLINGS: u32 = 4;
 
+pub mod trace;
+
 /// Configuration for the star-detection pipeline.
 #[derive(Debug, Clone)]
 pub struct DetectConfig {
     /// Experimental continuous occupancy threshold, bounded by the same 16× cap.
     pub quantile_threshold: bool,
+    /// Opt-in concentration normalization over the component footprint.
+    pub blob_concentration: bool,
     /// Mesh cell size in pixels for background estimation.
     pub mesh_px: u32,
     /// Gaussian kernel sigma in pixels for matched filtering.
@@ -77,6 +81,7 @@ impl Default for DetectConfig {
     fn default() -> Self {
         Self {
             quantile_threshold: false,
+            blob_concentration: false,
             mesh_px: 32,
             sigma_px: 1.2,
             k_sigma: 2.5,
@@ -128,6 +133,8 @@ pub struct DetectStats {
     pub threshold_doublings: u32,
     /// Whether the experimental occupancy quantile was used (no doublings).
     pub quantile_threshold: bool,
+    /// Opt-in concentration normalization over the component footprint.
+    pub blob_concentration: bool,
     /// Fraction of all image pixels above the final adaptive threshold.
     pub threshold_fill: f32,
     /// Size and final occupancy of the region driving adaptive thresholding.
@@ -166,6 +173,15 @@ pub fn detect_stars_with_mask(
     frame: &FrameImage,
     config: &DetectConfig,
     sky_mask: Option<&SkyMask>,
+) -> DetectResult {
+    detect_stars_impl(frame, config, sky_mask, None)
+}
+
+fn detect_stars_impl(
+    frame: &FrameImage,
+    config: &DetectConfig,
+    sky_mask: Option<&SkyMask>,
+    mut trace: Option<&mut trace::TraceCollector>,
 ) -> DetectResult {
     let width = frame.width as usize;
     let height = frame.height as usize;
@@ -245,6 +261,9 @@ pub fn detect_stars_with_mask(
         }
     }
     let blobs = label_components(&mask, width, height);
+    if let Some(trace) = trace.as_deref_mut() {
+        trace.associate(&blobs);
+    }
 
     let mut stats = DetectStats {
         sigma: sigma_raw,
@@ -254,6 +273,7 @@ pub fn detect_stars_with_mask(
         threshold,
         threshold_doublings,
         quantile_threshold: config.quantile_threshold,
+        blob_concentration: config.blob_concentration,
         threshold_fill: mask.iter().filter(|&&v| v).count() as f32 / n.max(1) as f32,
         threshold_region_pixels,
         threshold_region_fill: threshold_occupancy(&mask, fill_region, threshold_region_pixels),
@@ -276,7 +296,10 @@ pub fn detect_stars_with_mask(
 
     let mut detections = Vec::new();
 
-    for blob in blobs {
+    for (component, blob) in blobs.into_iter().enumerate() {
+        let mut traced = trace
+            .as_deref_mut()
+            .and_then(|t| t.components.get_mut(&component));
         let area = blob.pixels.len() as u32;
 
         // Border rejection
@@ -286,6 +309,9 @@ pub fn detect_stars_with_mask(
             || blob.max_y >= h - border
         {
             stats.rejected_border += 1;
+            if let Some(t) = traced.as_deref_mut() {
+                t.outcome = "border";
+            }
             continue;
         }
 
@@ -295,8 +321,14 @@ pub fn detect_stars_with_mask(
             .iter()
             .filter(|&&(x, y)| resid[y as usize * width + x as usize] > core_thresh)
             .count() as u32;
+        if let Some(t) = traced.as_deref_mut() {
+            t.core_area = Some(core_area);
+        }
         if core_area < config.min_core_area {
             stats.rejected_small += 1;
+            if let Some(t) = traced.as_deref_mut() {
+                t.outcome = "core_area";
+            }
             continue;
         }
 
@@ -306,8 +338,14 @@ pub fn detect_stars_with_mask(
             .iter()
             .map(|&(x, y)| resid[y as usize * width + x as usize])
             .fold(f32::NEG_INFINITY, f32::max);
+        if let Some(t) = traced.as_deref_mut() {
+            t.peak = Some(peak);
+        }
         if peak < peak_thresh {
             stats.rejected_faint += 1;
+            if let Some(t) = traced.as_deref_mut() {
+                t.outcome = "peak";
+            }
             continue;
         }
 
@@ -330,8 +368,14 @@ pub fn detect_stars_with_mask(
             } else {
                 config.max_area
             };
+            if let Some(t) = traced.as_deref_mut() {
+                t.measured_area = Some(core_pixels.len());
+            }
             if core_pixels.is_empty() || core_pixels.len() as u32 > core_cap {
                 stats.rejected_large += 1;
+                if let Some(t) = traced.as_deref_mut() {
+                    t.outcome = "area";
+                }
                 continue;
             }
             blob_from_pixels(core_pixels)
@@ -340,13 +384,32 @@ pub fn detect_stars_with_mask(
         };
 
         let elongation = blob_elongation(&measured, &resid, width);
+        if let Some(t) = traced.as_deref_mut() {
+            t.measured_area = Some(measured.pixels.len());
+            t.elongation = Some(elongation);
+        }
         if measured.pixels.len() >= 6 && elongation > config.max_elongation {
             stats.rejected_elongated += 1;
+            if let Some(t) = traced.as_deref_mut() {
+                t.outcome = "elongation";
+            }
             continue;
         }
 
         let (cx, cy, flux) = refine_centroid(&measured, &resid, width, height);
         let snr = flux / (sigma_raw * (area as f32).sqrt());
+        if let Some(t) = traced.as_deref_mut() {
+            t.centroid = Some([cx, cy]);
+            t.positive_blob_flux = Some(
+                measured
+                    .pixels
+                    .iter()
+                    .map(|&(x, y)| resid[y as usize * width + x as usize].max(0.0))
+                    .sum(),
+            );
+            t.photometry_flux = Some(flux);
+            t.concentration = Some(peak * area as f32 / flux.max(1e-9));
+        }
 
         // Diffuse-structure screen for mid-size blobs that never went through
         // core re-segmentation: a point source concentrates its light (high
@@ -355,18 +418,40 @@ pub fn detect_stars_with_mask(
         // legitimately has concentration ≈ 1, and so does a re-segmented
         // half-peak core (its compactness at half peak is already the test).
         if area <= config.max_area && area >= CONCENTRATION_MIN_AREA && !saturated {
-            let concentration = peak * area as f32 / flux.max(1e-9);
+            let concentration_flux = if config.blob_concentration {
+                measured
+                    .pixels
+                    .iter()
+                    .map(|&(x, y)| resid[y as usize * width + x as usize].max(0.0))
+                    .sum()
+            } else {
+                flux
+            };
+            let concentration = peak * area as f32 / concentration_flux.max(1e-9);
+            if let Some(t) = traced.as_deref_mut() {
+                t.concentration = Some(concentration);
+                t.concentration_screened = true;
+            }
             if concentration < config.min_concentration {
                 stats.rejected_diffuse += 1;
+                if let Some(t) = traced.as_deref_mut() {
+                    t.outcome = "concentration";
+                }
                 continue;
             }
         }
 
         if sky_mask.is_some_and(|mask| !mask.contains(cx, cy, frame.width, frame.height)) {
             stats.rejected_mask += 1;
+            if let Some(t) = traced.as_deref_mut() {
+                t.outcome = "mask";
+            }
             continue;
         }
 
+        if let Some(t) = traced {
+            t.outcome = "accepted";
+        }
         detections.push(Detection {
             x: cx,
             y: cy,
@@ -387,6 +472,9 @@ pub fn detect_stars_with_mask(
             .partial_cmp(&a.flux)
             .unwrap_or(std::cmp::Ordering::Equal)
     });
+    if let Some(trace) = trace {
+        trace.finish(&detections, config.max_detections as usize);
+    }
     detections.truncate(config.max_detections as usize);
     for (rank, det) in detections.iter_mut().enumerate() {
         det.rank = rank as u32;
@@ -983,7 +1071,7 @@ mod tests {
 
     use super::*;
 
-    fn make_frame(width: u32, height: u32, gray: Vec<f32>) -> FrameImage {
+    pub(super) fn make_frame(width: u32, height: u32, gray: Vec<f32>) -> FrameImage {
         FrameImage {
             width,
             height,
@@ -994,7 +1082,7 @@ mod tests {
     }
 
     /// Flat background with deterministic ripple so MAD-based noise estimates are non-zero.
-    fn flat_background(width: u32, height: u32, level: f32) -> Vec<f32> {
+    pub(super) fn flat_background(width: u32, height: u32, level: f32) -> Vec<f32> {
         let mut gray = vec![0.0f32; (width * height) as usize];
         for y in 0..height {
             for x in 0..width {
@@ -1005,7 +1093,7 @@ mod tests {
         gray
     }
 
-    fn gaussian_bump(
+    pub(super) fn gaussian_bump(
         width: u32,
         height: u32,
         cx: f64,
@@ -1491,21 +1579,27 @@ mod tests {
         gaussian_bump(width, height, 32.0, 32.0, 0.5, 1.2, &mut gray);
 
         let frame = make_frame(width, height, gray);
-        let result = detect_stars(&frame, &DetectConfig::default());
+        for blob_concentration in [false, true] {
+            let config = DetectConfig {
+                blob_concentration,
+                ..DetectConfig::default()
+            };
+            let result = detect_stars(&frame, &config);
 
-        assert!(
-            result.stats.rejected_diffuse >= 1,
-            "flat blob not screened: {:?}",
-            result.stats
-        );
-        assert_eq!(result.detections.len(), 1, "only the star survives");
-        let det = &result.detections[0];
-        assert!(
-            (det.x - 32.0).abs() < 0.5 && (det.y - 32.0).abs() < 0.5,
-            "star centroid: ({}, {})",
-            det.x,
-            det.y
-        );
+            assert!(
+                result.stats.rejected_diffuse >= 1,
+                "flat blob not screened: {:?}",
+                result.stats
+            );
+            assert_eq!(result.detections.len(), 1, "only the star survives");
+            let det = &result.detections[0];
+            assert!(
+                (det.x - 32.0).abs() < 0.5 && (det.y - 32.0).abs() < 0.5,
+                "star centroid: ({}, {})",
+                det.x,
+                det.y
+            );
+        }
     }
 
     #[test]

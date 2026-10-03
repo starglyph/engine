@@ -267,6 +267,8 @@ pub struct ConfigInfo {
     pub sky_fill: bool,
     #[serde(default, skip_serializing_if = "std::ops::Not::not")]
     pub quantile_threshold: bool,
+    #[serde(default, skip_serializing_if = "std::ops::Not::not")]
+    pub blob_concentration: bool,
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize, PartialEq)]
@@ -355,6 +357,7 @@ pub(crate) fn build_summary(
             sky_statistics: false,
             sky_fill: false,
             quantile_threshold: false,
+            blob_concentration: false,
         },
         solver_track,
         scene_track,
@@ -530,6 +533,7 @@ pub fn gate_violations(
         || current.config.sky_statistics != baseline.config.sky_statistics
         || current.config.sky_fill != baseline.config.sky_fill
         || current.config.quantile_threshold != baseline.config.quantile_threshold
+        || current.config.blob_concentration != baseline.config.blob_concentration
     {
         out.push("experimental detector configuration differs from baseline".into());
     }
@@ -576,6 +580,8 @@ pub struct EvalArgs<'a> {
     pub sky_fill: bool,
     pub detection_diagnostics: bool,
     pub quantile_threshold: bool,
+    /// Opt-in concentration normalization over the component footprint.
+    pub blob_concentration: bool,
     pub out_dir: &'a Path,
     pub tracks: &'a str,
     pub ids: Option<&'a str>,
@@ -754,6 +760,7 @@ pub fn run_eval(args: EvalArgs<'_>) -> Result<EvalOutcome> {
         let epoch_years = timestamp.map(|t| t.to_epoch_years());
         let opts = SolveOptions {
             quantile_threshold: args.quantile_threshold,
+            blob_concentration: args.blob_concentration,
             fov_hint_deg: args.fov_hint,
             attitude_hint: None,
             cache_dir: cache_dir.clone(),
@@ -798,10 +805,14 @@ pub fn run_eval(args: EvalArgs<'_>) -> Result<EvalOutcome> {
             })
         });
         let diagnostics = if args.detection_diagnostics {
-            Some(starglyph_core::solve::detection_diagnostics_with_threshold(
+            Some(starglyph_core::solve::detection_diagnostics_with_config(
                 &frame,
                 sky_mask.as_ref(),
-                args.quantile_threshold,
+                &starglyph_core::detect::DetectConfig {
+                    quantile_threshold: args.quantile_threshold,
+                    blob_concentration: args.blob_concentration,
+                    ..Default::default()
+                },
             ))
         } else {
             None
@@ -816,6 +827,7 @@ pub fn run_eval(args: EvalArgs<'_>) -> Result<EvalOutcome> {
             "sky_fill": args.sky_fill && annotation.is_some(),
             "detection_diagnostics": diagnostics,
             "quantile_threshold": args.quantile_threshold,
+            "blob_concentration": args.blob_concentration,
         });
         fs::write(&report_path, serde_json::to_string_pretty(&artifact)?)
             .with_context(|| format!("failed to write '{}'", report_path.display()))?;
@@ -879,6 +891,7 @@ pub fn run_eval(args: EvalArgs<'_>) -> Result<EvalOutcome> {
     summary.config.sky_statistics = args.sky_statistics;
     summary.config.sky_fill = args.sky_fill;
     summary.config.quantile_threshold = args.quantile_threshold;
+    summary.config.blob_concentration = args.blob_concentration;
 
     for rec in &frames {
         let path = per_frame_dir.join(format!("{}.json", rec.id));
@@ -1004,6 +1017,7 @@ mod tests {
                 sky_statistics: false,
                 sky_fill: false,
                 quantile_threshold: false,
+                blob_concentration: false,
             },
             solver_track: TrackStats {
                 n: 8,

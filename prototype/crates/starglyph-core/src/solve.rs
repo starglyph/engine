@@ -104,6 +104,8 @@ fn k1_reg_weight(fov_x_deg: f64) -> f64 {
 pub struct SolveOptions {
     /// Opt-in detector experiment; never changes matching acceptance thresholds.
     pub quantile_threshold: bool,
+    /// Opt-in concentration normalization over the component footprint.
+    pub blob_concentration: bool,
     /// FOV hint (degrees) from a previous confident solve.
     pub fov_hint_deg: Option<f32>,
     /// Attitude hint quaternion `[w, x, y, z]` (ICRS→camera), for batch tracking.
@@ -128,6 +130,7 @@ impl Default for SolveOptions {
     fn default() -> Self {
         Self {
             quantile_threshold: false,
+            blob_concentration: false,
             fov_hint_deg: None,
             attitude_hint: None,
             cache_dir: PathBuf::from("artifacts/cache"),
@@ -315,6 +318,7 @@ fn solve_single_scale(
         frame,
         &DetectConfig {
             quantile_threshold: opts.quantile_threshold,
+            blob_concentration: opts.blob_concentration,
             ..DetectConfig::default()
         },
         sky_mask,
@@ -363,6 +367,7 @@ fn solve_single_scale(
             frame,
             &DetectConfig {
                 quantile_threshold: opts.quantile_threshold,
+                blob_concentration: opts.blob_concentration,
                 ..deep_detect_config()
             },
             sky_mask,
@@ -809,6 +814,22 @@ pub fn detection_diagnostics_with_threshold(
     mask: Option<&SkyMask>,
     quantile_threshold: bool,
 ) -> Vec<DetectionDiagnostic> {
+    detection_diagnostics_with_config(
+        frame,
+        mask,
+        &DetectConfig {
+            quantile_threshold,
+            ..DetectConfig::default()
+        },
+    )
+}
+
+/// Diagnostic counterpart of the detector experiments; solver tier limits remain fixed.
+pub fn detection_diagnostics_with_config(
+    frame: &FrameImage,
+    mask: Option<&SkyMask>,
+    experiments: &DetectConfig,
+) -> Vec<DetectionDiagnostic> {
     let working = frame.resized(WORKING_MAX_EDGE);
     let mut results = Vec::new();
     for current in working.iter().chain(std::iter::once(frame)) {
@@ -817,7 +838,8 @@ pub fn detection_diagnostics_with_threshold(
             ("deep", deep_detect_config()),
         ] {
             let max_detections = config.max_detections;
-            config.quantile_threshold = quantile_threshold;
+            config.quantile_threshold = experiments.quantile_threshold;
+            config.blob_concentration = experiments.blob_concentration;
             config.max_detections = u32::MAX;
             results.push(DetectionDiagnostic {
                 width: current.width,
@@ -1412,6 +1434,9 @@ fn round4(v: f64) -> f64 {
 
 #[cfg(test)]
 mod replay;
+
+#[cfg(test)]
+mod catalog_replay;
 
 #[cfg(test)]
 mod tests {
