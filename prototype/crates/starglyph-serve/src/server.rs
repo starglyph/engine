@@ -405,6 +405,7 @@ async fn solve_inner(
     });
 
     let opts = SolveOptions {
+        quantile_threshold: false,
         fov_hint_deg: form.fov_hint,
         attitude_hint: None,
         cache_dir: state.cache_dir.clone(),

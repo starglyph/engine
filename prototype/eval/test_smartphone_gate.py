@@ -87,6 +87,20 @@ class SmartphoneGateTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, 'experimental sky fill'):
             self.check()
 
+    def test_experimental_quantile_cannot_satisfy_default_gate(self):
+        self.summary['config']['quantile_threshold'] = True
+        self.save_summary()
+        with self.assertRaisesRegex(ValueError, 'experimental quantile'):
+            self.check()
+        self.summary['config'].pop('quantile_threshold')
+        self.save_summary()
+        path = self.run / 'solve-reports' / 'a.json'
+        artifact = json.loads(path.read_text())
+        artifact['quantile_threshold'] = True
+        path.write_text(json.dumps(artifact))
+        with self.assertRaisesRegex(ValueError, 'experimental quantile'):
+            self.check()
+
     def test_experimental_statistics_cannot_satisfy_default_gate(self):
         self.summary['config']['sky_statistics'] = True
         self.save_summary()

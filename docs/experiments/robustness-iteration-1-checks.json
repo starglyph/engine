@@ -1,0 +1,46 @@
+{
+  "date_utc": "2026-10-03T07:56:57.784551+00:00",
+  "frozen_protocol_sha256": "37579139477b49df5c5465a5676d6a40206e1f0fadb9c79e08f1b39ca450d668",
+  "frozen_implementation_unchanged": true,
+  "rust_unit_tests_passed": 106,
+  "python_eval_tests_passed": 79,
+  "collection_unit_tests_passed": 17,
+  "collection_contract": {
+    "entries": 89,
+    "errors": 0,
+    "check_files": true
+  },
+  "gates": {
+    "eval": "passed",
+    "smartphone": "passed: 8/17, all required IDs",
+    "smartphone_sky_fill": "passed, including extended_dense integration"
+  },
+  "fmt": "passed",
+  "clippy": "passed: core, cli, serve; all-targets; -D warnings",
+  "remote_ci": "not run",
+  "logs_sha256": {
+    "rust-tests.log": "892ea40daa6823f229eef442050d7c01547fa8cc8bf890871a98b3fc60683846",
+    "build.log": "45c019b2b0bf39853e623655a28390c156e6cf174f5a9be9af2404083cdb4448",
+    "clippy.log": "12324775da8e12c035e272ed47a5b86f7bfeecf5aadc22e65742b69515184bf1",
+    "python-tests.log": "83a87763077b806af63282e918af075086de69050c81e481a5e159451af85269",
+    "collection-integrity.log": "8ea75bc432c395f0f191232fa2704f58a2a839de485e35c22299d521f12a3524",
+    "collection-unit-tests.log": "0f0c7171e27ca812d6a6f04621a132e1da8e02f29560d5f3e946e6e07c63d9cc",
+    "eval-gate.log": "048a43a5671e60b22415133dd79b5858ef1a6438ae5c31fca281ee08c44b9a75",
+    "smartphone-gate.log": "cd39b8ff1b38d7a01ac14a169e792956df807423540c2f61f2cdc496703d3dd7",
+    "sky-fill-gate.log": "47fe1941ce0e2d976705c97080b7768c31c3ca22b9fc86da48d2c6608b387bf1"
+  },
+  "deviations": [
+    "Initial manual-mask schema lacked note; solver did not run; corrected run kept separately.",
+    "Initial long development controller externally terminated with exit 143 after 24 completed rows; resumed from intact prefix in bounded batches.",
+    "Initial general unittest discovery entered local .tetra3_src; corrected to the exact CI collection unit-test command."
+  ],
+  "snapshots_sha256": {
+    "robustness-iteration-1-development.json": "dfa2f8bc727728870f105f8c2e0a6a82f84ea20e1b42fc9e8488c4148c036e21",
+    "robustness-iteration-1-diagnosis.json": "014899143fb8cb00dc4dbc12ffbbbda2fa3149267d9e81404f5d0328c0b0f8c0",
+    "robustness-iteration-1-holdout.json": "bdd03cfb86e6ed649dec08142902769a366a423d2d071ad900d0365094820a63",
+    "robustness-iteration-1-manual.json": "2708c01648d708583737c782de276427716df3e17adbdd6ec243a91f5e0790e4",
+    "robustness-iteration-1-observations.json": "1fa84827c41e4d78962470de3ab8afc3080e0ca09fafb228e089fd7e09326145",
+    "robustness-iteration-1-quantile-diagnosis.json": "3c69d45987f8eee1bf2b68d6578d68167d8e79bcbba357f6d9c739c3af184c19",
+    "robustness-iteration-1-regression.json": "d4b297ddf6b4a2d9694cdb25a33e3f31778f9b99e13bf53d75dd2e71932137d8"
+  }
+}

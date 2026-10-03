@@ -102,6 +102,8 @@ fn k1_reg_weight(fov_x_deg: f64) -> f64 {
 /// Options controlling a single solve.
 #[derive(Debug, Clone)]
 pub struct SolveOptions {
+    /// Opt-in detector experiment; never changes matching acceptance thresholds.
+    pub quantile_threshold: bool,
     /// FOV hint (degrees) from a previous confident solve.
     pub fov_hint_deg: Option<f32>,
     /// Attitude hint quaternion `[w, x, y, z]` (ICRS→camera), for batch tracking.
@@ -125,6 +127,7 @@ pub struct SolveOptions {
 impl Default for SolveOptions {
     fn default() -> Self {
         Self {
+            quantile_threshold: false,
             fov_hint_deg: None,
             attitude_hint: None,
             cache_dir: PathBuf::from("artifacts/cache"),
@@ -308,8 +311,15 @@ fn solve_single_scale(
     // ── 1. Detect (clean default first) ───────────────────────────────────────
     progress(SolveStage::Detect);
     let t_detect = Instant::now();
-    let default_detections =
-        detect_stars_with_mask(frame, &DetectConfig::default(), sky_mask).detections;
+    let default_detections = detect_stars_with_mask(
+        frame,
+        &DetectConfig {
+            quantile_threshold: opts.quantile_threshold,
+            ..DetectConfig::default()
+        },
+        sky_mask,
+    )
+    .detections;
     let mut detect_ms = t_detect.elapsed().as_millis() as u64;
 
     let verify = VerifyStars::build(catalog, epoch);
@@ -349,7 +359,15 @@ fn solve_single_scale(
     let mut deep_detections: Vec<Detection> = Vec::new();
     if chosen.is_none() {
         let t_deep = Instant::now();
-        deep_detections = detect_stars_with_mask(frame, &deep_detect_config(), sky_mask).detections;
+        deep_detections = detect_stars_with_mask(
+            frame,
+            &DetectConfig {
+                quantile_threshold: opts.quantile_threshold,
+                ..deep_detect_config()
+            },
+            sky_mask,
+        )
+        .detections;
         detect_ms += t_deep.elapsed().as_millis() as u64;
         if debug {
             eprintln!("  deep re-detect: {} centroids", deep_detections.len());
@@ -782,6 +800,15 @@ pub fn detection_diagnostics(
     frame: &FrameImage,
     mask: Option<&SkyMask>,
 ) -> Vec<DetectionDiagnostic> {
+    detection_diagnostics_with_threshold(frame, mask, false)
+}
+
+/// Diagnostic counterpart of the opt-in threshold experiment.
+pub fn detection_diagnostics_with_threshold(
+    frame: &FrameImage,
+    mask: Option<&SkyMask>,
+    quantile_threshold: bool,
+) -> Vec<DetectionDiagnostic> {
     let working = frame.resized(WORKING_MAX_EDGE);
     let mut results = Vec::new();
     for current in working.iter().chain(std::iter::once(frame)) {
@@ -790,6 +817,7 @@ pub fn detection_diagnostics(
             ("deep", deep_detect_config()),
         ] {
             let max_detections = config.max_detections;
+            config.quantile_threshold = quantile_threshold;
             config.max_detections = u32::MAX;
             results.push(DetectionDiagnostic {
                 width: current.width,

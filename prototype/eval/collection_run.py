@@ -83,6 +83,20 @@ def eligible(rec, stage):
     return True, None
 
 
+def select_records(records, split="all", ids=None):
+    """Select before opening images; preserve manifest order and reject typos."""
+    selected = [r for r in records
+                if r.get("research", {}).get("collection") == COLLECTION
+                and (split == "all" or r["research"]["split"] == split)]
+    if ids is not None:
+        requested = set(ids)
+        unknown = requested - {r["id"] for r in selected}
+        if unknown:
+            raise ValueError(f"IDs outside selected split/collection: {sorted(unknown)}")
+        selected = [r for r in selected if r["id"] in requested]
+    return selected
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("stage", choices=("starglyph", "wcs", "compare"))
@@ -97,14 +111,24 @@ def main():
     parser.add_argument("--wcs-run", type=Path)
     parser.add_argument("--resume", action="store_true", help="continue an intact prefix with identical measurement settings")
     parser.add_argument("--batch-size", type=int, help="stop cleanly after this many additional records")
+    parser.add_argument("--split", choices=("all", "development", "holdout"), default="all")
+    parser.add_argument("--ids", help="comma-separated subset within the selected split")
+    parser.add_argument("--detection-diagnostics", action="store_true")
+    parser.add_argument("--quantile-threshold", action="store_true", help="opt-in detector experiment")
+    parser.add_argument("--sky-masks", type=Path, help="experimental masks; enables existing sky-statistics and sky-fill")
     args = parser.parse_args()
     if args.batch_size is not None and args.batch_size < 1:
         parser.error("batch-size must be positive")
     if args.resume and args.stage == "compare":
         parser.error("comparison requires a fresh directory")
     manifest = args.manifest.resolve()
-    records = [r for r in json.loads(manifest.read_text())
-               if r.get("research", {}).get("collection") == COLLECTION]
+    if args.stage != "starglyph" and (args.sky_masks or args.detection_diagnostics or args.quantile_threshold):
+        parser.error("detector options require starglyph stage")
+    try:
+        records = select_records(json.loads(manifest.read_text()), args.split,
+                                 args.ids.split(",") if args.ids is not None else None)
+    except ValueError as error:
+        parser.error(str(error))
     if not records:
         parser.error("no collection records")
     for rec in records:
@@ -127,9 +151,19 @@ def main():
                         "split": r["research"]["split"]} for r in records],
             "runner_sha256": digest(Path(__file__)),
             "git_commit": subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=ROOT, text=True).strip()}
+    # Omit default-only additions so historical full-collection resumes remain valid.
+    if args.split != "all" or args.ids is not None:
+        plan["selection"] = {"split": args.split, "ids": [r["id"] for r in records]}
     if args.stage == "starglyph":
         plan.update(binary_sha256=digest(args.binary), catalog_sha256=digest(args.catalog),
                     wall_limit_s=120, cache="prewarmed; individual CLI processes; no masks")
+        if args.detection_diagnostics:
+            plan["detection_diagnostics"] = True
+        if args.quantile_threshold:
+            plan["quantile_threshold"] = True
+        if args.sky_masks:
+            plan.update(sky_masks_sha256=digest(args.sky_masks), sky_statistics=True, sky_fill=True,
+                        cache="prewarmed; individual CLI processes; experimental masks")
     if args.stage == "wcs":
         if not args.config or not args.index_dir:
             parser.error("wcs requires config and index-dir")
@@ -194,6 +228,12 @@ def main():
             command = [str(args.binary.resolve()), "eval", "--manifest", str(manifest),
                        "--ids", rid, "--tracks", "solver,stress", "--catalog", str(args.catalog.resolve()),
                        "--out-dir", str(dest.resolve())]
+            if args.detection_diagnostics:
+                command += ["--detection-diagnostics"]
+            if args.quantile_threshold:
+                command += ["--quantile-threshold"]
+            if args.sky_masks:
+                command += ["--sky-masks", str(args.sky_masks.resolve()), "--sky-statistics", "--sky-fill"]
             row.update(bounded(command, args.out_dir / f"{rid}.log", 120))
             report = dest / "solve-reports" / f"{rid}.json"
             if row["status"] == "completed":

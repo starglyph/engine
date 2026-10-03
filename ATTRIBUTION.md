@@ -88,3 +88,8 @@ photographs or derived previews. New `robustness-2026-10` entries use CC0 or
 CC BY 2.0/3.0/4.0; older entries keep their individual licenses. Normalization
 applies EXIF orientation and removes metadata without additional lossy encoding;
 review sheets additionally resize, crop, brighten and label the images.
+
+The image-derived annotations in `docs/experiments/robustness-iteration-1-*.json`
+use the same per-image media licenses and credits. Codex added diagnostic sky
+rectangles, visual source labels and source-recovery measurements; these are not
+certified astrometric ground truth. No new photographs are redistributed by this iteration.

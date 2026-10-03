@@ -1,0 +1,645 @@
+{
+  "scope": "Diagnostic only; not an automatic improvement. No acceptance change.",
+  "masks": {
+    "schema_version": 1,
+    "coordinates": "exif_oriented_normalized_image_edges",
+    "description": "Conservative diagnostic sky rectangles; see source manifest for per-image attribution. Not an automatic method.",
+    "masks": [
+      {
+        "id": "wm_r_161606532",
+        "source_sha256": "985afe7d1142a2ece7545bc8846cb7c610ac5d307f85bf9f45056d7249921c63",
+        "width": 4080,
+        "height": 3072,
+        "sky_polygon": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            1,
+            0.34
+          ],
+          [
+            0,
+            0.34
+          ]
+        ],
+        "note": "Conservative rectangle selected from image before solving; diagnostic only."
+      },
+      {
+        "id": "wm_r_170711707",
+        "source_sha256": "da2915dd724a0781a7a885204abda8a35b897bcf1ed4494d21bedbc63ac69815",
+        "width": 3560,
+        "height": 3336,
+        "sky_polygon": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            1,
+            0.87
+          ],
+          [
+            0,
+            0.87
+          ]
+        ],
+        "note": "Conservative rectangle selected from image before solving; diagnostic only."
+      }
+    ]
+  },
+  "frames": [
+    {
+      "id": "wm_r_161606532",
+      "diagnosis": {
+        "status": "failed",
+        "failure": {
+          "code": "no_confident_match",
+          "message": "no tetra3 pattern match found across the retry ladder"
+        },
+        "detections": 50,
+        "timing_ms": {
+          "detect": 4137,
+          "solve": 17281,
+          "total": 19782
+        },
+        "detector_tiers": [
+          {
+            "width": 1600,
+            "tier": "default",
+            "pre_top_k": 593,
+            "stats": {
+              "accepted": 593,
+              "background_median": 0.21960784494876862,
+              "candidates": 887,
+              "rejected_border": 14,
+              "rejected_diffuse": 142,
+              "rejected_elongated": 68,
+              "rejected_faint": 0,
+              "rejected_large": 17,
+              "rejected_mask": 0,
+              "rejected_small": 53,
+              "sigma": 0.01857933960855007,
+              "sigma_convolved": 0.016130728647112846,
+              "statistics_pixels": 1928000,
+              "threshold": 0.08065364509820938,
+              "threshold_doublings": 1,
+              "threshold_fill": 0.012106846086680889,
+              "threshold_region_fill": 0.012106846086680889,
+              "threshold_region_pixels": 1928000
+            }
+          },
+          {
+            "width": 1600,
+            "tier": "deep",
+            "pre_top_k": 241,
+            "stats": {
+              "accepted": 241,
+              "background_median": 0.21960784494876862,
+              "candidates": 315,
+              "rejected_border": 3,
+              "rejected_diffuse": 36,
+              "rejected_elongated": 11,
+              "rejected_faint": 0,
+              "rejected_large": 2,
+              "rejected_mask": 0,
+              "rejected_small": 22,
+              "sigma": 0.01857933960855007,
+              "sigma_convolved": 0.016130728647112846,
+              "statistics_pixels": 1928000,
+              "threshold": 0.12904582917690277,
+              "threshold_doublings": 2,
+              "threshold_fill": 0.002885892055928707,
+              "threshold_region_fill": 0.002885892055928707,
+              "threshold_region_pixels": 1928000
+            }
+          },
+          {
+            "width": 4080,
+            "tier": "default",
+            "pre_top_k": 1311,
+            "stats": {
+              "accepted": 1311,
+              "background_median": 0.21960784494876862,
+              "candidates": 3489,
+              "rejected_border": 27,
+              "rejected_diffuse": 1456,
+              "rejected_elongated": 359,
+              "rejected_faint": 0,
+              "rejected_large": 236,
+              "rejected_mask": 0,
+              "rejected_small": 100,
+              "sigma": 0.01335536502301693,
+              "sigma_convolved": 0.011992127634584904,
+              "statistics_pixels": 12533760,
+              "threshold": 0.059960637241601944,
+              "threshold_doublings": 1,
+              "threshold_fill": 0.017943458631634712,
+              "threshold_region_fill": 0.017943458631634712,
+              "threshold_region_pixels": 12533760
+            }
+          },
+          {
+            "width": 4080,
+            "tier": "deep",
+            "pre_top_k": 572,
+            "stats": {
+              "accepted": 572,
+              "background_median": 0.21960784494876862,
+              "candidates": 1359,
+              "rejected_border": 13,
+              "rejected_diffuse": 603,
+              "rejected_elongated": 104,
+              "rejected_faint": 0,
+              "rejected_large": 27,
+              "rejected_mask": 0,
+              "rejected_small": 40,
+              "sigma": 0.01335536502301693,
+              "sigma_convolved": 0.011992127634584904,
+              "statistics_pixels": 12533760,
+              "threshold": 0.09593702107667923,
+              "threshold_doublings": 2,
+              "threshold_fill": 0.005147936288267374,
+              "threshold_region_fill": 0.005147936288267374,
+              "threshold_region_pixels": 12533760
+            }
+          }
+        ]
+      },
+      "manual-valid": {
+        "status": "failed",
+        "failure": {
+          "code": "no_confident_match",
+          "message": "no tetra3 pattern match found across the retry ladder"
+        },
+        "detections": 50,
+        "timing_ms": {
+          "detect": 2634,
+          "solve": 10158,
+          "total": 11837
+        },
+        "detector_tiers": [
+          {
+            "width": 1600,
+            "tier": "default",
+            "pre_top_k": 526,
+            "stats": {
+              "accepted": 526,
+              "background_median": 0.3529411852359772,
+              "candidates": 741,
+              "rejected_border": 23,
+              "rejected_diffuse": 80,
+              "rejected_elongated": 22,
+              "rejected_faint": 0,
+              "rejected_large": 2,
+              "rejected_mask": 60,
+              "rejected_small": 28,
+              "sigma": 0.005814117379486561,
+              "sigma_convolved": 0.004603847395628691,
+              "statistics_pixels": 656000,
+              "threshold": 0.04603847488760948,
+              "threshold_doublings": 2,
+              "threshold_fill": 0.06781742721796036,
+              "threshold_region_fill": 0.01785365864634514,
+              "threshold_region_pixels": 656000
+            }
+          },
+          {
+            "width": 1600,
+            "tier": "deep",
+            "pre_top_k": 322,
+            "stats": {
+              "accepted": 322,
+              "background_median": 0.3529411852359772,
+              "candidates": 603,
+              "rejected_border": 15,
+              "rejected_diffuse": 112,
+              "rejected_elongated": 18,
+              "rejected_faint": 0,
+              "rejected_large": 5,
+              "rejected_mask": 100,
+              "rejected_small": 31,
+              "sigma": 0.005814117379486561,
+              "sigma_convolved": 0.004603847395628691,
+              "statistics_pixels": 656000,
+              "threshold": 0.07366155833005905,
+              "threshold_doublings": 3,
+              "threshold_fill": 0.03002178482711315,
+              "threshold_region_fill": 0.009675305336713791,
+              "threshold_region_pixels": 656000
+            }
+          },
+          {
+            "width": 4080,
+            "tier": "default",
+            "pre_top_k": 226,
+            "stats": {
+              "accepted": 226,
+              "background_median": 0.3529411852359772,
+              "candidates": 1326,
+              "rejected_border": 18,
+              "rejected_diffuse": 700,
+              "rejected_elongated": 52,
+              "rejected_faint": 0,
+              "rejected_large": 50,
+              "rejected_mask": 223,
+              "rejected_small": 57,
+              "sigma": 0.005814117379486561,
+              "sigma_convolved": 0.004427604377269745,
+              "statistics_pixels": 4259520,
+              "threshold": 0.04427604377269745,
+              "threshold_doublings": 2,
+              "threshold_fill": 0.07065900415182114,
+              "threshold_region_fill": 0.01797362230718136,
+              "threshold_region_pixels": 4259520
+            }
+          },
+          {
+            "width": 4080,
+            "tier": "deep",
+            "pre_top_k": 160,
+            "stats": {
+              "accepted": 160,
+              "background_median": 0.3529411852359772,
+              "candidates": 1241,
+              "rejected_border": 18,
+              "rejected_diffuse": 620,
+              "rejected_elongated": 49,
+              "rejected_faint": 0,
+              "rejected_large": 56,
+              "rejected_mask": 292,
+              "rejected_small": 46,
+              "sigma": 0.005814117379486561,
+              "sigma_convolved": 0.004427604377269745,
+              "statistics_pixels": 4259520,
+              "threshold": 0.07084167003631592,
+              "threshold_doublings": 3,
+              "threshold_fill": 0.033929724246263504,
+              "threshold_region_fill": 0.011527120135724545,
+              "threshold_region_pixels": 4259520
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "wm_r_170711707",
+      "diagnosis": {
+        "status": "failed",
+        "failure": {
+          "code": "no_confident_match",
+          "message": "no tetra3 pattern match found across the retry ladder"
+        },
+        "detections": 50,
+        "timing_ms": {
+          "detect": 3054,
+          "solve": 24199,
+          "total": 26285
+        },
+        "detector_tiers": [
+          {
+            "width": 1600,
+            "tier": "default",
+            "pre_top_k": 155,
+            "stats": {
+              "accepted": 155,
+              "background_median": 0.11764705926179886,
+              "candidates": 243,
+              "rejected_border": 13,
+              "rejected_diffuse": 18,
+              "rejected_elongated": 22,
+              "rejected_faint": 0,
+              "rejected_large": 16,
+              "rejected_mask": 0,
+              "rejected_small": 19,
+              "sigma": 0.004867341835051775,
+              "sigma_convolved": 0.002432502806186676,
+              "statistics_pixels": 2398400,
+              "threshold": 0.04865005612373352,
+              "threshold_doublings": 3,
+              "threshold_fill": 0.01008297223597765,
+              "threshold_region_fill": 0.01008297223597765,
+              "threshold_region_pixels": 2398400
+            }
+          },
+          {
+            "width": 1600,
+            "tier": "deep",
+            "pre_top_k": 200,
+            "stats": {
+              "accepted": 200,
+              "background_median": 0.11764705926179886,
+              "candidates": 316,
+              "rejected_border": 36,
+              "rejected_diffuse": 21,
+              "rejected_elongated": 23,
+              "rejected_faint": 0,
+              "rejected_large": 18,
+              "rejected_mask": 0,
+              "rejected_small": 18,
+              "sigma": 0.004867341835051775,
+              "sigma_convolved": 0.002432502806186676,
+              "statistics_pixels": 2398400,
+              "threshold": 0.038920044898986816,
+              "threshold_doublings": 3,
+              "threshold_fill": 0.012942795641720295,
+              "threshold_region_fill": 0.012942795641720295,
+              "threshold_region_pixels": 2398400
+            }
+          },
+          {
+            "width": 3560,
+            "tier": "default",
+            "pre_top_k": 758,
+            "stats": {
+              "accepted": 758,
+              "background_median": 0.11764705926179886,
+              "candidates": 1389,
+              "rejected_border": 112,
+              "rejected_diffuse": 132,
+              "rejected_elongated": 252,
+              "rejected_faint": 0,
+              "rejected_large": 53,
+              "rejected_mask": 0,
+              "rejected_small": 82,
+              "sigma": 0.005760887637734413,
+              "sigma_convolved": 0.0025638104416429996,
+              "statistics_pixels": 11876160,
+              "threshold": 0.025638103485107422,
+              "threshold_doublings": 2,
+              "threshold_fill": 0.012250171974301338,
+              "threshold_region_fill": 0.012250171974301338,
+              "threshold_region_pixels": 11876160
+            }
+          },
+          {
+            "width": 3560,
+            "tier": "deep",
+            "pre_top_k": 917,
+            "stats": {
+              "accepted": 917,
+              "background_median": 0.11764705926179886,
+              "candidates": 1596,
+              "rejected_border": 133,
+              "rejected_diffuse": 132,
+              "rejected_elongated": 274,
+              "rejected_faint": 0,
+              "rejected_large": 50,
+              "rejected_mask": 0,
+              "rejected_small": 90,
+              "sigma": 0.005760887637734413,
+              "sigma_convolved": 0.0025638104416429996,
+              "statistics_pixels": 11876160,
+              "threshold": 0.020510483533143997,
+              "threshold_doublings": 2,
+              "threshold_fill": 0.015439755283296108,
+              "threshold_region_fill": 0.015439755283296108,
+              "threshold_region_pixels": 11876160
+            }
+          }
+        ]
+      },
+      "manual-valid": {
+        "status": "failed",
+        "failure": {
+          "code": "no_confident_match",
+          "message": "no tetra3 pattern match found across the retry ladder"
+        },
+        "detections": 50,
+        "timing_ms": {
+          "detect": 5179,
+          "solve": 37853,
+          "total": 40668
+        },
+        "detector_tiers": [
+          {
+            "width": 1600,
+            "tier": "default",
+            "pre_top_k": 564,
+            "stats": {
+              "accepted": 564,
+              "background_median": 0.11372549086809158,
+              "candidates": 1946,
+              "rejected_border": 45,
+              "rejected_diffuse": 27,
+              "rejected_elongated": 51,
+              "rejected_faint": 78,
+              "rejected_large": 1,
+              "rejected_mask": 10,
+              "rejected_small": 1170,
+              "sigma": 0.00393332913517952,
+              "sigma_convolved": 0.0020213027019053698,
+              "statistics_pixels": 2086400,
+              "threshold": 0.005053256638348103,
+              "threshold_doublings": 0,
+              "threshold_fill": 0.12118620425462723,
+              "threshold_region_fill": 0.017881518229842186,
+              "threshold_region_pixels": 2086400
+            }
+          },
+          {
+            "width": 1600,
+            "tier": "deep",
+            "pre_top_k": 550,
+            "stats": {
+              "accepted": 550,
+              "background_median": 0.11372549086809158,
+              "candidates": 684,
+              "rejected_border": 30,
+              "rejected_diffuse": 8,
+              "rejected_elongated": 30,
+              "rejected_faint": 0,
+              "rejected_large": 1,
+              "rejected_mask": 15,
+              "rejected_small": 50,
+              "sigma": 0.00393332913517952,
+              "sigma_convolved": 0.0020213027019053698,
+              "statistics_pixels": 2086400,
+              "threshold": 0.008085210807621479,
+              "threshold_doublings": 1,
+              "threshold_fill": 0.11029936373233795,
+              "threshold_region_fill": 0.007199482526630163,
+              "threshold_region_pixels": 2086400
+            }
+          },
+          {
+            "width": 3560,
+            "tier": "default",
+            "pre_top_k": 583,
+            "stats": {
+              "accepted": 583,
+              "background_median": 0.11372549086809158,
+              "candidates": 10858,
+              "rejected_border": 99,
+              "rejected_diffuse": 127,
+              "rejected_elongated": 119,
+              "rejected_faint": 227,
+              "rejected_large": 3,
+              "rejected_mask": 36,
+              "rejected_small": 9664,
+              "sigma": 0.005452154204249382,
+              "sigma_convolved": 0.002260148525238037,
+              "statistics_pixels": 10331120,
+              "threshold": 0.005650371313095093,
+              "threshold_doublings": 0,
+              "threshold_fill": 0.11687725782394409,
+              "threshold_region_fill": 0.013997127301990986,
+              "threshold_region_pixels": 10331120
+            }
+          },
+          {
+            "width": 3560,
+            "tier": "deep",
+            "pre_top_k": 725,
+            "stats": {
+              "accepted": 725,
+              "background_median": 0.11372549086809158,
+              "candidates": 1517,
+              "rejected_border": 37,
+              "rejected_diffuse": 117,
+              "rejected_elongated": 93,
+              "rejected_faint": 0,
+              "rejected_large": 3,
+              "rejected_mask": 78,
+              "rejected_small": 464,
+              "sigma": 0.005452154204249382,
+              "sigma_convolved": 0.002260148525238037,
+              "statistics_pixels": 10331120,
+              "threshold": 0.009040594100952148,
+              "threshold_doublings": 1,
+              "threshold_fill": 0.10682880878448486,
+              "threshold_region_fill": 0.004581884481012821,
+              "threshold_region_pixels": 10331120
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "provenance": {
+    "diagnosis": {
+      "stage": "starglyph",
+      "manifest_sha256": "97e229270c7b0f97fce4e1f738917cd91cdff01df3508db29584af70a0ea4871",
+      "collection": "robustness-2026-10",
+      "input_count": 10,
+      "inputs": [
+        {
+          "id": "wm_r_134291495",
+          "sha256": "efe2f4460cb419479ff3bd251815db7f7c78cd30258afc9a88cc1f7818cc145d",
+          "split": "development"
+        },
+        {
+          "id": "wm_r_148245316",
+          "sha256": "a00f51721cc4f29fb967d2304d548c84076500ec0af8510790c1266334bac2c3",
+          "split": "development"
+        },
+        {
+          "id": "wm_r_16053617",
+          "sha256": "1e294faf829dcb2ea61a2ff39ef7ab20919781d7eeecfd8824a02e7c4520034f",
+          "split": "development"
+        },
+        {
+          "id": "wm_r_161606532",
+          "sha256": "985afe7d1142a2ece7545bc8846cb7c610ac5d307f85bf9f45056d7249921c63",
+          "split": "development"
+        },
+        {
+          "id": "wm_r_170376698",
+          "sha256": "e0d64620d4b09c5854274ce2af269b112628652ef739f1070ea6fb0cd8e1d9ae",
+          "split": "development"
+        },
+        {
+          "id": "wm_r_170711707",
+          "sha256": "da2915dd724a0781a7a885204abda8a35b897bcf1ed4494d21bedbc63ac69815",
+          "split": "development"
+        },
+        {
+          "id": "wm_r_174305244",
+          "sha256": "50f6a4930959619674464c5811f4d01b271af56939c3001c1c9c3bd0808a8228",
+          "split": "development"
+        },
+        {
+          "id": "wm_r_176481855",
+          "sha256": "a2c97f072a339d1444db3a1ec8935fe5ed70cc484fc0e212d113c5ee0399327d",
+          "split": "development"
+        },
+        {
+          "id": "wm_r_49541180",
+          "sha256": "ee899364984d433f9e317779ed1bd11abdc48dcfa31b8d6bf942392ac05a31d3",
+          "split": "development"
+        },
+        {
+          "id": "wm_r_82991013",
+          "sha256": "c6f565a340a0150df3e6a11e013d0f9d3397026172d4ba7e6eb6b5d0220e43fd",
+          "split": "development"
+        }
+      ],
+      "runner_sha256": "8552d75c480d6654ea38e3bb60c5473895618127387ddc39de9c88066d8304c3",
+      "git_commit": "3f19ffebcb99eaab5fe86983999bf24ff5fa7d1f",
+      "selection": {
+        "split": "development",
+        "ids": [
+          "wm_r_134291495",
+          "wm_r_148245316",
+          "wm_r_16053617",
+          "wm_r_161606532",
+          "wm_r_170376698",
+          "wm_r_170711707",
+          "wm_r_174305244",
+          "wm_r_176481855",
+          "wm_r_49541180",
+          "wm_r_82991013"
+        ]
+      },
+      "binary_sha256": "c7ba3e39c9f94da2fb37b12b0235d3bc051c7738f324e8f69579085b75819c92",
+      "catalog_sha256": "5ca9431ff364c8002a4a3efa91b2b9296746aea1543374db4cb6b4fab049d601",
+      "wall_limit_s": 120,
+      "cache": "prewarmed; individual CLI processes; no masks",
+      "detection_diagnostics": true
+    },
+    "manual-valid": {
+      "stage": "starglyph",
+      "manifest_sha256": "97e229270c7b0f97fce4e1f738917cd91cdff01df3508db29584af70a0ea4871",
+      "collection": "robustness-2026-10",
+      "input_count": 2,
+      "inputs": [
+        {
+          "id": "wm_r_161606532",
+          "sha256": "985afe7d1142a2ece7545bc8846cb7c610ac5d307f85bf9f45056d7249921c63",
+          "split": "development"
+        },
+        {
+          "id": "wm_r_170711707",
+          "sha256": "da2915dd724a0781a7a885204abda8a35b897bcf1ed4494d21bedbc63ac69815",
+          "split": "development"
+        }
+      ],
+      "runner_sha256": "8552d75c480d6654ea38e3bb60c5473895618127387ddc39de9c88066d8304c3",
+      "git_commit": "3f19ffebcb99eaab5fe86983999bf24ff5fa7d1f",
+      "selection": {
+        "split": "development",
+        "ids": [
+          "wm_r_161606532",
+          "wm_r_170711707"
+        ]
+      },
+      "binary_sha256": "c7ba3e39c9f94da2fb37b12b0235d3bc051c7738f324e8f69579085b75819c92",
+      "catalog_sha256": "5ca9431ff364c8002a4a3efa91b2b9296746aea1543374db4cb6b4fab049d601",
+      "wall_limit_s": 120,
+      "cache": "prewarmed; individual CLI processes; experimental masks",
+      "detection_diagnostics": true,
+      "sky_masks_sha256": "b3f71586da928ef28b883df6c481315da8c6a8524fc450edf3247a28f695caf1",
+      "sky_statistics": true,
+      "sky_fill": true
+    }
+  }
+}

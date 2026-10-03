@@ -75,6 +75,8 @@ def check_sky_fill_masks(baseline, masks_path):
 def check_reports(manifest_path, baseline, run_dir, *, sky_fill_masks=None):
     entries = check_inputs(manifest_path, baseline)
     summary = read_json(run_dir / 'summary.json')
+    require(not summary['config'].get('quantile_threshold'),
+            'experimental quantile threshold cannot satisfy an existing gate')
     masks = None
     if sky_fill_masks is not None:
         masks = check_sky_fill_masks(baseline, sky_fill_masks)
@@ -100,6 +102,8 @@ def check_reports(manifest_path, baseline, run_dir, *, sky_fill_masks=None):
         pinned = baseline['frames'][frame_id]
         record = read_json(run_dir / 'per-frame' / f'{frame_id}.json')
         artifact = read_json(run_dir / 'solve-reports' / f'{frame_id}.json')
+        require(not artifact.get('quantile_threshold'),
+                f'{frame_id}: experimental quantile threshold in existing baseline')
         if masks is not None:
             applied = frame_id in masks
             require(artifact.get('sky_mask') == masks.get(frame_id), f'{frame_id}: mask provenance mismatch')

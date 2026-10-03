@@ -127,6 +127,9 @@ enum Command {
         /// Export both detector scales/tiers before top-K, outside solve timing.
         #[arg(long)]
         detection_diagnostics: bool,
+        /// Experimental occupancy-quantile detector; disabled by default.
+        #[arg(long)]
+        quantile_threshold: bool,
         #[arg(long)]
         out_dir: PathBuf,
         /// Comma-separated subset of solver, scene, stress (default: solver).
@@ -445,6 +448,7 @@ fn main() -> Result<()> {
             sky_statistics,
             sky_fill,
             detection_diagnostics,
+            quantile_threshold,
             out_dir,
             tracks,
             ids,
@@ -464,6 +468,7 @@ fn main() -> Result<()> {
                 sky_statistics,
                 sky_fill,
                 detection_diagnostics,
+                quantile_threshold,
                 out_dir: &out_dir,
                 tracks: &tracks,
                 ids: ids.as_deref(),
@@ -808,6 +813,7 @@ fn run_solve(args: SolveRun<'_>) -> Result<()> {
         .or_else(|| timestamp.map(|t| t.to_epoch_years()));
 
     let opts = SolveOptions {
+        quantile_threshold: false,
         fov_hint_deg: args.fov_hint,
         attitude_hint: args.attitude_hint,
         cache_dir,
@@ -943,6 +949,7 @@ fn run_batch_solve(args: BatchRun<'_>) -> Result<()> {
         };
         let epoch = frame.timestamp_from_name().map(|t| t.to_epoch_years());
         let opts = SolveOptions {
+            quantile_threshold: false,
             fov_hint_deg: args.fov_hint,
             attitude_hint: None,
             cache_dir: cache_dir.clone(),
@@ -1060,6 +1067,7 @@ fn resolve_failed_frame(
         );
     }
     let opts = SolveOptions {
+        quantile_threshold: false,
         fov_hint_deg: Some(fov_hint),
         attitude_hint,
         cache_dir: cache_dir.to_path_buf(),

@@ -30,13 +30,16 @@ const CONCENTRATION_MIN_AREA: u32 = 25;
 /// per-blob reasoning breaks down. The threshold is then doubled (up to
 /// [`MAX_THRESHOLD_DOUBLINGS`]) until the mask is sparse: star cores are far
 /// brighter than the junk floor, so they survive every doubling.
-const MAX_MASK_FILL: f32 = 0.02;
+const MASK_FILL_DENOMINATOR: usize = 50;
+const MAX_MASK_FILL: f32 = 1.0 / MASK_FILL_DENOMINATOR as f32;
 /// Upper bound on adaptive threshold doublings (16× total).
 const MAX_THRESHOLD_DOUBLINGS: u32 = 4;
 
 /// Configuration for the star-detection pipeline.
 #[derive(Debug, Clone)]
 pub struct DetectConfig {
+    /// Experimental continuous occupancy threshold, bounded by the same 16× cap.
+    pub quantile_threshold: bool,
     /// Mesh cell size in pixels for background estimation.
     pub mesh_px: u32,
     /// Gaussian kernel sigma in pixels for matched filtering.
@@ -73,6 +76,7 @@ pub struct DetectConfig {
 impl Default for DetectConfig {
     fn default() -> Self {
         Self {
+            quantile_threshold: false,
             mesh_px: 32,
             sigma_px: 1.2,
             k_sigma: 2.5,
@@ -122,6 +126,8 @@ pub struct DetectStats {
     pub sigma_convolved: f32,
     pub threshold: f32,
     pub threshold_doublings: u32,
+    /// Whether the experimental occupancy quantile was used (no doublings).
+    pub quantile_threshold: bool,
     /// Fraction of all image pixels above the final adaptive threshold.
     pub threshold_fill: f32,
     /// Size and final occupancy of the region driving adaptive thresholding.
@@ -215,7 +221,19 @@ pub fn detect_stars_with_mask(
     // Adaptive threshold: keep the mask sparse (see MAX_MASK_FILL).
     let mut mask: Vec<bool> = conv.iter().map(|&v| v > threshold).collect();
     let mut threshold_doublings = 0;
-    for _ in 0..MAX_THRESHOLD_DOUBLINGS {
+    if config.quantile_threshold
+        && threshold_occupancy(&mask, fill_region, threshold_region_pixels) > MAX_MASK_FILL
+    {
+        threshold = occupancy_quantile_threshold(&conv, fill_region, threshold);
+        for (m, &v) in mask.iter_mut().zip(conv.iter()) {
+            *m = v > threshold;
+        }
+    }
+    for _ in 0..if config.quantile_threshold {
+        0
+    } else {
+        MAX_THRESHOLD_DOUBLINGS
+    } {
         let fill = threshold_occupancy(&mask, fill_region, threshold_region_pixels);
         if fill <= MAX_MASK_FILL {
             break;
@@ -235,6 +253,7 @@ pub fn detect_stars_with_mask(
         sigma_convolved: sigma_conv,
         threshold,
         threshold_doublings,
+        quantile_threshold: config.quantile_threshold,
         threshold_fill: mask.iter().filter(|&&v| v).count() as f32 / n.max(1) as f32,
         threshold_region_pixels,
         threshold_region_fill: threshold_occupancy(&mask, fill_region, threshold_region_pixels),
@@ -378,6 +397,25 @@ pub fn detect_stars_with_mask(
 }
 
 // --- Pipeline helpers ---
+
+/// Smallest sampled threshold selecting at most 2% of the eligible pixels.
+/// For fixed pixels this is monotone in the starting threshold; ties are
+/// excluded by the detector's strict `>` comparison. Keep the old 16× cap.
+fn occupancy_quantile_threshold(values: &[f32], region: Option<&[bool]>, initial: f32) -> f32 {
+    let mut eligible: Vec<f32> = values
+        .iter()
+        .enumerate()
+        .filter(|(i, _)| region.is_none_or(|mask| mask[*i]))
+        .map(|(_, &value)| value)
+        .collect();
+    if eligible.is_empty() {
+        return initial;
+    }
+    let allowed = eligible.len() / MASK_FILL_DENOMINATOR;
+    let index = eligible.len() - allowed - 1;
+    let (_, quantile, _) = eligible.select_nth_unstable_by(index, f32::total_cmp);
+    quantile.clamp(initial, initial * (1 << MAX_THRESHOLD_DOUBLINGS) as f32)
+}
 
 fn threshold_occupancy(mask: &[bool], region: Option<&[bool]>, count: usize) -> f32 {
     let selected = match region {
@@ -1215,6 +1253,43 @@ mod tests {
 
         assert!(result.detections.is_empty());
         assert!(result.stats.rejected_large >= 1);
+    }
+
+    #[test]
+    fn occupancy_quantile_preserves_monotone_threshold_and_cap() {
+        let values: Vec<f32> = (0..1000).map(|i| i as f32 / 1000.0).collect();
+        let deep = occupancy_quantile_threshold(&values, None, 0.08);
+        let default = occupancy_quantile_threshold(&values, None, 0.10);
+        assert_eq!(deep, default);
+        assert_eq!(values.iter().filter(|&&v| v > deep).count(), 20);
+        // A source between the quantile and the old rounded-up threshold survives.
+        assert!(0.99 > deep);
+        let mut previous = 0.0;
+        for i in 1..200 {
+            let initial = i as f32 / 1000.0;
+            let threshold = occupancy_quantile_threshold(&values, None, initial);
+            assert!(threshold >= previous && threshold >= initial && threshold <= initial * 16.0);
+            previous = threshold;
+        }
+        assert_eq!(occupancy_quantile_threshold(&values, None, 0.01), 0.16);
+    }
+
+    #[test]
+    fn occupancy_quantile_uses_only_selected_pixels_and_handles_ties() {
+        let mut values = vec![0.3; 1000];
+        values[0] = 0.8;
+        values[100..].fill(1.0);
+        let region: Vec<bool> = (0..1000).map(|i| i < 100).collect();
+        assert_eq!(
+            occupancy_quantile_threshold(&values, Some(&region), 0.1),
+            0.3
+        );
+        assert_eq!(occupancy_quantile_threshold(&values, None, 0.1), 1.0);
+        assert_eq!(
+            occupancy_quantile_threshold(&values, Some(&vec![false; 1000]), 0.1),
+            0.1
+        );
+        assert_eq!(occupancy_quantile_threshold(&[], None, 0.1), 0.1);
     }
 
     #[test]

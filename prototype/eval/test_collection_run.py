@@ -6,11 +6,28 @@ import sys
 import tempfile
 import unittest
 
-from collection_run import bounded, eligible, digest, write_json, resume_rows
+from collection_run import bounded, eligible, digest, write_json, resume_rows, select_records, COLLECTION
 from export_collection import read_run
 
 
 class CollectionRunTests(unittest.TestCase):
+    def test_split_selection_is_explicit_and_manifest_ordered(self):
+        records = [{"id": rid, "research": {"collection": COLLECTION, "split": split}}
+                   for rid, split in [("b", "development"), ("h", "holdout"), ("a", "development")]]
+        self.assertEqual(select_records(records), records)
+        self.assertEqual([r["id"] for r in select_records(records, "development", ["a", "b"])], ["b", "a"])
+        with self.assertRaisesRegex(ValueError, "outside selected"):
+            select_records(records, "development", ["h"])
+        self.assertEqual(select_records(records, "development", []), [])
+
+    def test_resume_rejects_changed_selection_or_masks(self):
+        prior = {"inputs": [{"id": "a"}], "input_count": 1,
+                 "selection": {"split": "development"}, "sky_masks_sha256": "original"}
+        summary = {"plan_sha256": "plan", "input_count": 1, "completed": 0, "frames": []}
+        for key, value in [("selection", {"split": "holdout"}), ("sky_masks_sha256", "changed")]:
+            with self.assertRaisesRegex(ValueError, "settings"):
+                resume_rows(prior, {**prior, key: value}, summary, "plan")
+
     def test_resume_preserves_prefix_and_records_executor_change(self):
         prior = {"runner_sha256": "old", "input_count": 2, "inputs": [{"id": "a"}, {"id": "b"}], "cpu_limit_s": 30}
         current = {**prior, "runner_sha256": "new"}

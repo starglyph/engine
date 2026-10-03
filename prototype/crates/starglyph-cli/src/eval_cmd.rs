@@ -265,6 +265,8 @@ pub struct ConfigInfo {
     pub sky_statistics: bool,
     #[serde(default, skip_serializing_if = "std::ops::Not::not")]
     pub sky_fill: bool,
+    #[serde(default, skip_serializing_if = "std::ops::Not::not")]
+    pub quantile_threshold: bool,
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize, PartialEq)]
@@ -352,6 +354,7 @@ pub(crate) fn build_summary(
             sky_masks: None,
             sky_statistics: false,
             sky_fill: false,
+            quantile_threshold: false,
         },
         solver_track,
         scene_track,
@@ -526,8 +529,9 @@ pub fn gate_violations(
     if current.config.sky_masks != baseline.config.sky_masks
         || current.config.sky_statistics != baseline.config.sky_statistics
         || current.config.sky_fill != baseline.config.sky_fill
+        || current.config.quantile_threshold != baseline.config.quantile_threshold
     {
-        out.push("experimental sky mask configuration differs from baseline".into());
+        out.push("experimental detector configuration differs from baseline".into());
     }
 
     if let (Some(cur), Some(base)) = (
@@ -571,6 +575,7 @@ pub struct EvalArgs<'a> {
     pub sky_statistics: bool,
     pub sky_fill: bool,
     pub detection_diagnostics: bool,
+    pub quantile_threshold: bool,
     pub out_dir: &'a Path,
     pub tracks: &'a str,
     pub ids: Option<&'a str>,
@@ -748,6 +753,7 @@ pub fn run_eval(args: EvalArgs<'_>) -> Result<EvalOutcome> {
         let timestamp = frame.timestamp_from_name();
         let epoch_years = timestamp.map(|t| t.to_epoch_years());
         let opts = SolveOptions {
+            quantile_threshold: args.quantile_threshold,
             fov_hint_deg: args.fov_hint,
             attitude_hint: None,
             cache_dir: cache_dir.clone(),
@@ -792,9 +798,10 @@ pub fn run_eval(args: EvalArgs<'_>) -> Result<EvalOutcome> {
             })
         });
         let diagnostics = if args.detection_diagnostics {
-            Some(starglyph_core::solve::detection_diagnostics(
+            Some(starglyph_core::solve::detection_diagnostics_with_threshold(
                 &frame,
                 sky_mask.as_ref(),
+                args.quantile_threshold,
             ))
         } else {
             None
@@ -808,6 +815,7 @@ pub fn run_eval(args: EvalArgs<'_>) -> Result<EvalOutcome> {
             "sky_statistics": args.sky_statistics && annotation.is_some(),
             "sky_fill": args.sky_fill && annotation.is_some(),
             "detection_diagnostics": diagnostics,
+            "quantile_threshold": args.quantile_threshold,
         });
         fs::write(&report_path, serde_json::to_string_pretty(&artifact)?)
             .with_context(|| format!("failed to write '{}'", report_path.display()))?;
@@ -870,6 +878,7 @@ pub fn run_eval(args: EvalArgs<'_>) -> Result<EvalOutcome> {
     summary.config.sky_masks = args.sky_masks.map(|p| p.display().to_string());
     summary.config.sky_statistics = args.sky_statistics;
     summary.config.sky_fill = args.sky_fill;
+    summary.config.quantile_threshold = args.quantile_threshold;
 
     for rec in &frames {
         let path = per_frame_dir.join(format!("{}.json", rec.id));
@@ -994,6 +1003,7 @@ mod tests {
                 sky_masks: None,
                 sky_statistics: false,
                 sky_fill: false,
+                quantile_threshold: false,
             },
             solver_track: TrackStats {
                 n: 8,
@@ -1036,6 +1046,16 @@ mod tests {
             },
             worst_cases: vec![],
         }
+    }
+
+    #[test]
+    fn quantile_experiment_cannot_pass_as_the_default_baseline() {
+        let baseline = sample_summary(0.5, Some(0.4));
+        let mut experiment = sample_summary(0.5, Some(0.4));
+        experiment.config.quantile_threshold = true;
+        assert!(gate_violations(&experiment, &baseline, 10.0)
+            .iter()
+            .any(|v| v.contains("configuration differs")));
     }
 
     #[test]
