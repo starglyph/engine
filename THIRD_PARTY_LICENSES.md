@@ -72,3 +72,12 @@ includes the exact index SHA-256. The mixed research snapshot
 `docs/experiments/sky-edge-review-2026-10-02.json` additionally contains positions
 derived from HYG v4.2 and is distributed under CC BY-SA 4.0 with HYG/Astronexus
 attribution; original Tycho-2 notices are retained. No complete indices are vendored.
+
+## 5) Public sky sample photographs
+
+- **Registry:** [`data/samples/sky-samples/manifest.json`](data/samples/sky-samples/manifest.json), with per-file source, revision, author, license and checksums.
+- **New collection:** `robustness-2026-10`, CC0 or CC BY 2.0/3.0/4.0 only.
+- **Historical collection:** also includes ESA tetra3 Apache-2.0 examples and two separately stored CC BY-SA 4.0 trail photographs; those terms remain in force.
+- **Required credits:** [`data/samples/sky-samples/ATTRIBUTION.md`](data/samples/sky-samples/ATTRIBUTION.md). Keep author/source/license links and indicate modifications when distributing normalized copies or previews. CC0 credits are retained as provenance.
+- **Scope:** photographs and image-derived annotations retain the applicable media license, independently of the repository's code license. A manifest/download script does not remove redistribution obligations. Original files and derived previews are local ignored artifacts.
+- **Measurements:** local Astrometry.net uses the Tycho-2 indices documented in §4; no full indices or star-coordinate tables are added with this collection. Starglyph uses HYG (§1).

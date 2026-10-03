@@ -3,6 +3,8 @@
 images/
 images-stress-tier-b/
 .tetra3_src/
+.originals/
+__pycache__/
 # WCS ground-truth: keep the small JSON sidecars, ignore the larger FITS headers.
 ground-truth/*.fits
 *.wcs.fits

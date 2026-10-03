@@ -1,0 +1,2 @@
+# Exact normalization environment used by the robustness collection.
+Pillow==12.3.0

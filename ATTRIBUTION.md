@@ -78,3 +78,13 @@ This project uses third-party astronomical datasets.
   and uses CC BY-SA 4.0, with attribution to the HYG Database, Astronexus;
   Tycho-2 and photograph attribution above is retained. Experimental HYG FITS
   indices are local artifacts, not bundled datasets.
+
+## Public sky sample collection
+
+`data/samples/sky-samples/` contains the provenance of third-party photographs.
+Use the **per-image** credits, source links and license links in its
+[attribution list](data/samples/sky-samples/ATTRIBUTION.md) when distributing
+photographs or derived previews. New `robustness-2026-10` entries use CC0 or
+CC BY 2.0/3.0/4.0; older entries keep their individual licenses. Normalization
+applies EXIF orientation and removes metadata without additional lossy encoding;
+review sheets additionally resize, crop, brighten and label the images.

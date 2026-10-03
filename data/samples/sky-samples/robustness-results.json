@@ -1,0 +1,3624 @@
+{
+  "collection": "robustness-2026-10",
+  "date": "2026-10-02",
+  "provenance": {
+    "manifest_sha256": "97e229270c7b0f97fce4e1f738917cd91cdff01df3508db29584af70a0ea4871",
+    "git_commit": "6be5d63033ddc90ec2eb4be7cd2fa5918da8dc89",
+    "binary_sha256": "c7ba3e39c9f94da2fb37b12b0235d3bc051c7738f324e8f69579085b75819c92",
+    "catalog_sha256": "5ca9431ff364c8002a4a3efa91b2b9296746aea1543374db4cb6b4fab049d601",
+    "runner_sha256": "61c2cba91e9cb651b40c350e63955b5a45f299b31b3aeef0494b059acd0c5139",
+    "wcs_initial_runner_sha256": "61c2cba91e9cb651b40c350e63955b5a45f299b31b3aeef0494b059acd0c5139",
+    "wcs_continuations": [
+      {
+        "completed_before": 20,
+        "runner_sha256": "1fadf52a9982872ab0272e16a6237925ebda00403983a1292e7a5567fffef9d7",
+        "plan_sha256": "9018e0bfd37e9176672d27ce24e6752bb0a0fca71a6467eaa1789ec0a3551e9d",
+        "batch_size": 8,
+        "quarantined_incomplete_ids": [
+          "wm_r_143159342"
+        ]
+      },
+      {
+        "completed_before": 28,
+        "runner_sha256": "32ec10ff7b4cf895eecb09b62078768a50069f82a2582c2610677aa0937f4f16",
+        "plan_sha256": "9018e0bfd37e9176672d27ce24e6752bb0a0fca71a6467eaa1789ec0a3551e9d",
+        "batch_size": 8,
+        "measurement_code_sha256": "1547111d5f88fbaf788b081f7c6472a6b461d875eb77150ea371c13042837ef6",
+        "quarantined_incomplete_ids": []
+      },
+      {
+        "completed_before": 35,
+        "runner_sha256": "32ec10ff7b4cf895eecb09b62078768a50069f82a2582c2610677aa0937f4f16",
+        "plan_sha256": "9018e0bfd37e9176672d27ce24e6752bb0a0fca71a6467eaa1789ec0a3551e9d",
+        "batch_size": 2,
+        "measurement_code_sha256": "1547111d5f88fbaf788b081f7c6472a6b461d875eb77150ea371c13042837ef6",
+        "quarantined_incomplete_ids": [
+          "wm_r_170711707"
+        ]
+      },
+      {
+        "completed_before": 37,
+        "runner_sha256": "32ec10ff7b4cf895eecb09b62078768a50069f82a2582c2610677aa0937f4f16",
+        "plan_sha256": "9018e0bfd37e9176672d27ce24e6752bb0a0fca71a6467eaa1789ec0a3551e9d",
+        "batch_size": 2,
+        "measurement_code_sha256": "1547111d5f88fbaf788b081f7c6472a6b461d875eb77150ea371c13042837ef6",
+        "quarantined_incomplete_ids": []
+      },
+      {
+        "completed_before": 39,
+        "runner_sha256": "32ec10ff7b4cf895eecb09b62078768a50069f82a2582c2610677aa0937f4f16",
+        "plan_sha256": "9018e0bfd37e9176672d27ce24e6752bb0a0fca71a6467eaa1789ec0a3551e9d",
+        "batch_size": 2,
+        "measurement_code_sha256": "1547111d5f88fbaf788b081f7c6472a6b461d875eb77150ea371c13042837ef6",
+        "quarantined_incomplete_ids": []
+      },
+      {
+        "completed_before": 41,
+        "runner_sha256": "32ec10ff7b4cf895eecb09b62078768a50069f82a2582c2610677aa0937f4f16",
+        "plan_sha256": "9018e0bfd37e9176672d27ce24e6752bb0a0fca71a6467eaa1789ec0a3551e9d",
+        "batch_size": 2,
+        "measurement_code_sha256": "1547111d5f88fbaf788b081f7c6472a6b461d875eb77150ea371c13042837ef6",
+        "quarantined_incomplete_ids": []
+      },
+      {
+        "completed_before": 43,
+        "runner_sha256": "32ec10ff7b4cf895eecb09b62078768a50069f82a2582c2610677aa0937f4f16",
+        "plan_sha256": "9018e0bfd37e9176672d27ce24e6752bb0a0fca71a6467eaa1789ec0a3551e9d",
+        "batch_size": 2,
+        "measurement_code_sha256": "1547111d5f88fbaf788b081f7c6472a6b461d875eb77150ea371c13042837ef6",
+        "quarantined_incomplete_ids": []
+      },
+      {
+        "completed_before": 45,
+        "runner_sha256": "32ec10ff7b4cf895eecb09b62078768a50069f82a2582c2610677aa0937f4f16",
+        "plan_sha256": "9018e0bfd37e9176672d27ce24e6752bb0a0fca71a6467eaa1789ec0a3551e9d",
+        "batch_size": 2,
+        "measurement_code_sha256": "1547111d5f88fbaf788b081f7c6472a6b461d875eb77150ea371c13042837ef6",
+        "quarantined_incomplete_ids": []
+      },
+      {
+        "completed_before": 47,
+        "runner_sha256": "32ec10ff7b4cf895eecb09b62078768a50069f82a2582c2610677aa0937f4f16",
+        "plan_sha256": "9018e0bfd37e9176672d27ce24e6752bb0a0fca71a6467eaa1789ec0a3551e9d",
+        "batch_size": 2,
+        "measurement_code_sha256": "1547111d5f88fbaf788b081f7c6472a6b461d875eb77150ea371c13042837ef6",
+        "quarantined_incomplete_ids": []
+      },
+      {
+        "completed_before": 47,
+        "runner_sha256": "32ec10ff7b4cf895eecb09b62078768a50069f82a2582c2610677aa0937f4f16",
+        "plan_sha256": "9018e0bfd37e9176672d27ce24e6752bb0a0fca71a6467eaa1789ec0a3551e9d",
+        "batch_size": 2,
+        "measurement_code_sha256": "1547111d5f88fbaf788b081f7c6472a6b461d875eb77150ea371c13042837ef6",
+        "quarantined_incomplete_ids": [
+          "wm_r_180635038"
+        ]
+      },
+      {
+        "completed_before": 49,
+        "runner_sha256": "32ec10ff7b4cf895eecb09b62078768a50069f82a2582c2610677aa0937f4f16",
+        "plan_sha256": "9018e0bfd37e9176672d27ce24e6752bb0a0fca71a6467eaa1789ec0a3551e9d",
+        "batch_size": 2,
+        "measurement_code_sha256": "1547111d5f88fbaf788b081f7c6472a6b461d875eb77150ea371c13042837ef6",
+        "quarantined_incomplete_ids": []
+      },
+      {
+        "completed_before": 51,
+        "runner_sha256": "32ec10ff7b4cf895eecb09b62078768a50069f82a2582c2610677aa0937f4f16",
+        "plan_sha256": "9018e0bfd37e9176672d27ce24e6752bb0a0fca71a6467eaa1789ec0a3551e9d",
+        "batch_size": 2,
+        "measurement_code_sha256": "1547111d5f88fbaf788b081f7c6472a6b461d875eb77150ea371c13042837ef6",
+        "quarantined_incomplete_ids": []
+      },
+      {
+        "completed_before": 53,
+        "runner_sha256": "32ec10ff7b4cf895eecb09b62078768a50069f82a2582c2610677aa0937f4f16",
+        "plan_sha256": "9018e0bfd37e9176672d27ce24e6752bb0a0fca71a6467eaa1789ec0a3551e9d",
+        "batch_size": 2,
+        "measurement_code_sha256": "1547111d5f88fbaf788b081f7c6472a6b461d875eb77150ea371c13042837ef6",
+        "quarantined_incomplete_ids": []
+      },
+      {
+        "completed_before": 55,
+        "runner_sha256": "32ec10ff7b4cf895eecb09b62078768a50069f82a2582c2610677aa0937f4f16",
+        "plan_sha256": "9018e0bfd37e9176672d27ce24e6752bb0a0fca71a6467eaa1789ec0a3551e9d",
+        "batch_size": 2,
+        "measurement_code_sha256": "1547111d5f88fbaf788b081f7c6472a6b461d875eb77150ea371c13042837ef6",
+        "quarantined_incomplete_ids": []
+      },
+      {
+        "completed_before": 57,
+        "runner_sha256": "32ec10ff7b4cf895eecb09b62078768a50069f82a2582c2610677aa0937f4f16",
+        "plan_sha256": "9018e0bfd37e9176672d27ce24e6752bb0a0fca71a6467eaa1789ec0a3551e9d",
+        "batch_size": 2,
+        "measurement_code_sha256": "1547111d5f88fbaf788b081f7c6472a6b461d875eb77150ea371c13042837ef6",
+        "quarantined_incomplete_ids": []
+      },
+      {
+        "completed_before": 59,
+        "runner_sha256": "32ec10ff7b4cf895eecb09b62078768a50069f82a2582c2610677aa0937f4f16",
+        "plan_sha256": "9018e0bfd37e9176672d27ce24e6752bb0a0fca71a6467eaa1789ec0a3551e9d",
+        "batch_size": 2,
+        "measurement_code_sha256": "1547111d5f88fbaf788b081f7c6472a6b461d875eb77150ea371c13042837ef6",
+        "quarantined_incomplete_ids": []
+      },
+      {
+        "completed_before": 61,
+        "runner_sha256": "32ec10ff7b4cf895eecb09b62078768a50069f82a2582c2610677aa0937f4f16",
+        "plan_sha256": "9018e0bfd37e9176672d27ce24e6752bb0a0fca71a6467eaa1789ec0a3551e9d",
+        "batch_size": 2,
+        "measurement_code_sha256": "1547111d5f88fbaf788b081f7c6472a6b461d875eb77150ea371c13042837ef6",
+        "quarantined_incomplete_ids": []
+      },
+      {
+        "completed_before": 63,
+        "runner_sha256": "32ec10ff7b4cf895eecb09b62078768a50069f82a2582c2610677aa0937f4f16",
+        "plan_sha256": "9018e0bfd37e9176672d27ce24e6752bb0a0fca71a6467eaa1789ec0a3551e9d",
+        "batch_size": 2,
+        "measurement_code_sha256": "1547111d5f88fbaf788b081f7c6472a6b461d875eb77150ea371c13042837ef6",
+        "quarantined_incomplete_ids": []
+      },
+      {
+        "completed_before": 65,
+        "runner_sha256": "32ec10ff7b4cf895eecb09b62078768a50069f82a2582c2610677aa0937f4f16",
+        "plan_sha256": "9018e0bfd37e9176672d27ce24e6752bb0a0fca71a6467eaa1789ec0a3551e9d",
+        "batch_size": 2,
+        "measurement_code_sha256": "1547111d5f88fbaf788b081f7c6472a6b461d875eb77150ea371c13042837ef6",
+        "quarantined_incomplete_ids": []
+      }
+    ],
+    "comparison_runner_sha256": "32ec10ff7b4cf895eecb09b62078768a50069f82a2582c2610677aa0937f4f16",
+    "solve_local_wcs_sha256": "1547111d5f88fbaf788b081f7c6472a6b461d875eb77150ea371c13042837ef6",
+    "compare_local_wcs_sha256": "1a8c83f6d0a19f3cbbe2a96f0db79a0ab60ac33fd09ad6c5c69472672ef31a3b",
+    "run_plan_sha256": {
+      "starglyph": "7de4c363ec5e8fc5a8bee25c8a1c89e93042b83572526e91a31fca6ab496f68d",
+      "wcs": "9018e0bfd37e9176672d27ce24e6752bb0a0fca71a6467eaa1789ec0a3551e9d",
+      "comparison": "6b1a5483e743f47ad17a7cf335bf7e38d980d5746b672f6ff02a1033b10e2140"
+    },
+    "wcs_version": "0.89",
+    "indices": {
+      "index-tycho2-10.littleendian.fits": "42617bb214e1782f1ba4dbab9b7e6b1b0ec635416b500bab6f0be9e9704dccc8",
+      "index-tycho2-11.littleendian.fits": "2b216e715a96afb79ac4e7b679474dae0208c37f1f1352be895edbbb336231d9",
+      "index-tycho2-12.littleendian.fits": "911c9bf4e5dce89f6b7a6fae803bf0951cb33389c8f040a553f5007e6de5d44e",
+      "index-tycho2-13.littleendian.fits": "5446d29abd35a9626777de8235fbed5d2daf76c074adabf8db4688b38333f8b2",
+      "index-tycho2-14.littleendian.fits": "c8efbcaf24eaf4f0cf1af43f20740d4edf29ce8190fcae6f94256ffbea020e55",
+      "index-tycho2-15.littleendian.fits": "3c646bb3aecf8dfee021dcb23d7f1c32f31588fdd2b8cc33a2bf4b121e7acfa5",
+      "index-tycho2-16.littleendian.fits": "ca85f6683c7edfd060d6854526cfc53367e34dd75a1ef750063a9606be888ed8",
+      "index-tycho2-17.littleendian.fits": "725c060dd659884512184019ce07bbff36b49327ebe14ee572377fc1d32bbda7",
+      "index-tycho2-18.littleendian.fits": "e24837c414636b8c7481c17f3421be8b01e2922637975631d984a4476a7d7004",
+      "index-tycho2-19.littleendian.fits": "c761ac93f92dbe8184bff87e293d2465c667bace2b8ad76e51c33e778b2d144f"
+    },
+    "wcs_config_sha256": "4dd87c4884ff53bd9487259754acf83fc4cfb8a4e23169e3870ae4ed09644dbf",
+    "wcs_config_template": [
+      "cpulimit 30",
+      "add_path ${ASTROMETRY_INDEX_DIR}",
+      "autoindex"
+    ],
+    "python_version": "3.10.12",
+    "wcs_python_packages": {
+      "numpy": "1.23.5",
+      "astropy": "6.1.7",
+      "pillow": "12.3.0"
+    },
+    "starglyph_wall_limit_s": 120,
+    "wcs_cpu_limit_s": 30,
+    "wcs_attempt_wall_limit_s": 60,
+    "wcs_downsample": [
+      4,
+      2
+    ],
+    "cache": "prewarmed; individual CLI processes; no masks",
+    "execution": "Two independent sequential queues initially overlapped on one host. WCS resumed in bounded batches after external termination; times are diagnostic, not isolated performance benchmarks."
+  },
+  "accepted_ground_truth_count": 0,
+  "interpretation": "External solutions are pending candidates. Neither solver success nor mutual agreement certifies a correct full-field solution.",
+  "summaries": [
+    {
+      "split": "development",
+      "track": "solver",
+      "count": 34,
+      "starglyph_status": {
+        "solved": 24,
+        "failed": 10
+      },
+      "external_wcs_status": {
+        "solved_candidate": 15,
+        "unresolved": 18,
+        "wall_timeout": 1
+      }
+    },
+    {
+      "split": "development",
+      "track": "stress",
+      "count": 10,
+      "starglyph_status": {
+        "failed": 10
+      },
+      "external_wcs_status": {
+        "not_attempted": 10
+      }
+    },
+    {
+      "split": "development",
+      "track": "scene",
+      "count": 1,
+      "starglyph_status": {
+        "not_attempted": 1
+      },
+      "external_wcs_status": {
+        "not_attempted": 1
+      }
+    },
+    {
+      "split": "holdout",
+      "track": "solver",
+      "count": 20,
+      "starglyph_status": {
+        "solved": 7,
+        "failed": 13
+      },
+      "external_wcs_status": {
+        "unresolved": 12,
+        "wall_timeout": 4,
+        "solved_candidate": 4
+      }
+    },
+    {
+      "split": "holdout",
+      "track": "stress",
+      "count": 1,
+      "starglyph_status": {
+        "failed": 1
+      },
+      "external_wcs_status": {
+        "not_attempted": 1
+      }
+    },
+    {
+      "split": "holdout",
+      "track": "scene",
+      "count": 0,
+      "starglyph_status": {},
+      "external_wcs_status": {}
+    }
+  ],
+  "frames": [
+    {
+      "id": "wm_r_103258865",
+      "source_sha256": "21b85ac526c5c4427ce69cd6bed985d2bbca4dc842745c90ee77648be4cc1747",
+      "track": "solver",
+      "split": "holdout",
+      "negative": false,
+      "starglyph": {
+        "status": "completed",
+        "solve_status": "solved",
+        "elapsed_s": 9.070995287969708,
+        "exit_code": 0,
+        "report_sha256": "b1c1ce43a661f8cdb2a3fb5bc501dd5a534e777233541e05d67546264afe27af",
+        "quality": {
+          "confidence": 1.0,
+          "log_odds": 257.23,
+          "n_detections": 40,
+          "n_inliers": 29,
+          "rms_px": 1.35
+        },
+        "timing_ms": {
+          "detect": 3699,
+          "solve": 3787,
+          "total": 7648
+        }
+      },
+      "external_wcs": {
+        "status": "unresolved",
+        "review_status": "unresolved",
+        "elapsed_s": 117.61436809413135,
+        "input_fits_sha256": "2994fabf34f065460931ba41f4d71fad7c9f60627c68ec632f315718912f967c",
+        "attempts": [
+          {
+            "downsample": 4,
+            "exit_code": 0
+          },
+          {
+            "downsample": 2,
+            "wall_timeout": true
+          }
+        ]
+      },
+      "comparison": {
+        "status": "compared",
+        "metrics": {
+          "reference_status": "unresolved",
+          "review_status": "unresolved",
+          "solver_status": "solved"
+        }
+      }
+    },
+    {
+      "id": "wm_r_112866114",
+      "source_sha256": "67ee5cc8c6c2b67477718c1f8bccce650bbcfacf1e953aca9fd7257821d4cc87",
+      "track": "solver",
+      "split": "holdout",
+      "negative": false,
+      "starglyph": {
+        "status": "completed",
+        "solve_status": "failed",
+        "elapsed_s": 36.60688343271613,
+        "exit_code": 0,
+        "report_sha256": "4ec97abd9a82059dd68a3cde4383dd85b67949ed885a55765cc9533d080d1274",
+        "timing_ms": {
+          "detect": 4768,
+          "solve": 33252,
+          "total": 35826
+        }
+      },
+      "external_wcs": {
+        "status": "wall_timeout",
+        "review_status": "unresolved",
+        "elapsed_s": 121.20719650946558,
+        "input_fits_sha256": "e17697a69e13900813709c851e62e876887ae0ae294ae80786dbaba98e5aad1c",
+        "attempts": [
+          {
+            "downsample": 4,
+            "wall_timeout": true
+          },
+          {
+            "downsample": 2,
+            "wall_timeout": true
+          }
+        ]
+      },
+      "comparison": {
+        "status": "compared",
+        "metrics": {
+          "reference_status": "unresolved",
+          "review_status": "unresolved",
+          "solver_status": "failed"
+        }
+      }
+    },
+    {
+      "id": "wm_r_112866115",
+      "source_sha256": "ac6fdb601af58d67eae077ef483a2c40b7473bf918a632998fa757895de1892f",
+      "track": "solver",
+      "split": "holdout",
+      "negative": false,
+      "starglyph": {
+        "status": "completed",
+        "solve_status": "failed",
+        "elapsed_s": 30.007105518132448,
+        "exit_code": 0,
+        "report_sha256": "ad06ae598367a889a4f9f973f4dd3f264fc09e3cacc28bc1dc9865d97f7ce00a",
+        "timing_ms": {
+          "detect": 11515,
+          "solve": 22083,
+          "total": 28300
+        }
+      },
+      "external_wcs": {
+        "status": "wall_timeout",
+        "review_status": "unresolved",
+        "elapsed_s": 124.90817975997925,
+        "input_fits_sha256": "0c5f0b4c4e0f4a5344693594bbbe0e1c1846dc104a3b876cb20a270882d7cd51",
+        "attempts": [
+          {
+            "downsample": 4,
+            "wall_timeout": true
+          },
+          {
+            "downsample": 2,
+            "wall_timeout": true
+          }
+        ]
+      },
+      "comparison": {
+        "status": "compared",
+        "metrics": {
+          "reference_status": "unresolved",
+          "review_status": "unresolved",
+          "solver_status": "failed"
+        }
+      }
+    },
+    {
+      "id": "wm_r_112929230",
+      "source_sha256": "01de14e5cd4724f40f46c760627d9f5c7373979274364db40f76a6e5be38f6b3",
+      "track": "solver",
+      "split": "development",
+      "negative": false,
+      "starglyph": {
+        "status": "completed",
+        "solve_status": "solved",
+        "elapsed_s": 1.95105036534369,
+        "exit_code": 0,
+        "report_sha256": "f90b6698e62e9d37836f3b5c7d59cd02ca8c35806a30bb746447d6ff4473c546",
+        "quality": {
+          "confidence": 1.0,
+          "log_odds": 114.26,
+          "n_detections": 40,
+          "n_inliers": 21,
+          "rms_px": 2.74
+        },
+        "timing_ms": {
+          "detect": 207,
+          "solve": 432,
+          "total": 939
+        }
+      },
+      "external_wcs": {
+        "status": "solved_candidate",
+        "review_status": "pending",
+        "elapsed_s": 9.502029715105891,
+        "wcs_sha256": "ffe21c40e9dde31eff4c968c79d74aaaec146e37033ac4f5acf21ceb27c405d1",
+        "input_fits_sha256": "f7217c9b4ac903aef95348d898dc6c1245fc9425eb00fe4bdec7ffc2b7595af6",
+        "n_correspondences": 90,
+        "n_high_weight_correspondences": 82,
+        "fit_rms_px": 10.420928963611903,
+        "fit_p95_px": 24.315420867236195,
+        "matched_extent_fraction": [
+          0.9469273739710006,
+          0.8695306047728745
+        ],
+        "attempts": [
+          {
+            "downsample": 4,
+            "exit_code": 0
+          }
+        ]
+      },
+      "comparison": {
+        "status": "compared",
+        "metrics": {
+          "reference_status": "solved_candidate",
+          "review_status": "pending",
+          "solver_status": "solved",
+          "full_field_wcs_difference": {
+            "count": 81,
+            "rms_px": 43.98074068876845,
+            "median_px": 13.118263905617988,
+            "p95_px": 96.37651131541354,
+            "max_px": 160.58405510208033
+          },
+          "external_star_error": {
+            "count": 82,
+            "rms_px": 8.5129002156084,
+            "median_px": 2.1876525657248505,
+            "p95_px": 4.010028604960316,
+            "max_px": 73.78731115737946
+          },
+          "external_wcs_fit": {
+            "count": 82,
+            "rms_px": 7.121984497184975,
+            "median_px": 6.5294704232488066,
+            "p95_px": 11.74138513328045,
+            "max_px": 16.360093319528914
+          }
+        }
+      }
+    },
+    {
+      "id": "wm_r_113343122",
+      "source_sha256": "28c65b20ad39c16bd1013b11d4d146a21c19738fba0ee31df6c24af5034ed7fc",
+      "track": "solver",
+      "split": "development",
+      "negative": false,
+      "starglyph": {
+        "status": "completed",
+        "solve_status": "solved",
+        "elapsed_s": 6.782592488452792,
+        "exit_code": 0,
+        "report_sha256": "da3514933703c4d4f42fbeaab55003a3b4f7dab444b5d6548b86694f3cf29d02",
+        "quality": {
+          "confidence": 1.0,
+          "log_odds": 263.5,
+          "n_detections": 40,
+          "n_inliers": 37,
+          "rms_px": 1.77
+        },
+        "timing_ms": {
+          "detect": 292,
+          "solve": 5009,
+          "total": 5609
+        }
+      },
+      "external_wcs": {
+        "status": "unresolved",
+        "review_status": "unresolved",
+        "elapsed_s": 109.32417265325785,
+        "input_fits_sha256": "17989a7f6a9b29bdf026aec1d58410874c5b73584566d77e7baa3309e5cfa823",
+        "attempts": [
+          {
+            "downsample": 4,
+            "exit_code": 0
+          },
+          {
+            "downsample": 2,
+            "exit_code": 0
+          }
+        ]
+      },
+      "comparison": {
+        "status": "compared",
+        "metrics": {
+          "reference_status": "unresolved",
+          "review_status": "unresolved",
+          "solver_status": "solved"
+        }
+      }
+    },
+    {
+      "id": "wm_r_113343124",
+      "source_sha256": "2736e16473752e7a3123836c8748b84988728cb5f68952a84a95505f15962a3a",
+      "track": "solver",
+      "split": "development",
+      "negative": false,
+      "starglyph": {
+        "status": "completed",
+        "solve_status": "solved",
+        "elapsed_s": 2.8315088655799627,
+        "exit_code": 0,
+        "report_sha256": "d08cc36439d3c0b60276716bb746370fa686ef980a9b1048078d3c91704af301",
+        "quality": {
+          "confidence": 1.0,
+          "log_odds": 272.67,
+          "n_detections": 40,
+          "n_inliers": 38,
+          "rms_px": 2.7
+        },
+        "timing_ms": {
+          "detect": 196,
+          "solve": 1032,
+          "total": 1643
+        }
+      },
+      "external_wcs": {
+        "status": "solved_candidate",
+        "review_status": "pending",
+        "elapsed_s": 13.244026605039835,
+        "wcs_sha256": "f47c063bff52fa0db913201fb148a5bab0353085e2c65935c7b534f547229715",
+        "input_fits_sha256": "693786e85edef048d9b1fce4f5cfa249390f28d23ade1ec4fcca5b41e68139b6",
+        "n_correspondences": 246,
+        "n_high_weight_correspondences": 148,
+        "fit_rms_px": 11.078092729921126,
+        "fit_p95_px": 23.43021028840505,
+        "matched_extent_fraction": [
+          0.6598115582083991,
+          0.8941565068857852
+        ],
+        "attempts": [
+          {
+            "downsample": 4,
+            "exit_code": 0
+          }
+        ]
+      },
+      "comparison": {
+        "status": "compared",
+        "metrics": {
+          "reference_status": "solved_candidate",
+          "review_status": "pending",
+          "solver_status": "solved",
+          "full_field_wcs_difference": {
+            "count": 81,
+            "rms_px": 22.46730804334355,
+            "median_px": 6.163474924664153,
+            "p95_px": 48.183365553398126,
+            "max_px": 67.83207010076693
+          },
+          "external_star_error": {
+            "count": 148,
+            "rms_px": 1.9609301219770447,
+            "median_px": 1.807757831454483,
+            "p95_px": 2.9448464068924745,
+            "max_px": 7.561490215741949
+          },
+          "external_wcs_fit": {
+            "count": 148,
+            "rms_px": 5.289947579114479,
+            "median_px": 5.316565738185504,
+            "p95_px": 7.821713460778524,
+            "max_px": 8.19546055543854
+          }
+        }
+      }
+    },
+    {
+      "id": "wm_r_113780329",
+      "source_sha256": "232b101968109c94307936036be6878d86f188a364e736ac5448003b11c9fc0c",
+      "track": "solver",
+      "split": "holdout",
+      "negative": false,
+      "starglyph": {
+        "status": "completed",
+        "solve_status": "failed",
+        "elapsed_s": 7.978743132203817,
+        "exit_code": 0,
+        "report_sha256": "e06ba5ca24610f67fd5e39db905bfb96558c13be3f55d1e08ed016eb625f3b2e",
+        "timing_ms": {
+          "detect": 3677,
+          "solve": 3875,
+          "total": 6344
+        }
+      },
+      "external_wcs": {
+        "status": "unresolved",
+        "review_status": "unresolved",
+        "elapsed_s": 109.48974276892841,
+        "input_fits_sha256": "405b8f3812f772da87a4e9da64842a966f7676e50dd67f1acb6bc951819529d4",
+        "attempts": [
+          {
+            "downsample": 4,
+            "exit_code": 0
+          },
+          {
+            "downsample": 2,
+            "exit_code": 0
+          }
+        ]
+      },
+      "comparison": {
+        "status": "compared",
+        "metrics": {
+          "reference_status": "unresolved",
+          "review_status": "unresolved",
+          "solver_status": "failed"
+        }
+      }
+    },
+    {
+      "id": "wm_r_117865777",
+      "source_sha256": "0ea16bb8500c45e1390be323faea68d5b06001ac7cd6698242171e21d7ad07fa",
+      "track": "solver",
+      "split": "development",
+      "negative": false,
+      "starglyph": {
+        "status": "completed",
+        "solve_status": "solved",
+        "elapsed_s": 22.203839862719178,
+        "exit_code": 0,
+        "report_sha256": "46dae7e14848565bce87c7709458701e8b3c62fc7e193867aab958de74cb172e",
+        "quality": {
+          "confidence": 1.0,
+          "log_odds": 262.73,
+          "n_detections": 40,
+          "n_inliers": 30,
+          "rms_px": 1.34
+        },
+        "timing_ms": {
+          "detect": 2731,
+          "solve": 18267,
+          "total": 21322
+        }
+      },
+      "external_wcs": {
+        "status": "solved_candidate",
+        "review_status": "pending",
+        "elapsed_s": 8.935286529362202,
+        "wcs_sha256": "c98b6893fee20e51e7f5b8e862c43243569d800ce714b48bcebbca994b34193c",
+        "input_fits_sha256": "136621e5cd97c28ab6604e195389e9e5095f9d6b707f2223468855161f8cd2a1",
+        "n_correspondences": 40,
+        "n_high_weight_correspondences": 40,
+        "fit_rms_px": 1.6875577210145827,
+        "fit_p95_px": 3.7680984842983896,
+        "matched_extent_fraction": [
+          0.9682014872216516,
+          0.9545534010286685
+        ],
+        "attempts": [
+          {
+            "downsample": 4,
+            "exit_code": 0
+          }
+        ]
+      },
+      "comparison": {
+        "status": "compared",
+        "metrics": {
+          "reference_status": "solved_candidate",
+          "review_status": "pending",
+          "solver_status": "solved",
+          "full_field_wcs_difference": {
+            "count": 81,
+            "rms_px": 4.400340327154035,
+            "median_px": 2.5187485786153276,
+            "p95_px": 9.337197371786093,
+            "max_px": 14.8731026283179
+          },
+          "external_star_error": {
+            "count": 40,
+            "rms_px": 3.6389411705354764,
+            "median_px": 2.416487245401994,
+            "p95_px": 7.124413752908516,
+            "max_px": 9.388003590079867
+          },
+          "external_wcs_fit": {
+            "count": 40,
+            "rms_px": 1.6875577210145827,
+            "median_px": 1.091812583626916,
+            "p95_px": 3.7680984842983896,
+            "max_px": 4.36578355197469
+          }
+        }
+      }
+    },
+    {
+      "id": "wm_r_117897523",
+      "source_sha256": "51299fe7ffcf699cf3ad2e327f3352b6166145c9fd7d1278253675a533bae677",
+      "track": "solver",
+      "split": "holdout",
+      "negative": false,
+      "starglyph": {
+        "status": "completed",
+        "solve_status": "solved",
+        "elapsed_s": 7.740364018827677,
+        "exit_code": 0,
+        "report_sha256": "066dd2dcb3059f12838cd6b415020d18b30a0c12eb8db2216af1b30449fd0787",
+        "quality": {
+          "confidence": 1.0,
+          "log_odds": 207.76,
+          "n_detections": 40,
+          "n_inliers": 29,
+          "rms_px": 0.98
+        },
+        "timing_ms": {
+          "detect": 949,
+          "solve": 6259,
+          "total": 7148
+        }
+      },
+      "external_wcs": {
+        "status": "wall_timeout",
+        "review_status": "unresolved",
+        "elapsed_s": 120.14847514405847,
+        "input_fits_sha256": "ae54fc26a661c9a5a49cbb437e8edbc6591aad45d3f3f124c520bacbe8bad728",
+        "attempts": [
+          {
+            "downsample": 4,
+            "wall_timeout": true
+          },
+          {
+            "downsample": 2,
+            "wall_timeout": true
+          }
+        ]
+      },
+      "comparison": {
+        "status": "compared",
+        "metrics": {
+          "reference_status": "unresolved",
+          "review_status": "unresolved",
+          "solver_status": "solved"
+        }
+      }
+    },
+    {
+      "id": "wm_r_118484591",
+      "source_sha256": "a40183436c91907492d56af35e1a907fd5a8b85e458e641ec0efb753995a9dc9",
+      "track": "solver",
+      "split": "development",
+      "negative": false,
+      "starglyph": {
+        "status": "completed",
+        "solve_status": "solved",
+        "elapsed_s": 1.6702127922326326,
+        "exit_code": 0,
+        "report_sha256": "dfee2b4b6832e48d40ba993e59ba956d535869f96eaee7dd747243608070d741",
+        "quality": {
+          "confidence": 1.0,
+          "log_odds": 286.17,
+          "n_detections": 40,
+          "n_inliers": 40,
+          "rms_px": 1.27
+        },
+        "timing_ms": {
+          "detect": 231,
+          "solve": 153,
+          "total": 736
+        }
+      },
+      "external_wcs": {
+        "status": "solved_candidate",
+        "review_status": "pending",
+        "elapsed_s": 19.65841810591519,
+        "wcs_sha256": "890e215288eb42704efdc80e98b15b0d500a3f375891cead2f24e1c9793aca90",
+        "input_fits_sha256": "1d36b5b5c81741b314c3a35659fb3d7c1be8fbee02a68137b091e0f773c666d5",
+        "n_correspondences": 185,
+        "n_high_weight_correspondences": 138,
+        "fit_rms_px": 16.76972677511849,
+        "fit_p95_px": 40.820562949074194,
+        "matched_extent_fraction": [
+          0.7263833986106494,
+          0.8946349449157714
+        ],
+        "attempts": [
+          {
+            "downsample": 4,
+            "exit_code": 0
+          }
+        ]
+      },
+      "comparison": {
+        "status": "compared",
+        "metrics": {
+          "reference_status": "solved_candidate",
+          "review_status": "pending",
+          "solver_status": "solved",
+          "full_field_wcs_difference": {
+            "count": 81,
+            "rms_px": 35.834950431388236,
+            "median_px": 11.930840058130924,
+            "p95_px": 81.21201607619066,
+            "max_px": 105.71466750623281
+          },
+          "external_star_error": {
+            "count": 138,
+            "rms_px": 1.087050954206232,
+            "median_px": 0.8790773082020881,
+            "p95_px": 1.7546132478950325,
+            "max_px": 4.293464409942225
+          },
+          "external_wcs_fit": {
+            "count": 138,
+            "rms_px": 4.919070937166638,
+            "median_px": 4.047533353680253,
+            "p95_px": 8.793162970092158,
+            "max_px": 13.268106991911916
+          }
+        }
+      }
+    },
+    {
+      "id": "wm_r_124355480",
+      "source_sha256": "f95266fa221aab6431af9326b96323eee59fc5c5d56210f8e726c3851060a610",
+      "track": "stress",
+      "split": "development",
+      "negative": true,
+      "starglyph": {
+        "status": "completed",
+        "solve_status": "failed",
+        "elapsed_s": 3.650842050090432,
+        "exit_code": 0,
+        "report_sha256": "66f174327dfe1f0ad4583ab89774bf09f177ae6518929104494c44ce8865f03e",
+        "timing_ms": {
+          "detect": 1422,
+          "solve": 2260,
+          "total": 3005
+        }
+      },
+      "external_wcs": {
+        "status": "not_attempted",
+        "reason": "negative example without identified stellar field"
+      },
+      "comparison": {
+        "status": "not_comparable",
+        "starglyph_status": "completed",
+        "wcs_status": "not_attempted"
+      }
+    },
+    {
+      "id": "wm_r_128555253",
+      "source_sha256": "87708c42ba603cf892912eeb82e49ab9d9d5619e801ae825b2112c3889097184",
+      "track": "solver",
+      "split": "holdout",
+      "negative": false,
+      "starglyph": {
+        "status": "completed",
+        "solve_status": "failed",
+        "elapsed_s": 21.834551056846976,
+        "exit_code": 0,
+        "report_sha256": "98dfbfd227b8a5d5f9984e835d9c4daa3890115b948b5f949bb1af55ef3be0d0",
+        "timing_ms": {
+          "detect": 4937,
+          "solve": 17397,
+          "total": 20488
+        }
+      },
+      "external_wcs": {
+        "status": "unresolved",
+        "review_status": "unresolved",
+        "elapsed_s": 113.11492439731956,
+        "input_fits_sha256": "1d8b7d5739b4994a071cf73245fdb0b701b4b5c509853db92b47a4276813e583",
+        "attempts": [
+          {
+            "downsample": 4,
+            "exit_code": 0
+          },
+          {
+            "downsample": 2,
+            "wall_timeout": true
+          }
+        ]
+      },
+      "comparison": {
+        "status": "compared",
+        "metrics": {
+          "reference_status": "unresolved",
+          "review_status": "unresolved",
+          "solver_status": "failed"
+        }
+      }
+    },
+    {
+      "id": "wm_r_131742271",
+      "source_sha256": "5ad41f1e8fe0a100db5d60ed6e81b11932a7af72df8cd89c7318722f3250ce7c",
+      "track": "solver",
+      "split": "holdout",
+      "negative": false,
+      "starglyph": {
+        "status": "completed",
+        "solve_status": "failed",
+        "elapsed_s": 23.85829640738666,
+        "exit_code": 0,
+        "report_sha256": "1880a3d1f65a598291e5206b878d6d7b13ad4ef1bebf18c7fc0f2d50c3041ef0",
+        "timing_ms": {
+          "detect": 3974,
+          "solve": 20363,
+          "total": 22644
+        }
+      },
+      "external_wcs": {
+        "status": "unresolved",
+        "review_status": "unresolved",
+        "elapsed_s": 120.15795755758882,
+        "input_fits_sha256": "7a799b8af78c1ae718fff14bb3828bd0b0dad1264cfb277780ae6cc0e63324d6",
+        "attempts": [
+          {
+            "downsample": 4,
+            "wall_timeout": true
+          },
+          {
+            "downsample": 2,
+            "exit_code": 0
+          }
+        ]
+      },
+      "comparison": {
+        "status": "compared",
+        "metrics": {
+          "reference_status": "unresolved",
+          "review_status": "unresolved",
+          "solver_status": "failed"
+        }
+      }
+    },
+    {
+      "id": "wm_r_132162731",
+      "source_sha256": "58dfbce4f8a236cab8158a4a0f9ed677c68aa8873afd9568df48d370f01ef188",
+      "track": "solver",
+      "split": "development",
+      "negative": false,
+      "starglyph": {
+        "status": "completed",
+        "solve_status": "solved",
+        "elapsed_s": 49.481905445456505,
+        "exit_code": 0,
+        "report_sha256": "4692066bfd9e9a734be1232f78657fedcb5de911a12c884c3b3216c7867d6cf2",
+        "quality": {
+          "confidence": 0.1177,
+          "log_odds": 4.71,
+          "n_detections": 40,
+          "n_inliers": 7,
+          "rms_px": 1.53
+        },
+        "timing_ms": {
+          "detect": 4951,
+          "solve": 43231,
+          "total": 48538
+        }
+      },
+      "external_wcs": {
+        "status": "unresolved",
+        "review_status": "unresolved",
+        "elapsed_s": 113.49384908750653,
+        "input_fits_sha256": "6735df93d7e1953b904ec33f64177e677ba92f971d80194e8fc3784214c96458",
+        "attempts": [
+          {
+            "downsample": 4,
+            "exit_code": 0
+          },
+          {
+            "downsample": 2,
+            "wall_timeout": true
+          }
+        ]
+      },
+      "comparison": {
+        "status": "compared",
+        "metrics": {
+          "reference_status": "unresolved",
+          "review_status": "unresolved",
+          "solver_status": "solved"
+        }
+      }
+    },
+    {
+      "id": "wm_r_133668009",
+      "source_sha256": "66068948ef7f6fbb4497d2ea695712d41556e891618f97b403a5c1dab3d95243",
+      "track": "solver",
+      "split": "holdout",
+      "negative": false,
+      "starglyph": {
+        "status": "completed",
+        "solve_status": "solved",
+        "elapsed_s": 29.186459751799703,
+        "exit_code": 0,
+        "report_sha256": "7ddaec727a0ce282118480ff67fbeef7a0505ff4f29725b8bef0e8798df54426",
+        "quality": {
+          "confidence": 0.8043,
+          "log_odds": 32.17,
+          "n_detections": 40,
+          "n_inliers": 11,
+          "rms_px": 1.45
+        },
+        "timing_ms": {
+          "detect": 1899,
+          "solve": 25780,
+          "total": 27594
+        }
+      },
+      "external_wcs": {
+        "status": "unresolved",
+        "review_status": "unresolved",
+        "elapsed_s": 83.66511767730117,
+        "input_fits_sha256": "6b60a89e02a8c703869441144b1d36109a62cf984f9c5522d0681c02ff6bbd36",
+        "attempts": [
+          {
+            "downsample": 4,
+            "exit_code": 0
+          },
+          {
+            "downsample": 2,
+            "exit_code": 0
+          }
+        ]
+      },
+      "comparison": {
+        "status": "compared",
+        "metrics": {
+          "reference_status": "unresolved",
+          "review_status": "unresolved",
+          "solver_status": "solved"
+        }
+      }
+    },
+    {
+      "id": "wm_r_134291495",
+      "source_sha256": "efe2f4460cb419479ff3bd251815db7f7c78cd30258afc9a88cc1f7818cc145d",
+      "track": "solver",
+      "split": "development",
+      "negative": false,
+      "starglyph": {
+        "status": "completed",
+        "solve_status": "failed",
+        "elapsed_s": 31.9305424336344,
+        "exit_code": 0,
+        "report_sha256": "5a181deaf57ba95d506bfc52205ce37dee7175992b1a09e1de4e4bb7e9695542",
+        "timing_ms": {
+          "detect": 19617,
+          "solve": 18233,
+          "total": 30278
+        }
+      },
+      "external_wcs": {
+        "status": "unresolved",
+        "review_status": "unresolved",
+        "elapsed_s": 110.78378810361028,
+        "input_fits_sha256": "0919380738de76586c8248faba22fedc523ad4e123f44d068a91a7d6e10ab16d",
+        "attempts": [
+          {
+            "downsample": 4,
+            "exit_code": 0
+          },
+          {
+            "downsample": 2,
+            "wall_timeout": true
+          }
+        ]
+      },
+      "comparison": {
+        "status": "compared",
+        "metrics": {
+          "reference_status": "unresolved",
+          "review_status": "unresolved",
+          "solver_status": "failed"
+        }
+      }
+    },
+    {
+      "id": "wm_r_140736786",
+      "source_sha256": "8efae48632099d8eeb619315fc1ea4fd2b7ab4062c66af4c94b6c147a35d01e5",
+      "track": "solver",
+      "split": "development",
+      "negative": false,
+      "starglyph": {
+        "status": "completed",
+        "solve_status": "solved",
+        "elapsed_s": 4.262507829815149,
+        "exit_code": 0,
+        "report_sha256": "601922bf747d8bd4eff995c4052f9294beab678858aadeaab0e576494446fb72",
+        "quality": {
+          "confidence": 1.0,
+          "log_odds": 231.96,
+          "n_detections": 40,
+          "n_inliers": 34,
+          "rms_px": 2.15
+        },
+        "timing_ms": {
+          "detect": 349,
+          "solve": 705,
+          "total": 2708
+        }
+      },
+      "external_wcs": {
+        "status": "solved_candidate",
+        "review_status": "pending",
+        "elapsed_s": 18.70988880097866,
+        "wcs_sha256": "e2db51466e2e196ea08c1137182d804757d219fea956498a00b78b785fe6a5e6",
+        "input_fits_sha256": "b27dbee300adf89acb2427e9a12f35f98f2a9c94a871d6fed22fc49292fcd53f",
+        "n_correspondences": 40,
+        "n_high_weight_correspondences": 40,
+        "fit_rms_px": 2.4771274789253193,
+        "fit_p95_px": 3.065691398920622,
+        "matched_extent_fraction": [
+          0.9641699023630427,
+          0.9072301778300055
+        ],
+        "attempts": [
+          {
+            "downsample": 4,
+            "exit_code": 0
+          }
+        ]
+      },
+      "comparison": {
+        "status": "compared",
+        "metrics": {
+          "reference_status": "solved_candidate",
+          "review_status": "pending",
+          "solver_status": "solved",
+          "full_field_wcs_difference": {
+            "count": 81,
+            "rms_px": 6.285164674716625,
+            "median_px": 3.0496589507536624,
+            "p95_px": 13.377517300701664,
+            "max_px": 21.0278314687458
+          },
+          "external_star_error": {
+            "count": 40,
+            "rms_px": 4.32725739368519,
+            "median_px": 1.9799966908660775,
+            "p95_px": 7.850544589212261,
+            "max_px": 18.674906876353297
+          },
+          "external_wcs_fit": {
+            "count": 40,
+            "rms_px": 2.4771274789253193,
+            "median_px": 1.3241784774094638,
+            "p95_px": 3.065691398920622,
+            "max_px": 12.204216653033567
+          }
+        }
+      }
+    },
+    {
+      "id": "wm_r_141205291",
+      "source_sha256": "f7c7e01181c2cce18003b0135ce7699fade406758ad73ac54e6c51373423d060",
+      "track": "solver",
+      "split": "holdout",
+      "negative": false,
+      "starglyph": {
+        "status": "completed",
+        "solve_status": "solved",
+        "elapsed_s": 19.672415060922503,
+        "exit_code": 0,
+        "report_sha256": "5087db13f10d30787a0660435b9094c8d11f3f7899a723b82e4fc0b78b53bac6",
+        "quality": {
+          "confidence": 1.0,
+          "log_odds": 158.7,
+          "n_detections": 40,
+          "n_inliers": 27,
+          "rms_px": 1.01
+        },
+        "timing_ms": {
+          "detect": 295,
+          "solve": 18201,
+          "total": 18520
+        }
+      },
+      "external_wcs": {
+        "status": "unresolved",
+        "review_status": "unresolved",
+        "elapsed_s": 86.24199640750885,
+        "input_fits_sha256": "238c7ce0ce5016fb06f77c97d813f5c5c268055bc065714f5409a4b44427abab",
+        "attempts": [
+          {
+            "downsample": 4,
+            "exit_code": 0
+          },
+          {
+            "downsample": 2,
+            "exit_code": 0
+          }
+        ]
+      },
+      "comparison": {
+        "status": "compared",
+        "metrics": {
+          "reference_status": "unresolved",
+          "review_status": "unresolved",
+          "solver_status": "solved"
+        }
+      }
+    },
+    {
+      "id": "wm_r_141776696",
+      "source_sha256": "f737b0845bc0d801d81f8076599bfb8156373d63c9a32368f5c308ba905328ff",
+      "track": "stress",
+      "split": "holdout",
+      "negative": true,
+      "starglyph": {
+        "status": "completed",
+        "solve_status": "failed",
+        "elapsed_s": 7.791897468268871,
+        "exit_code": 0,
+        "report_sha256": "92b45dbbee575bea4cd536c58daa25a56edc99ddaf8e54d972e9c5eada822587",
+        "timing_ms": {
+          "detect": 3549,
+          "solve": 4412,
+          "total": 6619
+        }
+      },
+      "external_wcs": {
+        "status": "not_attempted",
+        "reason": "negative example without identified stellar field"
+      },
+      "comparison": {
+        "status": "not_comparable",
+        "starglyph_status": "completed",
+        "wcs_status": "not_attempted"
+      }
+    },
+    {
+      "id": "wm_r_142048359",
+      "source_sha256": "5c5f6016a8755ad21ab6a260eec136697897398f6501437bdd498ce67bed9fd4",
+      "track": "solver",
+      "split": "development",
+      "negative": false,
+      "starglyph": {
+        "status": "completed",
+        "solve_status": "solved",
+        "elapsed_s": 2.6369302421808243,
+        "exit_code": 0,
+        "report_sha256": "c0989c66071130e4936435910033cd854cce7691bc40f943e42f1c9940608b42",
+        "quality": {
+          "confidence": 1.0,
+          "log_odds": 263.47,
+          "n_detections": 40,
+          "n_inliers": 37,
+          "rms_px": 2.74
+        },
+        "timing_ms": {
+          "detect": 332,
+          "solve": 899,
+          "total": 1584
+        }
+      },
+      "external_wcs": {
+        "status": "unresolved",
+        "review_status": "unresolved",
+        "elapsed_s": 91.49408284761012,
+        "input_fits_sha256": "d81180f90125e232c2ce692a88dff91e8f17c95d5968e600e884a39b183ce965",
+        "attempts": [
+          {
+            "downsample": 4,
+            "exit_code": 0
+          },
+          {
+            "downsample": 2,
+            "exit_code": 0
+          }
+        ]
+      },
+      "comparison": {
+        "status": "compared",
+        "metrics": {
+          "reference_status": "unresolved",
+          "review_status": "unresolved",
+          "solver_status": "solved"
+        }
+      }
+    },
+    {
+      "id": "wm_r_143159342",
+      "source_sha256": "94f3d61426e03e4fda29b95a1b91038332a09491587acf77df3681c5b919c54d",
+      "track": "solver",
+      "split": "development",
+      "negative": false,
+      "starglyph": {
+        "status": "completed",
+        "solve_status": "solved",
+        "elapsed_s": 25.281727574765682,
+        "exit_code": 0,
+        "report_sha256": "33ff72fd7163d0f69edbb6d452f2aed50e119991dfd762a9b5c31a9a5c52fea4",
+        "quality": {
+          "confidence": 1.0,
+          "log_odds": 146.77,
+          "n_detections": 50,
+          "n_inliers": 27,
+          "rms_px": 3.0
+        },
+        "timing_ms": {
+          "detect": 1086,
+          "solve": 23360,
+          "total": 24297
+        }
+      },
+      "external_wcs": {
+        "status": "unresolved",
+        "review_status": "unresolved",
+        "elapsed_s": 105.8772247582674,
+        "prior_incomplete_attempt": "Executor terminated externally; partial artifacts retained under interrupted/. This ID was restarted with unchanged settings.",
+        "input_fits_sha256": "33d49678d3e4abfd614435a0020730b6ddf799eb12f8ea8b313ad514c2af3715",
+        "attempts": [
+          {
+            "downsample": 4,
+            "wall_timeout": true
+          },
+          {
+            "downsample": 2,
+            "exit_code": 0
+          }
+        ]
+      },
+      "comparison": {
+        "status": "compared",
+        "metrics": {
+          "reference_status": "unresolved",
+          "review_status": "unresolved",
+          "solver_status": "solved"
+        }
+      }
+    },
+    {
+      "id": "wm_r_146925915",
+      "source_sha256": "d52c49a4e1f7c4e128a842c709703bd6778ecf051defc611f11fe2478f97b6a8",
+      "track": "solver",
+      "split": "holdout",
+      "negative": false,
+      "starglyph": {
+        "status": "completed",
+        "solve_status": "failed",
+        "elapsed_s": 89.83028603345156,
+        "exit_code": 0,
+        "report_sha256": "8565ea076c131c1a045b615c87d6490ce156ca3d289ed501c9945772dfecf2f0",
+        "timing_ms": {
+          "detect": 6036,
+          "solve": 86622,
+          "total": 89015
+        }
+      },
+      "external_wcs": {
+        "status": "solved_candidate",
+        "review_status": "pending",
+        "elapsed_s": 3.8434773981571198,
+        "wcs_sha256": "2d246ce528af0da1e0c6bee08e22bcfbd379e09cc6a2b756d05309cb449d0235",
+        "input_fits_sha256": "7ae5fea4a849f9eb98ca43b2ee1913c70628b9bc40c8dae8d481e573d654a580",
+        "n_correspondences": 27,
+        "n_high_weight_correspondences": 27,
+        "fit_rms_px": 2.629194207239205,
+        "fit_p95_px": 4.138931761763763,
+        "matched_extent_fraction": [
+          0.9476156972249349,
+          0.9019708700180054
+        ],
+        "attempts": [
+          {
+            "downsample": 4,
+            "exit_code": 0
+          }
+        ]
+      },
+      "comparison": {
+        "status": "compared",
+        "metrics": {
+          "reference_status": "solved_candidate",
+          "review_status": "pending",
+          "solver_status": "failed"
+        }
+      }
+    },
+    {
+      "id": "wm_r_148245316",
+      "source_sha256": "a00f51721cc4f29fb967d2304d548c84076500ec0af8510790c1266334bac2c3",
+      "track": "solver",
+      "split": "development",
+      "negative": false,
+      "starglyph": {
+        "status": "completed",
+        "solve_status": "failed",
+        "elapsed_s": 7.720298778265715,
+        "exit_code": 0,
+        "report_sha256": "0689d01953fe6345faaa83a250d3e6590ba11843d61d068f0fe7ea960da9f3fa",
+        "timing_ms": {
+          "detect": 3592,
+          "solve": 4975,
+          "total": 7111
+        }
+      },
+      "external_wcs": {
+        "status": "unresolved",
+        "review_status": "unresolved",
+        "elapsed_s": 97.36174933984876,
+        "input_fits_sha256": "a7b65b9f410f132cdbbc9673e30e69170ef1cc81b622808cb3f578c2c570c4c8",
+        "attempts": [
+          {
+            "downsample": 4,
+            "exit_code": 0
+          },
+          {
+            "downsample": 2,
+            "exit_code": 0
+          }
+        ]
+      },
+      "comparison": {
+        "status": "compared",
+        "metrics": {
+          "reference_status": "unresolved",
+          "review_status": "unresolved",
+          "solver_status": "failed"
+        }
+      }
+    },
+    {
+      "id": "wm_r_148266565",
+      "source_sha256": "be7292e499ead98eb6a514d4d3e3e18bbc5ffb6a58be4581ea9679e94737cc76",
+      "track": "solver",
+      "split": "development",
+      "negative": false,
+      "starglyph": {
+        "status": "completed",
+        "solve_status": "solved",
+        "elapsed_s": 1.218770083039999,
+        "exit_code": 0,
+        "report_sha256": "c9afb0fcbf30f470d95b8ac038330a1b4391c26fb4b8400fa60586b38c397efe",
+        "quality": {
+          "confidence": 1.0,
+          "log_odds": 172.87,
+          "n_detections": 40,
+          "n_inliers": 28,
+          "rms_px": 1.18
+        },
+        "timing_ms": {
+          "detect": 194,
+          "solve": 174,
+          "total": 611
+        }
+      },
+      "external_wcs": {
+        "status": "solved_candidate",
+        "review_status": "pending",
+        "elapsed_s": 14.413468094542623,
+        "wcs_sha256": "66279b1201825af198b75401dfaa5c5284174db6cee81fde6e71c535d339af36",
+        "input_fits_sha256": "3dc4319d14a3bfd92d0a898b6f50fb564377fe7a35cfd57f97529d75fc47371c",
+        "n_correspondences": 62,
+        "n_high_weight_correspondences": 62,
+        "fit_rms_px": 1.351543493775997,
+        "fit_p95_px": 1.6872331760321952,
+        "matched_extent_fraction": [
+          0.9680425996149044,
+          0.9822578533515104
+        ],
+        "attempts": [
+          {
+            "downsample": 4,
+            "exit_code": 0
+          }
+        ]
+      },
+      "comparison": {
+        "status": "compared",
+        "metrics": {
+          "reference_status": "solved_candidate",
+          "review_status": "pending",
+          "solver_status": "solved",
+          "full_field_wcs_difference": {
+            "count": 81,
+            "rms_px": 1.7046560876634518,
+            "median_px": 1.1287086803050466,
+            "p95_px": 3.8941164626032236,
+            "max_px": 4.148860157028903
+          },
+          "external_star_error": {
+            "count": 62,
+            "rms_px": 2.0169122072705505,
+            "median_px": 0.9775849300004829,
+            "p95_px": 2.3488985316313453,
+            "max_px": 12.26786561966304
+          },
+          "external_wcs_fit": {
+            "count": 62,
+            "rms_px": 1.351543493775997,
+            "median_px": 0.6730192229370853,
+            "p95_px": 1.6872331760321952,
+            "max_px": 8.337381020965891
+          }
+        }
+      }
+    },
+    {
+      "id": "wm_r_149276071",
+      "source_sha256": "07ae25603db00a53060aaac710635df8ec71ca14eeb758e604cadb211cbd25a2",
+      "track": "solver",
+      "split": "development",
+      "negative": false,
+      "starglyph": {
+        "status": "completed",
+        "solve_status": "solved",
+        "elapsed_s": 1.9754131492227316,
+        "exit_code": 0,
+        "report_sha256": "b51005b1fef8bb6353cbe195dc6d820e3034a060ede58eb095437c486c7a07b3",
+        "quality": {
+          "confidence": 1.0,
+          "log_odds": 208.57,
+          "n_detections": 40,
+          "n_inliers": 31,
+          "rms_px": 1.63
+        },
+        "timing_ms": {
+          "detect": 235,
+          "solve": 653,
+          "total": 1157
+        }
+      },
+      "external_wcs": {
+        "status": "solved_candidate",
+        "review_status": "pending",
+        "elapsed_s": 3.7055367045104504,
+        "wcs_sha256": "6216b402ad795c61d9c8f9c7afd3e7a1ab1181b63dc2a76abdb6d706e6c1c69b",
+        "input_fits_sha256": "0014b9ae0f52fd05b147f720e2f48168ea7dd4671af0cc14f608a41149c7f031",
+        "n_correspondences": 65,
+        "n_high_weight_correspondences": 4,
+        "fit_rms_px": 12.483802247398389,
+        "fit_p95_px": 34.01233301575059,
+        "matched_extent_fraction": [
+          0.19432317197712418,
+          0.16007178679645778
+        ],
+        "attempts": [
+          {
+            "downsample": 4,
+            "exit_code": 0
+          }
+        ]
+      },
+      "comparison": {
+        "status": "compared",
+        "metrics": {
+          "reference_status": "solved_candidate",
+          "review_status": "pending",
+          "solver_status": "solved",
+          "full_field_wcs_difference": {
+            "count": 81,
+            "rms_px": 13.952634154095797,
+            "median_px": 5.301166271363686,
+            "p95_px": 28.77551225769273,
+            "max_px": 50.71564446698015
+          },
+          "external_star_error": {
+            "count": 4,
+            "rms_px": 2.5001510301108407,
+            "median_px": 2.5090297192158872,
+            "p95_px": 2.9416156714749366,
+            "max_px": 2.9826750731538842
+          },
+          "external_wcs_fit": {
+            "count": 4,
+            "rms_px": 2.5343046576424855,
+            "median_px": 2.6239558042708335,
+            "p95_px": 3.2386561915760788,
+            "max_px": 3.2751501014461333
+          }
+        }
+      }
+    },
+    {
+      "id": "wm_r_152165509",
+      "source_sha256": "53078e0dd7291d31321860f76d247d814175621ccb73d8beb62455bacde41c26",
+      "track": "stress",
+      "split": "development",
+      "negative": false,
+      "starglyph": {
+        "status": "completed",
+        "solve_status": "failed",
+        "elapsed_s": 20.01522029004991,
+        "exit_code": 0,
+        "report_sha256": "ad9ca4a69e85b9990ca0788d924f7691978912e8cde3aaba324739352d4ee89d",
+        "timing_ms": {
+          "detect": 6932,
+          "solve": 13153,
+          "total": 17583
+        }
+      },
+      "external_wcs": {
+        "status": "not_attempted",
+        "reason": "extended trails outside point-source WCS protocol"
+      },
+      "comparison": {
+        "status": "not_comparable",
+        "starglyph_status": "completed",
+        "wcs_status": "not_attempted"
+      }
+    },
+    {
+      "id": "wm_r_153414920",
+      "source_sha256": "556c7aecacb5402969a5e013a45434c51d12c022d1e420c189fd6bf86b33cbee",
+      "track": "stress",
+      "split": "development",
+      "negative": true,
+      "starglyph": {
+        "status": "completed",
+        "solve_status": "failed",
+        "elapsed_s": 11.121179737150669,
+        "exit_code": 0,
+        "report_sha256": "6461d4a63aa0b8d05b8e9d4fab1f81c1d4f3d24ad44f3ae3018fa255536aebb5",
+        "timing_ms": {
+          "detect": 5039,
+          "solve": 7979,
+          "total": 10287
+        }
+      },
+      "external_wcs": {
+        "status": "not_attempted",
+        "reason": "negative example without identified stellar field"
+      },
+      "comparison": {
+        "status": "not_comparable",
+        "starglyph_status": "completed",
+        "wcs_status": "not_attempted"
+      }
+    },
+    {
+      "id": "wm_r_154107562",
+      "source_sha256": "fb7381b92a199ec618208febb092f51cc7d3b533d57526a0297e1f8940367305",
+      "track": "stress",
+      "split": "development",
+      "negative": false,
+      "starglyph": {
+        "status": "completed",
+        "solve_status": "failed",
+        "elapsed_s": 5.449348421767354,
+        "exit_code": 0,
+        "report_sha256": "a0c5656d67f974f8abef0490725fef93b5e351adcdbc9ea791c80aa7f2d8d9d6",
+        "timing_ms": {
+          "detect": 223,
+          "solve": 4230,
+          "total": 4370
+        }
+      },
+      "external_wcs": {
+        "status": "not_attempted",
+        "reason": "extended trails outside point-source WCS protocol"
+      },
+      "comparison": {
+        "status": "not_comparable",
+        "starglyph_status": "completed",
+        "wcs_status": "not_attempted"
+      }
+    },
+    {
+      "id": "wm_r_154807046",
+      "source_sha256": "da420889b2818f3176320feb2d8fd4c4794f4c0f0800cf10e82de7473c262cb9",
+      "track": "solver",
+      "split": "development",
+      "negative": false,
+      "starglyph": {
+        "status": "completed",
+        "solve_status": "solved",
+        "elapsed_s": 4.784283109009266,
+        "exit_code": 0,
+        "report_sha256": "4c86f1fe576219cb56e5f81d727ede474d4631dd5ad6b2409cfbca67540c6551",
+        "quality": {
+          "confidence": 1.0,
+          "log_odds": 77.65,
+          "n_detections": 40,
+          "n_inliers": 17,
+          "rms_px": 3.66
+        },
+        "timing_ms": {
+          "detect": 213,
+          "solve": 3440,
+          "total": 3988
+        }
+      },
+      "external_wcs": {
+        "status": "solved_candidate",
+        "review_status": "pending",
+        "elapsed_s": 6.14613694511354,
+        "wcs_sha256": "66ab4000d9b593aa30eba37ca8efc78985ce8490be7c56e40dae3e80e545c290",
+        "input_fits_sha256": "c4b8bafe574ec62607982d9454936e09a62ed59281acef5aa0c36f3ea231cdf0",
+        "n_correspondences": 108,
+        "n_high_weight_correspondences": 107,
+        "fit_rms_px": 6.010865276965311,
+        "fit_p95_px": 11.744917711964492,
+        "matched_extent_fraction": [
+          0.9577402767661954,
+          0.9452826708963472
+        ],
+        "attempts": [
+          {
+            "downsample": 4,
+            "exit_code": 0
+          }
+        ]
+      },
+      "comparison": {
+        "status": "compared",
+        "metrics": {
+          "reference_status": "solved_candidate",
+          "review_status": "pending",
+          "solver_status": "solved",
+          "full_field_wcs_difference": {
+            "count": 81,
+            "rms_px": 115.88756510814248,
+            "median_px": 32.77334309493036,
+            "p95_px": 265.2325666145358,
+            "max_px": 325.0234171379408
+          },
+          "external_star_error": {
+            "count": 107,
+            "rms_px": 69.9974456018283,
+            "median_px": 19.29404257473665,
+            "p95_px": 169.4290671077654,
+            "max_px": 237.43579302875847
+          },
+          "external_wcs_fit": {
+            "count": 107,
+            "rms_px": 5.2748218051473,
+            "median_px": 3.502412736956531,
+            "p95_px": 11.150005779186003,
+            "max_px": 13.656411603235176
+          }
+        }
+      }
+    },
+    {
+      "id": "wm_r_156873262",
+      "source_sha256": "7577861fd6448be23879c11c4ac23463c84cb34d3e83670beaa46d1330bc889e",
+      "track": "solver",
+      "split": "development",
+      "negative": false,
+      "starglyph": {
+        "status": "completed",
+        "solve_status": "solved",
+        "elapsed_s": 2.0628737788647413,
+        "exit_code": 0,
+        "report_sha256": "52e892d1bd1c233151438f27c2bfe23ee22da08bc0f11f5e2c549eac559a4d39",
+        "quality": {
+          "confidence": 1.0,
+          "log_odds": 213.82,
+          "n_detections": 40,
+          "n_inliers": 32,
+          "rms_px": 0.94
+        },
+        "timing_ms": {
+          "detect": 217,
+          "solve": 224,
+          "total": 790
+        }
+      },
+      "external_wcs": {
+        "status": "solved_candidate",
+        "review_status": "pending",
+        "elapsed_s": 64.52793782949448,
+        "wcs_sha256": "e4bcce7f8b4f1f4fd6877d90abff3f2243a8a4f726d9e7717e0ede1ddcd72fd2",
+        "input_fits_sha256": "c29975f6370e50a6945f8ab9cd7022cd9fbff693086122473217092546c5a00e",
+        "n_correspondences": 109,
+        "n_high_weight_correspondences": 78,
+        "fit_rms_px": 7.388210188194475,
+        "fit_p95_px": 17.717896729187945,
+        "matched_extent_fraction": [
+          0.7380914762616158,
+          0.9086961375924694
+        ],
+        "attempts": [
+          {
+            "downsample": 4,
+            "exit_code": 0
+          },
+          {
+            "downsample": 2,
+            "exit_code": 0
+          }
+        ]
+      },
+      "comparison": {
+        "status": "compared",
+        "metrics": {
+          "reference_status": "solved_candidate",
+          "review_status": "pending",
+          "solver_status": "solved",
+          "full_field_wcs_difference": {
+            "count": 81,
+            "rms_px": 20.398338935528404,
+            "median_px": 5.790839878089978,
+            "p95_px": 44.85308763744126,
+            "max_px": 72.20818191334217
+          },
+          "external_star_error": {
+            "count": 78,
+            "rms_px": 1.940062623812676,
+            "median_px": 0.7299302560076664,
+            "p95_px": 2.4181003219268264,
+            "max_px": 12.493937914527205
+          },
+          "external_wcs_fit": {
+            "count": 78,
+            "rms_px": 4.154816524539749,
+            "median_px": 3.9400646815415916,
+            "p95_px": 6.251696918860759,
+            "max_px": 9.364723677515975
+          }
+        }
+      }
+    },
+    {
+      "id": "wm_r_16053617",
+      "source_sha256": "1e294faf829dcb2ea61a2ff39ef7ab20919781d7eeecfd8824a02e7c4520034f",
+      "track": "solver",
+      "split": "development",
+      "negative": false,
+      "starglyph": {
+        "status": "completed",
+        "solve_status": "failed",
+        "elapsed_s": 22.432965653017163,
+        "exit_code": 0,
+        "report_sha256": "044a2ce70a1febb4aa7b1a7cf7ffda1411ca28e6411c614f0a8cce302eca3df7",
+        "timing_ms": {
+          "detect": 2176,
+          "solve": 20077,
+          "total": 21399
+        }
+      },
+      "external_wcs": {
+        "status": "unresolved",
+        "review_status": "unresolved",
+        "elapsed_s": 109.03677810356021,
+        "input_fits_sha256": "486d3218f62d4b7c85c7b0e9ef657a10940a2af7d830c23c9f55ec773436e1ee",
+        "attempts": [
+          {
+            "downsample": 4,
+            "exit_code": 0
+          },
+          {
+            "downsample": 2,
+            "exit_code": 0
+          }
+        ]
+      },
+      "comparison": {
+        "status": "compared",
+        "metrics": {
+          "reference_status": "unresolved",
+          "review_status": "unresolved",
+          "solver_status": "failed"
+        }
+      }
+    },
+    {
+      "id": "wm_r_161606532",
+      "source_sha256": "985afe7d1142a2ece7545bc8846cb7c610ac5d307f85bf9f45056d7249921c63",
+      "track": "solver",
+      "split": "development",
+      "negative": false,
+      "starglyph": {
+        "status": "completed",
+        "solve_status": "failed",
+        "elapsed_s": 27.5395715162158,
+        "exit_code": 0,
+        "report_sha256": "9e7421987437818f41c6cc8083eb27c9962099609a3ae7cc6d3910a165937da6",
+        "timing_ms": {
+          "detect": 5258,
+          "solve": 23463,
+          "total": 26729
+        }
+      },
+      "external_wcs": {
+        "status": "solved_candidate",
+        "review_status": "pending",
+        "elapsed_s": 7.384942544624209,
+        "wcs_sha256": "43507a1f91749ea5a54bbf26f1c2202d47f1db4132587e686d89ed7d9408356b",
+        "input_fits_sha256": "44afa5cb66de9674618b034954bc494c7c0bcceb04e7825541d5f4b2433ec02b",
+        "n_correspondences": 67,
+        "n_high_weight_correspondences": 63,
+        "fit_rms_px": 7.388785915429507,
+        "fit_p95_px": 11.672531509377745,
+        "matched_extent_fraction": [
+          0.9592987528034285,
+          0.9402890453735987
+        ],
+        "attempts": [
+          {
+            "downsample": 4,
+            "exit_code": 0
+          }
+        ]
+      },
+      "comparison": {
+        "status": "compared",
+        "metrics": {
+          "reference_status": "solved_candidate",
+          "review_status": "pending",
+          "solver_status": "failed"
+        }
+      }
+    },
+    {
+      "id": "wm_r_162210628",
+      "source_sha256": "182f67e9c900e7cad333e16c73ac43206a350832dfe46f61ba45f647ac8cdc82",
+      "track": "solver",
+      "split": "development",
+      "negative": false,
+      "starglyph": {
+        "status": "completed",
+        "solve_status": "solved",
+        "elapsed_s": 2.1706549283117056,
+        "exit_code": 0,
+        "report_sha256": "ae5ab0c8affdb04df81dff089e2491dc0f1095c5c6896befb15ce5f85c187480",
+        "quality": {
+          "confidence": 1.0,
+          "log_odds": 286.28,
+          "n_detections": 40,
+          "n_inliers": 40,
+          "rms_px": 1.24
+        },
+        "timing_ms": {
+          "detect": 269,
+          "solve": 3,
+          "total": 789
+        }
+      },
+      "external_wcs": {
+        "status": "solved_candidate",
+        "review_status": "pending",
+        "elapsed_s": 6.6863289922475815,
+        "wcs_sha256": "437071822bee9e18d9b368e88a54d50180292ee7792c9aa5e1c2433c374c642a",
+        "input_fits_sha256": "ff15cf5105c20ac61efd88e849615427e6fa5ab7101db31c6de1d2990d18c456",
+        "n_correspondences": 23,
+        "n_high_weight_correspondences": 23,
+        "fit_rms_px": 1.0524692965299467,
+        "fit_p95_px": 1.948664260814446,
+        "matched_extent_fraction": [
+          0.7361967298719618,
+          0.8710864090625151
+        ],
+        "attempts": [
+          {
+            "downsample": 4,
+            "exit_code": 0
+          }
+        ]
+      },
+      "comparison": {
+        "status": "compared",
+        "metrics": {
+          "reference_status": "solved_candidate",
+          "review_status": "pending",
+          "solver_status": "solved",
+          "full_field_wcs_difference": {
+            "count": 81,
+            "rms_px": 5.9456963404703105,
+            "median_px": 2.743980716771807,
+            "p95_px": 12.087115241751171,
+            "max_px": 24.053489343196585
+          },
+          "external_star_error": {
+            "count": 23,
+            "rms_px": 0.9097610752822567,
+            "median_px": 0.7516158993640549,
+            "p95_px": 1.496796367231452,
+            "max_px": 1.9776269551757046
+          },
+          "external_wcs_fit": {
+            "count": 23,
+            "rms_px": 1.0524692965299467,
+            "median_px": 0.6784361623872487,
+            "p95_px": 1.948664260814446,
+            "max_px": 2.103103844607352
+          }
+        }
+      }
+    },
+    {
+      "id": "wm_r_163971318",
+      "source_sha256": "908b43c0b68aba1e321f38f4ee5227d9919c6c0ad5cc967c2118e356bf417ba1",
+      "track": "solver",
+      "split": "development",
+      "negative": false,
+      "starglyph": {
+        "status": "completed",
+        "solve_status": "solved",
+        "elapsed_s": 2.4733732976019382,
+        "exit_code": 0,
+        "report_sha256": "b9ec67e1b18fa04b5267e79c157d3167e037b2440d3e08245dbdb3c2eba822b9",
+        "quality": {
+          "confidence": 1.0,
+          "log_odds": 231.96,
+          "n_detections": 40,
+          "n_inliers": 34,
+          "rms_px": 1.81
+        },
+        "timing_ms": {
+          "detect": 313,
+          "solve": 632,
+          "total": 1373
+        }
+      },
+      "external_wcs": {
+        "status": "solved_candidate",
+        "review_status": "pending",
+        "elapsed_s": 36.937261778861284,
+        "wcs_sha256": "8571c0efabe5800e6af9fa200d32eacc8878b3047c75e89cda96628668c59aeb",
+        "input_fits_sha256": "6529e8e5d7595d746babb2ed25bce792eaf116b287086bc90fd172b73b96c0f5",
+        "n_correspondences": 85,
+        "n_high_weight_correspondences": 85,
+        "fit_rms_px": 1.4903802353143933,
+        "fit_p95_px": 2.2163828015280482,
+        "matched_extent_fraction": [
+          0.9718332741976765,
+          0.9320250293354929
+        ],
+        "attempts": [
+          {
+            "downsample": 4,
+            "exit_code": 0
+          }
+        ]
+      },
+      "comparison": {
+        "status": "compared",
+        "metrics": {
+          "reference_status": "solved_candidate",
+          "review_status": "pending",
+          "solver_status": "solved",
+          "full_field_wcs_difference": {
+            "count": 81,
+            "rms_px": 5.076464096165226,
+            "median_px": 1.8788205841927657,
+            "p95_px": 11.636089762635686,
+            "max_px": 17.038692950873013
+          },
+          "external_star_error": {
+            "count": 85,
+            "rms_px": 2.5414265113338756,
+            "median_px": 1.44014076921436,
+            "p95_px": 5.539735854455475,
+            "max_px": 9.18005902333592
+          },
+          "external_wcs_fit": {
+            "count": 85,
+            "rms_px": 1.4903802353143933,
+            "median_px": 1.2248376143545976,
+            "p95_px": 2.2163828015280482,
+            "max_px": 5.140924961169897
+          }
+        }
+      }
+    },
+    {
+      "id": "wm_r_170376698",
+      "source_sha256": "e0d64620d4b09c5854274ce2af269b112628652ef739f1070ea6fb0cd8e1d9ae",
+      "track": "solver",
+      "split": "development",
+      "negative": false,
+      "starglyph": {
+        "status": "completed",
+        "solve_status": "failed",
+        "elapsed_s": 8.96644034795463,
+        "exit_code": 0,
+        "report_sha256": "cd6ce2c0b2e1c6639ecbafdf45304abfed5eb1570a40bc8aebc01d58084ce4b3",
+        "timing_ms": {
+          "detect": 4034,
+          "solve": 5085,
+          "total": 7965
+        }
+      },
+      "external_wcs": {
+        "status": "unresolved",
+        "review_status": "unresolved",
+        "elapsed_s": 109.65165294334292,
+        "input_fits_sha256": "9b4dcbeb28ecef122bcbdc4712c5d1295eff8acb90236ec6d7617b557c3e56d5",
+        "attempts": [
+          {
+            "downsample": 4,
+            "exit_code": 0
+          },
+          {
+            "downsample": 2,
+            "wall_timeout": true
+          }
+        ]
+      },
+      "comparison": {
+        "status": "compared",
+        "metrics": {
+          "reference_status": "unresolved",
+          "review_status": "unresolved",
+          "solver_status": "failed"
+        }
+      }
+    },
+    {
+      "id": "wm_r_170711707",
+      "source_sha256": "da2915dd724a0781a7a885204abda8a35b897bcf1ed4494d21bedbc63ac69815",
+      "track": "solver",
+      "split": "development",
+      "negative": false,
+      "starglyph": {
+        "status": "completed",
+        "solve_status": "failed",
+        "elapsed_s": 32.88296866416931,
+        "exit_code": 0,
+        "report_sha256": "931dbad894d90e3ca6ccdaff76722c4d4bfed553a2ef5e11a39bb0a3ba553585",
+        "timing_ms": {
+          "detect": 3325,
+          "solve": 30017,
+          "total": 32012
+        }
+      },
+      "external_wcs": {
+        "status": "unresolved",
+        "review_status": "unresolved",
+        "elapsed_s": 101.96372551098466,
+        "prior_incomplete_attempt": "Executor terminated externally; partial artifacts retained under interrupted/. This ID was restarted with unchanged settings.",
+        "input_fits_sha256": "c2336fe4bf7f50d28bfdd5155bebdcee8583db1d4071e7ef350d83493597ecfc",
+        "attempts": [
+          {
+            "downsample": 4,
+            "exit_code": 0
+          },
+          {
+            "downsample": 2,
+            "exit_code": 0
+          }
+        ]
+      },
+      "comparison": {
+        "status": "compared",
+        "metrics": {
+          "reference_status": "unresolved",
+          "review_status": "unresolved",
+          "solver_status": "failed"
+        }
+      }
+    },
+    {
+      "id": "wm_r_174305244",
+      "source_sha256": "50f6a4930959619674464c5811f4d01b271af56939c3001c1c9c3bd0808a8228",
+      "track": "solver",
+      "split": "development",
+      "negative": false,
+      "starglyph": {
+        "status": "completed",
+        "solve_status": "failed",
+        "elapsed_s": 11.547534013167024,
+        "exit_code": 0,
+        "report_sha256": "168af825fb48543d6d3bc4e570163a7ffbdee5dbc16bb67db148adc9247da6c5",
+        "timing_ms": {
+          "detect": 5312,
+          "solve": 7386,
+          "total": 10313
+        }
+      },
+      "external_wcs": {
+        "status": "unresolved",
+        "review_status": "unresolved",
+        "elapsed_s": 103.91436361894011,
+        "input_fits_sha256": "8bce11f9ac12fdcd06a384cd171fe2c0ec5081f4be4070df7b4bc96133622348",
+        "attempts": [
+          {
+            "downsample": 4,
+            "exit_code": 0
+          },
+          {
+            "downsample": 2,
+            "exit_code": 0
+          }
+        ]
+      },
+      "comparison": {
+        "status": "compared",
+        "metrics": {
+          "reference_status": "unresolved",
+          "review_status": "unresolved",
+          "solver_status": "failed"
+        }
+      }
+    },
+    {
+      "id": "wm_r_176021058",
+      "source_sha256": "c950aff831b9e748548d681cffb26e9102547687e90861861ddaa1a5eecd5dc0",
+      "track": "solver",
+      "split": "development",
+      "negative": false,
+      "starglyph": {
+        "status": "completed",
+        "solve_status": "solved",
+        "elapsed_s": 1.5373591724783182,
+        "exit_code": 0,
+        "report_sha256": "3e0ea1d56153045db4b4dddfed763bf2eaa58fca7cf6309547be7b526353faee",
+        "quality": {
+          "confidence": 1.0,
+          "log_odds": 261.71,
+          "n_detections": 40,
+          "n_inliers": 38,
+          "rms_px": 1.94
+        },
+        "timing_ms": {
+          "detect": 174,
+          "solve": 54,
+          "total": 561
+        }
+      },
+      "external_wcs": {
+        "status": "solved_candidate",
+        "review_status": "pending",
+        "elapsed_s": 4.612348707392812,
+        "wcs_sha256": "700b2a3b721805bc790e4c3fc815dfaec78f92541326b41b17e29e8c1822de87",
+        "input_fits_sha256": "afb75eeba2fa8ef709f7584dbe359a292f9044898df0e23ef5896eb43502fe57",
+        "n_correspondences": 32,
+        "n_high_weight_correspondences": 32,
+        "fit_rms_px": 0.9748954657751432,
+        "fit_p95_px": 1.7695544398080354,
+        "matched_extent_fraction": [
+          0.972239441606152,
+          0.7806046111400181
+        ],
+        "attempts": [
+          {
+            "downsample": 4,
+            "exit_code": 0
+          }
+        ]
+      },
+      "comparison": {
+        "status": "compared",
+        "metrics": {
+          "reference_status": "solved_candidate",
+          "review_status": "pending",
+          "solver_status": "solved",
+          "full_field_wcs_difference": {
+            "count": 81,
+            "rms_px": 2.8470713661837213,
+            "median_px": 1.8832510723720677,
+            "p95_px": 5.734458672972794,
+            "max_px": 9.701190063667328
+          },
+          "external_star_error": {
+            "count": 32,
+            "rms_px": 1.91120554925836,
+            "median_px": 1.8207373225294496,
+            "p95_px": 3.148012473900878,
+            "max_px": 3.296287028076433
+          },
+          "external_wcs_fit": {
+            "count": 32,
+            "rms_px": 0.9748954657751432,
+            "median_px": 0.6650655191833964,
+            "p95_px": 1.7695544398080354,
+            "max_px": 2.257283076107899
+          }
+        }
+      }
+    },
+    {
+      "id": "wm_r_176481855",
+      "source_sha256": "a2c97f072a339d1444db3a1ec8935fe5ed70cc484fc0e212d113c5ee0399327d",
+      "track": "solver",
+      "split": "development",
+      "negative": false,
+      "starglyph": {
+        "status": "completed",
+        "solve_status": "failed",
+        "elapsed_s": 15.452169235795736,
+        "exit_code": 0,
+        "report_sha256": "1912f468b5e139033fade2288ed0ccae9522fb89d6f3ab25c80180e6968551e1",
+        "timing_ms": {
+          "detect": 6701,
+          "solve": 10597,
+          "total": 13931
+        }
+      },
+      "external_wcs": {
+        "status": "unresolved",
+        "review_status": "unresolved",
+        "elapsed_s": 112.43924140371382,
+        "input_fits_sha256": "69f4aff6e699a6a4ecc78a6c8ff0c215badf797688d87c3a3cd0b13a72b92c4f",
+        "attempts": [
+          {
+            "downsample": 4,
+            "exit_code": 0
+          },
+          {
+            "downsample": 2,
+            "wall_timeout": true
+          }
+        ]
+      },
+      "comparison": {
+        "status": "compared",
+        "metrics": {
+          "reference_status": "unresolved",
+          "review_status": "unresolved",
+          "solver_status": "failed"
+        }
+      }
+    },
+    {
+      "id": "wm_r_176775625",
+      "source_sha256": "96f014bc8636333b09cb4c577a8e363f1cc2c470bcfb1fcdd344296f819e8bd9",
+      "track": "solver",
+      "split": "holdout",
+      "negative": false,
+      "starglyph": {
+        "status": "completed",
+        "solve_status": "failed",
+        "elapsed_s": 9.63654819317162,
+        "exit_code": 0,
+        "report_sha256": "6e601c3a2d6b612fc44614ee2e70bc43b797130a488fbae86e872938288e9429",
+        "timing_ms": {
+          "detect": 2553,
+          "solve": 7198,
+          "total": 8696
+        }
+      },
+      "external_wcs": {
+        "status": "unresolved",
+        "review_status": "unresolved",
+        "elapsed_s": 106.95578265562654,
+        "input_fits_sha256": "a7928259470b277efcf7d4f9b29a5fcaf29e8da5e733cf379937f9c6ffdba049",
+        "attempts": [
+          {
+            "downsample": 4,
+            "exit_code": 0
+          },
+          {
+            "downsample": 2,
+            "exit_code": 0
+          }
+        ]
+      },
+      "comparison": {
+        "status": "compared",
+        "metrics": {
+          "reference_status": "unresolved",
+          "review_status": "unresolved",
+          "solver_status": "failed"
+        }
+      }
+    },
+    {
+      "id": "wm_r_178297645",
+      "source_sha256": "8c4fef84dd0c0a307522b4bfb9c9af6b68031e1e86b8bda020d25660eb4ac2b4",
+      "track": "solver",
+      "split": "development",
+      "negative": false,
+      "starglyph": {
+        "status": "completed",
+        "solve_status": "solved",
+        "elapsed_s": 1.5817998349666595,
+        "exit_code": 0,
+        "report_sha256": "a8c84d5e1863f32e3252bd9a6e70177c7f57f29fb0172e385bebfeb5e6f4f953",
+        "quality": {
+          "confidence": 0.8548,
+          "log_odds": 34.19,
+          "n_detections": 40,
+          "n_inliers": 12,
+          "rms_px": 1.3
+        },
+        "timing_ms": {
+          "detect": 221,
+          "solve": 187,
+          "total": 686
+        }
+      },
+      "external_wcs": {
+        "status": "solved_candidate",
+        "review_status": "pending",
+        "elapsed_s": 72.54862371645868,
+        "wcs_sha256": "af8d74cc458542c04016031c53e7474ebdb59fb85a1e83424c7d51f3cc0d2c07",
+        "input_fits_sha256": "83c4d672c3a19e496be8b02765a7a71b643bf236f23e3ce3a251df09903bd936",
+        "n_correspondences": 335,
+        "n_high_weight_correspondences": 12,
+        "fit_rms_px": 3.144407848007829,
+        "fit_p95_px": 2.1948317186930293,
+        "matched_extent_fraction": [
+          0.05478854709201389,
+          0.07229880538641238
+        ],
+        "attempts": [
+          {
+            "downsample": 4,
+            "exit_code": 0
+          },
+          {
+            "downsample": 2,
+            "exit_code": 0
+          }
+        ]
+      },
+      "comparison": {
+        "status": "compared",
+        "metrics": {
+          "reference_status": "solved_candidate",
+          "review_status": "pending",
+          "solver_status": "solved",
+          "full_field_wcs_difference": {
+            "count": 81,
+            "rms_px": 31.58322464566594,
+            "median_px": 17.749796495280588,
+            "p95_px": 63.93526064804173,
+            "max_px": 81.08749065890194
+          },
+          "external_star_error": {
+            "count": 12,
+            "rms_px": 3.1890160788858655,
+            "median_px": 3.312883547038732,
+            "p95_px": 4.412215381939759,
+            "max_px": 4.697359582337156
+          },
+          "external_wcs_fit": {
+            "count": 12,
+            "rms_px": 0.7099912556371938,
+            "median_px": 0.6991046425398618,
+            "p95_px": 1.0884849182027447,
+            "max_px": 1.2416490054863614
+          }
+        }
+      }
+    },
+    {
+      "id": "wm_r_179245779",
+      "source_sha256": "8f7cc8f185fe50d47384bd079b75b4ebb35c62424a3f23f16695340905021b9d",
+      "track": "solver",
+      "split": "holdout",
+      "negative": false,
+      "starglyph": {
+        "status": "completed",
+        "solve_status": "failed",
+        "elapsed_s": 19.621267393231392,
+        "exit_code": 0,
+        "report_sha256": "294c8df3c0e2a0bf4f8ec739845f18eb50c0fdbec190670788b45c1b483283d5",
+        "timing_ms": {
+          "detect": 7724,
+          "solve": 13157,
+          "total": 17712
+        }
+      },
+      "external_wcs": {
+        "status": "unresolved",
+        "review_status": "unresolved",
+        "elapsed_s": 110.2781580556184,
+        "input_fits_sha256": "06c3010cbced13ca9ba290b25c0912000387497c701d941dbabbcc2ad2b86136",
+        "attempts": [
+          {
+            "downsample": 4,
+            "exit_code": 0
+          },
+          {
+            "downsample": 2,
+            "exit_code": 0
+          }
+        ]
+      },
+      "comparison": {
+        "status": "compared",
+        "metrics": {
+          "reference_status": "unresolved",
+          "review_status": "unresolved",
+          "solver_status": "failed"
+        }
+      }
+    },
+    {
+      "id": "wm_r_179619449",
+      "source_sha256": "60aa033d5614c48727d8b74dce5b4b52e45105c0990a9560d7bf0d1f40534dc2",
+      "track": "solver",
+      "split": "development",
+      "negative": false,
+      "starglyph": {
+        "status": "completed",
+        "solve_status": "solved",
+        "elapsed_s": 1.1194899342954159,
+        "exit_code": 0,
+        "report_sha256": "61ca10197e75b29366b1679f37455fd84f63715530c5c9a4aff9bd24bda77292",
+        "quality": {
+          "confidence": 1.0,
+          "log_odds": 88.18,
+          "n_detections": 40,
+          "n_inliers": 19,
+          "rms_px": 2.8
+        },
+        "timing_ms": {
+          "detect": 122,
+          "solve": 71,
+          "total": 356
+        }
+      },
+      "external_wcs": {
+        "status": "solved_candidate",
+        "review_status": "pending",
+        "elapsed_s": 8.454307895153761,
+        "wcs_sha256": "840696481321b5c93e04fd1df5e69b4399970c13d6370bd7e0062e3c8726e848",
+        "input_fits_sha256": "59b903aa621134a7077225aa704b1148de9b3d7939eeb60e791b82d70c55b309",
+        "n_correspondences": 42,
+        "n_high_weight_correspondences": 37,
+        "fit_rms_px": 7.9813023610380425,
+        "fit_p95_px": 20.91092221273982,
+        "matched_extent_fraction": [
+          0.7987140808105468,
+          0.9218548334896837
+        ],
+        "attempts": [
+          {
+            "downsample": 4,
+            "exit_code": 0
+          }
+        ]
+      },
+      "comparison": {
+        "status": "compared",
+        "metrics": {
+          "reference_status": "solved_candidate",
+          "review_status": "pending",
+          "solver_status": "solved",
+          "full_field_wcs_difference": {
+            "count": 81,
+            "rms_px": 17.191155175722518,
+            "median_px": 6.766144747591418,
+            "p95_px": 36.66859202800556,
+            "max_px": 54.44612128406012
+          },
+          "external_star_error": {
+            "count": 37,
+            "rms_px": 7.728670717498634,
+            "median_px": 2.635986614525135,
+            "p95_px": 18.736197332336033,
+            "max_px": 31.379901570725306
+          },
+          "external_wcs_fit": {
+            "count": 37,
+            "rms_px": 2.900297942423543,
+            "median_px": 2.6079397586047106,
+            "p95_px": 4.6523044069097965,
+            "max_px": 5.160536171462384
+          }
+        }
+      }
+    },
+    {
+      "id": "wm_r_179696785",
+      "source_sha256": "d2b8e3a238a1eed6292933aeaeaf4c2088f44997acd3c95124b350bf1439c38c",
+      "track": "stress",
+      "split": "development",
+      "negative": true,
+      "starglyph": {
+        "status": "completed",
+        "solve_status": "failed",
+        "elapsed_s": 8.12266694381833,
+        "exit_code": 0,
+        "report_sha256": "b8acf72ace99c31b9d0046b45d22bd23bf3deab0081278e8c06970699101e34a",
+        "timing_ms": {
+          "detect": 3749,
+          "solve": 5657,
+          "total": 7526
+        }
+      },
+      "external_wcs": {
+        "status": "not_attempted",
+        "reason": "negative example without identified stellar field"
+      },
+      "comparison": {
+        "status": "not_comparable",
+        "starglyph_status": "completed",
+        "wcs_status": "not_attempted"
+      }
+    },
+    {
+      "id": "wm_r_179998887",
+      "source_sha256": "759151eb489418d870299c8d61109ac8c1bed79b5ddd55e912e7df16eb631085",
+      "track": "solver",
+      "split": "holdout",
+      "negative": false,
+      "starglyph": {
+        "status": "completed",
+        "solve_status": "solved",
+        "elapsed_s": 2.0247593652457,
+        "exit_code": 0,
+        "report_sha256": "008010d9703e81d61631a9c49e2a01e98e6a3be5f1b17a4c96b065dd71cdef4d",
+        "quality": {
+          "confidence": 1.0,
+          "log_odds": 226.21,
+          "n_detections": 40,
+          "n_inliers": 34,
+          "rms_px": 2.64
+        },
+        "timing_ms": {
+          "detect": 217,
+          "solve": 411,
+          "total": 962
+        }
+      },
+      "external_wcs": {
+        "status": "solved_candidate",
+        "review_status": "pending",
+        "elapsed_s": 10.330026596784592,
+        "wcs_sha256": "e3b47f2edab5fa2b2c2309dbc49f32168da3c16c4b377c07d80e58c35b868649",
+        "input_fits_sha256": "4dc970eef2bd85aaab26b303b3889bcca8f34560b0e0c5b30769fe387ae19ce6",
+        "n_correspondences": 273,
+        "n_high_weight_correspondences": 109,
+        "fit_rms_px": 5.075428425313336,
+        "fit_p95_px": 7.923004627401117,
+        "matched_extent_fraction": [
+          0.398734375,
+          0.7506622260247835
+        ],
+        "attempts": [
+          {
+            "downsample": 4,
+            "exit_code": 0
+          }
+        ]
+      },
+      "comparison": {
+        "status": "compared",
+        "metrics": {
+          "reference_status": "solved_candidate",
+          "review_status": "pending",
+          "solver_status": "solved",
+          "full_field_wcs_difference": {
+            "count": 81,
+            "rms_px": 6.309270217915589,
+            "median_px": 3.8421404156491556,
+            "p95_px": 12.540362619593273,
+            "max_px": 22.41334287051061
+          },
+          "external_star_error": {
+            "count": 109,
+            "rms_px": 2.291626835004392,
+            "median_px": 2.2420264742336578,
+            "p95_px": 3.3591981019844175,
+            "max_px": 5.13534083976547
+          },
+          "external_wcs_fit": {
+            "count": 109,
+            "rms_px": 3.4855896811281095,
+            "median_px": 3.424746572194262,
+            "p95_px": 4.886758025565218,
+            "max_px": 5.804868780625896
+          }
+        }
+      }
+    },
+    {
+      "id": "wm_r_180011612",
+      "source_sha256": "0e97e36fdbb80e831e003614916ce29fca817eb171a4f0350ac27b2975506a8a",
+      "track": "solver",
+      "split": "development",
+      "negative": false,
+      "starglyph": {
+        "status": "completed",
+        "solve_status": "solved",
+        "elapsed_s": 13.094899216666818,
+        "exit_code": 0,
+        "report_sha256": "3fc1d1f44ea39ef511ea2e15d73b468b9d000846dce86225e7d27a86be9f3a74",
+        "quality": {
+          "confidence": 1.0,
+          "log_odds": 229.09,
+          "n_detections": 40,
+          "n_inliers": 27,
+          "rms_px": 0.99
+        },
+        "timing_ms": {
+          "detect": 3156,
+          "solve": 8583,
+          "total": 11839
+        }
+      },
+      "external_wcs": {
+        "status": "unresolved",
+        "review_status": "unresolved",
+        "elapsed_s": 109.24326696619391,
+        "input_fits_sha256": "d540e096bde10ac593404a5f367bd8a73b442ae3c9b30e6d8b848acc794f57ac",
+        "attempts": [
+          {
+            "downsample": 4,
+            "exit_code": 0
+          },
+          {
+            "downsample": 2,
+            "wall_timeout": true
+          }
+        ]
+      },
+      "comparison": {
+        "status": "compared",
+        "metrics": {
+          "reference_status": "unresolved",
+          "review_status": "unresolved",
+          "solver_status": "solved"
+        }
+      }
+    },
+    {
+      "id": "wm_r_180231845",
+      "source_sha256": "8899f829284d747557f10ac913cd6e48c30ac2ea030b85f0e781f07bf96cb7a7",
+      "track": "solver",
+      "split": "development",
+      "negative": false,
+      "starglyph": {
+        "status": "completed",
+        "solve_status": "solved",
+        "elapsed_s": 7.65251792781055,
+        "exit_code": 0,
+        "report_sha256": "9dc4f23c817dd95d811d8004352302a062d72ab7eb36074bfceb5e41079fe9d8",
+        "quality": {
+          "confidence": 1.0,
+          "log_odds": 177.45,
+          "n_detections": 40,
+          "n_inliers": 28,
+          "rms_px": 3.79
+        },
+        "timing_ms": {
+          "detect": 194,
+          "solve": 5716,
+          "total": 6552
+        }
+      },
+      "external_wcs": {
+        "status": "unresolved",
+        "review_status": "unresolved",
+        "elapsed_s": 102.73266309313476,
+        "input_fits_sha256": "19f3dcf48da5bd8127f9cca262b833a9f4e3d216475f6cc7bbe5ee644e304ddc",
+        "attempts": [
+          {
+            "downsample": 4,
+            "wall_timeout": true
+          },
+          {
+            "downsample": 2,
+            "exit_code": 0
+          }
+        ]
+      },
+      "comparison": {
+        "status": "compared",
+        "metrics": {
+          "reference_status": "unresolved",
+          "review_status": "unresolved",
+          "solver_status": "solved"
+        }
+      }
+    },
+    {
+      "id": "wm_r_180635038",
+      "source_sha256": "d21d4713a51fd86359098ec4565d6238674eccee5227cdaae7ce08714453b526",
+      "track": "solver",
+      "split": "holdout",
+      "negative": false,
+      "starglyph": {
+        "status": "completed",
+        "solve_status": "failed",
+        "elapsed_s": 10.869858102872968,
+        "exit_code": 0,
+        "report_sha256": "8f1acacc695796193cbc95d0a43ca44b240546e07ff7c5818548718fa6322eee",
+        "timing_ms": {
+          "detect": 3538,
+          "solve": 7636,
+          "total": 9795
+        }
+      },
+      "external_wcs": {
+        "status": "wall_timeout",
+        "review_status": "unresolved",
+        "elapsed_s": 120.63631870597601,
+        "prior_incomplete_attempt": "Executor terminated externally; partial artifacts retained under interrupted/. This ID was restarted with unchanged settings.",
+        "input_fits_sha256": "116fbebb26a2f759db3937cef86d7c776b05261629b207eba058f88c6ecfece7",
+        "attempts": [
+          {
+            "downsample": 4,
+            "wall_timeout": true
+          },
+          {
+            "downsample": 2,
+            "wall_timeout": true
+          }
+        ]
+      },
+      "comparison": {
+        "status": "compared",
+        "metrics": {
+          "reference_status": "unresolved",
+          "review_status": "unresolved",
+          "solver_status": "failed"
+        }
+      }
+    },
+    {
+      "id": "wm_r_190763073",
+      "source_sha256": "7bee29820e145e4c8c7259f3d33b83cbd65bd03cc91bc9f547a170f4c9049058",
+      "track": "solver",
+      "split": "holdout",
+      "negative": false,
+      "starglyph": {
+        "status": "completed",
+        "solve_status": "failed",
+        "elapsed_s": 9.918484594672918,
+        "exit_code": 0,
+        "report_sha256": "98f57c968994c2198d114556b6c4aff9faa5fc85af0ee2cc1b41be3b550de400",
+        "timing_ms": {
+          "detect": 6634,
+          "solve": 4551,
+          "total": 8563
+        }
+      },
+      "external_wcs": {
+        "status": "unresolved",
+        "review_status": "unresolved",
+        "elapsed_s": 121.98943886905909,
+        "input_fits_sha256": "76b05b57e90636dfe289632fd85a6e9a7a67c0b23f16f6375d64cc26e9114c1a",
+        "attempts": [
+          {
+            "downsample": 4,
+            "wall_timeout": true
+          },
+          {
+            "downsample": 2,
+            "exit_code": 0
+          }
+        ]
+      },
+      "comparison": {
+        "status": "compared",
+        "metrics": {
+          "reference_status": "unresolved",
+          "review_status": "unresolved",
+          "solver_status": "failed"
+        }
+      }
+    },
+    {
+      "id": "wm_r_47840645",
+      "source_sha256": "e94bf669985f24fbfa65f75153f2bfb6e18d8b6d7cf13ebffcfc60cc0c482dee",
+      "track": "solver",
+      "split": "holdout",
+      "negative": false,
+      "starglyph": {
+        "status": "completed",
+        "solve_status": "failed",
+        "elapsed_s": 18.064384223893285,
+        "exit_code": 0,
+        "report_sha256": "b68a913b16fb6bfc1a23916baa0bcb6cab83957442270624aafb7eb48260d9ba",
+        "timing_ms": {
+          "detect": 8659,
+          "solve": 13174,
+          "total": 17045
+        }
+      },
+      "external_wcs": {
+        "status": "unresolved",
+        "review_status": "unresolved",
+        "elapsed_s": 108.0684416629374,
+        "input_fits_sha256": "245292f727ff20a69a0f868302b48a752973586c19fefd45cd128fa324bff78f",
+        "attempts": [
+          {
+            "downsample": 4,
+            "exit_code": 0
+          },
+          {
+            "downsample": 2,
+            "exit_code": 0
+          }
+        ]
+      },
+      "comparison": {
+        "status": "compared",
+        "metrics": {
+          "reference_status": "unresolved",
+          "review_status": "unresolved",
+          "solver_status": "failed"
+        }
+      }
+    },
+    {
+      "id": "wm_r_49541180",
+      "source_sha256": "ee899364984d433f9e317779ed1bd11abdc48dcfa31b8d6bf942392ac05a31d3",
+      "track": "solver",
+      "split": "development",
+      "negative": false,
+      "starglyph": {
+        "status": "completed",
+        "solve_status": "failed",
+        "elapsed_s": 26.533137118443847,
+        "exit_code": 0,
+        "report_sha256": "87659f23aca083fe2b6f5d82549bbf9e52ef32b6debd5ed7ef8524df64636338",
+        "timing_ms": {
+          "detect": 7493,
+          "solve": 19716,
+          "total": 24192
+        }
+      },
+      "external_wcs": {
+        "status": "unresolved",
+        "review_status": "unresolved",
+        "elapsed_s": 109.00855079106987,
+        "input_fits_sha256": "68e910a2bfefb06a76709dca4b18e1d887c12c338d2b69224325ba311cbc80b2",
+        "attempts": [
+          {
+            "downsample": 4,
+            "exit_code": 0
+          },
+          {
+            "downsample": 2,
+            "wall_timeout": true
+          }
+        ]
+      },
+      "comparison": {
+        "status": "compared",
+        "metrics": {
+          "reference_status": "unresolved",
+          "review_status": "unresolved",
+          "solver_status": "failed"
+        }
+      }
+    },
+    {
+      "id": "wm_r_59634605",
+      "source_sha256": "d4e3bddd78b52da29ca8d6ac648e5b6fd6d1b45e7cd8e187f2e045fe99df2534",
+      "track": "solver",
+      "split": "holdout",
+      "negative": false,
+      "starglyph": {
+        "status": "completed",
+        "solve_status": "solved",
+        "elapsed_s": 54.73062659613788,
+        "exit_code": 0,
+        "report_sha256": "d87a4e72e57457f75cd75b67f1539d88b243f688318a05a518254c2540d05f43",
+        "quality": {
+          "confidence": 1.0,
+          "log_odds": 82.14,
+          "n_detections": 50,
+          "n_inliers": 16,
+          "rms_px": 1.47
+        },
+        "timing_ms": {
+          "detect": 8460,
+          "solve": 48547,
+          "total": 52852
+        }
+      },
+      "external_wcs": {
+        "status": "solved_candidate",
+        "review_status": "pending",
+        "elapsed_s": 97.85423046350479,
+        "wcs_sha256": "0de0b0a0503c70419fce3ab300046d3ab659891cc73c331719726bf5211dc7bd",
+        "input_fits_sha256": "06d0e649880d37dd44d89abd65d3a08967bfc2fe254030dcf8fc281c347be2ed",
+        "n_correspondences": 314,
+        "n_high_weight_correspondences": 117,
+        "fit_rms_px": 11.563627274272541,
+        "fit_p95_px": 12.731633724302066,
+        "matched_extent_fraction": [
+          0.6197027034632475,
+          0.4340036957290875
+        ],
+        "attempts": [
+          {
+            "downsample": 4,
+            "exit_code": 0
+          },
+          {
+            "downsample": 2,
+            "exit_code": 0
+          }
+        ]
+      },
+      "comparison": {
+        "status": "compared",
+        "metrics": {
+          "reference_status": "solved_candidate",
+          "review_status": "pending",
+          "solver_status": "solved",
+          "full_field_wcs_difference": {
+            "count": 81,
+            "rms_px": 53.13108087785988,
+            "median_px": 17.49774813710453,
+            "p95_px": 120.9438513894957,
+            "max_px": 178.57096354417166
+          },
+          "external_star_error": {
+            "count": 117,
+            "rms_px": 5.949954098214036,
+            "median_px": 3.9048030324261696,
+            "p95_px": 11.810301507533975,
+            "max_px": 15.540890125950927
+          },
+          "external_wcs_fit": {
+            "count": 117,
+            "rms_px": 4.185677493369739,
+            "median_px": 3.6026150330572215,
+            "p95_px": 7.010489439025312,
+            "max_px": 8.033375211714965
+          }
+        }
+      }
+    },
+    {
+      "id": "wm_r_63612482",
+      "source_sha256": "a2a00dae8ed9588e64bd70fcd8aa52680863836aae01c92264ab69dd689a2dce",
+      "track": "solver",
+      "split": "holdout",
+      "negative": false,
+      "starglyph": {
+        "status": "completed",
+        "solve_status": "failed",
+        "elapsed_s": 28.799200808629394,
+        "exit_code": 0,
+        "report_sha256": "a508197b9f1d78641a981f842faa26bfad3373d3f0fe7f65ab89e8ad37cc4d49",
+        "timing_ms": {
+          "detect": 9607,
+          "solve": 21967,
+          "total": 27320
+        }
+      },
+      "external_wcs": {
+        "status": "unresolved",
+        "review_status": "unresolved",
+        "elapsed_s": 114.79336221702397,
+        "input_fits_sha256": "db5b8361cf28ea46792e007d6a2dc379299217fc405b6c52c0f3f5cd5f1682e0",
+        "attempts": [
+          {
+            "downsample": 4,
+            "exit_code": 0
+          },
+          {
+            "downsample": 2,
+            "wall_timeout": true
+          }
+        ]
+      },
+      "comparison": {
+        "status": "compared",
+        "metrics": {
+          "reference_status": "unresolved",
+          "review_status": "unresolved",
+          "solver_status": "failed"
+        }
+      }
+    },
+    {
+      "id": "wm_r_63612514",
+      "source_sha256": "90b02f4d075bfe64cf5dcc31e594cc1c96057f7a384efaf39e4b80888ec960d1",
+      "track": "solver",
+      "split": "holdout",
+      "negative": false,
+      "starglyph": {
+        "status": "completed",
+        "solve_status": "failed",
+        "elapsed_s": 33.13286215811968,
+        "exit_code": 0,
+        "report_sha256": "59bbafb4db45074c10c15738734a2d80f8575ab6787860c996f5bb50e4f8139c",
+        "timing_ms": {
+          "detect": 12001,
+          "solve": 25379,
+          "total": 31538
+        }
+      },
+      "external_wcs": {
+        "status": "unresolved",
+        "review_status": "unresolved",
+        "elapsed_s": 117.459084097296,
+        "input_fits_sha256": "7dabfe92ff7f7aec485a153ce4f151710464b09774b7911af91e683d4546fbd4",
+        "attempts": [
+          {
+            "downsample": 4,
+            "exit_code": 0
+          },
+          {
+            "downsample": 2,
+            "wall_timeout": true
+          }
+        ]
+      },
+      "comparison": {
+        "status": "compared",
+        "metrics": {
+          "reference_status": "unresolved",
+          "review_status": "unresolved",
+          "solver_status": "failed"
+        }
+      }
+    },
+    {
+      "id": "wm_r_64398618",
+      "source_sha256": "752f7483d46d4ad69b61319cc98ee43ac0d8d60177e7a435a75bc2a6d44d9620",
+      "track": "scene",
+      "split": "development",
+      "negative": false,
+      "starglyph": {
+        "status": "not_attempted",
+        "reason": "projection outside the single-pose evaluation"
+      },
+      "external_wcs": {
+        "status": "not_attempted",
+        "reason": "projection outside the single-pose evaluation"
+      },
+      "comparison": {
+        "status": "not_attempted",
+        "reason": "projection outside the single-pose evaluation"
+      }
+    },
+    {
+      "id": "wm_r_64919627",
+      "source_sha256": "96a9a993f9d0d84fe816b3a23d040bb813dc9ccd97bc176dc22f275ff10b8cb6",
+      "track": "stress",
+      "split": "development",
+      "negative": true,
+      "starglyph": {
+        "status": "completed",
+        "solve_status": "failed",
+        "elapsed_s": 11.036836007609963,
+        "exit_code": 0,
+        "report_sha256": "47a91545f6d18ae444e6db7633eee5c8aedc1d6a94ad9ce51456f0c8786cd4ee",
+        "timing_ms": {
+          "detect": 6098,
+          "solve": 5702,
+          "total": 9238
+        }
+      },
+      "external_wcs": {
+        "status": "not_attempted",
+        "reason": "negative example without identified stellar field"
+      },
+      "comparison": {
+        "status": "not_comparable",
+        "starglyph_status": "completed",
+        "wcs_status": "not_attempted"
+      }
+    },
+    {
+      "id": "wm_r_68938641",
+      "source_sha256": "c5de1900b46fee8338629be7c4f1a8b3e6f14de5d10c25a8ca3f7cec2b599fd6",
+      "track": "solver",
+      "split": "development",
+      "negative": false,
+      "starglyph": {
+        "status": "completed",
+        "solve_status": "solved",
+        "elapsed_s": 2.976718209683895,
+        "exit_code": 0,
+        "report_sha256": "60d06d54bb8beaaf7978165ae917bb72f0dc11f05aefb38ea166d71e90e3cdf9",
+        "quality": {
+          "confidence": 1.0,
+          "log_odds": 250.07,
+          "n_detections": 40,
+          "n_inliers": 36,
+          "rms_px": 3.2
+        },
+        "timing_ms": {
+          "detect": 315,
+          "solve": 590,
+          "total": 1688
+        }
+      },
+      "external_wcs": {
+        "status": "unresolved",
+        "review_status": "unresolved",
+        "elapsed_s": 116.84095566533506,
+        "input_fits_sha256": "cbde92b6863429ecdc6f0963349d8b73e658d0c7f8764690a2cbfccb148133d4",
+        "attempts": [
+          {
+            "downsample": 4,
+            "exit_code": 0
+          },
+          {
+            "downsample": 2,
+            "wall_timeout": true
+          }
+        ]
+      },
+      "comparison": {
+        "status": "compared",
+        "metrics": {
+          "reference_status": "unresolved",
+          "review_status": "unresolved",
+          "solver_status": "solved"
+        }
+      }
+    },
+    {
+      "id": "wm_r_82991013",
+      "source_sha256": "c6f565a340a0150df3e6a11e013d0f9d3397026172d4ba7e6eb6b5d0220e43fd",
+      "track": "solver",
+      "split": "development",
+      "negative": false,
+      "starglyph": {
+        "status": "completed",
+        "solve_status": "failed",
+        "elapsed_s": 12.905972031876445,
+        "exit_code": 0,
+        "report_sha256": "0a64acae5c16867083594373dba916b7435a52b20d02c54b0bac14397065da29",
+        "timing_ms": {
+          "detect": 4921,
+          "solve": 8140,
+          "total": 11444
+        }
+      },
+      "external_wcs": {
+        "status": "wall_timeout",
+        "review_status": "unresolved",
+        "elapsed_s": 120.80664593167603,
+        "input_fits_sha256": "5ea08da206dca012f4b3c3c76ec14b5307264df5eb617ba4970670979fa0bfb2",
+        "attempts": [
+          {
+            "downsample": 4,
+            "wall_timeout": true
+          },
+          {
+            "downsample": 2,
+            "wall_timeout": true
+          }
+        ]
+      },
+      "comparison": {
+        "status": "compared",
+        "metrics": {
+          "reference_status": "unresolved",
+          "review_status": "unresolved",
+          "solver_status": "failed"
+        }
+      }
+    },
+    {
+      "id": "wm_r_86780043",
+      "source_sha256": "991507349edbec8a3ad59cf7f4b7d9c6f52c6e1eed6cb568da9f2ff173bedfb4",
+      "track": "solver",
+      "split": "holdout",
+      "negative": false,
+      "starglyph": {
+        "status": "completed",
+        "solve_status": "solved",
+        "elapsed_s": 3.37285771779716,
+        "exit_code": 0,
+        "report_sha256": "a40ea96783ed2f7f3a8776b5a7b2fedec8fbccde2366c3a2c3eff78e1a7cea44",
+        "quality": {
+          "confidence": 1.0,
+          "log_odds": 259.12,
+          "n_detections": 40,
+          "n_inliers": 37,
+          "rms_px": 1.75
+        },
+        "timing_ms": {
+          "detect": 245,
+          "solve": 572,
+          "total": 1617
+        }
+      },
+      "external_wcs": {
+        "status": "solved_candidate",
+        "review_status": "pending",
+        "elapsed_s": 81.89263675920665,
+        "wcs_sha256": "521830aa4f31903b373f67ac3d2cd7af195b4d68d3af31beac2467aa14b28de3",
+        "input_fits_sha256": "d53589d45fdf63a6c9b3e7493f152db04959c9442a1251c7b905994232480e42",
+        "n_correspondences": 73,
+        "n_high_weight_correspondences": 73,
+        "fit_rms_px": 2.8910929981921165,
+        "fit_p95_px": 4.6823693742826595,
+        "matched_extent_fraction": [
+          0.9301318740844726,
+          0.956446044921875
+        ],
+        "attempts": [
+          {
+            "downsample": 4,
+            "exit_code": 0
+          },
+          {
+            "downsample": 2,
+            "exit_code": 0
+          }
+        ]
+      },
+      "comparison": {
+        "status": "compared",
+        "metrics": {
+          "reference_status": "solved_candidate",
+          "review_status": "pending",
+          "solver_status": "solved",
+          "full_field_wcs_difference": {
+            "count": 81,
+            "rms_px": 7.910832299866887,
+            "median_px": 3.6189807825193046,
+            "p95_px": 17.6105672552376,
+            "max_px": 25.919668162250183
+          },
+          "external_star_error": {
+            "count": 73,
+            "rms_px": 2.292817440145814,
+            "median_px": 1.065691539820666,
+            "p95_px": 4.246992206791159,
+            "max_px": 8.287354471020858
+          },
+          "external_wcs_fit": {
+            "count": 73,
+            "rms_px": 2.8910929981921165,
+            "median_px": 2.527428468638995,
+            "p95_px": 4.6823693742826595,
+            "max_px": 6.781390056019991
+          }
+        }
+      }
+    },
+    {
+      "id": "wm_r_88363556",
+      "source_sha256": "7ea7a06b597177da6358339719e1b6bbf325c30821357c5129f4779533a0061c",
+      "track": "solver",
+      "split": "development",
+      "negative": false,
+      "starglyph": {
+        "status": "completed",
+        "solve_status": "solved",
+        "elapsed_s": 2.329383246600628,
+        "exit_code": 0,
+        "report_sha256": "5db8c40c4a04d5a97c4924f60ddd4fa1c6655372d599fa4706c6b26f8b430a7b",
+        "quality": {
+          "confidence": 1.0,
+          "log_odds": 268.17,
+          "n_detections": 40,
+          "n_inliers": 38,
+          "rms_px": 1.84
+        },
+        "timing_ms": {
+          "detect": 249,
+          "solve": 148,
+          "total": 896
+        }
+      },
+      "external_wcs": {
+        "status": "unresolved",
+        "review_status": "unresolved",
+        "elapsed_s": 106.1018016114831,
+        "input_fits_sha256": "89847244612a5a8405eb5173d9269863a9554fa1f029dfdd0776a10c9037dd68",
+        "attempts": [
+          {
+            "downsample": 4,
+            "exit_code": 0
+          },
+          {
+            "downsample": 2,
+            "wall_timeout": true
+          }
+        ]
+      },
+      "comparison": {
+        "status": "compared",
+        "metrics": {
+          "reference_status": "unresolved",
+          "review_status": "unresolved",
+          "solver_status": "solved"
+        }
+      }
+    },
+    {
+      "id": "wm_r_88363557",
+      "source_sha256": "496c238a248c80c6afc0970a638566c4cafdc6712e433eb24df48a2cc21cb34b",
+      "track": "solver",
+      "split": "development",
+      "negative": false,
+      "starglyph": {
+        "status": "completed",
+        "solve_status": "solved",
+        "elapsed_s": 1.6182550825178623,
+        "exit_code": 0,
+        "report_sha256": "546ebb52485346d5d5c9de7fa25a2dbe13006170d2c597a096dddd3ec0fc68a2",
+        "quality": {
+          "confidence": 1.0,
+          "log_odds": 268.17,
+          "n_detections": 40,
+          "n_inliers": 38,
+          "rms_px": 1.45
+        },
+        "timing_ms": {
+          "detect": 185,
+          "solve": 265,
+          "total": 889
+        }
+      },
+      "external_wcs": {
+        "status": "unresolved",
+        "review_status": "unresolved",
+        "elapsed_s": 107.0728124640882,
+        "input_fits_sha256": "70391879d8614467a0a05436ac2389e04a79dbcd1d77e32854d21a9f6bcf81a5",
+        "attempts": [
+          {
+            "downsample": 4,
+            "exit_code": 0
+          },
+          {
+            "downsample": 2,
+            "wall_timeout": true
+          }
+        ]
+      },
+      "comparison": {
+        "status": "compared",
+        "metrics": {
+          "reference_status": "unresolved",
+          "review_status": "unresolved",
+          "solver_status": "solved"
+        }
+      }
+    },
+    {
+      "id": "wm_r_88363564",
+      "source_sha256": "fa21b12b2982c24c2f47061a751204338c2b630505e7c3da2adb802bd07a74e8",
+      "track": "solver",
+      "split": "development",
+      "negative": false,
+      "starglyph": {
+        "status": "completed",
+        "solve_status": "solved",
+        "elapsed_s": 23.464636139571667,
+        "exit_code": 0,
+        "report_sha256": "c70bc8692c70ef1f408250f716ee5f1ade4d20dd1d22511b9c36482e13582620",
+        "quality": {
+          "confidence": 1.0,
+          "log_odds": 60.84,
+          "n_detections": 40,
+          "n_inliers": 15,
+          "rms_px": 3.78
+        },
+        "timing_ms": {
+          "detect": 310,
+          "solve": 20977,
+          "total": 22092
+        }
+      },
+      "external_wcs": {
+        "status": "unresolved",
+        "review_status": "unresolved",
+        "elapsed_s": 109.85964923724532,
+        "input_fits_sha256": "b810c77fd425a9ed214e7cde9c6a300485e640ae54049b7bbf9df1c6fad799a8",
+        "attempts": [
+          {
+            "downsample": 4,
+            "wall_timeout": true
+          },
+          {
+            "downsample": 2,
+            "exit_code": 0
+          }
+        ]
+      },
+      "comparison": {
+        "status": "compared",
+        "metrics": {
+          "reference_status": "unresolved",
+          "review_status": "unresolved",
+          "solver_status": "solved"
+        }
+      }
+    },
+    {
+      "id": "wm_r_92627738",
+      "source_sha256": "921f0423e54c5fafbd97e6b6e43e42cfb41ef4d85ac315fe62a1baf97dca5c71",
+      "track": "stress",
+      "split": "development",
+      "negative": true,
+      "starglyph": {
+        "status": "completed",
+        "solve_status": "failed",
+        "elapsed_s": 8.79703107662499,
+        "exit_code": 0,
+        "report_sha256": "6e136d508034f5f74ce23fef51f4f831b5ea9b15fdfb97b1def64890cb2720cd",
+        "timing_ms": {
+          "detect": 5073,
+          "solve": 4206,
+          "total": 7334
+        }
+      },
+      "external_wcs": {
+        "status": "not_attempted",
+        "reason": "negative example without identified stellar field"
+      },
+      "comparison": {
+        "status": "not_comparable",
+        "starglyph_status": "completed",
+        "wcs_status": "not_attempted"
+      }
+    },
+    {
+      "id": "wm_r_92627740",
+      "source_sha256": "4866f2d2ec4af42cc0298ead0cf676262b1348650b1e30fab9e56c45ee2f03ea",
+      "track": "stress",
+      "split": "development",
+      "negative": true,
+      "starglyph": {
+        "status": "completed",
+        "solve_status": "failed",
+        "elapsed_s": 15.119503306224942,
+        "exit_code": 0,
+        "report_sha256": "7dd35cdfe725d50879602691086bb656776e30daf661c7c9ecf4e612f9d731e1",
+        "timing_ms": {
+          "detect": 6596,
+          "solve": 9716,
+          "total": 13788
+        }
+      },
+      "external_wcs": {
+        "status": "not_attempted",
+        "reason": "negative example without identified stellar field"
+      },
+      "comparison": {
+        "status": "not_comparable",
+        "starglyph_status": "completed",
+        "wcs_status": "not_attempted"
+      }
+    },
+    {
+      "id": "wm_r_98339111",
+      "source_sha256": "846c77f331570987a1d9f682ecd46e5ede707984a1fbf7f8ef710deeec69818e",
+      "track": "stress",
+      "split": "development",
+      "negative": true,
+      "starglyph": {
+        "status": "completed",
+        "solve_status": "failed",
+        "elapsed_s": 7.034138236194849,
+        "exit_code": 0,
+        "report_sha256": "c23e197bea342bb65abb034a66e760259e61a4380ab52e295bd6acdd9adddf6c",
+        "timing_ms": {
+          "detect": 4516,
+          "solve": 3755,
+          "total": 6172
+        }
+      },
+      "external_wcs": {
+        "status": "not_attempted",
+        "reason": "negative example without identified stellar field"
+      },
+      "comparison": {
+        "status": "not_comparable",
+        "starglyph_status": "completed",
+        "wcs_status": "not_attempted"
+      }
+    },
+    {
+      "id": "wm_r_99644775",
+      "source_sha256": "7db56658f5fb75e1367ed267797d800e3433eb1c47487d53f815f35d71ee1454",
+      "track": "stress",
+      "split": "development",
+      "negative": true,
+      "starglyph": {
+        "status": "completed",
+        "solve_status": "failed",
+        "elapsed_s": 8.491998851299286,
+        "exit_code": 0,
+        "report_sha256": "59f9fd73760803b19dcef6b12a3ec2a6c62b2a0846c675f83a908bef9efe7b67",
+        "timing_ms": {
+          "detect": 5000,
+          "solve": 4523,
+          "total": 7286
+        }
+      },
+      "external_wcs": {
+        "status": "not_attempted",
+        "reason": "negative example without identified stellar field"
+      },
+      "comparison": {
+        "status": "not_comparable",
+        "starglyph_status": "completed",
+        "wcs_status": "not_attempted"
+      }
+    }
+  ]
+}
