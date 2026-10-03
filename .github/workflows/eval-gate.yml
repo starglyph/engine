@@ -17,6 +17,26 @@ on:
       - ".github/workflows/eval-gate.yml"
 
 jobs:
+  collection-integrity:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install pinned image decoder
+        run: python3 -m pip install -r data/samples/sky-samples/requirements.txt
+      - name: Check collection contract without downloading images
+        run: >-
+          python3 data/samples/sky-samples/validate_collection.py --acceptance
+          --results data/samples/sky-samples/robustness-results.json
+      - name: Test normalization and licensing integrity
+        working-directory: data/samples/sky-samples
+        run: python3 -m unittest test_collection
+      - name: Test bounded collection measurements
+        working-directory: prototype
+        run: python3 -m unittest discover -s eval -p test_collection_run.py
+
   automatic-sky-unit:
     runs-on: ubuntu-latest
     defaults:
@@ -53,7 +73,7 @@ jobs:
           path: prototype/artifacts/cache
           key: tetra3-dbs-${{ hashFiles('data/catalogs/hyg_v42.csv.gz', 'prototype/crates/starglyph-core/src/engine.rs') }}
       - name: Install Pillow
-        run: pip install pillow
+        run: pip install -r ../data/samples/sky-samples/requirements.txt
       - name: Fetch CI sample frames
         working-directory: data/samples/sky-samples
         run: python3 fetch_sample.py tetra3_alt40 tetra3_alt60

@@ -1,89 +1,164 @@
 #!/usr/bin/env python3
-"""Reconstruct the sky-sample images from manifest.json (nothing binary in git).
+"""Reconstruct licensed images with strict integrity checks and atomic writes.
 
-The repo stores only provenance (manifest.json + docs). This script rebuilds the
-actual frames on demand: download from the recorded source, verify integrity
-against orig_sha256, strip EXIF/GPS, resize to the recorded dimensions, and write
-into images/ and images-stress-tier-b/.
-
-  python3 fetch_sample.py            # fetch all
-  python3 fetch_sample.py --list     # show what would be fetched
-  python3 fetch_sample.py <id> ...   # fetch specific ids
-
-Rationale: keeps the repo tiny, sidesteps any redistribution question (we
-reference sources, not re-host them), and lets sha256 catch source drift.
+A manifest is not a substitute for license review. Legacy records retain their
+historical resize/JPEG recipe; new records select oriented_png_v1 (full resolution,
+EXIF orientation, no further lossy codec). Originals remain local and ignored.
 """
-import io, os, sys, json, hashlib, subprocess, time
+import argparse
+import hashlib
+import io
+import json
+import os
+import subprocess
+import tempfile
+import time
+from pathlib import Path
 
-HERE = os.path.dirname(os.path.abspath(__file__))
-MAN = json.load(open(os.path.join(HERE, "manifest.json")))
-UA = "starglyph-dataset-collector/1.0 (https://github.com/starglyph; research)"
+HERE = Path(__file__).resolve().parent
+UA = "Starglyph/1.0 (https://github.com/starglyph/engine; sky-image research)"
 IMG_MAGIC = (b"\xff\xd8\xff", b"\x89PNG", b"II*\x00", b"MM\x00*", b"RIFF", b"GIF8")
-# tetra3 (Apache-2.0) frames come from the repo, not a media URL:
 TETRA3 = {
- "tetra3_alt60": "examples/data/2019-07-29T204726_Alt60_Azi-135_Try1.tiff",
- "tetra3_alt40": "examples/data/2019-07-29T204726_Alt40_Azi-135_Try1.tiff",
+    "tetra3_alt60": "examples/data/2019-07-29T204726_Alt60_Azi-135_Try1.tiff",
+    "tetra3_alt40": "examples/data/2019-07-29T204726_Alt40_Azi-135_Try1.tiff",
 }
 
-def sha256(b): return hashlib.sha256(b).hexdigest()
 
-def curl(url, timeout=150, retries=5):
-    last = ""
-    for a in range(retries):
-        r = subprocess.run(["curl","-sS","-L","-A",UA,"--max-time",str(timeout),url],
-                           capture_output=True, timeout=timeout+15)
-        out = r.stdout
-        if r.returncode == 0 and out and any(out.startswith(m) for m in IMG_MAGIC):
-            return out
-        last = f"rc={r.returncode} starts={out[:12]!r}"
-        time.sleep(2 + 2*a)
-    raise RuntimeError(f"download failed for {url}: {last}")
+def sha256(data):
+    return hashlib.sha256(data).hexdigest()
 
-def clone_tetra3():
-    dst = os.path.join(HERE, ".tetra3_src")
-    if not os.path.isdir(dst):
-        subprocess.run(["git","clone","--depth","1","https://github.com/esa/tetra3.git",dst],
-                       check=True, capture_output=True)
-    return dst
+
+def pixel_sha256(image):
+    header = json.dumps([image.mode, image.width, image.height], separators=(",", ":"))
+    return sha256(header.encode() + b"\0" + image.tobytes())
+
+
+def curl(url, timeout=150, retries=3):
+    if not url.startswith("https://"):
+        raise ValueError("downloads require HTTPS")
+    for attempt in range(retries):
+        result = subprocess.run(
+            ["curl", "-fsSL", "--proto", "=https", "--proto-redir", "=https",
+             "-A", UA, "--max-time", str(timeout), url],
+            capture_output=True, timeout=timeout + 15)
+        if result.returncode == 0 and result.stdout.startswith(IMG_MAGIC):
+            return result.stdout
+        if attempt + 1 < retries:
+            time.sleep(2 + 2 * attempt)
+    raise RuntimeError(f"image download failed (curl {result.returncode}): {url}")
+
 
 def process(raw, w, h, tiff=False):
+    """Preserve the historical recipe; do not migrate regression pixels."""
     from PIL import Image
-    img = Image.open(io.BytesIO(raw)); img.load()
-    if img.size != (w, h):
-        img = img.resize((w, h), Image.LANCZOS)
-    clean = Image.new(img.mode, img.size); clean.putdata(list(img.getdata()))
-    out = io.BytesIO()
-    if tiff:
-        clean.save(out, format="TIFF")
-    else:
-        if clean.mode not in ("RGB","L"): clean = clean.convert("RGB")
-        clean.save(out, format="JPEG", quality=92)
-    return out.getvalue()
+    with Image.open(io.BytesIO(raw)) as source:
+        source.load()
+        img = source.resize((w, h), Image.Resampling.LANCZOS) if source.size != (w, h) else source
+        clean = Image.new(img.mode, img.size)
+        clean.putdata(list(img.getdata()))
+        out = io.BytesIO()
+        if tiff:
+            clean.save(out, format="TIFF")
+        else:
+            if clean.mode not in ("RGB", "L"):
+                clean = clean.convert("RGB")
+            clean.save(out, format="JPEG", quality=92)
+        return out.getvalue()
 
-def fetch(rec):
-    rid = rec["id"]; path = os.path.join(HERE, rec["file"])
-    os.makedirs(os.path.dirname(path), exist_ok=True)
-    tiff = rec["file"].lower().endswith((".tif",".tiff"))
-    if rid in TETRA3:
-        raw = open(os.path.join(clone_tetra3(), TETRA3[rid]), "rb").read()
+
+def normalize(raw):
+    """Strip metadata after orientation; retain decoded pixels and sensor range."""
+    from PIL import Image, ImageOps
+    with Image.open(io.BytesIO(raw)) as source:
+        source.load()
+        oriented = ImageOps.exif_transpose(source)
+        if oriented.mode not in ("RGB", "RGBA", "L", "LA", "I;16", "I", "F"):
+            raise ValueError(f"unsupported image mode: {oriented.mode}")
+        clean = Image.frombytes(oriented.mode, oriented.size, oriented.tobytes())
+        out = io.BytesIO()
+        fmt = "TIFF" if clean.mode in ("I;16", "I", "F") else "PNG"
+        clean.save(out, format=fmt)
+        return out.getvalue(), pixel_sha256(clean), clean.size
+
+
+def atomic_write(path, data):
+    path.parent.mkdir(parents=True, exist_ok=True)
+    temporary = None
+    try:
+        with tempfile.NamedTemporaryFile(dir=path.parent, delete=False) as stream:
+            temporary = Path(stream.name)
+            stream.write(data)
+        os.replace(temporary, path)
+    finally:
+        if temporary is not None:
+            temporary.unlink(missing_ok=True)
+
+
+def source_bytes(rec, root):
+    original = root / ".originals" / rec["orig_sha256"]
+    if original.exists():
+        return original.read_bytes()
+    if rec["id"] in TETRA3:
+        clone = root / ".tetra3_src"
+        if not clone.is_dir():
+            subprocess.run(["git", "clone", "--depth", "1", "https://github.com/esa/tetra3.git", str(clone)],
+                           check=True, capture_output=True)
+        return (clone / TETRA3[rec["id"]]).read_bytes()
+    return curl(rec["download_url"])
+
+
+def fetch(rec, root=HERE):
+    relative = Path(rec["file"])
+    if relative.is_absolute() or ".." in relative.parts:
+        raise ValueError("image path must stay inside the dataset")
+    raw = source_bytes(rec, root)
+    if sha256(raw) != rec["orig_sha256"]:
+        raise ValueError(f"{rec['id']}: source SHA-256 mismatch; existing image preserved")
+    mode = rec.get("processing", {}).get("mode", "legacy_v1")
+    if mode == "oriented_png_v1":
+        data, pixels, size = normalize(raw)
+        if pixels != rec["processing"]["pixel_sha256"] or size != (rec["width"], rec["height"]):
+            raise ValueError(f"{rec['id']}: normalized pixels or dimensions differ")
+    elif mode == "legacy_v1":
+        data = process(raw, rec["width"], rec["height"], relative.suffix.lower() in (".tif", ".tiff"))
     else:
-        raw = curl(rec["download_url"])
-        got = sha256(raw)
-        if rec.get("orig_sha256") and got != rec["orig_sha256"]:
-            print(f"  [warn] {rid}: source sha differs (source changed since 2026-07-05)")
-    open(path, "wb").write(process(raw, rec["width"], rec["height"], tiff=tiff))
-    print(f"  [ok] {rec['file']}  ({rec['license']})")
+        raise ValueError(f"unknown processing mode: {mode}")
+    if sha256(data) != rec["clean_sha256"]:
+        raise ValueError(f"{rec['id']}: output SHA-256 mismatch; use recorded codec environment")
+    atomic_write(root / ".originals" / rec["orig_sha256"], raw)
+    atomic_write(root / relative, data)
+    print(f"[ok] {rec['id']} ({rec['license']})", flush=True)
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("ids", nargs="*")
+    parser.add_argument("--list", action="store_true")
+    parser.add_argument("--collection", help="select only this research.collection")
+    parser.add_argument("--manifest", type=Path, default=HERE / "manifest.json")
+    args = parser.parse_args()
+    records = json.loads(args.manifest.read_text())
+    unknown = set(args.ids) - {r["id"] for r in records}
+    if unknown:
+        parser.error("unknown IDs: " + ", ".join(sorted(unknown)))
+    selected = [r for r in records if (not args.ids or r["id"] in args.ids)
+                and (not args.collection or r.get("research", {}).get("collection") == args.collection)]
+    if not selected:
+        parser.error("selection is empty")
+    if args.list:
+        for rec in selected:
+            print(f"{rec['id']:40s} {rec['license']:12s} {rec['file']}")
+        return 0
+    failed = []
+    for rec in selected:
+        try:
+            fetch(rec, args.manifest.resolve().parent)
+        except (OSError, ValueError, RuntimeError, subprocess.SubprocessError) as error:
+            failed.append(rec["id"])
+            print(f"[FAIL] {rec['id']}: {error}", flush=True)
+    print(f"done: {len(selected) - len(failed)}/{len(selected)}")
+    return bool(failed)
+
 
 if __name__ == "__main__":
-    args = [a for a in sys.argv[1:] if a != "--list"]
-    if "--list" in sys.argv:
-        for m in MAN:
-            print(f"{m['id']:36s} {m['license']:12s} {m['file']}")
-        sys.exit(0)
-    todo = [m for m in MAN if not args or m["id"] in args]
-    print(f"fetching {len(todo)} frames...")
-    ok = 0
-    for m in todo:
-        try: fetch(m); ok += 1
-        except Exception as e: print(f"  [FAIL] {m['id']}: {e}")
-    print(f"done: {ok}/{len(todo)}")
+    raise SystemExit(main())

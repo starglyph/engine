@@ -1,0 +1,143 @@
+{
+  "collection": "robustness-2026-10",
+  "reviewer": "Codex",
+  "date": "2026-10-02",
+  "scope": "Diagnostic visual review of overview and six native correspondence crops; not an independent identification of every star or acceptance as ground truth.",
+  "method": "preview_collection_wcs.py; high-weight correspondences, x-sorted six evenly spaced rows; brightness x1/x3 as displayed",
+  "preview_script_sha256": "9639f03a758f8e1649776d4eabc652d13eac72b9807511be5575432b62699bf8",
+  "frames": [
+    {
+      "id": "wm_r_112929230",
+      "source_sha256": "01de14e5cd4724f40f46c760627d9f5c7373979274364db40f76a6e5be38f6b3",
+      "wcs_sha256": "ffe21c40e9dde31eff4c968c79d74aaaec146e37033ac4f5acf21ceb27c405d1",
+      "review_status": "pending",
+      "diagnostic_note": "Most sampled positions lie on visible point sources, but the left-edge crop overlaps vegetation and several catalog/centroid offsets are visible. A high-weight outlier and field-edge behavior require dedicated review."
+    },
+    {
+      "id": "wm_r_113343124",
+      "source_sha256": "2736e16473752e7a3123836c8748b84988728cb5f68952a84a95505f15962a3a",
+      "wcs_sha256": "f47c063bff52fa0db913201fb148a5bab0353085e2c65935c7b534f547229715",
+      "review_status": "pending",
+      "diagnostic_note": "Six sampled locations contain visible stellar sources over a noisy field; small marker offsets remain. Star identities and full-field accuracy have not been independently certified."
+    },
+    {
+      "id": "wm_r_117865777",
+      "source_sha256": "0ea16bb8500c45e1390be323faea68d5b06001ac7cd6698242171e21d7ad07fa",
+      "wcs_sha256": "c98b6893fee20e51e7f5b8e862c43243569d800ce714b48bcebbca994b34193c",
+      "review_status": "pending",
+      "diagnostic_note": "Sampled sources are visible, including bright clustered stars; sparse coverage and blended wings require centroid review. No full-field certification."
+    },
+    {
+      "id": "wm_r_118484591",
+      "source_sha256": "a40183436c91907492d56af35e1a907fd5a8b85e458e641ec0efb753995a9dc9",
+      "wcs_sha256": "890e215288eb42704efdc80e98b15b0d500a3f375891cead2f24e1c9793aca90",
+      "review_status": "pending",
+      "diagnostic_note": "Sampled sources are visible in very dark noisy sky, with some catalog/centroid displacement. No independent full-field certification."
+    },
+    {
+      "id": "wm_r_140736786",
+      "source_sha256": "8efae48632099d8eeb619315fc1ea4fd2b7ab4062c66af4c94b6c147a35d01e5",
+      "wcs_sha256": "e2db51466e2e196ea08c1137182d804757d219fea956498a00b78b785fe6a5e6",
+      "review_status": "pending",
+      "diagnostic_note": "Six sampled positions contain visible stars; one bright edge source is elongated with a halo. Broad footprint is plausible, but edge accuracy is not certified."
+    },
+    {
+      "id": "wm_r_146925915",
+      "source_sha256": "d52c49a4e1f7c4e128a842c709703bd6778ecf051defc611f11fe2478f97b6a8",
+      "wcs_sha256": "2d246ce528af0da1e0c6bee08e22bcfbd379e09cc6a2b756d05309cb449d0235",
+      "review_status": "pending",
+      "diagnostic_note": "Six sampled locations coincide with visible soft point sources on a bright phone-camera background. The footprint spans much of the frame; independent star identities and edge accuracy remain unverified."
+    },
+    {
+      "id": "wm_r_148266565",
+      "source_sha256": "be7292e499ead98eb6a514d4d3e3e18bbc5ffb6a58be4581ea9679e94737cc76",
+      "wcs_sha256": "66279b1201825af198b75401dfaa5c5284174db6cee81fde6e71c535d339af36",
+      "review_status": "pending",
+      "diagnostic_note": "Sampled sources are visible against green/pink aurora, with short elongation in several crops. Broad spatial coverage is plausible, but this is not a full-field accuracy review."
+    },
+    {
+      "id": "wm_r_149276071",
+      "source_sha256": "07ae25603db00a53060aaac710635df8ec71ca14eeb758e604cadb211cbd25a2",
+      "wcs_sha256": "6216b402ad795c61d9c8f9c7afd3e7a1ab1181b63dc2a76abdb6d706e6c1c69b",
+      "review_status": "pending",
+      "diagnostic_note": "Only four correspondences have weight >=0.95, concentrated near the center. Visible source blobs are heavily affected by compression and enhancement clips some crops. This is a weak candidate; full-field WCS must not be trusted from this diagnostic."
+    },
+    {
+      "id": "wm_r_154807046",
+      "source_sha256": "da420889b2818f3176320feb2d8fd4c4794f4c0f0800cf10e82de7473c262cb9",
+      "wcs_sha256": "66ab4000d9b593aa30eba37ca8efc78985ce8490be7c56e40dae3e80e545c290",
+      "review_status": "pending",
+      "diagnostic_note": "Six sampled locations contain faint sources, with noticeable catalog/centroid displacement at some edges. No acceptance of the full-field model."
+    },
+    {
+      "id": "wm_r_156873262",
+      "source_sha256": "7577861fd6448be23879c11c4ac23463c84cb34d3e83670beaa46d1330bc889e",
+      "wcs_sha256": "e4bcce7f8b4f1f4fd6877d90abff3f2243a8a4f726d9e7717e0ede1ddcd72fd2",
+      "review_status": "pending",
+      "diagnostic_note": "Sampled sky locations contain stars, but overview correspondences also overlap the foreground sign/structure. Several sampled catalog markers have visible offsets. Foreground matches must be checked individually before using residuals as accuracy."
+    },
+    {
+      "id": "wm_r_161606532",
+      "source_sha256": "985afe7d1142a2ece7545bc8846cb7c610ac5d307f85bf9f45056d7249921c63",
+      "wcs_sha256": "43507a1f91749ea5a54bbf26f1c2202d47f1db4132587e686d89ed7d9408356b",
+      "review_status": "pending",
+      "diagnostic_note": "Six sampled sky positions contain visible sources, but additional high-weight correspondences in the overview fall on foreground vegetation. The external correspondence list is not a verified star-only set."
+    },
+    {
+      "id": "wm_r_162210628",
+      "source_sha256": "182f67e9c900e7cad333e16c73ac43206a350832dfe46f61ba45f647ac8cdc82",
+      "wcs_sha256": "437071822bee9e18d9b368e88a54d50180292ee7792c9aa5e1c2433c374c642a",
+      "review_status": "pending",
+      "diagnostic_note": "Six sampled locations align with visible stars across a sparse, noisy Orion field; several stars are elongated. No independent identity or full-field certification."
+    },
+    {
+      "id": "wm_r_163971318",
+      "source_sha256": "908b43c0b68aba1e321f38f4ee5227d9919c6c0ad5cc967c2118e356bf417ba1",
+      "wcs_sha256": "8571c0efabe5800e6af9fa200d32eacc8878b3047c75e89cda96628668c59aeb",
+      "review_status": "pending",
+      "diagnostic_note": "Sampled sources are visible over structured aurora, with elongated/haloed bright sources and some offset. No independent full-field certification."
+    },
+    {
+      "id": "wm_r_176021058",
+      "source_sha256": "c950aff831b9e748548d681cffb26e9102547687e90861861ddaa1a5eecd5dc0",
+      "wcs_sha256": "700b2a3b721805bc790e4c3fc815dfaec78f92541326b41b17e29e8c1822de87",
+      "review_status": "pending",
+      "diagnostic_note": "Sampled locations coincide with visible stars over a frame containing Andromeda, a linear trail and a bright foreground gutter. Several stellar profiles are elongated. This is a diagnostic sample, not full-field acceptance."
+    },
+    {
+      "id": "wm_r_178297645",
+      "source_sha256": "8c4fef84dd0c0a307522b4bfb9c9af6b68031e1e86b8bda020d25660eb4ac2b4",
+      "wcs_sha256": "af8d74cc458542c04016031c53e7474ebdb59fb85a1e83424c7d51f3cc0d2c07",
+      "review_status": "pending",
+      "diagnostic_note": "Only 12 high-weight correspondences are concentrated in a very small central cluster despite a much larger stellar field. Sampled blobs are visible but strongly smeared/noisy. This local footprint cannot certify full-field WCS."
+    },
+    {
+      "id": "wm_r_179619449",
+      "source_sha256": "60aa033d5614c48727d8b74dce5b4b52e45105c0990a9560d7bf0d1f40534dc2",
+      "wcs_sha256": "840696481321b5c93e04fd1df5e69b4399970c13d6370bd7e0062e3c8726e848",
+      "review_status": "pending",
+      "diagnostic_note": "Several sampled locations contain visible stars, but the very dark field has strong noise/compression and some selected crops lack a distinct isolated source. The broad footprint needs individual identity and edge review."
+    },
+    {
+      "id": "wm_r_179998887",
+      "source_sha256": "759151eb489418d870299c8d61109ac8c1bed79b5ddd55e912e7df16eb631085",
+      "wcs_sha256": "e3b47f2edab5fa2b2c2309dbc49f32168da3c16c4b377c07d80e58c35b868649",
+      "review_status": "pending",
+      "diagnostic_note": "Six sampled locations contain visible stellar sources with short elongation and small marker offsets despite the bright Moon and Venus. Correspondences cover mainly the central/right field; full-field accuracy remains unverified."
+    },
+    {
+      "id": "wm_r_59634605",
+      "source_sha256": "d4e3bddd78b52da29ca8d6ac648e5b6fd6d1b45e7cd8e187f2e045fe99df2534",
+      "wcs_sha256": "0de0b0a0503c70419fce3ab300046d3ab659891cc73c331719726bf5211dc7bd",
+      "review_status": "pending",
+      "diagnostic_note": "Sampled positions contain elongated stellar sources, but several catalog circles are visibly offset from their centroids. The correspondence footprint covers mainly the central Milky Way field, excluding much of the frame. Full-field WCS remains unverified."
+    },
+    {
+      "id": "wm_r_86780043",
+      "source_sha256": "991507349edbec8a3ad59cf7f4b7d9c6f52c6e1eed6cb568da9f2ff173bedfb4",
+      "wcs_sha256": "521830aa4f31903b373f67ac3d2cd7af195b4d68d3af31beac2467aa14b28de3",
+      "review_status": "pending",
+      "diagnostic_note": "Sampled locations contain visible sources against clouds and a bright gradient. Several sources are horizontally elongated, and edge catalog markers are visibly displaced. Broad correspondence coverage does not yet certify full-field accuracy."
+    }
+  ]
+}
