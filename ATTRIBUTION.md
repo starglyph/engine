@@ -99,3 +99,62 @@ The image-derived source probes and traces in
 licenses and credits. Codex reused iteration 1 annotations to measure detector
 rejections and controlled centroid replays; these measurements do not certify
 stellar identities or astrometric ground truth. No new photographs were added.
+
+The image-derived coordinates and visual labels in
+`docs/experiments/robustness-iteration-5-*.json` and
+`docs/experiments/robustness-iteration-6-*.json` and
+`docs/experiments/robustness-iteration-7-*.json` and
+`docs/experiments/robustness-iteration-8-*.json` retain the same per-image
+licenses and credits linked above. Codex reviewed existing development images
+and measured geometry from existing source extractions and image pixels.
+Catalog identities remain conditional; these annotations are not certified
+astrometric ground truth. No new photographs were added.
+
+Iteration 9 mask polygons and measurements (`docs/experiments/robustness-iteration-9-*.json`)
+are derived from the same development photographs and retain their per-image
+licenses and credits. `docs/images/robustness-iteration-9-masks.jpg` shows, left
+to right, `wm_r_132162731` by oliwok, `wm_r_143159342` by Aruncmohan1987, and
+`wm_r_149276071` by Harukkaaario, all **CC BY 4.0**. Original source links are
+in the collection's per-image attribution. Modifications by Codex: resizing,
+mask boundary and source markers, assembly and captions. No new photos or
+ground-truth certifications were added.
+
+Iteration 10 annotations and replay measurements
+(`docs/experiments/robustness-iteration-10-*.json`) reuse `wm_r_143159342`,
+Aruncmohan1987, **CC BY 4.0**, with its original source linked in the collection
+attribution. `docs/images/robustness-iteration-10-leaf.jpg` is a cropped and
+enlarged diagnostic view of that photo: original brightness on the left,
+enhanced contrast on the right, with coordinate markers and a caption added
+by Codex. No new photographs or ground-truth certifications were added.
+
+Iteration 11 fixed-fit measurements (`docs/experiments/robustness-iteration-11-*.json`)
+reuse the same `wm_r_143159342` coordinates and review, Aruncmohan1987,
+**CC BY 4.0**. No new photographs, visual annotations or ground-truth
+certifications were added.
+
+Iteration 12 measurements (`docs/experiments/robustness-iteration-12-*.json`)
+and plots (`docs/images/robustness-iteration-12-vectors.*`) reuse the prior
+image-derived source coordinates for `wm_r_132162731` (oliwok),
+`wm_r_143159342` (Aruncmohan1987), and `wm_r_149276071` (Harukkaaario),
+all **CC BY 4.0**, with original links in the collection attribution.
+Residual-vector analysis and plots by Codex. No new images, source annotations
+or ground-truth certifications were added.
+
+Iteration 13 fixed-pair camera measurements
+(`docs/experiments/robustness-iteration-13-*.json`) reuse those same three
+photographs' reviewed coordinates, **CC BY 4.0**, and the existing HYG catalog
+under its documented license. Credits: oliwok, Aruncmohan1987, Harukkaaario;
+original links remain in the collection attribution. No new photographs,
+visual annotations or ground-truth certifications were added.
+
+Iteration 14 sensitivity measurements (`docs/experiments/robustness-iteration-14-*.json`)
+reuse the same reviewed image coordinates and HYG identities as iteration 13:
+`wm_r_132162731` (oliwok), `wm_r_143159342` (Aruncmohan1987),
+`wm_r_149276071` (Harukkaaario), photographs **CC BY 4.0**, HYG under its
+existing documented license. No new photographs or visual annotations.
+
+Iteration 15 perturbation measurements (`docs/experiments/robustness-iteration-15-*.json`)
+reuse those same three photographs' reviewed coordinates and HYG identities.
+Photograph credits remain oliwok, Aruncmohan1987, Harukkaaario, **CC BY 4.0**;
+HYG retains its existing license. Injected coordinate shifts are diagnostic
+inputs, not edits to the photographs or new ground truth.

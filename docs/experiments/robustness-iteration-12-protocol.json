@@ -1,0 +1,59 @@
+{
+  "iteration": 12,
+  "split": "development",
+  "ids": [
+    "wm_r_132162731",
+    "wm_r_143159342",
+    "wm_r_149276071"
+  ],
+  "hashes": {
+    "docs/experiments/robustness-iteration-5-geometry.json": "dc93a959d0a8930da1984a721fb9fd9fd606b882611a56af58c1663f1a69f531",
+    "docs/experiments/robustness-iteration-5-review.json": "6a23870a2373e17cac7e1976b5725fabd94ba0efda1898a3980a04b2183aca3f",
+    "docs/experiments/robustness-iteration-5-protocol.json": "3f6c49f51d6666e6aad72d0a07b3c864eb331ec39835b461857f776b3e80b5bc",
+    "prototype/eval/robustness_residual_fields.py": "ff653267f15936829c70a7de58cf6ae54901102f8f5acd1c9ee14533e839b29e",
+    "prototype/eval/robustness_residual_plot.py": "196c307fabfe13a888a83e2ab35e0b1c3accfc6669695eb1987f1f57a5f12f81",
+    "prototype/eval/compare_local_wcs.py": "1a8c83f6d0a19f3cbbe2a96f0db79a0ab60ac33fd09ad6c5c69472672ef31a3b",
+    "prototype/eval/robustness_geometry.py": "b15495e6ba97832a84d06c4e83bfa16aec704784875fdeccb3f831ceec976034",
+    "prototype/eval/collection_run.py": "6bf1108b48c21a40bdd00023eae564c27c5062fd63beb45d32ddde86154bd5b5",
+    "data/samples/sky-samples/manifest.json": "97e229270c7b0f97fce4e1f738917cd91cdff01df3508db29584af70a0ea4871",
+    "prototype/artifacts/robustness-iteration-4/final/development/control/wm_r_132162731/solve-reports/wm_r_132162731.json": "95d97137cfc0e3e2fb67cf89bfc3ff9f97f218adb28f1a29e0fe54354881cdbc",
+    "prototype/artifacts/robustness-iteration-4/final/development/footprint/wm_r_132162731/solve-reports/wm_r_132162731.json": "797dc2c87cdf4d4834f305ff66fc92564d17104b55a3568d83c5dc6f807b7cfd",
+    "prototype/artifacts/robustness-iteration-4/final/development/control/wm_r_143159342/solve-reports/wm_r_143159342.json": "6b4f32d58183b41ea4ae693154f3fbb012aaed417d3f855e9faccb4c8bf31828",
+    "prototype/artifacts/robustness-iteration-4/final/development/footprint/wm_r_143159342/solve-reports/wm_r_143159342.json": "5018f5c94028908158ce935af3568f2725258c60307de7d3de3575552bb540f5",
+    "prototype/artifacts/robustness-iteration-4/final/development/control/wm_r_149276071/solve-reports/wm_r_149276071.json": "757b2ff542e8c5ebb195a2a7aa85429f4a8a9ee319e649fbbfae841fae50c55f",
+    "prototype/artifacts/robustness-iteration-4/final/development/footprint/wm_r_149276071/solve-reports/wm_r_149276071.json": "509425c3f213a3c3d36919df1c646f899746058a2402e960c88c9876b1f7203b"
+  },
+  "arms": [
+    "control",
+    "footprint"
+  ],
+  "radial_bins": [
+    0.0,
+    0.35,
+    0.7,
+    1.000001
+  ],
+  "edge_fraction": 0.1,
+  "grid": [
+    3,
+    3
+  ],
+  "residual_sign": "predicted minus measured; x right, y down",
+  "radial_origin": "unchanged camera principal point (width/2,height/2)",
+  "radial_normalization": "distance / half image diagonal",
+  "tangential_sign": "clockwise from outward radial direction in image coordinates",
+  "angular_comparison_min_residual_px": 1.0,
+  "plot_arrow_magnification": 15.0,
+  "criteria": [
+    "reproduce every saved iteration-5 projected position and error",
+    "retain all 117 probes, outside-input and edge groups, including sparse or empty cells",
+    "repeat summaries with both previously measured aperture centroids",
+    "do not infer a universal lens model from three heterogeneous conditional fields"
+  ],
+  "environment": {
+    "python": "3.10.12",
+    "numpy": "1.26.4"
+  },
+  "interpretation": "descriptive decomposition only; no pose, translation or distortion fit",
+  "holdout": false
+}

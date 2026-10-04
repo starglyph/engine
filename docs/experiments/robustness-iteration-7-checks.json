@@ -1,0 +1,131 @@
+{
+  "iteration": 7,
+  "id": "wm_r_143159342",
+  "split": "development",
+  "base_commit": "67fbcf8203915f0329eb74d643e526c992bbaf4a",
+  "review": {
+    "candidates_sha256": "350e3c8459cc0bc07f23314412b8f72c77edf4d62085590df1ed8c8c5dd61fc0",
+    "review_sha256": "76de03b80a9fea56b7bc4bef532d70cf948e9dabccea2a6c216422df7a59819e",
+    "protocol": {
+      "id": "wm_r_143159342",
+      "split": "development",
+      "candidates_sha256": "350e3c8459cc0bc07f23314412b8f72c77edf4d62085590df1ed8c8c5dd61fc0",
+      "hashes": {
+        "data/samples/sky-samples/images/wm_r_143159342.png": "94f3d61426e03e4fda29b95a1b91038332a09491587acf77df3681c5b919c54d",
+        "data/catalogs/hyg_v42.csv.gz": "5ca9431ff364c8002a4a3efa91b2b9296746aea1543374db4cb6b4fab049d601",
+        "prototype/artifacts/robustness-baseline/wcs-run/wm_r_143159342/downsample-2/field.axy": "84e5272e5e4882691c4a4e5753f0d419a40ebd7f028f673f924194e631d93106",
+        "docs/experiments/robustness-iteration-5-review.json": "6a23870a2373e17cac7e1976b5725fabd94ba0efda1898a3980a04b2183aca3f",
+        "prototype/eval/robustness_pairs.py": "78f7de7e20fa71cf924817a8d7ae6a3e69065e833821740d9f635c7caf57f522",
+        "prototype/eval/robustness_geometry.py": "b15495e6ba97832a84d06c4e83bfa16aec704784875fdeccb3f831ceec976034",
+        "docs/experiments/robustness-iteration-6-geometry.json": "1cf543d24b15b3cffc37f3c00fc073755cacae7f5b1ed251c39a548b4843ef4f"
+      },
+      "selection": "all eleven initial footprint fit pairs; no selection by leave-one-out outcome",
+      "identity_limit": "visual source/pattern review conditional on prior camera proposals; no absolute GT"
+    },
+    "labels": {
+      "visible_source": 9,
+      "blend": 1,
+      "not_visible_foreground": 1
+    },
+    "ground_truth_promoted": false
+  },
+  "run": {
+    "exit_code": 0,
+    "status": "completed",
+    "elapsed_s": 47.26926621235907,
+    "command": [
+      "cargo",
+      "test",
+      "--offline",
+      "--release",
+      "--manifest-path",
+      "/home/agent/work/starglyph/engine/prototype/artifacts/robustness-iteration-7/fixed/pipeline/Cargo.toml",
+      "-p",
+      "starglyph-core",
+      "solve::pair_refit::fixed_pairs",
+      "--",
+      "--ignored",
+      "--nocapture"
+    ]
+  },
+  "fit_count": 23,
+  "sum_optimizer_ms": 0.5666310000000001,
+  "reproduced_previous_first_fits": 2,
+  "python_tests": {
+    "command": "PYTHONPATH=/tmp/starglyph-iteration-deps python3 -m unittest discover -s prototype/eval -p 'test_*.py'",
+    "status": "passed",
+    "count": 111,
+    "exit_code": 0,
+    "log_sha256": "c8ae40178bdff9e7ba09f3007e87b3bfff4a605909f8343eaffeae543d868a78"
+  },
+  "rustfmt": {
+    "command": "rustfmt --check --edition 2021 prototype/eval/pair_refit.rs",
+    "exit_code": 0
+  },
+  "clippy": {
+    "command": "CARGO_TARGET_DIR=artifacts/robustness-iteration-7/fixed/pipeline/target cargo clippy --offline --release --manifest-path artifacts/robustness-iteration-7/fixed/pipeline/Cargo.toml -p starglyph-core --all-targets --no-deps -- -D warnings",
+    "cwd": "prototype",
+    "exit_code": 0,
+    "log_sha256": "d68f9dcab8aa19d4676e79d221750a4c1af46697a4546558151971558ff5fcef"
+  },
+  "raw": {
+    "fits_sha256": "aa7081f7d0b2059bd635fde4c5b957ef20a7ece06f644f169bdc17ceacf77544",
+    "input_sha256": "f49b2d31f986a5fe8d70c35f4a730628dd3cb43f0cb209da7a9bcf74fccec120",
+    "run_log_sha256": "5eb5f7d02a13a3bde7185660b0fef321b7646f25225d4bfa4f204cbbd46caca3"
+  },
+  "isolated_lock": {
+    "before_sha256": "59694debace1f5f18e2de398a77ce4d6a1a8f7dd237af646906aa49bfa3b677a",
+    "after_sha256": "2fc70c7f2f8ee7c6eb227a3bbabb358b203ab87489477d96607354b1b94ea69f",
+    "no_added_versions": true,
+    "packages": 189
+  },
+  "frozen_inputs_verified_except_expected_cargo_lock_pruning": true,
+  "files_sha256": {
+    "prototype/eval/pair_refit.rs": "8a064163d8dc43db1d858e3567565f9d822ec1e0e3e729a383fabbd8df5dc348",
+    "prototype/eval/robustness_pairs.py": "78f7de7e20fa71cf924817a8d7ae6a3e69065e833821740d9f635c7caf57f522",
+    "prototype/eval/robustness_pair_refit.py": "cf060fd043e2531e0df24741a7ffc6d9d9f76bc52639282f5f3439c43ac078ed",
+    "prototype/eval/robustness_pair_report.py": "9d23b0c108ef88125a0127176f293bbf05e5eacc080b7d9ffd3d0506e089abbc",
+    "prototype/eval/test_robustness_pairs.py": "c4cd31961411104354feb2b09c1752bac30d84389a24b1a2889ac1fe0f37627d",
+    "docs/experiments/robustness-iteration-7-review.json": "76de03b80a9fea56b7bc4bef532d70cf948e9dabccea2a6c216422df7a59819e",
+    "docs/experiments/robustness-iteration-7-protocol.json": "825c71b81ff058a4b5f96097cd37f91cae6189301a027309ed9c74910d904528",
+    "docs/experiments/robustness-iteration-7-geometry.json": "6542b2764d7bcde1cf6a64926eeef4f47ef18d5f2aa2198c01bbc4e8167553d0"
+  },
+  "protected": {
+    "data/samples/sky-samples/manifest.json": {
+      "sha256": "97e229270c7b0f97fce4e1f738917cd91cdff01df3508db29584af70a0ea4871",
+      "matches_head": true
+    },
+    "data/samples/sky-samples/robustness-results.json": {
+      "sha256": "09e6efe61468b4afe896967d583553751d80fe82e65e0ac064528523bbc525e8",
+      "matches_head": true
+    },
+    "data/samples/sky-samples/collection-wcs-review.json": {
+      "sha256": "97c182c51955baee9adce93cde8e93fb98ece6a69bdc606cf871d3a1eef19841",
+      "matches_head": true
+    },
+    "prototype/Cargo.toml": {
+      "sha256": "ea0b115c3ff3465b164e9f35f3f4cef373dbc1dcc25074f77e751eacc55e2840",
+      "matches_head": true
+    },
+    "prototype/Cargo.lock": {
+      "sha256": "59694debace1f5f18e2de398a77ce4d6a1a8f7dd237af646906aa49bfa3b677a",
+      "matches_head": true
+    }
+  },
+  "changes": {
+    "production_code": false,
+    "production_dependencies": false,
+    "original_photographs": false,
+    "published_baseline": false,
+    "holdout_used": false,
+    "new_wcs_runs": 0,
+    "new_tetra3_searches": 0,
+    "new_photographs": 0
+  },
+  "outcome": "one confirmed palm-leaf correspondence and one possible blend; fixed-pair composition dominates initialization; removing leaf improves Albireo but worsens southern geometry",
+  "limitations": [
+    "first fit only; full rematching still untested for the diagnostic subsets",
+    "conditional stellar identities, no absolute ground truth",
+    "manual exclusions are diagnostic, not an automatic improvement"
+  ]
+}

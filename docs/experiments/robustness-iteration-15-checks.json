@@ -1,0 +1,239 @@
+{
+  "iteration": 15,
+  "split": "development",
+  "base_commit": "67fbcf8203915f0329eb74d643e526c992bbaf4a",
+  "frozen_inputs_verified": true,
+  "previous_13_14_published_hashes_preserved": true,
+  "exact_zero_shift_controls": 6,
+  "exact_control_projections": 234,
+  "shifted_fit_count": 288,
+  "total_fit_count": 294,
+  "skipped_empty_cells": 18,
+  "all_linear_agreement_gates_pass": true,
+  "max_outside_motion_rms_px": 0.599412447165184,
+  "max_probe_motion_px": 0.9279577690607126,
+  "max_outside_probe_motion_px": 0.8268927781134029,
+  "max_nonempty_edge_mismatch_rms_px": 0.011130985425497262,
+  "max_outside_even_component_rms_px": 0.0007688908037394243,
+  "iterations_range": [
+    4,
+    6
+  ],
+  "residual_evaluations_range": [
+    29,
+    58
+  ],
+  "stop_reasons_shifted_trials": {
+    "small_improvement": 282,
+    "no_accepted_step": 6
+  },
+  "bound_hits": 0,
+  "invalid_projections": 0,
+  "sensor_coverage_failures": 0,
+  "optimizer_ms": 20.676234000000004,
+  "summary": [
+    {
+      "id": "wm_r_132162731",
+      "arm": "k1",
+      "amplitude_px": 0.1,
+      "trial_count": 20,
+      "max_outside_motion_rms_px": 0.035471652625245126,
+      "max_outside_mismatch_rms_px": 7.492489754884146e-05,
+      "max_nonempty_edge_mismatch_rms_px": 0.00011130048306845389
+    },
+    {
+      "id": "wm_r_132162731",
+      "arm": "k1",
+      "amplitude_px": 1.0,
+      "trial_count": 20,
+      "max_outside_motion_rms_px": 0.3547405298945472,
+      "max_outside_mismatch_rms_px": 0.0007729320486672038,
+      "max_nonempty_edge_mismatch_rms_px": 0.0011400720527317528
+    },
+    {
+      "id": "wm_r_132162731",
+      "arm": "k1_k2",
+      "amplitude_px": 0.1,
+      "trial_count": 20,
+      "max_outside_motion_rms_px": 0.044196968380088505,
+      "max_outside_mismatch_rms_px": 0.00018557912607536353,
+      "max_nonempty_edge_mismatch_rms_px": 0.0001580625240902191
+    },
+    {
+      "id": "wm_r_132162731",
+      "arm": "k1_k2",
+      "amplitude_px": 1.0,
+      "trial_count": 20,
+      "max_outside_motion_rms_px": 0.4419702418167845,
+      "max_outside_mismatch_rms_px": 0.0018780549024851126,
+      "max_nonempty_edge_mismatch_rms_px": 0.001664613242996159
+    },
+    {
+      "id": "wm_r_143159342",
+      "arm": "k1",
+      "amplitude_px": 0.1,
+      "trial_count": 28,
+      "max_outside_motion_rms_px": 0.05856808279461944,
+      "max_outside_mismatch_rms_px": 0.00027344031843651333,
+      "max_nonempty_edge_mismatch_rms_px": 0.0005908095179852743
+    },
+    {
+      "id": "wm_r_143159342",
+      "arm": "k1",
+      "amplitude_px": 1.0,
+      "trial_count": 28,
+      "max_outside_motion_rms_px": 0.5857406211616443,
+      "max_outside_mismatch_rms_px": 0.002774473489828676,
+      "max_nonempty_edge_mismatch_rms_px": 0.006021944494491783
+    },
+    {
+      "id": "wm_r_143159342",
+      "arm": "k1_k2",
+      "amplitude_px": 0.1,
+      "trial_count": 28,
+      "max_outside_motion_rms_px": 0.05993577758720728,
+      "max_outside_mismatch_rms_px": 0.0004177107499896533,
+      "max_nonempty_edge_mismatch_rms_px": 0.0010947565302282384
+    },
+    {
+      "id": "wm_r_143159342",
+      "arm": "k1_k2",
+      "amplitude_px": 1.0,
+      "trial_count": 28,
+      "max_outside_motion_rms_px": 0.599412447165184,
+      "max_outside_mismatch_rms_px": 0.004255325161504379,
+      "max_nonempty_edge_mismatch_rms_px": 0.011130985425497262
+    },
+    {
+      "id": "wm_r_149276071",
+      "arm": "k1",
+      "amplitude_px": 0.1,
+      "trial_count": 24,
+      "max_outside_motion_rms_px": 0.040116973938354596,
+      "max_outside_mismatch_rms_px": 0.00014196977578577973,
+      "max_nonempty_edge_mismatch_rms_px": 0.00015252813139106475
+    },
+    {
+      "id": "wm_r_149276071",
+      "arm": "k1",
+      "amplitude_px": 1.0,
+      "trial_count": 24,
+      "max_outside_motion_rms_px": 0.4011771281421383,
+      "max_outside_mismatch_rms_px": 0.0019816376976878694,
+      "max_nonempty_edge_mismatch_rms_px": 0.0020241539395779366
+    },
+    {
+      "id": "wm_r_149276071",
+      "arm": "k1_k2",
+      "amplitude_px": 0.1,
+      "trial_count": 24,
+      "max_outside_motion_rms_px": 0.04155950184224854,
+      "max_outside_mismatch_rms_px": 7.096449815887538e-05,
+      "max_nonempty_edge_mismatch_rms_px": 9.02555535287394e-05
+    },
+    {
+      "id": "wm_r_149276071",
+      "arm": "k1_k2",
+      "amplitude_px": 1.0,
+      "trial_count": 24,
+      "max_outside_motion_rms_px": 0.4156464761859405,
+      "max_outside_mismatch_rms_px": 0.0012674659340630755,
+      "max_nonempty_edge_mismatch_rms_px": 0.0016287945096300693
+    }
+  ],
+  "run": {
+    "status": "completed",
+    "exit_code": 0,
+    "command": [
+      "cargo",
+      "test",
+      "--offline",
+      "--locked",
+      "--release",
+      "--manifest-path",
+      "/home/agent/work/starglyph/engine/prototype/artifacts/robustness-iteration-15/fixed/pipeline/Cargo.toml",
+      "-p",
+      "starglyph-core",
+      "solve::radial_refit::perturbation::",
+      "--",
+      "--include-ignored",
+      "--nocapture"
+    ],
+    "elapsed_s": 53.90093682333827
+  },
+  "python_tests": {
+    "count": 154,
+    "new": 5,
+    "exit_code": 0,
+    "command": "PYTHONPATH=/tmp/starglyph-iteration-deps python3 -m unittest discover -s prototype/eval -p 'test_*.py'",
+    "log_sha256": "b5c30456b876ff40a0073d36d79e7a9d1331f15d15e5d652ab3a690397febc0b"
+  },
+  "rust_tests": {
+    "passed": 3,
+    "new_unit_tests": 2,
+    "includes_experiment": true,
+    "exit_code": 0
+  },
+  "rustfmt": {
+    "exit_code": 0,
+    "command": "rustfmt --check --edition 2021 prototype/eval/radial_perturbation.rs"
+  },
+  "clippy": {
+    "exit_code": 0,
+    "command": "CARGO_TARGET_DIR=artifacts/robustness-iteration-15/fixed/pipeline/target cargo clippy --offline --locked --release --manifest-path artifacts/robustness-iteration-15/fixed/pipeline/Cargo.toml -p starglyph-core --all-targets --no-deps -- -D warnings",
+    "cwd": "prototype",
+    "log_sha256": "7ccdd4cca2c119340e6f704c1fa5350d76cbc59949bfbcc1d8325d804d26f03f"
+  },
+  "environment": {
+    "python": "3.10.12",
+    "numpy": "1.26.4"
+  },
+  "raw_sha256": {
+    "protocol.json": "ddf147880491c43b7226c23327301927701573ac8b9e98c47b9c68edb6c69f2a",
+    "input.json": "114d628c94079acc4899c828593b220dfc56cac620cd97ff13cda0c469bf53c2",
+    "fits.json": "2b482dbcb62394f0427e53188586458db961cd9405ceae0bdb78d849705ac544",
+    "results.json": "ff7e4db8b1e9128ecd7fc090ac77e5b6ba38341c4329502b15356d607fdc8e14",
+    "run.log": "f555ff77e1b778651bdb59976b11d0642765b7f4669842dc67c6e1cc8fc23433"
+  },
+  "files_sha256": {
+    "prototype/eval/robustness_perturbation.py": "206f569f7718ddf9b08fbb7ca1fb5afa694fea467ad8c08cc3abe45a8981bd83",
+    "prototype/eval/radial_perturbation.rs": "29f55f843ff17a91eb6d658f4419c489eb50b5b8a8eba6600a2517a4a2033965",
+    "prototype/eval/test_robustness_perturbation.py": "fb9c07c201b6883c1af42a44c654b7d9e6770918569c985735a5b9c19a3eb421",
+    "docs/robustness-iteration-15.md": "48075a5153a0d54d6feab6e14dbb51192fd2bbe1cd6cd20c932308a230ec849c",
+    "docs/experiments/robustness-iteration-15-protocol.json": "ddf147880491c43b7226c23327301927701573ac8b9e98c47b9c68edb6c69f2a",
+    "docs/experiments/robustness-iteration-15-results.json": "ff7e4db8b1e9128ecd7fc090ac77e5b6ba38341c4329502b15356d607fdc8e14"
+  },
+  "protected": {
+    "data/samples/sky-samples/manifest.json": {
+      "sha256": "97e229270c7b0f97fce4e1f738917cd91cdff01df3508db29584af70a0ea4871",
+      "matches_head": true
+    },
+    "data/samples/sky-samples/robustness-results.json": {
+      "sha256": "09e6efe61468b4afe896967d583553751d80fe82e65e0ac064528523bbc525e8",
+      "matches_head": true
+    },
+    "data/samples/sky-samples/collection-wcs-review.json": {
+      "sha256": "97c182c51955baee9adce93cde8e93fb98ece6a69bdc606cf871d3a1eef19841",
+      "matches_head": true
+    },
+    "prototype/Cargo.toml": {
+      "sha256": "ea0b115c3ff3465b164e9f35f3f4cef373dbc1dcc25074f77e751eacc55e2840",
+      "matches_head": true
+    },
+    "prototype/Cargo.lock": {
+      "sha256": "59694debace1f5f18e2de398a77ce4d6a1a8f7dd237af646906aa49bfa3b677a",
+      "matches_head": true
+    }
+  },
+  "changes": {
+    "production_code": false,
+    "production_dependencies": false,
+    "original_photographs": false,
+    "published_baseline": false,
+    "holdout_used": false,
+    "new_ground_truth": false,
+    "new_solver_runs": 0,
+    "new_wcs_runs": 0
+  },
+  "conclusion": "For these fixed correspondences, single-cell coherent shifts up to 1 px agree with local predictions and do not reproduce large edge errors. This is a sensitivity test, not improved recognition."
+}

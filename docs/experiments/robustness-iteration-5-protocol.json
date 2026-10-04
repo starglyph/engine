@@ -1,0 +1,39 @@
+{
+  "split": "development",
+  "ids": [
+    "wm_r_132162731",
+    "wm_r_143159342",
+    "wm_r_149276071"
+  ],
+  "hashes": {
+    "data/samples/sky-samples/manifest.json": "97e229270c7b0f97fce4e1f738917cd91cdff01df3508db29584af70a0ea4871",
+    "data/catalogs/hyg_v42.csv.gz": "5ca9431ff364c8002a4a3efa91b2b9296746aea1543374db4cb6b4fab049d601",
+    "prototype/eval/robustness_geometry.py": "b15495e6ba97832a84d06c4e83bfa16aec704784875fdeccb3f831ceec976034",
+    "prototype/eval/collection_run.py": "6bf1108b48c21a40bdd00023eae564c27c5062fd63beb45d32ddde86154bd5b5",
+    "prototype/eval/compare_local_wcs.py": "1a8c83f6d0a19f3cbbe2a96f0db79a0ab60ac33fd09ad6c5c69472672ef31a3b",
+    "prototype/eval/review_external_stars.py": "089f7dc7e406b93843e392a3712d307d28cf01753826ae40b27e3334705fab56",
+    "prototype/artifacts/robustness-iteration-4/final/development/control/wm_r_132162731/solve-reports/wm_r_132162731.json": "95d97137cfc0e3e2fb67cf89bfc3ff9f97f218adb28f1a29e0fe54354881cdbc",
+    "prototype/artifacts/robustness-iteration-4/final/development/footprint/wm_r_132162731/solve-reports/wm_r_132162731.json": "797dc2c87cdf4d4834f305ff66fc92564d17104b55a3568d83c5dc6f807b7cfd",
+    "prototype/artifacts/robustness-baseline/wcs-run/wm_r_132162731/downsample-2/field.axy": "2564a957ebe704cdf8a2ca06f6cdca6269cc031597033fd18c6bc6baae67448d",
+    "data/samples/sky-samples/images/wm_r_132162731.png": "58dfbce4f8a236cab8158a4a0f9ed677c68aa8873afd9568df48d370f01ef188",
+    "prototype/artifacts/robustness-iteration-4/final/development/control/wm_r_143159342/solve-reports/wm_r_143159342.json": "6b4f32d58183b41ea4ae693154f3fbb012aaed417d3f855e9faccb4c8bf31828",
+    "prototype/artifacts/robustness-iteration-4/final/development/footprint/wm_r_143159342/solve-reports/wm_r_143159342.json": "5018f5c94028908158ce935af3568f2725258c60307de7d3de3575552bb540f5",
+    "prototype/artifacts/robustness-baseline/wcs-run/wm_r_143159342/downsample-2/field.axy": "84e5272e5e4882691c4a4e5753f0d419a40ebd7f028f673f924194e631d93106",
+    "data/samples/sky-samples/images/wm_r_143159342.png": "94f3d61426e03e4fda29b95a1b91038332a09491587acf77df3681c5b919c54d",
+    "prototype/artifacts/robustness-iteration-4/final/development/control/wm_r_149276071/solve-reports/wm_r_149276071.json": "757b2ff542e8c5ebb195a2a7aa85429f4a8a9ee319e649fbbfae841fae50c55f",
+    "prototype/artifacts/robustness-iteration-4/final/development/footprint/wm_r_149276071/solve-reports/wm_r_149276071.json": "509425c3f213a3c3d36919df1c646f899746058a2402e960c88c9876b1f7203b",
+    "prototype/artifacts/robustness-baseline/wcs-run/wm_r_149276071/downsample-4/field.axy": "10b6761be41918be19f70d402c5fded381d356404e7e2a350bf2e248c8cb9e3e",
+    "data/samples/sky-samples/images/wm_r_149276071.png": "07ae25603db00a53060aaac710635df8ec71ca14eeb758e604cadb211cbd25a2"
+  },
+  "candidates_sha256": "881177b44850d7ab947f84b54f1d1db9ec9ce4e2fa4febb0dd378a903d8279d7",
+  "max_magnitude": 5.5,
+  "review_selection": "three brightest candidates per 4x4 image cell",
+  "association_radius_px": 45,
+  "exclusion_from_both_solver_inputs_px": 12,
+  "candidates": "union-symmetric camera midpoint; identities require visual review",
+  "measurements": "pre-existing Astrometry.net X/Y minus one; never camera-fitted",
+  "geometry": "conditional on reviewed identities; no ground-truth promotion",
+  "primary": "same visible sources absent from both final solver input lists",
+  "sensitivity": "image-only positive-flux centroids, radii 8 and 12 px, background annulus 16-22 px",
+  "acceptance": "report all reviewed points and edge groups, including regressions; no tuning"
+}

@@ -1,0 +1,173 @@
+{
+  "iteration": 6,
+  "id": "wm_r_143159342",
+  "split": "development",
+  "base_commit": "67fbcf8203915f0329eb74d643e526c992bbaf4a",
+  "rust_replay_runs": [
+    {
+      "arm": "control",
+      "exit_code": 0,
+      "status": "completed",
+      "elapsed_s": 71.39839986525476,
+      "command": [
+        "cargo",
+        "test",
+        "--offline",
+        "--release",
+        "--manifest-path",
+        "/home/agent/work/starglyph/engine/prototype/artifacts/robustness-iteration-6/isolated/control/pipeline/Cargo.toml",
+        "-p",
+        "starglyph-core",
+        "solve::geometry_replay::candidate_geometry",
+        "--",
+        "--ignored",
+        "--nocapture"
+      ]
+    },
+    {
+      "arm": "footprint",
+      "exit_code": 0,
+      "status": "completed",
+      "elapsed_s": 73.69274756871164,
+      "command": [
+        "cargo",
+        "test",
+        "--offline",
+        "--release",
+        "--manifest-path",
+        "/home/agent/work/starglyph/engine/prototype/artifacts/robustness-iteration-6/isolated/footprint/pipeline/Cargo.toml",
+        "-p",
+        "starglyph-core",
+        "solve::geometry_replay::candidate_geometry",
+        "--",
+        "--ignored",
+        "--nocapture"
+      ]
+    }
+  ],
+  "selected_solution_reproduction": {
+    "control": {
+      "status": "passed",
+      "camera_max_abs_difference": {
+        "focal_px": 0.0,
+        "k1": 0.0,
+        "world_to_camera": 0.0,
+        "width": 0.0,
+        "height": 0.0
+      },
+      "detections_max_abs_difference_px": 0.004978339564786438,
+      "detections_tolerance_px": 0.00501
+    },
+    "footprint": {
+      "status": "passed",
+      "camera_max_abs_difference": {
+        "focal_px": 0.0,
+        "k1": 0.0,
+        "world_to_camera": 0.0,
+        "width": 0.0,
+        "height": 0.0
+      },
+      "detections_max_abs_difference_px": 0.004959787377174507,
+      "detections_tolerance_px": 0.00501
+    }
+  },
+  "detector_inputs_identical_between_arms": true,
+  "python_tests": {
+    "command": "PYTHONPATH=/tmp/starglyph-iteration-deps python3 -m unittest discover -s prototype/eval -p 'test_*.py'",
+    "status": "passed",
+    "count": 106,
+    "exit_code": 0,
+    "log_sha256": "03db2b6d408b47b3c55bbc52c3a206fdea27fb3a8312baa93c9e9606c3b8b730"
+  },
+  "rustfmt": {
+    "command": "rustfmt --check --edition 2021 prototype/eval/geometry_replay.rs",
+    "exit_code": 0
+  },
+  "clippy": {
+    "command": "CARGO_TARGET_DIR=artifacts/robustness-iteration-6/isolated/footprint/pipeline/target cargo clippy --offline --release --manifest-path artifacts/robustness-iteration-6/isolated/footprint/pipeline/Cargo.toml -p starglyph-core --all-targets --no-deps -- -D warnings",
+    "cwd": "prototype",
+    "exit_code": 0,
+    "log_sha256": "c61213f605ec0baf38ef2d957411c33ad154fb20f58d4ba8fb6cda2f77414a97"
+  },
+  "excluded_checks": [
+    {
+      "run": "initial research harness builds",
+      "reason": "missing control track.rs restoration; then two path argument type errors, both fixed before successful runs"
+    },
+    {
+      "run": "shared-target replay",
+      "reason": "Cargo reused control artifact for footprint; selected-camera comparison rejected results; final variants use separate target trees"
+    },
+    {
+      "run": "unscoped Clippy",
+      "reason": "existing simulator-core too_many_arguments lint; affected-crate --no-deps gate passed without suppressing new-code warnings"
+    }
+  ],
+  "full_geometry_sha256": "b264dd18fc82478c0c9f729b469b62dca565280f769b82a2a5694c6d907932e5",
+  "trace_sha256": {
+    "control": "3823c3bbb1045d285bcf0be4a12190d61e4f91b068c3e420b19d3bf3faf6ffc2",
+    "footprint": "69227843a704ff71bd7984bf99e69e313f8fbd7b47d3180883bfd48fa348f8d7"
+  },
+  "run_log_sha256": {
+    "control": "b0b8d75c9177c552c1ae2e2b8497cb797f2788309dd093ea366eb8f3abbaf6af",
+    "footprint": "d6e8fe69800c374168195d039141b4bf112b2a4007207f5939c8c50031b1007f"
+  },
+  "frozen_input_hashes_verified": true,
+  "files_sha256": {
+    "prototype/eval/geometry_replay.rs": "1d90e7089c540919664cb47b9e22455cd42b1dd21a93bb40e206dda92c4da9b3",
+    "prototype/eval/robustness_refinement.py": "1fb8ec776146085f8c40ebf1ba29e04541d5bfecadf7b877b4e6ae5b4f6c1a0f",
+    "prototype/eval/robustness_refinement_report.py": "dda0cc3acdfd078769c11548c864212e522951a071f90b52d6087e7c0f19e825",
+    "prototype/eval/test_robustness_refinement.py": "0882216016006e1d073a57630e86dd2a76e587f5dd1523f7309036fcc764116c",
+    "docs/experiments/robustness-iteration-6-protocol.json": "de7feb2936de950eb46de575412ae2267f4730eec25e9761113320539e40c10c",
+    "docs/experiments/robustness-iteration-6-geometry.json": "1cf543d24b15b3cffc37f3c00fc073755cacae7f5b1ed251c39a548b4843ef4f"
+  },
+  "protected": {
+    "data/samples/sky-samples/manifest.json": {
+      "sha256": "97e229270c7b0f97fce4e1f738917cd91cdff01df3508db29584af70a0ea4871",
+      "matches_head": true
+    },
+    "data/samples/sky-samples/robustness-results.json": {
+      "sha256": "09e6efe61468b4afe896967d583553751d80fe82e65e0ac064528523bbc525e8",
+      "matches_head": true
+    },
+    "data/samples/sky-samples/collection-wcs-review.json": {
+      "sha256": "97c182c51955baee9adce93cde8e93fb98ece6a69bdc606cf871d3a1eef19841",
+      "matches_head": true
+    },
+    "prototype/Cargo.toml": {
+      "sha256": "ea0b115c3ff3465b164e9f35f3f4cef373dbc1dcc25074f77e751eacc55e2840",
+      "matches_head": true
+    },
+    "prototype/Cargo.lock": {
+      "sha256": "59694debace1f5f18e2de398a77ce4d6a1a8f7dd237af646906aa49bfa3b677a",
+      "matches_head": true
+    }
+  },
+  "isolated_lockfiles": {
+    "control": {
+      "sha256": "2fc70c7f2f8ee7c6eb227a3bbabb358b203ab87489477d96607354b1b94ea69f",
+      "package_count": 189,
+      "no_new_versions": true,
+      "note": "desktop dependency closure pruned; tetra3 becomes a local path dependency"
+    },
+    "footprint": {
+      "sha256": "2fc70c7f2f8ee7c6eb227a3bbabb358b203ab87489477d96607354b1b94ea69f",
+      "package_count": 189,
+      "no_new_versions": true,
+      "note": "desktop dependency closure pruned; tetra3 becomes a local path dependency"
+    }
+  },
+  "changes": {
+    "production_code": false,
+    "production_dependencies": false,
+    "original_images": false,
+    "manifest": false,
+    "published_baseline": false,
+    "holdout_used": false,
+    "external_wcs_runs": 0,
+    "new_photographs": 0,
+    "ground_truth_promotions": 0
+  },
+  "outcome": "candidate-dependent first refinement moves detected Albireo outside rematch radius; alternate candidates restore that corner but worsen southern stars; no default change",
+  "scope": "one development frame, diagnostic refinement of all nine returned candidates; no new solve-rate or false-acceptance estimate"
+}

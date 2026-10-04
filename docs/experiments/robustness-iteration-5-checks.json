@@ -1,0 +1,101 @@
+{
+  "iteration": 5,
+  "split": "development",
+  "base_commit": "67fbcf8203915f0329eb74d643e526c992bbaf4a",
+  "selected_ids": [
+    "wm_r_132162731",
+    "wm_r_143159342",
+    "wm_r_149276071"
+  ],
+  "measurement_freeze": {
+    "protocol_sha256": "3f6c49f51d6666e6aad72d0a07b3c864eb331ec39835b461857f776b3e80b5bc",
+    "review_sha256": "6a23870a2373e17cac7e1976b5725fabd94ba0efda1898a3980a04b2183aca3f",
+    "tool_sha256": "b15495e6ba97832a84d06c4e83bfa16aec704784875fdeccb3f831ceec976034",
+    "selection": "unchanged visual decisions; final validation and image-only centroid sensitivity"
+  },
+  "geometry_run": {
+    "status": "completed",
+    "exit_code": 0,
+    "elapsed_s": 4.075339421629906,
+    "command": [
+      "/usr/bin/python3",
+      "prototype/eval/robustness_geometry.py",
+      "measure",
+      "prototype/artifacts/robustness-iteration-5/measured",
+      "--output",
+      "prototype/artifacts/robustness-iteration-5/measured/geometry.json"
+    ]
+  },
+  "reproduction": {
+    "status": "passed",
+    "elapsed_s": 8.942564953118563,
+    "byte_identical": {
+      "protocol": true,
+      "review": true,
+      "geometry": true,
+      "external-wcs": true
+    }
+  },
+  "tests": {
+    "command": "PYTHONPATH=/tmp/starglyph-iteration-deps python3 -m unittest discover -s prototype/eval -p 'test_*.py'",
+    "exit_code": 0,
+    "total": 101,
+    "status": "passed",
+    "log_sha256": "5e7a690a26567eee20a30d40ac5c46d2dd30f8dd96a14ac01a6c7413413dddaf"
+  },
+  "environment": {
+    "python": "3.10.12",
+    "numpy": "1.26.4",
+    "astropy": "6.1.7",
+    "pillow": "12.3.0"
+  },
+  "files_sha256": {
+    "prototype/eval/robustness_geometry.py": "b15495e6ba97832a84d06c4e83bfa16aec704784875fdeccb3f831ceec976034",
+    "prototype/eval/robustness_geometry_wcs.py": "6b3aec411a74364b6669de88e22147823f14ea8aedf8dcf7aed32e20896d66fd",
+    "prototype/eval/test_robustness_geometry.py": "377f008143d027d270721be547ec96877d128a64b941ccd846a985ee2546a1dd",
+    "docs/experiments/robustness-iteration-5-review.json": "6a23870a2373e17cac7e1976b5725fabd94ba0efda1898a3980a04b2183aca3f",
+    "docs/experiments/robustness-iteration-5-geometry.json": "dc93a959d0a8930da1984a721fb9fd9fd606b882611a56af58c1663f1a69f531",
+    "docs/experiments/robustness-iteration-5-external-wcs.json": "da6fe9f3441768b3c6b7a4ba23a1a9daf5a01a779402eeb9c93119d4a4bfef97",
+    "docs/experiments/robustness-iteration-5-protocol.json": "3f6c49f51d6666e6aad72d0a07b3c864eb331ec39835b461857f776b3e80b5bc"
+  },
+  "protected": {
+    "data/samples/sky-samples/manifest.json": {
+      "sha256": "97e229270c7b0f97fce4e1f738917cd91cdff01df3508db29584af70a0ea4871",
+      "matches_head": true
+    },
+    "data/samples/sky-samples/robustness-results.json": {
+      "sha256": "09e6efe61468b4afe896967d583553751d80fe82e65e0ac064528523bbc525e8",
+      "matches_head": true
+    },
+    "data/samples/sky-samples/collection-wcs-review.json": {
+      "sha256": "97c182c51955baee9adce93cde8e93fb98ece6a69bdc606cf871d3a1eef19841",
+      "matches_head": true
+    },
+    "prototype/Cargo.toml": {
+      "sha256": "ea0b115c3ff3465b164e9f35f3f4cef373dbc1dcc25074f77e751eacc55e2840",
+      "matches_head": true
+    },
+    "prototype/Cargo.lock": {
+      "sha256": "59694debace1f5f18e2de398a77ce4d6a1a8f7dd237af646906aa49bfa3b677a",
+      "matches_head": true
+    }
+  },
+  "changes": {
+    "production_code": false,
+    "cargo_dependencies": false,
+    "published_baseline": false,
+    "original_images": false,
+    "new_photographs": false,
+    "holdout_access": false,
+    "new_solver_runs": 0,
+    "new_wcs_runs": 0,
+    "ground_truth_promotions": 0
+  },
+  "external_wcs_command": "python3 prototype/eval/robustness_geometry_wcs.py prototype/artifacts/robustness-iteration-5/measured --output prototype/artifacts/robustness-iteration-5/measured/external-wcs.json",
+  "outcome": "localized geometry regressions survive image-only centroid sensitivity; experimental footprint patch remains disabled by default",
+  "limitations": [
+    "three development frames; conditional visually reviewed identities",
+    "no new negative or Rust regression runs because production code unchanged",
+    "source labels frozen before residual review; final provenance guards and centroid sensitivity added afterwards"
+  ]
+}

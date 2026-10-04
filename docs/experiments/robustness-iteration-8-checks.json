@@ -1,0 +1,171 @@
+{
+  "iteration": 8,
+  "id": "wm_r_143159342",
+  "split": "development",
+  "base_commit": "67fbcf8203915f0329eb74d643e526c992bbaf4a",
+  "run": {
+    "status": "completed",
+    "exit_code": 0,
+    "command": [
+      "cargo",
+      "test",
+      "--offline",
+      "--locked",
+      "--release",
+      "--manifest-path",
+      "/home/agent/work/starglyph/engine/prototype/artifacts/robustness-iteration-8/verified/pipeline/Cargo.toml",
+      "-p",
+      "starglyph-core",
+      "solve::rematch_replay::fixed_candidate",
+      "--",
+      "--ignored",
+      "--nocapture"
+    ],
+    "elapsed_s": 50.585527462884784
+  },
+  "case_count": 3,
+  "stages_per_case": 12,
+  "exact_baseline_stage_equality": true,
+  "alternative_final_camera_max_abs_difference": {
+    "focal_px": 7.185008144006133e-11,
+    "k1": 2.3984286778855335e-13,
+    "world_to_camera": 1.5124013152956195e-13
+  },
+  "python_tests": {
+    "count": 117,
+    "status": "passed",
+    "exit_code": 0,
+    "command": "PYTHONPATH=/tmp/starglyph-iteration-deps python3 -m unittest discover -s prototype/eval -p 'test_*.py'",
+    "log_sha256": "3afbc1594d546492b1b26904bcc5583b9fe8c97f316df3bc864187d0b01ba6e6"
+  },
+  "rustfmt": {
+    "command": "rustfmt --check --edition 2021 prototype/eval/rematch_replay.rs",
+    "exit_code": 0
+  },
+  "clippy": {
+    "command": "CARGO_TARGET_DIR=artifacts/robustness-iteration-8/verified/pipeline/target cargo clippy --offline --locked --release --manifest-path artifacts/robustness-iteration-8/verified/pipeline/Cargo.toml -p starglyph-core --all-targets --no-deps -- -D warnings",
+    "cwd": "prototype",
+    "exit_code": 0,
+    "log_sha256": "bab0773b6f49e87dd61a549f9bf52bd9d36aab7ab4577c57a753a5e9a352d305"
+  },
+  "raw": {
+    "input_sha256": "69f95b1fa04b0aeda4acea05cc4ca80eb5636a20ce650f06e4bbb41540a1df94",
+    "trace_sha256": "32ce52a903c60aaf344e500c605537632db8af18c461d22dfc88488b1c2d3114",
+    "protocol_sha256": "870769b6d55b3683056b6c8dffc2002ba987ba4b60b7b2fd6eeca8d4ebbe8d73"
+  },
+  "frozen_inputs_verified": true,
+  "isolated_lock": {
+    "sha256": "2fc70c7f2f8ee7c6eb227a3bbabb358b203ab87489477d96607354b1b94ea69f",
+    "packages": 189,
+    "no_added_versions": true,
+    "resolved_before_freeze": true
+  },
+  "files_sha256": {
+    "prototype/eval/robustness_rematch.py": "5295cf5eed5ccde07fcc882bd51f6aa8482724fc66b2c8131af0e2a10a64ae7c",
+    "prototype/eval/robustness_rematch_report.py": "5d8b9a5ccdc825c5b595fea4e878b3444c718176e4daca3e997c77d6d7b2a77e",
+    "prototype/eval/rematch_replay.rs": "7017676c925582c564adf43abe28066b9df669e9049a7a68faaa624cb95500c8",
+    "prototype/eval/test_robustness_rematch.py": "2977dfb2c6a44d5f39bbf97eff2c827a9d4256d9aefe21c71c6dc8f8284293a5",
+    "prototype/eval/geometry_replay.rs": "1d90e7089c540919664cb47b9e22455cd42b1dd21a93bb40e206dda92c4da9b3",
+    "prototype/eval/robustness_refinement_report.py": "dda0cc3acdfd078769c11548c864212e522951a071f90b52d6087e7c0f19e825",
+    "prototype/eval/robustness_pairs.py": "78f7de7e20fa71cf924817a8d7ae6a3e69065e833821740d9f635c7caf57f522",
+    "prototype/eval/robustness_geometry.py": "b15495e6ba97832a84d06c4e83bfa16aec704784875fdeccb3f831ceec976034",
+    "prototype/eval/collection_run.py": "6bf1108b48c21a40bdd00023eae564c27c5062fd63beb45d32ddde86154bd5b5",
+    "prototype/eval/tetra3_footprint.py": "cad2cd5dcfa5953fe56b1fda8dc4aed0afb372eda4fc6b588534da4786c47fe5",
+    "docs/experiments/robustness-iteration-8-protocol.json": "870769b6d55b3683056b6c8dffc2002ba987ba4b60b7b2fd6eeca8d4ebbe8d73",
+    "docs/experiments/robustness-iteration-8-geometry.json": "16de19ff134a07a048e710737df2f10b5047d5935572d42e6bc8ffb3b55bb111",
+    "docs/robustness-iteration-8.md": "fcbfb59bf4cceff3976e9de30b514e0199761a38d5fc758c3482151cfaca8407"
+  },
+  "protected": {
+    "data/samples/sky-samples/manifest.json": {
+      "sha256": "97e229270c7b0f97fce4e1f738917cd91cdff01df3508db29584af70a0ea4871",
+      "matches_head": true
+    },
+    "data/samples/sky-samples/robustness-results.json": {
+      "sha256": "09e6efe61468b4afe896967d583553751d80fe82e65e0ac064528523bbc525e8",
+      "matches_head": true
+    },
+    "data/samples/sky-samples/collection-wcs-review.json": {
+      "sha256": "97c182c51955baee9adce93cde8e93fb98ece6a69bdc606cf871d3a1eef19841",
+      "matches_head": true
+    },
+    "prototype/Cargo.toml": {
+      "sha256": "ea0b115c3ff3465b164e9f35f3f4cef373dbc1dcc25074f77e751eacc55e2840",
+      "matches_head": true
+    },
+    "prototype/Cargo.lock": {
+      "sha256": "59694debace1f5f18e2de398a77ce4d6a1a8f7dd237af646906aa49bfa3b677a",
+      "matches_head": true
+    }
+  },
+  "excluded_runs": [
+    {
+      "path": "prototype/artifacts/robustness-iteration-8/fixed",
+      "run": {
+        "status": "failed",
+        "exit_code": 101,
+        "command": [
+          "cargo",
+          "test",
+          "--offline",
+          "--locked",
+          "--release",
+          "--manifest-path",
+          "/home/agent/work/starglyph/engine/prototype/artifacts/robustness-iteration-8/fixed/pipeline/Cargo.toml",
+          "-p",
+          "starglyph-core",
+          "solve::rematch_replay::fixed_candidate",
+          "--",
+          "--ignored",
+          "--nocapture"
+        ],
+        "elapsed_s": 0.16685950383543968
+      },
+      "reason": "--locked rejected unresolved isolated lock before running Rust",
+      "protocol_sha256": "209806f2930bb90e8bee7b91d39e00b7c81f1c59d172fca42005d4238ab1a897",
+      "used_in_results": false
+    },
+    {
+      "path": "prototype/artifacts/robustness-iteration-8/final",
+      "run": {
+        "status": "completed",
+        "exit_code": 0,
+        "command": [
+          "cargo",
+          "test",
+          "--offline",
+          "--locked",
+          "--release",
+          "--manifest-path",
+          "/home/agent/work/starglyph/engine/prototype/artifacts/robustness-iteration-8/final/pipeline/Cargo.toml",
+          "-p",
+          "starglyph-core",
+          "solve::rematch_replay::fixed_candidate",
+          "--",
+          "--ignored",
+          "--nocapture"
+        ],
+        "elapsed_s": 47.72394633106887
+      },
+      "reason": "baseline stage comparison rejected f64 JSON round-trip differences and lost catalogue IDs",
+      "protocol_sha256": "e0d68266636763389ba8dd06f4fa4302af5008265a66a968b55fcc82ff96a088",
+      "used_in_results": false
+    }
+  ],
+  "changes": {
+    "production_code": false,
+    "production_dependencies": false,
+    "original_photographs": false,
+    "published_baseline": false,
+    "holdout_used": false,
+    "new_wcs_runs": 0,
+    "new_tetra3_searches": 0,
+    "new_photographs": 0
+  },
+  "regression_scope": "all Python eval tests and isolated replay/clippy; no collection solve gates rerun because production is unchanged",
+  "outcome": "Albireo reenters at 25 px but is lost at 12.5 px with or without leaf reentry; both exclusions converge and worsen whole-field geometry",
+  "limitations": [
+    "fixed candidate; manual source exclusion, not an automatic improvement",
+    "conditional stellar identities; no absolute ground truth",
+    "no acceptance, solve-rate or negative evaluation in this iteration"
+  ]
+}

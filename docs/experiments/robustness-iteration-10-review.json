@@ -1,0 +1,1978 @@
+{
+  "split": "development",
+  "frames": [
+    {
+      "id": "wm_r_143159342",
+      "image": "data/samples/sky-samples/images/wm_r_143159342.png",
+      "source_sha256": "94f3d61426e03e4fda29b95a1b91038332a09491587acf77df3681c5b919c54d",
+      "width": 3000,
+      "height": 4000,
+      "points": [
+        {
+          "id": 0,
+          "hyg_id": 88610,
+          "name": "Ramus",
+          "mag": 4.37,
+          "world": [
+            0.03571201566126037,
+            -0.934052979295034,
+            0.35534445796646486
+          ],
+          "detector_xy_original": [
+            1430.3929153686895,
+            583.869119471864
+          ],
+          "detector_xy_working": [
+            571.8571661474758,
+            233.2476477887456
+          ],
+          "native_r8_xy": [
+            1430.4915556662813,
+            583.9385787050567
+          ],
+          "native_r12_xy": [
+            1430.8493543763338,
+            584.195467777613
+          ],
+          "choices": [
+            {
+              "row": 57,
+              "x": 1430.308837890625,
+              "y": 583.8610229492188,
+              "distance_px": 0.08446641934302393
+            },
+            {
+              "row": 1664,
+              "x": 1403.802978515625,
+              "y": 574.661376953125,
+              "distance_px": 28.13907006532646
+            },
+            {
+              "row": 2905,
+              "x": 1454.648193359375,
+              "y": 565.5084838867188,
+              "distance_px": 30.420904810605723
+            }
+          ],
+          "prior_pairs": [
+            {
+              "hyg_id": 88610,
+              "label": "visible_source",
+              "distance_px": 0.0
+            }
+          ],
+          "prior_probes": [],
+          "neighbours": [],
+          "label": "visible_source",
+          "selected_row": 57,
+          "note": "Compact stellar core with surrounding stars; agrees with prior pair review; catalogue identity remains conditional."
+        },
+        {
+          "id": 1,
+          "hyg_id": 88057,
+          "name": "96    Her",
+          "mag": 5.25,
+          "world": [
+            0.009722441509377993,
+            -0.9345665034891983,
+            0.35565562653650057
+          ],
+          "detector_xy_original": [
+            1514.137147031516,
+            565.2715343786919
+          ],
+          "detector_xy_working": [
+            605.3548588126064,
+            225.80861375147674
+          ],
+          "native_r8_xy": [
+            1514.1709952066294,
+            565.1130602567821
+          ],
+          "native_r12_xy": [
+            1514.1898698337552,
+            564.8692012965789
+          ],
+          "choices": [
+            {
+              "row": 176,
+              "x": 1514.1461181640625,
+              "y": 565.3536987304688,
+              "distance_px": 0.08265265828807497
+            },
+            {
+              "row": 1426,
+              "x": 1545.661865234375,
+              "y": 564.9871215820312,
+              "distance_px": 31.526001148394588
+            },
+            {
+              "row": 3450,
+              "x": 1528.68603515625,
+              "y": 605.8287963867188,
+              "distance_px": 43.08783641880582
+            }
+          ],
+          "prior_pairs": [
+            {
+              "hyg_id": 88057,
+              "label": "visible_source",
+              "distance_px": 0.0
+            }
+          ],
+          "prior_probes": [],
+          "neighbours": [],
+          "label": "visible_source",
+          "selected_row": 176,
+          "note": "Compact stellar core on structured sky background; prior pair retained conditionally."
+        },
+        {
+          "id": 2,
+          "hyg_id": 89860,
+          "name": "Tusizuo",
+          "mag": 3.85,
+          "world": [
+            0.09585660048469527,
+            -0.9237214459269354,
+            0.3708776111848348
+          ],
+          "detector_xy_original": [
+            1223.3635571833192,
+            559.9293018644354
+          ],
+          "detector_xy_working": [
+            489.0454228733277,
+            223.67172074577414
+          ],
+          "native_r8_xy": [
+            1223.3382550315318,
+            559.9876166077643
+          ],
+          "native_r12_xy": [
+            1223.3067524147468,
+            560.017092170431
+          ],
+          "choices": [
+            {
+              "row": 28,
+              "x": 1223.3719482421875,
+              "y": 559.923095703125,
+              "distance_px": 0.010436776664329218
+            },
+            {
+              "row": 1328,
+              "x": 1196.4927978515625,
+              "y": 546.0914916992188,
+              "distance_px": 30.224537998681885
+            },
+            {
+              "row": 800,
+              "x": 1251.4229736328125,
+              "y": 572.0809936523438,
+              "distance_px": 30.577679192417666
+            }
+          ],
+          "prior_pairs": [
+            {
+              "hyg_id": 89860,
+              "label": "visible_source",
+              "distance_px": 0.0
+            }
+          ],
+          "prior_probes": [
+            {
+              "hyg_id": 89860,
+              "name": "Tusizuo",
+              "distance_px": 0.010436776664329218
+            }
+          ],
+          "neighbours": [],
+          "label": "visible_source",
+          "selected_row": 28,
+          "note": "Tusizuo core and surrounding pattern agree with prior physical probe and pair review."
+        },
+        {
+          "id": 3,
+          "hyg_id": 84622,
+          "name": "53Nu  Ser",
+          "mag": 4.32,
+          "world": [
+            -0.16583276866447386,
+            -0.9607609747133352,
+            -0.222346221701555
+          ],
+          "detector_xy_original": [
+            2354.2836766644505,
+            2322.6993100584696
+          ],
+          "detector_xy_working": [
+            941.4134706657801,
+            928.7797240233878
+          ],
+          "native_r8_xy": [
+            2354.4458746257947,
+            2322.6569838775345
+          ],
+          "native_r12_xy": [
+            2354.287799691851,
+            2323.422189886522
+          ],
+          "choices": [
+            {
+              "row": 85,
+              "x": 2354.191162109375,
+              "y": 2322.372802734375,
+              "distance_px": 0.3393611285757465
+            },
+            {
+              "row": 2649,
+              "x": 2380.294921875,
+              "y": 2305.59375,
+              "distance_px": 31.131737219712704
+            },
+            {
+              "row": 2440,
+              "x": 2339.6865234375,
+              "y": 2277.20556640625,
+              "distance_px": 47.77821254321826
+            }
+          ],
+          "prior_pairs": [
+            {
+              "hyg_id": 84622,
+              "label": "visible_source",
+              "distance_px": 0.0
+            }
+          ],
+          "prior_probes": [],
+          "neighbours": [],
+          "label": "visible_source",
+          "selected_row": 85,
+          "note": "Bright stellar core with lower adjacent structure; native centroid aperture check retained; individual identification conditional."
+        },
+        {
+          "id": 4,
+          "hyg_id": 85769,
+          "name": "Rasalhague",
+          "mag": 2.08,
+          "world": [
+            -0.10653892245312915,
+            -0.9702368451367525,
+            0.21746246191379226
+          ],
+          "detector_xy_original": [
+            1957.2707542183816,
+            981.6656495290428
+          ],
+          "detector_xy_working": [
+            782.6083016873527,
+            392.3662598116171
+          ],
+          "native_r8_xy": [
+            1957.1921221188306,
+            981.6760358143405
+          ],
+          "native_r12_xy": [
+            1957.3784031396242,
+            982.1018416664418
+          ],
+          "choices": [
+            {
+              "row": 2,
+              "x": 1957.0731201171875,
+              "y": 981.46142578125,
+              "distance_px": 0.2841946113446346
+            },
+            {
+              "row": 875,
+              "x": 1948.8427734375,
+              "y": 1013.996337890625,
+              "distance_px": 33.411139908369776
+            },
+            {
+              "row": 501,
+              "x": 1959.6087646484375,
+              "y": 944.946044921875,
+              "distance_px": 36.79396221226772
+            }
+          ],
+          "prior_pairs": [
+            {
+              "hyg_id": 85769,
+              "label": "visible_source",
+              "distance_px": 0.0
+            }
+          ],
+          "prior_probes": [
+            {
+              "hyg_id": 85769,
+              "name": "Rasalhague",
+              "distance_px": 0.2841946113446346
+            }
+          ],
+          "neighbours": [],
+          "label": "visible_source",
+          "selected_row": 2,
+          "note": "Bright Rasalhague core agrees with prior probe and neighbouring pattern."
+        },
+        {
+          "id": 5,
+          "hyg_id": 91756,
+          "name": "110    Her",
+          "mag": 4.19,
+          "world": [
+            0.18533282085254194,
+            -0.9178648058088346,
+            0.3509643055530718
+          ],
+          "detector_xy_original": [
+            945.63442264732,
+            680.7429430348276
+          ],
+          "detector_xy_working": [
+            377.953769058928,
+            271.997177213931
+          ],
+          "native_r8_xy": [
+            945.6576011273789,
+            680.8122598212005
+          ],
+          "native_r12_xy": [
+            945.7469794017429,
+            680.528948150285
+          ],
+          "choices": [
+            {
+              "row": 47,
+              "x": 945.5824584960938,
+              "y": 680.71435546875,
+              "distance_px": 0.059308700431749836
+            },
+            {
+              "row": 3493,
+              "x": 936.5,
+              "y": 700.5,
+              "distance_px": 21.76646450448349
+            },
+            {
+              "row": 635,
+              "x": 953.1058959960938,
+              "y": 716.5540161132812,
+              "distance_px": 36.582179664855744
+            }
+          ],
+          "prior_pairs": [
+            {
+              "hyg_id": 91756,
+              "label": "visible_source",
+              "distance_px": 0.0
+            }
+          ],
+          "prior_probes": [
+            {
+              "hyg_id": 91756,
+              "name": "110    Her",
+              "distance_px": 0.059308700431749836
+            }
+          ],
+          "neighbours": [],
+          "label": "visible_source",
+          "selected_row": 47,
+          "note": "Orange stellar core agrees with prior 110 Her probe and initial pair."
+        },
+        {
+          "id": 6,
+          "hyg_id": 85096,
+          "name": "49Sig Oph",
+          "mag": 4.34,
+          "world": [
+            -0.14520807232980895,
+            -0.9867632802345703,
+            0.07220003123941118
+          ],
+          "detector_xy_original": [
+            2140.4708964743513,
+            1426.5753603246344
+          ],
+          "detector_xy_working": [
+            855.8883585897405,
+            570.3301441298538
+          ],
+          "native_r8_xy": [
+            2140.6001978932923,
+            1426.610636315479
+          ],
+          "native_r12_xy": [
+            2140.6717400231037,
+            1426.500348507886
+          ],
+          "choices": [
+            {
+              "row": 75,
+              "x": 2140.304931640625,
+              "y": 1426.53369140625,
+              "distance_px": 0.17111582274334328
+            },
+            {
+              "row": 2669,
+              "x": 2114.050537109375,
+              "y": 1459.730712890625,
+              "distance_px": 42.39472600158693
+            },
+            {
+              "row": 1687,
+              "x": 2160.49462890625,
+              "y": 1468.550048828125,
+              "distance_px": 46.506175240169306
+            }
+          ],
+          "prior_pairs": [
+            {
+              "hyg_id": 85096,
+              "label": "visible_source",
+              "distance_px": 0.0
+            }
+          ],
+          "prior_probes": [],
+          "neighbours": [],
+          "label": "visible_source",
+          "selected_row": 75,
+          "note": "Orange compact core and surrounding stellar pattern; prior Sigma Oph pair retained conditionally."
+        },
+        {
+          "id": 7,
+          "hyg_id": 119198,
+          "name": "",
+          "mag": 6.0,
+          "world": [
+            0.0237961151033597,
+            -0.9987661052700849,
+            0.043589125588997836
+          ],
+          "detector_xy_original": [
+            1637.3886155585433,
+            1607.9025831395754
+          ],
+          "detector_xy_working": [
+            654.6554462234174,
+            642.8610332558302
+          ],
+          "native_r8_xy": [
+            1637.4130158395105,
+            1608.1038879133207
+          ],
+          "native_r12_xy": [
+            1637.185894166245,
+            1608.642716780245
+          ],
+          "choices": [
+            {
+              "row": 88,
+              "x": 1637.3804931640625,
+              "y": 1607.7783203125,
+              "distance_px": 0.1245280028141413
+            },
+            {
+              "row": 621,
+              "x": 1613.049560546875,
+              "y": 1612.2264404296875,
+              "distance_px": 24.72014038645958
+            },
+            {
+              "row": 1199,
+              "x": 1637.32666015625,
+              "y": 1634.9378662109375,
+              "distance_px": 27.03535406131294
+            }
+          ],
+          "prior_pairs": [],
+          "prior_probes": [],
+          "neighbours": [
+            {
+              "hyg_id": 88327,
+              "mag": 4.03,
+              "separation_deg": 0.002163606956691327
+            }
+          ],
+          "label": "blend",
+          "selected_row": null,
+          "note": "Compact stellar image; HYG 119198 and brighter HYG 88327 are only 0.00216 degrees apart. Individual component assignment unresolved; not a confirmed false source."
+        },
+        {
+          "id": 8,
+          "hyg_id": 89193,
+          "name": "",
+          "mag": 6.05,
+          "world": [
+            0.06407945827966435,
+            -0.9452555673283934,
+            -0.3199777108819641
+          ],
+          "detector_xy_original": [
+            1692.0764533391216,
+            2727.4922065621513
+          ],
+          "detector_xy_working": [
+            676.5305813356487,
+            1090.6968826248606
+          ],
+          "native_r8_xy": [
+            1690.8479761310941,
+            2725.0048775914747
+          ],
+          "native_r12_xy": [
+            1691.3964857796052,
+            2726.4641070455355
+          ],
+          "choices": [
+            {
+              "row": 412,
+              "x": 1689.9312744140625,
+              "y": 2723.1142578125,
+              "distance_px": 4.875266954238614
+            },
+            {
+              "row": 647,
+              "x": 1694.6802978515625,
+              "y": 2740.1083984375,
+              "distance_px": 12.882092364231179
+            },
+            {
+              "row": 1593,
+              "x": 1711.0458984375,
+              "y": 2705.830322265625,
+              "distance_px": 28.793698592165697
+            }
+          ],
+          "prior_pairs": [],
+          "prior_probes": [],
+          "neighbours": [],
+          "label": "blend",
+          "selected_row": null,
+          "note": "Crowded stellar patch with multiple nearby cores; detector and external centroid differ by 4.88 px. A single HYG 89193 identity is not established."
+        },
+        {
+          "id": 9,
+          "hyg_id": 92527,
+          "name": "113    Her",
+          "mag": 4.57,
+          "world": [
+            0.21837658665067292,
+            -0.896699558735399,
+            0.3850215159787074
+          ],
+          "detector_xy_original": [
+            799.1237579807955,
+            561.8272376104047
+          ],
+          "detector_xy_working": [
+            319.3495031923182,
+            224.43089504416187
+          ],
+          "native_r8_xy": [
+            799.2418398398984,
+            561.8707682757788
+          ],
+          "native_r12_xy": [
+            799.0074117714801,
+            561.5757326516247
+          ],
+          "choices": [
+            {
+              "row": 37,
+              "x": 799.0743408203125,
+              "y": 561.86279296875,
+              "distance_px": 0.060878890079118245
+            },
+            {
+              "row": 2223,
+              "x": 765.5128784179688,
+              "y": 555.2213134765625,
+              "distance_px": 34.25389698485305
+            },
+            {
+              "row": 2250,
+              "x": 786.5895385742188,
+              "y": 525.8939819335938,
+              "distance_px": 38.056609408449326
+            }
+          ],
+          "prior_pairs": [
+            {
+              "hyg_id": 92527,
+              "label": "visible_source",
+              "distance_px": 0.0
+            }
+          ],
+          "prior_probes": [],
+          "neighbours": [],
+          "label": "visible_source",
+          "selected_row": 37,
+          "note": "Isolated stellar core; prior 113 Her pair retained conditionally."
+        },
+        {
+          "id": 10,
+          "hyg_id": 83221,
+          "name": "",
+          "mag": 5.91,
+          "world": [
+            -0.23655256043768072,
+            -0.9427133250340684,
+            0.23523280586174294
+          ],
+          "detector_xy_original": [
+            2389.4782127037306,
+            813.1701341402512
+          ],
+          "detector_xy_working": [
+            955.4912850814923,
+            324.9680536561005
+          ],
+          "native_r8_xy": [
+            2389.4537071555364,
+            813.3092726368958
+          ],
+          "native_r12_xy": [
+            2389.6031098620565,
+            813.3793744732474
+          ],
+          "choices": [
+            {
+              "row": 196,
+              "x": 2389.17578125,
+              "y": 813.1975708007812,
+              "distance_px": 0.3036734340482357
+            },
+            {
+              "row": 3057,
+              "x": 2367.7041015625,
+              "y": 800.2284545898438,
+              "distance_px": 25.32980429407415
+            },
+            {
+              "row": 59,
+              "x": 2394.421875,
+              "y": 779.9434204101562,
+              "distance_px": 33.592473892246105
+            }
+          ],
+          "prior_pairs": [
+            {
+              "hyg_id": 83221,
+              "label": "blend",
+              "distance_px": 0.0
+            }
+          ],
+          "prior_probes": [],
+          "neighbours": [
+            {
+              "hyg_id": 83247,
+              "mag": 6.06,
+              "separation_deg": 0.08484857415081751
+            }
+          ],
+          "label": "blend",
+          "selected_row": null,
+          "note": "Prior possible blend HYG 83221/83247 preserved; individual identity unresolved."
+        },
+        {
+          "id": 11,
+          "hyg_id": 88361,
+          "name": "Alnasl",
+          "mag": 2.98,
+          "world": [
+            0.02185099672282436,
+            -0.8620239200772223,
+            -0.5063963814611216
+          ],
+          "detector_xy_original": [
+            1927.528731815721,
+            3408.4922967138164
+          ],
+          "detector_xy_working": [
+            770.7114927262884,
+            1363.0969186855266
+          ],
+          "native_r8_xy": [
+            1927.5258901035493,
+            3408.5864669844714
+          ],
+          "native_r12_xy": [
+            1927.6353042932335,
+            3408.2063220706787
+          ],
+          "choices": [
+            {
+              "row": 97,
+              "x": 1927.4974365234375,
+              "y": 3408.4345703125,
+              "distance_px": 0.06566378551409366
+            },
+            {
+              "row": 1367,
+              "x": 1949.9036865234375,
+              "y": 3368.6591796875,
+              "distance_px": 45.687151478337796
+            },
+            {
+              "row": 1447,
+              "x": 1884.2078857421875,
+              "y": 3384.316162109375,
+              "distance_px": 49.610293175296206
+            }
+          ],
+          "prior_pairs": [
+            {
+              "hyg_id": 88361,
+              "label": "visible_source",
+              "distance_px": 0.0
+            }
+          ],
+          "prior_probes": [],
+          "neighbours": [],
+          "label": "visible_source",
+          "selected_row": 97,
+          "note": "Stellar core on bright Milky Way background; prior Alnasl pair retained conditionally."
+        },
+        {
+          "id": 12,
+          "hyg_id": 91888,
+          "name": "Bet Sct",
+          "mag": 4.22,
+          "world": [
+            0.20368599455383865,
+            -0.9755311161066127,
+            -0.08277111289815958
+          ],
+          "detector_xy_original": [
+            1170.4085296726123,
+            2065.6320394614254
+          ],
+          "detector_xy_working": [
+            467.8634118690449,
+            825.9528157845701
+          ],
+          "native_r8_xy": [
+            1170.4839674171922,
+            2065.844293437137
+          ],
+          "native_r12_xy": [
+            1171.072628637951,
+            2065.7800133131686
+          ],
+          "choices": [
+            {
+              "row": 116,
+              "x": 1170.272216796875,
+              "y": 2065.712646484375,
+              "distance_px": 0.15836253420734336
+            },
+            {
+              "row": 292,
+              "x": 1174.5577392578125,
+              "y": 2115.249755859375,
+              "distance_px": 49.79089997910536
+            },
+            {
+              "row": 592,
+              "x": 1162.4520263671875,
+              "y": 2132.88134765625,
+              "distance_px": 67.7183534762308
+            }
+          ],
+          "prior_pairs": [],
+          "prior_probes": [],
+          "neighbours": [],
+          "label": "visible_source",
+          "selected_row": 116,
+          "note": "Isolated orange stellar core among a recognisable relative field; Bet Sct assignment remains camera-proposed and conditional."
+        },
+        {
+          "id": 13,
+          "hyg_id": 84121,
+          "name": "Sarin",
+          "mag": 3.12,
+          "world": [
+            -0.17691882420028224,
+            -0.8900776940929298,
+            0.42007312235110017
+          ],
+          "detector_xy_original": [
+            2122.955040212623,
+            127.00026615270326
+          ],
+          "detector_xy_working": [
+            848.8820160850491,
+            50.5001064610813
+          ],
+          "native_r8_xy": [
+            2122.922580107209,
+            127.09312366263403
+          ],
+          "native_r12_xy": [
+            2122.7216922344387,
+            127.20528355683162
+          ],
+          "choices": [
+            {
+              "row": 10,
+              "x": 2122.965576171875,
+              "y": 126.93257904052734,
+              "distance_px": 0.0685022013666567
+            },
+            {
+              "row": 1592,
+              "x": 2148.410400390625,
+              "y": 107.29822540283203,
+              "distance_px": 32.189218249305206
+            },
+            {
+              "row": 2891,
+              "x": 2083.55126953125,
+              "y": 97.46817016601562,
+              "distance_px": 49.242276930267465
+            }
+          ],
+          "prior_pairs": [],
+          "prior_probes": [
+            {
+              "hyg_id": 84121,
+              "name": "Sarin",
+              "distance_px": 0.0685022013666567
+            }
+          ],
+          "neighbours": [],
+          "label": "visible_source",
+          "selected_row": 10,
+          "note": "Bright stellar core consistent with prior Sarin physical probe."
+        },
+        {
+          "id": 14,
+          "hyg_id": 89064,
+          "name": "Polis",
+          "mag": 3.84,
+          "world": [
+            0.05600995959545122,
+            -0.9315296148282669,
+            -0.35932639914709386
+          ],
+          "detector_xy_original": [
+            1734.0129272113488,
+            2854.470272334178
+          ],
+          "detector_xy_working": [
+            693.3051708845395,
+            1141.4881089336711
+          ],
+          "native_r8_xy": [
+            1734.0169580902989,
+            2854.4548536802035
+          ],
+          "native_r12_xy": [
+            1734.1246172022875,
+            2854.968695150514
+          ],
+          "choices": [
+            {
+              "row": 94,
+              "x": 1734.0390625,
+              "y": 2854.380126953125,
+              "distance_px": 0.09385756782518433
+            },
+            {
+              "row": 301,
+              "x": 1712.625732421875,
+              "y": 2838.321044921875,
+              "distance_px": 26.799433706277693
+            },
+            {
+              "row": 420,
+              "x": 1733.6680908203125,
+              "y": 2892.750244140625,
+              "distance_px": 38.28152496490918
+            }
+          ],
+          "prior_pairs": [],
+          "prior_probes": [
+            {
+              "hyg_id": 89064,
+              "name": "Polis",
+              "distance_px": 0.09385756782518433
+            }
+          ],
+          "neighbours": [],
+          "label": "visible_source",
+          "selected_row": 94,
+          "note": "Compact stellar core consistent with prior Polis probe."
+        },
+        {
+          "id": 15,
+          "hyg_id": 86019,
+          "name": "57Mu  Oph",
+          "mag": 4.58,
+          "world": [
+            -0.0955506440546869,
+            -0.985355475757933,
+            -0.14122556714204393
+          ],
+          "detector_xy_original": [
+            2082.5740871532457,
+            2097.143888097968
+          ],
+          "detector_xy_working": [
+            832.7296348612983,
+            838.5575552391872
+          ],
+          "native_r8_xy": [
+            2082.549638455151,
+            2097.155279030469
+          ],
+          "native_r12_xy": [
+            2082.6335901143902,
+            2097.3975770564266
+          ],
+          "choices": [
+            {
+              "row": 113,
+              "x": 2082.56396484375,
+              "y": 2097.099609375,
+              "distance_px": 0.045420991371976804
+            },
+            {
+              "row": 3455,
+              "x": 2087.654541015625,
+              "y": 2142.212158203125,
+              "distance_px": 45.353720704250314
+            },
+            {
+              "row": 3436,
+              "x": 1999.1171875,
+              "y": 2103.813720703125,
+              "distance_px": 83.7230002252233
+            }
+          ],
+          "prior_pairs": [],
+          "prior_probes": [],
+          "neighbours": [],
+          "label": "visible_source",
+          "selected_row": 113,
+          "note": "Elongated bright stellar core; no foreground structure at centre. Mu Oph identity conditional, not absolute GT."
+        },
+        {
+          "id": 16,
+          "hyg_id": 82745,
+          "name": "27Kap Oph",
+          "mag": 3.19,
+          "world": [
+            -0.2650446004891225,
+            -0.950376894307377,
+            0.16289603591931304
+          ],
+          "detector_xy_original": [
+            2515.367502582619,
+            1042.3969487388026
+          ],
+          "detector_xy_working": [
+            1005.8470010330477,
+            416.65877949552106
+          ],
+          "native_r8_xy": [
+            2515.4171045889398,
+            1042.5590379233556
+          ],
+          "native_r12_xy": [
+            2515.3235106667603,
+            1042.604261236787
+          ],
+          "choices": [
+            {
+              "row": 19,
+              "x": 2515.259521484375,
+              "y": 1042.29150390625,
+              "distance_px": 0.15092557864745726
+            },
+            {
+              "row": 1439,
+              "x": 2475.714599609375,
+              "y": 1025.4918212890625,
+              "distance_px": 43.106102216478284
+            },
+            {
+              "row": 49,
+              "x": 2564.14599609375,
+              "y": 982.1698608398438,
+              "distance_px": 77.50253896489036
+            }
+          ],
+          "prior_pairs": [],
+          "prior_probes": [
+            {
+              "hyg_id": 82745,
+              "name": "27Kap Oph",
+              "distance_px": 0.15092557864745726
+            }
+          ],
+          "neighbours": [],
+          "label": "visible_source",
+          "selected_row": 19,
+          "note": "Orange stellar core consistent with prior Kap Oph probe; distinct from nearby vegetation."
+        },
+        {
+          "id": 17,
+          "hyg_id": 95927,
+          "name": "38Mu  Aql",
+          "mag": 4.45,
+          "world": [
+            0.39580072569427055,
+            -0.9093114075415424,
+            0.12843110859409365
+          ],
+          "detector_xy_original": [
+            421.00301289634234,
+            1526.8242029938224
+          ],
+          "detector_xy_working": [
+            168.10120515853694,
+            610.4296811975289
+          ],
+          "native_r8_xy": [
+            420.89149627041513,
+            1526.8835639298882
+          ],
+          "native_r12_xy": [
+            421.3637830624688,
+            1526.7972830002489
+          ],
+          "choices": [
+            {
+              "row": 60,
+              "x": 420.7813415527344,
+              "y": 1526.7615966796875,
+              "distance_px": 0.23034264725950424
+            },
+            {
+              "row": 1217,
+              "x": 426.1923828125,
+              "y": 1413.8638916015625,
+              "distance_px": 113.07944777882071
+            },
+            {
+              "row": 2335,
+              "x": 354.5755615234375,
+              "y": 1410.7518310546875,
+              "distance_px": 133.73631452779196
+            }
+          ],
+          "prior_pairs": [],
+          "prior_probes": [],
+          "neighbours": [],
+          "label": "visible_source",
+          "selected_row": 60,
+          "note": "Compact bright core against sky near a dark foreground boundary; not continuous with the object. Catalogue identity conditional."
+        },
+        {
+          "id": 18,
+          "hyg_id": 82421,
+          "name": "25Iot Oph",
+          "mag": 4.39,
+          "world": [
+            -0.2795246225188411,
+            -0.9437782492474456,
+            0.17648966443711617
+          ],
+          "detector_xy_original": [
+            2564.186056211372,
+            982.2714759928567
+          ],
+          "detector_xy_working": [
+            1025.3744224845489,
+            392.6085903971427
+          ],
+          "native_r8_xy": [
+            2564.1951987933817,
+            982.5792292578051
+          ],
+          "native_r12_xy": [
+            2564.105148283949,
+            982.9402717799496
+          ],
+          "choices": [
+            {
+              "row": 49,
+              "x": 2564.14599609375,
+              "y": 982.1698608398438,
+              "distance_px": 0.109226610062479
+            },
+            {
+              "row": 865,
+              "x": 2570.337158203125,
+              "y": 936.2562255859375,
+              "distance_px": 46.424555202224894
+            },
+            {
+              "row": 821,
+              "x": 2580.888671875,
+              "y": 910.7234497070312,
+              "distance_px": 73.47174583065276
+            }
+          ],
+          "prior_pairs": [],
+          "prior_probes": [
+            {
+              "hyg_id": 82421,
+              "name": "25Iot Oph",
+              "distance_px": 0.109226610062479
+            }
+          ],
+          "neighbours": [],
+          "label": "visible_source",
+          "selected_row": 49,
+          "note": "Distinct stellar core above nearby vegetation; agrees with prior Iot Oph probe."
+        },
+        {
+          "id": 19,
+          "hyg_id": 95289,
+          "name": "32Nu  Aql",
+          "mag": 4.64,
+          "world": [
+            0.3685973975266369,
+            -0.9295703527664685,
+            0.005909128041759312
+          ],
+          "detector_xy_original": [
+            602.3373545945815,
+            1892.8789935964628
+          ],
+          "detector_xy_working": [
+            240.63494183783257,
+            756.8515974385851
+          ],
+          "native_r8_xy": [
+            602.232963033457,
+            1893.0376669788127
+          ],
+          "native_r12_xy": [
+            602.300558187454,
+            1893.3630447025623
+          ],
+          "choices": [
+            {
+              "row": 92,
+              "x": 602.393798828125,
+              "y": 1892.7203369140625,
+              "distance_px": 0.16839802365403952
+            },
+            {
+              "row": 763,
+              "x": 565.2916259765625,
+              "y": 1903.440185546875,
+              "distance_px": 38.52174430439725
+            },
+            {
+              "row": 1963,
+              "x": 561.1400756835938,
+              "y": 1942.09130859375,
+              "distance_px": 64.17996367295585
+            }
+          ],
+          "prior_pairs": [],
+          "prior_probes": [],
+          "neighbours": [],
+          "label": "visible_source",
+          "selected_row": 92,
+          "note": "Compact white core with separately resolved orange neighbour; proposed Nu Aql identity conditional."
+        },
+        {
+          "id": 20,
+          "hyg_id": 92793,
+          "name": "37Xi 2Sgr",
+          "mag": 3.52,
+          "world": [
+            0.23251822438196615,
+            -0.9034708355024831,
+            -0.3601051578729507
+          ],
+          "detector_xy_original": [
+            1185.8515434277363,
+            2960.3246904486164
+          ],
+          "detector_xy_working": [
+            474.0406173710945,
+            1183.8298761794465
+          ],
+          "native_r8_xy": [
+            1185.7992662750346,
+            2960.3599779738993
+          ],
+          "native_r12_xy": [
+            1185.7249445834161,
+            2960.214148028108
+          ],
+          "choices": [
+            {
+              "row": 87,
+              "x": 1185.871826171875,
+              "y": 2960.363525390625,
+              "distance_px": 0.0438125830168865
+            },
+            {
+              "row": 287,
+              "x": 1185.907470703125,
+              "y": 2933.444580078125,
+              "distance_px": 26.88016855211161
+            },
+            {
+              "row": 3555,
+              "x": 1193.5194091796875,
+              "y": 2922.2890625,
+              "distance_px": 38.800839664052546
+            }
+          ],
+          "prior_pairs": [],
+          "prior_probes": [
+            {
+              "hyg_id": 92793,
+              "name": "37Xi 2Sgr",
+              "distance_px": 0.0438125830168865
+            }
+          ],
+          "neighbours": [],
+          "label": "visible_source",
+          "selected_row": 87,
+          "note": "Orange core with other distinguishable stars; agrees with prior Xi2 Sgr probe."
+        },
+        {
+          "id": 21,
+          "hyg_id": 96165,
+          "name": "41Iot Aql",
+          "mag": 4.36,
+          "world": [
+            0.40950649604545547,
+            -0.9120308484379649,
+            -0.022453534111568658
+          ],
+          "detector_xy_original": [
+            475.6572047208588,
+            2003.3112213954523
+          ],
+          "detector_xy_working": [
+            189.9628818883435,
+            801.0244885581809
+          ],
+          "native_r8_xy": [
+            475.6685888946378,
+            2003.3543909395767
+          ],
+          "native_r12_xy": [
+            475.65463819385604,
+            2003.3468598654963
+          ],
+          "choices": [
+            {
+              "row": 93,
+              "x": 475.68780517578125,
+              "y": 2003.1781005859375,
+              "distance_px": 0.13659259777654115
+            },
+            {
+              "row": 2126,
+              "x": 445.8753356933594,
+              "y": 1964.175048828125,
+              "distance_px": 49.17926113709672
+            },
+            {
+              "row": 3394,
+              "x": 525.7977905273438,
+              "y": 1968.393310546875,
+              "distance_px": 61.10105435298704
+            }
+          ],
+          "prior_pairs": [],
+          "prior_probes": [
+            {
+              "hyg_id": 96165,
+              "name": "41Iot Aql",
+              "distance_px": 0.13659259777654115
+            }
+          ],
+          "neighbours": [],
+          "label": "visible_source",
+          "selected_row": 93,
+          "note": "Bright core agrees with prior Iot Aql probe."
+        },
+        {
+          "id": 22,
+          "hyg_id": 95473,
+          "name": "Anser",
+          "mag": 4.44,
+          "world": [
+            0.3430215616340787,
+            -0.841539153845877,
+            0.4173105088522015
+          ],
+          "detector_xy_original": [
+            293.1597349304969,
+            458.90927896693205
+          ],
+          "detector_xy_working": [
+            116.96389397219876,
+            183.2637115867728
+          ],
+          "native_r8_xy": [
+            293.09376128120556,
+            458.61972960135614
+          ],
+          "native_r12_xy": [
+            292.43356763234385,
+            457.72100467628997
+          ],
+          "choices": [
+            {
+              "row": 25,
+              "x": 293.9303894042969,
+              "y": 459.7817687988281,
+              "distance_px": 1.1641077376042077
+            },
+            {
+              "row": 1236,
+              "x": 293.345458984375,
+              "y": 437.06768798828125,
+              "distance_px": 21.842380591475575
+            },
+            {
+              "row": 2692,
+              "x": 273.0663146972656,
+              "y": 477.4796447753906,
+              "distance_px": 27.360629066766624
+            }
+          ],
+          "prior_pairs": [],
+          "prior_probes": [],
+          "neighbours": [
+            {
+              "hyg_id": 95487,
+              "mag": 5.82,
+              "separation_deg": 0.11786918368811206
+            }
+          ],
+          "label": "blend",
+          "selected_row": null,
+          "note": "Partly separated close double in the crop, consistent with Anser and HYG 95487 at 0.11787 degrees. Centroid/component ambiguity retained."
+        },
+        {
+          "id": 23,
+          "hyg_id": 96530,
+          "name": "6Bet Sge",
+          "mag": 4.39,
+          "world": [
+            0.4070638116403423,
+            -0.8626208782144789,
+            0.3003069658221686
+          ],
+          "detector_xy_original": [
+            201.44365021706665,
+            942.097403814264
+          ],
+          "detector_xy_working": [
+            80.27746008682666,
+            376.5389615257056
+          ],
+          "native_r8_xy": [
+            201.4132666692774,
+            942.1588121965242
+          ],
+          "native_r12_xy": [
+            201.45230233292023,
+            941.9275319989423
+          ],
+          "choices": [
+            {
+              "row": 41,
+              "x": 201.48098754882812,
+              "y": 942.1275634765625,
+              "distance_px": 0.04799668293774394
+            },
+            {
+              "row": 44,
+              "x": 209.39772033691406,
+              "y": 907.4436645507812,
+              "distance_px": 35.554871345750854
+            },
+            {
+              "row": 1127,
+              "x": 246.20443725585938,
+              "y": 953.9765014648438,
+              "distance_px": 46.31026902668742
+            }
+          ],
+          "prior_pairs": [],
+          "prior_probes": [],
+          "neighbours": [],
+          "label": "visible_source",
+          "selected_row": 41,
+          "note": "Compact orange core; nearby text watermark and other stars are distinct. Bet Sge assignment remains conditional."
+        },
+        {
+          "id": 24,
+          "hyg_id": 82921,
+          "name": "",
+          "mag": 5.88,
+          "world": [
+            -0.23453936863506178,
+            -0.8747289502900782,
+            -0.4240761111931258
+          ],
+          "detector_xy_original": [
+            2759.231745626317,
+            3021.9053102945145
+          ],
+          "detector_xy_working": [
+            1103.3926982505268,
+            1208.4621241178058
+          ],
+          "native_r8_xy": [
+            2759.245352814819,
+            3021.7218743030526
+          ],
+          "native_r12_xy": [
+            2759.323402977755,
+            3021.7918428203834
+          ],
+          "choices": [
+            {
+              "row": 465,
+              "x": 2758.5,
+              "y": 3020.5,
+              "distance_px": 1.584407992122853
+            },
+            {
+              "row": 2718,
+              "x": 2797.856689453125,
+              "y": 3066.196044921875,
+              "distance_px": 58.766958909367844
+            },
+            {
+              "row": 831,
+              "x": 2695.89794921875,
+              "y": 3059.97802734375,
+              "distance_px": 73.89655980427182
+            }
+          ],
+          "prior_pairs": [],
+          "prior_probes": [],
+          "neighbours": [
+            {
+              "hyg_id": 82941,
+              "mag": 5.74,
+              "separation_deg": 0.11234090307735257
+            }
+          ],
+          "label": "blend",
+          "selected_row": null,
+          "note": "Two close bright cores near a foreground structure, consistent with HYG 82921/82941 at 0.11234 degrees; blended centroid/individual ID unresolved."
+        },
+        {
+          "id": 25,
+          "hyg_id": 95973,
+          "name": "9    Vul",
+          "mag": 5.0,
+          "world": [
+            0.37742677373681005,
+            -0.8620332848476917,
+            0.33830111776540295
+          ],
+          "detector_xy_original": [
+            270.32292343149913,
+            791.408271719177
+          ],
+          "detector_xy_working": [
+            107.82916937259965,
+            316.2633086876708
+          ],
+          "native_r8_xy": [
+            270.37751163141286,
+            791.5668992715318
+          ],
+          "native_r12_xy": [
+            270.2431815077154,
+            791.784358482197
+          ],
+          "choices": [
+            {
+              "row": 91,
+              "x": 270.2825622558594,
+              "y": 791.3313598632812,
+              "distance_px": 0.08685883994365705
+            },
+            {
+              "row": 3551,
+              "x": 260.4664611816406,
+              "y": 779.8089599609375,
+              "distance_px": 15.221494057671206
+            },
+            {
+              "row": 2722,
+              "x": 276.2205810546875,
+              "y": 817.1632080078125,
+              "distance_px": 26.421565219949095
+            }
+          ],
+          "prior_pairs": [],
+          "prior_probes": [],
+          "neighbours": [],
+          "label": "visible_source",
+          "selected_row": 91,
+          "note": "Compact stellar core and surrounding pattern; 9 Vul identity conditional."
+        },
+        {
+          "id": 26,
+          "hyg_id": 97725,
+          "name": "Alshain",
+          "mag": 3.71,
+          "world": [
+            0.4791751428917038,
+            -0.8705973200021428,
+            0.11158623947334084
+          ],
+          "detector_xy_original": [
+            115.49397613895634,
+            1619.7871775896506
+          ],
+          "detector_xy_working": [
+            45.89759045558254,
+            647.6148710358602
+          ],
+          "native_r8_xy": [
+            115.45995447221921,
+            1619.8589464548331
+          ],
+          "native_r12_xy": [
+            115.69502025521147,
+            1619.7774943412376
+          ],
+          "choices": [
+            {
+              "row": 9,
+              "x": 115.37946319580078,
+              "y": 1619.8319091796875,
+              "distance_px": 0.12293953512755547
+            },
+            {
+              "row": 668,
+              "x": 138.98565673828125,
+              "y": 1622.287109375,
+              "distance_px": 23.624324674201773
+            },
+            {
+              "row": 1853,
+              "x": 76.73561096191406,
+              "y": 1563.4102783203125,
+              "distance_px": 68.41465955789049
+            }
+          ],
+          "prior_pairs": [],
+          "prior_probes": [],
+          "neighbours": [],
+          "label": "visible_source",
+          "selected_row": 9,
+          "note": "Compact bright stellar core near a dark cable, separated from the cable itself; Alshain assignment conditional."
+        },
+        {
+          "id": 27,
+          "hyg_id": 89364,
+          "name": "Eta Sgr",
+          "mag": 3.1,
+          "world": [
+            0.061558109771480914,
+            -0.7987632321332777,
+            -0.5984880099996672
+          ],
+          "detector_xy_original": [
+            1852.2902369351457,
+            3864.4867688738773
+          ],
+          "detector_xy_working": [
+            740.6160947740583,
+            1545.4947075495509
+          ],
+          "native_r8_xy": [
+            1852.219939372847,
+            3864.6366977570474
+          ],
+          "native_r12_xy": [
+            1852.512391456591,
+            3864.8342585185655
+          ],
+          "choices": [
+            {
+              "row": 69,
+              "x": 1852.26953125,
+              "y": 3864.4287109375,
+              "distance_px": 0.061639673699174495
+            },
+            {
+              "row": 1787,
+              "x": 1871.6568603515625,
+              "y": 3847.049072265625,
+              "distance_px": 26.060302483945907
+            },
+            {
+              "row": 3357,
+              "x": 1816.0587158203125,
+              "y": 3866.548828125,
+              "distance_px": 36.29015308110099
+            }
+          ],
+          "prior_pairs": [],
+          "prior_probes": [],
+          "neighbours": [],
+          "label": "visible_source",
+          "selected_row": 69,
+          "note": "Compact orange core with separately resolved neighbours; Eta Sgr identity conditional."
+        },
+        {
+          "id": 28,
+          "hyg_id": 80571,
+          "name": "Kornephoros",
+          "mag": 2.78,
+          "world": [
+            -0.35525517530366585,
+            -0.8599966409750017,
+            0.36633255101297746
+          ],
+          "detector_xy_original": [
+            2845.6739090852907,
+            125.71815759414662
+          ],
+          "detector_xy_working": [
+            1137.9695636341162,
+            49.98726303765865
+          ],
+          "native_r8_xy": [
+            2845.6598554320585,
+            125.71782820699444
+          ],
+          "native_r12_xy": [
+            2845.88188493082,
+            125.83213258265917
+          ],
+          "choices": [
+            {
+              "row": 1,
+              "x": 2845.675048828125,
+              "y": 125.66996002197266,
+              "distance_px": 0.04821104621549506
+            },
+            {
+              "row": 3283,
+              "x": 2846.52685546875,
+              "y": 158.9815673828125,
+              "distance_px": 33.27434369453092
+            },
+            {
+              "row": 3008,
+              "x": 2881.929443359375,
+              "y": 100.972412109375,
+              "distance_px": 43.89550871212677
+            }
+          ],
+          "prior_pairs": [],
+          "prior_probes": [
+            {
+              "hyg_id": 80571,
+              "name": "Kornephoros",
+              "distance_px": 0.04821104621549506
+            }
+          ],
+          "neighbours": [],
+          "label": "visible_source",
+          "selected_row": 1,
+          "note": "Bright stellar core agrees with prior Kornephoros probe."
+        },
+        {
+          "id": 29,
+          "hyg_id": 97186,
+          "name": "8Zet Sge",
+          "mag": 5.01,
+          "world": [
+            0.43247550677640584,
+            -0.8399042715300393,
+            0.32791119331929636
+          ],
+          "detector_xy_original": [
+            59.535108367101415,
+            841.764105742512
+          ],
+          "detector_xy_working": [
+            23.514043346840566,
+            336.4056422970048
+          ],
+          "native_r8_xy": [
+            59.43280065740846,
+            841.7778152347709
+          ],
+          "native_r12_xy": [
+            59.64013362631553,
+            841.9378251038881
+          ],
+          "choices": [
+            {
+              "row": 126,
+              "x": 59.55470657348633,
+              "y": 841.7197875976562,
+              "distance_px": 0.04845810207759105
+            },
+            {
+              "row": 941,
+              "x": 68.3263168334961,
+              "y": 859.9926147460938,
+              "distance_px": 20.23768481801389
+            },
+            {
+              "row": 2240,
+              "x": 56.263397216796875,
+              "y": 808.3184204101562,
+              "distance_px": 33.605326381423296
+            }
+          ],
+          "prior_pairs": [],
+          "prior_probes": [],
+          "neighbours": [],
+          "label": "visible_source",
+          "selected_row": 126,
+          "note": "Compact bright core with surrounding stars near left edge; Zeta Sge identity conditional."
+        },
+        {
+          "id": 30,
+          "hyg_id": 95648,
+          "name": "Albireo",
+          "mag": 3.05,
+          "world": [
+            0.34058255974967133,
+            -0.8149742861185902,
+            0.468850117798701
+          ],
+          "detector_xy_original": [
+            218.77726962306025,
+            223.74832474945282
+          ],
+          "detector_xy_working": [
+            87.2109078492241,
+            89.19932989978113
+          ],
+          "native_r8_xy": [
+            218.8676794269308,
+            223.62632983775558
+          ],
+          "native_r12_xy": [
+            218.45180631348217,
+            223.6077192560661
+          ],
+          "choices": [
+            {
+              "row": 7,
+              "x": 218.99241638183594,
+              "y": 223.83653259277344,
+              "distance_px": 0.23252688325214965
+            },
+            {
+              "row": 3479,
+              "x": 243.94500732421875,
+              "y": 192.61578369140625,
+              "distance_px": 40.033112965709655
+            },
+            {
+              "row": 2869,
+              "x": 190.14324951171875,
+              "y": 265.3204345703125,
+              "distance_px": 50.47917811032909
+            }
+          ],
+          "prior_pairs": [],
+          "prior_probes": [
+            {
+              "hyg_id": 95648,
+              "name": "Albireo",
+              "distance_px": 0.23252688325214965
+            }
+          ],
+          "neighbours": [
+            {
+              "hyg_id": 95652,
+              "mag": 5.12,
+              "separation_deg": 0.00958580114137919
+            }
+          ],
+          "label": "blend",
+          "selected_row": null,
+          "note": "Known Albireo physical source, matching prior probe. Close HYG 95652 companion (0.00959 degrees) is unresolved here; primary/component ambiguity explicitly retained."
+        },
+        {
+          "id": 31,
+          "hyg_id": 87511,
+          "name": "",
+          "mag": 6.48,
+          "world": [
+            -0.016867374336965748,
+            -0.946486857225592,
+            -0.32230128883111614
+          ],
+          "detector_xy_original": [
+            1926.8654898916561,
+            2710.704121303823
+          ],
+          "detector_xy_working": [
+            770.4461959566625,
+            1083.9816485215292
+          ],
+          "native_r8_xy": [
+            1926.7312618500184,
+            2710.650161186281
+          ],
+          "native_r12_xy": [
+            1927.0369263293187,
+            2710.4594221071666
+          ],
+          "choices": [
+            {
+              "row": 1453,
+              "x": 1925.874267578125,
+              "y": 2710.391357421875,
+              "distance_px": 1.0393954592420886
+            },
+            {
+              "row": 950,
+              "x": 1939.213134765625,
+              "y": 2697.72021484375,
+              "distance_px": 17.91776104588882
+            },
+            {
+              "row": 2449,
+              "x": 1916.489501953125,
+              "y": 2659.5322265625,
+              "distance_px": 52.21325441990344
+            }
+          ],
+          "prior_pairs": [],
+          "prior_probes": [],
+          "neighbours": [],
+          "label": "blend",
+          "selected_row": null,
+          "note": "Multiple partially blended cores around measured centroid on structured Milky Way background; single HYG 87511 identity unconfirmed."
+        },
+        {
+          "id": 32,
+          "hyg_id": 96324,
+          "name": "",
+          "mag": 6.36,
+          "world": [
+            0.4172049186965917,
+            -0.906896295785813,
+            0.058984442909479184
+          ],
+          "detector_xy_original": [
+            377.34218619846973,
+            1740.4776662578327
+          ],
+          "detector_xy_working": [
+            150.6368744793879,
+            695.8910665031331
+          ],
+          "native_r8_xy": [
+            377.52618592906094,
+            1741.0403278332817
+          ],
+          "native_r12_xy": [
+            379.0360312105497,
+            1741.3505758027043
+          ],
+          "choices": [
+            {
+              "row": 1574,
+              "x": 396.5716552734375,
+              "y": 1755.6971435546875,
+              "distance_px": 24.523559490714675
+            },
+            {
+              "row": 1935,
+              "x": 450.5406799316406,
+              "y": 1774.9388427734375,
+              "distance_px": 80.90483404373767
+            },
+            {
+              "row": 2350,
+              "x": 362.4127197265625,
+              "y": 1861.321044921875,
+              "distance_px": 121.76210878625965
+            }
+          ],
+          "prior_pairs": [],
+          "prior_probes": [],
+          "neighbours": [],
+          "label": "ambiguous",
+          "selected_row": null,
+          "note": "No securely isolated stellar core at detector centre beside a broad foreground boundary. Nearest external centroid is 24.52 px away. Source nature/identity uncertain; do not treat absence of a visible core as a confirmed false source."
+        },
+        {
+          "id": 33,
+          "hyg_id": 81442,
+          "name": "",
+          "mag": 6.4,
+          "world": [
+            -0.3366915858742324,
+            -0.941364089341244,
+            0.021735392801246565
+          ],
+          "detector_xy_original": [
+            2819.5414269980756,
+            1445.6512479753792
+          ],
+          "detector_xy_working": [
+            1127.5165707992303,
+            577.9604991901517
+          ],
+          "native_r8_xy": [
+            2818.5788548103183,
+            1445.8769551390435
+          ],
+          "native_r12_xy": [
+            2818.6473142025357,
+            1445.2936869983932
+          ],
+          "choices": [
+            {
+              "row": 356,
+              "x": 2814.5,
+              "y": 1450.5,
+              "distance_px": 6.994739621543475
+            },
+            {
+              "row": 493,
+              "x": 2838.5,
+              "y": 1448.5,
+              "distance_px": 19.17140783476991
+            },
+            {
+              "row": 830,
+              "x": 2854.871826171875,
+              "y": 1424.657958984375,
+              "distance_px": 41.09690120239994
+            }
+          ],
+          "prior_pairs": [],
+          "prior_probes": [],
+          "neighbours": [
+            {
+              "hyg_id": 81484,
+              "mag": 5.74,
+              "separation_deg": 0.125014266157311
+            }
+          ],
+          "label": "not_visible",
+          "selected_row": null,
+          "note": "Detector centre lies on a continuous illuminated palm-leaf structure, without an isolated stellar core. Full native-context crop confirms foreground. Existing external extraction at 6.99 px also lies on the leaf; it does not validate HYG 81442."
+        }
+      ]
+    }
+  ]
+}

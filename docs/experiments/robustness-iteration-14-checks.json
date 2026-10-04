@@ -1,0 +1,170 @@
+{
+  "iteration": 14,
+  "split": "development",
+  "base_commit": "67fbcf8203915f0329eb74d643e526c992bbaf4a",
+  "frozen_inputs_verified": true,
+  "previous_iteration_13_published_hashes_preserved": true,
+  "probes": 117,
+  "training_counts": [
+    17,
+    26,
+    19
+  ],
+  "outside_counts": [
+    18,
+    14,
+    23
+  ],
+  "cameras": 6,
+  "projection_count": 234,
+  "projection_max_abs_px": 0.0,
+  "all_fit_residuals_exact": true,
+  "prior_rows": [
+    1,
+    2
+  ],
+  "one_prior_existing_helper_comparisons": 9,
+  "full_rank_all_cases": true,
+  "max_cell_energy_partition_error": 2.220446049250313e-16,
+  "max_probe_gain_relative_change_half_double_step": 3.269256620974659e-07,
+  "cases": [
+    {
+      "id": "wm_r_132162731",
+      "normalized_data_condition": [
+        5.146282210268634,
+        32.11565188354006
+      ],
+      "outside_rms_gain": [
+        0.5591890135736032,
+        0.6441524292424856
+      ],
+      "k1_k2_response_correlation": -0.9872202462997663
+    },
+    {
+      "id": "wm_r_143159342",
+      "normalized_data_condition": [
+        4.214965353697114,
+        24.419377120376225
+      ],
+      "outside_rms_gain": [
+        0.5127177158247433,
+        0.5733325175822658
+      ],
+      "k1_k2_response_correlation": -0.9813133164976011
+    },
+    {
+      "id": "wm_r_149276071",
+      "normalized_data_condition": [
+        5.8932497038269185,
+        27.880346949290555
+      ],
+      "outside_rms_gain": [
+        0.5731171220021177,
+        0.601884299541272
+      ],
+      "k1_k2_response_correlation": -0.9763075208341545
+    }
+  ],
+  "run": {
+    "status": "completed",
+    "exit_code": 0,
+    "command": [
+      "cargo",
+      "test",
+      "--offline",
+      "--locked",
+      "--release",
+      "--manifest-path",
+      "/home/agent/work/starglyph/engine/prototype/artifacts/robustness-iteration-14/fixed/pipeline/Cargo.toml",
+      "-p",
+      "starglyph-core",
+      "solve::radial_refit::sensitivity_export::export",
+      "--",
+      "--ignored",
+      "--nocapture"
+    ],
+    "elapsed_s": 49.631056655198336
+  },
+  "repeat": {
+    "exact_except_elapsed_s": true,
+    "first_derivative_elapsed_s": 0.004225186,
+    "repeat_derivative_elapsed_s": 0.003429936,
+    "raw_sha256": "c20b7d81073f597f426e9cb85aacf0c04257c7e959cf2666e48f1ba717d5c902"
+  },
+  "python_tests": {
+    "count": 149,
+    "new": 6,
+    "exit_code": 0,
+    "command": "PYTHONPATH=/tmp/starglyph-iteration-deps python3 -m unittest discover -s prototype/eval -p 'test_*.py'",
+    "log_sha256": "c6cfa236bc70b6e9fc22b34595f1d83b7c060819947f6272c712a4656dcd7828"
+  },
+  "rust_export": {
+    "passed": 1,
+    "exit_code": 0,
+    "repeat_passed": true
+  },
+  "rustfmt": {
+    "exit_code": 0,
+    "command": "rustfmt --check --edition 2021 prototype/eval/radial_sensitivity.rs"
+  },
+  "clippy": {
+    "exit_code": 0,
+    "command": "CARGO_TARGET_DIR=artifacts/robustness-iteration-14/fixed/pipeline/target cargo clippy --offline --locked --release --manifest-path artifacts/robustness-iteration-14/fixed/pipeline/Cargo.toml -p starglyph-core --all-targets --no-deps -- -D warnings",
+    "cwd": "prototype",
+    "log_sha256": "19341eca687643c502d051369e1a071f054903f5f29b4b90f245eb2ddb62ce4d"
+  },
+  "environment": {
+    "python": "3.10.12",
+    "numpy": "1.26.4"
+  },
+  "raw_sha256": {
+    "protocol.json": "6430a6026b9e88b61b12b2cbb03a681836426fa0e132d42e852a6ceaf3a8a92a",
+    "input.json": "b5f4dbea36dac3965d3dae6b0db854e785a4db5177a4baced9b25c1e74e8cf37",
+    "jacobians.json": "6ffbaf35eddf9eebae2d024c4b90bde738ddf03ccfb6cf6a80f4e42edf568bba",
+    "results.json": "3149246da705c27f1f973ddf112de1541d96d4249ca211d0ce9805be8fb8eb04",
+    "run.log": "21dec60e7feab7404647e6315b92a030e04ab34722c9d1e47aea026519a84420",
+    "repeat.log": "c9b811f68fb4835c455b7e884b6c246f12e53dba0db7cc602af8d0e721e340b5"
+  },
+  "files_sha256": {
+    "prototype/eval/robustness_observability.py": "9205b8d9390ebcbc82a4d8372140b79feefa7722694a0df299e2097562c2c599",
+    "prototype/eval/radial_sensitivity.rs": "f55906434f0a12eccc556dde3827e77ff69979ecc9983bdc0924ad27e3422ea0",
+    "prototype/eval/test_robustness_observability.py": "554e615605ce71d1191811abd2d7d1f2cde8ea8d70d223aa0de1044e1bda3a01",
+    "docs/robustness-iteration-14.md": "0fca35d93a267fc99a99ab6ee640cbfba6a0536bb1404b656106253298366dbf",
+    "docs/experiments/robustness-iteration-14-protocol.json": "6430a6026b9e88b61b12b2cbb03a681836426fa0e132d42e852a6ceaf3a8a92a",
+    "docs/experiments/robustness-iteration-14-results.json": "3149246da705c27f1f973ddf112de1541d96d4249ca211d0ce9805be8fb8eb04"
+  },
+  "protected": {
+    "data/samples/sky-samples/manifest.json": {
+      "sha256": "97e229270c7b0f97fce4e1f738917cd91cdff01df3508db29584af70a0ea4871",
+      "matches_head": true
+    },
+    "data/samples/sky-samples/robustness-results.json": {
+      "sha256": "09e6efe61468b4afe896967d583553751d80fe82e65e0ac064528523bbc525e8",
+      "matches_head": true
+    },
+    "data/samples/sky-samples/collection-wcs-review.json": {
+      "sha256": "97c182c51955baee9adce93cde8e93fb98ece6a69bdc606cf871d3a1eef19841",
+      "matches_head": true
+    },
+    "prototype/Cargo.toml": {
+      "sha256": "ea0b115c3ff3465b164e9f35f3f4cef373dbc1dcc25074f77e751eacc55e2840",
+      "matches_head": true
+    },
+    "prototype/Cargo.lock": {
+      "sha256": "59694debace1f5f18e2de398a77ce4d6a1a8f7dd237af646906aa49bfa3b677a",
+      "matches_head": true
+    }
+  },
+  "changes": {
+    "production_code": false,
+    "production_dependencies": false,
+    "original_photographs": false,
+    "published_baseline": false,
+    "holdout_used": false,
+    "new_ground_truth": false,
+    "new_fits": 0,
+    "new_solver_runs": 0,
+    "new_wcs_runs": 0
+  },
+  "conclusion": "k2 increases parameter coupling but all data Jacobians retain full rank; outside projection response rises only 5-15%. Local independent-noise sensitivity alone does not establish the cause of edge errors."
+}

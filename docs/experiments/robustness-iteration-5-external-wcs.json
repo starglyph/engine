@@ -1,0 +1,638 @@
+{
+  "iteration": 5,
+  "split": "development",
+  "review_sha256": "6a23870a2373e17cac7e1976b5725fabd94ba0efda1898a3980a04b2183aca3f",
+  "frames": [
+    {
+      "id": "wm_r_132162731",
+      "reference_sha256": "cb55299b065f5c9bc26a67944fbd7b14602e78ff51c03895fa3a7a1445af8fcd",
+      "status": "unresolved",
+      "review_status": "unresolved"
+    },
+    {
+      "id": "wm_r_143159342",
+      "reference_sha256": "9d07964a7b129d73df67336eac045db9e7b1a355acc0abd12675d35a0b89d720",
+      "status": "unresolved",
+      "review_status": "unresolved"
+    },
+    {
+      "id": "wm_r_149276071",
+      "reference_sha256": "5ea2df1455d7c3fb4510f6b1905fa3a51b224b60d35e4efcb3c72d8ce97fe4f2",
+      "status": "solved_candidate",
+      "review_status": "pending",
+      "wcs_sha256": "6216b402ad795c61d9c8f9c7afd3e7a1ab1181b63dc2a76abdb6d706e6c1c69b",
+      "correspondences_sha256": "2bae240da7933c077bff9b68b8eaac619b3a85cb6e8284959813de237322cfe9",
+      "correspondences_count": 65,
+      "high_weight_count": 4,
+      "all_reviewed": {
+        "count": 42,
+        "rms_px": 6.1650765915570975,
+        "median_px": 4.241814680839035,
+        "p95_px": 15.045777583957454,
+        "max_px": 16.382812725322182
+      },
+      "outside_all_corr_sources": {
+        "count": 11,
+        "rms_px": 10.076857287712489,
+        "median_px": 7.165260535780506,
+        "p95_px": 16.108489447258833,
+        "max_px": 16.382812725322182
+      },
+      "sources": [
+        {
+          "hyg_id": 80519,
+          "xy": [
+            1963.7982177734375,
+            407.89251708984375
+          ],
+          "predicted_xy": [
+            1948.543391281586,
+            412.136464188619
+          ],
+          "error_px": 15.834166169195484,
+          "outside_all_corr_sources": true,
+          "nearest_corr_source_px": 231.25561520270676
+        },
+        {
+          "hyg_id": 85769,
+          "xy": [
+            904.0426635742188,
+            996.96044921875
+          ],
+          "predicted_xy": [
+            904.5692109909601,
+            1000.190080714764
+          ],
+          "error_px": 3.2722731826854923,
+          "outside_all_corr_sources": false,
+          "nearest_corr_source_px": 0.0
+        },
+        {
+          "hyg_id": 76035,
+          "xy": [
+            370.0498046875,
+            312.4215087890625
+          ],
+          "predicted_xy": [
+            370.3995057837833,
+            312.29672352068997
+          ],
+          "error_px": 0.37129802038867027,
+          "outside_all_corr_sources": false,
+          "nearest_corr_source_px": 0.0
+        },
+        {
+          "hyg_id": 78165,
+          "xy": [
+            1813.166259765625,
+            220.2630615234375
+          ],
+          "predicted_xy": [
+            1802.6469107948978,
+            225.87872350685686
+          ],
+          "error_px": 11.924443898143,
+          "outside_all_corr_sources": true,
+          "nearest_corr_source_px": 204.94173814540963
+        },
+        {
+          "hyg_id": 83755,
+          "xy": [
+            1630.7432861328125,
+            743.1000366210938
+          ],
+          "predicted_xy": [
+            1632.7203922025462,
+            742.4085938423257
+          ],
+          "error_px": 2.094526563996862,
+          "outside_all_corr_sources": false,
+          "nearest_corr_source_px": 0.0
+        },
+        {
+          "hyg_id": 81130,
+          "xy": [
+            1448.6009521484375,
+            547.6275024414062
+          ],
+          "predicted_xy": [
+            1454.0987125445708,
+            544.7542831831514
+          ],
+          "error_px": 6.203286087171761,
+          "outside_all_corr_sources": true,
+          "nearest_corr_source_px": 188.0978681249133
+        },
+        {
+          "hyg_id": 78580,
+          "xy": [
+            1716.4930419921875,
+            277.0918273925781
+          ],
+          "predicted_xy": [
+            1709.860969939218,
+            279.99245822209025
+          ],
+          "error_px": 7.238648970967975,
+          "outside_all_corr_sources": true,
+          "nearest_corr_source_px": 132.56405749264826
+        },
+        {
+          "hyg_id": 76835,
+          "xy": [
+            946.7607421875,
+            272.2680358886719
+          ],
+          "predicted_xy": [
+            948.6406068233887,
+            267.0799109950738
+          ],
+          "error_px": 5.518199974705224,
+          "outside_all_corr_sources": false,
+          "nearest_corr_source_px": 0.0
+        },
+        {
+          "hyg_id": 79352,
+          "xy": [
+            1243.41943359375,
+            428.9110107421875
+          ],
+          "predicted_xy": [
+            1248.0040416500265,
+            423.6036348078123
+          ],
+          "error_px": 7.013335179389352,
+          "outside_all_corr_sources": false,
+          "nearest_corr_source_px": 0.0
+        },
+        {
+          "hyg_id": 86475,
+          "xy": [
+            1112.297607421875,
+            1026.3011474609375
+          ],
+          "predicted_xy": [
+            1116.6390232518913,
+            1030.1855872244482
+          ],
+          "error_px": 5.825526901959998,
+          "outside_all_corr_sources": false,
+          "nearest_corr_source_px": 0.0
+        },
+        {
+          "hyg_id": 80571,
+          "xy": [
+            615.13134765625,
+            637.9436645507812
+          ],
+          "predicted_xy": [
+            611.8789906562812,
+            635.1898980950513
+          ],
+          "error_px": 4.261579020498132,
+          "outside_all_corr_sources": true,
+          "nearest_corr_source_px": 267.0790446396857
+        },
+        {
+          "hyg_id": 84086,
+          "xy": [
+            842.5537719726562,
+            878.3038330078125
+          ],
+          "predicted_xy": [
+            842.0578972019783,
+            879.0748644938757
+          ],
+          "error_px": 0.9167231537905378,
+          "outside_all_corr_sources": false,
+          "nearest_corr_source_px": 0.0
+        },
+        {
+          "hyg_id": 81444,
+          "xy": [
+            339.214111328125,
+            749.164306640625
+          ],
+          "predicted_xy": [
+            336.02005632599077,
+            748.2468231091029
+          ],
+          "error_px": 3.3232158201466437,
+          "outside_all_corr_sources": true,
+          "nearest_corr_source_px": 68.75878781096922
+        },
+        {
+          "hyg_id": 78029,
+          "xy": [
+            1941.18798828125,
+            184.9869842529297
+          ],
+          "predicted_xy": [
+            1927.8246281664992,
+            192.25103822179466
+          ],
+          "error_px": 15.210058304263493,
+          "outside_all_corr_sources": true,
+          "nearest_corr_source_px": 305.8940308236897
+        },
+        {
+          "hyg_id": 84121,
+          "xy": [
+            566.9597778320312,
+            919.81396484375
+          ],
+          "predicted_xy": [
+            563.9743838993752,
+            919.8294114031545
+          ],
+          "error_px": 2.9854338929772006,
+          "outside_all_corr_sources": false,
+          "nearest_corr_source_px": 0.0
+        },
+        {
+          "hyg_id": 84122,
+          "xy": [
+            198.74969482421875,
+            972.243896484375
+          ],
+          "predicted_xy": [
+            200.20593268507943,
+            970.4562572713239
+          ],
+          "error_px": 2.3057065432187978,
+          "outside_all_corr_sources": false,
+          "nearest_corr_source_px": 0.0
+        },
+        {
+          "hyg_id": 79640,
+          "xy": [
+            1272.8560791015625,
+            450.4962158203125
+          ],
+          "predicted_xy": [
+            1278.1602522163491,
+            445.6788818985267
+          ],
+          "error_px": 7.165260535780506,
+          "outside_all_corr_sources": true,
+          "nearest_corr_source_px": 36.50256397867595
+        },
+        {
+          "hyg_id": 89684,
+          "xy": [
+            1350.98193359375,
+            1267.66748046875
+          ],
+          "predicted_xy": [
+            1352.5638532459227,
+            1269.4376444366915
+          ],
+          "error_px": 2.374015640076639,
+          "outside_all_corr_sources": false,
+          "nearest_corr_source_px": 0.0
+        },
+        {
+          "hyg_id": 84711,
+          "xy": [
+            1961.7012939453125,
+            780.7479858398438
+          ],
+          "predicted_xy": [
+            1945.3184820840893,
+            780.7533068117746
+          ],
+          "error_px": 16.382812725322182,
+          "outside_all_corr_sources": true,
+          "nearest_corr_source_px": 333.0924361428767
+        },
+        {
+          "hyg_id": 87775,
+          "xy": [
+            1516.4027099609375,
+            1090.2969970703125
+          ],
+          "predicted_xy": [
+            1518.2503253978025,
+            1091.3033228393067
+          ],
+          "error_px": 2.10389504393247,
+          "outside_all_corr_sources": false,
+          "nearest_corr_source_px": 0.0
+        },
+        {
+          "hyg_id": 86705,
+          "xy": [
+            499.95501708984375,
+            1122.751953125
+          ],
+          "predicted_xy": [
+            497.64147725154544,
+            1123.5838085064024
+          ],
+          "error_px": 2.4585463101112293,
+          "outside_all_corr_sources": false,
+          "nearest_corr_source_px": 0.0
+        },
+        {
+          "hyg_id": 74438,
+          "xy": [
+            105.6940689086914,
+            223.3717803955078
+          ],
+          "predicted_xy": [
+            109.06203991538581,
+            227.6700609540301
+          ],
+          "error_px": 5.460626746235714,
+          "outside_all_corr_sources": false,
+          "nearest_corr_source_px": 0.0
+        },
+        {
+          "hyg_id": 81583,
+          "xy": [
+            94.95821380615234,
+            796.6417236328125
+          ],
+          "predicted_xy": [
+            99.07171967352969,
+            795.5068766578976
+          ],
+          "error_px": 4.267178010983531,
+          "outside_all_corr_sources": false,
+          "nearest_corr_source_px": 0.0
+        },
+        {
+          "hyg_id": 77280,
+          "xy": [
+            1214.914306640625,
+            258.7594909667969
+          ],
+          "predicted_xy": [
+            1218.2510433346008,
+            254.54583169523733
+          ],
+          "error_px": 5.374824296823513,
+          "outside_all_corr_sources": false,
+          "nearest_corr_source_px": 0.0
+        },
+        {
+          "hyg_id": 85998,
+          "xy": [
+            1654.872802734375,
+            925.8439331054688
+          ],
+          "predicted_xy": [
+            1654.6496889995108,
+            925.5375144897027
+          ],
+          "error_px": 0.3790410357375837,
+          "outside_all_corr_sources": false,
+          "nearest_corr_source_px": 0.0
+        },
+        {
+          "hyg_id": 76997,
+          "xy": [
+            712.33935546875,
+            330.41302490234375
+          ],
+          "predicted_xy": [
+            712.0318065282238,
+            326.20219093118806
+          ],
+          "error_px": 4.222050341179937,
+          "outside_all_corr_sources": false,
+          "nearest_corr_source_px": 0.0
+        },
+        {
+          "hyg_id": 75466,
+          "xy": [
+            278.2969055175781,
+            279.29156494140625
+          ],
+          "predicted_xy": [
+            280.70469228252864,
+            281.6702297651838
+          ],
+          "error_px": 3.3845950199909653,
+          "outside_all_corr_sources": false,
+          "nearest_corr_source_px": 0.0
+        },
+        {
+          "hyg_id": 87661,
+          "xy": [
+            454.1383972167969,
+            1200.920166015625
+          ],
+          "predicted_xy": [
+            454.1773124196054,
+            1200.5461662342248
+          ],
+          "error_px": 0.3760189217274308,
+          "outside_all_corr_sources": false,
+          "nearest_corr_source_px": 0.0
+        },
+        {
+          "hyg_id": 77386,
+          "xy": [
+            1005.6229248046875,
+            309.2132568359375
+          ],
+          "predicted_xy": [
+            1008.3061633493481,
+            302.6378333858412
+          ],
+          "error_px": 7.101828119268235,
+          "outside_all_corr_sources": false,
+          "nearest_corr_source_px": 0.0
+        },
+        {
+          "hyg_id": 88494,
+          "xy": [
+            1002.5079345703125,
+            1200.5167236328125
+          ],
+          "predicted_xy": [
+            1004.4987380764973,
+            1204.3522129539526
+          ],
+          "error_px": 4.321374426362233,
+          "outside_all_corr_sources": false,
+          "nearest_corr_source_px": 0.0
+        },
+        {
+          "hyg_id": 79928,
+          "xy": [
+            666.8087158203125,
+            578.03515625
+          ],
+          "predicted_xy": [
+            664.1755691612632,
+            573.658294688034
+          ],
+          "error_px": 5.107874162572771,
+          "outside_all_corr_sources": true,
+          "nearest_corr_source_px": 218.08671980786417
+        },
+        {
+          "hyg_id": 86839,
+          "xy": [
+            1163.747802734375,
+            1049.595703125
+          ],
+          "predicted_xy": [
+            1168.6268979079666,
+            1053.6442111217023
+          ],
+          "error_px": 6.340030497744248,
+          "outside_all_corr_sources": false,
+          "nearest_corr_source_px": 0.0
+        },
+        {
+          "hyg_id": 76044,
+          "xy": [
+            825.2047729492188,
+            225.9872589111328
+          ],
+          "predicted_xy": [
+            825.2867171569706,
+            222.23446623411783
+          ],
+          "error_px": 3.7536872179020637,
+          "outside_all_corr_sources": false,
+          "nearest_corr_source_px": 0.0
+        },
+        {
+          "hyg_id": 88517,
+          "xy": [
+            468.6417236328125,
+            1263.4835205078125
+          ],
+          "predicted_xy": [
+            469.2575277750606,
+            1262.3440073700347
+          ],
+          "error_px": 1.2952624957043437,
+          "outside_all_corr_sources": false,
+          "nearest_corr_source_px": 0.0
+        },
+        {
+          "hyg_id": 77836,
+          "xy": [
+            722.340087890625,
+            400.4964599609375
+          ],
+          "predicted_xy": [
+            721.5616678533302,
+            395.378151382875
+          ],
+          "error_px": 5.177163359865165,
+          "outside_all_corr_sources": true,
+          "nearest_corr_source_px": 70.79337905896334
+        },
+        {
+          "hyg_id": 89860,
+          "xy": [
+            676.0472412109375,
+            1350.53369140625
+          ],
+          "predicted_xy": [
+            675.9869132646118,
+            1350.9616259654838
+          ],
+          "error_px": 0.43216599599517325,
+          "outside_all_corr_sources": false,
+          "nearest_corr_source_px": 0.0
+        },
+        {
+          "hyg_id": 82952,
+          "xy": [
+            379.7625427246094,
+            857.5654296875
+          ],
+          "predicted_xy": [
+            376.018189222653,
+            856.9516958945992
+          ],
+          "error_px": 3.794318425773109,
+          "outside_all_corr_sources": false,
+          "nearest_corr_source_px": 0.0
+        },
+        {
+          "hyg_id": 87920,
+          "xy": [
+            1170.063232421875,
+            1136.2618408203125
+          ],
+          "predicted_xy": [
+            1174.0659250043639,
+            1139.9546565157432
+          ],
+          "error_px": 5.445955900512833,
+          "outside_all_corr_sources": false,
+          "nearest_corr_source_px": 0.0
+        },
+        {
+          "hyg_id": 77923,
+          "xy": [
+            413.94891357421875,
+            462.2825012207031
+          ],
+          "predicted_xy": [
+            411.6946081517662,
+            460.36977252563554
+          ],
+          "error_px": 2.956420808787866,
+          "outside_all_corr_sources": false,
+          "nearest_corr_source_px": 0.0
+        },
+        {
+          "hyg_id": 87994,
+          "xy": [
+            678.8944702148438,
+            1198.55029296875
+          ],
+          "predicted_xy": [
+            677.1038972820352,
+            1200.0565613917076
+          ],
+          "error_px": 2.3398709344119832,
+          "outside_all_corr_sources": false,
+          "nearest_corr_source_px": 0.0
+        },
+        {
+          "hyg_id": 77276,
+          "xy": [
+            422.1656799316406,
+            407.70263671875
+          ],
+          "predicted_xy": [
+            420.53669233701163,
+            405.35588532380876
+          ],
+          "error_px": 2.8567188684072153,
+          "outside_all_corr_sources": false,
+          "nearest_corr_source_px": 0.0
+        },
+        {
+          "hyg_id": 119058,
+          "xy": [
+            1448.2379150390625,
+            320.8267822265625
+          ],
+          "predicted_xy": [
+            1451.882753124746,
+            318.01130125486236
+          ],
+          "error_px": 4.6056245801035525,
+          "outside_all_corr_sources": false,
+          "nearest_corr_source_px": 0.0
+        }
+      ]
+    }
+  ],
+  "ground_truth_promotions": 0,
+  "limitations": [
+    "all corr rows excluded from withheld group regardless of match weight",
+    "identities remain conditional on visual pattern review; no WCS refit"
+  ]
+}

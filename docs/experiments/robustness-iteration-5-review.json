@@ -1,0 +1,3821 @@
+{
+  "schema_version": 1,
+  "split": "development",
+  "frames": [
+    {
+      "id": "wm_r_132162731",
+      "source_sha256": "58dfbce4f8a236cab8158a4a0f9ed677c68aa8873afd9568df48d370f01ef188",
+      "image": "data/samples/sky-samples/images/wm_r_132162731.png",
+      "width": 3648,
+      "height": 5472,
+      "extraction": "prototype/artifacts/robustness-baseline/wcs-run/wm_r_132162731/downsample-2/field.axy",
+      "sky_bounds": [
+        12,
+        12,
+        3636,
+        3500
+      ],
+      "points": [
+        {
+          "hyg_id": 97338,
+          "name": "Altair",
+          "mag": 0.76,
+          "ra_deg": 297.69582,
+          "dec_deg": 8.868322,
+          "review_center": [
+            1622.5777521021814,
+            1497.699265031829
+          ],
+          "choices": [
+            {
+              "row": 2,
+              "x": 1627.43896484375,
+              "y": 1497.023193359375,
+              "flux": 204.52694702148438
+            },
+            {
+              "row": 139,
+              "x": 1585.767578125,
+              "y": 1515.134521484375,
+              "flux": 151.67562866210938
+            },
+            {
+              "row": 2621,
+              "x": 1613.08642578125,
+              "y": 1538.102294921875,
+              "flux": 66.56078338623047
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 2,
+          "id": 0,
+          "note": "Visible stellar source; identification conditional on relative field pattern"
+        },
+        {
+          "hyg_id": 92564,
+          "name": "Nunki",
+          "mag": 2.05,
+          "ra_deg": 283.81635,
+          "dec_deg": -26.296722,
+          "review_center": [
+            2099.053603667323,
+            3148.6348081495335
+          ],
+          "choices": [
+            {
+              "row": 94,
+              "x": 2110.705322265625,
+              "y": 3143.99267578125,
+              "flux": 158.79977416992188
+            },
+            {
+              "row": 6441,
+              "x": 2114.391357421875,
+              "y": 3171.51220703125,
+              "flux": 30.745079040527344
+            },
+            {
+              "row": 8542,
+              "x": 2073.8994140625,
+              "y": 3134.380615234375,
+              "flux": 22.372455596923828
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 94,
+          "id": 1,
+          "note": "Visible stellar source; identification conditional on relative field pattern"
+        },
+        {
+          "hyg_id": 85769,
+          "name": "Rasalhague",
+          "mag": 2.08,
+          "ra_deg": 263.733615,
+          "dec_deg": 12.560035,
+          "review_center": [
+            3409.2969713792963,
+            1333.5219016388523
+          ],
+          "choices": [
+            {
+              "row": 0,
+              "x": 3406.705810546875,
+              "y": 1330.2852783203125,
+              "flux": 213.11109924316406
+            },
+            {
+              "row": 1110,
+              "x": 3384.843505859375,
+              "y": 1363.6395263671875,
+              "flux": 95.02731323242188
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 0,
+          "id": 2,
+          "note": "Visible stellar source; identification conditional on relative field pattern"
+        },
+        {
+          "hyg_id": 106972,
+          "name": "Enif",
+          "mag": 2.38,
+          "ra_deg": 326.04649500000005,
+          "dec_deg": 9.875011,
+          "review_center": [
+            34.03713331414531,
+            1217.5748647576183
+          ],
+          "choices": [
+            {
+              "row": 5,
+              "x": 30.319442749023438,
+              "y": 1215.0673828125,
+              "flux": 203.2318115234375
+            },
+            {
+              "row": 1089,
+              "x": 56.80483627319336,
+              "y": 1198.4306640625,
+              "flux": 95.49459075927734
+            },
+            {
+              "row": 3057,
+              "x": 67.48040771484375,
+              "y": 1213.4200439453125,
+              "flux": 61.15083312988281
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 5,
+          "id": 3,
+          "note": "Visible stellar source; identification conditional on relative field pattern"
+        },
+        {
+          "hyg_id": 83755,
+          "name": "Sabik",
+          "mag": 2.43,
+          "ra_deg": 257.59452,
+          "dec_deg": -15.72491,
+          "review_center": [
+            3386.9484660636726,
+            2905.041705481685
+          ],
+          "choices": [
+            {
+              "row": 23,
+              "x": 3395.178466796875,
+              "y": 2894.32470703125,
+              "flux": 182.8355712890625
+            },
+            {
+              "row": 4401,
+              "x": 3369.291015625,
+              "y": 2928.546142578125,
+              "flux": 45.91098403930664
+            },
+            {
+              "row": 9335,
+              "x": 3347.91259765625,
+              "y": 2924.7099609375,
+              "flux": 20.159252166748047
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 23,
+          "id": 4,
+          "note": "Visible stellar source; identification conditional on relative field pattern"
+        },
+        {
+          "hyg_id": 93213,
+          "name": "Ascella",
+          "mag": 2.6,
+          "ra_deg": 285.65297999999996,
+          "dec_deg": -29.880105,
+          "review_center": [
+            2010.5666839727328,
+            3298.7346653636087
+          ],
+          "choices": [
+            {
+              "row": 111,
+              "x": 2022.932861328125,
+              "y": 3294.6630859375,
+              "flux": 155.7169189453125
+            },
+            {
+              "row": 8101,
+              "x": 1979.9940185546875,
+              "y": 3293.683349609375,
+              "flux": 23.671409606933594
+            },
+            {
+              "row": 8562,
+              "x": 2027.72998046875,
+              "y": 3271.23974609375,
+              "flux": 22.301273345947266
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 111,
+          "id": 5,
+          "note": "Visible stellar source; identification conditional on relative field pattern"
+        },
+        {
+          "hyg_id": 89653,
+          "name": "Kaus Media",
+          "mag": 2.72,
+          "ra_deg": 275.24850000000004,
+          "dec_deg": -29.828103,
+          "review_center": [
+            2416.387396108495,
+            3366.4373064098504
+          ],
+          "choices": [
+            {
+              "row": 213,
+              "x": 2429.335693359375,
+              "y": 3360.12841796875,
+              "flux": 140.72390747070312
+            },
+            {
+              "row": 9246,
+              "x": 2397.12158203125,
+              "y": 3339.587890625,
+              "flux": 20.365921020507812
+            },
+            {
+              "row": 2634,
+              "x": 2382.97265625,
+              "y": 3394.3349609375,
+              "flux": 66.41204833984375
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 213,
+          "id": 6,
+          "note": "Visible stellar source; identification conditional on relative field pattern"
+        },
+        {
+          "hyg_id": 96970,
+          "name": "Tarazed",
+          "mag": 2.72,
+          "ra_deg": 296.56491000000005,
+          "dec_deg": 10.613261,
+          "review_center": [
+            1680.8663085102457,
+            1407.4708380697675
+          ],
+          "choices": [
+            {
+              "row": 11,
+              "x": 1685.5533447265625,
+              "y": 1407.1236572265625,
+              "flux": 190.32955932617188
+            },
+            {
+              "row": 1205,
+              "x": 1658.642822265625,
+              "y": 1400.0672607421875,
+              "flux": 92.53286743164062
+            },
+            {
+              "row": 1853,
+              "x": 1704.2999267578125,
+              "y": 1392.233154296875,
+              "flux": 78.28645324707031
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 11,
+          "id": 7,
+          "note": "Visible stellar source; identification conditional on relative field pattern"
+        },
+        {
+          "hyg_id": 86475,
+          "name": "Cebalrai",
+          "mag": 2.76,
+          "ra_deg": 265.868145,
+          "dec_deg": 4.567303,
+          "review_center": [
+            3172.246338435877,
+            1810.561183289533
+          ],
+          "choices": [
+            {
+              "row": 7,
+              "x": 3173.243896484375,
+              "y": 1805.191650390625,
+              "flux": 196.77642822265625
+            },
+            {
+              "row": 2321,
+              "x": 3192.762939453125,
+              "y": 1816.4249267578125,
+              "flux": 70.76411437988281
+            },
+            {
+              "row": 4029,
+              "x": 3207.72509765625,
+              "y": 1828.7548828125,
+              "flux": 49.828834533691406
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 7,
+          "id": 8,
+          "note": "Visible stellar source; identification conditional on relative field pattern"
+        },
+        {
+          "hyg_id": 107213,
+          "name": "Deneb Algedi",
+          "mag": 2.85,
+          "ra_deg": 326.760165,
+          "dec_deg": -16.127286,
+          "review_center": [
+            186.4157300590109,
+            2704.012357261231
+          ],
+          "choices": [
+            {
+              "row": 29,
+              "x": 185.93626403808594,
+              "y": 2706.7666015625,
+              "flux": 179.80343627929688
+            },
+            {
+              "row": 9747,
+              "x": 158.63511657714844,
+              "y": 2714.19775390625,
+              "flux": 18.928516387939453
+            },
+            {
+              "row": 4215,
+              "x": 183.7317657470703,
+              "y": 2739.719970703125,
+              "flux": 47.73515701293945
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 29,
+          "id": 9,
+          "note": "Visible stellar source; identification conditional on relative field pattern"
+        },
+        {
+          "hyg_id": 105936,
+          "name": "Sadalsuud",
+          "mag": 2.9,
+          "ra_deg": 322.88973,
+          "dec_deg": -5.571172,
+          "review_center": [
+            348.3951972767237,
+            2151.610379330588
+          ],
+          "choices": [
+            {
+              "row": 9,
+              "x": 349.7533264160156,
+              "y": 2151.559814453125,
+              "flux": 194.0533905029297
+            },
+            {
+              "row": 3033,
+              "x": 315.342529296875,
+              "y": 2143.171875,
+              "flux": 61.398712158203125
+            },
+            {
+              "row": 4997,
+              "x": 339.9506530761719,
+              "y": 2189.74560546875,
+              "flux": 40.3049201965332
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 9,
+          "id": 10,
+          "note": "Visible stellar source; identification conditional on relative field pattern"
+        },
+        {
+          "hyg_id": 93452,
+          "name": "Okab",
+          "mag": 2.99,
+          "ra_deg": 286.352535,
+          "dec_deg": 13.863478,
+          "review_center": [
+            2188.087927797038,
+            1257.697743093032
+          ],
+          "choices": [
+            {
+              "row": 8,
+              "x": 2190.802978515625,
+              "y": 1257.3502197265625,
+              "flux": 195.2689208984375
+            },
+            {
+              "row": 10804,
+              "x": 2187.241455078125,
+              "y": 1222.208740234375,
+              "flux": 14.50411605834961
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 8,
+          "id": 11,
+          "note": "Visible stellar source; identification conditional on relative field pattern"
+        },
+        {
+          "hyg_id": 95648,
+          "name": "Albireo",
+          "mag": 3.05,
+          "ra_deg": 292.680345,
+          "dec_deg": 27.959681,
+          "review_center": [
+            1945.6082258338179,
+            242.3067953910936
+          ],
+          "choices": [
+            {
+              "row": 13,
+              "x": 1945.6640625,
+              "y": 245.78872680664062,
+              "flux": 189.56863403320312
+            },
+            {
+              "row": 3064,
+              "x": 1923.3984375,
+              "y": 246.96243286132812,
+              "flux": 61.065711975097656
+            },
+            {
+              "row": 3002,
+              "x": 1967.17041015625,
+              "y": 250.80911254882812,
+              "flux": 61.721378326416016
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 13,
+          "id": 12,
+          "note": "Visible stellar source; identification conditional on relative field pattern"
+        },
+        {
+          "hyg_id": 100020,
+          "name": "Dabih",
+          "mag": 3.05,
+          "ra_deg": 305.25280499999997,
+          "dec_deg": -14.781367,
+          "review_center": [
+            1254.5779268241765,
+            2596.7816508799024
+          ],
+          "choices": [
+            {
+              "row": 33,
+              "x": 1262.751708984375,
+              "y": 2595.026611328125,
+              "flux": 178.6940460205078
+            },
+            {
+              "row": 4436,
+              "x": 1262.93603515625,
+              "y": 2624.0771484375,
+              "flux": 45.595970153808594
+            },
+            {
+              "row": 3347,
+              "x": 1235.6746826171875,
+              "y": 2571.467041015625,
+              "flux": 57.61525344848633
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 33,
+          "id": 13,
+          "note": "Visible stellar source; identification conditional on relative field pattern"
+        },
+        {
+          "hyg_id": 89684,
+          "name": "58Eta Ser",
+          "mag": 3.23,
+          "ra_deg": 275.32750500000003,
+          "dec_deg": -2.898825,
+          "review_center": [
+            2607.8822872126398,
+            2157.346265349593
+          ],
+          "choices": [
+            {
+              "row": 26,
+              "x": 2613.208251953125,
+              "y": 2152.3046875,
+              "flux": 180.79412841796875
+            },
+            {
+              "row": 8186,
+              "x": 2619.3037109375,
+              "y": 2127.111328125,
+              "flux": 23.40557861328125
+            },
+            {
+              "row": 5032,
+              "x": 2638.673095703125,
+              "y": 2167.26123046875,
+              "flux": 39.98798751831055
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 26,
+          "id": 14,
+          "note": "Visible stellar source; identification conditional on relative field pattern"
+        },
+        {
+          "hyg_id": 84711,
+          "name": "42The Oph",
+          "mag": 3.27,
+          "ra_deg": 260.502405,
+          "dec_deg": -24.999545,
+          "review_center": [
+            3112.976314553289,
+            3313.607917175007
+          ],
+          "choices": [
+            {
+              "row": 159,
+              "x": 3125.3330078125,
+              "y": 3303.22216796875,
+              "flux": 148.03646850585938
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 159,
+          "id": 15,
+          "note": "Visible stellar source; identification conditional on relative field pattern"
+        },
+        {
+          "hyg_id": 87775,
+          "name": "64Nu  Oph",
+          "mag": 3.32,
+          "ra_deg": 269.75662500000004,
+          "dec_deg": -9.773632,
+          "review_center": [
+            2819.3716453641473,
+            2507.3875697099065
+          ],
+          "choices": [
+            {
+              "row": 46,
+              "x": 2825.908203125,
+              "y": 2500.104736328125,
+              "flux": 173.85829162597656
+            },
+            {
+              "row": 6924,
+              "x": 2792.330078125,
+              "y": 2517.06982421875,
+              "flux": 28.351119995117188
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 46,
+          "id": 16,
+          "note": "Visible stellar source; identification conditional on relative field pattern"
+        },
+        {
+          "hyg_id": 95207,
+          "name": "30Del Aql",
+          "mag": 3.36,
+          "ra_deg": 291.37458,
+          "dec_deg": 3.114775,
+          "review_center": [
+            1900.4574452366846,
+            1815.2007528739628
+          ],
+          "choices": [
+            {
+              "row": 34,
+              "x": 1906.2242431640625,
+              "y": 1812.9168701171875,
+              "flux": 177.95693969726562
+            },
+            {
+              "row": 980,
+              "x": 1873.3211669921875,
+              "y": 1819.5306396484375,
+              "flux": 97.99576568603516
+            },
+            {
+              "row": 3419,
+              "x": 1871.7027587890625,
+              "y": 1781.618896484375,
+              "flux": 56.81760787963867
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 34,
+          "id": 17,
+          "note": "Visible stellar source; identification conditional on relative field pattern"
+        },
+        {
+          "hyg_id": 119131,
+          "name": "Oph",
+          "mag": 3.4,
+          "ra_deg": 257.591745,
+          "dec_deg": -15.726921,
+          "review_center": [
+            3387.077740602246,
+            2905.1767188492504
+          ],
+          "choices": [
+            {
+              "row": 23,
+              "x": 3395.178466796875,
+              "y": 2894.32470703125,
+              "flux": 182.8355712890625
+            },
+            {
+              "row": 4401,
+              "x": 3369.291015625,
+              "y": 2928.546142578125,
+              "flux": 45.91098403930664
+            },
+            {
+              "row": 9335,
+              "x": 3347.91259765625,
+              "y": 2924.7099609375,
+              "flux": 20.159252166748047
+            }
+          ],
+          "label": "blend",
+          "selected_row": null,
+          "id": 18,
+          "note": "Same unresolved external source as candidate 4"
+        },
+        {
+          "hyg_id": 86705,
+          "name": "86Mu  Her",
+          "mag": 3.42,
+          "ra_deg": 266.614785,
+          "dec_deg": 27.720676,
+          "review_center": [
+            3482.149165901529,
+            161.0717679922061
+          ],
+          "choices": [
+            {
+              "row": 1,
+              "x": 3473.186767578125,
+              "y": 166.09036254882812,
+              "flux": 205.8009490966797
+            },
+            {
+              "row": 3294,
+              "x": 3496.107666015625,
+              "y": 149.8873748779297,
+              "flux": 58.21723175048828
+            },
+            {
+              "row": 3152,
+              "x": 3496.73486328125,
+              "y": 185.77557373046875,
+              "flux": 60.18486785888672
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 1,
+          "id": 19,
+          "note": "Visible stellar source; identification conditional on relative field pattern"
+        },
+        {
+          "hyg_id": 93510,
+          "name": "16Lam Aql",
+          "mag": 3.43,
+          "ra_deg": 286.56225,
+          "dec_deg": -4.882554,
+          "review_center": [
+            2083.868971671018,
+            2204.992854021346
+          ],
+          "choices": [
+            {
+              "row": 89,
+              "x": 2091.083740234375,
+              "y": 2200.9052734375,
+              "flux": 160.345947265625
+            },
+            {
+              "row": 7616,
+              "x": 2067.195068359375,
+              "y": 2218.88916015625,
+              "flux": 25.511646270751953
+            },
+            {
+              "row": 2240,
+              "x": 2107.89453125,
+              "y": 2238.962890625,
+              "flux": 71.82875061035156
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 89,
+          "id": 20,
+          "note": "Visible stellar source; identification conditional on relative field pattern"
+        },
+        {
+          "hyg_id": 98026,
+          "name": "12Gam Sge",
+          "mag": 3.51,
+          "ra_deg": 299.689275,
+          "dec_deg": 19.492148,
+          "review_center": [
+            1546.1569569642138,
+            848.0334238146096
+          ],
+          "choices": [
+            {
+              "row": 20,
+              "x": 1548.9478759765625,
+              "y": 848.7476196289062,
+              "flux": 184.8345489501953
+            },
+            {
+              "row": 3313,
+              "x": 1571.3953857421875,
+              "y": 845.8153686523438,
+              "flux": 58.00986862182617
+            },
+            {
+              "row": 2308,
+              "x": 1534.9017333984375,
+              "y": 819.7093505859375,
+              "flux": 71.00719451904297
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 20,
+          "id": 21,
+          "note": "Visible stellar source; identification conditional on relative field pattern"
+        },
+        {
+          "hyg_id": 101442,
+          "name": "Rotanev",
+          "mag": 3.64,
+          "ra_deg": 309.38724,
+          "dec_deg": 14.595087,
+          "review_center": [
+            1034.8925742428587,
+            1091.708271001658
+          ],
+          "choices": [
+            {
+              "row": 14,
+              "x": 1037.9873046875,
+              "y": 1091.4061279296875,
+              "flux": 188.827880859375
+            },
+            {
+              "row": 5976,
+              "x": 1013.9194946289062,
+              "y": 1082.4053955078125,
+              "flux": 33.47423553466797
+            },
+            {
+              "row": 64,
+              "x": 1068.30810546875,
+              "y": 1091.3197021484375,
+              "flux": 166.94564819335938
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 14,
+          "id": 22,
+          "note": "Visible stellar source; identification conditional on relative field pattern"
+        },
+        {
+          "hyg_id": 97056,
+          "name": "7Del Sge",
+          "mag": 3.68,
+          "ra_deg": 296.846925,
+          "dec_deg": 18.534286,
+          "review_center": [
+            1688.7295393198126,
+            929.526081656952
+          ],
+          "choices": [
+            {
+              "row": 25,
+              "x": 1691.665771484375,
+              "y": 930.24072265625,
+              "flux": 180.9568634033203
+            },
+            {
+              "row": 1723,
+              "x": 1700.486328125,
+              "y": 911.648681640625,
+              "flux": 80.35589599609375
+            },
+            {
+              "row": 1003,
+              "x": 1675.7193603515625,
+              "y": 906.4117431640625,
+              "flux": 97.37709045410156
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 25,
+          "id": 23,
+          "note": "Visible stellar source; identification conditional on relative field pattern"
+        },
+        {
+          "hyg_id": 106642,
+          "name": "Nashira",
+          "mag": 3.69,
+          "ra_deg": 325.022715,
+          "dec_deg": -16.662308,
+          "review_center": [
+            290.576956688721,
+            2722.346191427364
+          ],
+          "choices": [
+            {
+              "row": 77,
+              "x": 291.4759216308594,
+              "y": 2724.58984375,
+              "flux": 163.74404907226562
+            },
+            {
+              "row": 6955,
+              "x": 314.5836486816406,
+              "y": 2732.78515625,
+              "flux": 28.19629669189453
+            },
+            {
+              "row": 7924,
+              "x": 322.7976379394531,
+              "y": 2701.489501953125,
+              "flux": 24.360755920410156
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 77,
+          "id": 24,
+          "note": "Visible stellar source; identification conditional on relative field pattern"
+        },
+        {
+          "hyg_id": 87661,
+          "name": "92Xi  Her",
+          "mag": 3.7,
+          "ra_deg": 269.44116,
+          "dec_deg": 29.24788,
+          "review_center": [
+            3317.2989058879793,
+            47.22094545482787
+          ],
+          "choices": [
+            {
+              "row": 3,
+              "x": 3309.437255859375,
+              "y": 52.3216552734375,
+              "flux": 204.44680786132812
+            },
+            {
+              "row": 636,
+              "x": 3316.04296875,
+              "y": 30.860097885131836,
+              "flux": 111.0909652709961
+            },
+            {
+              "row": 2730,
+              "x": 3287.182861328125,
+              "y": 33.10696029663086,
+              "flux": 65.11175537109375
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 3,
+          "id": 25,
+          "note": "Visible stellar source; identification conditional on relative field pattern"
+        },
+        {
+          "hyg_id": 88494,
+          "name": "72    Oph",
+          "mag": 3.71,
+          "ra_deg": 271.83744,
+          "dec_deg": 9.563847,
+          "review_center": [
+            2895.6291545412323,
+            1523.4983583884755
+          ],
+          "choices": [
+            {
+              "row": 83,
+              "x": 2896.3994140625,
+              "y": 1520.5263671875,
+              "flux": 161.57876586914062
+            },
+            {
+              "row": 377,
+              "x": 2888.9423828125,
+              "y": 1567.2855224609375,
+              "flux": 125.61367797851562
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 83,
+          "id": 26,
+          "note": "Visible stellar source; identification conditional on relative field pattern"
+        },
+        {
+          "hyg_id": 105540,
+          "name": "34Zet Cap",
+          "mag": 3.77,
+          "ra_deg": 321.66677999999996,
+          "dec_deg": -22.411332,
+          "review_center": [
+            503.0386046445691,
+            2987.6117498054964
+          ],
+          "choices": [
+            {
+              "row": 123,
+              "x": 506.52471923828125,
+              "y": 2990.2509765625,
+              "flux": 153.93710327148438
+            },
+            {
+              "row": 4975,
+              "x": 509.1652526855469,
+              "y": 2961.363037109375,
+              "flux": 40.45885467529297
+            },
+            {
+              "row": 265,
+              "x": 476.6302490234375,
+              "y": 2963.716064453125,
+              "flux": 135.1703338623047
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 123,
+          "id": 27,
+          "note": "Visible stellar source; identification conditional on relative field pattern"
+        },
+        {
+          "hyg_id": 92951,
+          "name": "13Eps Aql",
+          "mag": 4.02,
+          "ra_deg": 284.905665,
+          "dec_deg": 15.068298,
+          "review_center": [
+            2267.2960140269142,
+            1188.8211004116874
+          ],
+          "choices": [
+            {
+              "row": 28,
+              "x": 2269.81298828125,
+              "y": 1188.5311279296875,
+              "flux": 180.13739013671875
+            },
+            {
+              "row": 9333,
+              "x": 2272.476806640625,
+              "y": 1163.0242919921875,
+              "flux": 20.163604736328125
+            },
+            {
+              "row": 1582,
+              "x": 2298.75244140625,
+              "y": 1204.1448974609375,
+              "flux": 83.13650512695312
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 28,
+          "id": 28,
+          "note": "Visible stellar source; identification conditional on relative field pattern"
+        },
+        {
+          "hyg_id": 105162,
+          "name": "1    Peg",
+          "mag": 4.08,
+          "ra_deg": 320.52165,
+          "dec_deg": 19.804508,
+          "review_center": [
+            339.7701107933807,
+            572.1607561504495
+          ],
+          "choices": [
+            {
+              "row": 15,
+              "x": 338.1368408203125,
+              "y": 570.0200805664062,
+              "flux": 188.32168579101562
+            },
+            {
+              "row": 2502,
+              "x": 333.6832275390625,
+              "y": 551.9566650390625,
+              "flux": 68.3421630859375
+            },
+            {
+              "row": 2489,
+              "x": 363.4678039550781,
+              "y": 574.3270263671875,
+              "flux": 68.47359466552734
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 15,
+          "id": 29,
+          "note": "Visible stellar source; identification conditional on relative field pattern"
+        },
+        {
+          "hyg_id": 102647,
+          "name": "18Ome Cap",
+          "mag": 4.12,
+          "ra_deg": 312.95538,
+          "dec_deg": -26.919133,
+          "review_center": [
+            929.5783487296077,
+            3156.7544731129615
+          ],
+          "choices": [
+            {
+              "row": 294,
+              "x": 937.0787963867188,
+              "y": 3157.821533203125,
+              "flux": 132.67050170898438
+            },
+            {
+              "row": 7182,
+              "x": 923.3056030273438,
+              "y": 3170.957763671875,
+              "flux": 27.327102661132812
+            },
+            {
+              "row": 2931,
+              "x": 940.7484741210938,
+              "y": 3172.690673828125,
+              "flux": 62.508174896240234
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 294,
+          "id": 30,
+          "note": "Visible stellar source; identification conditional on relative field pattern"
+        },
+        {
+          "hyg_id": 102154,
+          "name": "16Psi Cap",
+          "mag": 4.13,
+          "ra_deg": 311.5239,
+          "dec_deg": -25.270898,
+          "review_center": [
+            989.12069385786,
+            3075.0281545131656
+          ],
+          "choices": [
+            {
+              "row": 276,
+              "x": 996.7461547851562,
+              "y": 3075.5595703125,
+              "flux": 134.12744140625
+            },
+            {
+              "row": 10045,
+              "x": 998.1983642578125,
+              "y": 3039.7109375,
+              "flux": 18.133098602294922
+            },
+            {
+              "row": 1133,
+              "x": 962.082275390625,
+              "y": 3102.4658203125,
+              "flux": 94.35418701171875
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 276,
+          "id": 31,
+          "note": "Visible stellar source; identification conditional on relative field pattern"
+        },
+        {
+          "hyg_id": 102201,
+          "name": "12Gam2Del",
+          "mag": 4.27,
+          "ra_deg": 311.6646,
+          "dec_deg": 16.124296,
+          "review_center": [
+            905.7597380235708,
+            969.7921350805669
+          ],
+          "choices": [
+            {
+              "row": 17,
+              "x": 908.18310546875,
+              "y": 969.4133911132812,
+              "flux": 186.03334045410156
+            },
+            {
+              "row": 1658,
+              "x": 894.0947265625,
+              "y": 959.12841796875,
+              "flux": 81.3792724609375
+            },
+            {
+              "row": 1015,
+              "x": 914.9547729492188,
+              "y": 985.1047973632812,
+              "flux": 97.22418212890625
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 17,
+          "id": 32,
+          "note": "Visible stellar source; identification conditional on relative field pattern"
+        },
+        {
+          "hyg_id": 98375,
+          "name": "62    Sgr",
+          "mag": 4.43,
+          "ra_deg": 300.66448499999996,
+          "dec_deg": -27.709845,
+          "review_center": [
+            1438.5766275447354,
+            3167.279503691231
+          ],
+          "choices": [
+            {
+              "row": 492,
+              "x": 1448.7042236328125,
+              "y": 3165.9189453125,
+              "flux": 118.32015991210938
+            },
+            {
+              "row": 5361,
+              "x": 1422.862060546875,
+              "y": 3170.7080078125,
+              "flux": 37.56547927856445
+            },
+            {
+              "row": 7509,
+              "x": 1466.1429443359375,
+              "y": 3142.728271484375,
+              "flux": 25.92275619506836
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 492,
+          "id": 33,
+          "note": "Visible stellar source; identification conditional on relative field pattern"
+        },
+        {
+          "hyg_id": 103899,
+          "name": "24    Cap",
+          "mag": 4.49,
+          "ra_deg": 316.78195500000004,
+          "dec_deg": -25.005853,
+          "review_center": [
+            751.6433013556741,
+            3084.567338841217
+          ],
+          "choices": [
+            {
+              "row": 307,
+              "x": 757.674072265625,
+              "y": 3086.389892578125,
+              "flux": 131.12557983398438
+            },
+            {
+              "row": 5995,
+              "x": 762.2941284179688,
+              "y": 3112.818115234375,
+              "flux": 33.33635711669922
+            },
+            {
+              "row": 5314,
+              "x": 738.4267578125,
+              "y": 3050.229248046875,
+              "flux": 37.92930603027344
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 307,
+          "id": 34,
+          "note": "Visible stellar source; identification conditional on relative field pattern"
+        },
+        {
+          "hyg_id": 105698,
+          "name": "36    Cap",
+          "mag": 4.5,
+          "ra_deg": 322.180815,
+          "dec_deg": -21.80718,
+          "review_center": [
+            473.58094660103563,
+            2961.2780680101005
+          ],
+          "choices": [
+            {
+              "row": 265,
+              "x": 476.6302490234375,
+              "y": 2963.716064453125,
+              "flux": 135.1703338623047
+            },
+            {
+              "row": 1011,
+              "x": 492.979248046875,
+              "y": 2931.61181640625,
+              "flux": 97.30783081054688
+            },
+            {
+              "row": 4975,
+              "x": 509.1652526855469,
+              "y": 2961.363037109375,
+              "flux": 40.45885467529297
+            },
+            {
+              "row": 123,
+              "x": 506.52471923828125,
+              "y": 2990.2509765625,
+              "flux": 153.93710327148438
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 265,
+          "id": 35,
+          "note": "Visible stellar source; identification conditional on relative field pattern"
+        }
+      ],
+      "review_notes": "Reviewed full field and native crops before camera residual comparison; named bright-star patterns support field identity. Camera-suggested associations remain conditional. No new WCS or camera fit."
+    },
+    {
+      "id": "wm_r_143159342",
+      "source_sha256": "94f3d61426e03e4fda29b95a1b91038332a09491587acf77df3681c5b919c54d",
+      "image": "data/samples/sky-samples/images/wm_r_143159342.png",
+      "width": 3000,
+      "height": 4000,
+      "extraction": "prototype/artifacts/robustness-baseline/wcs-run/wm_r_143159342/downsample-2/field.axy",
+      "sky_bounds": [
+        12,
+        12,
+        2988,
+        3988
+      ],
+      "points": [
+        {
+          "hyg_id": 97338,
+          "name": "Altair",
+          "mag": 0.76,
+          "ra_deg": 297.69582,
+          "dec_deg": 8.868322,
+          "review_center": [
+            153.322036647186,
+            1470.315008497604
+          ],
+          "choices": [],
+          "label": "occluded",
+          "selected_row": null,
+          "id": 0,
+          "note": "Utility structure covers predicted Altair location"
+        },
+        {
+          "hyg_id": 85665,
+          "name": "Shaula",
+          "mag": 1.62,
+          "ra_deg": 263.402175,
+          "dec_deg": -37.103821,
+          "review_center": [
+            2402.303011077526,
+            3813.7515001299685
+          ],
+          "choices": [
+            {
+              "row": 17,
+              "x": 2414.72216796875,
+              "y": 3849.495361328125,
+              "flux": 128.2286376953125
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 17,
+          "id": 1,
+          "note": "Visible stellar source; identification conditional on relative field pattern"
+        },
+        {
+          "hyg_id": 89906,
+          "name": "Kaus Australis",
+          "mag": 1.79,
+          "ra_deg": 276.04302,
+          "dec_deg": -34.384616,
+          "review_center": [
+            1744.4393085785996,
+            3682.3911765036482
+          ],
+          "choices": [
+            {
+              "row": 20,
+              "x": 1743.3482666015625,
+              "y": 3706.747802734375,
+              "flux": 123.06661224365234
+            },
+            {
+              "row": 874,
+              "x": 1716.75341796875,
+              "y": 3678.857421875,
+              "flux": 49.27519989013672
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 20,
+          "id": 2,
+          "note": "Visible stellar source; identification conditional on relative field pattern"
+        },
+        {
+          "hyg_id": 92564,
+          "name": "Nunki",
+          "mag": 2.05,
+          "ra_deg": 283.81635,
+          "dec_deg": -26.296722,
+          "review_center": [
+            1275.632870583479,
+            3250.176428182519
+          ],
+          "choices": [
+            {
+              "row": 30,
+              "x": 1269.52001953125,
+              "y": 3260.1142578125,
+              "flux": 120.02973175048828
+            },
+            {
+              "row": 967,
+              "x": 1308.1973876953125,
+              "y": 3273.1748046875,
+              "flux": 46.69866943359375
+            },
+            {
+              "row": 3072,
+              "x": 1282.4332275390625,
+              "y": 3294.115234375,
+              "flux": 8.137825012207031
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 30,
+          "id": 3,
+          "note": "Visible stellar source; identification conditional on relative field pattern"
+        },
+        {
+          "hyg_id": 85769,
+          "name": "Rasalhague",
+          "mag": 2.08,
+          "ra_deg": 263.733615,
+          "dec_deg": 12.560035,
+          "review_center": [
+            1957.037099220408,
+            986.1397070346718
+          ],
+          "choices": [
+            {
+              "row": 2,
+              "x": 1957.0731201171875,
+              "y": 981.46142578125,
+              "flux": 150.46824645996094
+            },
+            {
+              "row": 875,
+              "x": 1948.8427734375,
+              "y": 1013.996337890625,
+              "flux": 49.232666015625
+            },
+            {
+              "row": 501,
+              "x": 1959.6087646484375,
+              "y": 944.946044921875,
+              "flux": 61.16282653808594
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 2,
+          "id": 4,
+          "note": "Visible stellar source; identification conditional on relative field pattern"
+        },
+        {
+          "hyg_id": 82144,
+          "name": "Larawag",
+          "mag": 2.29,
+          "ra_deg": 252.54119999999998,
+          "dec_deg": -34.293232,
+          "review_center": [
+            2968.7661940122007,
+            3630.0204058123604
+          ],
+          "choices": [],
+          "label": "ambiguous",
+          "selected_row": null,
+          "id": 5,
+          "note": "Bright source truncated at right edge; no external extraction within review window"
+        },
+        {
+          "hyg_id": 86403,
+          "name": "Kap Sco",
+          "mag": 2.39,
+          "ra_deg": 265.62198,
+          "dec_deg": -39.029983,
+          "review_center": [
+            2311.3754676322783,
+            3961.816896950015
+          ],
+          "choices": [
+            {
+              "row": 1315,
+              "x": 2298.49462890625,
+              "y": 3981.86572265625,
+              "flux": 36.709877014160156
+            },
+            {
+              "row": 123,
+              "x": 2321.038330078125,
+              "y": 3995.572998046875,
+              "flux": 94.17993927001953
+            }
+          ],
+          "label": "ambiguous",
+          "selected_row": null,
+          "id": 6,
+          "note": "Bright core clipped by lower image edge"
+        },
+        {
+          "hyg_id": 83755,
+          "name": "Sabik",
+          "mag": 2.43,
+          "ra_deg": 257.59452,
+          "dec_deg": -15.72491,
+          "review_center": [
+            2515.767991359746,
+            2463.1263178101794
+          ],
+          "choices": [
+            {
+              "row": 12,
+              "x": 2526.57666015625,
+              "y": 2470.31640625,
+              "flux": 133.75357055664062
+            },
+            {
+              "row": 2825,
+              "x": 2490.865966796875,
+              "y": 2440.779052734375,
+              "flux": 9.311904907226562
+            },
+            {
+              "row": 756,
+              "x": 2478.067626953125,
+              "y": 2464.469482421875,
+              "flux": 52.52799987792969
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 12,
+          "id": 7,
+          "note": "Visible stellar source; identification conditional on relative field pattern"
+        },
+        {
+          "hyg_id": 81130,
+          "name": "13Zet Oph",
+          "mag": 2.54,
+          "ra_deg": 249.28974000000002,
+          "dec_deg": -10.56709,
+          "review_center": [
+            2967.4343215654512,
+            2132.563922572568
+          ],
+          "choices": [
+            {
+              "row": 2780,
+              "x": 2959.59912109375,
+              "y": 2120.755126953125,
+              "flux": 9.66558837890625
+            },
+            {
+              "row": 8,
+              "x": 2990.375,
+              "y": 2136.0068359375,
+              "flux": 138.07492065429688
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 8,
+          "id": 8,
+          "note": "Bright edge source matches zeta Oph; nearest faint extraction is not selected; possible edge truncation"
+        },
+        {
+          "hyg_id": 93213,
+          "name": "Ascella",
+          "mag": 2.6,
+          "ra_deg": 285.65297999999996,
+          "dec_deg": -29.880105,
+          "review_center": [
+            1224.1495784363465,
+            3493.9591434709837
+          ],
+          "choices": [
+            {
+              "row": 24,
+              "x": 1216.9000244140625,
+              "y": 3507.692626953125,
+              "flux": 121.7982177734375
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 24,
+          "id": 9,
+          "note": "Visible stellar source; identification conditional on relative field pattern"
+        },
+        {
+          "hyg_id": 89653,
+          "name": "Kaus Media",
+          "mag": 2.72,
+          "ra_deg": 275.24850000000004,
+          "dec_deg": -29.828103,
+          "review_center": [
+            1733.2164405237017,
+            3378.640224599807
+          ],
+          "choices": [
+            {
+              "row": 98,
+              "x": 1731.9517822265625,
+              "y": 3396.3388671875,
+              "flux": 99.92849731445312
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 98,
+          "id": 10,
+          "note": "Visible stellar source; identification conditional on relative field pattern"
+        },
+        {
+          "hyg_id": 96970,
+          "name": "Tarazed",
+          "mag": 2.72,
+          "ra_deg": 296.56491000000005,
+          "dec_deg": 10.613261,
+          "review_center": [
+            201.93608369368644,
+            1361.6249469327354
+          ],
+          "choices": [
+            {
+              "row": 14,
+              "x": 205.08665466308594,
+              "y": 1362.2935791015625,
+              "flux": 132.4447479248047
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 14,
+          "id": 11,
+          "note": "Visible stellar source; identification conditional on relative field pattern"
+        },
+        {
+          "hyg_id": 86475,
+          "name": "Cebalrai",
+          "mag": 2.76,
+          "ra_deg": 265.868145,
+          "dec_deg": 4.567303,
+          "review_center": [
+            1909.879998346524,
+            1447.3859017848931
+          ],
+          "choices": [
+            {
+              "row": 51,
+              "x": 1907.10205078125,
+              "y": 1447.508056640625,
+              "flux": 112.34722137451172
+            },
+            {
+              "row": 869,
+              "x": 1928.2784423828125,
+              "y": 1454.1767578125,
+              "flux": 49.387664794921875
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 51,
+          "id": 12,
+          "note": "Visible stellar source; identification conditional on relative field pattern"
+        },
+        {
+          "hyg_id": 80571,
+          "name": "Kornephoros",
+          "mag": 2.78,
+          "ra_deg": 247.55502,
+          "dec_deg": 21.489613,
+          "review_center": [
+            2834.8992582632877,
+            140.33740071093973
+          ],
+          "choices": [
+            {
+              "row": 1,
+              "x": 2845.675048828125,
+              "y": 125.66996002197266,
+              "flux": 152.73492431640625
+            },
+            {
+              "row": 3283,
+              "x": 2846.52685546875,
+              "y": 158.9815673828125,
+              "flux": 7.133514404296875
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 1,
+          "id": 13,
+          "note": "Visible stellar source; identification conditional on relative field pattern"
+        },
+        {
+          "hyg_id": 84086,
+          "name": "Rasalgethi",
+          "mag": 2.78,
+          "ra_deg": 258.661905,
+          "dec_deg": 14.390333,
+          "review_center": [
+            2220.445851130472,
+            814.5551663328589
+          ],
+          "choices": [
+            {
+              "row": 15,
+              "x": 2224.928955078125,
+              "y": 805.0711059570312,
+              "flux": 128.5333251953125
+            },
+            {
+              "row": 2236,
+              "x": 2190.65087890625,
+              "y": 796.116455078125,
+              "flux": 16.138900756835938
+            },
+            {
+              "row": 2796,
+              "x": 2192.5,
+              "y": 846.5,
+              "flux": 9.556671142578125
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 15,
+          "id": 14,
+          "note": "Visible stellar source; identification conditional on relative field pattern"
+        },
+        {
+          "hyg_id": 90217,
+          "name": "Kaus Borealis",
+          "mag": 2.82,
+          "ra_deg": 276.992685,
+          "dec_deg": -25.4217,
+          "review_center": [
+            1602.8723612484746,
+            3127.4030486688775
+          ],
+          "choices": [
+            {
+              "row": 84,
+              "x": 1599.67236328125,
+              "y": 3137.85205078125,
+              "flux": 102.43162536621094
+            },
+            {
+              "row": 1172,
+              "x": 1580.267333984375,
+              "y": 3130.502197265625,
+              "flux": 41.089622497558594
+            },
+            {
+              "row": 3091,
+              "x": 1589.1014404296875,
+              "y": 3087.662109375,
+              "flux": 8.035240173339844
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 84,
+          "id": 15,
+          "note": "Visible stellar source; identification conditional on relative field pattern"
+        },
+        {
+          "hyg_id": 93846,
+          "name": "Albaldah",
+          "mag": 2.88,
+          "ra_deg": 287.440965,
+          "dec_deg": -21.023615,
+          "review_center": [
+            1037.8435816408228,
+            2989.636484869773
+          ],
+          "choices": [
+            {
+              "row": 64,
+              "x": 1031.7760009765625,
+              "y": 2992.72607421875,
+              "flux": 107.39683532714844
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 64,
+          "id": 16,
+          "note": "Visible stellar source; identification conditional on relative field pattern"
+        },
+        {
+          "hyg_id": 93452,
+          "name": "Okab",
+          "mag": 2.99,
+          "ra_deg": 286.352535,
+          "dec_deg": 13.863478,
+          "review_center": [
+            751.367543441941,
+            1112.4898229667301
+          ],
+          "choices": [
+            {
+              "row": 13,
+              "x": 751.3298950195312,
+              "y": 1114.4056396484375,
+              "flux": 132.89320373535156
+            },
+            {
+              "row": 3145,
+              "x": 794.4478759765625,
+              "y": 1125.092041015625,
+              "flux": 7.7296142578125
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 13,
+          "id": 17,
+          "note": "Visible stellar source; identification conditional on relative field pattern"
+        },
+        {
+          "hyg_id": 95648,
+          "name": "Albireo",
+          "mag": 3.05,
+          "ra_deg": 292.680345,
+          "dec_deg": 27.959681,
+          "review_center": [
+            212.1368347293395,
+            214.35727517461555
+          ],
+          "choices": [
+            {
+              "row": 7,
+              "x": 218.99241638183594,
+              "y": 223.83653259277344,
+              "flux": 139.92611694335938
+            },
+            {
+              "row": 3479,
+              "x": 243.94500732421875,
+              "y": 192.61578369140625,
+              "flux": 6.112300872802734
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 7,
+          "id": 18,
+          "note": "Visible stellar source; identification conditional on relative field pattern"
+        },
+        {
+          "hyg_id": 84121,
+          "name": "Sarin",
+          "mag": 3.12,
+          "ra_deg": 258.75796499999996,
+          "dec_deg": 24.839204,
+          "review_center": [
+            2119.4395008393512,
+            138.1631516263417
+          ],
+          "choices": [
+            {
+              "row": 10,
+              "x": 2122.965576171875,
+              "y": 126.93257904052734,
+              "flux": 137.0297393798828
+            },
+            {
+              "row": 1592,
+              "x": 2148.410400390625,
+              "y": 107.29822540283203,
+              "flux": 30.10452651977539
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 10,
+          "id": 19,
+          "note": "Visible stellar source; identification conditional on relative field pattern"
+        },
+        {
+          "hyg_id": 91754,
+          "name": "27Phi Sgr",
+          "mag": 3.17,
+          "ra_deg": 281.4141,
+          "dec_deg": -26.990778,
+          "review_center": [
+            1401.6605450225593,
+            3264.1284467612704
+          ],
+          "choices": [
+            {
+              "row": 86,
+              "x": 1396.4588623046875,
+              "y": 3275.9052734375,
+              "flux": 102.170166015625
+            },
+            {
+              "row": 1291,
+              "x": 1396.667724609375,
+              "y": 3306.531982421875,
+              "flux": 37.79109191894531
+            },
+            {
+              "row": 3500,
+              "x": 1432.0325927734375,
+              "y": 3294.8349609375,
+              "flux": 5.9569549560546875
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 86,
+          "id": 20,
+          "note": "Visible stellar source; identification conditional on relative field pattern"
+        },
+        {
+          "hyg_id": 82745,
+          "name": "27Kap Oph",
+          "mag": 3.19,
+          "ra_deg": 254.417085,
+          "dec_deg": 9.375033,
+          "review_center": [
+            2505.881264064922,
+            1051.8125336814524
+          ],
+          "choices": [
+            {
+              "row": 19,
+              "x": 2515.259521484375,
+              "y": 1042.29150390625,
+              "flux": 126.19696807861328
+            },
+            {
+              "row": 1439,
+              "x": 2475.714599609375,
+              "y": 1025.4918212890625,
+              "flux": 33.633506774902344
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 19,
+          "id": 21,
+          "note": "Visible stellar source; identification conditional on relative field pattern"
+        },
+        {
+          "hyg_id": 89684,
+          "name": "58Eta Ser",
+          "mag": 3.23,
+          "ra_deg": 275.32750500000003,
+          "dec_deg": -2.898825,
+          "review_center": [
+            1484.340320049374,
+            1916.6114920089485
+          ],
+          "choices": [
+            {
+              "row": 48,
+              "x": 1481.2802734375,
+              "y": 1916.7652587890625,
+              "flux": 112.75342559814453
+            },
+            {
+              "row": 2210,
+              "x": 1512.04736328125,
+              "y": 1926.189208984375,
+              "flux": 16.670394897460938
+            },
+            {
+              "row": 1548,
+              "x": 1443.54638671875,
+              "y": 1900.081298828125,
+              "flux": 31.1190185546875
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 48,
+          "id": 22,
+          "note": "Visible stellar source; identification conditional on relative field pattern"
+        },
+        {
+          "hyg_id": 87775,
+          "name": "64Nu  Oph",
+          "mag": 3.32,
+          "ra_deg": 269.75662500000004,
+          "dec_deg": -9.773632,
+          "review_center": [
+            1824.7171372739413,
+            2222.269265431764
+          ],
+          "choices": [
+            {
+              "row": 71,
+              "x": 1820.511962890625,
+              "y": 2221.731201171875,
+              "flux": 105.84207916259766
+            },
+            {
+              "row": 2550,
+              "x": 1792.306884765625,
+              "y": 2249.336181640625,
+              "flux": 11.578460693359375
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 71,
+          "id": 23,
+          "note": "Visible stellar source; identification conditional on relative field pattern"
+        },
+        {
+          "hyg_id": 95207,
+          "name": "30Del Aql",
+          "mag": 3.36,
+          "ra_deg": 291.37458,
+          "dec_deg": 3.114775,
+          "review_center": [
+            586.0935109812654,
+            1743.1452642362701
+          ],
+          "choices": [
+            {
+              "row": 23,
+              "x": 588.44873046875,
+              "y": 1742.8392333984375,
+              "flux": 121.88770294189453
+            },
+            {
+              "row": 344,
+              "x": 550.282470703125,
+              "y": 1758.576904296875,
+              "flux": 69.28353881835938
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 23,
+          "id": 24,
+          "note": "Visible stellar source; identification conditional on relative field pattern"
+        },
+        {
+          "hyg_id": 119131,
+          "name": "Oph",
+          "mag": 3.4,
+          "ra_deg": 257.591745,
+          "dec_deg": -15.726921,
+          "review_center": [
+            2515.9386754280085,
+            2463.2257284580005
+          ],
+          "choices": [
+            {
+              "row": 12,
+              "x": 2526.57666015625,
+              "y": 2470.31640625,
+              "flux": 133.75357055664062
+            },
+            {
+              "row": 2825,
+              "x": 2490.865966796875,
+              "y": 2440.779052734375,
+              "flux": 9.311904907226562
+            },
+            {
+              "row": 756,
+              "x": 2478.067626953125,
+              "y": 2464.469482421875,
+              "flux": 52.52799987792969
+            }
+          ],
+          "label": "blend",
+          "selected_row": null,
+          "id": 25,
+          "note": "Same unresolved external source as candidate 7"
+        },
+        {
+          "hyg_id": 93510,
+          "name": "16Lam Aql",
+          "mag": 3.43,
+          "ra_deg": 286.56225,
+          "dec_deg": -4.882554,
+          "review_center": [
+            925.1375418906864,
+            2119.001960483506
+          ],
+          "choices": [
+            {
+              "row": 52,
+              "x": 925.8232421875,
+              "y": 2116.83740234375,
+              "flux": 112.34355163574219
+            },
+            {
+              "row": 3354,
+              "x": 905.7470092773438,
+              "y": 2142.677734375,
+              "flux": 6.800529479980469
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 52,
+          "id": 26,
+          "note": "Visible stellar source; identification conditional on relative field pattern"
+        },
+        {
+          "hyg_id": 92793,
+          "name": "37Xi 2Sgr",
+          "mag": 3.52,
+          "ra_deg": 284.432505,
+          "dec_deg": -21.106654,
+          "review_center": [
+            1191.119680561918,
+            2957.6453386554804
+          ],
+          "choices": [
+            {
+              "row": 87,
+              "x": 1185.871826171875,
+              "y": 2960.363525390625,
+              "flux": 102.12873077392578
+            },
+            {
+              "row": 287,
+              "x": 1185.907470703125,
+              "y": 2933.444580078125,
+              "flux": 74.18141174316406
+            },
+            {
+              "row": 3555,
+              "x": 1193.5194091796875,
+              "y": 2922.2890625,
+              "flux": 3.7212295532226562
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 87,
+          "id": 27,
+          "note": "Visible stellar source; identification conditional on relative field pattern"
+        },
+        {
+          "hyg_id": 85998,
+          "name": "55Xi  Ser",
+          "mag": 3.54,
+          "ra_deg": 264.396675,
+          "dec_deg": -15.398557,
+          "review_center": [
+            2146.9257428828714,
+            2481.0932664414895
+          ],
+          "choices": [
+            {
+              "row": 74,
+              "x": 2147.451416015625,
+              "y": 2484.991943359375,
+              "flux": 105.21015930175781
+            },
+            {
+              "row": 2369,
+              "x": 2165.1484375,
+              "y": 2440.8681640625,
+              "flux": 13.866416931152344
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 74,
+          "id": 28,
+          "note": "Visible stellar source; identification conditional on relative field pattern"
+        },
+        {
+          "hyg_id": 97056,
+          "name": "7Del Sge",
+          "mag": 3.68,
+          "ra_deg": 296.846925,
+          "dec_deg": 18.534286,
+          "review_center": [
+            86.1470954923152,
+            875.8989545677248
+          ],
+          "choices": [
+            {
+              "row": 16,
+              "x": 91.72543334960938,
+              "y": 879.80810546875,
+              "flux": 128.25564575195312
+            },
+            {
+              "row": 941,
+              "x": 68.3263168334961,
+              "y": 859.9926147460938,
+              "flux": 47.19654846191406
+            },
+            {
+              "row": 126,
+              "x": 59.55470657348633,
+              "y": 841.7197875976562,
+              "flux": 94.01162719726562
+            }
+          ],
+          "label": "ambiguous",
+          "selected_row": null,
+          "id": 29,
+          "note": "Watermark crosses source neighbourhood"
+        },
+        {
+          "hyg_id": 88494,
+          "name": "72    Oph",
+          "mag": 3.71,
+          "ra_deg": 271.83744,
+          "dec_deg": 9.563847,
+          "review_center": [
+            1556.261831396585,
+            1236.3207130994986
+          ],
+          "choices": [
+            {
+              "row": 22,
+              "x": 1553.82275390625,
+              "y": 1238.30810546875,
+              "flux": 122.4610366821289
+            },
+            {
+              "row": 788,
+              "x": 1545.4613037109375,
+              "y": 1223.6483154296875,
+              "flux": 51.62748718261719
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 22,
+          "id": 30,
+          "note": "Visible stellar source; identification conditional on relative field pattern"
+        },
+        {
+          "hyg_id": 86839,
+          "name": "Bake-eo",
+          "mag": 3.75,
+          "ra_deg": 266.973165,
+          "dec_deg": 2.707276,
+          "review_center": [
+            1867.0097303200516,
+            1555.7448817390684
+          ],
+          "choices": [
+            {
+              "row": 45,
+              "x": 1863.548095703125,
+              "y": 1556.4090576171875,
+              "flux": 113.33528137207031
+            },
+            {
+              "row": 210,
+              "x": 1908.1380615234375,
+              "y": 1555.1260986328125,
+              "flux": 81.6872329711914
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 45,
+          "id": 31,
+          "note": "Visible stellar source; identification conditional on relative field pattern"
+        },
+        {
+          "hyg_id": 80637,
+          "name": "Marfik",
+          "mag": 3.82,
+          "ra_deg": 247.72843500000002,
+          "dec_deg": 1.983923,
+          "review_center": [
+            2976.2991647070676,
+            1395.7021616559396
+          ],
+          "choices": [],
+          "label": "occluded",
+          "selected_row": null,
+          "id": 32,
+          "note": "Palm leaves cover predicted source"
+        },
+        {
+          "hyg_id": 88517,
+          "name": "103Omi Her",
+          "mag": 3.84,
+          "ra_deg": 271.88562,
+          "dec_deg": 28.762488,
+          "review_center": [
+            1360.4752918116328,
+            44.844677108415226
+          ],
+          "choices": [
+            {
+              "row": 21,
+              "x": 1359.75390625,
+              "y": 42.257320404052734,
+              "flux": 122.95481872558594
+            },
+            {
+              "row": 1529,
+              "x": 1387.835693359375,
+              "y": 42.31968688964844,
+              "flux": 31.540386199951172
+            },
+            {
+              "row": 3158,
+              "x": 1344.84814453125,
+              "y": 85.30558776855469,
+              "flux": 7.690723419189453
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 21,
+          "id": 33,
+          "note": "Visible stellar source; identification conditional on relative field pattern"
+        },
+        {
+          "hyg_id": 89064,
+          "name": "Polis",
+          "mag": 3.84,
+          "ra_deg": 273.44088,
+          "dec_deg": -21.058834,
+          "review_center": [
+            1736.7838191038832,
+            2849.8406007632148
+          ],
+          "choices": [
+            {
+              "row": 94,
+              "x": 1734.0390625,
+              "y": 2854.380126953125,
+              "flux": 100.98491668701172
+            },
+            {
+              "row": 301,
+              "x": 1712.625732421875,
+              "y": 2838.321044921875,
+              "flux": 73.05745697021484
+            },
+            {
+              "row": 1749,
+              "x": 1751.272216796875,
+              "y": 2814.36328125,
+              "flux": 26.710342407226562
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 94,
+          "id": 34,
+          "note": "Visible stellar source; identification conditional on relative field pattern"
+        },
+        {
+          "hyg_id": 89860,
+          "name": "Tusizuo",
+          "mag": 3.85,
+          "ra_deg": 275.924505,
+          "dec_deg": 21.769752,
+          "review_center": [
+            1224.9546132782948,
+            561.5672122600275
+          ],
+          "choices": [
+            {
+              "row": 28,
+              "x": 1223.3719482421875,
+              "y": 559.923095703125,
+              "flux": 120.35914611816406
+            },
+            {
+              "row": 800,
+              "x": 1251.4229736328125,
+              "y": 572.0809936523438,
+              "flux": 51.240779876708984
+            },
+            {
+              "row": 1328,
+              "x": 1196.4927978515625,
+              "y": 546.0914916992188,
+              "flux": 36.333770751953125
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 28,
+          "id": 35,
+          "note": "Visible stellar source; identification conditional on relative field pattern"
+        },
+        {
+          "hyg_id": 92951,
+          "name": "13Eps Aql",
+          "mag": 4.02,
+          "ra_deg": 284.905665,
+          "dec_deg": 15.068298,
+          "review_center": [
+            817.3052703923756,
+            1033.4144656508506
+          ],
+          "choices": [
+            {
+              "row": 32,
+              "x": 817.148193359375,
+              "y": 1034.75927734375,
+              "flux": 119.19222259521484
+            },
+            {
+              "row": 1161,
+              "x": 852.50341796875,
+              "y": 1044.368408203125,
+              "flux": 41.335243225097656
+            },
+            {
+              "row": 2015,
+              "x": 789.7643432617188,
+              "y": 1000.6876831054688,
+              "flux": 21.1483154296875
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 32,
+          "id": 36,
+          "note": "Visible stellar source; identification conditional on relative field pattern"
+        },
+        {
+          "hyg_id": 91756,
+          "name": "110    Her",
+          "mag": 4.19,
+          "ra_deg": 281.415525,
+          "dec_deg": 20.546308,
+          "review_center": [
+            946.2050088491077,
+            680.5081101405101
+          ],
+          "choices": [
+            {
+              "row": 47,
+              "x": 945.5824584960938,
+              "y": 680.71435546875,
+              "flux": 112.98648071289062
+            },
+            {
+              "row": 3493,
+              "x": 936.5,
+              "y": 700.5,
+              "flux": 6.0404052734375
+            },
+            {
+              "row": 635,
+              "x": 953.1058959960938,
+              "y": 716.5540161132812,
+              "flux": 56.28575134277344
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 47,
+          "id": 37,
+          "note": "Visible stellar source; identification conditional on relative field pattern"
+        },
+        {
+          "hyg_id": 96165,
+          "name": "41Iot Aql",
+          "mag": 4.36,
+          "ra_deg": 294.18032999999997,
+          "dec_deg": -1.286601,
+          "review_center": [
+            473.72809857200116,
+            2005.0687257565567
+          ],
+          "choices": [
+            {
+              "row": 93,
+              "x": 475.68780517578125,
+              "y": 2003.1781005859375,
+              "flux": 100.99976348876953
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 93,
+          "id": 38,
+          "note": "Visible stellar source; identification conditional on relative field pattern"
+        },
+        {
+          "hyg_id": 82421,
+          "name": "25Iot Oph",
+          "mag": 4.39,
+          "ra_deg": 253.50196499999998,
+          "dec_deg": 10.165359,
+          "review_center": [
+            2554.0299342845096,
+            992.559583290057
+          ],
+          "choices": [
+            {
+              "row": 49,
+              "x": 2564.14599609375,
+              "y": 982.1698608398438,
+              "flux": 112.73117065429688
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 49,
+          "id": 39,
+          "note": "Visible stellar source; identification conditional on relative field pattern"
+        },
+        {
+          "hyg_id": 96450,
+          "name": "Sham",
+          "mag": 4.39,
+          "ra_deg": 295.024125,
+          "dec_deg": 18.01389,
+          "review_center": [
+            205.41757949113196,
+            904.3856904673124
+          ],
+          "choices": [
+            {
+              "row": 44,
+              "x": 209.39772033691406,
+              "y": 907.4436645507812,
+              "flux": 113.56565856933594
+            },
+            {
+              "row": 41,
+              "x": 201.48098754882812,
+              "y": 942.1275634765625,
+              "flux": 114.49327087402344
+            },
+            {
+              "row": 1091,
+              "x": 216.41262817382812,
+              "y": 864.7557983398438,
+              "flux": 43.156822204589844
+            }
+          ],
+          "label": "ambiguous",
+          "selected_row": null,
+          "id": 40,
+          "note": "Watermark crosses source neighbourhood"
+        },
+        {
+          "hyg_id": 98375,
+          "name": "62    Sgr",
+          "mag": 4.43,
+          "ra_deg": 300.66448499999996,
+          "dec_deg": -27.709845,
+          "review_center": [
+            405.2856769850695,
+            3625.3914298743575
+          ],
+          "choices": [
+            {
+              "row": 255,
+              "x": 429.5870666503906,
+              "y": 3625.83740234375,
+              "flux": 77.1576156616211
+            },
+            {
+              "row": 166,
+              "x": 400.5,
+              "y": 3658.5,
+              "flux": 86.4465560913086
+            }
+          ],
+          "label": "occluded",
+          "selected_row": null,
+          "id": 41,
+          "note": "External source candidates lie on palm leaves"
+        },
+        {
+          "hyg_id": 97851,
+          "name": "59    Sgr",
+          "mag": 4.54,
+          "ra_deg": 299.2368,
+          "dec_deg": -27.169899,
+          "review_center": [
+            479.4778214772806,
+            3557.956623922507
+          ],
+          "choices": [
+            {
+              "row": 142,
+              "x": 469.9091796875,
+              "y": 3563.94384765625,
+              "flux": 89.8541259765625
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 142,
+          "id": 42,
+          "note": "Visible stellar source; identification conditional on relative field pattern"
+        },
+        {
+          "hyg_id": 80221,
+          "name": "Cujam",
+          "mag": 4.57,
+          "ra_deg": 246.35396999999998,
+          "dec_deg": 14.03327,
+          "review_center": [
+            2977.2569028043367,
+            629.2991154905919
+          ],
+          "choices": [
+            {
+              "row": 39,
+              "x": 2995.1416015625,
+              "y": 612.6403198242188,
+              "flux": 115.94168090820312
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 39,
+          "id": 43,
+          "note": "Visible stellar source; identification conditional on relative field pattern"
+        },
+        {
+          "hyg_id": 96162,
+          "name": "52    Sgr",
+          "mag": 4.59,
+          "ra_deg": 294.17679,
+          "dec_deg": -24.883623,
+          "review_center": [
+            728.9589266071774,
+            3316.059257509045
+          ],
+          "choices": [
+            {
+              "row": 577,
+              "x": 727.0460815429688,
+              "y": 3308.781982421875,
+              "flux": 58.023597717285156
+            },
+            {
+              "row": 150,
+              "x": 720.0884399414062,
+              "y": 3321.3720703125,
+              "flux": 88.62842559814453
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 577,
+          "id": 44,
+          "note": "Visible stellar source; identification conditional on relative field pattern"
+        },
+        {
+          "hyg_id": 84256,
+          "name": "41    Oph",
+          "mag": 4.72,
+          "ra_deg": 259.152855,
+          "dec_deg": -0.445297,
+          "review_center": [
+            2311.335209767234,
+            1650.2972798997926
+          ],
+          "choices": [
+            {
+              "row": 100,
+              "x": 2313.888916015625,
+              "y": 1648.4381103515625,
+              "flux": 99.73771667480469
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 100,
+          "id": 45,
+          "note": "Visible stellar source; identification conditional on relative field pattern"
+        },
+        {
+          "hyg_id": 96180,
+          "name": "39Kap Aql",
+          "mag": 4.93,
+          "ra_deg": 294.222705,
+          "dec_deg": -7.027477,
+          "review_center": [
+            531.4809643599531,
+            2313.1223014648003
+          ],
+          "choices": [
+            {
+              "row": 204,
+              "x": 531.1495361328125,
+              "y": 2310.180419921875,
+              "flux": 82.40013885498047
+            },
+            {
+              "row": 804,
+              "x": 555.5198974609375,
+              "y": 2328.797119140625,
+              "flux": 51.15929412841797
+            },
+            {
+              "row": 3141,
+              "x": 489.1902160644531,
+              "y": 2300.856201171875,
+              "flux": 7.7519378662109375
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 204,
+          "id": 46,
+          "note": "Visible stellar source; identification conditional on relative field pattern"
+        },
+        {
+          "hyg_id": 94771,
+          "name": "26    Aql",
+          "mag": 4.98,
+          "ra_deg": 290.137095,
+          "dec_deg": -5.415766,
+          "review_center": [
+            739.9221405371878,
+            2182.648765546078
+          ],
+          "choices": [
+            {
+              "row": 155,
+              "x": 740.5653076171875,
+              "y": 2180.1435546875,
+              "flux": 88.06547546386719
+            },
+            {
+              "row": 2977,
+              "x": 767.8428955078125,
+              "y": 2194.480224609375,
+              "flux": 8.557884216308594
+            },
+            {
+              "row": 1950,
+              "x": 773.6128540039062,
+              "y": 2173.257568359375,
+              "flux": 22.7459716796875
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 155,
+          "id": 47,
+          "note": "Visible stellar source; identification conditional on relative field pattern"
+        }
+      ],
+      "review_notes": "Reviewed full field and native crops before camera residual comparison; named bright-star patterns support field identity. Camera-suggested associations remain conditional. No new WCS or camera fit."
+    },
+    {
+      "id": "wm_r_149276071",
+      "source_sha256": "07ae25603db00a53060aaac710635df8ec71ca14eeb758e604cadb211cbd25a2",
+      "image": "data/samples/sky-samples/images/wm_r_149276071.png",
+      "width": 1989,
+      "height": 1498,
+      "extraction": "prototype/artifacts/robustness-baseline/wcs-run/wm_r_149276071/downsample-4/field.axy",
+      "sky_bounds": [
+        12,
+        160,
+        1977,
+        1486
+      ],
+      "points": [
+        {
+          "hyg_id": 80519,
+          "name": "Antares",
+          "mag": 1.06,
+          "ra_deg": 247.35191999999998,
+          "dec_deg": -26.432002,
+          "review_center": [
+            1968.3394759390821,
+            403.7179399517774
+          ],
+          "choices": [
+            {
+              "row": 0,
+              "x": 1963.7982177734375,
+              "y": 407.89251708984375,
+              "flux": 69.8817138671875
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 0,
+          "id": 0,
+          "note": "Visible stellar source; identification conditional on relative field pattern"
+        },
+        {
+          "hyg_id": 85769,
+          "name": "Rasalhague",
+          "mag": 2.08,
+          "ra_deg": 263.733615,
+          "dec_deg": 12.560035,
+          "review_center": [
+            902.2792125636258,
+            998.0568651761607
+          ],
+          "choices": [
+            {
+              "row": 2,
+              "x": 904.0426635742188,
+              "y": 996.96044921875,
+              "flux": 51.97130584716797
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 2,
+          "id": 1,
+          "note": "Visible stellar source; identification conditional on relative field pattern"
+        },
+        {
+          "hyg_id": 76035,
+          "name": "Alphecca",
+          "mag": 2.22,
+          "ra_deg": 233.67192,
+          "dec_deg": 26.714693,
+          "review_center": [
+            372.0204931830075,
+            313.393467877124
+          ],
+          "choices": [
+            {
+              "row": 14,
+              "x": 370.0498046875,
+              "y": 312.4215087890625,
+              "flux": 31.316455841064453
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 14,
+          "id": 2,
+          "note": "Visible stellar source; identification conditional on relative field pattern"
+        },
+        {
+          "hyg_id": 78165,
+          "name": "Dschubba",
+          "mag": 2.29,
+          "ra_deg": 240.08335499999998,
+          "dec_deg": -22.62171,
+          "review_center": [
+            1814.5553963948364,
+            217.89455443115884
+          ],
+          "choices": [
+            {
+              "row": 1,
+              "x": 1813.166259765625,
+              "y": 220.2630615234375,
+              "flux": 63.55854034423828
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 1,
+          "id": 3,
+          "note": "Visible stellar source; identification conditional on relative field pattern"
+        },
+        {
+          "hyg_id": 83755,
+          "name": "Sabik",
+          "mag": 2.43,
+          "ra_deg": 257.59452,
+          "dec_deg": -15.72491,
+          "review_center": [
+            1632.6789694688925,
+            741.0627264788117
+          ],
+          "choices": [
+            {
+              "row": 3,
+              "x": 1630.7432861328125,
+              "y": 743.1000366210938,
+              "flux": 45.15345764160156
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 3,
+          "id": 4,
+          "note": "Visible stellar source; identification conditional on relative field pattern"
+        },
+        {
+          "hyg_id": 81130,
+          "name": "13Zet Oph",
+          "mag": 2.54,
+          "ra_deg": 249.28974000000002,
+          "dec_deg": -10.56709,
+          "review_center": [
+            1449.6376303370582,
+            545.7985339836005
+          ],
+          "choices": [
+            {
+              "row": 12,
+              "x": 1448.6009521484375,
+              "y": 547.6275024414062,
+              "flux": 31.97211456298828
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 12,
+          "id": 5,
+          "note": "Visible stellar source; identification conditional on relative field pattern"
+        },
+        {
+          "hyg_id": 78580,
+          "name": "Acrab",
+          "mag": 2.56,
+          "ra_deg": 241.35930000000002,
+          "dec_deg": -19.805453,
+          "review_center": [
+            1715.4857313093441,
+            275.80289050083354
+          ],
+          "choices": [
+            {
+              "row": 11,
+              "x": 1716.4930419921875,
+              "y": 277.0918273925781,
+              "flux": 35.10390853881836
+            },
+            {
+              "row": 56,
+              "x": 1750.3768310546875,
+              "y": 282.6275939941406,
+              "flux": 17.34194564819336
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 11,
+          "id": 6,
+          "note": "Visible stellar source; identification conditional on relative field pattern"
+        },
+        {
+          "hyg_id": 76835,
+          "name": "Unukalhai",
+          "mag": 2.63,
+          "ra_deg": 236.06697,
+          "dec_deg": 6.425627,
+          "review_center": [
+            947.1807666313005,
+            273.1396592347338
+          ],
+          "choices": [
+            {
+              "row": 17,
+              "x": 946.7607421875,
+              "y": 272.2680358886719,
+              "flux": 28.467613220214844
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 17,
+          "id": 7,
+          "note": "Visible stellar source; identification conditional on relative field pattern"
+        },
+        {
+          "hyg_id": 79352,
+          "name": "Yed Prior",
+          "mag": 2.73,
+          "ra_deg": 243.58641000000003,
+          "dec_deg": -3.694323,
+          "review_center": [
+            1243.1579008951844,
+            427.4715777605395
+          ],
+          "choices": [
+            {
+              "row": 6,
+              "x": 1243.41943359375,
+              "y": 428.9110107421875,
+              "flux": 37.809242248535156
+            },
+            {
+              "row": 13,
+              "x": 1272.8560791015625,
+              "y": 450.4962158203125,
+              "flux": 31.88971710205078
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 6,
+          "id": 8,
+          "note": "Visible stellar source; identification conditional on relative field pattern"
+        },
+        {
+          "hyg_id": 86475,
+          "name": "Cebalrai",
+          "mag": 2.76,
+          "ra_deg": 265.868145,
+          "dec_deg": 4.567303,
+          "review_center": [
+            1112.7411230179432,
+            1027.7418583846525
+          ],
+          "choices": [
+            {
+              "row": 4,
+              "x": 1112.297607421875,
+              "y": 1026.3011474609375,
+              "flux": 40.82127380371094
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 4,
+          "id": 9,
+          "note": "Visible stellar source; identification conditional on relative field pattern"
+        },
+        {
+          "hyg_id": 80571,
+          "name": "Kornephoros",
+          "mag": 2.78,
+          "ra_deg": 247.55502,
+          "dec_deg": 21.489613,
+          "review_center": [
+            613.845802605326,
+            637.2286220322144
+          ],
+          "choices": [
+            {
+              "row": 10,
+              "x": 615.13134765625,
+              "y": 637.9436645507812,
+              "flux": 35.77924346923828
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 10,
+          "id": 10,
+          "note": "Visible stellar source; identification conditional on relative field pattern"
+        },
+        {
+          "hyg_id": 84086,
+          "name": "Rasalgethi",
+          "mag": 2.78,
+          "ra_deg": 258.661905,
+          "dec_deg": 14.390333,
+          "review_center": [
+            840.7109224637102,
+            878.1143826308007
+          ],
+          "choices": [
+            {
+              "row": 7,
+              "x": 842.5537719726562,
+              "y": 878.3038330078125,
+              "flux": 37.7286376953125
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 7,
+          "id": 11,
+          "note": "Visible stellar source; identification conditional on relative field pattern"
+        },
+        {
+          "hyg_id": 81444,
+          "name": "40Zet Her",
+          "mag": 2.81,
+          "ra_deg": 250.32169500000003,
+          "dec_deg": 31.602726,
+          "review_center": [
+            336.9261697087395,
+            748.5928915714962
+          ],
+          "choices": [
+            {
+              "row": 19,
+              "x": 339.214111328125,
+              "y": 749.164306640625,
+              "flux": 27.94632339477539
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 19,
+          "id": 12,
+          "note": "Visible stellar source; identification conditional on relative field pattern"
+        },
+        {
+          "hyg_id": 78029,
+          "name": "Fang",
+          "mag": 2.89,
+          "ra_deg": 239.712975,
+          "dec_deg": -26.114105,
+          "review_center": [
+            1950.07240648981,
+            178.79648072840456
+          ],
+          "choices": [
+            {
+              "row": 34,
+              "x": 1941.18798828125,
+              "y": 184.9869842529297,
+              "flux": 23.481178283691406
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 34,
+          "id": 13,
+          "note": "Visible stellar source; identification conditional on relative field pattern"
+        },
+        {
+          "hyg_id": 84121,
+          "name": "Sarin",
+          "mag": 3.12,
+          "ra_deg": 258.75796499999996,
+          "dec_deg": 24.839204,
+          "review_center": [
+            564.608841472919,
+            919.1616728208301
+          ],
+          "choices": [
+            {
+              "row": 15,
+              "x": 566.9597778320312,
+              "y": 919.81396484375,
+              "flux": 31.189857482910156
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 15,
+          "id": 14,
+          "note": "Visible stellar source; identification conditional on relative field pattern"
+        },
+        {
+          "hyg_id": 84122,
+          "name": "67Pi  Her",
+          "mag": 3.16,
+          "ra_deg": 258.76182,
+          "dec_deg": 36.809162,
+          "review_center": [
+            195.23158363126146,
+            971.7320784563117
+          ],
+          "choices": [
+            {
+              "row": 31,
+              "x": 198.74969482421875,
+              "y": 972.243896484375,
+              "flux": 23.949195861816406
+            },
+            {
+              "row": 89,
+              "x": 181.4798583984375,
+              "y": 989.9598388671875,
+              "flux": 9.131240844726562
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 31,
+          "id": 15,
+          "note": "Visible stellar source; identification conditional on relative field pattern"
+        },
+        {
+          "hyg_id": 79640,
+          "name": "Yed Posterior",
+          "mag": 3.23,
+          "ra_deg": 244.58036999999996,
+          "dec_deg": -4.692511,
+          "review_center": [
+            1273.1355064032646,
+            449.126178636693
+          ],
+          "choices": [
+            {
+              "row": 13,
+              "x": 1272.8560791015625,
+              "y": 450.4962158203125,
+              "flux": 31.88971710205078
+            },
+            {
+              "row": 6,
+              "x": 1243.41943359375,
+              "y": 428.9110107421875,
+              "flux": 37.809242248535156
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 13,
+          "id": 16,
+          "note": "Visible stellar source; identification conditional on relative field pattern"
+        },
+        {
+          "hyg_id": 89684,
+          "name": "58Eta Ser",
+          "mag": 3.23,
+          "ra_deg": 275.32750500000003,
+          "dec_deg": -2.898825,
+          "review_center": [
+            1352.5496556152216,
+            1269.8161118440446
+          ],
+          "choices": [
+            {
+              "row": 33,
+              "x": 1350.98193359375,
+              "y": 1267.66748046875,
+              "flux": 23.574913024902344
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 33,
+          "id": 17,
+          "note": "Visible stellar source; identification conditional on relative field pattern"
+        },
+        {
+          "hyg_id": 84711,
+          "name": "42The Oph",
+          "mag": 3.27,
+          "ra_deg": 260.502405,
+          "dec_deg": -24.999545,
+          "review_center": [
+            1964.5761750188426,
+            778.0513293737026
+          ],
+          "choices": [
+            {
+              "row": 32,
+              "x": 1961.7012939453125,
+              "y": 780.7479858398438,
+              "flux": 23.581920623779297
+            },
+            {
+              "row": 91,
+              "x": 1937.15283203125,
+              "y": 813.24658203125,
+              "flux": 8.899120330810547
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 32,
+          "id": 18,
+          "note": "Visible stellar source; identification conditional on relative field pattern"
+        },
+        {
+          "hyg_id": 87775,
+          "name": "64Nu  Oph",
+          "mag": 3.32,
+          "ra_deg": 269.75662500000004,
+          "dec_deg": -9.773632,
+          "review_center": [
+            1518.8132542031321,
+            1090.4632487401736
+          ],
+          "choices": [
+            {
+              "row": 16,
+              "x": 1516.4027099609375,
+              "y": 1090.2969970703125,
+              "flux": 28.841400146484375
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 16,
+          "id": 19,
+          "note": "Visible stellar source; identification conditional on relative field pattern"
+        },
+        {
+          "hyg_id": 119131,
+          "name": "Oph",
+          "mag": 3.4,
+          "ra_deg": 257.591745,
+          "dec_deg": -15.726921,
+          "review_center": [
+            1632.7284156818184,
+            740.9807955444683
+          ],
+          "choices": [
+            {
+              "row": 3,
+              "x": 1630.7432861328125,
+              "y": 743.1000366210938,
+              "flux": 45.15345764160156
+            }
+          ],
+          "label": "blend",
+          "selected_row": null,
+          "id": 20,
+          "note": "Same unresolved external source as candidate 4"
+        },
+        {
+          "hyg_id": 86705,
+          "name": "86Mu  Her",
+          "mag": 3.42,
+          "ra_deg": 266.614785,
+          "dec_deg": 27.720676,
+          "review_center": [
+            495.7342691008105,
+            1123.656566128132
+          ],
+          "choices": [
+            {
+              "row": 28,
+              "x": 499.95501708984375,
+              "y": 1122.751953125,
+              "flux": 24.069175720214844
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 28,
+          "id": 21,
+          "note": "Visible stellar source; identification conditional on relative field pattern"
+        },
+        {
+          "hyg_id": 74438,
+          "name": "49Del Boo",
+          "mag": 3.46,
+          "ra_deg": 228.87564,
+          "dec_deg": 33.314833,
+          "review_center": [
+            103.26215711608211,
+            221.44641174301955
+          ],
+          "choices": [
+            {
+              "row": 75,
+              "x": 105.6940689086914,
+              "y": 223.3717803955078,
+              "flux": 13.406654357910156
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 75,
+          "id": 22,
+          "note": "Visible stellar source; identification conditional on relative field pattern"
+        },
+        {
+          "hyg_id": 81583,
+          "name": "44Eta Her",
+          "mag": 3.48,
+          "ra_deg": 250.72399499999997,
+          "dec_deg": 38.922254,
+          "review_center": [
+            93.08411314048482,
+            795.5546987813323
+          ],
+          "choices": [
+            {
+              "row": 36,
+              "x": 94.95821380615234,
+              "y": 796.6417236328125,
+              "flux": 21.995052337646484
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 36,
+          "id": 23,
+          "note": "Visible stellar source; identification conditional on relative field pattern"
+        },
+        {
+          "hyg_id": 77280,
+          "name": "32Mu  Ser",
+          "mag": 3.54,
+          "ra_deg": 237.40503,
+          "dec_deg": -3.430208,
+          "review_center": [
+            1214.6663550118114,
+            259.1917325116224
+          ],
+          "choices": [
+            {
+              "row": 30,
+              "x": 1214.914306640625,
+              "y": 258.7594909667969,
+              "flux": 24.02764892578125
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 30,
+          "id": 24,
+          "note": "Visible stellar source; identification conditional on relative field pattern"
+        },
+        {
+          "hyg_id": 85998,
+          "name": "55Xi  Ser",
+          "mag": 3.54,
+          "ra_deg": 264.396675,
+          "dec_deg": -15.398557,
+          "review_center": [
+            1657.2509450877012,
+            924.328514037504
+          ],
+          "choices": [
+            {
+              "row": 24,
+              "x": 1654.872802734375,
+              "y": 925.8439331054688,
+              "flux": 25.529064178466797
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 24,
+          "id": 25,
+          "note": "Visible stellar source; identification conditional on relative field pattern"
+        },
+        {
+          "hyg_id": 76997,
+          "name": "Zhou",
+          "mag": 3.65,
+          "ra_deg": 236.546895,
+          "dec_deg": 15.421826,
+          "review_center": [
+            713.294340699947,
+            331.3959251174948
+          ],
+          "choices": [
+            {
+              "row": 51,
+              "x": 712.33935546875,
+              "y": 330.41302490234375,
+              "flux": 17.835350036621094
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 51,
+          "id": 26,
+          "note": "Visible stellar source; identification conditional on relative field pattern"
+        },
+        {
+          "hyg_id": 75466,
+          "name": "Nusakan",
+          "mag": 3.66,
+          "ra_deg": 231.95727,
+          "dec_deg": 29.105703,
+          "review_center": [
+            280.7172472711402,
+            280.7499326403036
+          ],
+          "choices": [
+            {
+              "row": 79,
+              "x": 278.2969055175781,
+              "y": 279.29156494140625,
+              "flux": 12.794502258300781
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 79,
+          "id": 27,
+          "note": "Visible stellar source; identification conditional on relative field pattern"
+        },
+        {
+          "hyg_id": 87661,
+          "name": "92Xi  Her",
+          "mag": 3.7,
+          "ra_deg": 269.44116,
+          "dec_deg": 29.24788,
+          "review_center": [
+            450.5192400109998,
+            1202.1401118130239
+          ],
+          "choices": [
+            {
+              "row": 21,
+              "x": 454.1383972167969,
+              "y": 1200.920166015625,
+              "flux": 26.608409881591797
+            },
+            {
+              "row": 69,
+              "x": 424.3531799316406,
+              "y": 1209.4241943359375,
+              "flux": 14.859336853027344
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 21,
+          "id": 28,
+          "note": "Visible stellar source; identification conditional on relative field pattern"
+        },
+        {
+          "hyg_id": 77386,
+          "name": "37Eps Ser",
+          "mag": 3.71,
+          "ra_deg": 237.704025,
+          "dec_deg": 4.47773,
+          "review_center": [
+            1006.0203675263172,
+            308.5411556658541
+          ],
+          "choices": [
+            {
+              "row": 44,
+              "x": 1005.6229248046875,
+              "y": 309.2132568359375,
+              "flux": 20.17963409423828
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 44,
+          "id": 29,
+          "note": "Visible stellar source; identification conditional on relative field pattern"
+        },
+        {
+          "hyg_id": 88494,
+          "name": "72    Oph",
+          "mag": 3.71,
+          "ra_deg": 271.83744,
+          "dec_deg": 9.563847,
+          "review_center": [
+            1001.6565137032862,
+            1202.3703487741527
+          ],
+          "choices": [
+            {
+              "row": 25,
+              "x": 1002.5079345703125,
+              "y": 1200.5167236328125,
+              "flux": 24.87075424194336
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 25,
+          "id": 30,
+          "note": "Visible stellar source; identification conditional on relative field pattern"
+        },
+        {
+          "hyg_id": 79928,
+          "name": "20Gam Her",
+          "mag": 3.74,
+          "ra_deg": 245.48007,
+          "dec_deg": 19.15313,
+          "review_center": [
+            665.8155789929216,
+            576.5926300364408
+          ],
+          "choices": [
+            {
+              "row": 40,
+              "x": 666.8087158203125,
+              "y": 578.03515625,
+              "flux": 20.79822540283203
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 40,
+          "id": 31,
+          "note": "Visible stellar source; identification conditional on relative field pattern"
+        },
+        {
+          "hyg_id": 86839,
+          "name": "Bake-eo",
+          "mag": 3.75,
+          "ra_deg": 266.973165,
+          "dec_deg": 2.707276,
+          "review_center": [
+            1164.6933950835494,
+            1051.1923494819607
+          ],
+          "choices": [
+            {
+              "row": 22,
+              "x": 1163.747802734375,
+              "y": 1049.595703125,
+              "flux": 26.46917724609375
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 22,
+          "id": 32,
+          "note": "Visible stellar source; identification conditional on relative field pattern"
+        },
+        {
+          "hyg_id": 76044,
+          "name": "13Del Ser",
+          "mag": 3.8,
+          "ra_deg": 233.700615,
+          "dec_deg": 10.538867,
+          "review_center": [
+            825.3359466993772,
+            228.02822760994644
+          ],
+          "choices": [
+            {
+              "row": 49,
+              "x": 825.2047729492188,
+              "y": 225.9872589111328,
+              "flux": 18.40203094482422
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 49,
+          "id": 33,
+          "note": "Visible stellar source; identification conditional on relative field pattern"
+        },
+        {
+          "hyg_id": 88517,
+          "name": "103Omi Her",
+          "mag": 3.84,
+          "ra_deg": 271.88562,
+          "dec_deg": 28.762488,
+          "review_center": [
+            464.6673675515915,
+            1265.0132693203702
+          ],
+          "choices": [
+            {
+              "row": 59,
+              "x": 468.6417236328125,
+              "y": 1263.4835205078125,
+              "flux": 16.603294372558594
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 59,
+          "id": 34,
+          "note": "Visible stellar source; identification conditional on relative field pattern"
+        },
+        {
+          "hyg_id": 89064,
+          "name": "Polis",
+          "mag": 3.84,
+          "ra_deg": 273.44088,
+          "dec_deg": -21.058834,
+          "review_center": [
+            1917.8878854257127,
+            1165.9317297132761
+          ],
+          "choices": [
+            {
+              "row": 64,
+              "x": 1911.747802734375,
+              "y": 1165.0225830078125,
+              "flux": 15.371360778808594
+            }
+          ],
+          "label": "ambiguous",
+          "selected_row": null,
+          "id": 35,
+          "note": "Weak source amid structured compression/background; identity not secure"
+        },
+        {
+          "hyg_id": 77836,
+          "name": "41Gam Ser",
+          "mag": 3.85,
+          "ra_deg": 239.11323000000002,
+          "dec_deg": 15.661617,
+          "review_center": [
+            722.7362595966964,
+            400.3010865381561
+          ],
+          "choices": [
+            {
+              "row": 60,
+              "x": 722.340087890625,
+              "y": 400.4964599609375,
+              "flux": 16.594009399414062
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 60,
+          "id": 36,
+          "note": "Visible stellar source; identification conditional on relative field pattern"
+        },
+        {
+          "hyg_id": 89860,
+          "name": "Tusizuo",
+          "mag": 3.85,
+          "ra_deg": 275.924505,
+          "dec_deg": 21.769752,
+          "review_center": [
+            672.248227376062,
+            1353.352871584916
+          ],
+          "choices": [
+            {
+              "row": 52,
+              "x": 676.0472412109375,
+              "y": 1350.53369140625,
+              "flux": 17.781463623046875
+            },
+            {
+              "row": 102,
+              "x": 670.4533081054688,
+              "y": 1326.5511474609375,
+              "flux": 6.056755065917969
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 52,
+          "id": 37,
+          "note": "Visible stellar source; identification conditional on relative field pattern"
+        },
+        {
+          "hyg_id": 90835,
+          "name": "Alp Sct",
+          "mag": 3.85,
+          "ra_deg": 278.80177499999996,
+          "dec_deg": -8.244073,
+          "review_center": [
+            1532.4412738964293,
+            1365.3098042212735
+          ],
+          "choices": [
+            {
+              "row": 80,
+              "x": 1530.8348388671875,
+              "y": 1364.7752685546875,
+              "flux": 11.753917694091797
+            }
+          ],
+          "label": "ambiguous",
+          "selected_row": null,
+          "id": 38,
+          "note": "Weak diffuse feature; identity not secure"
+        },
+        {
+          "hyg_id": 82952,
+          "name": "58Eps Her",
+          "mag": 3.92,
+          "ra_deg": 255.07240499999997,
+          "dec_deg": 30.926405,
+          "review_center": [
+            376.42939978719005,
+            857.0213942160422
+          ],
+          "choices": [
+            {
+              "row": 54,
+              "x": 379.7625427246094,
+              "y": 857.5654296875,
+              "flux": 17.62337875366211
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 54,
+          "id": 39,
+          "note": "Visible stellar source; identification conditional on relative field pattern"
+        },
+        {
+          "hyg_id": 87920,
+          "name": "67    Oph",
+          "mag": 3.93,
+          "ra_deg": 270.16130999999996,
+          "dec_deg": 2.931568,
+          "review_center": [
+            1170.7399612488475,
+            1137.6799653913233
+          ],
+          "choices": [
+            {
+              "row": 35,
+              "x": 1170.063232421875,
+              "y": 1136.2618408203125,
+              "flux": 22.873428344726562
+            },
+            {
+              "row": 45,
+              "x": 1186.7598876953125,
+              "y": 1168.3157958984375,
+              "flux": 19.903671264648438
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 35,
+          "id": 40,
+          "note": "Visible stellar source; identification conditional on relative field pattern"
+        },
+        {
+          "hyg_id": 77923,
+          "name": "13Eps CrB",
+          "mag": 4.14,
+          "ra_deg": 239.39691000000002,
+          "dec_deg": 26.87788,
+          "review_center": [
+            414.17102587152374,
+            462.3414970989234
+          ],
+          "choices": [
+            {
+              "row": 53,
+              "x": 413.94891357421875,
+              "y": 462.2825012207031,
+              "flux": 17.633472442626953
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 53,
+          "id": 41,
+          "note": "Visible stellar source; identification conditional on relative field pattern"
+        },
+        {
+          "hyg_id": 87994,
+          "name": "Bodu",
+          "mag": 4.26,
+          "ra_deg": 270.37669500000004,
+          "dec_deg": 21.595782,
+          "review_center": [
+            674.9943838868858,
+            1199.3848062485572
+          ],
+          "choices": [
+            {
+              "row": 63,
+              "x": 678.8944702148438,
+              "y": 1198.55029296875,
+              "flux": 15.693675994873047
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 63,
+          "id": 42,
+          "note": "Visible stellar source; identification conditional on relative field pattern"
+        },
+        {
+          "hyg_id": 85096,
+          "name": "49Sig Oph",
+          "mag": 4.34,
+          "ra_deg": 261.628665,
+          "dec_deg": 4.14036,
+          "review_center": [
+            1108.6863240432845,
+            917.3116808590862
+          ],
+          "choices": [],
+          "label": "ambiguous",
+          "selected_row": null,
+          "id": 43,
+          "note": "No external extracted source within frozen review window"
+        },
+        {
+          "hyg_id": 88610,
+          "name": "Ramus",
+          "mag": 4.37,
+          "ra_deg": 272.18955,
+          "dec_deg": 20.814557,
+          "review_center": [
+            698.3660840313069,
+            1245.6633126777556
+          ],
+          "choices": [],
+          "label": "ambiguous",
+          "selected_row": null,
+          "id": 44,
+          "note": "No external extracted source within frozen review window"
+        },
+        {
+          "hyg_id": 77276,
+          "name": "10Del CrB",
+          "mag": 4.59,
+          "ra_deg": 237.39855,
+          "dec_deg": 26.068394,
+          "review_center": [
+            422.96006354260805,
+            407.4997917077904
+          ],
+          "choices": [
+            {
+              "row": 87,
+              "x": 422.1656799316406,
+              "y": 407.70263671875,
+              "flux": 10.07601547241211
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 87,
+          "id": 45,
+          "note": "Visible stellar source; identification conditional on relative field pattern"
+        },
+        {
+          "hyg_id": 89856,
+          "name": "Zet Sct",
+          "mag": 4.66,
+          "ra_deg": 275.914935,
+          "dec_deg": -8.934383,
+          "review_center": [
+            1533.0257239626276,
+            1273.044165842491
+          ],
+          "choices": [],
+          "label": "not_visible",
+          "selected_row": null,
+          "id": 46,
+          "note": "No convincing source or external extraction at candidate position"
+        },
+        {
+          "hyg_id": 119058,
+          "name": "Graffias",
+          "mag": 4.84,
+          "ra_deg": 241.09160999999997,
+          "dec_deg": -11.374611,
+          "review_center": [
+            1448.9924136891152,
+            319.68084230457833
+          ],
+          "choices": [
+            {
+              "row": 57,
+              "x": 1448.2379150390625,
+              "y": 320.8267822265625,
+              "flux": 17.183456420898438
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 57,
+          "id": 47,
+          "note": "Visible stellar source; identification conditional on relative field pattern"
+        }
+      ],
+      "review_notes": "Reviewed full field and native crops before camera residual comparison; named bright-star patterns support field identity. Camera-suggested associations remain conditional. No new WCS or camera fit."
+    }
+  ],
+  "reviewer": "Codex",
+  "date": "2026-10-03"
+}

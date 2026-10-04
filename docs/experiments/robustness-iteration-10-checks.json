@@ -1,0 +1,221 @@
+{
+  "iteration": 10,
+  "id": "wm_r_143159342",
+  "split": "development",
+  "base_commit": "67fbcf8203915f0329eb74d643e526c992bbaf4a",
+  "review": {
+    "labels": {
+      "visible_source": 25,
+      "blend": 7,
+      "ambiguous": 1,
+      "not_visible": 1
+    },
+    "prior_pairs": 10,
+    "prior_probes": 11,
+    "prior_overlap": 3,
+    "previously_unreviewed": 16,
+    "review_sha256": "83d683a1953b96d5152d43ef6b565f4d06733b788ae4fa74f3c7fc9c93588856",
+    "candidates_sha256": "ee8fc9e60e5508c00212f57ee814ac837212b03c7df6ca5a026d9c1d019f7c08",
+    "ground_truth_promoted": false
+  },
+  "run": {
+    "status": "completed",
+    "exit_code": 0,
+    "elapsed_s": 1.1744559537619352,
+    "command": [
+      "cargo",
+      "test",
+      "--offline",
+      "--locked",
+      "--release",
+      "--manifest-path",
+      "/home/agent/work/starglyph/engine/prototype/artifacts/robustness-iteration-8/verified/pipeline/Cargo.toml",
+      "-p",
+      "starglyph-core",
+      "solve::rematch_replay::fixed_candidate",
+      "--",
+      "--ignored",
+      "--nocapture"
+    ]
+  },
+  "exact_control_all_12_stages": true,
+  "same_28_pair_set_at_next_radius": true,
+  "pair_order_at_next_radius_differs": true,
+  "final_camera_max_abs_difference": {
+    "focal_px": 1.1323209037072957e-10,
+    "k1": 1.8639950694065988e-13,
+    "world_to_camera": 6.458722445756848e-14
+  },
+  "stage_review_labels": {
+    "drop_detection_all_stages": {
+      "candidate": {
+        "visible_source": 9,
+        "blend": 1
+      },
+      "initial_refine": {
+        "visible_source": 9,
+        "blend": 1
+      },
+      "rematch_10_before": {
+        "visible_source": 25,
+        "blend": 7,
+        "ambiguous": 1,
+        "not_visible": 1
+      },
+      "rematch_10_after": {
+        "visible_source": 25,
+        "blend": 7,
+        "ambiguous": 1,
+        "not_visible": 1
+      },
+      "rematch_5_before": {
+        "visible_source": 24,
+        "blend": 4
+      },
+      "rematch_5_after": {
+        "visible_source": 24,
+        "blend": 4
+      },
+      "rematch_2.5_before": {
+        "visible_source": 15,
+        "blend": 2
+      },
+      "rematch_2.5_after": {
+        "visible_source": 15,
+        "blend": 2
+      },
+      "working_final": {
+        "visible_source": 16,
+        "blend": 1
+      },
+      "lift_before_refine": {
+        "visible_source": 16,
+        "blend": 1
+      },
+      "lift_after_refine": {
+        "visible_source": 16,
+        "blend": 1
+      },
+      "original_final": {
+        "visible_source": 17,
+        "blend": 1
+      }
+    },
+    "drop_second_leaf": {
+      "candidate": {
+        "visible_source": 9,
+        "blend": 1
+      },
+      "initial_refine": {
+        "visible_source": 9,
+        "blend": 1
+      },
+      "rematch_10_before": {
+        "visible_source": 25,
+        "blend": 7,
+        "ambiguous": 1
+      },
+      "rematch_10_after": {
+        "visible_source": 25,
+        "blend": 7,
+        "ambiguous": 1
+      },
+      "rematch_5_before": {
+        "visible_source": 24,
+        "blend": 4
+      },
+      "rematch_5_after": {
+        "visible_source": 24,
+        "blend": 4
+      },
+      "rematch_2.5_before": {
+        "visible_source": 15,
+        "blend": 2
+      },
+      "rematch_2.5_after": {
+        "visible_source": 15,
+        "blend": 2
+      },
+      "working_final": {
+        "visible_source": 16,
+        "blend": 1
+      },
+      "lift_before_refine": {
+        "visible_source": 16,
+        "blend": 1
+      },
+      "lift_after_refine": {
+        "visible_source": 16,
+        "blend": 1
+      },
+      "original_final": {
+        "visible_source": 17,
+        "blend": 1
+      }
+    }
+  },
+  "python_tests": {
+    "count": 127,
+    "exit_code": 0,
+    "command": "PYTHONPATH=/tmp/starglyph-iteration-deps python3 -m unittest discover -s prototype/eval -p 'test_*.py'",
+    "log_sha256": "5633481379052996dddf3c3227a3d3eed9e3ea3cb12321a30ff6fa66f35bc5b7"
+  },
+  "rust_validation": "unchanged iteration-8 Rust observer/module/manifests verified by hashes; replay passed; no new Rust edits or repeat clippy/format required",
+  "raw_sha256": {
+    "prototype/artifacts/robustness-iteration-10/fixed/input.json": "d36cf1c65a4ba8afd3e55959595f90ce3ef64a4ea2d3bfc27c5fd22b2e85ba32",
+    "prototype/artifacts/robustness-iteration-10/fixed/trace.json": "6e0f13393d6b874c7ad726e86f7fcc2e5ce32957e4b8e2cf810cbc04044721fb",
+    "prototype/artifacts/robustness-iteration-10/fixed/run.log": "6fd4a9d6c225cbeab08f9a102cc028e6dad345b86affb622a7b2fb307c1e0abe",
+    "prototype/artifacts/robustness-iteration-10/review/context-32.jpg": "0eb56e3e495db9827c1d31a337c2d76b574e3068cfeee528710c0a2ea4fa4574",
+    "prototype/artifacts/robustness-iteration-10/review/context-33.jpg": "d069cccb20c0086eb927855daf32843f3c57bbb3d0ebb1a4b6e5d5105479d875"
+  },
+  "frozen_inputs_verified": true,
+  "files_sha256": {
+    "prototype/eval/robustness_wide_pairs.py": "09111089542b557b3bcfdcd10abbbddd7be0a52774333ce858f915d26eedf155",
+    "prototype/eval/robustness_wide_replay.py": "c87cc92786b520ab49745823849f7e6c20688288383c92e4aa70e9222e238e78",
+    "prototype/eval/test_robustness_wide_pairs.py": "6b7b0ff618ebbc89f0503f5ece8fe87fe9070ff861ca9d65ee9ad07fac15e02e",
+    "docs/robustness-iteration-10.md": "d85e52772c7afa239348ec34fe501f1c6e62cdaa192704c4a4d181afd223a7da",
+    "docs/images/robustness-iteration-10-leaf.jpg": "d069cccb20c0086eb927855daf32843f3c57bbb3d0ebb1a4b6e5d5105479d875",
+    "docs/experiments/robustness-iteration-10-review.json": "83d683a1953b96d5152d43ef6b565f4d06733b788ae4fa74f3c7fc9c93588856",
+    "docs/experiments/robustness-iteration-10-protocol.json": "ce3a9466b0220e689d8a6eddb3c44034062650dc3a4d5e8858c71558fbea46e0",
+    "docs/experiments/robustness-iteration-10-geometry.json": "b225f0af4e9bea9c8dcbebea888641e8a8eed1828b95ea775037a5f2f06b2b42",
+    "docs/experiments/robustness-iteration-10-review-protocol.json": "49d98f63f970b1d06f181ffd8d3b2af00bd4e38ffc5f1fabd1d4d5e98b76bc36"
+  },
+  "protected": {
+    "data/samples/sky-samples/manifest.json": {
+      "sha256": "97e229270c7b0f97fce4e1f738917cd91cdff01df3508db29584af70a0ea4871",
+      "matches_head": true
+    },
+    "data/samples/sky-samples/robustness-results.json": {
+      "sha256": "09e6efe61468b4afe896967d583553751d80fe82e65e0ac064528523bbc525e8",
+      "matches_head": true
+    },
+    "data/samples/sky-samples/collection-wcs-review.json": {
+      "sha256": "97c182c51955baee9adce93cde8e93fb98ece6a69bdc606cf871d3a1eef19841",
+      "matches_head": true
+    },
+    "prototype/Cargo.toml": {
+      "sha256": "ea0b115c3ff3465b164e9f35f3f4cef373dbc1dcc25074f77e751eacc55e2840",
+      "matches_head": true
+    },
+    "prototype/Cargo.lock": {
+      "sha256": "59694debace1f5f18e2de398a77ce4d6a1a8f7dd237af646906aa49bfa3b677a",
+      "matches_head": true
+    }
+  },
+  "changes": {
+    "production_code": false,
+    "production_dependencies": false,
+    "original_photographs": false,
+    "published_baseline": false,
+    "holdout_used": false,
+    "new_wcs_runs": 0,
+    "new_tetra3_searches": 0,
+    "new_photographs": 0
+  },
+  "outcome": "second palm-leaf correspondence confirmed in wide rematch; persistent exclusion changes the intermediate fit but converges to the same final geometry; no automatic improvement",
+  "limitations": [
+    "physical star cores and relative field agreement do not establish every individual catalogue identity",
+    "seven blends/component ambiguities and one uncertain boundary source retained in the experiment",
+    "fixed candidate and manual exclusion; no solve-rate, negative or holdout evaluation"
+  ]
+}

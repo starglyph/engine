@@ -1,0 +1,24 @@
+{
+  "iteration": 10,
+  "id": "wm_r_143159342",
+  "split": "development",
+  "case": "drop_detection_all_stages",
+  "stage": "rematch_10_before",
+  "pair_count": 34,
+  "hashes": {
+    "data/samples/sky-samples/images/wm_r_143159342.png": "94f3d61426e03e4fda29b95a1b91038332a09491587acf77df3681c5b919c54d",
+    "data/catalogs/hyg_v42.csv.gz": "5ca9431ff364c8002a4a3efa91b2b9296746aea1543374db4cb6b4fab049d601",
+    "prototype/artifacts/robustness-baseline/wcs-run/wm_r_143159342/downsample-2/field.axy": "84e5272e5e4882691c4a4e5753f0d419a40ebd7f028f673f924194e631d93106",
+    "prototype/artifacts/robustness-iteration-8/verified/trace.json": "32ce52a903c60aaf344e500c605537632db8af18c461d22dfc88488b1c2d3114",
+    "docs/experiments/robustness-iteration-8-geometry.json": "16de19ff134a07a048e710737df2f10b5047d5935572d42e6bc8ffb3b55bb111",
+    "docs/experiments/robustness-iteration-7-review.json": "76de03b80a9fea56b7bc4bef532d70cf948e9dabccea2a6c216422df7a59819e",
+    "prototype/eval/robustness_wide_pairs.py": "09111089542b557b3bcfdcd10abbbddd7be0a52774333ce858f915d26eedf155",
+    "prototype/eval/robustness_geometry.py": "b15495e6ba97832a84d06c4e83bfa16aec704784875fdeccb3f831ceec976034",
+    "prototype/eval/robustness_pairs.py": "78f7de7e20fa71cf924817a8d7ae6a3e69065e833821740d9f635c7caf57f522",
+    "data/samples/sky-samples/manifest.json": "97e229270c7b0f97fce4e1f738917cd91cdff01df3508db29584af70a0ea4871"
+  },
+  "candidates_sha256": "ee8fc9e60e5508c00212f57ee814ac837212b03c7df6ca5a026d9c1d019f7c08",
+  "selection": "all 34 wide-rematch pairs; no residual-based selection",
+  "followup": "new fit only for visually confirmed false pairs; ambiguous/blended identities remain uncertain",
+  "limitations": "physical source review and relative field agreement do not constitute absolute astrometric ground truth"
+}

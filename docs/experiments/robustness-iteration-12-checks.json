@@ -1,0 +1,98 @@
+{
+  "iteration": 12,
+  "split": "development",
+  "ids": [
+    "wm_r_132162731",
+    "wm_r_143159342",
+    "wm_r_149276071"
+  ],
+  "base_commit": "67fbcf8203915f0329eb74d643e526c992bbaf4a",
+  "frozen_inputs_verified": true,
+  "projections": {
+    "count": 234,
+    "max_abs_difference_px": 0.0
+  },
+  "probes": {
+    "total": 117,
+    "outside_both_inputs": 55
+  },
+  "scalar_group_regression": {
+    "nonempty_comparisons": 32,
+    "max_abs_rms_difference_px": 3.552713678800501e-15
+  },
+  "decomposition": {
+    "max_abs_squared_norm_difference_px2": 2.2737367544323206e-13,
+    "grid_and_radius_partitions_preserved": true
+  },
+  "repeat": {
+    "exact_except_elapsed_s": true,
+    "first_elapsed_s": 0.051659898832440376,
+    "repeat_elapsed_s": 0.08498018607497215,
+    "first_results_sha256": "a74ec757320075430662aefc7f1fd6e027b505eabbd401075e3ff4a99f0d6eec",
+    "repeat_results_sha256": "aba06f8fa95112d8227eb5475c553eb88f9464675aa555333e133acca1884576"
+  },
+  "python_tests": {
+    "count": 137,
+    "new_tests": 5,
+    "exit_code": 0,
+    "command": "PYTHONPATH=/tmp/starglyph-iteration-deps python3 -m unittest discover -s prototype/eval -p 'test_*.py'",
+    "log_sha256": "04751990f7f76bac828fd5d7bd1bbfdf004b0367e204bab4cb54c8c65080ed85"
+  },
+  "plotting": {
+    "matplotlib": "3.8.4",
+    "numpy": "1.26.4",
+    "results_sha256": "a74ec757320075430662aefc7f1fd6e027b505eabbd401075e3ff4a99f0d6eec",
+    "script_sha256": "196c307fabfe13a888a83e2ab35e0b1c3accfc6669695eb1987f1f57a5f12f81",
+    "files": {
+      "vectors.png": "e6f6663e7970dc0cbc0cca98f03637a5764acb39cbd2bded190e77ec05a71116",
+      "vectors.svg": "f3088096973f6e32be465a4e3e05b5b9d4ebb139f67956a1df781bf3ec2729be",
+      "vectors.pdf": "f880d195482d8e20889a7cef3f4a3fb4f355acbf4c5fb06f0cb84af507db6e62"
+    }
+  },
+  "files_sha256": {
+    "docs/experiments/robustness-iteration-12-protocol.json": "0569b72973bbb56c6422c27760e0988d97c8947a0b0062def1d059d57ccebe00",
+    "docs/experiments/robustness-iteration-12-results.json": "a74ec757320075430662aefc7f1fd6e027b505eabbd401075e3ff4a99f0d6eec",
+    "docs/images/robustness-iteration-12-vectors.pdf": "f880d195482d8e20889a7cef3f4a3fb4f355acbf4c5fb06f0cb84af507db6e62",
+    "docs/images/robustness-iteration-12-vectors.png": "e6f6663e7970dc0cbc0cca98f03637a5764acb39cbd2bded190e77ec05a71116",
+    "docs/images/robustness-iteration-12-vectors.svg": "f3088096973f6e32be465a4e3e05b5b9d4ebb139f67956a1df781bf3ec2729be",
+    "docs/robustness-iteration-12.md": "afc535e40660972e6befade0b966642e91bb9ed7f8d78adecab640eb55a95ac9",
+    "prototype/eval/robustness_residual_fields.py": "ff653267f15936829c70a7de58cf6ae54901102f8f5acd1c9ee14533e839b29e",
+    "prototype/eval/robustness_residual_plot.py": "196c307fabfe13a888a83e2ab35e0b1c3accfc6669695eb1987f1f57a5f12f81",
+    "prototype/eval/test_robustness_residual_fields.py": "4520f978dad93eae9f9de46571896854f2ef94d34e2fcdd8cf172b3c1082a3fc"
+  },
+  "protected": {
+    "data/samples/sky-samples/manifest.json": {
+      "sha256": "97e229270c7b0f97fce4e1f738917cd91cdff01df3508db29584af70a0ea4871",
+      "matches_head": true
+    },
+    "data/samples/sky-samples/robustness-results.json": {
+      "sha256": "09e6efe61468b4afe896967d583553751d80fe82e65e0ac064528523bbc525e8",
+      "matches_head": true
+    },
+    "data/samples/sky-samples/collection-wcs-review.json": {
+      "sha256": "97c182c51955baee9adce93cde8e93fb98ece6a69bdc606cf871d3a1eef19841",
+      "matches_head": true
+    },
+    "prototype/Cargo.toml": {
+      "sha256": "ea0b115c3ff3465b164e9f35f3f4cef373dbc1dcc25074f77e751eacc55e2840",
+      "matches_head": true
+    },
+    "prototype/Cargo.lock": {
+      "sha256": "59694debace1f5f18e2de398a77ce4d6a1a8f7dd237af646906aa49bfa3b677a",
+      "matches_head": true
+    }
+  },
+  "changes": {
+    "production_code": false,
+    "production_dependencies": false,
+    "original_photographs": false,
+    "published_baseline": false,
+    "holdout_used": false,
+    "new_ground_truth": false,
+    "new_detection_runs": 0,
+    "new_solver_runs": 0,
+    "new_wcs_runs": 0,
+    "new_camera_fits": 0
+  },
+  "conclusion": "Residual directions differ across these three development fields; descriptive evidence does not validate a camera-model change."
+}

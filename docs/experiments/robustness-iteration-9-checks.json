@@ -1,0 +1,120 @@
+{
+  "iteration": 9,
+  "split": "development",
+  "base_commit": "67fbcf8203915f0329eb74d643e526c992bbaf4a",
+  "inputs": 45,
+  "tracks": {
+    "solver": 34,
+    "stress": 10,
+    "scene": 1
+  },
+  "development_negatives": 8,
+  "frozen_inputs_verified": true,
+  "baseline_reports": {
+    "count": 44,
+    "all_match_published_sha256": true,
+    "missing": [
+      {
+        "id": "wm_r_64398618",
+        "reason": "scene single-pose evaluation intentionally not attempted"
+      }
+    ]
+  },
+  "repeat": {
+    "status": "passed",
+    "masks_exact": true,
+    "metrics_exact_except_time": true,
+    "results_sha256": "ff3b952b05350554690a2c136421b9e999e60b4c3f462319d433828e4d161322",
+    "masks_sha256": "ba7931e23451f332d3d2d51a9abd848bd58dbfed46cb0d82f412e9112a285ffa"
+  },
+  "public_masks_semantically_identical_to_raw": true,
+  "python_tests": {
+    "count": 122,
+    "exit_code": 0,
+    "command": "PYTHONPATH=/tmp/starglyph-iteration-deps python3 -m unittest discover -s prototype/eval -p 'test_*.py'",
+    "log_sha256": "cb2e69e36a44fb1b11728116592e13f413c5381355d645ae94dddc70f18fa661",
+    "affected_existing_gates": [
+      "test_automatic_sky.py",
+      "test_gradient_sky.py",
+      "test_matching_search.py"
+    ]
+  },
+  "generation": {
+    "status": "completed",
+    "process_errors": 0,
+    "observed_timeouts": 0,
+    "sum_image_decode_and_generation_ms": 30107.904007658362,
+    "repeat_exact_except_time": true
+  },
+  "summary": {
+    "frames": 45,
+    "decisions": {
+      "mask": 41,
+      "abstain_heterogeneous_seed": 3,
+      "abstain_small_region": 1
+    },
+    "reviewed_total": 117,
+    "reviewed_retained": 99,
+    "leaf_excluded": true,
+    "preliminary_gate_passed": false
+  },
+  "prior_successes_screened": 24,
+  "prior_successes_losing_at_least_one_saved_inlier": 10,
+  "files_sha256": {
+    "prototype/eval/robustness_mask_screen.py": "a5e486c2c58f3cf576a8ceb8c977d4786ccda8eae52a795bb89122b60d23767f",
+    "prototype/eval/test_robustness_mask_screen.py": "a81cb62848e28bf397dd64fd0fa3697c49c836f9b470e141340effbc542675ee",
+    "docs/robustness-iteration-9.md": "8e2dbc27e9d51279bd13d05f15d0d65a0787d8bb40f46f69157f31383fc37985",
+    "docs/images/robustness-iteration-9-masks.jpg": "76d5161dcf3f0a9cbca1b7ddafd041c836ab41fcfd8eee1d974a37ab49844ff3",
+    "docs/experiments/robustness-iteration-9-protocol.json": "ce064ff72e479235af81713452477246ff4c2896fb252bc36bb9ee33999606b8",
+    "docs/experiments/robustness-iteration-9-results.json": "ff3b952b05350554690a2c136421b9e999e60b4c3f462319d433828e4d161322",
+    "docs/experiments/robustness-iteration-9-masks.json": "342b0a6ba50d462423363ad2ded459e40fae85ce14ea9dda09be27281893f57f"
+  },
+  "protected": {
+    "data/samples/sky-samples/manifest.json": {
+      "sha256": "97e229270c7b0f97fce4e1f738917cd91cdff01df3508db29584af70a0ea4871",
+      "matches_head": true
+    },
+    "data/samples/sky-samples/robustness-results.json": {
+      "sha256": "09e6efe61468b4afe896967d583553751d80fe82e65e0ac064528523bbc525e8",
+      "matches_head": true
+    },
+    "data/samples/sky-samples/collection-wcs-review.json": {
+      "sha256": "97c182c51955baee9adce93cde8e93fb98ece6a69bdc606cf871d3a1eef19841",
+      "matches_head": true
+    },
+    "prototype/Cargo.toml": {
+      "sha256": "ea0b115c3ff3465b164e9f35f3f4cef373dbc1dcc25074f77e751eacc55e2840",
+      "matches_head": true
+    },
+    "prototype/Cargo.lock": {
+      "sha256": "59694debace1f5f18e2de398a77ce4d6a1a8f7dd237af646906aa49bfa3b677a",
+      "matches_head": true
+    },
+    "prototype/eval/gradient_sky_mask.py": {
+      "sha256": "ad7ceb5a96310eff0b846082e5729f151284f80e1866726209d4db5474246153",
+      "matches_head": true
+    },
+    "prototype/eval/automatic_sky_mask.py": {
+      "sha256": "5435ab09f3ed8e240671a562c253897bd122748c7d42e75340de9da7bcea1b62",
+      "matches_head": true
+    }
+  },
+  "changes": {
+    "production_code": false,
+    "production_dependencies": false,
+    "mask_algorithm": false,
+    "mask_parameters": false,
+    "published_baseline": false,
+    "original_photographs": false,
+    "holdout_used": false,
+    "new_detection_runs": 0,
+    "new_solve_runs": 0,
+    "new_wcs_runs": 0
+  },
+  "outcome": "fixed rgb_gradient_v2 excludes the confirmed leaf but loses 18/117 reviewed star probes; preliminary gate fails, no full solve A/B or default change",
+  "limitations": [
+    "mask membership only, not results of redetection with sky statistics/fill",
+    "no independent absolute astrometric ground truth or exhaustive segmentation truth",
+    "negative mask output is not a solver false acceptance; no false acceptance rate measured"
+  ]
+}

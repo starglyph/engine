@@ -1,0 +1,133 @@
+{
+  "iteration": 11,
+  "id": "wm_r_143159342",
+  "split": "development",
+  "base_commit": "67fbcf8203915f0329eb74d643e526c992bbaf4a",
+  "run": {
+    "status": "completed",
+    "exit_code": 0,
+    "command": [
+      "cargo",
+      "test",
+      "--offline",
+      "--locked",
+      "--release",
+      "--manifest-path",
+      "/home/agent/work/starglyph/engine/prototype/artifacts/robustness-iteration-11/fixed/pipeline/Cargo.toml",
+      "-p",
+      "starglyph-core",
+      "solve::pair_refit::fixed_pairs",
+      "--",
+      "--ignored",
+      "--nocapture"
+    ],
+    "elapsed_s": 106.30263540148735
+  },
+  "fit_count": 3,
+  "pair_counts": [
+    34,
+    33,
+    25
+  ],
+  "exact_control_cameras_reproduced": 2,
+  "common_prior_weight": 5.595584135109689,
+  "prior_scale": 1,
+  "subset_selected_before_fit": true,
+  "geometry_comparison": {
+    "improved_vs_34": 23,
+    "worsened_vs_34": 17,
+    "probe_count": 40,
+    "outside_previous_inputs_count": 14
+  },
+  "existing_centroid_sensitivity": {
+    "aperture_8_vs_12": {
+      "count": 25,
+      "rms_px": 0.35699973050179085,
+      "median_px": 0.2618971519714445,
+      "max_px": 0.7813628612444565
+    },
+    "detector_vs_nearest_axy": {
+      "count": 25,
+      "rms_px": 0.13588275715339032,
+      "median_px": 0.08446641934302393,
+      "max_px": 0.3393611285757465
+    }
+  },
+  "sum_optimizer_ms": 0.07462200000000001,
+  "python_tests": {
+    "count": 132,
+    "exit_code": 0,
+    "command": "PYTHONPATH=/tmp/starglyph-iteration-deps python3 -m unittest discover -s prototype/eval -p 'test_*.py'",
+    "log_sha256": "a3fd2cc0329963c3dbf4b4f1163c801a96a1c4c26ed3bcb9655c1262b373c68e"
+  },
+  "rustfmt": {
+    "command": "rustfmt --check --edition 2021 prototype/eval/pair_refit.rs",
+    "exit_code": 0
+  },
+  "clippy": {
+    "command": "CARGO_TARGET_DIR=artifacts/robustness-iteration-11/fixed/pipeline/target cargo clippy --offline --locked --release --manifest-path artifacts/robustness-iteration-11/fixed/pipeline/Cargo.toml -p starglyph-core --all-targets --no-deps -- -D warnings",
+    "cwd": "prototype",
+    "exit_code": 0,
+    "log_sha256": "d72914018683625ec54f5c250b6f81bcf5313073463a17832dc5dcf4b9b8b92d"
+  },
+  "isolated_lock": {
+    "sha256": "2fc70c7f2f8ee7c6eb227a3bbabb358b203ab87489477d96607354b1b94ea69f",
+    "packages": 189,
+    "no_added_versions": true,
+    "resolved_before_freeze": true
+  },
+  "raw_sha256": {
+    "input.json": "b2028840db8f71e3324e2a49c650fdc776b8b23681f04ac83d135b727729db76",
+    "fits.json": "cc8aab8132e217c40777a7657bab86eebe1ce22e3900dee2e38cad26f6a1ed86",
+    "run.log": "cdcbf47c43be4f2580feda1f3999b6536b8d2f95c66aaccc8efde739cb9437c7",
+    "protocol.json": "37625dc6289bdbb04424ff2706317b33e477e297d455a8200dabcfd6e9f9b929"
+  },
+  "frozen_inputs_verified": true,
+  "files_sha256": {
+    "prototype/eval/robustness_single_fit.py": "f729d56db8cb49d736acd4dc942822d527b8d4a515e36cf142000b61cfc5dff4",
+    "prototype/eval/test_robustness_single_fit.py": "9792ac80ffb38c11041aa8ff8e723f93109a4f0e5219d6393896191d21b73ee2",
+    "prototype/eval/pair_refit.rs": "8a064163d8dc43db1d858e3567565f9d822ec1e0e3e729a383fabbd8df5dc348",
+    "docs/robustness-iteration-11.md": "cd976eedb90012900d46e1438df9bb8df3e29d6e5d6ec2d5c00528561e695984",
+    "docs/experiments/robustness-iteration-11-protocol.json": "37625dc6289bdbb04424ff2706317b33e477e297d455a8200dabcfd6e9f9b929",
+    "docs/experiments/robustness-iteration-11-geometry.json": "1fc0727012dcea3baccbbd4f46f6e346861427a4753b45949e583f035e74a6f5"
+  },
+  "protected": {
+    "data/samples/sky-samples/manifest.json": {
+      "sha256": "97e229270c7b0f97fce4e1f738917cd91cdff01df3508db29584af70a0ea4871",
+      "matches_head": true
+    },
+    "data/samples/sky-samples/robustness-results.json": {
+      "sha256": "09e6efe61468b4afe896967d583553751d80fe82e65e0ac064528523bbc525e8",
+      "matches_head": true
+    },
+    "data/samples/sky-samples/collection-wcs-review.json": {
+      "sha256": "97c182c51955baee9adce93cde8e93fb98ece6a69bdc606cf871d3a1eef19841",
+      "matches_head": true
+    },
+    "prototype/Cargo.toml": {
+      "sha256": "ea0b115c3ff3465b164e9f35f3f4cef373dbc1dcc25074f77e751eacc55e2840",
+      "matches_head": true
+    },
+    "prototype/Cargo.lock": {
+      "sha256": "59694debace1f5f18e2de398a77ce4d6a1a8f7dd237af646906aa49bfa3b677a",
+      "matches_head": true
+    }
+  },
+  "changes": {
+    "production_code": false,
+    "production_dependencies": false,
+    "original_photographs": false,
+    "published_baseline": false,
+    "holdout_used": false,
+    "new_wcs_runs": 0,
+    "new_tetra3_searches": 0,
+    "new_photographs": 0,
+    "new_visual_annotations": 0
+  },
+  "outcome": "25 visually isolated sources slightly improve all-40 and outside-input RMS, but worsen Albireo and left/top edges; mixed diagnostic result, no automatic improvement",
+  "limitations": [
+    "one wide fixed fit, not full rematch or final geometry",
+    "manual subset selection and conditional catalogue identities; no absolute astrometric ground truth",
+    "no collection solve-rate, negative or holdout evaluation"
+  ]
+}

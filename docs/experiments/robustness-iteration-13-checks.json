@@ -1,0 +1,244 @@
+{
+  "iteration": 13,
+  "split": "development",
+  "base_commit": "67fbcf8203915f0329eb74d643e526c992bbaf4a",
+  "diagnostic_gate_passed": false,
+  "frozen_inputs_verified": true,
+  "control_fits_exact": 3,
+  "training_counts": [
+    17,
+    26,
+    19
+  ],
+  "outside_counts": [
+    18,
+    14,
+    23
+  ],
+  "cases": [
+    {
+      "id": "wm_r_132162731",
+      "improved": 23,
+      "worsened": 12,
+      "outside_improved": 13,
+      "outside_worsened": 5,
+      "criteria": {
+        "primary_improves_10pct": null,
+        "regression_frame_outside_pass": true,
+        "edge_regressions": [],
+        "no_bound_hit": true,
+        "all_projectable": true
+      },
+      "rust_python_max_abs_px": 4.973799150320701e-13,
+      "sensor_covered": true
+    },
+    {
+      "id": "wm_r_143159342",
+      "improved": 28,
+      "worsened": 12,
+      "outside_improved": 9,
+      "outside_worsened": 5,
+      "criteria": {
+        "primary_improves_10pct": false,
+        "regression_frame_outside_pass": null,
+        "edge_regressions": [
+          "top_10pct"
+        ],
+        "no_bound_hit": true,
+        "all_projectable": true
+      },
+      "rust_python_max_abs_px": 1.3642420526593924e-12,
+      "sensor_covered": true
+    },
+    {
+      "id": "wm_r_149276071",
+      "improved": 22,
+      "worsened": 20,
+      "outside_improved": 11,
+      "outside_worsened": 12,
+      "criteria": {
+        "primary_improves_10pct": null,
+        "regression_frame_outside_pass": true,
+        "edge_regressions": [
+          "left_10pct"
+        ],
+        "no_bound_hit": true,
+        "all_projectable": true
+      },
+      "rust_python_max_abs_px": 3.410605131648481e-13,
+      "sensor_covered": true
+    }
+  ],
+  "run": {
+    "status": "completed",
+    "exit_code": 0,
+    "command": [
+      "cargo",
+      "test",
+      "--offline",
+      "--locked",
+      "--release",
+      "--manifest-path",
+      "/home/agent/work/starglyph/engine/prototype/artifacts/robustness-iteration-13/final/pipeline/Cargo.toml",
+      "-p",
+      "starglyph-core",
+      "solve::radial_refit::",
+      "--",
+      "--include-ignored",
+      "--nocapture"
+    ],
+    "elapsed_s": 52.18242640979588
+  },
+  "overhead_correction": {
+    "initial_run": {
+      "status": "completed",
+      "exit_code": 0,
+      "command": [
+        "cargo",
+        "test",
+        "--offline",
+        "--locked",
+        "--release",
+        "--manifest-path",
+        "/home/agent/work/starglyph/engine/prototype/artifacts/robustness-iteration-13/fixed/pipeline/Cargo.toml",
+        "-p",
+        "starglyph-core",
+        "solve::radial_refit::",
+        "--",
+        "--include-ignored",
+        "--nocapture"
+      ],
+      "elapsed_s": 55.786447156220675
+    },
+    "unchanged_inputs_and_protocol_settings": true,
+    "all_fit_fields_exact_except_elapsed_ms": true,
+    "initial_protocol_sha256": "42321d94723549a52d647db1179d170c621c62066025d80efb018f72dff45cd7",
+    "initial_rust_sha256": "a1ef5db7ae7dc3be8f832f847b2cbce8b3028555c153529413f49af56566bb3c",
+    "initial_fits_sha256": "a54cc5052ab3638e4a7ecdabe825c4a11e901fec797e0b2e02e1c1635c267616",
+    "timings": [
+      {
+        "id": "wm_r_132162731",
+        "arm": "k1",
+        "first_elapsed_ms": 0.038433999999999996,
+        "final_elapsed_ms": 0.032512000000000006
+      },
+      {
+        "id": "wm_r_132162731",
+        "arm": "k1_k2",
+        "first_elapsed_ms": 0.31611,
+        "final_elapsed_ms": 0.07425100000000001
+      },
+      {
+        "id": "wm_r_143159342",
+        "arm": "k1",
+        "first_elapsed_ms": 0.056707,
+        "final_elapsed_ms": 0.044966000000000006
+      },
+      {
+        "id": "wm_r_143159342",
+        "arm": "k1_k2",
+        "first_elapsed_ms": 0.430246,
+        "final_elapsed_ms": 0.078088
+      },
+      {
+        "id": "wm_r_149276071",
+        "arm": "k1",
+        "first_elapsed_ms": 0.037531999999999996,
+        "final_elapsed_ms": 0.029686999999999998
+      },
+      {
+        "id": "wm_r_149276071",
+        "arm": "k1_k2",
+        "first_elapsed_ms": 0.351457,
+        "final_elapsed_ms": 0.066276
+      }
+    ],
+    "change": "rotation computed once per residual vector instead of once per source; no model or parameter tuning"
+  },
+  "python_tests": {
+    "count": 143,
+    "new": 6,
+    "exit_code": 0,
+    "command": "PYTHONPATH=/tmp/starglyph-iteration-deps python3 -m unittest discover -s prototype/eval -p 'test_*.py'",
+    "log_sha256": "89f826c7b860cdf0d8e254d25bd054f3b6396b1707cba0efb6e314538b0a13d7"
+  },
+  "rust_tests": {
+    "passed": 100,
+    "ignored": 7,
+    "exit_code": 0,
+    "command": "CARGO_TARGET_DIR=artifacts/robustness-iteration-13/final/pipeline/target cargo test --offline --locked --release --manifest-path artifacts/robustness-iteration-13/final/pipeline/Cargo.toml -p starglyph-core --lib",
+    "cwd": "prototype",
+    "log_sha256": "13a061b8d840cf59dfa36056b5e528535f0dbadfb1f30d86ce2cfe63d89f8d4e"
+  },
+  "rust_diagnostic_tests": {
+    "passed": 4,
+    "including_fixed_pair_run": true,
+    "new_unit_tests": 3
+  },
+  "rustfmt": {
+    "exit_code": 0,
+    "command": "rustfmt --check --edition 2021 prototype/eval/radial_refit.rs"
+  },
+  "clippy": {
+    "exit_code": 0,
+    "command": "CARGO_TARGET_DIR=artifacts/robustness-iteration-13/final/pipeline/target cargo clippy --offline --locked --release --manifest-path artifacts/robustness-iteration-13/final/pipeline/Cargo.toml -p starglyph-core --all-targets --no-deps -- -D warnings",
+    "cwd": "prototype",
+    "log_sha256": "1b969355b4b32ebed1bb0e3814a1c1ddbbcdebc555340abe95560b10be5ec266"
+  },
+  "isolated_lock": {
+    "sha256": "2fc70c7f2f8ee7c6eb227a3bbabb358b203ab87489477d96607354b1b94ea69f",
+    "packages": 189,
+    "no_added_versions": true
+  },
+  "raw_sha256": {
+    "protocol.json": "e0e63b6327e8f8bf056dd04e34db175a79ac5c3f4e54d55008e212f330c80001",
+    "input.json": "0114049349815c49a98e549a234796730923d0f6c9e7b73bad26a40baf85b068",
+    "fits.json": "3bd80093768a2fc72e95d16f32ff4206f104fba8b1bb3afd07e46cb40fb212d2",
+    "geometry.json": "85ebf434154c458f52c339daa86b712b9d494633ff0d5c4d37f85e169d88aabd",
+    "run.log": "48ebde9a3d9c716f5a9b839f26a6ae3469e5e56697b0c3bc4205b4a15a5ef61d",
+    "pipeline/crates/starglyph-core/src/solve/radial_optimizer.rs": "1d1e3d1822e54d6cf0cda6d14ab7b3398b5a50c95bf8dd5a2edab642925b0b62"
+  },
+  "files_sha256": {
+    "prototype/eval/radial_refit.rs": "5e61d4fc81406599ebb9da14db87ea7279844d3f20e08680c72ac5cf3cd9aa84",
+    "prototype/eval/robustness_radial_fit.py": "1b4ed469f19ca7c5eb441eec9c69dd1deb3bdf466ee4f502bd8625763b130c8c",
+    "prototype/eval/test_robustness_radial_fit.py": "8034f4199d910d71c8edf69e81c4132186ad9b38c7b2df8d988c803bc28e1e6e",
+    "docs/robustness-iteration-13.md": "13d62d96e4b9dc8f371bc50571081b8867b53e463a9481cf4bc835254d7eb512",
+    "docs/experiments/robustness-iteration-13-protocol.json": "e0e63b6327e8f8bf056dd04e34db175a79ac5c3f4e54d55008e212f330c80001",
+    "docs/experiments/robustness-iteration-13-input.json": "0114049349815c49a98e549a234796730923d0f6c9e7b73bad26a40baf85b068",
+    "docs/experiments/robustness-iteration-13-geometry.json": "85ebf434154c458f52c339daa86b712b9d494633ff0d5c4d37f85e169d88aabd"
+  },
+  "protected": {
+    "data/samples/sky-samples/manifest.json": {
+      "sha256": "97e229270c7b0f97fce4e1f738917cd91cdff01df3508db29584af70a0ea4871",
+      "matches_head": true
+    },
+    "data/samples/sky-samples/robustness-results.json": {
+      "sha256": "09e6efe61468b4afe896967d583553751d80fe82e65e0ac064528523bbc525e8",
+      "matches_head": true
+    },
+    "data/samples/sky-samples/collection-wcs-review.json": {
+      "sha256": "97c182c51955baee9adce93cde8e93fb98ece6a69bdc606cf871d3a1eef19841",
+      "matches_head": true
+    },
+    "prototype/Cargo.toml": {
+      "sha256": "ea0b115c3ff3465b164e9f35f3f4cef373dbc1dcc25074f77e751eacc55e2840",
+      "matches_head": true
+    },
+    "prototype/Cargo.lock": {
+      "sha256": "59694debace1f5f18e2de398a77ce4d6a1a8f7dd237af646906aa49bfa3b677a",
+      "matches_head": true
+    }
+  },
+  "changes": {
+    "production_code": false,
+    "production_dependencies": false,
+    "published_baseline": false,
+    "photographs": false,
+    "holdout": false,
+    "new_ground_truth": false,
+    "new_wcs_runs": 0,
+    "collection_solver_runs": 0,
+    "regression_solver_test": "existing starglyph-core blind_solve_g128_real_frame"
+  },
+  "conclusion": "One extra radial term fails the frozen development diagnostic: primary outside RMS improvement below 10%, upper/left edge regressions; not enabled by default."
+}
