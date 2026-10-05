@@ -1,0 +1,60 @@
+{
+  "iteration": 31,
+  "id": "wm_r_132162731",
+  "split": "development",
+  "holdout": false,
+  "case_names": [
+    "original22_external",
+    "coverage22_external",
+    "original22_native_r8",
+    "coverage22_native_r8",
+    "original22_native_r12",
+    "coverage22_native_r12"
+  ],
+  "hashes": {
+    "prototype/eval/robustness_tangent_fit.py": "6deb6ed61fd19e464f6eec34988d262dedb79d2294caf85917b4041bff76f8da",
+    "prototype/artifacts/robustness-iteration-31/input.json": "a6cb2fb9a7ccd1e2fc3c0c9664d3d0d4700ac4dde8d9f142c1aa3f44ed900b89",
+    "prototype/artifacts/robustness-iteration-30/fits.json": "0514bf8f51444e64e2c8d0982367a00a2099532aaff1647adc42122d1628b143",
+    "prototype/artifacts/robustness-iteration-30/protocol.json": "a642bf9437b98538559407fac964480a72ec68949cb8b3aacf6814e8105b25af",
+    "prototype/artifacts/robustness-iteration-30/input.json": "bfd836dd183cbc27d3b36ee902cf4022c4793dd5ffaa0901935a2b8b052bb07b",
+    "docs/experiments/robustness-iteration-30-checks.json": "d3dd65753c837459e39ab8fe077ff64a0b396e0ae82388f2f8f73e1bc9c938bf",
+    "docs/experiments/robustness-iteration-30-results.json": "f1a9a3966a33b414b03883e2d9c9f4749427ba7a6b2c7261645d7f8e1e62ad10",
+    "docs/experiments/robustness-iteration-30-protocol.json": "a642bf9437b98538559407fac964480a72ec68949cb8b3aacf6814e8105b25af",
+    "docs/experiments/robustness-iteration-13-geometry.json": "85ebf434154c458f52c339daa86b712b9d494633ff0d5c4d37f85e169d88aabd",
+    "docs/experiments/robustness-iteration-5-geometry.json": "dc93a959d0a8930da1984a721fb9fd9fd606b882611a56af58c1663f1a69f531",
+    "prototype/eval/robustness_observability.py": "9205b8d9390ebcbc82a4d8372140b79feefa7722694a0df299e2097562c2c599",
+    "prototype/eval/robustness_coverage_fit.py": "06827aa90649d5b62f1a23ce2b3847359b78714b273420466f34ad25ae4db363",
+    "prototype/eval/robustness_single22_residuals.py": "aa95c86649647ce9e85c7bda644777b41634aad19e5b0eebdf4296da771464f7",
+    "prototype/eval/collection_run.py": "6bf1108b48c21a40bdd00023eae564c27c5062fd63beb45d32ddde86154bd5b5",
+    "prototype/eval/compare_local_wcs.py": "1a8c83f6d0a19f3cbbe2a96f0db79a0ab60ac33fd09ad6c5c69472672ef31a3b",
+    "data/samples/sky-samples/manifest.json": "97e229270c7b0f97fce4e1f738917cd91cdff01df3508db29584af70a0ea4871",
+    "data/samples/sky-samples/robustness-results.json": "09e6efe61468b4afe896967d583553751d80fe82e65e0ac064528523bbc525e8",
+    "data/samples/sky-samples/collection-wcs-review.json": "97c182c51955baee9adce93cde8e93fb98ece6a69bdc606cf871d3a1eef19841"
+  },
+  "rcond": 1e-12,
+  "parameter_order": [
+    "ra_deg",
+    "dec_deg",
+    "roll_deg",
+    "focal_px",
+    "k1"
+  ],
+  "analyses": [
+    "one Gauss-Newton step on original22 residuals with original nonzero prior residual",
+    "optimistic in-sample tangent correction on common19; report transfer back to original22",
+    "19 leave-one-probe-out corrections on18 common probes; evaluate excluded x/y together"
+  ],
+  "criteria": [
+    "stationary diagnostic if additional original22 RMS gain<0.01px in every case",
+    "LOO descriptive transfer passes only with>=10percent strict15 RMS decrease and no group RMS increase>0.5px in all6 cases",
+    "LOO metrics pool19 different linear corrections, never claim one improved physical camera",
+    "no nonlinear extrapolation, new parameter, rematch, acceptance change or ground-truth promotion"
+  ],
+  "limitations": [
+    "local tangent space only, not global model adequacy",
+    "prior camera trained on different22; common19 excluded from all previous inputs to fit30",
+    "same-field conditional identities; no collection holdout"
+  ],
+  "nonlinear_fits": 0,
+  "new_searches": 0
+}

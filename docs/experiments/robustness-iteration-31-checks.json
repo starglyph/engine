@@ -1,0 +1,60 @@
+{
+  "iteration": 31,
+  "python_tests": {
+    "command": [
+      "python3",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "eval",
+      "-p",
+      "test_*.py"
+    ],
+    "exit_code": 0,
+    "elapsed_s": 4.380694920197129
+  },
+  "python_test_count": 227,
+  "repeated_measurement": {
+    "command": [
+      "python3",
+      "eval/robustness_tangent_fit.py",
+      "measure",
+      "--out-dir",
+      "/home/agent/work/starglyph/engine/prototype/artifacts/robustness-iteration-31"
+    ],
+    "exit_code": 0,
+    "elapsed_s": 0.9181931801140308
+  },
+  "frozen_input_hashes_valid": true,
+  "prior_fit30_hashes_valid": true,
+  "summary_repeat_identical": true,
+  "public_local_semantically_equal": true,
+  "reproduced_probe_projections": 210,
+  "training_residual_vectors_checked": 132,
+  "training_residual_tolerance_px": 1e-08,
+  "linear_system_count": 126,
+  "leave_one_probe_out_systems": 114,
+  "all_loo_full_rank": true,
+  "max_loo_normalized_condition": 5.688835395454155,
+  "nonlinear_fits": 0,
+  "new_searches": 0,
+  "production_changed": false,
+  "holdout": false,
+  "ground_truth_promoted": false,
+  "gate_scope": "Offline tangent-space diagnostics only. No Rust changes, rebuild, CLI, collection or negative trials.",
+  "protected_hashes": {
+    "data/samples/sky-samples/manifest.json": "97e229270c7b0f97fce4e1f738917cd91cdff01df3508db29584af70a0ea4871",
+    "data/samples/sky-samples/robustness-results.json": "09e6efe61468b4afe896967d583553751d80fe82e65e0ac064528523bbc525e8",
+    "data/samples/sky-samples/collection-wcs-review.json": "97c182c51955baee9adce93cde8e93fb98ece6a69bdc606cf871d3a1eef19841"
+  },
+  "artifact_hashes": {
+    "prototype/artifacts/robustness-iteration-31/protocol.json": "06770fe9065f3e3d4403561a37426241a93fc57cf0b9d07184935bda49a5b650",
+    "prototype/artifacts/robustness-iteration-31/input.json": "a6cb2fb9a7ccd1e2fc3c0c9664d3d0d4700ac4dde8d9f142c1aa3f44ed900b89",
+    "prototype/artifacts/robustness-iteration-31/results.json": "b2370002f44e792a0fa88d1538bbf794cea585e34c8479e30a4d32897b37112f",
+    "prototype/eval/test_robustness_tangent_fit.py": "ca87579b79e3b04182ef594638d8f91a8b5e77597c8961e5f5c411c00e351166",
+    "docs/experiments/robustness-iteration-31-protocol.json": "06770fe9065f3e3d4403561a37426241a93fc57cf0b9d07184935bda49a5b650",
+    "docs/experiments/robustness-iteration-31-input.json": "f435fd69e5a68fa1b43ddb438e7c24e9bd05f172d02ab85afbfa68b480614c8c",
+    "docs/experiments/robustness-iteration-31-results.json": "f466bedf0fe2b714bed6e2886dc06915981db427b59bc665fe82a59e40ce1f3b"
+  }
+}
