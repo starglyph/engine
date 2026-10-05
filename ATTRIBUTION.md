@@ -190,3 +190,10 @@ NOIRLab/AURA/NSF, **CC BY 4.0**, with its original source in the collection
 attribution. The figure retains **CC BY 4.0**. Changes: crops, uniform resizing,
 display brightness ×1.5, probe circles and coordinate labels. No new photograph
 or independent star identity is supplied.
+
+Iteration 38 matcher counters (`docs/experiments/robustness-iteration-38-*.json`)
+reuse the iteration 36/37 photograph-derived coordinates: NOIRLab/AURA/NSF
+(`wm_r_134291495`) and Mmfgh (`wm_r_112929230`), **CC BY 4.0**. Original
+source links are in the collection attribution. Catalog identifiers remain
+subject to the existing catalog attribution and license; derived HYG/Astronexus
+tables retain **CC BY-SA 4.0**. No new photograph or confirmed star identity.

@@ -1,0 +1,54 @@
+{
+  "iteration": 38,
+  "python_tests": 258,
+  "rust_tests": 2,
+  "tests_passed": true,
+  "baseline_results_exact": 432,
+  "target_exhaustive_quartet_checks": 12480,
+  "nonfinite_probabilities": 0,
+  "attempt_classification": {
+    "control": {
+      "ratio_rejection": 46,
+      "probability_rejection": 120,
+      "TooFew": 26
+    },
+    "manual_promotion": {
+      "probability_rejection": 190,
+      "ratio_rejection": 2
+    }
+  },
+  "strict_clippy_passed": false,
+  "strict_clippy_reason": "Existing tetra3_internal.rs caller: unnecessary f64 cast at CameraModel::from_fov.",
+  "clippy_with_legacy_cast_exception_passed": true,
+  "protected_hashes": {
+    "data/samples/sky-samples/manifest.json": "97e229270c7b0f97fce4e1f738917cd91cdff01df3508db29584af70a0ea4871",
+    "data/samples/sky-samples/robustness-results.json": "09e6efe61468b4afe896967d583553751d80fe82e65e0ac064528523bbc525e8",
+    "data/samples/sky-samples/collection-wcs-review.json": "97c182c51955baee9adce93cde8e93fb98ece6a69bdc606cf871d3a1eef19841"
+  },
+  "artifact_hashes": {
+    "docs/experiments/robustness-iteration-38-input.json": "01805a97fe03f0a63e00e6b161c79d51c10b1dabc51045cfa862a410dcf0bb08",
+    "docs/experiments/robustness-iteration-38-protocol.json": "0b2fdb1f525ae9525cef756d9cbc5c31dd060460678ec3a14e733ca8866549e5",
+    "docs/experiments/robustness-iteration-38-results.json": "be549fa8faa595379cf65f821c1c0ea469046925207f9b285bf6aabb6f3fe74c",
+    "prototype/eval/robustness_matcher_funnel.py": "2018cd5d003ee5c630efbb49b7c53280bdb44f575194a47cffbd51ff9a3412fc",
+    "prototype/eval/tetra3_funnel.rs": "831b92ff4b46fe90cfaf8f5760eaa80dabf55db81d63633e01381f8fc59f74d6",
+    "prototype/eval/test_robustness_matcher_funnel.py": "1efa85c762298c88531f1207a267708fc814a0bc34ef62de39178ba2f256e5cb",
+    "prototype/artifacts/robustness-iteration-38/trace": "a6661b3117654f4e8f180813dec28d6702519df519caababf43a9e28c5884476",
+    "prototype/artifacts/robustness-iteration-38/binary.json": "3fce3c3605581b65c9cd1d59953eee364ab65c2820988bfc6922058c513c9b3c",
+    "prototype/artifacts/robustness-iteration-38/raw.json": "a3202247b6c754e76a3d0583494be168ce6b10c90f6b13d9e31484defce98478",
+    "prototype/artifacts/robustness-iteration-38/run.json": "c1df013b0459a92fd61b23134de4b44b1b37102d84e61e3dd3ddfdf805b4e607",
+    "prototype/artifacts/robustness-iteration-38/run.log": "9aec7a5d9cf2e413ea8a3e1e9b87aabed32e7a3a650adfab477e6e22573559bf",
+    "prototype/artifacts/robustness-iteration-38/build.log": "b9829bb35065805666c75d1dff36bb8fd32312d14fea90a439c3214458af296a",
+    "prototype/artifacts/robustness-iteration-38/build.json": "cf3ed94dae4f51e94d17b7dcd3272af7e9d373bd03f26d87d85f994e0c6d4ff3",
+    "prototype/artifacts/robustness-iteration-38/rust-tests.json": "3d8eccbdb5931ac9373f9a6f2e04dc0407cbbb5d9aaf271df27b726523a7615e",
+    "prototype/artifacts/robustness-iteration-38/rust-tests.log": "d513158bff0a511a552a8e3508dfbd9fad624406c3248a31c78bd012b343897f",
+    "prototype/artifacts/robustness-iteration-38/python-tests.log": "4ad7c0a4952735cd67ea83a5fd3dfd719540c89705a2a84557e30a00c26d93a2",
+    "prototype/artifacts/robustness-iteration-38/clippy.json": "e09617a3fed7a62d60a706b6f7785f9e451c3038d98250785abb313389e23f26",
+    "prototype/artifacts/robustness-iteration-38/clippy.log": "c83623c2d4d3e0c073e84a9c2b590222ff92c8dd17d55750aff10980b998aafd",
+    "prototype/artifacts/robustness-iteration-38/clippy-legacy-cast.json": "b6336c00df2b871f8231138303f4bc342652d76d8dd536cba7863cc08d7a3c6e",
+    "prototype/artifacts/robustness-iteration-38/clippy-legacy-cast.log": "18368aba77672ca4ee153a254245fa700b73b9781ab0bfbadd3fb86b48ac0819",
+    "prototype/artifacts/robustness-iteration-38/harness/Cargo.lock": "081ceb53a973ae17d068bd9b1a41fbd546d2f8d65bc1b8fc9403ddc65921667d"
+  },
+  "production_changed": false,
+  "holdout": false,
+  "automatic_improvement_confirmed": false
+}
