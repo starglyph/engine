@@ -1,0 +1,137 @@
+{
+  "iteration": 30,
+  "id": "wm_r_132162731",
+  "split": "development",
+  "holdout": false,
+  "manual_diagnostic": true,
+  "selection": {
+    "added_probe_ids": [
+      20,
+      1,
+      6
+    ],
+    "removed_pair_ids": [
+      10,
+      3,
+      1
+    ],
+    "donor_cell": [
+      0,
+      1
+    ],
+    "donor_count": 7,
+    "central_probe_ids": [
+      20,
+      13,
+      1,
+      33,
+      5,
+      6
+    ]
+  },
+  "case_names": [
+    "reproduce_single22",
+    "original22_external",
+    "coverage22_external",
+    "original22_native_r8",
+    "coverage22_native_r8",
+    "original22_native_r12",
+    "coverage22_native_r12"
+  ],
+  "group_probe_ids": {
+    "left_10pct": [
+      24,
+      29
+    ],
+    "right_10pct": [
+      4,
+      19,
+      25
+    ],
+    "top_10pct": [
+      12,
+      19,
+      25
+    ],
+    "bottom_10pct": [],
+    "common_unused": [
+      4,
+      5,
+      12,
+      13,
+      15,
+      16,
+      17,
+      19,
+      23,
+      24,
+      25,
+      27,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35
+    ],
+    "strict_unused": [
+      5,
+      13,
+      15,
+      16,
+      17,
+      23,
+      24,
+      27,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35
+    ],
+    "central_unused": [
+      5,
+      13,
+      33
+    ]
+  },
+  "criteria": [
+    "reproduce saved detector-single22 camera with existing harness tolerances",
+    "coverage favourable only if strict common-unused RMS falls>=10percent and no common-unused group RMS grows>0.5px",
+    "apply criterion separately to each of3 matched centroid-method fits; all3 must pass",
+    "always report every probe; fitted sources excluded from shared assessment, including edge groups",
+    "no automatic improvement, solved status, ground truth or causal isolation of coverage from source identity"
+  ],
+  "budget": "one existing production5parameter LM per case; same initial, natural k1 prior, no restarts/rematches; process limit60s",
+  "hashes": {
+    "prototype/eval/robustness_coverage_fit.py": "06827aa90649d5b62f1a23ce2b3847359b78714b273420466f34ad25ae4db363",
+    "prototype/artifacts/robustness-iteration-30/input.json": "bfd836dd183cbc27d3b36ee902cf4022c4793dd5ffaa0901935a2b8b052bb07b",
+    "prototype/artifacts/robustness-iteration-30/pair-test": "02ac1f6971b0c91269c2fa5f4b3c9139a55e2eff563932b82e88ee00ef9b6abe",
+    "prototype/artifacts/robustness-iteration-30/selection.json": "2343d6a46098e085c8b1a085d1b218fda19b48e9fc5ea9a58fbd0601502d80e2",
+    "prototype/artifacts/robustness-iteration-30/visual-review.json": "a7b3f3375708363692b675c7ff19113aa5122be9446dce86f98bc14e23a794bd",
+    "prototype/artifacts/robustness-iteration-30/review-candidates.json": "5b02ce236561adf675952b70649df344fccee2cff308c2c3a62928f044185de5",
+    "prototype/artifacts/robustness-iteration-28/protocol.json": "5a36706cd8818564148f37b1db360f12d96272ecf3683884c91dac30a7551867",
+    "docs/experiments/robustness-iteration-27-results.json": "8a6fffac34e3184de5c6672a71f5fcb8fc16bc096338eb7db7cbd524b7e01a0e",
+    "docs/experiments/robustness-iteration-28-input.json": "0c67161292af50c03621dd87e5aa5ecd31aeeffc1f255c14718d1bec147cba8d",
+    "docs/experiments/robustness-iteration-28-results.json": "7e3f172345263367cb33992bcc9054820d2d184b7403b534c966f098448f59d4",
+    "docs/experiments/robustness-iteration-28-checks.json": "4c3e225399b1e84865dee2b7a9bb7c3a8c15763a00f38e3fbddaee1ec722d760",
+    "docs/experiments/robustness-iteration-13-geometry.json": "85ebf434154c458f52c339daa86b712b9d494633ff0d5c4d37f85e169d88aabd",
+    "docs/experiments/robustness-iteration-5-geometry.json": "dc93a959d0a8930da1984a721fb9fd9fd606b882611a56af58c1663f1a69f531",
+    "docs/experiments/robustness-iteration-5-review.json": "6a23870a2373e17cac7e1976b5725fabd94ba0efda1898a3980a04b2183aca3f",
+    "prototype/eval/pair_refit.rs": "8a064163d8dc43db1d858e3567565f9d822ec1e0e3e729a383fabbd8df5dc348",
+    "prototype/eval/robustness_single31_fit.py": "88bdbcba76c4bd5db7358619edb0a0b645057fe88bb468c28ad1e4aa1700c825",
+    "prototype/eval/robustness_single22_residuals.py": "aa95c86649647ce9e85c7bda644777b41634aad19e5b0eebdf4296da771464f7",
+    "prototype/eval/robustness_geometry.py": "b15495e6ba97832a84d06c4e83bfa16aec704784875fdeccb3f831ceec976034",
+    "prototype/eval/robustness_centroid_origin_report.py": "09d29d91a855973370cfe5a61dabf13769ab50c4ab4dd3bc146dbe6b8cba1e2f",
+    "prototype/eval/compare_local_wcs.py": "1a8c83f6d0a19f3cbbe2a96f0db79a0ab60ac33fd09ad6c5c69472672ef31a3b",
+    "prototype/eval/robustness_candidate_trace.py": "6ee7661eb7875c9307760bf3d038a94eccf18269e388f9fe11511c125ca72c17",
+    "prototype/eval/collection_run.py": "6bf1108b48c21a40bdd00023eae564c27c5062fd63beb45d32ddde86154bd5b5",
+    "data/samples/sky-samples/manifest.json": "97e229270c7b0f97fce4e1f738917cd91cdff01df3508db29584af70a0ea4871",
+    "data/samples/sky-samples/robustness-results.json": "09e6efe61468b4afe896967d583553751d80fe82e65e0ac064528523bbc525e8",
+    "data/samples/sky-samples/collection-wcs-review.json": "97c182c51955baee9adce93cde8e93fb98ece6a69bdc606cf871d3a1eef19841",
+    "data/samples/sky-samples/images/wm_r_132162731.png": "58dfbce4f8a236cab8158a4a0f9ed677c68aa8873afd9568df48d370f01ef188"
+  }
+}

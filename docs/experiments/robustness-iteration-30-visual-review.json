@@ -1,0 +1,23 @@
+{
+  "id": "wm_r_132162731",
+  "split": "development",
+  "independent_ground_truth": false,
+  "method": "Existing iteration5 physical identifications; rechecked fixed128px crops enlarged2x, brightness2x before any iteration30 fits; coordinates unchanged",
+  "points": [
+    {
+      "source_id": 20,
+      "label": "visible_source",
+      "note": "Distinct bright compact core at existing selected extraction; close field stars separate; identity remains conditional"
+    },
+    {
+      "source_id": 1,
+      "label": "visible_source",
+      "note": "Bright compact core with halo, distinct from nearby faint points; identity remains conditional"
+    },
+    {
+      "source_id": 6,
+      "label": "visible_source",
+      "note": "Bright core with halo on structured Milky Way background; nearby bright sources are separated; identity remains conditional"
+    }
+  ]
+}
