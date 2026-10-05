@@ -1,0 +1,40 @@
+{
+  "iteration": 29,
+  "id": "wm_r_132162731",
+  "split": "development",
+  "holdout": false,
+  "arms": [
+    "all31",
+    "single22"
+  ],
+  "hashes": {
+    "docs/experiments/robustness-iteration-27-results.json": "8a6fffac34e3184de5c6672a71f5fcb8fc16bc096338eb7db7cbd524b7e01a0e",
+    "docs/experiments/robustness-iteration-28-input.json": "0c67161292af50c03621dd87e5aa5ecd31aeeffc1f255c14718d1bec147cba8d",
+    "docs/experiments/robustness-iteration-28-results.json": "7e3f172345263367cb33992bcc9054820d2d184b7403b534c966f098448f59d4",
+    "docs/experiments/robustness-iteration-28-protocol.json": "5a36706cd8818564148f37b1db360f12d96272ecf3683884c91dac30a7551867",
+    "docs/experiments/robustness-iteration-28-checks.json": "4c3e225399b1e84865dee2b7a9bb7c3a8c15763a00f38e3fbddaee1ec722d760",
+    "docs/experiments/robustness-iteration-13-geometry.json": "85ebf434154c458f52c339daa86b712b9d494633ff0d5c4d37f85e169d88aabd",
+    "docs/experiments/robustness-iteration-5-geometry.json": "dc93a959d0a8930da1984a721fb9fd9fd606b882611a56af58c1663f1a69f531",
+    "data/samples/sky-samples/manifest.json": "97e229270c7b0f97fce4e1f738917cd91cdff01df3508db29584af70a0ea4871",
+    "data/samples/sky-samples/robustness-results.json": "09e6efe61468b4afe896967d583553751d80fe82e65e0ac064528523bbc525e8",
+    "data/samples/sky-samples/collection-wcs-review.json": "97c182c51955baee9adce93cde8e93fb98ece6a69bdc606cf871d3a1eef19841",
+    "prototype/eval/robustness_single22_residuals.py": "aa95c86649647ce9e85c7bda644777b41634aad19e5b0eebdf4296da771464f7",
+    "prototype/eval/robustness_residual_fields.py": "ff653267f15936829c70a7de58cf6ae54901102f8f5acd1c9ee14533e839b29e",
+    "prototype/eval/compare_local_wcs.py": "1a8c83f6d0a19f3cbbe2a96f0db79a0ab60ac33fd09ad6c5c69472672ef31a3b",
+    "prototype/eval/collection_run.py": "6bf1108b48c21a40bdd00023eae564c27c5062fd63beb45d32ddde86154bd5b5",
+    "prototype/eval/robustness_geometry.py": "b15495e6ba97832a84d06c4e83bfa16aec704784875fdeccb3f831ceec976034"
+  },
+  "residual_sign": "predicted minus measured; x right, y down",
+  "decomposition": "reuse iteration12; origin width/2,height/2; clockwise tangential",
+  "groups": "unchanged22 and35; fixed baseline-centroid edges10pct, grid3x3, radius bins0/.35/.70/1; saved outside-all40 and outside-union31 masks",
+  "centroid_methods": "fit22 detector/external/r8/r12; probes35 external/r8/r12; no recentering or refit",
+  "criteria": [
+    "exactly reproduce saved fit28 projections and corresponding RMS",
+    "report both camera arms, all sources, empty groups and every centroid method",
+    "compare full vector fields and directions for residuals>=1px using existing agreement",
+    "descriptive only: no parameter choice, significance or causal claim from agreement alone"
+  ],
+  "plot_arrow_magnification": 15.0,
+  "new_fits": 0,
+  "new_searches": 0
+}

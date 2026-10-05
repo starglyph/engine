@@ -1,0 +1,56 @@
+{
+  "iteration": 29,
+  "python_tests": {
+    "command": [
+      "python3",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "eval",
+      "-p",
+      "test_*.py"
+    ],
+    "exit_code": 0,
+    "elapsed_s": 4.279374025762081
+  },
+  "python_test_count": 218,
+  "frozen_hashes_valid": true,
+  "projections_reproduced": 70,
+  "fit22_rms_tolerance_px": 1e-08,
+  "exact_repeat_results": true,
+  "public_local_semantically_equal": true,
+  "production_changed": false,
+  "new_fits": 0,
+  "new_searches": 0,
+  "holdout": false,
+  "independent_ground_truth": false,
+  "gate_scope": "Offline residual reporting only; Rust/CLI/collection and negative gates not repeated.",
+  "preparation_note": "Published iteration27 JSON is compact; verified its original pretty-serialized SHA against the frozen iteration28 protocol before measurement.",
+  "protected_hashes": {
+    "data/samples/sky-samples/manifest.json": "97e229270c7b0f97fce4e1f738917cd91cdff01df3508db29584af70a0ea4871",
+    "data/samples/sky-samples/robustness-results.json": "09e6efe61468b4afe896967d583553751d80fe82e65e0ac064528523bbc525e8",
+    "data/samples/sky-samples/collection-wcs-review.json": "97c182c51955baee9adce93cde8e93fb98ece6a69bdc606cf871d3a1eef19841"
+  },
+  "plot": {
+    "matplotlib": "3.8.4",
+    "numpy": "1.23.5",
+    "script_sha256": "e9ad1ad08df3cd9e7018d9350fb39ded7a8814d65e6c88c094d399bc7a32da9d",
+    "results_sha256": "966421de698e573b8aaf6e8afdd66a23a4c50c190cfc6d39febaef480b5ba92a",
+    "files": {
+      "png": "83eceb0eefea0336c78509537b856aad7dba2944111d5ba8c664b7cc2c80c8ec",
+      "svg": "325f0f916f076d7ff028a2a6de91e0b62dd1f80ea6d5e105949b3ced3bd6b591",
+      "pdf": "0389b4ee86740e3975a67112d09c9afd2d7332a9b0b9fdd5572c896bcb5b143e"
+    }
+  },
+  "artifact_hashes": {
+    "prototype/artifacts/robustness-iteration-29/protocol.json": "287040477ddbbc928770a0cea5213879081ce59794e63003933137b803a8729d",
+    "prototype/artifacts/robustness-iteration-29/results.json": "966421de698e573b8aaf6e8afdd66a23a4c50c190cfc6d39febaef480b5ba92a",
+    "prototype/eval/test_robustness_single22_residuals.py": "d626d3155952e7841a225b66ad8bfc265ee255080dcc24a4c55b7e77e1ea18f8",
+    "docs/experiments/robustness-iteration-29-protocol.json": "287040477ddbbc928770a0cea5213879081ce59794e63003933137b803a8729d",
+    "docs/experiments/robustness-iteration-29-results.json": "17012a2d02bd54e13ebb9c2f7261e070045134a4a76ea2ee7e32538d9c1d61e2",
+    "docs/images/robustness-iteration-29-vectors.png": "83eceb0eefea0336c78509537b856aad7dba2944111d5ba8c664b7cc2c80c8ec",
+    "docs/images/robustness-iteration-29-vectors.svg": "325f0f916f076d7ff028a2a6de91e0b62dd1f80ea6d5e105949b3ced3bd6b591",
+    "docs/images/robustness-iteration-29-vectors.pdf": "0389b4ee86740e3975a67112d09c9afd2d7332a9b0b9fdd5572c896bcb5b143e"
+  }
+}
