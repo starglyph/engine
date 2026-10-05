@@ -1,0 +1,56 @@
+{
+  "iteration": 36,
+  "ids": [
+    "wm_r_134291495",
+    "wm_r_112929230"
+  ],
+  "split": "development",
+  "holdout": false,
+  "scope": "observation only: existing tetra3 thinning hook; no detector or acceptance changes",
+  "case_names": [
+    "1600-default",
+    "1600-deep",
+    "6016-default",
+    "6016-deep",
+    "positive-control"
+  ],
+  "budget": {
+    "attempts": 240,
+    "per_attempt_ms": 2500,
+    "wall_s": 180
+  },
+  "criteria": [
+    "192 target outcomes reproduce saved log in order",
+    "positive control returns at least one tetra3 candidate",
+    "all attempts have attributed thinning events; count every swept FOV, including TooFew",
+    "no solve-rate or geometry improvement claim; unresolved WCS remains unresolved"
+  ],
+  "hashes": {
+    "data/samples/sky-samples/collection-wcs-review.json": "97c182c51955baee9adce93cde8e93fb98ece6a69bdc606cf871d3a1eef19841",
+    "data/samples/sky-samples/images/wm_r_112929230.png": "01de14e5cd4724f40f46c760627d9f5c7373979274364db40f76a6e5be38f6b3",
+    "data/samples/sky-samples/images/wm_r_134291495.png": "efe2f4460cb419479ff3bd251815db7f7c78cd30258afc9a88cc1f7818cc145d",
+    "data/samples/sky-samples/manifest.json": "97e229270c7b0f97fce4e1f738917cd91cdff01df3508db29584af70a0ea4871",
+    "data/samples/sky-samples/robustness-results.json": "09e6efe61468b4afe896967d583553751d80fe82e65e0ac064528523bbc525e8",
+    "prototype/Cargo.lock": "59694debace1f5f18e2de398a77ce4d6a1a8f7dd237af646906aa49bfa3b677a",
+    "prototype/artifacts/cache/tetra3-bootstrap-10-70-mag65-v0.8.0.bin": "3dab6ebaa5c8dea2a5a5b2690a8c42c4b79fca7ed3129ed4f7decd1ea2d3d3fe",
+    "prototype/artifacts/cache/tetra3-dense-16-30-mag65-v0.8.0.bin": "9666a53166adb3c9411b87ce5d995c12acecc4e72963c50fc9870c28334f15d9",
+    "prototype/artifacts/cache/tetra3-dense-30-54-mag65-v0.8.0.bin": "27c39a71201c72f9bb58e04daf4f526b4ad8da11eeafc05fbcf2ac0b95334893",
+    "prototype/artifacts/cache/tetra3-dense-48-88-mag65-v0.8.0.bin": "8238a8f7e15052a5e2a5de9d8671178815f07c86478df23fab2ec5ce1c125b20",
+    "prototype/artifacts/robustness-baseline/wcs-run/wm_r_134291495/reference.json": "c76a466447ee655a75398414d931155d9ab22c500350d090faba2d18539b3c17",
+    "prototype/artifacts/robustness-iteration-1/diagnosis/wm_r_134291495/solve-reports/wm_r_134291495.json": "9adfa5b55f509aecf263d7ad584d8bb66675319bff84652154060df838d119ed",
+    "prototype/artifacts/robustness-iteration-24/real/development/control/wm_r_134291495.log": "9c67d5f284e4f06c31c00c22d806f1469b8813e1ba9244cc952bebb056baf8a8",
+    "prototype/artifacts/robustness-iteration-3/positive-input.json": "26883e4f9f1280646f72ce89d49b6486e2cd118a3d94db8618bf6de8ee64d6a9",
+    "prototype/artifacts/robustness-iteration-36/harness/Cargo.toml": "2df22856bc45086ecf13d39175e844c87cbbba83f1340e3e9ee8700d3443a59d",
+    "prototype/artifacts/robustness-iteration-36/harness/src/main.rs": "bc6ff72c0893c0ffe346d196ab61b8468981ebe7dff8b7764513d321d61bcf22",
+    "prototype/artifacts/robustness-iteration-36/harness/tetra3/src/research_trace.rs": "da1b49f14b4eab18baaf539b893794152094e93846a66f9ab3c0c7654e705411",
+    "prototype/artifacts/robustness-iteration-36/harness/tetra3/src/solver/solve.rs": "eee6304b6e7c0e40b8aefb6a28501ac8290b24f537c4819c27f1a0882cc57b4a",
+    "prototype/artifacts/robustness-iteration-36/input.json": "beca9f0762fa1b93ad927cf71f10ed7060fdad17c06e79c18aef2e16a2f54792",
+    "prototype/crates/starglyph-core/src/solve.rs": "e80d51157981eed6c910ed6a230d575a271720aced59d1d77c1997f758014ed9",
+    "prototype/eval/collection_run.py": "6bf1108b48c21a40bdd00023eae564c27c5062fd63beb45d32ddde86154bd5b5",
+    "prototype/eval/robustness_candidate_trace.py": "6ee7661eb7875c9307760bf3d038a94eccf18269e388f9fe11511c125ca72c17",
+    "prototype/eval/robustness_thinning_trace.py": "4bdfdc720beb48494b87cd71a8ea9749df747a00cbf53465b43da6db880e7122",
+    "prototype/eval/tetra3_internal.py": "1f76e947796458b3001410eb969a78c1732fda8ef8ce5c3dc553ba36601828c5",
+    "prototype/eval/tetra3_internal.rs": "75df6437798f80691683e175e02e96acaf0dc70fdc6d51467dbcf7a97dcbb1df",
+    "prototype/eval/tetra3_internal_trace.rs": "da1b49f14b4eab18baaf539b893794152094e93846a66f9ab3c0c7654e705411"
+  }
+}

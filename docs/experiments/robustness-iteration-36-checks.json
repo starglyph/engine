@@ -1,0 +1,30 @@
+{
+  "iteration": 36,
+  "python_tests": 248,
+  "python_passed": true,
+  "isolated_rust_build_passed": true,
+  "production_rust_changed": false,
+  "holdout": false,
+  "baseline_statuses_exact": 192,
+  "protected_hashes": {
+    "data/samples/sky-samples/manifest.json": "97e229270c7b0f97fce4e1f738917cd91cdff01df3508db29584af70a0ea4871",
+    "data/samples/sky-samples/robustness-results.json": "09e6efe61468b4afe896967d583553751d80fe82e65e0ac064528523bbc525e8",
+    "data/samples/sky-samples/collection-wcs-review.json": "97c182c51955baee9adce93cde8e93fb98ece6a69bdc606cf871d3a1eef19841"
+  },
+  "artifact_hashes": {
+    "docs/experiments/robustness-iteration-36-input.json": "beca9f0762fa1b93ad927cf71f10ed7060fdad17c06e79c18aef2e16a2f54792",
+    "docs/experiments/robustness-iteration-36-protocol.json": "84b05ee1c41b55363dcfb7cb0744516230abc3a23d8406154f5aa0ccf6386fcd",
+    "docs/experiments/robustness-iteration-36-results.json": "563d5c731881119f32be8926372e81d7f4e8e35b6fefddf4f2e2256c96e03dfd",
+    "prototype/eval/robustness_thinning_trace.py": "4bdfdc720beb48494b87cd71a8ea9749df747a00cbf53465b43da6db880e7122",
+    "prototype/eval/test_robustness_thinning_trace.py": "2bd908c05832eef528dfa22d334165cfd4fc69c1e5cc8e31bdbdadfa727c9197",
+    "prototype/artifacts/robustness-iteration-36/trace": "7994c694f43089aae403337dd5e69755ae95695d6ebf430278ed6cddd967680f",
+    "prototype/artifacts/robustness-iteration-36/binary.json": "c252e7e8115fa0b906d8e71a33a78660e665ef110b4ad9eec70ebb680d85c96b",
+    "prototype/artifacts/robustness-iteration-36/raw.json": "5c1c9c594d3abb856b595084136cacab8948489198cd33d9a170f8acd8e5f857",
+    "prototype/artifacts/robustness-iteration-36/run.log": "a9ac9804ea6b9baaf8764e0ed4fbdf65df2a2fddbbcafc06a6bfea84203b00dd",
+    "prototype/artifacts/robustness-iteration-36/build.log": "c566d49ecdbdfbf474975897774d73aa4efdccda79905b9c2bbf0bd9a0d3cd71",
+    "prototype/artifacts/robustness-iteration-36/python-tests.log": "bb01d57b07d29edf28ee5583f20fbfc5b71b16dcf859e5ba6c0759b7f082efd7",
+    "prototype/artifacts/robustness-iteration-36/run.json": "fd2953b02d8ec5215a8f6b14c4ca4a23016117fd4b5dfb8dca0dc075268852ca",
+    "prototype/artifacts/robustness-iteration-36/harness/Cargo.lock": "081ceb53a973ae17d068bd9b1a41fbd546d2f8d65bc1b8fc9403ddc65921667d"
+  },
+  "timing_note": "Instrumented full matcher ladder, not end-to-end latency; positive-control post-candidate timeout retained."
+}

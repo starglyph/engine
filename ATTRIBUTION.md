@@ -176,3 +176,10 @@ Iteration 35 nonlinear validation (`docs/experiments/robustness-iteration-35-*.j
 uses the same frozen photograph-derived coordinates (oliwok, **CC BY 4.0**)
 and HYG/Astronexus identities. HYG-derived tables retain **CC BY-SA 4.0**.
 No new photograph, visual annotation or independent ground truth is added.
+
+Iteration 36 thinning diagnostics (`docs/experiments/robustness-iteration-36-*.json`)
+reuse coordinates from `wm_r_134291495` by NOIRLab/AURA/NSF and
+`wm_r_112929230` by Mmfgh, both **CC BY 4.0**, with original source links
+in the collection attribution. No new photograph, annotation or ground truth.
+Catalog identifiers from the existing tetra3 databases retain their documented
+source attribution; the source and licensing references are in `docs/data-sources.md`.
