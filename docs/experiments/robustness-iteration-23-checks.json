@@ -1,0 +1,58 @@
+{
+  "iteration": 23,
+  "production_changed": false,
+  "development_run": false,
+  "holdout_run": false,
+  "python_tests_passed": 188,
+  "rust_tests": {
+    "passed": 101,
+    "ignored": 7,
+    "failed": 0
+  },
+  "experiment_tests_passed": 5,
+  "cases": 2592,
+  "errors": 0,
+  "timeouts": 0,
+  "eligible_for_development": false,
+  "rejection": "6 of 8 clean noisy groups exceed predeclared RMS ratio limit 1.10",
+  "clippy": "passed: core release all-targets no-deps -D warnings",
+  "rustfmt": "passed: all new and generated Rust modules",
+  "preliminary_check_failures": [
+    "Clippy: use seed.is_multiple_of(2)",
+    "rustfmt: trailing blank line in generated adapter",
+    "cargo fmt at external virtual workspace found no targets; checked modules directly"
+  ],
+  "rerun_reason": "mechanical lint/format fixes only; same geometry, cases and criteria",
+  "rerun_all_geometric_metrics_and_corrupted_indices_exactly_identical": true,
+  "frozen_inputs": "iteration22 and iteration23 validated after final runs",
+  "environment": {
+    "rustc": "1.98.1 (48a229cea 2026-09-01)",
+    "python": "3.10.12"
+  },
+  "protected_inputs": {
+    "manifest.json": "97e229270c7b0f97fce4e1f738917cd91cdff01df3508db29584af70a0ea4871",
+    "robustness-results.json": "09e6efe61468b4afe896967d583553751d80fe82e65e0ac064528523bbc525e8",
+    "collection-wcs-review.json": "97c182c51955baee9adce93cde8e93fb98ece6a69bdc606cf871d3a1eef19841"
+  },
+  "removed_rebuildable_caches_bytes": {
+    "prototype/artifacts/robustness-iteration-23/fixed/pipeline/target": 449836108,
+    "prototype/artifacts/robustness-iteration-23/pre-lint/pipeline/artifacts/cache": 212201990
+  },
+  "cleanup_note": "Additional pre-lint search cache was generated only by an unchanged unit regression, not used by synthetic measurements; final unit checks pass with existing shared cache, which is preserved.",
+  "preserved_test_binary_sha256": "c25fbdc2e01b4ca6d899e4d1d0bfa88847375b81c085f2f549f2fd9171d7aadb",
+  "hashes": {
+    "prototype/artifacts/robustness-iteration-23/fixed/run.json": "ccd78fc043b3018386d7f91a721d9042f23536b271db3ff2a20402db2f5ffcd9",
+    "prototype/artifacts/robustness-iteration-23/fixed/run.log": "b8af54d1971fe446cb19032602cf005345cd7e78e9ec12ef98aa959a361a71f7",
+    "prototype/artifacts/robustness-iteration-23/fixed/build.json": "5bcac8a72c3d3a4e487a22ed0b4b42ec0ace365adeb7e06b78f1006fe3cee835",
+    "prototype/artifacts/robustness-iteration-23/fixed/build-artifact.json": "8f72ec0cccf366d241a7980285aa6715803f3e3363d3d7586f3d78e62e0e0518",
+    "prototype/artifacts/robustness-iteration-23/fixed/raw.json": "de7789cf13d344172997e93a3061504d137be0adb6f93121fed4b01e34923a21",
+    "prototype/artifacts/robustness-iteration-23/fixed/python-tests.log": "6893ea9400a9e9704a4f09b3f4845af0e0e6f864068f6657330816c9f5c166de",
+    "prototype/artifacts/robustness-iteration-23/fixed/rust-tests.log": "c8c8dc09e61c853207dccdf401374cbbd9aaa10e0edc197cee1158f4bb152a60",
+    "prototype/artifacts/robustness-iteration-23/fixed/clippy.log": "4864b792a70c7336bf5c70619f65d0458dd0ecd44a1ff2725d7a1273e9800533",
+    "prototype/artifacts/robustness-iteration-23/fixed/rustfmt.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "docs/experiments/robustness-iteration-23-protocol.json": "8edf089a9e6d16e20a5b18d961aa2afa5e97979f55e1fc7a60a7c2587b71410b",
+    "docs/experiments/robustness-iteration-23-results.json": "4a303be2a9200676e57505143136c5c80276252b973ba7776e535aa1025cc8f6",
+    "docs/experiments/robustness-iteration-23-cases-results.jsonl": "f836a4a2620f69b0c0513804d0f848f01892c00344251f3dde12b7b7e2f3b3b5",
+    "prototype/eval/test_robustness_roll_synthetic.py": "9242373b1faedce20d280594c5a76aeb028f53a80d4b46ac19930f2bd6c2aec3"
+  }
+}

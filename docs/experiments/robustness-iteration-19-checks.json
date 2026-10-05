@@ -1,0 +1,68 @@
+{
+  "iteration": 19,
+  "base_commit": "93a329924cecf28a453b53b2e317e97f293b52e1",
+  "holdout_run": false,
+  "production_default_changed": false,
+  "acceptance_changed": false,
+  "protocol_sha256": "e053dbf551a18dbd572fdbc1880e0942ab87d8ffb7ca0f2035a0f601137acf28",
+  "results_sha256": "9712d9297727f094efce4461c21f37efee8261b5bf7c78c5c82fa7e8266e809d",
+  "frozen_inputs_verified": true,
+  "frozen_hash_count": 90,
+  "observation_neutrality": {
+    "control": {
+      "status": true,
+      "quality": true,
+      "detections": true,
+      "failure": true,
+      "camera": true
+    },
+    "centered": {
+      "status": true,
+      "quality": true,
+      "detections": true,
+      "failure": true,
+      "camera": true
+    }
+  },
+  "tests": {
+    "python_passed": 173,
+    "refine_regressions_passed": 2,
+    "rustfmt": "passed",
+    "clippy": "passed: release core/CLI all-targets no-deps -D warnings"
+  },
+  "full_collection_runs": 0,
+  "full_smartphone_gate_repeated": false,
+  "first_pair_set_preserved": true,
+  "first_detection_inputs_preserved": true,
+  "lost_first_candidate_hits": [
+    16,
+    9,
+    2,
+    0
+  ],
+  "max_analysis_projection_discrepancy_px": 2.2737367544323206e-13,
+  "diagnostic_plus_half_recovers_all_original_pairs": true,
+  "diagnostic_minus_half_loses_same_pairs": true,
+  "external_reference_status": "pending",
+  "analysis_provenance_stage": "post-run; observational report only",
+  "analysis_hashes": {
+    "prototype/eval/robustness_candidate_trace_report.py": "64ee4a10d00d6830cf85c1bf15db34f44b693d0cb2a50e41f5b4d1b6a48b1c96",
+    "prototype/eval/test_robustness_candidate_trace.py": "58c56a018b9fc7987c3dc1742dcdd8271d3f27ddbea3b06534620b95b84e3cb3",
+    "prototype/eval/robustness_centroid_origin.py": "45c0a341be3a24aa2d634e6d8e2b5ca21b14518765d64c060b469fc2b716f0ea",
+    "prototype/eval/collection_run.py": "6bf1108b48c21a40bdd00023eae564c27c5062fd63beb45d32ddde86154bd5b5",
+    "prototype/artifacts/robustness-iteration-19/fixed/python-tests.log": "43d002794900a29041ee185d29bd2d39836704b6a93edb4e2ae26164de795b5d",
+    "prototype/artifacts/robustness-iteration-19/fixed/refine-tests.log": "3e13fb9116f336072ed85803c081738c67f92db755ff207dfa578cb8143f5682",
+    "prototype/artifacts/robustness-iteration-19/fixed/clippy.log": "d12900c0d691b568ba4ac684cc932614e7e89bc73732c6029030afbd16877c8a",
+    "prototype/artifacts/robustness-iteration-19/fixed/pair-crops.png": "b6a5a18ca9b61f0c2a8f9ae143332fcc1455fd2f76f605da0a58db84a41a0e92"
+  },
+  "protected_inputs_sha256": {
+    "manifest.json": "97e229270c7b0f97fce4e1f738917cd91cdff01df3508db29584af70a0ea4871",
+    "robustness-results.json": "09e6efe61468b4afe896967d583553751d80fe82e65e0ac064528523bbc525e8",
+    "collection-wcs-review.json": "97c182c51955baee9adce93cde8e93fb98ece6a69bdc606cf871d3a1eef19841"
+  },
+  "iteration18_hashes_preserved": true,
+  "json_and_links": "passed",
+  "disposable_build_removed": true,
+  "removed_build_bytes": 464244180,
+  "frozen_inputs_verified_after_cleanup": true
+}

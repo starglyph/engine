@@ -1,0 +1,6205 @@
+{
+  "iteration": 24,
+  "split": "development",
+  "holdout": false,
+  "protocol_sha256": "f089ec97047d23ec10ca8425d943c0727457651b2ebf2b2fc369cfde70b897d4",
+  "automatic_improvement_confirmed": false,
+  "totals": {
+    "solver": {
+      "count": 34,
+      "control": 24,
+      "huber": 24
+    },
+    "stress": {
+      "count": 10,
+      "control": 0,
+      "huber": 0
+    },
+    "scene": {
+      "count": 1,
+      "control": 0,
+      "huber": 0
+    }
+  },
+  "gained": [],
+  "lost": [],
+  "negative_accepts": {
+    "control": [],
+    "huber": []
+  },
+  "process_failures": {
+    "control": [],
+    "huber": []
+  },
+  "baseline_status_mismatches": [],
+  "timing": {
+    "control": {
+      "total_s": 394.97450339980423,
+      "median_s": 7.102088243700564,
+      "attempt_timeouts": 14
+    },
+    "huber": {
+      "total_s": 407.71247581765056,
+      "median_s": 7.088348333723843,
+      "attempt_timeouts": 18
+    }
+  },
+  "geometry_regressions": [
+    {
+      "id": "wm_r_132162731",
+      "centroid": "external_centroid",
+      "group": "left_10pct",
+      "rms_change_px": 0.6303881020207127
+    },
+    {
+      "id": "wm_r_132162731",
+      "centroid": "external_centroid",
+      "group": "top_10pct",
+      "rms_change_px": 0.6202446609243264
+    },
+    {
+      "id": "wm_r_132162731",
+      "centroid": "native_r8",
+      "group": "left_10pct",
+      "rms_change_px": 0.6384175521167537
+    },
+    {
+      "id": "wm_r_132162731",
+      "centroid": "native_r8",
+      "group": "top_10pct",
+      "rms_change_px": 0.629074747998482
+    },
+    {
+      "id": "wm_r_132162731",
+      "centroid": "native_r12",
+      "group": "left_10pct",
+      "rms_change_px": 0.6521568085517502
+    },
+    {
+      "id": "wm_r_132162731",
+      "centroid": "native_r12",
+      "group": "top_10pct",
+      "rms_change_px": 0.6273038178972996
+    }
+  ],
+  "geometry_improvements": [],
+  "development_checks": {
+    "retain_control_successes": true,
+    "negative_rejections_preserved": true,
+    "no_additional_process_failures": true,
+    "reviewed_geometry_no_regressions": false
+  },
+  "regression_gates": {
+    "rust-tests": {
+      "status": "completed",
+      "exit_code": 0,
+      "elapsed_s": 25.620513861998916,
+      "command": [
+        "cargo",
+        "test",
+        "--offline",
+        "--locked",
+        "--release",
+        "--manifest-path",
+        "/home/agent/work/starglyph/engine/prototype/artifacts/robustness-iteration-24/real/pipeline/Cargo.toml",
+        "-p",
+        "starglyph-core",
+        "-p",
+        "starglyph-cli"
+      ]
+    },
+    "extended-dense": {
+      "status": "completed",
+      "exit_code": 0,
+      "elapsed_s": 16.38095578737557,
+      "command": [
+        "cargo",
+        "test",
+        "--offline",
+        "--locked",
+        "--release",
+        "--manifest-path",
+        "/home/agent/work/starglyph/engine/prototype/artifacts/robustness-iteration-24/real/pipeline/Cargo.toml",
+        "-p",
+        "starglyph-core",
+        "--test",
+        "extended_dense",
+        "--",
+        "--ignored"
+      ]
+    },
+    "eval-ci": {
+      "status": "completed",
+      "exit_code": 0,
+      "elapsed_s": 1.4225904997438192,
+      "command": [
+        "/home/agent/work/starglyph/engine/prototype/artifacts/robustness-iteration-24/real/binaries/huber",
+        "eval",
+        "--manifest",
+        "../data/samples/sky-samples/manifest.json",
+        "--ids",
+        "tetra3_alt40,tetra3_alt60",
+        "--catalog",
+        "../data/catalogs/hyg_v42.csv.gz",
+        "--out-dir",
+        "/home/agent/work/starglyph/engine/prototype/artifacts/robustness-iteration-24/real/gate-ci",
+        "--baseline",
+        "eval/baseline-ci.json"
+      ]
+    },
+    "smartphone": {
+      "status": "completed",
+      "exit_code": 0,
+      "elapsed_s": 148.88036054372787,
+      "command": [
+        "/usr/bin/python3",
+        "eval/smartphone_gate.py",
+        "--binary",
+        "/home/agent/work/starglyph/engine/prototype/artifacts/robustness-iteration-24/real/binaries/huber",
+        "--out-dir",
+        "/home/agent/work/starglyph/engine/prototype/artifacts/robustness-iteration-24/real/gate-smartphone"
+      ]
+    },
+    "sky-fill": {
+      "status": "completed",
+      "exit_code": 0,
+      "elapsed_s": 114.13226211071014,
+      "command": [
+        "/usr/bin/python3",
+        "eval/sky_fill_gate.py",
+        "--binary",
+        "/home/agent/work/starglyph/engine/prototype/artifacts/robustness-iteration-24/real/binaries/huber",
+        "--out-dir",
+        "/home/agent/work/starglyph/engine/prototype/artifacts/robustness-iteration-24/real/gate-sky-fill"
+      ]
+    }
+  },
+  "new_solves_requiring_review": [],
+  "frames": [
+    {
+      "id": "wm_r_112929230",
+      "track": "solver",
+      "negative": false,
+      "published_status": "solved",
+      "source_sha256": "01de14e5cd4724f40f46c760627d9f5c7373979274364db40f76a6e5be38f6b3",
+      "control": {
+        "status": "completed",
+        "solve_status": "solved",
+        "elapsed_s": 2.774552943184972,
+        "exit_code": 0,
+        "report_sha256": "9a1ced1d59af448a98ee145b189e7723b23caab6b3e72f67ad91d8506d85f131",
+        "detections": 40,
+        "quality": {
+          "confidence": 1.0,
+          "log_odds": 114.26,
+          "n_detections": 40,
+          "n_inliers": 21,
+          "rms_px": 2.74
+        },
+        "failure": null,
+        "timing_ms": {
+          "detect": 211,
+          "solve": 744,
+          "total": 1497
+        },
+        "pending_external_geometry": {
+          "reference_status": "solved_candidate",
+          "review_status": "pending",
+          "solver_status": "solved",
+          "full_field_wcs_difference": {
+            "count": 81,
+            "rms_px": 43.98074068876845,
+            "median_px": 13.118263905617988,
+            "p95_px": 96.37651131541354,
+            "max_px": 160.58405510208033
+          },
+          "external_star_error": {
+            "count": 82,
+            "rms_px": 8.5129002156084,
+            "median_px": 2.1876525657248505,
+            "p95_px": 4.010028604960316,
+            "max_px": 73.78731115737946
+          },
+          "external_wcs_fit": {
+            "count": 82,
+            "rms_px": 7.121984497184975,
+            "median_px": 6.5294704232488066,
+            "p95_px": 11.74138513328045,
+            "max_px": 16.360093319528914
+          }
+        },
+        "attempt_timeouts": 0
+      },
+      "huber": {
+        "status": "completed",
+        "solve_status": "solved",
+        "elapsed_s": 2.229753902181983,
+        "exit_code": 0,
+        "report_sha256": "c1da051a60f4e272535f40c3e64f608046e0e8ecb18b0821580c76335cc44b2e",
+        "detections": 40,
+        "quality": {
+          "confidence": 1.0,
+          "log_odds": 114.26,
+          "n_detections": 40,
+          "n_inliers": 21,
+          "rms_px": 2.74
+        },
+        "failure": null,
+        "timing_ms": {
+          "detect": 156,
+          "solve": 412,
+          "total": 1003
+        },
+        "pending_external_geometry": {
+          "reference_status": "solved_candidate",
+          "review_status": "pending",
+          "solver_status": "solved",
+          "full_field_wcs_difference": {
+            "count": 81,
+            "rms_px": 43.98074068873327,
+            "median_px": 13.118263905531935,
+            "p95_px": 96.37651131534133,
+            "max_px": 160.58405510200183
+          },
+          "external_star_error": {
+            "count": 82,
+            "rms_px": 8.512900215590314,
+            "median_px": 2.187652565672815,
+            "p95_px": 4.01002860493424,
+            "max_px": 73.78731115728368
+          },
+          "external_wcs_fit": {
+            "count": 82,
+            "rms_px": 7.121984497184975,
+            "median_px": 6.5294704232488066,
+            "p95_px": 11.74138513328045,
+            "max_px": 16.360093319528914
+          }
+        },
+        "attempt_timeouts": 0
+      }
+    },
+    {
+      "id": "wm_r_113343122",
+      "track": "solver",
+      "negative": false,
+      "published_status": "solved",
+      "source_sha256": "28c65b20ad39c16bd1013b11d4d146a21c19738fba0ee31df6c24af5034ed7fc",
+      "control": {
+        "status": "completed",
+        "solve_status": "solved",
+        "elapsed_s": 8.697474483400583,
+        "exit_code": 0,
+        "report_sha256": "e0d44f4bde4c8d41d25145c7860bc4869d4b13e18752904188711680a9d648ca",
+        "detections": 40,
+        "quality": {
+          "confidence": 1.0,
+          "log_odds": 263.5,
+          "n_detections": 40,
+          "n_inliers": 37,
+          "rms_px": 1.77
+        },
+        "failure": null,
+        "timing_ms": {
+          "detect": 216,
+          "solve": 6663,
+          "total": 7397
+        },
+        "attempt_timeouts": 0
+      },
+      "huber": {
+        "status": "completed",
+        "solve_status": "solved",
+        "elapsed_s": 6.750094000250101,
+        "exit_code": 0,
+        "report_sha256": "6f0453b8ad618cdc273cd7f89264764d3548519d805a3de92cc887a82697556c",
+        "detections": 40,
+        "quality": {
+          "confidence": 1.0,
+          "log_odds": 263.5,
+          "n_detections": 40,
+          "n_inliers": 37,
+          "rms_px": 1.77
+        },
+        "failure": null,
+        "timing_ms": {
+          "detect": 287,
+          "solve": 5166,
+          "total": 6011
+        },
+        "attempt_timeouts": 0
+      }
+    },
+    {
+      "id": "wm_r_113343124",
+      "track": "solver",
+      "negative": false,
+      "published_status": "solved",
+      "source_sha256": "2736e16473752e7a3123836c8748b84988728cb5f68952a84a95505f15962a3a",
+      "control": {
+        "status": "completed",
+        "solve_status": "solved",
+        "elapsed_s": 1.8209039196372032,
+        "exit_code": 0,
+        "report_sha256": "01e47852ccbd8a27d1ddcc858d4588834e00f7f3941460ca15b2090c27988ba9",
+        "detections": 40,
+        "quality": {
+          "confidence": 1.0,
+          "log_odds": 272.67,
+          "n_detections": 40,
+          "n_inliers": 38,
+          "rms_px": 2.7
+        },
+        "failure": null,
+        "timing_ms": {
+          "detect": 213,
+          "solve": 602,
+          "total": 1121
+        },
+        "pending_external_geometry": {
+          "reference_status": "solved_candidate",
+          "review_status": "pending",
+          "solver_status": "solved",
+          "full_field_wcs_difference": {
+            "count": 81,
+            "rms_px": 22.46730804334355,
+            "median_px": 6.163474924664153,
+            "p95_px": 48.183365553398126,
+            "max_px": 67.83207010076693
+          },
+          "external_star_error": {
+            "count": 148,
+            "rms_px": 1.9609301219770447,
+            "median_px": 1.807757831454483,
+            "p95_px": 2.9448464068924745,
+            "max_px": 7.561490215741949
+          },
+          "external_wcs_fit": {
+            "count": 148,
+            "rms_px": 5.289947579114479,
+            "median_px": 5.316565738185504,
+            "p95_px": 7.821713460778524,
+            "max_px": 8.19546055543854
+          }
+        },
+        "attempt_timeouts": 0
+      },
+      "huber": {
+        "status": "completed",
+        "solve_status": "solved",
+        "elapsed_s": 2.4756057001650333,
+        "exit_code": 0,
+        "report_sha256": "0c35172a7eb6eaa0ff94197ec440f3742dcdc9b28148069fce35c508d3af27dd",
+        "detections": 40,
+        "quality": {
+          "confidence": 1.0,
+          "log_odds": 272.67,
+          "n_detections": 40,
+          "n_inliers": 38,
+          "rms_px": 2.7
+        },
+        "failure": null,
+        "timing_ms": {
+          "detect": 197,
+          "solve": 541,
+          "total": 1157
+        },
+        "pending_external_geometry": {
+          "reference_status": "solved_candidate",
+          "review_status": "pending",
+          "solver_status": "solved",
+          "full_field_wcs_difference": {
+            "count": 81,
+            "rms_px": 22.467308044393814,
+            "median_px": 6.163474925803016,
+            "p95_px": 48.183365555574746,
+            "max_px": 67.83207010426969
+          },
+          "external_star_error": {
+            "count": 148,
+            "rms_px": 1.96093012164006,
+            "median_px": 1.8077578310707776,
+            "p95_px": 2.9448464061049724,
+            "max_px": 7.561490216113734
+          },
+          "external_wcs_fit": {
+            "count": 148,
+            "rms_px": 5.289947579114479,
+            "median_px": 5.316565738185504,
+            "p95_px": 7.821713460778524,
+            "max_px": 8.19546055543854
+          }
+        },
+        "attempt_timeouts": 0
+      }
+    },
+    {
+      "id": "wm_r_117865777",
+      "track": "solver",
+      "negative": false,
+      "published_status": "solved",
+      "source_sha256": "0ea16bb8500c45e1390be323faea68d5b06001ac7cd6698242171e21d7ad07fa",
+      "control": {
+        "status": "completed",
+        "solve_status": "solved",
+        "elapsed_s": 16.139200860634446,
+        "exit_code": 0,
+        "report_sha256": "6c1e38e5245b4f3a4918cb15795cf43d56a37224e97e96080b3e46d6b89135e5",
+        "detections": 40,
+        "quality": {
+          "confidence": 1.0,
+          "log_odds": 262.73,
+          "n_detections": 40,
+          "n_inliers": 30,
+          "rms_px": 1.34
+        },
+        "failure": null,
+        "timing_ms": {
+          "detect": 2371,
+          "solve": 12796,
+          "total": 15493
+        },
+        "pending_external_geometry": {
+          "reference_status": "solved_candidate",
+          "review_status": "pending",
+          "solver_status": "solved",
+          "full_field_wcs_difference": {
+            "count": 81,
+            "rms_px": 4.400340327154035,
+            "median_px": 2.5187485786153276,
+            "p95_px": 9.337197371786093,
+            "max_px": 14.8731026283179
+          },
+          "external_star_error": {
+            "count": 40,
+            "rms_px": 3.6389411705354764,
+            "median_px": 2.416487245401994,
+            "p95_px": 7.124413752908516,
+            "max_px": 9.388003590079867
+          },
+          "external_wcs_fit": {
+            "count": 40,
+            "rms_px": 1.6875577210145827,
+            "median_px": 1.091812583626916,
+            "p95_px": 3.7680984842983896,
+            "max_px": 4.36578355197469
+          }
+        },
+        "attempt_timeouts": 1
+      },
+      "huber": {
+        "status": "completed",
+        "solve_status": "solved",
+        "elapsed_s": 20.260240888223052,
+        "exit_code": 0,
+        "report_sha256": "8a3e2daad477bc7be3ff2d96ab45b4fcf3a136b570b50bcaed8af3b40872a408",
+        "detections": 40,
+        "quality": {
+          "confidence": 1.0,
+          "log_odds": 274.02,
+          "n_detections": 40,
+          "n_inliers": 31,
+          "rms_px": 1.39
+        },
+        "failure": null,
+        "timing_ms": {
+          "detect": 2766,
+          "solve": 15984,
+          "total": 19102
+        },
+        "pending_external_geometry": {
+          "reference_status": "solved_candidate",
+          "review_status": "pending",
+          "solver_status": "solved",
+          "full_field_wcs_difference": {
+            "count": 81,
+            "rms_px": 4.35273624279264,
+            "median_px": 2.4536868830210485,
+            "p95_px": 9.15379130366345,
+            "max_px": 14.740198487903418
+          },
+          "external_star_error": {
+            "count": 40,
+            "rms_px": 3.608393896116954,
+            "median_px": 2.4072840003483273,
+            "p95_px": 7.234238405077847,
+            "max_px": 9.202062832756905
+          },
+          "external_wcs_fit": {
+            "count": 40,
+            "rms_px": 1.6875577210145827,
+            "median_px": 1.091812583626916,
+            "p95_px": 3.7680984842983896,
+            "max_px": 4.36578355197469
+          }
+        },
+        "attempt_timeouts": 1
+      }
+    },
+    {
+      "id": "wm_r_118484591",
+      "track": "solver",
+      "negative": false,
+      "published_status": "solved",
+      "source_sha256": "a40183436c91907492d56af35e1a907fd5a8b85e458e641ec0efb753995a9dc9",
+      "control": {
+        "status": "completed",
+        "solve_status": "solved",
+        "elapsed_s": 1.2187155466526747,
+        "exit_code": 0,
+        "report_sha256": "91812640c662df9e149a4a18fc1120b0f52eccc991a37fc011e990e3dced9a4a",
+        "detections": 40,
+        "quality": {
+          "confidence": 1.0,
+          "log_odds": 286.17,
+          "n_detections": 40,
+          "n_inliers": 40,
+          "rms_px": 1.27
+        },
+        "failure": null,
+        "timing_ms": {
+          "detect": 182,
+          "solve": 121,
+          "total": 570
+        },
+        "pending_external_geometry": {
+          "reference_status": "solved_candidate",
+          "review_status": "pending",
+          "solver_status": "solved",
+          "full_field_wcs_difference": {
+            "count": 81,
+            "rms_px": 35.834950431388236,
+            "median_px": 11.930840058130924,
+            "p95_px": 81.21201607619066,
+            "max_px": 105.71466750623281
+          },
+          "external_star_error": {
+            "count": 138,
+            "rms_px": 1.087050954206232,
+            "median_px": 0.8790773082020881,
+            "p95_px": 1.7546132478950325,
+            "max_px": 4.293464409942225
+          },
+          "external_wcs_fit": {
+            "count": 138,
+            "rms_px": 4.919070937166638,
+            "median_px": 4.047533353680253,
+            "p95_px": 8.793162970092158,
+            "max_px": 13.268106991911916
+          }
+        },
+        "attempt_timeouts": 0
+      },
+      "huber": {
+        "status": "completed",
+        "solve_status": "solved",
+        "elapsed_s": 1.9242818988859653,
+        "exit_code": 0,
+        "report_sha256": "ed5f0d6b884bf65f2e521c63b3efe8a08b2c62c3a3439d6fee1a7a8640f8bf29",
+        "detections": 40,
+        "quality": {
+          "confidence": 1.0,
+          "log_odds": 286.17,
+          "n_detections": 40,
+          "n_inliers": 40,
+          "rms_px": 1.27
+        },
+        "failure": null,
+        "timing_ms": {
+          "detect": 184,
+          "solve": 91,
+          "total": 638
+        },
+        "pending_external_geometry": {
+          "reference_status": "solved_candidate",
+          "review_status": "pending",
+          "solver_status": "solved",
+          "full_field_wcs_difference": {
+            "count": 81,
+            "rms_px": 35.83495046477353,
+            "median_px": 11.930840027765498,
+            "p95_px": 81.21201613377237,
+            "max_px": 105.71466760558202
+          },
+          "external_star_error": {
+            "count": 138,
+            "rms_px": 1.0870509461584805,
+            "median_px": 0.879077281863649,
+            "p95_px": 1.7546132415247226,
+            "max_px": 4.293464423957602
+          },
+          "external_wcs_fit": {
+            "count": 138,
+            "rms_px": 4.919070937166638,
+            "median_px": 4.047533353680253,
+            "p95_px": 8.793162970092158,
+            "max_px": 13.268106991911916
+          }
+        },
+        "attempt_timeouts": 0
+      }
+    },
+    {
+      "id": "wm_r_124355480",
+      "track": "stress",
+      "negative": true,
+      "published_status": "failed",
+      "source_sha256": "f95266fa221aab6431af9326b96323eee59fc5c5d56210f8e726c3851060a610",
+      "control": {
+        "status": "completed",
+        "solve_status": "failed",
+        "elapsed_s": 2.964698614552617,
+        "exit_code": 0,
+        "report_sha256": "ef517ec235c39c20b008d35dba798c710f5470f7c1fcdedbd3e3eb61e792f1f0",
+        "detections": 50,
+        "quality": null,
+        "failure": {
+          "code": "no_confident_match",
+          "message": "no tetra3 pattern match found across the retry ladder"
+        },
+        "timing_ms": {
+          "detect": 906,
+          "solve": 1884,
+          "total": 2493
+        },
+        "attempt_timeouts": 0
+      },
+      "huber": {
+        "status": "completed",
+        "solve_status": "failed",
+        "elapsed_s": 2.6231869645416737,
+        "exit_code": 0,
+        "report_sha256": "864f903a7636ffeda795f6171a7b9d0d3a20f7d33535d78b1e06a2c31b4d93b7",
+        "detections": 50,
+        "quality": null,
+        "failure": {
+          "code": "no_confident_match",
+          "message": "no tetra3 pattern match found across the retry ladder"
+        },
+        "timing_ms": {
+          "detect": 855,
+          "solve": 1600,
+          "total": 2138
+        },
+        "attempt_timeouts": 0
+      }
+    },
+    {
+      "id": "wm_r_132162731",
+      "track": "solver",
+      "negative": false,
+      "published_status": "solved",
+      "source_sha256": "58dfbce4f8a236cab8158a4a0f9ed677c68aa8873afd9568df48d370f01ef188",
+      "control": {
+        "status": "completed",
+        "solve_status": "solved",
+        "elapsed_s": 37.1575272269547,
+        "exit_code": 0,
+        "report_sha256": "2bba9dea2e7c40cb2ba02c0fd51f31e7cf0ed657a2e7503ffb252d2fd0f3559c",
+        "detections": 40,
+        "quality": {
+          "confidence": 0.1177,
+          "log_odds": 4.71,
+          "n_detections": 40,
+          "n_inliers": 7,
+          "rms_px": 1.53
+        },
+        "failure": null,
+        "timing_ms": {
+          "detect": 2474,
+          "solve": 32941,
+          "total": 35644
+        },
+        "attempt_timeouts": 5
+      },
+      "huber": {
+        "status": "completed",
+        "solve_status": "solved",
+        "elapsed_s": 37.2872576713562,
+        "exit_code": 0,
+        "report_sha256": "f1aa9f3314f23b745d3320251cd4f27df8fa7eb6770d0fdaaf30f38ed8ae6a96",
+        "detections": 40,
+        "quality": {
+          "confidence": 0.0,
+          "log_odds": -6.8,
+          "n_detections": 40,
+          "n_inliers": 6,
+          "rms_px": 1.34
+        },
+        "failure": null,
+        "timing_ms": {
+          "detect": 2950,
+          "solve": 32632,
+          "total": 35850
+        },
+        "attempt_timeouts": 6
+      }
+    },
+    {
+      "id": "wm_r_134291495",
+      "track": "solver",
+      "negative": false,
+      "published_status": "failed",
+      "source_sha256": "efe2f4460cb419479ff3bd251815db7f7c78cd30258afc9a88cc1f7818cc145d",
+      "control": {
+        "status": "completed",
+        "solve_status": "failed",
+        "elapsed_s": 11.869174679741263,
+        "exit_code": 0,
+        "report_sha256": "da404ae4bb9512231e9a7403352d6f36549b1accf0e253f2eefbe04390aa6c6e",
+        "detections": 50,
+        "quality": null,
+        "failure": {
+          "code": "no_confident_match",
+          "message": "no tetra3 pattern match found across the retry ladder"
+        },
+        "timing_ms": {
+          "detect": 6245,
+          "solve": 6651,
+          "total": 11007
+        },
+        "attempt_timeouts": 0
+      },
+      "huber": {
+        "status": "completed",
+        "solve_status": "failed",
+        "elapsed_s": 12.742196507751942,
+        "exit_code": 0,
+        "report_sha256": "0e17615c18d1be93e2f29e9432532aa5d635459c6c834dd07ab3141e52917e27",
+        "detections": 50,
+        "quality": null,
+        "failure": {
+          "code": "no_confident_match",
+          "message": "no tetra3 pattern match found across the retry ladder"
+        },
+        "timing_ms": {
+          "detect": 7049,
+          "solve": 7761,
+          "total": 11826
+        },
+        "attempt_timeouts": 0
+      }
+    },
+    {
+      "id": "wm_r_140736786",
+      "track": "solver",
+      "negative": false,
+      "published_status": "solved",
+      "source_sha256": "8efae48632099d8eeb619315fc1ea4fd2b7ab4062c66af4c94b6c147a35d01e5",
+      "control": {
+        "status": "completed",
+        "solve_status": "solved",
+        "elapsed_s": 1.8206104971468449,
+        "exit_code": 0,
+        "report_sha256": "228acf7d463699ead8e8ee6719051361b9a9990214f90ca96be51a4ed13ec157",
+        "detections": 40,
+        "quality": {
+          "confidence": 1.0,
+          "log_odds": 231.96,
+          "n_detections": 40,
+          "n_inliers": 34,
+          "rms_px": 2.15
+        },
+        "failure": null,
+        "timing_ms": {
+          "detect": 188,
+          "solve": 513,
+          "total": 1048
+        },
+        "pending_external_geometry": {
+          "reference_status": "solved_candidate",
+          "review_status": "pending",
+          "solver_status": "solved",
+          "full_field_wcs_difference": {
+            "count": 81,
+            "rms_px": 6.285164674716625,
+            "median_px": 3.0496589507536624,
+            "p95_px": 13.377517300701664,
+            "max_px": 21.0278314687458
+          },
+          "external_star_error": {
+            "count": 40,
+            "rms_px": 4.32725739368519,
+            "median_px": 1.9799966908660775,
+            "p95_px": 7.850544589212261,
+            "max_px": 18.674906876353297
+          },
+          "external_wcs_fit": {
+            "count": 40,
+            "rms_px": 2.4771274789253193,
+            "median_px": 1.3241784774094638,
+            "p95_px": 3.065691398920622,
+            "max_px": 12.204216653033567
+          }
+        },
+        "attempt_timeouts": 0
+      },
+      "huber": {
+        "status": "completed",
+        "solve_status": "solved",
+        "elapsed_s": 2.6778727397322655,
+        "exit_code": 0,
+        "report_sha256": "1053d6ddf1cfabc9643ff559ec14225cd4d2538c40af59dafb793a85d7e5073a",
+        "detections": 40,
+        "quality": {
+          "confidence": 1.0,
+          "log_odds": 231.96,
+          "n_detections": 40,
+          "n_inliers": 34,
+          "rms_px": 2.15
+        },
+        "failure": null,
+        "timing_ms": {
+          "detect": 269,
+          "solve": 515,
+          "total": 1290
+        },
+        "pending_external_geometry": {
+          "reference_status": "solved_candidate",
+          "review_status": "pending",
+          "solver_status": "solved",
+          "full_field_wcs_difference": {
+            "count": 81,
+            "rms_px": 6.285164674679884,
+            "median_px": 3.0496589507479195,
+            "p95_px": 13.377517300839623,
+            "max_px": 21.02783146857486
+          },
+          "external_star_error": {
+            "count": 40,
+            "rms_px": 4.327257393685946,
+            "median_px": 1.9799966909158484,
+            "p95_px": 7.850544589290841,
+            "max_px": 18.674906876400698
+          },
+          "external_wcs_fit": {
+            "count": 40,
+            "rms_px": 2.4771274789253193,
+            "median_px": 1.3241784774094638,
+            "p95_px": 3.065691398920622,
+            "max_px": 12.204216653033567
+          }
+        },
+        "attempt_timeouts": 0
+      }
+    },
+    {
+      "id": "wm_r_142048359",
+      "track": "solver",
+      "negative": false,
+      "published_status": "solved",
+      "source_sha256": "5c5f6016a8755ad21ab6a260eec136697897398f6501437bdd498ce67bed9fd4",
+      "control": {
+        "status": "completed",
+        "solve_status": "solved",
+        "elapsed_s": 2.8751596231013536,
+        "exit_code": 0,
+        "report_sha256": "5759f3d8a37bb99a58802f5bc158ebf0422d2420437733b4020e37b2ce138068",
+        "detections": 40,
+        "quality": {
+          "confidence": 1.0,
+          "log_odds": 263.47,
+          "n_detections": 40,
+          "n_inliers": 37,
+          "rms_px": 2.74
+        },
+        "failure": null,
+        "timing_ms": {
+          "detect": 341,
+          "solve": 1206,
+          "total": 1988
+        },
+        "attempt_timeouts": 0
+      },
+      "huber": {
+        "status": "completed",
+        "solve_status": "solved",
+        "elapsed_s": 2.9294326566159725,
+        "exit_code": 0,
+        "report_sha256": "9c1c3f8325c061745954337a7e973a33521ac17b8bde0088d704d24e07cb6ede",
+        "detections": 40,
+        "quality": {
+          "confidence": 1.0,
+          "log_odds": 263.47,
+          "n_detections": 40,
+          "n_inliers": 37,
+          "rms_px": 2.74
+        },
+        "failure": null,
+        "timing_ms": {
+          "detect": 304,
+          "solve": 1169,
+          "total": 1999
+        },
+        "attempt_timeouts": 0
+      }
+    },
+    {
+      "id": "wm_r_143159342",
+      "track": "solver",
+      "negative": false,
+      "published_status": "solved",
+      "source_sha256": "94f3d61426e03e4fda29b95a1b91038332a09491587acf77df3681c5b919c54d",
+      "control": {
+        "status": "completed",
+        "solve_status": "solved",
+        "elapsed_s": 20.45329905860126,
+        "exit_code": 0,
+        "report_sha256": "eb245cc2effc58a09ea1fe745654880d03eb450601de29d7d23043dad88ab865",
+        "detections": 50,
+        "quality": {
+          "confidence": 1.0,
+          "log_odds": 146.77,
+          "n_detections": 50,
+          "n_inliers": 27,
+          "rms_px": 3.0
+        },
+        "failure": null,
+        "timing_ms": {
+          "detect": 431,
+          "solve": 18680,
+          "total": 19369
+        },
+        "attempt_timeouts": 3
+      },
+      "huber": {
+        "status": "completed",
+        "solve_status": "solved",
+        "elapsed_s": 21.414158383384347,
+        "exit_code": 0,
+        "report_sha256": "026d5a53e2e241beb95e08f62934bbf5a7199f14380d1917b0f3e2b34708fc10",
+        "detections": 50,
+        "quality": {
+          "confidence": 1.0,
+          "log_odds": 146.77,
+          "n_detections": 50,
+          "n_inliers": 27,
+          "rms_px": 3.0
+        },
+        "failure": null,
+        "timing_ms": {
+          "detect": 351,
+          "solve": 20151,
+          "total": 20571
+        },
+        "attempt_timeouts": 3
+      }
+    },
+    {
+      "id": "wm_r_148245316",
+      "track": "solver",
+      "negative": false,
+      "published_status": "failed",
+      "source_sha256": "a00f51721cc4f29fb967d2304d548c84076500ec0af8510790c1266334bac2c3",
+      "control": {
+        "status": "completed",
+        "solve_status": "failed",
+        "elapsed_s": 7.807309549301863,
+        "exit_code": 0,
+        "report_sha256": "179b212bcb88abce0a30c24d318b9817298cfa1509ec0d075ef2a7d5a943a3de",
+        "detections": 50,
+        "quality": null,
+        "failure": {
+          "code": "no_confident_match",
+          "message": "no tetra3 pattern match found across the retry ladder"
+        },
+        "timing_ms": {
+          "detect": 3812,
+          "solve": 5409,
+          "total": 7190
+        },
+        "attempt_timeouts": 0
+      },
+      "huber": {
+        "status": "completed",
+        "solve_status": "failed",
+        "elapsed_s": 9.36367517337203,
+        "exit_code": 0,
+        "report_sha256": "1bcb41d0397c3d0a86a4d7a1b050da4efe331a1bab4a8736ae391c4c3f3d57bb",
+        "detections": 50,
+        "quality": null,
+        "failure": {
+          "code": "no_confident_match",
+          "message": "no tetra3 pattern match found across the retry ladder"
+        },
+        "timing_ms": {
+          "detect": 3407,
+          "solve": 5829,
+          "total": 8221
+        },
+        "attempt_timeouts": 0
+      }
+    },
+    {
+      "id": "wm_r_148266565",
+      "track": "solver",
+      "negative": false,
+      "published_status": "solved",
+      "source_sha256": "be7292e499ead98eb6a514d4d3e3e18bbc5ffb6a58be4581ea9679e94737cc76",
+      "control": {
+        "status": "completed",
+        "solve_status": "solved",
+        "elapsed_s": 1.9714903365820646,
+        "exit_code": 0,
+        "report_sha256": "9b864d0f4cdbf36602a19318f2104cf04a7701f710cf599fbd163cea58627cb8",
+        "detections": 40,
+        "quality": {
+          "confidence": 1.0,
+          "log_odds": 172.87,
+          "n_detections": 40,
+          "n_inliers": 28,
+          "rms_px": 1.18
+        },
+        "failure": null,
+        "timing_ms": {
+          "detect": 178,
+          "solve": 325,
+          "total": 899
+        },
+        "pending_external_geometry": {
+          "reference_status": "solved_candidate",
+          "review_status": "pending",
+          "solver_status": "solved",
+          "full_field_wcs_difference": {
+            "count": 81,
+            "rms_px": 1.7046560876634518,
+            "median_px": 1.1287086803050466,
+            "p95_px": 3.8941164626032236,
+            "max_px": 4.148860157028903
+          },
+          "external_star_error": {
+            "count": 62,
+            "rms_px": 2.0169122072705505,
+            "median_px": 0.9775849300004829,
+            "p95_px": 2.3488985316313453,
+            "max_px": 12.26786561966304
+          },
+          "external_wcs_fit": {
+            "count": 62,
+            "rms_px": 1.351543493775997,
+            "median_px": 0.6730192229370853,
+            "p95_px": 1.6872331760321952,
+            "max_px": 8.337381020965891
+          }
+        },
+        "attempt_timeouts": 0
+      },
+      "huber": {
+        "status": "completed",
+        "solve_status": "solved",
+        "elapsed_s": 2.223045641556382,
+        "exit_code": 0,
+        "report_sha256": "8a2644a7fd8be3335151a40db5c7d6b1a19d81c95ab7d005a53715ac54e81140",
+        "detections": 40,
+        "quality": {
+          "confidence": 1.0,
+          "log_odds": 172.87,
+          "n_detections": 40,
+          "n_inliers": 28,
+          "rms_px": 1.18
+        },
+        "failure": null,
+        "timing_ms": {
+          "detect": 229,
+          "solve": 345,
+          "total": 1023
+        },
+        "pending_external_geometry": {
+          "reference_status": "solved_candidate",
+          "review_status": "pending",
+          "solver_status": "solved",
+          "full_field_wcs_difference": {
+            "count": 81,
+            "rms_px": 1.7046560879678372,
+            "median_px": 1.1287086794420924,
+            "p95_px": 3.8941164640231047,
+            "max_px": 4.1488601581447515
+          },
+          "external_star_error": {
+            "count": 62,
+            "rms_px": 2.0169122073676706,
+            "median_px": 0.9775849293891551,
+            "p95_px": 2.348898532810364,
+            "max_px": 12.267865620490156
+          },
+          "external_wcs_fit": {
+            "count": 62,
+            "rms_px": 1.351543493775997,
+            "median_px": 0.6730192229370853,
+            "p95_px": 1.6872331760321952,
+            "max_px": 8.337381020965891
+          }
+        },
+        "attempt_timeouts": 0
+      }
+    },
+    {
+      "id": "wm_r_149276071",
+      "track": "solver",
+      "negative": false,
+      "published_status": "solved",
+      "source_sha256": "07ae25603db00a53060aaac710635df8ec71ca14eeb758e604cadb211cbd25a2",
+      "control": {
+        "status": "completed",
+        "solve_status": "solved",
+        "elapsed_s": 2.2217553909868,
+        "exit_code": 0,
+        "report_sha256": "82a9f1ebfe172e841023d05cde4a4dac763cce91de6a2044af24e9025e29a98f",
+        "detections": 40,
+        "quality": {
+          "confidence": 1.0,
+          "log_odds": 208.57,
+          "n_detections": 40,
+          "n_inliers": 31,
+          "rms_px": 1.63
+        },
+        "failure": null,
+        "timing_ms": {
+          "detect": 251,
+          "solve": 912,
+          "total": 1399
+        },
+        "pending_external_geometry": {
+          "reference_status": "solved_candidate",
+          "review_status": "pending",
+          "solver_status": "solved",
+          "full_field_wcs_difference": {
+            "count": 81,
+            "rms_px": 13.952634154095797,
+            "median_px": 5.301166271363686,
+            "p95_px": 28.77551225769273,
+            "max_px": 50.71564446698015
+          },
+          "external_star_error": {
+            "count": 4,
+            "rms_px": 2.5001510301108407,
+            "median_px": 2.5090297192158872,
+            "p95_px": 2.9416156714749366,
+            "max_px": 2.9826750731538842
+          },
+          "external_wcs_fit": {
+            "count": 4,
+            "rms_px": 2.5343046576424855,
+            "median_px": 2.6239558042708335,
+            "p95_px": 3.2386561915760788,
+            "max_px": 3.2751501014461333
+          }
+        },
+        "attempt_timeouts": 0
+      },
+      "huber": {
+        "status": "completed",
+        "solve_status": "solved",
+        "elapsed_s": 2.0800187457352877,
+        "exit_code": 0,
+        "report_sha256": "7ae9527731ab50332fe9b16ada1be1a76c3374a823a77d54647417915fe64a37",
+        "detections": 40,
+        "quality": {
+          "confidence": 1.0,
+          "log_odds": 208.57,
+          "n_detections": 40,
+          "n_inliers": 31,
+          "rms_px": 1.63
+        },
+        "failure": null,
+        "timing_ms": {
+          "detect": 231,
+          "solve": 768,
+          "total": 1260
+        },
+        "pending_external_geometry": {
+          "reference_status": "solved_candidate",
+          "review_status": "pending",
+          "solver_status": "solved",
+          "full_field_wcs_difference": {
+            "count": 81,
+            "rms_px": 13.952634154086871,
+            "median_px": 5.301166271342952,
+            "p95_px": 28.775512257709703,
+            "max_px": 50.71564446697879
+          },
+          "external_star_error": {
+            "count": 4,
+            "rms_px": 2.5001510300715335,
+            "median_px": 2.509029719165037,
+            "p95_px": 2.941615671426481,
+            "max_px": 2.982675073107914
+          },
+          "external_wcs_fit": {
+            "count": 4,
+            "rms_px": 2.5343046576424855,
+            "median_px": 2.6239558042708335,
+            "p95_px": 3.2386561915760788,
+            "max_px": 3.2751501014461333
+          }
+        },
+        "attempt_timeouts": 0
+      }
+    },
+    {
+      "id": "wm_r_152165509",
+      "track": "stress",
+      "negative": false,
+      "published_status": "failed",
+      "source_sha256": "53078e0dd7291d31321860f76d247d814175621ccb73d8beb62455bacde41c26",
+      "control": {
+        "status": "completed",
+        "solve_status": "failed",
+        "elapsed_s": 15.124605394899845,
+        "exit_code": 0,
+        "report_sha256": "4df343a6ceac02894f8d997b17927441e700fcdcbc0ebf076426952fd4f4f8b9",
+        "detections": 50,
+        "quality": null,
+        "failure": {
+          "code": "no_confident_match",
+          "message": "no tetra3 pattern match found across the retry ladder"
+        },
+        "timing_ms": {
+          "detect": 5012,
+          "solve": 10966,
+          "total": 13744
+        },
+        "attempt_timeouts": 0
+      },
+      "huber": {
+        "status": "completed",
+        "solve_status": "failed",
+        "elapsed_s": 19.169864049181342,
+        "exit_code": 0,
+        "report_sha256": "06c70a3b3d38710e1b0ec190149af41061fd3d83f02798c3fc77f91934c7a58b",
+        "detections": 50,
+        "quality": null,
+        "failure": {
+          "code": "no_confident_match",
+          "message": "no tetra3 pattern match found across the retry ladder"
+        },
+        "timing_ms": {
+          "detect": 6734,
+          "solve": 13360,
+          "total": 17765
+        },
+        "attempt_timeouts": 0
+      }
+    },
+    {
+      "id": "wm_r_153414920",
+      "track": "stress",
+      "negative": true,
+      "published_status": "failed",
+      "source_sha256": "556c7aecacb5402969a5e013a45434c51d12c022d1e420c189fd6bf86b33cbee",
+      "control": {
+        "status": "completed",
+        "solve_status": "failed",
+        "elapsed_s": 8.44867599569261,
+        "exit_code": 0,
+        "report_sha256": "470d2db462eeab9f10fca385fcc661f9d9b49c7f986ec417ef53d6035d591246",
+        "detections": 50,
+        "quality": null,
+        "failure": {
+          "code": "no_confident_match",
+          "message": "no tetra3 pattern match found across the retry ladder"
+        },
+        "timing_ms": {
+          "detect": 3708,
+          "solve": 5692,
+          "total": 7706
+        },
+        "attempt_timeouts": 0
+      },
+      "huber": {
+        "status": "completed",
+        "solve_status": "failed",
+        "elapsed_s": 8.309564661234617,
+        "exit_code": 0,
+        "report_sha256": "b094f949d84458304693f11751f2cadfbf1c3c6afd49600ecc8488b8c04422a5",
+        "detections": 50,
+        "quality": null,
+        "failure": {
+          "code": "no_confident_match",
+          "message": "no tetra3 pattern match found across the retry ladder"
+        },
+        "timing_ms": {
+          "detect": 3572,
+          "solve": 5030,
+          "total": 7156
+        },
+        "attempt_timeouts": 0
+      }
+    },
+    {
+      "id": "wm_r_154107562",
+      "track": "stress",
+      "negative": false,
+      "published_status": "failed",
+      "source_sha256": "fb7381b92a199ec618208febb092f51cc7d3b533d57526a0297e1f8940367305",
+      "control": {
+        "status": "completed",
+        "solve_status": "failed",
+        "elapsed_s": 3.1287252996116877,
+        "exit_code": 0,
+        "report_sha256": "62a43d7894bc6138e7e9b138f966ede1940ac775e7aa9f9957a8d9edb988cef8",
+        "detections": 47,
+        "quality": null,
+        "failure": {
+          "code": "no_confident_match",
+          "message": "no tetra3 pattern match found across the retry ladder"
+        },
+        "timing_ms": {
+          "detect": 102,
+          "solve": 2613,
+          "total": 2662
+        },
+        "attempt_timeouts": 0
+      },
+      "huber": {
+        "status": "completed",
+        "solve_status": "failed",
+        "elapsed_s": 3.0451569464057684,
+        "exit_code": 0,
+        "report_sha256": "fa2fc5fad1f4dc0ef9bf64120a65f891d3806be6553e0473b1a588824cdb0dcc",
+        "detections": 47,
+        "quality": null,
+        "failure": {
+          "code": "no_confident_match",
+          "message": "no tetra3 pattern match found across the retry ladder"
+        },
+        "timing_ms": {
+          "detect": 133,
+          "solve": 2170,
+          "total": 2233
+        },
+        "attempt_timeouts": 0
+      }
+    },
+    {
+      "id": "wm_r_154807046",
+      "track": "solver",
+      "negative": false,
+      "published_status": "solved",
+      "source_sha256": "da420889b2818f3176320feb2d8fd4c4794f4c0f0800cf10e82de7473c262cb9",
+      "control": {
+        "status": "completed",
+        "solve_status": "solved",
+        "elapsed_s": 7.015934823080897,
+        "exit_code": 0,
+        "report_sha256": "61fc3a08f1e4839c3846609d86b7f12a652d7993b6bbcafe0ea8b5f241698cdc",
+        "detections": 40,
+        "quality": {
+          "confidence": 1.0,
+          "log_odds": 77.65,
+          "n_detections": 40,
+          "n_inliers": 17,
+          "rms_px": 3.66
+        },
+        "failure": null,
+        "timing_ms": {
+          "detect": 223,
+          "solve": 5291,
+          "total": 5907
+        },
+        "pending_external_geometry": {
+          "reference_status": "solved_candidate",
+          "review_status": "pending",
+          "solver_status": "solved",
+          "full_field_wcs_difference": {
+            "count": 81,
+            "rms_px": 115.88756510814248,
+            "median_px": 32.77334309493036,
+            "p95_px": 265.2325666145358,
+            "max_px": 325.0234171379408
+          },
+          "external_star_error": {
+            "count": 107,
+            "rms_px": 69.9974456018283,
+            "median_px": 19.29404257473665,
+            "p95_px": 169.4290671077654,
+            "max_px": 237.43579302875847
+          },
+          "external_wcs_fit": {
+            "count": 107,
+            "rms_px": 5.2748218051473,
+            "median_px": 3.502412736956531,
+            "p95_px": 11.150005779186003,
+            "max_px": 13.656411603235176
+          }
+        },
+        "attempt_timeouts": 0
+      },
+      "huber": {
+        "status": "completed",
+        "solve_status": "solved",
+        "elapsed_s": 5.45885868743062,
+        "exit_code": 0,
+        "report_sha256": "2a6aed727da732181618f7d1fc57ae695fb35c4f533794afc938840bb9113dc0",
+        "detections": 40,
+        "quality": {
+          "confidence": 1.0,
+          "log_odds": 77.65,
+          "n_detections": 40,
+          "n_inliers": 17,
+          "rms_px": 3.66
+        },
+        "failure": null,
+        "timing_ms": {
+          "detect": 210,
+          "solve": 3774,
+          "total": 4448
+        },
+        "pending_external_geometry": {
+          "reference_status": "solved_candidate",
+          "review_status": "pending",
+          "solver_status": "solved",
+          "full_field_wcs_difference": {
+            "count": 81,
+            "rms_px": 115.88756511116513,
+            "median_px": 32.77334307507408,
+            "p95_px": 265.23256662451934,
+            "max_px": 325.02341717425253
+          },
+          "external_star_error": {
+            "count": 107,
+            "rms_px": 69.99744559393805,
+            "median_px": 19.29404256415411,
+            "p95_px": 169.42906709361608,
+            "max_px": 237.43579302837554
+          },
+          "external_wcs_fit": {
+            "count": 107,
+            "rms_px": 5.2748218051473,
+            "median_px": 3.502412736956531,
+            "p95_px": 11.150005779186003,
+            "max_px": 13.656411603235176
+          }
+        },
+        "attempt_timeouts": 0
+      }
+    },
+    {
+      "id": "wm_r_156873262",
+      "track": "solver",
+      "negative": false,
+      "published_status": "solved",
+      "source_sha256": "7577861fd6448be23879c11c4ac23463c84cb34d3e83670beaa46d1330bc889e",
+      "control": {
+        "status": "completed",
+        "solve_status": "solved",
+        "elapsed_s": 1.7707659341394901,
+        "exit_code": 0,
+        "report_sha256": "2ca9c3ce87a7ed0deb9530d513013e988bce7b641d63902e03f2b395a325aaba",
+        "detections": 40,
+        "quality": {
+          "confidence": 1.0,
+          "log_odds": 213.82,
+          "n_detections": 40,
+          "n_inliers": 32,
+          "rms_px": 0.94
+        },
+        "failure": null,
+        "timing_ms": {
+          "detect": 224,
+          "solve": 234,
+          "total": 933
+        },
+        "pending_external_geometry": {
+          "reference_status": "solved_candidate",
+          "review_status": "pending",
+          "solver_status": "solved",
+          "full_field_wcs_difference": {
+            "count": 81,
+            "rms_px": 20.398338935528404,
+            "median_px": 5.790839878089978,
+            "p95_px": 44.85308763744126,
+            "max_px": 72.20818191334217
+          },
+          "external_star_error": {
+            "count": 78,
+            "rms_px": 1.940062623812676,
+            "median_px": 0.7299302560076664,
+            "p95_px": 2.4181003219268264,
+            "max_px": 12.493937914527205
+          },
+          "external_wcs_fit": {
+            "count": 78,
+            "rms_px": 4.154816524539749,
+            "median_px": 3.9400646815415916,
+            "p95_px": 6.251696918860759,
+            "max_px": 9.364723677515975
+          }
+        },
+        "attempt_timeouts": 0
+      },
+      "huber": {
+        "status": "completed",
+        "solve_status": "solved",
+        "elapsed_s": 1.4274261053651571,
+        "exit_code": 0,
+        "report_sha256": "33e541c2068e827f44c280442bf35929ba2064bc9b43c194cbcbdbd6029e3ace",
+        "detections": 40,
+        "quality": {
+          "confidence": 1.0,
+          "log_odds": 213.82,
+          "n_detections": 40,
+          "n_inliers": 32,
+          "rms_px": 0.94
+        },
+        "failure": null,
+        "timing_ms": {
+          "detect": 214,
+          "solve": 152,
+          "total": 560
+        },
+        "pending_external_geometry": {
+          "reference_status": "solved_candidate",
+          "review_status": "pending",
+          "solver_status": "solved",
+          "full_field_wcs_difference": {
+            "count": 81,
+            "rms_px": 20.39833893552016,
+            "median_px": 5.790839878084477,
+            "p95_px": 44.85308763741531,
+            "max_px": 72.20818191332529
+          },
+          "external_star_error": {
+            "count": 78,
+            "rms_px": 1.9400626238192669,
+            "median_px": 0.7299302559873984,
+            "p95_px": 2.4181003220316457,
+            "max_px": 12.493937914591983
+          },
+          "external_wcs_fit": {
+            "count": 78,
+            "rms_px": 4.154816524539749,
+            "median_px": 3.9400646815415916,
+            "p95_px": 6.251696918860759,
+            "max_px": 9.364723677515975
+          }
+        },
+        "attempt_timeouts": 0
+      }
+    },
+    {
+      "id": "wm_r_16053617",
+      "track": "solver",
+      "negative": false,
+      "published_status": "failed",
+      "source_sha256": "1e294faf829dcb2ea61a2ff39ef7ab20919781d7eeecfd8824a02e7c4520034f",
+      "control": {
+        "status": "completed",
+        "solve_status": "failed",
+        "elapsed_s": 23.669793087989092,
+        "exit_code": 0,
+        "report_sha256": "47145b7c18637bb4f871636458b8361e67d08cd39ab531b1fdece0480adfac8c",
+        "detections": 50,
+        "quality": null,
+        "failure": {
+          "code": "no_confident_match",
+          "message": "no tetra3 pattern match found across the retry ladder"
+        },
+        "timing_ms": {
+          "detect": 1686,
+          "solve": 21992,
+          "total": 23003
+        },
+        "attempt_timeouts": 0
+      },
+      "huber": {
+        "status": "completed",
+        "solve_status": "failed",
+        "elapsed_s": 19.920986112207174,
+        "exit_code": 0,
+        "report_sha256": "2e31f771492e8e38865bf09facdc03b888af527d0875eb9b5a0f5b8b935183e6",
+        "detections": 50,
+        "quality": null,
+        "failure": {
+          "code": "no_confident_match",
+          "message": "no tetra3 pattern match found across the retry ladder"
+        },
+        "timing_ms": {
+          "detect": 1516,
+          "solve": 17854,
+          "total": 18959
+        },
+        "attempt_timeouts": 0
+      }
+    },
+    {
+      "id": "wm_r_161606532",
+      "track": "solver",
+      "negative": false,
+      "published_status": "failed",
+      "source_sha256": "985afe7d1142a2ece7545bc8846cb7c610ac5d307f85bf9f45056d7249921c63",
+      "control": {
+        "status": "completed",
+        "solve_status": "failed",
+        "elapsed_s": 25.824454398825765,
+        "exit_code": 0,
+        "report_sha256": "ce421e0d66a41d65d0b5d0a89ed42a3662ed51ab99b2a9a233b6d1bc611385ef",
+        "detections": 50,
+        "quality": null,
+        "failure": {
+          "code": "no_confident_match",
+          "message": "no tetra3 pattern match found across the retry ladder"
+        },
+        "timing_ms": {
+          "detect": 3460,
+          "solve": 22589,
+          "total": 24702
+        },
+        "attempt_timeouts": 0
+      },
+      "huber": {
+        "status": "completed",
+        "solve_status": "failed",
+        "elapsed_s": 24.034348744899035,
+        "exit_code": 0,
+        "report_sha256": "4e569364d7f600f7195f6ce9d4e08309549099deb68b0b27c01338e2ce56868e",
+        "detections": 50,
+        "quality": null,
+        "failure": {
+          "code": "no_confident_match",
+          "message": "no tetra3 pattern match found across the retry ladder"
+        },
+        "timing_ms": {
+          "detect": 3426,
+          "solve": 20687,
+          "total": 22836
+        },
+        "attempt_timeouts": 0
+      }
+    },
+    {
+      "id": "wm_r_162210628",
+      "track": "solver",
+      "negative": false,
+      "published_status": "solved",
+      "source_sha256": "182f67e9c900e7cad333e16c73ac43206a350832dfe46f61ba45f647ac8cdc82",
+      "control": {
+        "status": "completed",
+        "solve_status": "solved",
+        "elapsed_s": 1.5185842756181955,
+        "exit_code": 0,
+        "report_sha256": "17ac173b1dcc5bc1bce40e9e6c0b4bd424cf13a4621e9058f5d31b68e7682893",
+        "detections": 40,
+        "quality": {
+          "confidence": 1.0,
+          "log_odds": 286.28,
+          "n_detections": 40,
+          "n_inliers": 40,
+          "rms_px": 1.24
+        },
+        "failure": null,
+        "timing_ms": {
+          "detect": 216,
+          "solve": 3,
+          "total": 764
+        },
+        "pending_external_geometry": {
+          "reference_status": "solved_candidate",
+          "review_status": "pending",
+          "solver_status": "solved",
+          "full_field_wcs_difference": {
+            "count": 81,
+            "rms_px": 5.9456963404703105,
+            "median_px": 2.743980716771807,
+            "p95_px": 12.087115241751171,
+            "max_px": 24.053489343196585
+          },
+          "external_star_error": {
+            "count": 23,
+            "rms_px": 0.9097610752822567,
+            "median_px": 0.7516158993640549,
+            "p95_px": 1.496796367231452,
+            "max_px": 1.9776269551757046
+          },
+          "external_wcs_fit": {
+            "count": 23,
+            "rms_px": 1.0524692965299467,
+            "median_px": 0.6784361623872487,
+            "p95_px": 1.948664260814446,
+            "max_px": 2.103103844607352
+          }
+        },
+        "attempt_timeouts": 0
+      },
+      "huber": {
+        "status": "completed",
+        "solve_status": "solved",
+        "elapsed_s": 1.4696126151829958,
+        "exit_code": 0,
+        "report_sha256": "0ce069feedf3b4234319355f73266265eef41b6054f909e09ea3480eded2c63f",
+        "detections": 40,
+        "quality": {
+          "confidence": 1.0,
+          "log_odds": 286.28,
+          "n_detections": 40,
+          "n_inliers": 40,
+          "rms_px": 1.24
+        },
+        "failure": null,
+        "timing_ms": {
+          "detect": 215,
+          "solve": 2,
+          "total": 552
+        },
+        "pending_external_geometry": {
+          "reference_status": "solved_candidate",
+          "review_status": "pending",
+          "solver_status": "solved",
+          "full_field_wcs_difference": {
+            "count": 81,
+            "rms_px": 5.945696340677521,
+            "median_px": 2.7439807169112767,
+            "p95_px": 12.087115242156836,
+            "max_px": 24.053489344077374
+          },
+          "external_star_error": {
+            "count": 23,
+            "rms_px": 0.9097610752846383,
+            "median_px": 0.7516158994493259,
+            "p95_px": 1.4967963672222366,
+            "max_px": 1.9776269551747534
+          },
+          "external_wcs_fit": {
+            "count": 23,
+            "rms_px": 1.0524692965299467,
+            "median_px": 0.6784361623872487,
+            "p95_px": 1.948664260814446,
+            "max_px": 2.103103844607352
+          }
+        },
+        "attempt_timeouts": 0
+      }
+    },
+    {
+      "id": "wm_r_163971318",
+      "track": "solver",
+      "negative": false,
+      "published_status": "solved",
+      "source_sha256": "908b43c0b68aba1e321f38f4ee5227d9919c6c0ad5cc967c2118e356bf417ba1",
+      "control": {
+        "status": "completed",
+        "solve_status": "solved",
+        "elapsed_s": 2.5226676631718874,
+        "exit_code": 0,
+        "report_sha256": "0078a3c02af7d30350ac2c0c02c5d6dd9d3b4c96cecd2ae398e5fb7cf77d76a9",
+        "detections": 40,
+        "quality": {
+          "confidence": 1.0,
+          "log_odds": 231.96,
+          "n_detections": 40,
+          "n_inliers": 34,
+          "rms_px": 1.81
+        },
+        "failure": null,
+        "timing_ms": {
+          "detect": 227,
+          "solve": 782,
+          "total": 1401
+        },
+        "pending_external_geometry": {
+          "reference_status": "solved_candidate",
+          "review_status": "pending",
+          "solver_status": "solved",
+          "full_field_wcs_difference": {
+            "count": 81,
+            "rms_px": 5.076464096165226,
+            "median_px": 1.8788205841927657,
+            "p95_px": 11.636089762635686,
+            "max_px": 17.038692950873013
+          },
+          "external_star_error": {
+            "count": 85,
+            "rms_px": 2.5414265113338756,
+            "median_px": 1.44014076921436,
+            "p95_px": 5.539735854455475,
+            "max_px": 9.18005902333592
+          },
+          "external_wcs_fit": {
+            "count": 85,
+            "rms_px": 1.4903802353143933,
+            "median_px": 1.2248376143545976,
+            "p95_px": 2.2163828015280482,
+            "max_px": 5.140924961169897
+          }
+        },
+        "attempt_timeouts": 0
+      },
+      "huber": {
+        "status": "completed",
+        "solve_status": "solved",
+        "elapsed_s": 2.3357089776545763,
+        "exit_code": 0,
+        "report_sha256": "e53ff107fb742c04058f3800f16f4e54655fa7572109974301ebbe68f6164719",
+        "detections": 40,
+        "quality": {
+          "confidence": 1.0,
+          "log_odds": 231.96,
+          "n_detections": 40,
+          "n_inliers": 34,
+          "rms_px": 1.81
+        },
+        "failure": null,
+        "timing_ms": {
+          "detect": 239,
+          "solve": 756,
+          "total": 1368
+        },
+        "pending_external_geometry": {
+          "reference_status": "solved_candidate",
+          "review_status": "pending",
+          "solver_status": "solved",
+          "full_field_wcs_difference": {
+            "count": 81,
+            "rms_px": 5.076464096149407,
+            "median_px": 1.8788205841849932,
+            "p95_px": 11.63608976256438,
+            "max_px": 17.038692950798264
+          },
+          "external_star_error": {
+            "count": 85,
+            "rms_px": 2.5414265113301067,
+            "median_px": 1.4401407692534853,
+            "p95_px": 5.539735854427769,
+            "max_px": 9.18005902333999
+          },
+          "external_wcs_fit": {
+            "count": 85,
+            "rms_px": 1.4903802353143933,
+            "median_px": 1.2248376143545976,
+            "p95_px": 2.2163828015280482,
+            "max_px": 5.140924961169897
+          }
+        },
+        "attempt_timeouts": 0
+      }
+    },
+    {
+      "id": "wm_r_170376698",
+      "track": "solver",
+      "negative": false,
+      "published_status": "failed",
+      "source_sha256": "e0d64620d4b09c5854274ce2af269b112628652ef739f1070ea6fb0cd8e1d9ae",
+      "control": {
+        "status": "completed",
+        "solve_status": "failed",
+        "elapsed_s": 8.49419816583395,
+        "exit_code": 0,
+        "report_sha256": "21e948f3f5bb04c7207967be8ac54e31b273aadedd7d20500fd1bf5c94152cb2",
+        "detections": 50,
+        "quality": null,
+        "failure": {
+          "code": "no_confident_match",
+          "message": "no tetra3 pattern match found across the retry ladder"
+        },
+        "timing_ms": {
+          "detect": 3196,
+          "solve": 5073,
+          "total": 7325
+        },
+        "attempt_timeouts": 0
+      },
+      "huber": {
+        "status": "completed",
+        "solve_status": "failed",
+        "elapsed_s": 8.765010992065072,
+        "exit_code": 0,
+        "report_sha256": "52d9ef29222aeb187116aa850ff7d93665531d1eea1124ebc7f9023fd4f986bb",
+        "detections": 50,
+        "quality": null,
+        "failure": {
+          "code": "no_confident_match",
+          "message": "no tetra3 pattern match found across the retry ladder"
+        },
+        "timing_ms": {
+          "detect": 3790,
+          "solve": 5041,
+          "total": 7538
+        },
+        "attempt_timeouts": 0
+      }
+    },
+    {
+      "id": "wm_r_170711707",
+      "track": "solver",
+      "negative": false,
+      "published_status": "failed",
+      "source_sha256": "da2915dd724a0781a7a885204abda8a35b897bcf1ed4494d21bedbc63ac69815",
+      "control": {
+        "status": "completed",
+        "solve_status": "failed",
+        "elapsed_s": 31.940652072429657,
+        "exit_code": 0,
+        "report_sha256": "1112a698a9d6873a490fd37a7fdb6e88da08cfc3583daf0e2e885864493165cf",
+        "detections": 50,
+        "quality": null,
+        "failure": {
+          "code": "no_confident_match",
+          "message": "no tetra3 pattern match found across the retry ladder"
+        },
+        "timing_ms": {
+          "detect": 3567,
+          "solve": 28198,
+          "total": 30911
+        },
+        "attempt_timeouts": 2
+      },
+      "huber": {
+        "status": "completed",
+        "solve_status": "failed",
+        "elapsed_s": 32.75799531303346,
+        "exit_code": 0,
+        "report_sha256": "3e076b70685e73e0bb273a66c8381f895db726546617aa4f154c63d4222fe38e",
+        "detections": 50,
+        "quality": null,
+        "failure": {
+          "code": "no_confident_match",
+          "message": "no tetra3 pattern match found across the retry ladder"
+        },
+        "timing_ms": {
+          "detect": 3310,
+          "solve": 30436,
+          "total": 32082
+        },
+        "attempt_timeouts": 3
+      }
+    },
+    {
+      "id": "wm_r_174305244",
+      "track": "solver",
+      "negative": false,
+      "published_status": "failed",
+      "source_sha256": "50f6a4930959619674464c5811f4d01b271af56939c3001c1c9c3bd0808a8228",
+      "control": {
+        "status": "completed",
+        "solve_status": "failed",
+        "elapsed_s": 8.991033738479018,
+        "exit_code": 0,
+        "report_sha256": "807e5d2386a8dca551b84a1ac9afeafef9516e4d9534ec4d8d244acbaa640b07",
+        "detections": 50,
+        "quality": null,
+        "failure": {
+          "code": "no_confident_match",
+          "message": "no tetra3 pattern match found across the retry ladder"
+        },
+        "timing_ms": {
+          "detect": 4482,
+          "solve": 4977,
+          "total": 7647
+        },
+        "attempt_timeouts": 0
+      },
+      "huber": {
+        "status": "completed",
+        "solve_status": "failed",
+        "elapsed_s": 10.209661405533552,
+        "exit_code": 0,
+        "report_sha256": "ef459a4d445f8769d7f547865057bbb657afa99234ab1182fa394f14a317876d",
+        "detections": 50,
+        "quality": null,
+        "failure": {
+          "code": "no_confident_match",
+          "message": "no tetra3 pattern match found across the retry ladder"
+        },
+        "timing_ms": {
+          "detect": 4879,
+          "solve": 5977,
+          "total": 9195
+        },
+        "attempt_timeouts": 0
+      }
+    },
+    {
+      "id": "wm_r_176021058",
+      "track": "solver",
+      "negative": false,
+      "published_status": "solved",
+      "source_sha256": "c950aff831b9e748548d681cffb26e9102547687e90861861ddaa1a5eecd5dc0",
+      "control": {
+        "status": "completed",
+        "solve_status": "solved",
+        "elapsed_s": 1.5181155558675528,
+        "exit_code": 0,
+        "report_sha256": "6daf61e5a9807f4c5f718ca0c4849bef1aa2b671b44568c8cd3f6f8d711d8e92",
+        "detections": 40,
+        "quality": {
+          "confidence": 1.0,
+          "log_odds": 261.71,
+          "n_detections": 40,
+          "n_inliers": 38,
+          "rms_px": 1.94
+        },
+        "failure": null,
+        "timing_ms": {
+          "detect": 165,
+          "solve": 59,
+          "total": 570
+        },
+        "pending_external_geometry": {
+          "reference_status": "solved_candidate",
+          "review_status": "pending",
+          "solver_status": "solved",
+          "full_field_wcs_difference": {
+            "count": 81,
+            "rms_px": 2.8470713661837213,
+            "median_px": 1.8832510723720677,
+            "p95_px": 5.734458672972794,
+            "max_px": 9.701190063667328
+          },
+          "external_star_error": {
+            "count": 32,
+            "rms_px": 1.91120554925836,
+            "median_px": 1.8207373225294496,
+            "p95_px": 3.148012473900878,
+            "max_px": 3.296287028076433
+          },
+          "external_wcs_fit": {
+            "count": 32,
+            "rms_px": 0.9748954657751432,
+            "median_px": 0.6650655191833964,
+            "p95_px": 1.7695544398080354,
+            "max_px": 2.257283076107899
+          }
+        },
+        "attempt_timeouts": 0
+      },
+      "huber": {
+        "status": "completed",
+        "solve_status": "solved",
+        "elapsed_s": 1.873482871800661,
+        "exit_code": 0,
+        "report_sha256": "1d714a208d569fc415d56742bf7623e51a0af493e6158155e95ccd2fdb091e70",
+        "detections": 40,
+        "quality": {
+          "confidence": 1.0,
+          "log_odds": 261.71,
+          "n_detections": 40,
+          "n_inliers": 38,
+          "rms_px": 1.94
+        },
+        "failure": null,
+        "timing_ms": {
+          "detect": 180,
+          "solve": 47,
+          "total": 682
+        },
+        "pending_external_geometry": {
+          "reference_status": "solved_candidate",
+          "review_status": "pending",
+          "solver_status": "solved",
+          "full_field_wcs_difference": {
+            "count": 81,
+            "rms_px": 2.8470713017293194,
+            "median_px": 1.8832509587949584,
+            "p95_px": 5.734458343697437,
+            "max_px": 9.701189637191822
+          },
+          "external_star_error": {
+            "count": 32,
+            "rms_px": 1.9112055790101663,
+            "median_px": 1.820737389991121,
+            "p95_px": 3.1480125972454367,
+            "max_px": 3.2962867686360253
+          },
+          "external_wcs_fit": {
+            "count": 32,
+            "rms_px": 0.9748954657751432,
+            "median_px": 0.6650655191833964,
+            "p95_px": 1.7695544398080354,
+            "max_px": 2.257283076107899
+          }
+        },
+        "attempt_timeouts": 0
+      }
+    },
+    {
+      "id": "wm_r_176481855",
+      "track": "solver",
+      "negative": false,
+      "published_status": "failed",
+      "source_sha256": "a2c97f072a339d1444db3a1ec8935fe5ed70cc484fc0e212d113c5ee0399327d",
+      "control": {
+        "status": "completed",
+        "solve_status": "failed",
+        "elapsed_s": 17.683968553319573,
+        "exit_code": 0,
+        "report_sha256": "d23491fa700f401fcdd149c0d1fa2571ebe218b37f289566566c938bab50615f",
+        "detections": 50,
+        "quality": null,
+        "failure": {
+          "code": "no_confident_match",
+          "message": "no tetra3 pattern match found across the retry ladder"
+        },
+        "timing_ms": {
+          "detect": 7409,
+          "solve": 12012,
+          "total": 16096
+        },
+        "attempt_timeouts": 0
+      },
+      "huber": {
+        "status": "completed",
+        "solve_status": "failed",
+        "elapsed_s": 17.567625237628818,
+        "exit_code": 0,
+        "report_sha256": "49aef0a60dea09bda35de620abe4aea2bbf35f580a1288af4b844e951ff9ca55",
+        "detections": 50,
+        "quality": null,
+        "failure": {
+          "code": "no_confident_match",
+          "message": "no tetra3 pattern match found across the retry ladder"
+        },
+        "timing_ms": {
+          "detect": 6777,
+          "solve": 11917,
+          "total": 16136
+        },
+        "attempt_timeouts": 0
+      }
+    },
+    {
+      "id": "wm_r_178297645",
+      "track": "solver",
+      "negative": false,
+      "published_status": "solved",
+      "source_sha256": "8c4fef84dd0c0a307522b4bfb9c9af6b68031e1e86b8bda020d25660eb4ac2b4",
+      "control": {
+        "status": "completed",
+        "solve_status": "solved",
+        "elapsed_s": 2.222968963906169,
+        "exit_code": 0,
+        "report_sha256": "7e4b71c11e08ff23531f16625c4f997c9d8f5354894420a745c0fd051e53f353",
+        "detections": 40,
+        "quality": {
+          "confidence": 0.8548,
+          "log_odds": 34.19,
+          "n_detections": 40,
+          "n_inliers": 12,
+          "rms_px": 1.3
+        },
+        "failure": null,
+        "timing_ms": {
+          "detect": 227,
+          "solve": 341,
+          "total": 1057
+        },
+        "pending_external_geometry": {
+          "reference_status": "solved_candidate",
+          "review_status": "pending",
+          "solver_status": "solved",
+          "full_field_wcs_difference": {
+            "count": 81,
+            "rms_px": 31.58322464566594,
+            "median_px": 17.749796495280588,
+            "p95_px": 63.93526064804173,
+            "max_px": 81.08749065890194
+          },
+          "external_star_error": {
+            "count": 12,
+            "rms_px": 3.1890160788858655,
+            "median_px": 3.312883547038732,
+            "p95_px": 4.412215381939759,
+            "max_px": 4.697359582337156
+          },
+          "external_wcs_fit": {
+            "count": 12,
+            "rms_px": 0.7099912556371938,
+            "median_px": 0.6991046425398618,
+            "p95_px": 1.0884849182027447,
+            "max_px": 1.2416490054863614
+          }
+        },
+        "attempt_timeouts": 0
+      },
+      "huber": {
+        "status": "completed",
+        "solve_status": "solved",
+        "elapsed_s": 2.1700390055775642,
+        "exit_code": 0,
+        "report_sha256": "c4cd2e1b665787b42d05ddc086dc169c0768b1c221220f264898f0d4e920db6a",
+        "detections": 40,
+        "quality": {
+          "confidence": 0.8548,
+          "log_odds": 34.19,
+          "n_detections": 40,
+          "n_inliers": 12,
+          "rms_px": 1.3
+        },
+        "failure": null,
+        "timing_ms": {
+          "detect": 232,
+          "solve": 347,
+          "total": 1026
+        },
+        "pending_external_geometry": {
+          "reference_status": "solved_candidate",
+          "review_status": "pending",
+          "solver_status": "solved",
+          "full_field_wcs_difference": {
+            "count": 81,
+            "rms_px": 31.583224645665723,
+            "median_px": 17.749796495232797,
+            "p95_px": 63.93526064799147,
+            "max_px": 81.08749065892587
+          },
+          "external_star_error": {
+            "count": 12,
+            "rms_px": 3.189016078876751,
+            "median_px": 3.312883547022647,
+            "p95_px": 4.412215381939834,
+            "max_px": 4.69735958233578
+          },
+          "external_wcs_fit": {
+            "count": 12,
+            "rms_px": 0.7099912556371938,
+            "median_px": 0.6991046425398618,
+            "p95_px": 1.0884849182027447,
+            "max_px": 1.2416490054863614
+          }
+        },
+        "attempt_timeouts": 0
+      }
+    },
+    {
+      "id": "wm_r_179619449",
+      "track": "solver",
+      "negative": false,
+      "published_status": "solved",
+      "source_sha256": "60aa033d5614c48727d8b74dce5b4b52e45105c0990a9560d7bf0d1f40534dc2",
+      "control": {
+        "status": "completed",
+        "solve_status": "solved",
+        "elapsed_s": 1.268972022458911,
+        "exit_code": 0,
+        "report_sha256": "90226fe5a8a271df34e58017f6a30546e8466369a68ac4cbcb617eba3ca83e9f",
+        "detections": 40,
+        "quality": {
+          "confidence": 1.0,
+          "log_odds": 88.18,
+          "n_detections": 40,
+          "n_inliers": 19,
+          "rms_px": 2.8
+        },
+        "failure": null,
+        "timing_ms": {
+          "detect": 119,
+          "solve": 92,
+          "total": 435
+        },
+        "pending_external_geometry": {
+          "reference_status": "solved_candidate",
+          "review_status": "pending",
+          "solver_status": "solved",
+          "full_field_wcs_difference": {
+            "count": 81,
+            "rms_px": 17.191155175722518,
+            "median_px": 6.766144747591418,
+            "p95_px": 36.66859202800556,
+            "max_px": 54.44612128406012
+          },
+          "external_star_error": {
+            "count": 37,
+            "rms_px": 7.728670717498634,
+            "median_px": 2.635986614525135,
+            "p95_px": 18.736197332336033,
+            "max_px": 31.379901570725306
+          },
+          "external_wcs_fit": {
+            "count": 37,
+            "rms_px": 2.900297942423543,
+            "median_px": 2.6079397586047106,
+            "p95_px": 4.6523044069097965,
+            "max_px": 5.160536171462384
+          }
+        },
+        "attempt_timeouts": 0
+      },
+      "huber": {
+        "status": "completed",
+        "solve_status": "solved",
+        "elapsed_s": 1.41886973567307,
+        "exit_code": 0,
+        "report_sha256": "52b5680326865e24ca2bcaad80f776f77ebade7356558497930d4e617e2af312",
+        "detections": 40,
+        "quality": {
+          "confidence": 1.0,
+          "log_odds": 88.18,
+          "n_detections": 40,
+          "n_inliers": 19,
+          "rms_px": 2.8
+        },
+        "failure": null,
+        "timing_ms": {
+          "detect": 154,
+          "solve": 138,
+          "total": 554
+        },
+        "pending_external_geometry": {
+          "reference_status": "solved_candidate",
+          "review_status": "pending",
+          "solver_status": "solved",
+          "full_field_wcs_difference": {
+            "count": 81,
+            "rms_px": 17.191155175682916,
+            "median_px": 6.766144747532836,
+            "p95_px": 36.668592028085584,
+            "max_px": 54.446121283919936
+          },
+          "external_star_error": {
+            "count": 37,
+            "rms_px": 7.728670717430288,
+            "median_px": 2.635986614628185,
+            "p95_px": 18.736197332176545,
+            "max_px": 31.379901570395216
+          },
+          "external_wcs_fit": {
+            "count": 37,
+            "rms_px": 2.900297942423543,
+            "median_px": 2.6079397586047106,
+            "p95_px": 4.6523044069097965,
+            "max_px": 5.160536171462384
+          }
+        },
+        "attempt_timeouts": 0
+      }
+    },
+    {
+      "id": "wm_r_179696785",
+      "track": "stress",
+      "negative": true,
+      "published_status": "failed",
+      "source_sha256": "d2b8e3a238a1eed6292933aeaeaf4c2088f44997acd3c95124b350bf1439c38c",
+      "control": {
+        "status": "completed",
+        "solve_status": "failed",
+        "elapsed_s": 7.97878341935575,
+        "exit_code": 0,
+        "report_sha256": "acf03ae9d423e454e346e65e624d504da17b518dfbe324d73a05086e4a538d7f",
+        "detections": 50,
+        "quality": null,
+        "failure": {
+          "code": "no_confident_match",
+          "message": "no tetra3 pattern match found across the retry ladder"
+        },
+        "timing_ms": {
+          "detect": 3302,
+          "solve": 5017,
+          "total": 6916
+        },
+        "attempt_timeouts": 0
+      },
+      "huber": {
+        "status": "completed",
+        "solve_status": "failed",
+        "elapsed_s": 8.917990935966372,
+        "exit_code": 0,
+        "report_sha256": "cb496303f9728dda2f4abfd5965711bd425f2cefb8ae937b9bb51d3cd847a6a9",
+        "detections": 50,
+        "quality": null,
+        "failure": {
+          "code": "no_confident_match",
+          "message": "no tetra3 pattern match found across the retry ladder"
+        },
+        "timing_ms": {
+          "detect": 3287,
+          "solve": 5573,
+          "total": 7897
+        },
+        "attempt_timeouts": 0
+      }
+    },
+    {
+      "id": "wm_r_180011612",
+      "track": "solver",
+      "negative": false,
+      "published_status": "solved",
+      "source_sha256": "0e97e36fdbb80e831e003614916ce29fca817eb171a4f0350ac27b2975506a8a",
+      "control": {
+        "status": "completed",
+        "solve_status": "solved",
+        "elapsed_s": 13.022602155804634,
+        "exit_code": 0,
+        "report_sha256": "db1c9c83ec6f1e971f505b0db933ffb70458770cc56e58bed2e75d2e88215351",
+        "detections": 40,
+        "quality": {
+          "confidence": 1.0,
+          "log_odds": 229.09,
+          "n_detections": 40,
+          "n_inliers": 27,
+          "rms_px": 0.99
+        },
+        "failure": null,
+        "timing_ms": {
+          "detect": 3098,
+          "solve": 9045,
+          "total": 12290
+        },
+        "attempt_timeouts": 0
+      },
+      "huber": {
+        "status": "completed",
+        "solve_status": "solved",
+        "elapsed_s": 10.469563346356153,
+        "exit_code": 0,
+        "report_sha256": "2f4d7f3e4797d2801f69127d6151a4a7573f3369b8d87ff78055c4fe58cec8cb",
+        "detections": 40,
+        "quality": {
+          "confidence": 1.0,
+          "log_odds": 262.97,
+          "n_detections": 40,
+          "n_inliers": 30,
+          "rms_px": 1.25
+        },
+        "failure": null,
+        "timing_ms": {
+          "detect": 2665,
+          "solve": 6919,
+          "total": 9749
+        },
+        "attempt_timeouts": 0
+      }
+    },
+    {
+      "id": "wm_r_180231845",
+      "track": "solver",
+      "negative": false,
+      "published_status": "solved",
+      "source_sha256": "8899f829284d747557f10ac913cd6e48c30ac2ea030b85f0e781f07bf96cb7a7",
+      "control": {
+        "status": "completed",
+        "solve_status": "solved",
+        "elapsed_s": 5.08684148453176,
+        "exit_code": 0,
+        "report_sha256": "6c73b5edc64431f05bd813833b4d54147dd2d45fbce78e48e1a2cd85d4d39d92",
+        "detections": 40,
+        "quality": {
+          "confidence": 1.0,
+          "log_odds": 177.45,
+          "n_detections": 40,
+          "n_inliers": 28,
+          "rms_px": 3.79
+        },
+        "failure": null,
+        "timing_ms": {
+          "detect": 136,
+          "solve": 3930,
+          "total": 4383
+        },
+        "attempt_timeouts": 0
+      },
+      "huber": {
+        "status": "completed",
+        "solve_status": "solved",
+        "elapsed_s": 8.017829479649663,
+        "exit_code": 0,
+        "report_sha256": "2e42c80082535cf71b17b794c9eefa185f9cdabc322b2ec5b42be24083b1c800",
+        "detections": 40,
+        "quality": {
+          "confidence": 1.0,
+          "log_odds": 177.45,
+          "n_detections": 40,
+          "n_inliers": 28,
+          "rms_px": 3.79
+        },
+        "failure": null,
+        "timing_ms": {
+          "detect": 203,
+          "solve": 5743,
+          "total": 6621
+        },
+        "attempt_timeouts": 1
+      }
+    },
+    {
+      "id": "wm_r_49541180",
+      "track": "solver",
+      "negative": false,
+      "published_status": "failed",
+      "source_sha256": "ee899364984d433f9e317779ed1bd11abdc48dcfa31b8d6bf942392ac05a31d3",
+      "control": {
+        "status": "completed",
+        "solve_status": "failed",
+        "elapsed_s": 13.97443856112659,
+        "exit_code": 0,
+        "report_sha256": "6e04d31ef795657f22480826691b27926d3db0dd0df2304efc3653028fd35eff",
+        "detections": 50,
+        "quality": null,
+        "failure": {
+          "code": "no_confident_match",
+          "message": "no tetra3 pattern match found across the retry ladder"
+        },
+        "timing_ms": {
+          "detect": 3978,
+          "solve": 10060,
+          "total": 12688
+        },
+        "attempt_timeouts": 0
+      },
+      "huber": {
+        "status": "completed",
+        "solve_status": "failed",
+        "elapsed_s": 17.3900187574327,
+        "exit_code": 0,
+        "report_sha256": "76bba8a672044dba98fb6075dac554323125640d2451b5dbc0a24a8bba866b94",
+        "detections": 50,
+        "quality": null,
+        "failure": {
+          "code": "no_confident_match",
+          "message": "no tetra3 pattern match found across the retry ladder"
+        },
+        "timing_ms": {
+          "detect": 4943,
+          "solve": 13136,
+          "total": 16044
+        },
+        "attempt_timeouts": 0
+      }
+    },
+    {
+      "id": "wm_r_64398618",
+      "track": "scene",
+      "negative": false,
+      "published_status": null,
+      "source_sha256": "752f7483d46d4ad69b61319cc98ee43ac0d8d60177e7a435a75bc2a6d44d9620",
+      "control": {
+        "status": "not_attempted",
+        "reason": "projection outside the single-pose evaluation",
+        "attempt_timeouts": 0
+      },
+      "huber": {
+        "status": "not_attempted",
+        "reason": "projection outside the single-pose evaluation",
+        "attempt_timeouts": 0
+      }
+    },
+    {
+      "id": "wm_r_64919627",
+      "track": "stress",
+      "negative": true,
+      "published_status": "failed",
+      "source_sha256": "96a9a993f9d0d84fe816b3a23d040bb813dc9ccd97bc176dc22f275ff10b8cb6",
+      "control": {
+        "status": "completed",
+        "solve_status": "failed",
+        "elapsed_s": 7.540734542533755,
+        "exit_code": 0,
+        "report_sha256": "fa8b8b4a869dfc76be022d8655617295337b7b479b287965c7da922a86560e66",
+        "detections": 50,
+        "quality": null,
+        "failure": {
+          "code": "no_confident_match",
+          "message": "no tetra3 pattern match found across the retry ladder"
+        },
+        "timing_ms": {
+          "detect": 3708,
+          "solve": 3949,
+          "total": 6475
+        },
+        "attempt_timeouts": 0
+      },
+      "huber": {
+        "status": "completed",
+        "solve_status": "failed",
+        "elapsed_s": 6.782548051327467,
+        "exit_code": 0,
+        "report_sha256": "b51e84ca5f235321f0c46c872680c6f6c6fdd49dbb9c09256507394b0220ca69",
+        "detections": 50,
+        "quality": null,
+        "failure": {
+          "code": "no_confident_match",
+          "message": "no tetra3 pattern match found across the retry ladder"
+        },
+        "timing_ms": {
+          "detect": 3626,
+          "solve": 3433,
+          "total": 5925
+        },
+        "attempt_timeouts": 0
+      }
+    },
+    {
+      "id": "wm_r_68938641",
+      "track": "solver",
+      "negative": false,
+      "published_status": "solved",
+      "source_sha256": "c5de1900b46fee8338629be7c4f1a8b3e6f14de5d10c25a8ca3f7cec2b599fd6",
+      "control": {
+        "status": "completed",
+        "solve_status": "solved",
+        "elapsed_s": 2.6221384294331074,
+        "exit_code": 0,
+        "report_sha256": "dc7be281d3631f36fabd86904ca1554c12f992ce6bb4e95596d6badb70b84386",
+        "detections": 40,
+        "quality": {
+          "confidence": 1.0,
+          "log_odds": 250.07,
+          "n_detections": 40,
+          "n_inliers": 36,
+          "rms_px": 3.2
+        },
+        "failure": null,
+        "timing_ms": {
+          "detect": 205,
+          "solve": 449,
+          "total": 1365
+        },
+        "attempt_timeouts": 0
+      },
+      "huber": {
+        "status": "completed",
+        "solve_status": "solved",
+        "elapsed_s": 2.4710926599800587,
+        "exit_code": 0,
+        "report_sha256": "97d9cc68fb22ac7e1119278c7cb4b0e25252f0ab459f8fbdf6c8dce005756078",
+        "detections": 40,
+        "quality": {
+          "confidence": 1.0,
+          "log_odds": 250.07,
+          "n_detections": 40,
+          "n_inliers": 36,
+          "rms_px": 3.2
+        },
+        "failure": null,
+        "timing_ms": {
+          "detect": 184,
+          "solve": 286,
+          "total": 1118
+        },
+        "attempt_timeouts": 0
+      }
+    },
+    {
+      "id": "wm_r_82991013",
+      "track": "solver",
+      "negative": false,
+      "published_status": "failed",
+      "source_sha256": "c6f565a340a0150df3e6a11e013d0f9d3397026172d4ba7e6eb6b5d0220e43fd",
+      "control": {
+        "status": "completed",
+        "solve_status": "failed",
+        "elapsed_s": 8.388372154906392,
+        "exit_code": 0,
+        "report_sha256": "4f581b97af3063d91dcf55a40c73b21bfd1784b967cdd951bf8d69b9806638b0",
+        "detections": 50,
+        "quality": null,
+        "failure": {
+          "code": "no_confident_match",
+          "message": "no tetra3 pattern match found across the retry ladder"
+        },
+        "timing_ms": {
+          "detect": 3353,
+          "solve": 5784,
+          "total": 7679
+        },
+        "attempt_timeouts": 0
+      },
+      "huber": {
+        "status": "completed",
+        "solve_status": "failed",
+        "elapsed_s": 10.301275042816997,
+        "exit_code": 0,
+        "report_sha256": "2a4285096d5a28623cbc88246163121a02de8df900b5cc4f89991a6bbc447efd",
+        "detections": 50,
+        "quality": null,
+        "failure": {
+          "code": "no_confident_match",
+          "message": "no tetra3 pattern match found across the retry ladder"
+        },
+        "timing_ms": {
+          "detect": 3807,
+          "solve": 6669,
+          "total": 8997
+        },
+        "attempt_timeouts": 0
+      }
+    },
+    {
+      "id": "wm_r_88363556",
+      "track": "solver",
+      "negative": false,
+      "published_status": "solved",
+      "source_sha256": "7ea7a06b597177da6358339719e1b6bbf325c30821357c5129f4779533a0061c",
+      "control": {
+        "status": "completed",
+        "solve_status": "solved",
+        "elapsed_s": 1.6694726906716824,
+        "exit_code": 0,
+        "report_sha256": "3713709618b69107a13c01e4861561c23682d2e2d284b032a14b1f28fc94dc57",
+        "detections": 40,
+        "quality": {
+          "confidence": 1.0,
+          "log_odds": 268.17,
+          "n_detections": 40,
+          "n_inliers": 38,
+          "rms_px": 1.84
+        },
+        "failure": null,
+        "timing_ms": {
+          "detect": 157,
+          "solve": 53,
+          "total": 534
+        },
+        "attempt_timeouts": 0
+      },
+      "huber": {
+        "status": "completed",
+        "solve_status": "solved",
+        "elapsed_s": 1.520379250869155,
+        "exit_code": 0,
+        "report_sha256": "27b750f9703a45c42ca384b99441bb3d93a2d93f59d57be188acb5c5d4cef5d3",
+        "detections": 40,
+        "quality": {
+          "confidence": 1.0,
+          "log_odds": 268.17,
+          "n_detections": 40,
+          "n_inliers": 38,
+          "rms_px": 1.84
+        },
+        "failure": null,
+        "timing_ms": {
+          "detect": 157,
+          "solve": 52,
+          "total": 487
+        },
+        "attempt_timeouts": 0
+      }
+    },
+    {
+      "id": "wm_r_88363557",
+      "track": "solver",
+      "negative": false,
+      "published_status": "solved",
+      "source_sha256": "496c238a248c80c6afc0970a638566c4cafdc6712e433eb24df48a2cc21cb34b",
+      "control": {
+        "status": "completed",
+        "solve_status": "solved",
+        "elapsed_s": 2.4223831612616777,
+        "exit_code": 0,
+        "report_sha256": "76054186747d376029626ef38b6fd37e03fb6ba832365d0b20919c7face0fb36",
+        "detections": 40,
+        "quality": {
+          "confidence": 1.0,
+          "log_odds": 268.17,
+          "n_detections": 40,
+          "n_inliers": 38,
+          "rms_px": 1.45
+        },
+        "failure": null,
+        "timing_ms": {
+          "detect": 232,
+          "solve": 367,
+          "total": 1154
+        },
+        "attempt_timeouts": 0
+      },
+      "huber": {
+        "status": "completed",
+        "solve_status": "solved",
+        "elapsed_s": 1.3203004840761423,
+        "exit_code": 0,
+        "report_sha256": "4328c78bc6e4cc1a8a64875f956d1a986c5b878058baa93ec3fde51c4ac0faa0",
+        "detections": 40,
+        "quality": {
+          "confidence": 1.0,
+          "log_odds": 268.17,
+          "n_detections": 40,
+          "n_inliers": 38,
+          "rms_px": 1.45
+        },
+        "failure": null,
+        "timing_ms": {
+          "detect": 164,
+          "solve": 184,
+          "total": 629
+        },
+        "attempt_timeouts": 0
+      }
+    },
+    {
+      "id": "wm_r_88363564",
+      "track": "solver",
+      "negative": false,
+      "published_status": "solved",
+      "source_sha256": "fa21b12b2982c24c2f47061a751204338c2b630505e7c3da2adb802bd07a74e8",
+      "control": {
+        "status": "completed",
+        "solve_status": "solved",
+        "elapsed_s": 19.17871634848416,
+        "exit_code": 0,
+        "report_sha256": "15b2246e318dfb92f6681a4d113890fb2e22c5151b484ffec0507991844f997f",
+        "detections": 40,
+        "quality": {
+          "confidence": 1.0,
+          "log_odds": 60.84,
+          "n_detections": 40,
+          "n_inliers": 15,
+          "rms_px": 3.78
+        },
+        "failure": null,
+        "timing_ms": {
+          "detect": 224,
+          "solve": 17264,
+          "total": 18019
+        },
+        "attempt_timeouts": 3
+      },
+      "huber": {
+        "status": "completed",
+        "solve_status": "solved",
+        "elapsed_s": 19.710799215361476,
+        "exit_code": 0,
+        "report_sha256": "60b68cf3cfef5a7b91bc7350ee717822c3737f8efa3c46a66575940ba8cef063",
+        "detections": 40,
+        "quality": {
+          "confidence": 1.0,
+          "log_odds": 60.84,
+          "n_detections": 40,
+          "n_inliers": 15,
+          "rms_px": 3.78
+        },
+        "failure": null,
+        "timing_ms": {
+          "detect": 153,
+          "solve": 18562,
+          "total": 19002
+        },
+        "attempt_timeouts": 4
+      }
+    },
+    {
+      "id": "wm_r_92627738",
+      "track": "stress",
+      "negative": true,
+      "published_status": "failed",
+      "source_sha256": "921f0423e54c5fafbd97e6b6e43e42cfb41ef4d85ac315fe62a1baf97dca5c71",
+      "control": {
+        "status": "completed",
+        "solve_status": "failed",
+        "elapsed_s": 7.1882416643202305,
+        "exit_code": 0,
+        "report_sha256": "f4a5a44d3b59191e9766a37ceb6b00b25ea0eebadbee6bd70e478e96cc826e09",
+        "detections": 50,
+        "quality": null,
+        "failure": {
+          "code": "no_confident_match",
+          "message": "no tetra3 pattern match found across the retry ladder"
+        },
+        "timing_ms": {
+          "detect": 3964,
+          "solve": 3295,
+          "total": 5984
+        },
+        "attempt_timeouts": 0
+      },
+      "huber": {
+        "status": "completed",
+        "solve_status": "failed",
+        "elapsed_s": 7.394148616120219,
+        "exit_code": 0,
+        "report_sha256": "c26635f154166eb215eace14aba86652038142740b51d8ecf23380ff3356305e",
+        "detections": 50,
+        "quality": null,
+        "failure": {
+          "code": "no_confident_match",
+          "message": "no tetra3 pattern match found across the retry ladder"
+        },
+        "timing_ms": {
+          "detect": 5287,
+          "solve": 3795,
+          "total": 6635
+        },
+        "attempt_timeouts": 0
+      }
+    },
+    {
+      "id": "wm_r_92627740",
+      "track": "stress",
+      "negative": true,
+      "published_status": "failed",
+      "source_sha256": "4866f2d2ec4af42cc0298ead0cf676262b1348650b1e30fab9e56c45ee2f03ea",
+      "control": {
+        "status": "completed",
+        "solve_status": "failed",
+        "elapsed_s": 12.121290212497115,
+        "exit_code": 0,
+        "report_sha256": "a3a1c6b5939c94613f2e852b43df12d7bc2575997d9d9fea6c05c4644d923afa",
+        "detections": 50,
+        "quality": null,
+        "failure": {
+          "code": "no_confident_match",
+          "message": "no tetra3 pattern match found across the retry ladder"
+        },
+        "timing_ms": {
+          "detect": 4299,
+          "solve": 7764,
+          "total": 10781
+        },
+        "attempt_timeouts": 0
+      },
+      "huber": {
+        "status": "completed",
+        "solve_status": "failed",
+        "elapsed_s": 12.531189499422908,
+        "exit_code": 0,
+        "report_sha256": "8350ec4c688927fbe5e95e74e2c20a612d40d5f05b419361aaa1d4bd5942048b",
+        "detections": 50,
+        "quality": null,
+        "failure": {
+          "code": "no_confident_match",
+          "message": "no tetra3 pattern match found across the retry ladder"
+        },
+        "timing_ms": {
+          "detect": 4308,
+          "solve": 8688,
+          "total": 11278
+        },
+        "attempt_timeouts": 0
+      }
+    },
+    {
+      "id": "wm_r_98339111",
+      "track": "stress",
+      "negative": true,
+      "published_status": "failed",
+      "source_sha256": "846c77f331570987a1d9f682ecd46e5ede707984a1fbf7f8ef710deeec69818e",
+      "control": {
+        "status": "completed",
+        "solve_status": "failed",
+        "elapsed_s": 6.655145764350891,
+        "exit_code": 0,
+        "report_sha256": "c2721a87cfe126acf8ca224aa41eb5cfe91ef4315615956a9daf00cb65197366",
+        "detections": 50,
+        "quality": null,
+        "failure": {
+          "code": "no_confident_match",
+          "message": "no tetra3 pattern match found across the retry ladder"
+        },
+        "timing_ms": {
+          "detect": 3702,
+          "solve": 3716,
+          "total": 5988
+        },
+        "attempt_timeouts": 0
+      },
+      "huber": {
+        "status": "completed",
+        "solve_status": "failed",
+        "elapsed_s": 6.548024203628302,
+        "exit_code": 0,
+        "report_sha256": "64f1e3d0513035b71ba12e23858a2196fc8516af96de9b3db3d75fea29d4ef19",
+        "detections": 50,
+        "quality": null,
+        "failure": {
+          "code": "no_confident_match",
+          "message": "no tetra3 pattern match found across the retry ladder"
+        },
+        "timing_ms": {
+          "detect": 3602,
+          "solve": 3569,
+          "total": 5820
+        },
+        "attempt_timeouts": 0
+      }
+    },
+    {
+      "id": "wm_r_99644775",
+      "track": "stress",
+      "negative": true,
+      "published_status": "failed",
+      "source_sha256": "7db56658f5fb75e1367ed267797d800e3433eb1c47487d53f815f35d71ee1454",
+      "control": {
+        "status": "completed",
+        "solve_status": "failed",
+        "elapsed_s": 6.189354134723544,
+        "exit_code": 0,
+        "report_sha256": "4a6254d04dd5d82aee92ee667dec5802ffa068d30aff05802a93911263eb6399",
+        "detections": 50,
+        "quality": null,
+        "failure": {
+          "code": "no_confident_match",
+          "message": "no tetra3 pattern match found across the retry ladder"
+        },
+        "timing_ms": {
+          "detect": 3774,
+          "solve": 3474,
+          "total": 5417
+        },
+        "attempt_timeouts": 0
+      },
+      "huber": {
+        "status": "completed",
+        "solve_status": "failed",
+        "elapsed_s": 7.422283940017223,
+        "exit_code": 0,
+        "report_sha256": "a467c31e9df1ebbd3f4a72231ccb1f5b8d2d8d559f5dbff79d9b1d7b5cb7480a",
+        "detections": 50,
+        "quality": null,
+        "failure": {
+          "code": "no_confident_match",
+          "message": "no tetra3 pattern match found across the retry ladder"
+        },
+        "timing_ms": {
+          "detect": 4110,
+          "solve": 3807,
+          "total": 6322
+        },
+        "attempt_timeouts": 0
+      }
+    }
+  ],
+  "reviewed_geometry": [
+    {
+      "id": "wm_r_132162731",
+      "status": "measured",
+      "independent_ground_truth": false,
+      "groups": {
+        "external_centroid": {
+          "all_reviewed": {
+            "count": 35,
+            "control": {
+              "count": 35,
+              "rms_px": 7.873410991907569,
+              "median_px": 4.78997248978903,
+              "p95_px": 14.21222540525928,
+              "max_px": 16.53596862299333
+            },
+            "huber": {
+              "count": 35,
+              "rms_px": 7.559231665948393,
+              "median_px": 4.825202969513321,
+              "p95_px": 14.231062657968552,
+              "max_px": 15.632257958743036
+            },
+            "rms_change_px": -0.3141793259591763
+          },
+          "outside_current_inputs": {
+            "count": 18,
+            "control": {
+              "count": 18,
+              "rms_px": 8.616100538418745,
+              "median_px": 6.497872515259165,
+              "p95_px": 14.863891445795314,
+              "max_px": 16.53596862299333
+            },
+            "huber": {
+              "count": 18,
+              "rms_px": 8.048099770768673,
+              "median_px": 5.882209431820115,
+              "p95_px": 14.043152838724433,
+              "max_px": 15.632257958743036
+            },
+            "rms_change_px": -0.5680007676500729
+          },
+          "left_10pct": {
+            "count": 5,
+            "control": {
+              "count": 5,
+              "rms_px": 2.898374925710851,
+              "median_px": 2.6346711098089957,
+              "p95_px": 4.270328319094832,
+              "max_px": 4.426191741987565
+            },
+            "huber": {
+              "count": 5,
+              "rms_px": 3.528763027731564,
+              "median_px": 3.1037568593968423,
+              "p95_px": 5.12460323581304,
+              "max_px": 5.31256940203931
+            },
+            "rms_change_px": 0.6303881020207127
+          },
+          "right_10pct": {
+            "count": 4,
+            "control": {
+              "count": 4,
+              "rms_px": 12.090608349756168,
+              "median_px": 13.60556026159255,
+              "p95_px": 14.043078418609111,
+              "max_px": 14.059399577758814
+            },
+            "huber": {
+              "count": 4,
+              "rms_px": 12.2210726661535,
+              "median_px": 13.50903121001221,
+              "p95_px": 14.681579314563507,
+              "max_px": 14.804447493634857
+            },
+            "rms_change_px": 0.13046431639733136
+          },
+          "top_10pct": {
+            "count": 3,
+            "control": {
+              "count": 3,
+              "rms_px": 11.463402705129136,
+              "median_px": 13.260528673090974,
+              "p95_px": 13.97951248729203,
+              "max_px": 14.059399577758814
+            },
+            "huber": {
+              "count": 3,
+              "rms_px": 12.083647366053462,
+              "median_px": 13.985326299825854,
+              "p95_px": 14.722535374253956,
+              "max_px": 14.804447493634857
+            },
+            "rms_change_px": 0.6202446609243264
+          },
+          "bottom_10pct": {
+            "count": 0
+          }
+        },
+        "native_r8": {
+          "all_reviewed": {
+            "count": 35,
+            "control": {
+              "count": 35,
+              "rms_px": 7.872785477977305,
+              "median_px": 4.846316056373047,
+              "p95_px": 14.221051198883641,
+              "max_px": 16.9624711588304
+            },
+            "huber": {
+              "count": 35,
+              "rms_px": 7.552712970249369,
+              "median_px": 4.7290558050956815,
+              "p95_px": 13.953923757079794,
+              "max_px": 16.061549766859272
+            },
+            "rms_change_px": -0.32007250772793583
+          },
+          "outside_current_inputs": {
+            "count": 18,
+            "control": {
+              "count": 18,
+              "rms_px": 8.6826964329636,
+              "median_px": 6.567715849384527,
+              "p95_px": 15.00359649031633,
+              "max_px": 16.9624711588304
+            },
+            "huber": {
+              "count": 18,
+              "rms_px": 8.113908197007635,
+              "median_px": 5.944643561617863,
+              "p95_px": 14.183917620859864,
+              "max_px": 16.061549766859272
+            },
+            "rms_change_px": -0.5687882359559637
+          },
+          "left_10pct": {
+            "count": 5,
+            "control": {
+              "count": 5,
+              "rms_px": 2.81724045243169,
+              "median_px": 2.737396234007304,
+              "p95_px": 4.005621291693405,
+              "max_px": 4.067185646286071
+            },
+            "huber": {
+              "count": 5,
+              "rms_px": 3.4556580045484435,
+              "median_px": 3.2378864451954663,
+              "p95_px": 4.863924075350891,
+              "max_px": 4.957223848047754
+            },
+            "rms_change_px": 0.6384175521167537
+          },
+          "right_10pct": {
+            "count": 4,
+            "control": {
+              "count": 4,
+              "rms_px": 11.847910716450752,
+              "median_px": 13.195320103808285,
+              "p95_px": 13.94305360771356,
+              "max_px": 14.033824830426159
+            },
+            "huber": {
+              "count": 4,
+              "rms_px": 11.972893542754917,
+              "median_px": 13.406957433978345,
+              "p95_px": 14.115916445579883,
+              "max_px": 14.190414056612324
+            },
+            "rms_change_px": 0.12498282630416568
+          },
+          "top_10pct": {
+            "count": 3,
+            "control": {
+              "count": 3,
+              "rms_px": 11.07919830529285,
+              "median_px": 12.961956861941069,
+              "p95_px": 13.382010697302057,
+              "max_px": 13.4286833456755
+            },
+            "huber": {
+              "count": 3,
+              "rms_px": 11.708273053291332,
+              "median_px": 13.693763316396048,
+              "p95_px": 14.140748982590697,
+              "max_px": 14.190414056612324
+            },
+            "rms_change_px": 0.629074747998482
+          },
+          "bottom_10pct": {
+            "count": 0
+          }
+        },
+        "native_r12": {
+          "all_reviewed": {
+            "count": 35,
+            "control": {
+              "count": 35,
+              "rms_px": 7.883597905093733,
+              "median_px": 4.908330320285943,
+              "p95_px": 14.233655410967817,
+              "max_px": 16.946635596453334
+            },
+            "huber": {
+              "count": 35,
+              "rms_px": 7.562096577404708,
+              "median_px": 4.72759026236856,
+              "p95_px": 13.8300946794337,
+              "max_px": 16.043277837493697
+            },
+            "rms_change_px": -0.32150132768902484
+          },
+          "outside_current_inputs": {
+            "count": 18,
+            "control": {
+              "count": 18,
+              "rms_px": 8.733937448149721,
+              "median_px": 6.769720295438212,
+              "p95_px": 15.009436877811464,
+              "max_px": 16.946635596453334
+            },
+            "huber": {
+              "count": 18,
+              "rms_px": 8.162519081715683,
+              "median_px": 6.130945368011547,
+              "p95_px": 14.18005876684551,
+              "max_px": 16.043277837493697
+            },
+            "rms_change_px": -0.5714183664340382
+          },
+          "left_10pct": {
+            "count": 5,
+            "control": {
+              "count": 5,
+              "rms_px": 2.9545901140459665,
+              "median_px": 2.7769813283470612,
+              "p95_px": 4.313814668131496,
+              "max_px": 4.428544936644381
+            },
+            "huber": {
+              "count": 5,
+              "rms_px": 3.6067469225977167,
+              "median_px": 3.300607122896541,
+              "p95_px": 5.18214765984062,
+              "max_px": 5.325064951030187
+            },
+            "rms_change_px": 0.6521568085517502
+          },
+          "right_10pct": {
+            "count": 4,
+            "control": {
+              "count": 4,
+              "rms_px": 11.730719869753754,
+              "median_px": 12.97136311576985,
+              "p95_px": 13.899266976008551,
+              "max_px": 14.047688466923708
+            },
+            "huber": {
+              "count": 4,
+              "rms_px": 11.84681685944733,
+              "median_px": 13.372062734190187,
+              "p95_px": 13.789702800489593,
+              "max_px": 13.821025798575139
+            },
+            "rms_change_px": 0.11609698969357574
+          },
+          "top_10pct": {
+            "count": 3,
+            "control": {
+              "count": 3,
+              "rms_px": 10.9003876373761,
+              "median_px": 12.88451437071703,
+              "p95_px": 13.040842111812106,
+              "max_px": 13.05821186082267
+            },
+            "huber": {
+              "count": 3,
+              "rms_px": 11.5276914552734,
+              "median_px": 13.612205811338162,
+              "p95_px": 13.80014379985144,
+              "max_px": 13.821025798575139
+            },
+            "rms_change_px": 0.6273038178972996
+          },
+          "bottom_10pct": {
+            "count": 0
+          }
+        }
+      },
+      "sources": [
+        {
+          "source_id": 0,
+          "hyg_id": 97338,
+          "xy": [
+            1627.43896484375,
+            1497.023193359375
+          ],
+          "outside_current_inputs": false,
+          "predicted_xy": {
+            "control": [
+              1622.9621054690072,
+              1498.7265919010301
+            ],
+            "huber": [
+              1623.2237739266702,
+              1498.6421511665792
+            ]
+          }
+        },
+        {
+          "source_id": 1,
+          "hyg_id": 92564,
+          "xy": [
+            2110.705322265625,
+            3143.99267578125
+          ],
+          "outside_current_inputs": true,
+          "predicted_xy": {
+            "control": [
+              2098.7811514218424,
+              3147.7333835137456
+            ],
+            "huber": [
+              2099.395237330374,
+              3147.166689615275
+            ]
+          }
+        },
+        {
+          "source_id": 2,
+          "hyg_id": 85769,
+          "xy": [
+            3406.705810546875,
+            1330.2852783203125
+          ],
+          "outside_current_inputs": false,
+          "predicted_xy": {
+            "control": [
+              3409.159959885764,
+              1333.5381296766368
+            ],
+            "huber": [
+              3409.3406375697614,
+              1332.7066264823834
+            ]
+          }
+        },
+        {
+          "source_id": 3,
+          "hyg_id": 106972,
+          "xy": [
+            30.319442749023438,
+            1215.0673828125
+          ],
+          "outside_current_inputs": false,
+          "predicted_xy": {
+            "control": [
+              34.181006003912444,
+              1217.2305986050944
+            ],
+            "huber": [
+              34.867731029262586,
+              1217.8126455269453
+            ]
+          }
+        },
+        {
+          "source_id": 4,
+          "hyg_id": 83755,
+          "xy": [
+            3395.178466796875,
+            2894.32470703125
+          ],
+          "outside_current_inputs": false,
+          "predicted_xy": {
+            "control": [
+              3385.788540864082,
+              2904.642085765433
+            ],
+            "huber": [
+              3386.232798024489,
+              2903.802429383877
+            ]
+          }
+        },
+        {
+          "source_id": 5,
+          "hyg_id": 93213,
+          "xy": [
+            2022.932861328125,
+            3294.6630859375
+          ],
+          "outside_current_inputs": true,
+          "predicted_xy": {
+            "control": [
+              2010.4283191566815,
+              3297.6175972532906
+            ],
+            "huber": [
+              2011.1044792613322,
+              3297.0268163191586
+            ]
+          }
+        },
+        {
+          "source_id": 6,
+          "hyg_id": 89653,
+          "xy": [
+            2429.335693359375,
+            3360.12841796875
+          ],
+          "outside_current_inputs": true,
+          "predicted_xy": {
+            "control": [
+              2415.716242301593,
+              3365.3015253540525
+            ],
+            "huber": [
+              2416.319930378165,
+              3364.600827305316
+            ]
+          }
+        },
+        {
+          "source_id": 7,
+          "hyg_id": 96970,
+          "xy": [
+            1685.5533447265625,
+            1407.1236572265625
+          ],
+          "outside_current_inputs": false,
+          "predicted_xy": {
+            "control": [
+              1681.180946256539,
+              1408.5087448932015
+            ],
+            "huber": [
+              1681.4041524336535,
+              1408.408872619462
+            ]
+          }
+        },
+        {
+          "source_id": 8,
+          "hyg_id": 86475,
+          "xy": [
+            3173.243896484375,
+            1805.191650390625
+          ],
+          "outside_current_inputs": false,
+          "predicted_xy": {
+            "control": [
+              3171.4244830410316,
+              1810.9759637746245
+            ],
+            "huber": [
+              3171.652712756333,
+              1810.2717402023998
+            ]
+          }
+        },
+        {
+          "source_id": 9,
+          "hyg_id": 107213,
+          "xy": [
+            185.93626403808594,
+            2706.7666015625
+          ],
+          "outside_current_inputs": false,
+          "predicted_xy": {
+            "control": [
+              187.94694151325575,
+              2703.7240909808056
+            ],
+            "huber": [
+              189.16273083556007,
+              2703.815202806943
+            ]
+          }
+        },
+        {
+          "source_id": 10,
+          "hyg_id": 105936,
+          "xy": [
+            349.7533264160156,
+            2151.559814453125
+          ],
+          "outside_current_inputs": false,
+          "predicted_xy": {
+            "control": [
+              349.82308063610185,
+              2151.8007029413584
+            ],
+            "huber": [
+              350.74632904285863,
+              2152.0383067112907
+            ]
+          }
+        },
+        {
+          "source_id": 11,
+          "hyg_id": 93452,
+          "xy": [
+            2190.802978515625,
+            1257.3502197265625
+          ],
+          "outside_current_inputs": false,
+          "predicted_xy": {
+            "control": [
+              2187.9602171827296,
+              1258.6444372723618
+            ],
+            "huber": [
+              2188.071159548229,
+              1258.339625194307
+            ]
+          }
+        },
+        {
+          "source_id": 12,
+          "hyg_id": 95648,
+          "xy": [
+            1945.6640625,
+            245.78872680664062
+          ],
+          "outside_current_inputs": false,
+          "predicted_xy": {
+            "control": [
+              1945.838691037826,
+              241.24010367027176
+            ],
+            "huber": [
+              1945.701188440506,
+              240.96366666592303
+            ]
+          }
+        },
+        {
+          "source_id": 13,
+          "hyg_id": 100020,
+          "xy": [
+            1262.751708984375,
+            2595.026611328125
+          ],
+          "outside_current_inputs": true,
+          "predicted_xy": {
+            "control": [
+              1255.5654460629748,
+              2596.689858659114
+            ],
+            "huber": [
+              1256.2706751392852,
+              2596.510739546939
+            ]
+          }
+        },
+        {
+          "source_id": 14,
+          "hyg_id": 89684,
+          "xy": [
+            2613.208251953125,
+            2152.3046875
+          ],
+          "outside_current_inputs": false,
+          "predicted_xy": {
+            "control": [
+              2607.063941279002,
+              2157.794934661729
+            ],
+            "huber": [
+              2607.3567299362085,
+              2157.2780349771606
+            ]
+          }
+        },
+        {
+          "source_id": 15,
+          "hyg_id": 84711,
+          "xy": [
+            3125.3330078125,
+            3303.22216796875
+          ],
+          "outside_current_inputs": true,
+          "predicted_xy": {
+            "control": [
+              3111.83200280142,
+              3312.770001335091
+            ],
+            "huber": [
+              3112.3510091687654,
+              3311.930508803993
+            ]
+          }
+        },
+        {
+          "source_id": 16,
+          "hyg_id": 87775,
+          "xy": [
+            2825.908203125,
+            2500.104736328125
+          ],
+          "outside_current_inputs": true,
+          "predicted_xy": {
+            "control": [
+              2818.298431464955,
+              2507.4004120481145
+            ],
+            "huber": [
+              2818.6569410095854,
+              2506.7731168333366
+            ]
+          }
+        },
+        {
+          "source_id": 17,
+          "hyg_id": 95207,
+          "xy": [
+            1906.2242431640625,
+            1812.9168701171875
+          ],
+          "outside_current_inputs": true,
+          "predicted_xy": {
+            "control": [
+              1900.5245230627663,
+              1816.0889275970585
+            ],
+            "huber": [
+              1900.8215017810817,
+              1815.8630649371403
+            ]
+          }
+        },
+        {
+          "source_id": 19,
+          "hyg_id": 86705,
+          "xy": [
+            3473.186767578125,
+            166.09036254882812
+          ],
+          "outside_current_inputs": false,
+          "predicted_xy": {
+            "control": [
+              3484.404000089372,
+              157.61449024707008
+            ],
+            "huber": [
+              3484.4398159985444,
+              156.47056177960803
+            ]
+          }
+        },
+        {
+          "source_id": 20,
+          "hyg_id": 93510,
+          "xy": [
+            2091.083740234375,
+            2200.9052734375
+          ],
+          "outside_current_inputs": true,
+          "predicted_xy": {
+            "control": [
+              2083.655106270914,
+              2205.470158681631
+            ],
+            "huber": [
+              2084.0235355297846,
+              2205.123291294956
+            ]
+          }
+        },
+        {
+          "source_id": 21,
+          "hyg_id": 98026,
+          "xy": [
+            1548.9478759765625,
+            848.7476196289062
+          ],
+          "outside_current_inputs": false,
+          "predicted_xy": {
+            "control": [
+              1546.4646830685072,
+              848.5994035621829
+            ],
+            "huber": [
+              1546.5457078192749,
+              848.5751495340883
+            ]
+          }
+        },
+        {
+          "source_id": 22,
+          "hyg_id": 101442,
+          "xy": [
+            1037.9873046875,
+            1091.4061279296875
+          ],
+          "outside_current_inputs": false,
+          "predicted_xy": {
+            "control": [
+              1035.5169371944307,
+              1092.3396972327464
+            ],
+            "huber": [
+              1035.7939828648073,
+              1092.5310788999845
+            ]
+          }
+        },
+        {
+          "source_id": 23,
+          "hyg_id": 97056,
+          "xy": [
+            1691.665771484375,
+            930.24072265625
+          ],
+          "outside_current_inputs": true,
+          "predicted_xy": {
+            "control": [
+              1688.9848424044308,
+              930.2410687208078
+            ],
+            "huber": [
+              1689.0668558227308,
+              930.1535752811299
+            ]
+          }
+        },
+        {
+          "source_id": 24,
+          "hyg_id": 106642,
+          "xy": [
+            291.4759216308594,
+            2724.58984375
+          ],
+          "outside_current_inputs": true,
+          "predicted_xy": {
+            "control": [
+              292.1599959917114,
+              2722.045529672358
+            ],
+            "huber": [
+              293.3289485271673,
+              2722.0999445625202
+            ]
+          }
+        },
+        {
+          "source_id": 25,
+          "hyg_id": 87661,
+          "xy": [
+            3309.437255859375,
+            52.3216552734375
+          ],
+          "outside_current_inputs": false,
+          "predicted_xy": {
+            "control": [
+              3319.386504320708,
+              43.555009635308124
+            ],
+            "huber": [
+              3319.359529117312,
+              42.465801931010446
+            ]
+          }
+        },
+        {
+          "source_id": 26,
+          "hyg_id": 88494,
+          "xy": [
+            2896.3994140625,
+            1520.5263671875
+          ],
+          "outside_current_inputs": false,
+          "predicted_xy": {
+            "control": [
+              2895.005288662089,
+              1524.1289716678816
+            ],
+            "huber": [
+              2895.160774604412,
+              1523.5301069572783
+            ]
+          }
+        },
+        {
+          "source_id": 27,
+          "hyg_id": 105540,
+          "xy": [
+            506.52471923828125,
+            2990.2509765625
+          ],
+          "outside_current_inputs": true,
+          "predicted_xy": {
+            "control": [
+              504.629414702521,
+              2987.0264143078584
+            ],
+            "huber": [
+              505.789165909767,
+              2986.91693814495
+            ]
+          }
+        },
+        {
+          "source_id": 28,
+          "hyg_id": 92951,
+          "xy": [
+            2269.81298828125,
+            1188.5311279296875
+          ],
+          "outside_current_inputs": false,
+          "predicted_xy": {
+            "control": [
+              2267.140018360489,
+              1189.699968153015
+            ],
+            "huber": [
+              2267.2279778626785,
+              1189.360335143152
+            ]
+          }
+        },
+        {
+          "source_id": 29,
+          "hyg_id": 105162,
+          "xy": [
+            338.1368408203125,
+            570.0200805664062
+          ],
+          "outside_current_inputs": true,
+          "predicted_xy": {
+            "control": [
+              339.29913821138416,
+              570.8899645627489
+            ],
+            "huber": [
+              339.59562262451027,
+              571.4130077776713
+            ]
+          }
+        },
+        {
+          "source_id": 30,
+          "hyg_id": 102647,
+          "xy": [
+            937.0787963867188,
+            3157.821533203125
+          ],
+          "outside_current_inputs": true,
+          "predicted_xy": {
+            "control": [
+              930.9053912587442,
+              3155.894229905833
+            ],
+            "huber": [
+              931.9229260047282,
+              3155.608919786806
+            ]
+          }
+        },
+        {
+          "source_id": 31,
+          "hyg_id": 102154,
+          "xy": [
+            996.7461547851562,
+            3075.5595703125
+          ],
+          "outside_current_inputs": true,
+          "predicted_xy": {
+            "control": [
+              990.4044435269305,
+              3074.2634639415655
+            ],
+            "huber": [
+              991.3689208663194,
+              3073.9948390604227
+            ]
+          }
+        },
+        {
+          "source_id": 32,
+          "hyg_id": 102201,
+          "xy": [
+            908.18310546875,
+            969.4133911132812
+          ],
+          "outside_current_inputs": true,
+          "predicted_xy": {
+            "control": [
+              906.2927364587996,
+              970.1697676727731
+            ],
+            "huber": [
+              906.5637128001241,
+              970.4247147688889
+            ]
+          }
+        },
+        {
+          "source_id": 33,
+          "hyg_id": 98375,
+          "xy": [
+            1448.7042236328125,
+            3165.9189453125
+          ],
+          "outside_current_inputs": true,
+          "predicted_xy": {
+            "control": [
+              1439.2932176124834,
+              3166.341728691991
+            ],
+            "huber": [
+              1440.109516466558,
+              3165.928436872726
+            ]
+          }
+        },
+        {
+          "source_id": 34,
+          "hyg_id": 103899,
+          "xy": [
+            757.674072265625,
+            3086.389892578125
+          ],
+          "outside_current_inputs": true,
+          "predicted_xy": {
+            "control": [
+              753.1200396354031,
+              3083.828171532391
+            ],
+            "huber": [
+              754.1940945376234,
+              3083.615734437465
+            ]
+          }
+        },
+        {
+          "source_id": 35,
+          "hyg_id": 105698,
+          "xy": [
+            476.6302490234375,
+            2963.716064453125
+          ],
+          "outside_current_inputs": true,
+          "predicted_xy": {
+            "control": [
+              475.17871041150306,
+              2960.7253629827283
+            ],
+            "huber": [
+              476.3436306801109,
+              2960.6343409457954
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "wm_r_143159342",
+      "status": "measured",
+      "independent_ground_truth": false,
+      "groups": {
+        "external_centroid": {
+          "all_reviewed": {
+            "count": 40,
+            "control": {
+              "count": 40,
+              "rms_px": 15.719262726419345,
+              "median_px": 4.74893726701143,
+              "p95_px": 36.151124937887666,
+              "max_px": 48.06456201175049
+            },
+            "huber": {
+              "count": 40,
+              "rms_px": 15.719262726455593,
+              "median_px": 4.748937267038247,
+              "p95_px": 36.151124937925665,
+              "max_px": 48.064562011889
+            },
+            "rms_change_px": 3.624833766480151e-11
+          },
+          "outside_current_inputs": {
+            "count": 17,
+            "control": {
+              "count": 17,
+              "rms_px": 19.72693467632044,
+              "median_px": 11.156886831432496,
+              "p95_px": 39.03600131535999,
+              "max_px": 48.06456201175049
+            },
+            "huber": {
+              "count": 17,
+              "rms_px": 19.726934676373972,
+              "median_px": 11.156886831515685,
+              "p95_px": 39.036001315414936,
+              "max_px": 48.064562011889
+            },
+            "rms_change_px": 5.353228971216595e-11
+          },
+          "left_10pct": {
+            "count": 2,
+            "control": {
+              "count": 2,
+              "rms_px": 1.8256797632941686,
+              "median_px": 1.7104234620660674,
+              "p95_px": 2.2849860127059274,
+              "max_px": 2.348826296110356
+            },
+            "huber": {
+              "count": 2,
+              "rms_px": 1.8256797632947723,
+              "median_px": 1.7104234620543193,
+              "p95_px": 2.284986012724061,
+              "max_px": 2.34882629613181
+            },
+            "rms_change_px": 6.037392807911601e-13
+          },
+          "right_10pct": {
+            "count": 3,
+            "control": {
+              "count": 3,
+              "rms_px": 33.87304075987198,
+              "median_px": 36.11808619034163,
+              "p95_px": 36.7127836461703,
+              "max_px": 36.778861141262375
+            },
+            "huber": {
+              "count": 3,
+              "rms_px": 33.87304075991441,
+              "median_px": 36.118086190379834,
+              "p95_px": 36.71278364620476,
+              "max_px": 36.778861141296424
+            },
+            "rms_change_px": 4.243361217959318e-11
+          },
+          "top_10pct": {
+            "count": 4,
+            "control": {
+              "count": 4,
+              "rms_px": 22.082617169687236,
+              "median_px": 17.231983168472887,
+              "p95_px": 34.04278254664333,
+              "max_px": 36.11808619034163
+            },
+            "huber": {
+              "count": 4,
+              "rms_px": 22.082617169701617,
+              "median_px": 17.2319831684688,
+              "p95_px": 34.04278254667637,
+              "max_px": 36.118086190379834
+            },
+            "rms_change_px": 1.4381384971784428e-11
+          },
+          "bottom_10pct": {
+            "count": 2,
+            "control": {
+              "count": 2,
+              "rms_px": 39.59447425973913,
+              "median_px": 38.395799572271855,
+              "p95_px": 47.09768576780262,
+              "max_px": 48.06456201175049
+            },
+            "huber": {
+              "count": 2,
+              "rms_px": 39.59447425986393,
+              "median_px": 38.39579957239725,
+              "p95_px": 47.09768576793983,
+              "max_px": 48.064562011889
+            },
+            "rms_change_px": 1.24799726108904e-10
+          }
+        },
+        "native_r8": {
+          "all_reviewed": {
+            "count": 40,
+            "control": {
+              "count": 40,
+              "rms_px": 15.737052320734136,
+              "median_px": 4.772418790906677,
+              "p95_px": 36.104729354721435,
+              "max_px": 48.293037116961145
+            },
+            "huber": {
+              "count": 40,
+              "rms_px": 15.737052320770983,
+              "median_px": 4.772418790936251,
+              "p95_px": 36.10472935475954,
+              "max_px": 48.29303711709992
+            },
+            "rms_change_px": 3.6846969919679395e-11
+          },
+          "outside_current_inputs": {
+            "count": 17,
+            "control": {
+              "count": 17,
+              "rms_px": 19.757338321395057,
+              "median_px": 11.169806941224298,
+              "p95_px": 39.07128191584349,
+              "max_px": 48.293037116961145
+            },
+            "huber": {
+              "count": 17,
+              "rms_px": 19.757338321449016,
+              "median_px": 11.169806941307478,
+              "p95_px": 39.07128191589924,
+              "max_px": 48.29303711709992
+            },
+            "rms_change_px": 5.395861535362201e-11
+          },
+          "left_10pct": {
+            "count": 2,
+            "control": {
+              "count": 2,
+              "rms_px": 1.8735864110768246,
+              "median_px": 1.7743392798165085,
+              "p95_px": 2.3158717252861183,
+              "max_px": 2.3760419970049638
+            },
+            "huber": {
+              "count": 2,
+              "rms_px": 1.8735864110790275,
+              "median_px": 1.7743392798110125,
+              "p95_px": 2.3158717253013816,
+              "max_px": 2.3760419970225337
+            },
+            "rms_change_px": 2.2029045254612356e-12
+          },
+          "right_10pct": {
+            "count": 3,
+            "control": {
+              "count": 3,
+              "rms_px": 33.862208466927356,
+              "median_px": 36.06993389362446,
+              "p95_px": 36.69625219337013,
+              "max_px": 36.76584311556409
+            },
+            "huber": {
+              "count": 3,
+              "rms_px": 33.86220846697021,
+              "median_px": 36.06993389366273,
+              "p95_px": 36.69625219340545,
+              "max_px": 36.76584311559908
+            },
+            "rms_change_px": 4.285283239369164e-11
+          },
+          "top_10pct": {
+            "count": 4,
+            "control": {
+              "count": 4,
+              "rms_px": 22.020003806812415,
+              "median_px": 17.12019799376466,
+              "p95_px": 33.98422837224439,
+              "max_px": 36.06993389362446
+            },
+            "huber": {
+              "count": 4,
+              "rms_px": 22.02000380682702,
+              "median_px": 17.12019799376069,
+              "p95_px": 33.98422837227745,
+              "max_px": 36.06993389366273
+            },
+            "rms_change_px": 1.460520593354886e-11
+          },
+          "bottom_10pct": {
+            "count": 2,
+            "control": {
+              "count": 2,
+              "rms_px": 39.78834460771677,
+              "median_px": 38.586110824752,
+              "p95_px": 47.32234448774023,
+              "max_px": 48.293037116961145
+            },
+            "huber": {
+              "count": 2,
+              "rms_px": 39.78834460784167,
+              "median_px": 38.58611082487744,
+              "p95_px": 47.32234448787767,
+              "max_px": 48.29303711709992
+            },
+            "rms_change_px": 1.248992020919104e-10
+          }
+        },
+        "native_r12": {
+          "all_reviewed": {
+            "count": 40,
+            "control": {
+              "count": 40,
+              "rms_px": 15.731096666452313,
+              "median_px": 4.8392637340324764,
+              "p95_px": 36.123352564393166,
+              "max_px": 48.66019505324066
+            },
+            "huber": {
+              "count": 40,
+              "rms_px": 15.731096666489996,
+              "median_px": 4.839263734051086,
+              "p95_px": 36.1233525644324,
+              "max_px": 48.66019505337989
+            },
+            "rms_change_px": 3.7683633991036913e-11
+          },
+          "outside_current_inputs": {
+            "count": 17,
+            "control": {
+              "count": 17,
+              "rms_px": 19.768135541584844,
+              "median_px": 11.28447762248269,
+              "p95_px": 38.97330503947854,
+              "max_px": 48.66019505324066
+            },
+            "huber": {
+              "count": 17,
+              "rms_px": 19.768135541639605,
+              "median_px": 11.284477622565445,
+              "p95_px": 38.9733050395342,
+              "max_px": 48.66019505337989
+            },
+            "rms_change_px": 5.476152864503092e-11
+          },
+          "left_10pct": {
+            "count": 2,
+            "control": {
+              "count": 2,
+              "rms_px": 2.111768655555791,
+              "median_px": 2.062106493378396,
+              "p95_px": 2.4718622356068622,
+              "max_px": 2.5173906514100253
+            },
+            "huber": {
+              "count": 2,
+              "rms_px": 2.111768655544545,
+              "median_px": 2.0621064933603024,
+              "p95_px": 2.4718622356155775,
+              "max_px": 2.517390651421719
+            },
+            "rms_change_px": -1.1246115150242986e-11
+          },
+          "right_10pct": {
+            "count": 3,
+            "control": {
+              "count": 3,
+              "rms_px": 33.73457732408837,
+              "median_px": 36.10081414483291,
+              "p95_px": 36.50650569691751,
+              "max_px": 36.55158253603802
+            },
+            "huber": {
+              "count": 3,
+              "rms_px": 33.73457732413161,
+              "median_px": 36.10081414487238,
+              "p95_px": 36.50650569695275,
+              "max_px": 36.55158253607279
+            },
+            "rms_change_px": 4.3236525471002096e-11
+          },
+          "top_10pct": {
+            "count": 4,
+            "control": {
+              "count": 4,
+              "rms_px": 21.913277114310965,
+              "median_px": 16.738072774820306,
+              "p95_px": 33.98007244610791,
+              "max_px": 36.10081414483291
+            },
+            "huber": {
+              "count": 4,
+              "rms_px": 21.913277114325503,
+              "median_px": 16.73807277481589,
+              "p95_px": 33.98007244614187,
+              "max_px": 36.10081414487238
+            },
+            "rms_change_px": 1.453770437365165e-11
+          },
+          "bottom_10pct": {
+            "count": 2,
+            "control": {
+              "count": 2,
+              "rms_px": 40.10914187659823,
+              "median_px": 38.90466391412174,
+              "p95_px": 47.68464193932877,
+              "max_px": 48.66019505324066
+            },
+            "huber": {
+              "count": 2,
+              "rms_px": 40.109141876723676,
+              "median_px": 38.90466391424777,
+              "p95_px": 47.68464193946667,
+              "max_px": 48.66019505337989
+            },
+            "rms_change_px": 1.254463199984457e-10
+          }
+        }
+      },
+      "sources": [
+        {
+          "source_id": 1,
+          "hyg_id": 85665,
+          "xy": [
+            2414.72216796875,
+            3849.495361328125
+          ],
+          "outside_current_inputs": true,
+          "predicted_xy": {
+            "control": [
+              2394.183323529526,
+              3806.0401200966835
+            ],
+            "huber": [
+              2394.1833235295744,
+              3806.0401200965075
+            ]
+          }
+        },
+        {
+          "source_id": 2,
+          "hyg_id": 89906,
+          "xy": [
+            1743.3482666015625,
+            3706.747802734375
+          ],
+          "outside_current_inputs": true,
+          "predicted_xy": {
+            "control": [
+              1740.282495902361,
+              3678.1848247305184
+            ],
+            "huber": [
+              1740.2824959024317,
+              3678.184824730398
+            ]
+          }
+        },
+        {
+          "source_id": 3,
+          "hyg_id": 92564,
+          "xy": [
+            1269.52001953125,
+            3260.1142578125
+          ],
+          "outside_current_inputs": true,
+          "predicted_xy": {
+            "control": [
+              1272.8214935842389,
+              3249.4570352453
+            ],
+            "huber": [
+              1272.8214935842998,
+              3249.457035245232
+            ]
+          }
+        },
+        {
+          "source_id": 4,
+          "hyg_id": 85769,
+          "xy": [
+            1957.0731201171875,
+            981.46142578125
+          ],
+          "outside_current_inputs": false,
+          "predicted_xy": {
+            "control": [
+              1956.0879576148084,
+              987.6318984809543
+            ],
+            "huber": [
+              1956.0879576147236,
+              987.6318984809001
+            ]
+          }
+        },
+        {
+          "source_id": 7,
+          "hyg_id": 83755,
+          "xy": [
+            2526.57666015625,
+            2470.31640625
+          ],
+          "outside_current_inputs": true,
+          "predicted_xy": {
+            "control": [
+              2513.0263088703596,
+              2464.437667529045
+            ],
+            "huber": [
+              2513.0263088703423,
+              2464.437667528929
+            ]
+          }
+        },
+        {
+          "source_id": 8,
+          "hyg_id": 81130,
+          "xy": [
+            2990.375,
+            2136.0068359375
+          ],
+          "outside_current_inputs": true,
+          "predicted_xy": {
+            "control": [
+              2962.410823971075,
+              2134.2884782675337
+            ],
+            "huber": [
+              2962.410823971023,
+              2134.2884782674
+            ]
+          }
+        },
+        {
+          "source_id": 9,
+          "hyg_id": 93213,
+          "xy": [
+            1216.9000244140625,
+            3507.692626953125
+          ],
+          "outside_current_inputs": true,
+          "predicted_xy": {
+            "control": [
+              1221.4395002619324,
+              3491.3385094630053
+            ],
+            "huber": [
+              1221.4395002620101,
+              3491.3385094629275
+            ]
+          }
+        },
+        {
+          "source_id": 10,
+          "hyg_id": 89653,
+          "xy": [
+            1731.9517822265625,
+            3396.3388671875
+          ],
+          "outside_current_inputs": false,
+          "predicted_xy": {
+            "control": [
+              1729.7488002968325,
+              3377.3904409559063
+            ],
+            "huber": [
+              1729.7488002968873,
+              3377.3904409558045
+            ]
+          }
+        },
+        {
+          "source_id": 11,
+          "hyg_id": 96970,
+          "xy": [
+            205.08665466308594,
+            1362.2935791015625
+          ],
+          "outside_current_inputs": true,
+          "predicted_xy": {
+            "control": [
+              202.7859907852253,
+              1361.8203659462015
+            ],
+            "huber": [
+              202.7859907851946,
+              1361.8203659462442
+            ]
+          }
+        },
+        {
+          "source_id": 12,
+          "hyg_id": 86475,
+          "xy": [
+            1907.10205078125,
+            1447.508056640625
+          ],
+          "outside_current_inputs": false,
+          "predicted_xy": {
+            "control": [
+              1909.0201535979309,
+              1447.8929274671764
+            ],
+            "huber": [
+              1909.0201535978742,
+              1447.8929274671166
+            ]
+          }
+        },
+        {
+          "source_id": 13,
+          "hyg_id": 80571,
+          "xy": [
+            2845.675048828125,
+            125.66996002197266
+          ],
+          "outside_current_inputs": false,
+          "predicted_xy": {
+            "control": [
+              2825.4244967915056,
+              155.57700421335198
+            ],
+            "huber": [
+              2825.42449679134,
+              155.57700421328605
+            ]
+          }
+        },
+        {
+          "source_id": 14,
+          "hyg_id": 84086,
+          "xy": [
+            2224.928955078125,
+            805.0711059570312
+          ],
+          "outside_current_inputs": false,
+          "predicted_xy": {
+            "control": [
+              2218.6853092685074,
+              817.7999417611416
+            ],
+            "huber": [
+              2218.685309268407,
+              817.7999417610779
+            ]
+          }
+        },
+        {
+          "source_id": 15,
+          "hyg_id": 90217,
+          "xy": [
+            1599.67236328125,
+            3137.85205078125
+          ],
+          "outside_current_inputs": false,
+          "predicted_xy": {
+            "control": [
+              1599.9627686411372,
+              3127.639114862468
+            ],
+            "huber": [
+              1599.962768641182,
+              3127.639114862386
+            ]
+          }
+        },
+        {
+          "source_id": 16,
+          "hyg_id": 93846,
+          "xy": [
+            1031.7760009765625,
+            2992.72607421875
+          ],
+          "outside_current_inputs": false,
+          "predicted_xy": {
+            "control": [
+              1035.1588077927622,
+              2989.603150535598
+            ],
+            "huber": [
+              1035.1588077928134,
+              2989.6031505355554
+            ]
+          }
+        },
+        {
+          "source_id": 17,
+          "hyg_id": 93452,
+          "xy": [
+            751.3298950195312,
+            1114.4056396484375
+          ],
+          "outside_current_inputs": true,
+          "predicted_xy": {
+            "control": [
+              750.8298972785619,
+              1112.648100385652
+            ],
+            "huber": [
+              750.829897278504,
+              1112.6481003856647
+            ]
+          }
+        },
+        {
+          "source_id": 18,
+          "hyg_id": 95648,
+          "xy": [
+            218.99241638183594,
+            223.83653259277344
+          ],
+          "outside_current_inputs": false,
+          "predicted_xy": {
+            "control": [
+              219.93223853006066,
+              224.35224817001586
+            ],
+            "huber": [
+              219.9322385299697,
+              224.35224817008816
+            ]
+          }
+        },
+        {
+          "source_id": 19,
+          "hyg_id": 84121,
+          "xy": [
+            2122.965576171875,
+            126.93257904052734
+          ],
+          "outside_current_inputs": false,
+          "predicted_xy": {
+            "control": [
+              2116.58027886911,
+              148.28083355201738
+            ],
+            "huber": [
+              2116.58027886897,
+              148.2808335519794
+            ]
+          }
+        },
+        {
+          "source_id": 20,
+          "hyg_id": 91754,
+          "xy": [
+            1396.4588623046875,
+            3275.9052734375
+          ],
+          "outside_current_inputs": false,
+          "predicted_xy": {
+            "control": [
+              1398.7327710915176,
+              3263.5042575333327
+            ],
+            "huber": [
+              1398.732771091576,
+              3263.5042575332573
+            ]
+          }
+        },
+        {
+          "source_id": 21,
+          "hyg_id": 82745,
+          "xy": [
+            2515.259521484375,
+            1042.29150390625
+          ],
+          "outside_current_inputs": false,
+          "predicted_xy": {
+            "control": [
+              2503.3834567054632,
+              1054.9663343448547
+            ],
+            "huber": [
+              2503.383456705368,
+              1054.966334344772
+            ]
+          }
+        },
+        {
+          "source_id": 22,
+          "hyg_id": 89684,
+          "xy": [
+            1481.2802734375,
+            1916.7652587890625
+          ],
+          "outside_current_inputs": false,
+          "predicted_xy": {
+            "control": [
+              1482.6577833809902,
+              1916.9918645026726
+            ],
+            "huber": [
+              1482.6577833809674,
+              1916.9918645026298
+            ]
+          }
+        },
+        {
+          "source_id": 23,
+          "hyg_id": 87775,
+          "xy": [
+            1820.511962890625,
+            2221.731201171875
+          ],
+          "outside_current_inputs": false,
+          "predicted_xy": {
+            "control": [
+              1823.2037600846802,
+              2223.4388104376
+            ],
+            "huber": [
+              1823.203760084669,
+              2223.4388104375316
+            ]
+          }
+        },
+        {
+          "source_id": 24,
+          "hyg_id": 95207,
+          "xy": [
+            588.44873046875,
+            1742.8392333984375
+          ],
+          "outside_current_inputs": false,
+          "predicted_xy": {
+            "control": [
+              584.2597500361376,
+              1742.6666258137047
+            ],
+            "huber": [
+              584.2597500361197,
+              1742.6666258137172
+            ]
+          }
+        },
+        {
+          "source_id": 26,
+          "hyg_id": 93510,
+          "xy": [
+            925.8232421875,
+            2116.83740234375
+          ],
+          "outside_current_inputs": false,
+          "predicted_xy": {
+            "control": [
+              922.5595770686845,
+              2119.1101545137567
+            ],
+            "huber": [
+              922.5595770686832,
+              2119.110154513743
+            ]
+          }
+        },
+        {
+          "source_id": 27,
+          "hyg_id": 92793,
+          "xy": [
+            1185.871826171875,
+            2960.363525390625
+          ],
+          "outside_current_inputs": false,
+          "predicted_xy": {
+            "control": [
+              1188.3699760829732,
+              2958.019720017728
+            ],
+            "huber": [
+              1188.3699760830184,
+              2958.0197200176776
+            ]
+          }
+        },
+        {
+          "source_id": 28,
+          "hyg_id": 85998,
+          "xy": [
+            2147.451416015625,
+            2484.991943359375
+          ],
+          "outside_current_inputs": false,
+          "predicted_xy": {
+            "control": [
+              2145.041154516837,
+              2482.5304388676223
+            ],
+            "huber": [
+              2145.041154516832,
+              2482.530438867529
+            ]
+          }
+        },
+        {
+          "source_id": 30,
+          "hyg_id": 88494,
+          "xy": [
+            1553.82275390625,
+            1238.30810546875
+          ],
+          "outside_current_inputs": false,
+          "predicted_xy": {
+            "control": [
+              1555.3246500725086,
+              1236.4016941866557
+            ],
+            "huber": [
+              1555.3246500724451,
+              1236.401694186619
+            ]
+          }
+        },
+        {
+          "source_id": 31,
+          "hyg_id": 86839,
+          "xy": [
+            1863.548095703125,
+            1556.4090576171875
+          ],
+          "outside_current_inputs": false,
+          "predicted_xy": {
+            "control": [
+              1866.0980025308875,
+              1556.1853459964718
+            ],
+            "huber": [
+              1866.0980025308374,
+              1556.1853459964127
+            ]
+          }
+        },
+        {
+          "source_id": 33,
+          "hyg_id": 88517,
+          "xy": [
+            1359.75390625,
+            42.257320404052734
+          ],
+          "outside_current_inputs": false,
+          "predicted_xy": {
+            "control": [
+              1361.3390919744743,
+              54.33497497184362
+            ],
+            "huber": [
+              1361.3390919743463,
+              54.334974971848396
+            ]
+          }
+        },
+        {
+          "source_id": 34,
+          "hyg_id": 89064,
+          "xy": [
+            1734.0390625,
+            2854.380126953125
+          ],
+          "outside_current_inputs": true,
+          "predicted_xy": {
+            "control": [
+              1734.2896994156756,
+              2850.9713007309097
+            ],
+            "huber": [
+              1734.2896994157013,
+              2850.97130073083
+            ]
+          }
+        },
+        {
+          "source_id": 35,
+          "hyg_id": 89860,
+          "xy": [
+            1223.3719482421875,
+            559.923095703125
+          ],
+          "outside_current_inputs": false,
+          "predicted_xy": {
+            "control": [
+              1225.1619623210395,
+              564.4848459133996
+            ],
+            "huber": [
+              1225.1619623209424,
+              564.4848459133952
+            ]
+          }
+        },
+        {
+          "source_id": 36,
+          "hyg_id": 92951,
+          "xy": [
+            817.148193359375,
+            1034.75927734375
+          ],
+          "outside_current_inputs": false,
+          "predicted_xy": {
+            "control": [
+              816.8898313178134,
+              1033.772137517842
+            ],
+            "huber": [
+              816.8898313177498,
+              1033.7721375178521
+            ]
+          }
+        },
+        {
+          "source_id": 37,
+          "hyg_id": 91756,
+          "xy": [
+            945.5824584960938,
+            680.71435546875
+          ],
+          "outside_current_inputs": true,
+          "predicted_xy": {
+            "control": [
+              946.6853305060189,
+              682.6341376517039
+            ],
+            "huber": [
+              946.6853305059334,
+              682.634137651713
+            ]
+          }
+        },
+        {
+          "source_id": 38,
+          "hyg_id": 96165,
+          "xy": [
+            475.68780517578125,
+            2003.1781005859375
+          ],
+          "outside_current_inputs": false,
+          "predicted_xy": {
+            "control": [
+              471.8032570579064,
+              2004.5767177806847
+            ],
+            "huber": [
+              471.80325705790756,
+              2004.5767177806993
+            ]
+          }
+        },
+        {
+          "source_id": 39,
+          "hyg_id": 82421,
+          "xy": [
+            2564.14599609375,
+            982.1698608398438
+          ],
+          "outside_current_inputs": true,
+          "predicted_xy": {
+            "control": [
+              2551.126928691703,
+              996.2279831132854
+            ],
+            "huber": [
+              2551.126928691604,
+              996.2279831132013
+            ]
+          }
+        },
+        {
+          "source_id": 42,
+          "hyg_id": 97851,
+          "xy": [
+            469.9091796875,
+            3563.94384765625
+          ],
+          "outside_current_inputs": true,
+          "predicted_xy": {
+            "control": [
+              479.89523405865214,
+              3551.7833056270974
+            ],
+            "huber": [
+              479.8952340587608,
+              3551.7833056270565
+            ]
+          }
+        },
+        {
+          "source_id": 43,
+          "hyg_id": 80221,
+          "xy": [
+            2995.1416015625,
+            612.6403198242188
+          ],
+          "outside_current_inputs": true,
+          "predicted_xy": {
+            "control": [
+              2969.0640729298766,
+              638.5757613524243
+            ],
+            "huber": [
+              2969.064072929738,
+              638.5757613523331
+            ]
+          }
+        },
+        {
+          "source_id": 44,
+          "hyg_id": 96162,
+          "xy": [
+            727.0460815429688,
+            3308.781982421875
+          ],
+          "outside_current_inputs": true,
+          "predicted_xy": {
+            "control": [
+              727.3364810517189,
+              3313.3630839610237
+            ],
+            "huber": [
+              727.3364810518009,
+              3313.363083960983
+            ]
+          }
+        },
+        {
+          "source_id": 45,
+          "hyg_id": 84256,
+          "xy": [
+            2313.888916015625,
+            1648.4381103515625
+          ],
+          "outside_current_inputs": true,
+          "predicted_xy": {
+            "control": [
+              2310.127266971807,
+              1651.5687389421282
+            ],
+            "huber": [
+              2310.1272669717528,
+              1651.568738942043
+            ]
+          }
+        },
+        {
+          "source_id": 46,
+          "hyg_id": 96180,
+          "xy": [
+            531.1495361328125,
+            2310.180419921875
+          ],
+          "outside_current_inputs": true,
+          "predicted_xy": {
+            "control": [
+              529.2227158303475,
+              2312.7528393670946
+            ],
+            "huber": [
+              529.2227158303672,
+              2312.7528393671
+            ]
+          }
+        },
+        {
+          "source_id": 47,
+          "hyg_id": 94771,
+          "xy": [
+            740.5653076171875,
+            2180.1435546875
+          ],
+          "outside_current_inputs": true,
+          "predicted_xy": {
+            "control": [
+              737.3489209308457,
+              2182.578644786885
+            ],
+            "huber": [
+              737.348920930852,
+              2182.578644786881
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "wm_r_149276071",
+      "status": "measured",
+      "independent_ground_truth": false,
+      "groups": {
+        "external_centroid": {
+          "all_reviewed": {
+            "count": 42,
+            "control": {
+              "count": 42,
+              "rms_px": 2.793479405892973,
+              "median_px": 2.1911801625634544,
+              "p95_px": 4.7589078849283535,
+              "max_px": 7.380584845998445
+            },
+            "huber": {
+              "count": 42,
+              "rms_px": 2.7934794058765395,
+              "median_px": 2.1911801625946077,
+              "p95_px": 4.758907884856524,
+              "max_px": 7.380584846060182
+            },
+            "rms_change_px": -1.6433521210501567e-11
+          },
+          "outside_current_inputs": {
+            "count": 23,
+            "control": {
+              "count": 23,
+              "rms_px": 2.9870048259031488,
+              "median_px": 2.3395281042949434,
+              "p95_px": 4.7491975718816475,
+              "max_px": 5.099815198040224
+            },
+            "huber": {
+              "count": 23,
+              "rms_px": 2.987004825862286,
+              "median_px": 2.3395281042445597,
+              "p95_px": 4.74919757180973,
+              "max_px": 5.099815197949653
+            },
+            "rms_change_px": -4.086286864435351e-11
+          },
+          "left_10pct": {
+            "count": 3,
+            "control": {
+              "count": 3,
+              "rms_px": 2.1998545685484507,
+              "median_px": 1.6224324519091708,
+              "p95_px": 3.102199511574966,
+              "max_px": 3.2666180737600548
+            },
+            "huber": {
+              "count": 3,
+              "rms_px": 2.1998545685048936,
+              "median_px": 1.622432451869114,
+              "p95_px": 3.1021995115141863,
+              "max_px": 3.2666180736969723
+            },
+            "rms_change_px": -4.355715788051384e-11
+          },
+          "right_10pct": {
+            "count": 4,
+            "control": {
+              "count": 4,
+              "rms_px": 4.276971231511254,
+              "median_px": 2.935882293073723,
+              "p95_px": 6.809409267932303,
+              "max_px": 7.380584845998445
+            },
+            "huber": {
+              "count": 4,
+              "rms_px": 4.2769712315746355,
+              "median_px": 2.9358822931694006,
+              "p95_px": 6.809409267997906,
+              "max_px": 7.380584846060182
+            },
+            "rms_change_px": 6.338130020822064e-11
+          },
+          "top_10pct": {
+            "count": 0
+          },
+          "bottom_10pct": {
+            "count": 1,
+            "control": {
+              "count": 1,
+              "rms_px": 5.099815198040224,
+              "median_px": 5.099815198040224,
+              "p95_px": 5.099815198040224,
+              "max_px": 5.099815198040224
+            },
+            "huber": {
+              "count": 1,
+              "rms_px": 5.099815197949653,
+              "median_px": 5.099815197949653,
+              "p95_px": 5.099815197949653,
+              "max_px": 5.099815197949653
+            },
+            "rms_change_px": -9.057110617050057e-11
+          }
+        },
+        "native_r8": {
+          "all_reviewed": {
+            "count": 42,
+            "control": {
+              "count": 42,
+              "rms_px": 2.711827587936568,
+              "median_px": 2.13098412076699,
+              "p95_px": 4.7313234313242045,
+              "max_px": 6.703468775183941
+            },
+            "huber": {
+              "count": 42,
+              "rms_px": 2.711827587919701,
+              "median_px": 2.1309841207445235,
+              "p95_px": 4.731323431251952,
+              "max_px": 6.7034687752531825
+            },
+            "rms_change_px": -1.6866952279315228e-11
+          },
+          "outside_current_inputs": {
+            "count": 23,
+            "control": {
+              "count": 23,
+              "rms_px": 2.9221689708814234,
+              "median_px": 2.384965437269909,
+              "p95_px": 4.719869262670421,
+              "max_px": 5.0614769089642015
+            },
+            "huber": {
+              "count": 23,
+              "rms_px": 2.9221689708400755,
+              "median_px": 2.3849654372317497,
+              "p95_px": 4.719869262597559,
+              "max_px": 5.061476908873657
+            },
+            "rms_change_px": -4.134781406150978e-11
+          },
+          "left_10pct": {
+            "count": 3,
+            "control": {
+              "count": 3,
+              "rms_px": 2.117859410182496,
+              "median_px": 1.464244331661182,
+              "p95_px": 3.00512316897975,
+              "max_px": 3.176331928681813
+            },
+            "huber": {
+              "count": 3,
+              "rms_px": 2.1178594101380193,
+              "median_px": 1.4642443316146145,
+              "p95_px": 3.0051231689186193,
+              "max_px": 3.1763319286190645
+            },
+            "rms_change_px": -4.447686663411332e-11
+          },
+          "right_10pct": {
+            "count": 4,
+            "control": {
+              "count": 4,
+              "rms_px": 3.954778838743757,
+              "median_px": 2.8038760212051415,
+              "p95_px": 6.229850238408045,
+              "max_px": 6.703468775183941
+            },
+            "huber": {
+              "count": 4,
+              "rms_px": 3.9547788388108343,
+              "median_px": 2.8038760213011322,
+              "p95_px": 6.229850238480049,
+              "max_px": 6.7034687752531825
+            },
+            "rms_change_px": 6.707745470180271e-11
+          },
+          "top_10pct": {
+            "count": 0
+          },
+          "bottom_10pct": {
+            "count": 1,
+            "control": {
+              "count": 1,
+              "rms_px": 5.0614769089642015,
+              "median_px": 5.0614769089642015,
+              "p95_px": 5.0614769089642015,
+              "max_px": 5.0614769089642015
+            },
+            "huber": {
+              "count": 1,
+              "rms_px": 5.061476908873657,
+              "median_px": 5.061476908873657,
+              "p95_px": 5.061476908873657,
+              "max_px": 5.061476908873657
+            },
+            "rms_change_px": -9.054446081790957e-11
+          }
+        },
+        "native_r12": {
+          "all_reviewed": {
+            "count": 42,
+            "control": {
+              "count": 42,
+              "rms_px": 2.761107421207437,
+              "median_px": 2.2635270582764297,
+              "p95_px": 4.724836814264705,
+              "max_px": 6.766972048139878
+            },
+            "huber": {
+              "count": 42,
+              "rms_px": 2.7611074211902342,
+              "median_px": 2.2635270583405083,
+              "p95_px": 4.724836814191905,
+              "max_px": 6.766972048208405
+            },
+            "rms_change_px": -1.7202683721961876e-11
+          },
+          "outside_current_inputs": {
+            "count": 23,
+            "control": {
+              "count": 23,
+              "rms_px": 2.9978260656090554,
+              "median_px": 2.4701193988101626,
+              "p95_px": 4.712487670639431,
+              "max_px": 5.120392934018916
+            },
+            "huber": {
+              "count": 23,
+              "rms_px": 2.997826065567685,
+              "median_px": 2.4701193987714816,
+              "p95_px": 4.712487670566013,
+              "max_px": 5.120392933928353
+            },
+            "rms_change_px": -4.137046261121213e-11
+          },
+          "left_10pct": {
+            "count": 3,
+            "control": {
+              "count": 3,
+              "rms_px": 2.1170685877118776,
+              "median_px": 1.5363898300370755,
+              "p95_px": 2.951309157373743,
+              "max_px": 3.108522415966706
+            },
+            "huber": {
+              "count": 3,
+              "rms_px": 2.1170685876674176,
+              "median_px": 1.5363898299912777,
+              "p95_px": 2.9513091573128802,
+              "max_px": 3.1085224159041696
+            },
+            "rms_change_px": -4.445999124413902e-11
+          },
+          "right_10pct": {
+            "count": 4,
+            "control": {
+              "count": 4,
+              "rms_px": 3.9916724914727166,
+              "median_px": 2.841522103664653,
+              "p95_px": 6.285279491057059,
+              "max_px": 6.766972048139878
+            },
+            "huber": {
+              "count": 4,
+              "rms_px": 3.991672491540307,
+              "median_px": 2.8415221037608647,
+              "p95_px": 6.285279491128539,
+              "max_px": 6.766972048208405
+            },
+            "rms_change_px": 6.759037773917953e-11
+          },
+          "top_10pct": {
+            "count": 0
+          },
+          "bottom_10pct": {
+            "count": 1,
+            "control": {
+              "count": 1,
+              "rms_px": 5.120392934018916,
+              "median_px": 5.120392934018916,
+              "p95_px": 5.120392934018916,
+              "max_px": 5.120392934018916
+            },
+            "huber": {
+              "count": 1,
+              "rms_px": 5.120392933928353,
+              "median_px": 5.120392933928353,
+              "p95_px": 5.120392933928353,
+              "max_px": 5.120392933928353
+            },
+            "rms_change_px": -9.056311256472327e-11
+          }
+        }
+      },
+      "sources": [
+        {
+          "source_id": 0,
+          "hyg_id": 80519,
+          "xy": [
+            1963.7982177734375,
+            407.89251708984375
+          ],
+          "outside_current_inputs": false,
+          "predicted_xy": {
+            "control": [
+              1966.0598122325514,
+              405.12670503248785
+            ],
+            "huber": [
+              1966.0598122325596,
+              405.1267050323815
+            ]
+          }
+        },
+        {
+          "source_id": 1,
+          "hyg_id": 85769,
+          "xy": [
+            904.0426635742188,
+            996.96044921875
+          ],
+          "outside_current_inputs": false,
+          "predicted_xy": {
+            "control": [
+              901.8608610413611,
+              998.5506881073348
+            ],
+            "huber": [
+              901.8608610414029,
+              998.5506881072861
+            ]
+          }
+        },
+        {
+          "source_id": 2,
+          "hyg_id": 76035,
+          "xy": [
+            370.0498046875,
+            312.4215087890625
+          ],
+          "outside_current_inputs": false,
+          "predicted_xy": {
+            "control": [
+              372.32859002475084,
+              313.60922256818657
+            ],
+            "huber": [
+              372.32859002476084,
+              313.6092225681885
+            ]
+          }
+        },
+        {
+          "source_id": 3,
+          "hyg_id": 78165,
+          "xy": [
+            1813.166259765625,
+            220.2630615234375
+          ],
+          "outside_current_inputs": false,
+          "predicted_xy": {
+            "control": [
+              1812.980075379715,
+              219.48061043855193
+            ],
+            "huber": [
+              1812.9800753797117,
+              219.48061043845394
+            ]
+          }
+        },
+        {
+          "source_id": 4,
+          "hyg_id": 83755,
+          "xy": [
+            1630.7432861328125,
+            743.1000366210938
+          ],
+          "outside_current_inputs": false,
+          "predicted_xy": {
+            "control": [
+              1632.4330682231555,
+              741.5491299009238
+            ],
+            "huber": [
+              1632.4330682231662,
+              741.5491299008406
+            ]
+          }
+        },
+        {
+          "source_id": 5,
+          "hyg_id": 81130,
+          "xy": [
+            1448.6009521484375,
+            547.6275024414062
+          ],
+          "outside_current_inputs": true,
+          "predicted_xy": {
+            "control": [
+              1449.731189416881,
+              546.1123671964851
+            ],
+            "huber": [
+              1449.731189416883,
+              546.112367196417
+            ]
+          }
+        },
+        {
+          "source_id": 6,
+          "hyg_id": 78580,
+          "xy": [
+            1716.4930419921875,
+            277.0918273925781
+          ],
+          "outside_current_inputs": false,
+          "predicted_xy": {
+            "control": [
+              1714.5715673539191,
+              276.91280321917463
+            ],
+            "huber": [
+              1714.5715673539137,
+              276.9128032190862
+            ]
+          }
+        },
+        {
+          "source_id": 7,
+          "hyg_id": 76835,
+          "xy": [
+            946.7607421875,
+            272.2680358886719
+          ],
+          "outside_current_inputs": false,
+          "predicted_xy": {
+            "control": [
+              947.140325780897,
+              273.0765874140651
+            ],
+            "huber": [
+              947.1403257808921,
+              273.0765874140331
+            ]
+          }
+        },
+        {
+          "source_id": 8,
+          "hyg_id": 79352,
+          "xy": [
+            1243.41943359375,
+            428.9110107421875
+          ],
+          "outside_current_inputs": false,
+          "predicted_xy": {
+            "control": [
+              1243.2761570084178,
+              427.5479933004537
+            ],
+            "huber": [
+              1243.276157008416,
+              427.54799330040106
+            ]
+          }
+        },
+        {
+          "source_id": 9,
+          "hyg_id": 86475,
+          "xy": [
+            1112.297607421875,
+            1026.3011474609375
+          ],
+          "outside_current_inputs": true,
+          "predicted_xy": {
+            "control": [
+              1112.5572846705534,
+              1028.330486523231
+            ],
+            "huber": [
+              1112.5572846705886,
+              1028.330486523169
+            ]
+          }
+        },
+        {
+          "source_id": 10,
+          "hyg_id": 80571,
+          "xy": [
+            615.13134765625,
+            637.9436645507812
+          ],
+          "outside_current_inputs": false,
+          "predicted_xy": {
+            "control": [
+              613.34206635705,
+              637.2003661893335
+            ],
+            "huber": [
+              613.3420663570791,
+              637.200366189316
+            ]
+          }
+        },
+        {
+          "source_id": 11,
+          "hyg_id": 84086,
+          "xy": [
+            842.5537719726562,
+            878.3038330078125
+          ],
+          "outside_current_inputs": true,
+          "predicted_xy": {
+            "control": [
+              840.250138826222,
+              878.4491992785272
+            ],
+            "huber": [
+              840.2501388262589,
+              878.4491992784872
+            ]
+          }
+        },
+        {
+          "source_id": 12,
+          "hyg_id": 81444,
+          "xy": [
+            339.214111328125,
+            749.164306640625
+          ],
+          "outside_current_inputs": true,
+          "predicted_xy": {
+            "control": [
+              336.7227065483132,
+              748.5555701749466
+            ],
+            "huber": [
+              336.72270654835893,
+              748.5555701749419
+            ]
+          }
+        },
+        {
+          "source_id": 13,
+          "hyg_id": 78029,
+          "xy": [
+            1941.18798828125,
+            184.9869842529297
+          ],
+          "outside_current_inputs": false,
+          "predicted_xy": {
+            "control": [
+              1947.4093453504177,
+              181.01612176640367
+            ],
+            "huber": [
+              1947.40934535042,
+              181.01612176629249
+            ]
+          }
+        },
+        {
+          "source_id": 14,
+          "hyg_id": 84121,
+          "xy": [
+            566.9597778320312,
+            919.81396484375
+          ],
+          "outside_current_inputs": true,
+          "predicted_xy": {
+            "control": [
+              564.0147484678255,
+              919.3413800602414
+            ],
+            "huber": [
+              564.0147484678762,
+              919.3413800602161
+            ]
+          }
+        },
+        {
+          "source_id": 15,
+          "hyg_id": 84122,
+          "xy": [
+            198.74969482421875,
+            972.243896484375
+          ],
+          "outside_current_inputs": true,
+          "predicted_xy": {
+            "control": [
+              195.57869656127934,
+              971.4593178355124
+            ],
+            "huber": [
+              195.5786965613455,
+              971.4593178355076
+            ]
+          }
+        },
+        {
+          "source_id": 16,
+          "hyg_id": 79640,
+          "xy": [
+            1272.8560791015625,
+            450.4962158203125
+          ],
+          "outside_current_inputs": false,
+          "predicted_xy": {
+            "control": [
+              1273.265840798308,
+              449.23429148241553
+            ],
+            "huber": [
+              1273.2658407983072,
+              449.23429148236056
+            ]
+          }
+        },
+        {
+          "source_id": 17,
+          "hyg_id": 89684,
+          "xy": [
+            1350.98193359375,
+            1267.66748046875
+          ],
+          "outside_current_inputs": true,
+          "predicted_xy": {
+            "control": [
+              1352.1530064754936,
+              1270.218590268123
+            ],
+            "huber": [
+              1352.1530064755357,
+              1270.2185902680385
+            ]
+          }
+        },
+        {
+          "source_id": 18,
+          "hyg_id": 84711,
+          "xy": [
+            1961.7012939453125,
+            780.7479858398438
+          ],
+          "outside_current_inputs": true,
+          "predicted_xy": {
+            "control": [
+              1962.5750691250203,
+              778.6214873641474
+            ],
+            "huber": [
+              1962.57506912504,
+              778.6214873640432
+            ]
+          }
+        },
+        {
+          "source_id": 19,
+          "hyg_id": 87775,
+          "xy": [
+            1516.4027099609375,
+            1090.2969970703125
+          ],
+          "outside_current_inputs": true,
+          "predicted_xy": {
+            "control": [
+              1518.4914116670086,
+              1090.917877986988
+            ],
+            "huber": [
+              1518.491411667037,
+              1090.9178779869019
+            ]
+          }
+        },
+        {
+          "source_id": 21,
+          "hyg_id": 86705,
+          "xy": [
+            499.95501708984375,
+            1122.751953125
+          ],
+          "outside_current_inputs": true,
+          "predicted_xy": {
+            "control": [
+              495.2913406463129,
+              1123.7468609338518
+            ],
+            "huber": [
+              495.2913406463798,
+              1123.7468609338216
+            ]
+          }
+        },
+        {
+          "source_id": 22,
+          "hyg_id": 74438,
+          "xy": [
+            105.6940689086914,
+            223.3717803955078
+          ],
+          "outside_current_inputs": false,
+          "predicted_xy": {
+            "control": [
+              105.1313728697611,
+              222.42395507655988
+            ],
+            "huber": [
+              105.13137286976439,
+              222.42395507657523
+            ]
+          }
+        },
+        {
+          "source_id": 23,
+          "hyg_id": 81583,
+          "xy": [
+            94.95821380615234,
+            796.6417236328125
+          ],
+          "outside_current_inputs": false,
+          "predicted_xy": {
+            "control": [
+              93.95770231880567,
+              795.3645142432857
+            ],
+            "huber": [
+              93.95770231886047,
+              795.3645142432937
+            ]
+          }
+        },
+        {
+          "source_id": 24,
+          "hyg_id": 77280,
+          "xy": [
+            1214.914306640625,
+            258.7594909667969
+          ],
+          "outside_current_inputs": true,
+          "predicted_xy": {
+            "control": [
+              1214.7306188814516,
+              259.346641016241
+            ],
+            "huber": [
+              1214.7306188814418,
+              259.3466410161905
+            ]
+          }
+        },
+        {
+          "source_id": 25,
+          "hyg_id": 85998,
+          "xy": [
+            1654.872802734375,
+            925.8439331054688
+          ],
+          "outside_current_inputs": true,
+          "predicted_xy": {
+            "control": [
+              1656.8019682983308,
+              924.779513732177
+            ],
+            "huber": [
+              1656.80196829835,
+              924.7795137320882
+            ]
+          }
+        },
+        {
+          "source_id": 26,
+          "hyg_id": 76997,
+          "xy": [
+            712.33935546875,
+            330.41302490234375
+          ],
+          "outside_current_inputs": false,
+          "predicted_xy": {
+            "control": [
+              713.1121143998848,
+              331.2940201123867
+            ],
+            "huber": [
+              713.1121143998892,
+              331.294020112369
+            ]
+          }
+        },
+        {
+          "source_id": 27,
+          "hyg_id": 75466,
+          "xy": [
+            278.2969055175781,
+            279.29156494140625
+          ],
+          "outside_current_inputs": false,
+          "predicted_xy": {
+            "control": [
+              281.43498891224476,
+              281.1755966427016
+            ],
+            "huber": [
+              281.43498891225295,
+              281.1755966427083
+            ]
+          }
+        },
+        {
+          "source_id": 28,
+          "hyg_id": 87661,
+          "xy": [
+            454.1383972167969,
+            1200.920166015625
+          ],
+          "outside_current_inputs": true,
+          "predicted_xy": {
+            "control": [
+              450.2337800927104,
+              1202.0616968805543
+            ],
+            "huber": [
+              450.2337800927842,
+              1202.0616968805234
+            ]
+          }
+        },
+        {
+          "source_id": 29,
+          "hyg_id": 77386,
+          "xy": [
+            1005.6229248046875,
+            309.2132568359375
+          ],
+          "outside_current_inputs": false,
+          "predicted_xy": {
+            "control": [
+              1006.0007088407558,
+              308.4692136507479
+            ],
+            "huber": [
+              1006.0007088407518,
+              308.46921365071194
+            ]
+          }
+        },
+        {
+          "source_id": 30,
+          "hyg_id": 88494,
+          "xy": [
+            1002.5079345703125,
+            1200.5167236328125
+          ],
+          "outside_current_inputs": true,
+          "predicted_xy": {
+            "control": [
+              1001.2732524874158,
+              1202.9438803137127
+            ],
+            "huber": [
+              1001.2732524874659,
+              1202.9438803136488
+            ]
+          }
+        },
+        {
+          "source_id": 31,
+          "hyg_id": 79928,
+          "xy": [
+            666.8087158203125,
+            578.03515625
+          ],
+          "outside_current_inputs": true,
+          "predicted_xy": {
+            "control": [
+              665.3647712709258,
+              576.5207352578251
+            ],
+            "huber": [
+              665.364771270949,
+              576.5207352578062
+            ]
+          }
+        },
+        {
+          "source_id": 32,
+          "hyg_id": 86839,
+          "xy": [
+            1163.747802734375,
+            1049.595703125
+          ],
+          "outside_current_inputs": true,
+          "predicted_xy": {
+            "control": [
+              1164.540652762878,
+              1051.7967893529994
+            ],
+            "huber": [
+              1164.540652762913,
+              1051.7967893529333
+            ]
+          }
+        },
+        {
+          "source_id": 33,
+          "hyg_id": 76044,
+          "xy": [
+            825.2047729492188,
+            225.9872589111328
+          ],
+          "outside_current_inputs": false,
+          "predicted_xy": {
+            "control": [
+              825.2846133883127,
+              228.01604575072918
+            ],
+            "huber": [
+              825.2846133883072,
+              228.0160457507045
+            ]
+          }
+        },
+        {
+          "source_id": 34,
+          "hyg_id": 88517,
+          "xy": [
+            468.6417236328125,
+            1263.4835205078125
+          ],
+          "outside_current_inputs": true,
+          "predicted_xy": {
+            "control": [
+              464.43079854145935,
+              1264.8534656969214
+            ],
+            "huber": [
+              464.43079854153655,
+              1264.8534656968864
+            ]
+          }
+        },
+        {
+          "source_id": 36,
+          "hyg_id": 77836,
+          "xy": [
+            722.340087890625,
+            400.4964599609375
+          ],
+          "outside_current_inputs": false,
+          "predicted_xy": {
+            "control": [
+              722.4740953905532,
+              400.1645588430044
+            ],
+            "huber": [
+              722.4740953905623,
+              400.1645588429855
+            ]
+          }
+        },
+        {
+          "source_id": 37,
+          "hyg_id": 89860,
+          "xy": [
+            676.0472412109375,
+            1350.53369140625
+          ],
+          "outside_current_inputs": true,
+          "predicted_xy": {
+            "control": [
+              671.8263962633762,
+              1353.3959602585433
+            ],
+            "huber": [
+              671.8263962634503,
+              1353.3959602584912
+            ]
+          }
+        },
+        {
+          "source_id": 39,
+          "hyg_id": 82952,
+          "xy": [
+            379.7625427246094,
+            857.5654296875
+          ],
+          "outside_current_inputs": true,
+          "predicted_xy": {
+            "control": [
+              376.095489378147,
+              857.0143651764665
+            ],
+            "huber": [
+              376.0954893781998,
+              857.0143651764553
+            ]
+          }
+        },
+        {
+          "source_id": 40,
+          "hyg_id": 87920,
+          "xy": [
+            1170.063232421875,
+            1136.2618408203125
+          ],
+          "outside_current_inputs": true,
+          "predicted_xy": {
+            "control": [
+              1170.5210955205052,
+              1138.2942938011133
+            ],
+            "huber": [
+              1170.521095520545,
+              1138.2942938010433
+            ]
+          }
+        },
+        {
+          "source_id": 41,
+          "hyg_id": 77923,
+          "xy": [
+            413.94891357421875,
+            462.2825012207031
+          ],
+          "outside_current_inputs": false,
+          "predicted_xy": {
+            "control": [
+              414.0820160828175,
+              462.3363197609272
+            ],
+            "huber": [
+              414.082016082839,
+              462.33631976092545
+            ]
+          }
+        },
+        {
+          "source_id": 42,
+          "hyg_id": 87994,
+          "xy": [
+            678.8944702148438,
+            1198.55029296875
+          ],
+          "outside_current_inputs": true,
+          "predicted_xy": {
+            "control": [
+              674.4630457109123,
+              1199.685071112573
+            ],
+            "huber": [
+              674.4630457109766,
+              1199.685071112528
+            ]
+          }
+        },
+        {
+          "source_id": 45,
+          "hyg_id": 77276,
+          "xy": [
+            422.1656799316406,
+            407.70263671875
+          ],
+          "outside_current_inputs": true,
+          "predicted_xy": {
+            "control": [
+              422.9444595271534,
+              407.52926005216233
+            ],
+            "huber": [
+              422.94445952717,
+              407.52926005216085
+            ]
+          }
+        },
+        {
+          "source_id": 47,
+          "hyg_id": 119058,
+          "xy": [
+            1448.2379150390625,
+            320.8267822265625
+          ],
+          "outside_current_inputs": true,
+          "predicted_xy": {
+            "control": [
+              1448.9401229519467,
+              320.1103405900694
+            ],
+            "huber": [
+              1448.9401229519385,
+              320.1103405900023
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "external WCS and reviewed identities remain conditional, not accepted independent ground truth",
+    "new solved statuses require separate field review; no default promotion from counts"
+  ]
+}

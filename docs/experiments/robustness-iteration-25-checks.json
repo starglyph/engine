@@ -1,0 +1,135 @@
+{
+  "iteration": 25,
+  "checks": {
+    "python-tests": {
+      "command": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "eval",
+        "-p",
+        "test_*.py"
+      ],
+      "exit_code": 0,
+      "elapsed_s": 3.489996327087283
+    },
+    "rust-tests": {
+      "command": [
+        "cargo",
+        "test",
+        "--offline",
+        "--locked",
+        "--release",
+        "--manifest-path",
+        "/home/agent/work/starglyph/engine/prototype/artifacts/robustness-iteration-25/fixed/pipeline/Cargo.toml",
+        "-p",
+        "starglyph-core",
+        "-p",
+        "starglyph-cli",
+        "--features",
+        "serde_json/float_roundtrip"
+      ],
+      "exit_code": 0,
+      "elapsed_s": 17.642689161002636
+    },
+    "replay": {
+      "command": [
+        "cargo",
+        "test",
+        "--offline",
+        "--locked",
+        "--release",
+        "--manifest-path",
+        "/home/agent/work/starglyph/engine/prototype/artifacts/robustness-iteration-25/fixed/pipeline/Cargo.toml",
+        "-p",
+        "starglyph-core",
+        "--features",
+        "serde_json/float_roundtrip",
+        "--lib",
+        "solve::refinement_trace::replay::export",
+        "--",
+        "--ignored"
+      ],
+      "exit_code": 0,
+      "elapsed_s": 19.358697237446904
+    },
+    "clippy": {
+      "command": [
+        "cargo",
+        "clippy",
+        "--offline",
+        "--locked",
+        "--release",
+        "--manifest-path",
+        "/home/agent/work/starglyph/engine/prototype/artifacts/robustness-iteration-25/fixed/pipeline/Cargo.toml",
+        "-p",
+        "starglyph-core",
+        "-p",
+        "starglyph-cli",
+        "--features",
+        "serde_json/float_roundtrip",
+        "--all-targets",
+        "--no-deps",
+        "--",
+        "-D",
+        "warnings"
+      ],
+      "exit_code": 0,
+      "elapsed_s": 18.738464646041393
+    },
+    "rustfmt": {
+      "command": [
+        "rustfmt",
+        "--check",
+        "--edition",
+        "2021",
+        "eval/refinement_trace.rs"
+      ],
+      "exit_code": 0,
+      "elapsed_s": 0.04397083446383476
+    },
+    "eval-ci": {
+      "command": [
+        "/home/agent/work/starglyph/engine/prototype/artifacts/robustness-iteration-25/fixed/binaries/huber",
+        "eval",
+        "--manifest",
+        "../data/samples/sky-samples/manifest.json",
+        "--ids",
+        "tetra3_alt40,tetra3_alt60",
+        "--catalog",
+        "../data/catalogs/hyg_v42.csv.gz",
+        "--out-dir",
+        "/home/agent/work/starglyph/engine/prototype/artifacts/robustness-iteration-25/fixed/gate-ci",
+        "--baseline",
+        "eval/baseline-ci.json"
+      ],
+      "exit_code": 0,
+      "elapsed_s": 1.926593467593193
+    }
+  },
+  "protocol_hashes_valid": true,
+  "protected_hashes": {
+    "data/samples/sky-samples/robustness-results.json": "09e6efe61468b4afe896967d583553751d80fe82e65e0ac064528523bbc525e8",
+    "data/samples/sky-samples/collection-wcs-review.json": "97c182c51955baee9adce93cde8e93fb98ece6a69bdc606cf871d3a1eef19841",
+    "data/samples/sky-samples/manifest.json": "97e229270c7b0f97fce4e1f738917cd91cdff01df3508db29584af70a0ea4871"
+  },
+  "internal_attempt_timeouts": {
+    "control": 5,
+    "huber": 5
+  },
+  "reused_iteration24_gates": [
+    "development 45 frames including 8 negatives",
+    "smartphone",
+    "sky-fill",
+    "extended-dense"
+  ],
+  "reason_no_repeated_full_gates": "diagnostic observer/replay only, unchanged algorithm; exact final cameras and quality reproduced on selected frame",
+  "superseded_attempt": {
+    "path": "prototype/artifacts/robustness-iteration-25",
+    "failure": "default JSON parse changed float inputs by one ULP; diagonal mismatch 1.33e-7 exceeded 1e-8 gate",
+    "fix": "serde_json/float_roundtrip for replay; same tolerance; full fresh observed/replay run"
+  },
+  "tooling_correction": "new report renamed after collision; original tracked module restored unchanged"
+}

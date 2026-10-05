@@ -1,0 +1,8 @@
+{
+  "iteration": 25,
+  "hashes": {
+    "prototype/eval/robustness_refinement_crossover_report.py": "8b564b11688f8d8390b0c8f959a322af65c0c64a42caa742a8181654bf9bb727",
+    "prototype/eval/test_robustness_refinement_trace.py": "6cd7f6c0101188feaa7a55162df3d10015973a34c2ddcf79f4ffb04384674c60"
+  },
+  "criteria": "unchanged 1e-8 scalar tolerance and exact identities; report all four cases"
+}

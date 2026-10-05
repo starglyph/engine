@@ -1,0 +1,43 @@
+{
+  "iteration": 25,
+  "id": "wm_r_132162731",
+  "crossovers": {
+    "control": {
+      "max_probe_displacement_px": 2.6059840304617776e-08,
+      "same_final_pairs": true,
+      "same_stage_pairs": true
+    },
+    "huber": {
+      "max_probe_displacement_px": 1.2116269932866545e-08,
+      "same_final_pairs": true,
+      "same_stage_pairs": true
+    }
+  },
+  "initial_roll_delta_deg": -0.01911300194895027,
+  "initial_lost_detection_indices": [
+    19,
+    37,
+    39
+  ],
+  "initial_gained_detection_indices": [
+    2
+  ],
+  "initial_changed_tetra_ids": [
+    {
+      "detection_index": 2,
+      "catalog_id": 85769
+    },
+    {
+      "detection_index": 19,
+      "catalog_id": 92951
+    },
+    {
+      "detection_index": 37,
+      "catalog_id": null
+    },
+    {
+      "detection_index": 39,
+      "catalog_id": null
+    }
+  ]
+}

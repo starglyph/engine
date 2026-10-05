@@ -1,0 +1,41 @@
+{
+  "iteration": 20,
+  "id": "20260831_214709",
+  "holdout": false,
+  "hashes": {
+    "docs/experiments/robustness-iteration-19-results.json": "9712d9297727f094efce4461c21f37efee8261b5bf7c78c5c82fa7e8266e809d",
+    "data/catalogs/hyg_v42.csv.gz": "5ca9431ff364c8002a4a3efa91b2b9296746aea1543374db4cb6b4fab049d601",
+    "prototype/artifacts/smartphone-wcs-compatible/20260831_214709/reference.json": "7a1830202311c1d90392844b1ec9fb4cbd1284c894cd0bd0212728e387fcef8b",
+    "data/input/smartphone/20260831_214709.jpg": "58017256429cb019f20fb52cca1ad99ca889d622821995df0b80d54a3c91e4c5",
+    "prototype/artifacts/smartphone-wcs-compatible/20260831_214709/downsample-2/field.wcs": "e5c8ac257d683c50faf7c46670ad0f57e1c9e25379861bbf24dd302722344c65",
+    "prototype/artifacts/smartphone-wcs-compatible/20260831_214709/downsample-2/field.corr": "7a536ec0736ee5d4c19b2436a417afbfb11fa712f90a72fab0e6bfe63dc6f69a",
+    "prototype/eval/robustness_pair_audit.py": "a76f9618c3f5ad598bf283283afbdc8397a882f64f53b87e9de21855ebbc486f",
+    "prototype/eval/collection_run.py": "6bf1108b48c21a40bdd00023eae564c27c5062fd63beb45d32ddde86154bd5b5",
+    "prototype/eval/robustness_candidate_trace.py": "6ee7661eb7875c9307760bf3d038a94eccf18269e388f9fe11511c125ca72c17",
+    "prototype/eval/robustness_residual_fields.py": "ff653267f15936829c70a7de58cf6ae54901102f8f5acd1c9ee14533e839b29e",
+    "data/samples/sky-samples/manifest.json": "97e229270c7b0f97fce4e1f738917cd91cdff01df3508db29584af70a0ea4871",
+    "data/samples/sky-samples/robustness-results.json": "09e6efe61468b4afe896967d583553751d80fe82e65e0ac064528523bbc525e8",
+    "data/samples/sky-samples/collection-wcs-review.json": "97c182c51955baee9adce93cde8e93fb98ece6a69bdc606cf871d3a1eef19841"
+  },
+  "study": "exploratory offline diagnosis after iteration19, not an algorithm A/B",
+  "identity": "all 13 pairs; existing pending WCS, all corr weights reported, HYG <=6.8 neighbors",
+  "neighbor_search": {
+    "catalog_mag_limit": 6.8,
+    "cone_deg": 60,
+    "nearest_count": 3
+  },
+  "decomposition": [
+    "translation",
+    "translation_rotation",
+    "similarity",
+    "similarity_radial"
+  ],
+  "evaluation": "unweighted linear residual explanation; all pairs and leave-one-pair-out; no exclusion or threshold tuning",
+  "criteria": [
+    "retain every pair and uncertainty, including unresolved catalog components",
+    "cross-check TAN reconstruction against saved tetra3 world_to_pixel",
+    "compare epoch effect to original residuals",
+    "training error decrease alone is not a reliable residual explanation",
+    "no ground truth promotion, camera correction, solve or holdout run"
+  ]
+}

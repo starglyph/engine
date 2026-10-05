@@ -1,0 +1,126 @@
+{
+  "iteration": 28,
+  "all_frozen_hashes_valid": true,
+  "protected_hashes": {
+    "data/samples/sky-samples/manifest.json": "97e229270c7b0f97fce4e1f738917cd91cdff01df3508db29584af70a0ea4871",
+    "data/samples/sky-samples/robustness-results.json": "09e6efe61468b4afe896967d583553751d80fe82e65e0ac064528523bbc525e8",
+    "data/samples/sky-samples/collection-wcs-review.json": "97c182c51955baee9adce93cde8e93fb98ece6a69bdc606cf871d3a1eef19841"
+  },
+  "build": {
+    "command": [
+      "cargo",
+      "test",
+      "--offline",
+      "--locked",
+      "--release",
+      "--manifest-path",
+      "/home/agent/work/starglyph/engine/prototype/artifacts/robustness-iteration-28/pipeline/Cargo.toml",
+      "-p",
+      "starglyph-core",
+      "--features",
+      "serde_json/float_roundtrip",
+      "--lib",
+      "--no-run",
+      "--message-format",
+      "json"
+    ],
+    "exit_code": 0,
+    "elapsed_s": 46.44836104288697
+  },
+  "python-tests": {
+    "command": [
+      "python3",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "eval",
+      "-p",
+      "test_*.py"
+    ],
+    "exit_code": 0,
+    "elapsed_s": 4.2824305556714535
+  },
+  "core-tests": {
+    "command": [
+      "cargo",
+      "test",
+      "--offline",
+      "--locked",
+      "--release",
+      "--manifest-path",
+      "/home/agent/work/starglyph/engine/prototype/artifacts/robustness-iteration-28/pipeline/Cargo.toml",
+      "-p",
+      "starglyph-core",
+      "--features",
+      "serde_json/float_roundtrip",
+      "--lib"
+    ],
+    "exit_code": 0,
+    "elapsed_s": 3.0752133391797543
+  },
+  "clippy": {
+    "command": [
+      "cargo",
+      "clippy",
+      "--offline",
+      "--locked",
+      "--release",
+      "--manifest-path",
+      "/home/agent/work/starglyph/engine/prototype/artifacts/robustness-iteration-28/pipeline/Cargo.toml",
+      "-p",
+      "starglyph-core",
+      "--features",
+      "serde_json/float_roundtrip",
+      "--all-targets",
+      "--no-deps",
+      "--",
+      "-D",
+      "warnings"
+    ],
+    "exit_code": 0,
+    "elapsed_s": 18.403165252879262
+  },
+  "rustfmt": {
+    "command": [
+      "rustfmt",
+      "--edition",
+      "2021",
+      "--check",
+      "/home/agent/work/starglyph/engine/prototype/artifacts/robustness-iteration-28/pipeline/crates/starglyph-core/src/solve/pair_refit.rs"
+    ],
+    "exit_code": 0,
+    "elapsed_s": 0.0342716071754694
+  },
+  "run": {
+    "command": [
+      "/home/agent/work/starglyph/engine/prototype/artifacts/robustness-iteration-28/pair-test",
+      "--exact",
+      "solve::pair_refit::fixed_pairs",
+      "--ignored"
+    ],
+    "exit_code": 0,
+    "elapsed_s": 0.008470095694065094
+  },
+  "python_test_count": 214,
+  "core_tests": {
+    "passed": 97,
+    "ignored": 7
+  },
+  "explicit_rust_export_tests": 1,
+  "control_camera_max_delta": 0.0,
+  "algorithm_change": false,
+  "new_searches": 0,
+  "new_refinements": 2,
+  "holdout": false,
+  "errors": 0,
+  "timeouts": 0,
+  "gate_scope": "Manual offline fixed-pair refinement only. Production solver unchanged; no repeated CLI, collection, negative or holdout gates.",
+  "artifact_hashes": {
+    "prototype/artifacts/robustness-iteration-28/protocol.json": "5a36706cd8818564148f37b1db360f12d96272ecf3683884c91dac30a7551867",
+    "prototype/artifacts/robustness-iteration-28/input.json": "0c67161292af50c03621dd87e5aa5ecd31aeeffc1f255c14718d1bec147cba8d",
+    "prototype/artifacts/robustness-iteration-28/fits.json": "bdcda379c5595767f36c2c2e43495d362b2cf81682a7ecb804559663dab575af",
+    "prototype/artifacts/robustness-iteration-28/results.json": "7e3f172345263367cb33992bcc9054820d2d184b7403b534c966f098448f59d4",
+    "prototype/eval/test_robustness_single31_fit.py": "5ccf49261694d764cbb7fa30da8dd2132abe5dda31015c88b39d3e6533141e71"
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "iteration": 27,
+  "python_tests": {
+    "command": [
+      "python3",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "eval",
+      "-p",
+      "test_*.py"
+    ],
+    "exit_code": 0,
+    "elapsed_s": 4.638907877728343
+  },
+  "test_count": 210,
+  "all_frozen_hashes_valid": true,
+  "shared_four_case_pair_sets_equal": true,
+  "local_published_iteration26_results_equal": true,
+  "protected_hashes": {
+    "data/samples/sky-samples/manifest.json": "97e229270c7b0f97fce4e1f738917cd91cdff01df3508db29584af70a0ea4871",
+    "data/samples/sky-samples/robustness-results.json": "09e6efe61468b4afe896967d583553751d80fe82e65e0ac064528523bbc525e8",
+    "data/samples/sky-samples/collection-wcs-review.json": "97c182c51955baee9adce93cde8e93fb98ece6a69bdc606cf871d3a1eef19841"
+  },
+  "artifact_hashes": {
+    "prototype/artifacts/robustness-iteration-27/protocol.json": "a60083ca8de4db3b7e529a5d17b2c4b70fe1e0b7b60322eb0ca9caa877230fbc",
+    "prototype/artifacts/robustness-iteration-27/candidates.json": "092445bb1132d56a168063d2f67b194b4624acef30ef019c0fb502f7c391ad1b",
+    "prototype/artifacts/robustness-iteration-27/review.json": "13bea5fe339176ecfad089596d1893b749b7adfac9c7968ec26c4911c2256170",
+    "prototype/artifacts/robustness-iteration-27/results.json": "347cb8123d4ad5a0e5cf5e6e9825974af553413290e6ab77ac87a9486f86e34a",
+    "prototype/artifacts/robustness-iteration-27/summary.json": "4328a9084797e6e6a5c3e6bd2ba0cbf3b13ee60eac5a475f236f9fb252a9e78e",
+    "prototype/artifacts/robustness-iteration-27/native-0.png": "ba1a5f7b13dd1cfc66c1962c48f46599fb30ca55194f404898c23bfd2b3e0078",
+    "prototype/artifacts/robustness-iteration-27/native-16.png": "aa47c5f732aa0ba832d3b2fc4986ea9792e33cd327e20516e0d61db1467a9919",
+    "prototype/artifacts/robustness-iteration-27/wm_r_132162731-sources-0.jpg": "638dd49aadc28fa730f1bec36fa57df5175bc4fe812081b1d0bb2b4a1a8053d1",
+    "prototype/artifacts/robustness-iteration-27/wm_r_132162731-sources-1.jpg": "2c053b6a6accd92f22fb620efcc4d4726347b5ed2d8d8fc5972fcc0042a5aa96",
+    "prototype/artifacts/robustness-iteration-27/wm_r_132162731-identities.jpg": "c53be9c86535e0a8648445bf9310f99bbe77d28c616959a15343039ccb39dadf",
+    "prototype/eval/test_robustness_remaining_sources.py": "3aec7662637e6e437acef841ce6ce6c99caacdde86b3944165e02bc258977264"
+  },
+  "algorithm_change": false,
+  "new_searches": 0,
+  "new_refinements": 0,
+  "holdout": false,
+  "gate_scope": "offline review and geometry reporting only; existing Rust/solver behavior unchanged, no repeated full gates"
+}

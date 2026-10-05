@@ -1,0 +1,156 @@
+{
+  "iteration": 23,
+  "split": "synthetic",
+  "holdout": false,
+  "real_images": false,
+  "plan": {
+    "sizes": [
+      [
+        1600,
+        1200
+      ],
+      [
+        1989,
+        1498
+      ]
+    ],
+    "fovs_deg": [
+      22.0,
+      85.0
+    ],
+    "skies": [
+      [
+        30.0,
+        20.0,
+        15.0
+      ],
+      [
+        210.0,
+        -35.0,
+        179.8
+      ]
+    ],
+    "supports": [
+      "full",
+      "upper"
+    ],
+    "pairs": [
+      13,
+      20
+    ],
+    "sigmas_px": [
+      0.25,
+      1.0
+    ],
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "bad_angles_deg": [
+      1.0,
+      5.0
+    ]
+  },
+  "criteria": {
+    "noiseless_max_px": 0.01,
+    "clean_group_rms_ratio_max": 1.1,
+    "clean_case_rms_increase_max_px": 0.5,
+    "contaminated_group_median_rms_ratio_max": 0.75
+  },
+  "case_count": 2592,
+  "probes": 63,
+  "fit_or_search": false,
+  "candidate": "median of pair roll angles unwrapped about their circular mean; even counts average middle two",
+  "corruption": "rotate catalogue identity around optical axis by signed 1 or 5 degrees for 1 or floor(n/4) pairs; detections unchanged",
+  "randomness": "SplitMix64 seed 20261005+seed; Box-Muller Cartesian noise then Fisher-Yates identity selection; sign alternates by seed",
+  "geometry": "independent existing tetra3 TAN fixtures; fixed known centre alignment +0.5 px; no distortion or boresight/FOV error",
+  "progression": "development only if all synthetic gates pass; no tuning after failed gates; never promote from synthetic alone",
+  "wall_limit_s": 120,
+  "build_wall_limit_s": 600,
+  "hashes": {
+    "data/samples/sky-samples/collection-wcs-review.json": "97c182c51955baee9adce93cde8e93fb98ece6a69bdc606cf871d3a1eef19841",
+    "data/samples/sky-samples/manifest.json": "97e229270c7b0f97fce4e1f738917cd91cdff01df3508db29584af70a0ea4871",
+    "data/samples/sky-samples/robustness-results.json": "09e6efe61468b4afe896967d583553751d80fe82e65e0ac064528523bbc525e8",
+    "prototype/Cargo.lock": "59694debace1f5f18e2de398a77ce4d6a1a8f7dd237af646906aa49bfa3b677a",
+    "prototype/Cargo.toml": "ea0b115c3ff3465b164e9f35f3f4cef373dbc1dcc25074f77e751eacc55e2840",
+    "prototype/artifacts/robustness-iteration-23/fixed/cases.json": "106e3cc0fafffdd59353a16eb24b7a68fd070c337000b3906f196b9424bcf6e3",
+    "prototype/artifacts/robustness-iteration-23/fixed/pipeline/Cargo.lock": "b5fba4741a148caf5b91db3325fbc3ef79db8b9e475ddd1ef7e8d80a89033bc1",
+    "prototype/artifacts/robustness-iteration-23/fixed/pipeline/Cargo.toml": "7eb0192ae4bf44141fc7490619cfb6e05d2d912f8f20ab20b0b277757484849e",
+    "prototype/artifacts/robustness-iteration-23/fixed/pipeline/crates/simulator-core/Cargo.toml": "e4463f132f8e2e0da717ce0084025104328b10b3a5bb6c2edd5d964ace899a51",
+    "prototype/artifacts/robustness-iteration-23/fixed/pipeline/crates/simulator-core/src/camera.rs": "b2ae4a3c044164b03d0a678dff94fab3fa4fa8a7664ef27a15ad1543187b1564",
+    "prototype/artifacts/robustness-iteration-23/fixed/pipeline/crates/simulator-core/src/catalog.rs": "d319ab601d300d56ea603ae5c48ccbd2a37e3fd0bf983b709dad3eee303c9aa8",
+    "prototype/artifacts/robustness-iteration-23/fixed/pipeline/crates/simulator-core/src/config.rs": "847c308f080284acbf783401743fc2253014c76bb9ecba89fadc7dee87fc45b0",
+    "prototype/artifacts/robustness-iteration-23/fixed/pipeline/crates/simulator-core/src/dataset.rs": "0f66bd63f241d98a92b25bfd1cbe035d85bb19a2f9c15c0d9ee613018134d33f",
+    "prototype/artifacts/robustness-iteration-23/fixed/pipeline/crates/simulator-core/src/degradations.rs": "564b6b68b340c06bd6d014fb4e31f51aaec980d143c04ec81e39b6e6bb9c435e",
+    "prototype/artifacts/robustness-iteration-23/fixed/pipeline/crates/simulator-core/src/lib.rs": "e860b5cb366bd90fe99b19011fc567f3404f9bd2a8c885a843f8e5f7339cdd05",
+    "prototype/artifacts/robustness-iteration-23/fixed/pipeline/crates/simulator-core/src/projection.rs": "7c1f706c4eb2cd271a2b255eb1806c2718efdad4862355da78cbf2883b5640a2",
+    "prototype/artifacts/robustness-iteration-23/fixed/pipeline/crates/simulator-core/src/rendering.rs": "ac1ad60b48c7bb2df4035285c4b3ca1e8ff28b55c166f5c37b4bb2f7203387d6",
+    "prototype/artifacts/robustness-iteration-23/fixed/pipeline/crates/simulator-core/src/rng.rs": "eb35643afa794d11c58aac136466997e940915ce50d594499551b870d0016e67",
+    "prototype/artifacts/robustness-iteration-23/fixed/pipeline/crates/simulator-core/src/sampling.rs": "324023a6ab0adb96930498cd8fa748ea609bfd6a9c0e448034efe97eff1b972a",
+    "prototype/artifacts/robustness-iteration-23/fixed/pipeline/crates/starglyph-core/Cargo.toml": "34434154753e8308ec74e55f266d4e161baea6c4b652185b3d26fff71b4bbf60",
+    "prototype/artifacts/robustness-iteration-23/fixed/pipeline/crates/starglyph-core/src/catalog.rs": "42652f59e641f0e0fa5cfe9e9120925bc92773b1f1ebaf4d242d346fbb0d58d9",
+    "prototype/artifacts/robustness-iteration-23/fixed/pipeline/crates/starglyph-core/src/constellations.rs": "a44c2290e116721b3260a1bcaf3efb4dcda71df98f66e19b4b473b82305f545b",
+    "prototype/artifacts/robustness-iteration-23/fixed/pipeline/crates/starglyph-core/src/contracts.rs": "8373569d33bf3c3d8a82f2c626035a99f1617995fb45b587c1f439f3288dd581",
+    "prototype/artifacts/robustness-iteration-23/fixed/pipeline/crates/starglyph-core/src/detect/trace.rs": "c914c89eec3e83e998982d3ede631b27a172ea4eecaadf6acb52e501648f1181",
+    "prototype/artifacts/robustness-iteration-23/fixed/pipeline/crates/starglyph-core/src/detect.rs": "9a622b14303bf01c3993a76c5d1bc65b9c1da1ea565def48bebdfdafa1a7a8c8",
+    "prototype/artifacts/robustness-iteration-23/fixed/pipeline/crates/starglyph-core/src/engine.rs": "e48f2069648a6bf0f373d44870ea1acad157c2a3ca760327e67e2f014fefa017",
+    "prototype/artifacts/robustness-iteration-23/fixed/pipeline/crates/starglyph-core/src/ephem.rs": "68091771cc86bad1c08d57d5b1337d0a8984f59d952cea46cfa4ad00a9096515",
+    "prototype/artifacts/robustness-iteration-23/fixed/pipeline/crates/starglyph-core/src/eval.rs": "adbb4fd469aef3e70cfa8e02fcb2cfa0ae516c32ff224421ddfeaa5c744ddd00",
+    "prototype/artifacts/robustness-iteration-23/fixed/pipeline/crates/starglyph-core/src/geom.rs": "31c5a253674025564ab839c7f58ffa2c59e1c7e2f5f31a50f3e9e705477ff528",
+    "prototype/artifacts/robustness-iteration-23/fixed/pipeline/crates/starglyph-core/src/image_input.rs": "0acc60b8fbf4cb91ffb1b2659136a3af2489921651bd448c8bbc967619d95f82",
+    "prototype/artifacts/robustness-iteration-23/fixed/pipeline/crates/starglyph-core/src/lib.rs": "87fd4fe1e39a3535be1abd95b74e1d31aa7e33df9d824e19ab025713322bc70c",
+    "prototype/artifacts/robustness-iteration-23/fixed/pipeline/crates/starglyph-core/src/overlay.rs": "c6a28dae451b3253e41530b39bbc4cab35e68ae41de5f3a17db60e4e01a622ea",
+    "prototype/artifacts/robustness-iteration-23/fixed/pipeline/crates/starglyph-core/src/render.rs": "bb3ba3641d5f6b2580a4339ac8b9fa78c3abc89375eb767e612b0c3b4c091985",
+    "prototype/artifacts/robustness-iteration-23/fixed/pipeline/crates/starglyph-core/src/sky_mask.rs": "4442221e88941432c4745579d3dd7481603a6aaf53c2d6106d331c8255275b41",
+    "prototype/artifacts/robustness-iteration-23/fixed/pipeline/crates/starglyph-core/src/solve/catalog_replay.rs": "bb26cb945ad8a9a62cdadfe5c74c413a53973da66bc499146eb5861d6daa69fc",
+    "prototype/artifacts/robustness-iteration-23/fixed/pipeline/crates/starglyph-core/src/solve/centre_transfer_fixture.rs": "02114732cd85d30c38fc32c0cb924fd8c5db6638b90eb893d9bccb20b848d885",
+    "prototype/artifacts/robustness-iteration-23/fixed/pipeline/crates/starglyph-core/src/solve/replay.rs": "06dfb8d26877d75e8fe9af34644fbaa5bb817c45c0abea48f61994ebb495431a",
+    "prototype/artifacts/robustness-iteration-23/fixed/pipeline/crates/starglyph-core/src/solve/robust_roll.rs": "4e4700d487cfe85638b7986c0db209c7e2d4a5dbde31dba89a1da807024f8453",
+    "prototype/artifacts/robustness-iteration-23/fixed/pipeline/crates/starglyph-core/src/solve/roll_candidate_adapter.rs": "44b67cd861ef3c2f183ff501f567006f7aea9f0a5adbd4ef80b47d56ed5d213f",
+    "prototype/artifacts/robustness-iteration-23/fixed/pipeline/crates/starglyph-core/src/solve/roll_synthetic.rs": "f9ad78e627949289dcdda05b0b3a49e1b146ca06a3c6dc3d99deed69691ea97c",
+    "prototype/artifacts/robustness-iteration-23/fixed/pipeline/crates/starglyph-core/src/solve/roll_synthetic_fixture.rs": "f8e6dcde59df3790ba0b479605af8eb77a5da6ea04c87c5d555464366f18c051",
+    "prototype/artifacts/robustness-iteration-23/fixed/pipeline/crates/starglyph-core/src/solve.rs": "7cf0744bb8bea3d79915954a6d819343819631ea77f633d990f442522f170434",
+    "prototype/crates/simulator-core/Cargo.toml": "e4463f132f8e2e0da717ce0084025104328b10b3a5bb6c2edd5d964ace899a51",
+    "prototype/crates/simulator-core/src/camera.rs": "b2ae4a3c044164b03d0a678dff94fab3fa4fa8a7664ef27a15ad1543187b1564",
+    "prototype/crates/simulator-core/src/catalog.rs": "d319ab601d300d56ea603ae5c48ccbd2a37e3fd0bf983b709dad3eee303c9aa8",
+    "prototype/crates/simulator-core/src/config.rs": "847c308f080284acbf783401743fc2253014c76bb9ecba89fadc7dee87fc45b0",
+    "prototype/crates/simulator-core/src/dataset.rs": "0f66bd63f241d98a92b25bfd1cbe035d85bb19a2f9c15c0d9ee613018134d33f",
+    "prototype/crates/simulator-core/src/degradations.rs": "564b6b68b340c06bd6d014fb4e31f51aaec980d143c04ec81e39b6e6bb9c435e",
+    "prototype/crates/simulator-core/src/lib.rs": "e860b5cb366bd90fe99b19011fc567f3404f9bd2a8c885a843f8e5f7339cdd05",
+    "prototype/crates/simulator-core/src/projection.rs": "7c1f706c4eb2cd271a2b255eb1806c2718efdad4862355da78cbf2883b5640a2",
+    "prototype/crates/simulator-core/src/rendering.rs": "ac1ad60b48c7bb2df4035285c4b3ca1e8ff28b55c166f5c37b4bb2f7203387d6",
+    "prototype/crates/simulator-core/src/rng.rs": "eb35643afa794d11c58aac136466997e940915ce50d594499551b870d0016e67",
+    "prototype/crates/simulator-core/src/sampling.rs": "324023a6ab0adb96930498cd8fa748ea609bfd6a9c0e448034efe97eff1b972a",
+    "prototype/crates/starglyph-core/Cargo.toml": "34434154753e8308ec74e55f266d4e161baea6c4b652185b3d26fff71b4bbf60",
+    "prototype/crates/starglyph-core/src/catalog.rs": "42652f59e641f0e0fa5cfe9e9120925bc92773b1f1ebaf4d242d346fbb0d58d9",
+    "prototype/crates/starglyph-core/src/constellations.rs": "a44c2290e116721b3260a1bcaf3efb4dcda71df98f66e19b4b473b82305f545b",
+    "prototype/crates/starglyph-core/src/contracts.rs": "8373569d33bf3c3d8a82f2c626035a99f1617995fb45b587c1f439f3288dd581",
+    "prototype/crates/starglyph-core/src/detect/trace.rs": "c914c89eec3e83e998982d3ede631b27a172ea4eecaadf6acb52e501648f1181",
+    "prototype/crates/starglyph-core/src/detect.rs": "9a622b14303bf01c3993a76c5d1bc65b9c1da1ea565def48bebdfdafa1a7a8c8",
+    "prototype/crates/starglyph-core/src/engine.rs": "e48f2069648a6bf0f373d44870ea1acad157c2a3ca760327e67e2f014fefa017",
+    "prototype/crates/starglyph-core/src/ephem.rs": "68091771cc86bad1c08d57d5b1337d0a8984f59d952cea46cfa4ad00a9096515",
+    "prototype/crates/starglyph-core/src/eval.rs": "adbb4fd469aef3e70cfa8e02fcb2cfa0ae516c32ff224421ddfeaa5c744ddd00",
+    "prototype/crates/starglyph-core/src/geom.rs": "31c5a253674025564ab839c7f58ffa2c59e1c7e2f5f31a50f3e9e705477ff528",
+    "prototype/crates/starglyph-core/src/image_input.rs": "0acc60b8fbf4cb91ffb1b2659136a3af2489921651bd448c8bbc967619d95f82",
+    "prototype/crates/starglyph-core/src/lib.rs": "87fd4fe1e39a3535be1abd95b74e1d31aa7e33df9d824e19ab025713322bc70c",
+    "prototype/crates/starglyph-core/src/overlay.rs": "c6a28dae451b3253e41530b39bbc4cab35e68ae41de5f3a17db60e4e01a622ea",
+    "prototype/crates/starglyph-core/src/render.rs": "bb3ba3641d5f6b2580a4339ac8b9fa78c3abc89375eb767e612b0c3b4c091985",
+    "prototype/crates/starglyph-core/src/sky_mask.rs": "4442221e88941432c4745579d3dd7481603a6aaf53c2d6106d331c8255275b41",
+    "prototype/crates/starglyph-core/src/solve/catalog_replay.rs": "bb26cb945ad8a9a62cdadfe5c74c413a53973da66bc499146eb5861d6daa69fc",
+    "prototype/crates/starglyph-core/src/solve/replay.rs": "06dfb8d26877d75e8fe9af34644fbaa5bb817c45c0abea48f61994ebb495431a",
+    "prototype/crates/starglyph-core/src/solve.rs": "e80d51157981eed6c910ed6a230d575a271720aced59d1d77c1997f758014ed9",
+    "prototype/eval/centre_transfer_fixture.rs": "02114732cd85d30c38fc32c0cb924fd8c5db6638b90eb893d9bccb20b848d885",
+    "prototype/eval/collection_run.py": "6bf1108b48c21a40bdd00023eae564c27c5062fd63beb45d32ddde86154bd5b5",
+    "prototype/eval/robust_roll.rs": "4e4700d487cfe85638b7986c0db209c7e2d4a5dbde31dba89a1da807024f8453",
+    "prototype/eval/robustness_candidate_trace.py": "6ee7661eb7875c9307760bf3d038a94eccf18269e388f9fe11511c125ca72c17",
+    "prototype/eval/robustness_roll_synthetic.py": "049427160673624bf6ade4fa8aaef087b7d42414eae1491588ceff8622c9e6ee",
+    "prototype/eval/roll_synthetic.rs": "f9ad78e627949289dcdda05b0b3a49e1b146ca06a3c6dc3d99deed69691ea97c",
+    "prototype/eval/roll_synthetic_fixture.rs": "f8e6dcde59df3790ba0b479605af8eb77a5da6ea04c87c5d555464366f18c051"
+  }
+}

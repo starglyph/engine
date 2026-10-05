@@ -1,0 +1,121 @@
+{
+  "iteration": 24,
+  "base_commit": "93a329924cecf28a453b53b2e317e97f293b52e1",
+  "production_default_changed": false,
+  "holdout_run": false,
+  "automatic_improvement_confirmed": false,
+  "decision": "reject: development remains24/34; conditional left/top geometry regresses0.62-0.65px beyond0.5px limit",
+  "synthetic": {
+    "cases": 12864,
+    "observed": 2592,
+    "fresh": 10272,
+    "all_gates_pass": true,
+    "observed_control_max_numeric_difference": 0.0,
+    "after_lint_rerun_geometry_and_corrupted_indices_exactly_identical": true,
+    "process_errors": 0,
+    "timeouts": 0
+  },
+  "development": {
+    "ids": 45,
+    "solver_count": 34,
+    "control_solved": 24,
+    "huber_solved": 24,
+    "new_solves": [],
+    "lost_solves": [],
+    "negative_count": 8,
+    "negative_accepts": 0,
+    "process_errors": 0,
+    "wall_timeouts": 0,
+    "internal_attempt_timeouts": {
+      "control": 14,
+      "huber": 18
+    },
+    "conditional_geometry_regression_groups": 2,
+    "centroid_representations": 3,
+    "criterion_failures": 6
+  },
+  "tests": {
+    "python": 197,
+    "synthetic_core_units": 104,
+    "synthetic_export_and_units": 8,
+    "real_core_units": 102,
+    "real_cli_units": 11,
+    "extended_dense": 1,
+    "clippy": "passed for synthetic core and real core/CLI all-targets no-deps",
+    "rustfmt": "passed; generated module declaration order preserved"
+  },
+  "regression_gates": {
+    "rust-tests": {
+      "status": "completed",
+      "exit_code": 0,
+      "elapsed_s": 25.620513861998916
+    },
+    "extended-dense": {
+      "status": "completed",
+      "exit_code": 0,
+      "elapsed_s": 16.38095578737557
+    },
+    "eval-ci": {
+      "status": "completed",
+      "exit_code": 0,
+      "elapsed_s": 1.4225904997438192
+    },
+    "smartphone": {
+      "status": "completed",
+      "exit_code": 0,
+      "elapsed_s": 148.88036054372787
+    },
+    "sky-fill": {
+      "status": "completed",
+      "exit_code": 0,
+      "elapsed_s": 114.13226211071014
+    }
+  },
+  "legacy_solved": {
+    "smartphone": 8,
+    "smartphone_count": 17,
+    "sky_fill": 13,
+    "sky_fill_count": 17
+  },
+  "frozen_inputs": "iteration23 synthetic and both iteration24 protocols validated after all gates",
+  "preliminary_check_failure": "Clippy manual_is_multiple_of in median helper; mechanical correction preserved every geometric result",
+  "protected_inputs": {
+    "manifest.json": "97e229270c7b0f97fce4e1f738917cd91cdff01df3508db29584af70a0ea4871",
+    "robustness-results.json": "09e6efe61468b4afe896967d583553751d80fe82e65e0ac064528523bbc525e8",
+    "collection-wcs-review.json": "97c182c51955baee9adce93cde8e93fb98ece6a69bdc606cf871d3a1eef19841"
+  },
+  "removed_rebuildable_targets_bytes": {
+    "prototype/artifacts/robustness-iteration-24/fixed/pipeline/target": 449841618,
+    "prototype/artifacts/robustness-iteration-24/real/pipeline/target": 491671155
+  },
+  "shared_catalogue_cache_preserved": true,
+  "preserved_binaries": {
+    "prototype/artifacts/robustness-iteration-24/fixed/roll-test": "4c8494046ab2aab9dfe79f470371e199f84db2e0f9dd905bdeb0d96df33b78bf",
+    "prototype/artifacts/robustness-iteration-24/real/binaries/control": "262077ba194f7e9cf962ef4500037bd33fed4e1f5e7520afb2933f88f98a7004",
+    "prototype/artifacts/robustness-iteration-24/real/binaries/huber": "33ab1c4abc629506fd4edfaa676fb1f6c11a3bae3322743e5a33ad0ae7939035"
+  },
+  "hashes": {
+    "docs/experiments/robustness-iteration-24-development-protocol.json": "f089ec97047d23ec10ca8425d943c0727457651b2ebf2b2fc369cfde70b897d4",
+    "docs/experiments/robustness-iteration-24-protocol.json": "3d1a6777ec28c6cf06cc7b2795e91cb27fe429fffc4f02ff527149d13d03bfb5",
+    "docs/experiments/robustness-iteration-24-case-132162731.json": "35f3acf20ed14cde40ec9e96ae98335c46c7c44f4906f98802b325cb6dafd41b",
+    "docs/experiments/robustness-iteration-24-development-results.json": "2e5d67b66b4183fcf5ed2c1adf29e4261df877189f584a8f6c4f869924d250d9",
+    "docs/experiments/robustness-iteration-24-synthetic-results.json": "e26f3afd462f80995401dd0a91422d726e61b887a6ab208e71158a4b0062dda8",
+    "docs/experiments/robustness-iteration-24-synthetic-cases-results.jsonl.gz": "160db38b75b0ac9f8606f0af56acc88991daa812af69e79d5d53b59ac83a3705",
+    "prototype/artifacts/robustness-iteration-24/fixed/run.json": "2a2cd0f2da1ffc183ecaebc1cedb1b001613d6b430dad356234ba40d1da3246d",
+    "prototype/artifacts/robustness-iteration-24/fixed/run.log": "7a2c33896d7ae79b4d2136b373a4c6eb9cea67805a78a13a3c340e285c19a0ff",
+    "prototype/artifacts/robustness-iteration-24/fixed/build.json": "230fcf66398df1221b3015495762a0ffa132227f14d11920cb35e33fc89c97f5",
+    "prototype/artifacts/robustness-iteration-24/fixed/build-artifact.json": "160cdf53775d952517eaeea324b14ab6e9c470d2c6d9db87a599b9a8bef79fed",
+    "prototype/artifacts/robustness-iteration-24/fixed/python-tests.log": "5b602d563f6e2fd4b015c064f4ff430d3c97cd10fd774228b9f78facd4a4bf68",
+    "prototype/artifacts/robustness-iteration-24/fixed/rust-tests.log": "53d7b5f051c691c66208b3db6a914994c87f5f2881ff6c4bab4c31e474941af4",
+    "prototype/artifacts/robustness-iteration-24/fixed/clippy.log": "e46bebc5af17b4d72923e2f605611b10b9b227f650f7181ccfc97236879cef77",
+    "prototype/artifacts/robustness-iteration-24/real/rust-tests.log": "a5da51f6490713e30cc9152514fd5f8960b21ff26dd86b9ee2ed413d3a81282c",
+    "prototype/artifacts/robustness-iteration-24/real/extended-dense.log": "973eec5ff9df35a4ead993c3a5cd20917d4d4e277415629a488d4b18c34e1f43",
+    "prototype/artifacts/robustness-iteration-24/real/eval-ci.log": "f24e44fe63180c6a5728221e2250224deb6807798f2afdad6c2ced907c3c95ea",
+    "prototype/artifacts/robustness-iteration-24/real/smartphone.log": "c474e0558ce11efd8ec3971cb71aa1e362b9abad0c1178c65e40da162e7d25bb",
+    "prototype/artifacts/robustness-iteration-24/real/sky-fill.log": "ad91e7354097b632183cde8229f498a9d7be83279af078fd2580d62756ebc7eb",
+    "prototype/artifacts/robustness-iteration-24/real/clippy.log": "0a36ab6113f0bb4de0290d3d000c97b6b3ece4ebed3dd9919bb1028053e6c088",
+    "prototype/artifacts/robustness-iteration-24/real/rustfmt.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "prototype/eval/test_robustness_huber_roll.py": "d0caf44dc56ab6deb692840838f48656918514ab6a89a7fa3ef1c4d608e80bf4",
+    "prototype/eval/test_robustness_huber_development.py": "869aa90e286d2007c7f92121ba9abaacc3d85ab06fd8984c914772feed97bd27"
+  }
+}

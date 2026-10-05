@@ -1,0 +1,42 @@
+{
+  "iteration": 21,
+  "holdout_run": false,
+  "solve_runs": 0,
+  "wcs_runs": 0,
+  "production_changed": false,
+  "ground_truth_promoted": false,
+  "protocol_sha256": "43e8713fbb4ec47a83b03871b8ea161f9fee92a230f57373808662da30e9f313",
+  "results_sha256": "21e9ac67efc39015538b80a2e512b4fb2e63fcbd17c742ce9abcded7b5c1367a",
+  "frozen_inputs_verified": true,
+  "iteration20_hashes_preserved": true,
+  "protected_inputs_sha256": {
+    "manifest.json": "97e229270c7b0f97fce4e1f738917cd91cdff01df3508db29584af70a0ea4871",
+    "robustness-results.json": "09e6efe61468b4afe896967d583553751d80fe82e65e0ac064528523bbc525e8",
+    "collection-wcs-review.json": "97c182c51955baee9adce93cde8e93fb98ece6a69bdc606cf871d3a1eef19841"
+  },
+  "python_tests_passed": 180,
+  "python_log_sha256": "fe898c84b721fa754e00012b5d35de780ef1e103159bf3516a965513b32d1070",
+  "test_source_sha256": "4eb6ab736e8d137b0f4fb54f2837f8f3b5a59f5f436f9783bb3397d67f025004",
+  "preview_sha256": "996336701690aba8dce5334faa01774955a93db5bb0598c682968877f937bc25",
+  "exif_exposure": {
+    "20260831_214709": {
+      "exposure_s": 0.25,
+      "iso": 2500.0,
+      "f_number": 1.8,
+      "focal_mm": 5.54
+    },
+    "20260831_214642": {
+      "exposure_s": 0.25,
+      "iso": 2500.0,
+      "f_number": 1.8,
+      "focal_mm": 5.54
+    },
+    "20260831_214748": {
+      "exposure_s": 0.25,
+      "iso": 2500.0,
+      "f_number": 1.8,
+      "focal_mm": 5.54
+    }
+  },
+  "build_cache_created": false
+}

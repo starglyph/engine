@@ -1,0 +1,108 @@
+{
+  "iteration": 24,
+  "id": "wm_r_132162731",
+  "split": "development",
+  "detection_count": 40,
+  "report_detection_fields_equal_except_inlier": true,
+  "arms": {
+    "control": {
+      "report_sha256": "2bba9dea2e7c40cb2ba02c0fd51f31e7cf0ed657a2e7503ffb252d2fd0f3559c",
+      "log_sha256": "85fdf0b52e76cc2dc7425638e832676acc3289c6fdbb8e7f983737891f0b720f",
+      "candidate_debug_lines": [
+        "[blind] k=30 fov=73.15 matches=23 prob=1.21e-7 -> logodds=62.3 H=12 M=1927 hard=true"
+      ],
+      "quality": {
+        "confidence": 0.1177,
+        "log_odds": 4.71,
+        "n_detections": 40,
+        "n_inliers": 7,
+        "rms_px": 1.53
+      },
+      "camera": {
+        "focal_px": 2457.1839452451745,
+        "height": 5472,
+        "k1": 0.0008582839788960519,
+        "width": 3648,
+        "world_to_camera": [
+          [
+            -0.9194226902139717,
+            -0.38716306803264133,
+            0.0690411143540978
+          ],
+          [
+            0.17747530949962045,
+            -0.251810095968897,
+            0.9513643834441927
+          ],
+          [
+            0.35094790387993086,
+            -0.8869590939382083,
+            -0.30023180118467724
+          ]
+        ]
+      },
+      "final_inlier_indices": [
+        14,
+        15,
+        17,
+        20,
+        23,
+        28,
+        36
+      ]
+    },
+    "huber": {
+      "report_sha256": "f1aa9f3314f23b745d3320251cd4f27df8fa7eb6770d0fdaaf30f38ed8ae6a96",
+      "log_sha256": "7878bb070989f18fc4f677bfb5a5023b4b898156773fe03faf02545ea9a82ee1",
+      "candidate_debug_lines": [
+        "[blind] k=30 fov=73.15 matches=23 prob=1.21e-7 -> logodds=39.2 H=10 M=1927 hard=true"
+      ],
+      "quality": {
+        "confidence": 0.0,
+        "log_odds": -6.8,
+        "n_detections": 40,
+        "n_inliers": 6,
+        "rms_px": 1.34
+      },
+      "camera": {
+        "focal_px": 2456.5368063054284,
+        "height": 5472,
+        "k1": 0.0008948992708576417,
+        "width": 3648,
+        "world_to_camera": [
+          [
+            -0.919391069391263,
+            -0.3872981308054761,
+            0.0687038528626619
+          ],
+          [
+            0.17727127194236914,
+            -0.25205672707309007,
+            0.951337112952678
+          ],
+          [
+            0.35113381732257654,
+            -0.8868300650134647,
+            -0.3003955361197788
+          ]
+        ]
+      },
+      "final_inlier_indices": [
+        14,
+        17,
+        20,
+        23,
+        28,
+        38
+      ]
+    }
+  },
+  "final_inliers_lost": [
+    15,
+    36
+  ],
+  "final_inliers_gained": [
+    38
+  ],
+  "limitation": "Debug summaries do not prove identity of every original tetra3 pair; inlier flags refer to final rematch. Existing WCS and reviewed field points remain conditional."
+}

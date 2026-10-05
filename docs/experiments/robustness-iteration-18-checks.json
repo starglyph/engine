@@ -1,0 +1,302 @@
+{
+  "iteration": 18,
+  "base_commit": "93a329924cecf28a453b53b2e317e97f293b52e1",
+  "split": "development",
+  "holdout_run": false,
+  "production_default_changed": false,
+  "automatic_improvement_confirmed": false,
+  "decision": "reject variant: no measured development benefit; legacy smartphone success lost",
+  "protocol_sha256": "9ff5b0cff4aa4bb276e87d5addfed59b8e01bb3bfc28910742c23955ab91b287",
+  "results_sha256": "f868dad0869fdfa572bae9434463a193e6477a1490a4aeb37ea075ed6f041e76",
+  "frozen_inputs_verified": true,
+  "development_checks": {
+    "retain_control_successes": true,
+    "negative_rejections_preserved": true,
+    "no_additional_process_failures": true,
+    "reviewed_geometry_no_regressions": true
+  },
+  "tests": {
+    "python": {
+      "command": "PYTHONPATH=artifacts/robustness-wcs-python python3 -m unittest discover -s eval -p 'test_*.py'",
+      "passed": 169,
+      "log_sha256": "164067a8f2c4ccc8d616a3a928285698f6eff5bede3fa2f66584d7e853f32dad"
+    },
+    "rust_final": {
+      "core_passed": 98,
+      "cli_passed": 11,
+      "core_unit_ignored": 6
+    },
+    "rustfmt": "passed",
+    "clippy": "passed: release core/CLI all-targets no-deps -D warnings"
+  },
+  "gates": [
+    {
+      "name": "rust-tests",
+      "status": "process_error",
+      "exit_code": 101,
+      "elapsed_s": 25.9177575558424,
+      "command": [
+        "env",
+        "CARGO_TARGET_DIR=$REPO/prototype/artifacts/robustness-iteration-18/fixed/pipeline/target",
+        "cargo",
+        "test",
+        "--offline",
+        "--locked",
+        "--release",
+        "--manifest-path",
+        "$REPO/prototype/artifacts/robustness-iteration-18/fixed/pipeline/Cargo.toml",
+        "-p",
+        "starglyph-core",
+        "-p",
+        "starglyph-cli"
+      ]
+    },
+    {
+      "name": "extended-dense",
+      "status": "completed",
+      "exit_code": 0,
+      "elapsed_s": 1.8712060619145632,
+      "command": [
+        "env",
+        "CARGO_TARGET_DIR=$REPO/prototype/artifacts/robustness-iteration-18/fixed/pipeline/target",
+        "cargo",
+        "test",
+        "--offline",
+        "--locked",
+        "--release",
+        "--manifest-path",
+        "$REPO/prototype/artifacts/robustness-iteration-18/fixed/pipeline/Cargo.toml",
+        "-p",
+        "starglyph-core",
+        "--test",
+        "extended_dense",
+        "--",
+        "--ignored"
+      ]
+    },
+    {
+      "name": "eval-ci",
+      "status": "completed",
+      "exit_code": 0,
+      "elapsed_s": 1.3191829472780228,
+      "command": [
+        "$REPO/prototype/artifacts/robustness-iteration-18/fixed/pipeline/target/release/starglyph",
+        "eval",
+        "--manifest",
+        "../data/samples/sky-samples/manifest.json",
+        "--ids",
+        "tetra3_alt40,tetra3_alt60",
+        "--catalog",
+        "../data/catalogs/hyg_v42.csv.gz",
+        "--out-dir",
+        "$REPO/prototype/artifacts/robustness-iteration-18/fixed/gate-ci",
+        "--baseline",
+        "eval/baseline-ci.json"
+      ]
+    },
+    {
+      "name": "smartphone",
+      "status": "process_error",
+      "exit_code": 1,
+      "elapsed_s": 165.46996376477182,
+      "command": [
+        "/usr/bin/python3",
+        "eval/smartphone_gate.py",
+        "--binary",
+        "$REPO/prototype/artifacts/robustness-iteration-18/fixed/pipeline/target/release/starglyph",
+        "--out-dir",
+        "$REPO/prototype/artifacts/robustness-iteration-18/fixed/gate-smartphone"
+      ]
+    },
+    {
+      "name": "sky-fill",
+      "status": "process_error",
+      "exit_code": 1,
+      "elapsed_s": 123.47964149713516,
+      "command": [
+        "/usr/bin/python3",
+        "eval/sky_fill_gate.py",
+        "--binary",
+        "$REPO/prototype/artifacts/robustness-iteration-18/fixed/pipeline/target/release/starglyph",
+        "--out-dir",
+        "$REPO/prototype/artifacts/robustness-iteration-18/fixed/gate-sky-fill"
+      ]
+    },
+    {
+      "name": "clippy",
+      "status": "completed",
+      "exit_code": 0,
+      "elapsed_s": 15.21778748370707,
+      "command": [
+        "env",
+        "CARGO_TARGET_DIR=$REPO/prototype/artifacts/robustness-iteration-18/fixed/pipeline/target",
+        "cargo",
+        "clippy",
+        "--offline",
+        "--locked",
+        "--release",
+        "--manifest-path",
+        "$REPO/prototype/artifacts/robustness-iteration-18/fixed/pipeline/Cargo.toml",
+        "-p",
+        "starglyph-core",
+        "-p",
+        "starglyph-cli",
+        "--all-targets",
+        "--no-deps",
+        "--",
+        "-D",
+        "warnings"
+      ]
+    }
+  ],
+  "final_gates": {
+    "commands": [
+      {
+        "name": "rust-tests-final",
+        "status": "completed",
+        "exit_code": 0,
+        "elapsed_s": 20.123705277219415,
+        "command": [
+          "env",
+          "CARGO_TARGET_DIR=$REPO/prototype/artifacts/robustness-iteration-18/fixed/pipeline/target",
+          "cargo",
+          "test",
+          "--offline",
+          "--locked",
+          "--release",
+          "--manifest-path",
+          "$REPO/prototype/artifacts/robustness-iteration-18/fixed/pipeline/Cargo.toml",
+          "-p",
+          "starglyph-core",
+          "-p",
+          "starglyph-cli"
+        ]
+      },
+      {
+        "name": "candidate-build-final",
+        "status": "completed",
+        "exit_code": 0,
+        "elapsed_s": 6.6364729311317205,
+        "command": [
+          "env",
+          "CARGO_TARGET_DIR=$REPO/prototype/artifacts/robustness-iteration-18/fixed/pipeline/target",
+          "cargo",
+          "build",
+          "--offline",
+          "--locked",
+          "--release",
+          "--manifest-path",
+          "$REPO/prototype/artifacts/robustness-iteration-18/fixed/pipeline/Cargo.toml",
+          "-p",
+          "starglyph-cli"
+        ]
+      }
+    ],
+    "candidate_binary_unchanged_after_test_update": false,
+    "old_binary_sha256": "55302fc89a80bf19d5f599f79fad376efbe19b476269e661bea8302173d199cb",
+    "new_binary_sha256": "799ae4818a91e9206e98f268553220907597485f29a08b75401dd910c04d2217"
+  },
+  "regression_recheck": [
+    {
+      "mode": "default",
+      "status": "completed",
+      "exit_code": 0,
+      "elapsed_s": 22.297020310536027,
+      "command": [
+        "env",
+        "STARGLYPH_SOLVE_DEBUG=1",
+        "$REPO/prototype/artifacts/robustness-iteration-18/fixed/pipeline/target/release/starglyph",
+        "eval",
+        "--manifest",
+        "../data/input/smartphone/manifest.json",
+        "--ids",
+        "20260831_214709",
+        "--catalog",
+        "../data/catalogs/hyg_v42.csv.gz",
+        "--out-dir",
+        "$REPO/prototype/artifacts/robustness-iteration-18/fixed/gate-regression-final-default"
+      ]
+    },
+    {
+      "mode": "sky-fill",
+      "status": "completed",
+      "exit_code": 0,
+      "elapsed_s": 18.591056171804667,
+      "command": [
+        "env",
+        "STARGLYPH_SOLVE_DEBUG=1",
+        "$REPO/prototype/artifacts/robustness-iteration-18/fixed/pipeline/target/release/starglyph",
+        "eval",
+        "--manifest",
+        "../data/input/smartphone/manifest.json",
+        "--ids",
+        "20260831_214709",
+        "--catalog",
+        "../data/catalogs/hyg_v42.csv.gz",
+        "--out-dir",
+        "$REPO/prototype/artifacts/robustness-iteration-18/fixed/gate-regression-final-sky-fill",
+        "--sky-masks",
+        "../data/input/smartphone/sky-masks.json",
+        "--sky-statistics",
+        "--sky-fill"
+      ]
+    }
+  ],
+  "regression_diagnosis": {
+    "id": "20260831_214709",
+    "control_status": "solved",
+    "control_inliers": 12,
+    "control_internal_rms_px": 2.48,
+    "centered_status": "failed",
+    "repeats": [
+      {
+        "mode": "default",
+        "log": "prototype/artifacts/robustness-iteration-18/fixed/gate-regression-final-default.log",
+        "log_sha256": "92b4ac4785afbc4849f8eb66df06fa0531c00d2bf64c8fd4e524a2d6c6acca99",
+        "report_sha256": "c7d6fe784759b26a328d519df7e47c0fdcdcf28d9096cd924555869830822d41",
+        "no_match_attempts": 322,
+        "timeout_attempts": 0,
+        "candidate_lines": [
+          "[dense 59-90] k=16 fov=70.86 matches=13 prob=5.49e-6 -> logodds=-68.8 H=3 M=1069",
+          "[dense 59-90] k=20 fov=70.86 matches=8 prob=9.93e-5 -> logodds=-34.2 H=7 M=1066",
+          "[dense 59-90] k=30 fov=70.86 matches=18 prob=3.32e-4 -> logodds=-51.5 H=5 M=1070",
+          "[dense 59-90] k=40 fov=70.84 matches=11 prob=6.74e-4 -> logodds=-16.9 H=9 M=1065",
+          "[dense 59-90] k=50 fov=70.84 matches=22 prob=1.68e-4 -> logodds=-51.5 H=5 M=1068",
+          "[dense 48-88] k=16 fov=70.86 matches=13 prob=7.90e-6 -> logodds=-68.8 H=3 M=1069",
+          "[dense 48-88] k=20 fov=70.86 matches=5 prob=1.43e-4 -> logodds=-25.5 H=8 M=1063",
+          "[dense 48-88] k=30 fov=70.86 matches=6 prob=4.77e-4 -> logodds=-25.5 H=8 M=1064"
+        ]
+      },
+      {
+        "mode": "sky-fill",
+        "log": "prototype/artifacts/robustness-iteration-18/fixed/gate-regression-final-sky-fill.log",
+        "log_sha256": "274bc8da590e29296678cae31f0622ffb8df61432356bb0512fc9a3c21144601",
+        "report_sha256": "81ad0006117312cbeb5a63cb14d190172435fd4d13b17c887df2f6f79c6c496b",
+        "no_match_attempts": 322,
+        "timeout_attempts": 0,
+        "candidate_lines": [
+          "[dense 59-90] k=16 fov=70.86 matches=13 prob=5.49e-6 -> logodds=-68.8 H=3 M=1069",
+          "[dense 59-90] k=20 fov=70.86 matches=8 prob=9.93e-5 -> logodds=-34.2 H=7 M=1066",
+          "[dense 59-90] k=30 fov=70.86 matches=18 prob=3.32e-4 -> logodds=-51.5 H=5 M=1070",
+          "[dense 59-90] k=40 fov=70.84 matches=11 prob=6.74e-4 -> logodds=-16.9 H=9 M=1065",
+          "[dense 59-90] k=50 fov=70.84 matches=22 prob=1.68e-4 -> logodds=-51.5 H=5 M=1068",
+          "[dense 48-88] k=16 fov=70.86 matches=13 prob=7.90e-6 -> logodds=-68.8 H=3 M=1069",
+          "[dense 48-88] k=20 fov=70.86 matches=5 prob=1.43e-4 -> logodds=-25.5 H=8 M=1063",
+          "[dense 48-88] k=30 fov=70.86 matches=6 prob=4.77e-4 -> logodds=-25.5 H=8 M=1064"
+        ]
+      }
+    ],
+    "interpretation": "Earlier tetra3 candidates exist but none pass unchanged Starglyph acceptance; final failure message summarizes last scale/hint attempt only. Root cause of verification mismatch and physical correctness of candidate poses remain unresolved."
+  },
+  "checks_cwd": "prototype",
+  "protected_inputs_sha256": {
+    "manifest.json": "97e229270c7b0f97fce4e1f738917cd91cdff01df3508db29584af70a0ea4871",
+    "robustness-results.json": "09e6efe61468b4afe896967d583553751d80fe82e65e0ac064528523bbc525e8",
+    "collection-wcs-review.json": "97c182c51955baee9adce93cde8e93fb98ece6a69bdc606cf871d3a1eef19841"
+  },
+  "json_and_links": "passed",
+  "frozen_hash_count": 205,
+  "disposable_build_removed": true,
+  "removed_build_bytes": 473781545,
+  "frozen_inputs_verified_after_cleanup": true
+}

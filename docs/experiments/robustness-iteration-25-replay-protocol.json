@@ -1,0 +1,31 @@
+{
+  "iteration": 25,
+  "id": "wm_r_132162731",
+  "holdout": false,
+  "cases": [
+    {
+      "pose_arm": "control",
+      "match_arm": "control"
+    },
+    {
+      "pose_arm": "control",
+      "match_arm": "huber"
+    },
+    {
+      "pose_arm": "huber",
+      "match_arm": "control"
+    },
+    {
+      "pose_arm": "huber",
+      "match_arm": "huber"
+    }
+  ],
+  "hashes": {
+    "prototype/artifacts/robustness-iteration-25/fixed/protocol.json": "b0270fe47fe95ca630ed6f0d06b4eca5fbbe943fc58542802986deb146615494",
+    "prototype/artifacts/robustness-iteration-25/fixed/run-control.log": "222544fc6dd9935da7fbd1fb66343498ac2de79c01dba3e7afb1a339f1ffef86",
+    "prototype/artifacts/robustness-iteration-25/fixed/run-huber.log": "e43c9e425f403baa2fe0e9f128c2e26815e8204061b0380379c33318fe7412d5",
+    "prototype/artifacts/robustness-iteration-25/fixed/chosen-candidates.json": "adf427b937f2318935fabca5ee3017c78be36965b6b879be9dff4c7543c09ac6",
+    "prototype/artifacts/robustness-iteration-25/fixed/replay-plan.json": "e196990601e0ba1eafea125e2ca21d4532d66b6ee0e89c11ce199201d5666d36",
+    "prototype/artifacts/robustness-iteration-25/fixed/observed-paths.json": "469d4b7807ca3bb6ac024734e6cf995e5c7546894491c5f7db88978da3b838c5"
+  }
+}

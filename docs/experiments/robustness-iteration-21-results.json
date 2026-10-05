@@ -1,0 +1,743 @@
+{
+  "iteration": 21,
+  "ids": [
+    "20260831_214709",
+    "20260831_214642",
+    "20260831_214748"
+  ],
+  "protocol_sha256": "43e8713fbb4ec47a83b03871b8ea161f9fee92a230f57373808662da30e9f313",
+  "cases": {
+    "r8": {
+      "registration": {
+        "homography": [
+          [
+            0.5782316022988713,
+            -0.26273566786222197,
+            45.10018804777883
+          ],
+          [
+            0.09032790010743733,
+            0.4039442327566933,
+            407.765837646737
+          ],
+          [
+            8.488947676626874e-06,
+            -0.00010794294032676034,
+            0.613985638666101
+          ]
+        ],
+        "held_out_error": {
+          "count": 3,
+          "rms_px": 5.9915691295931,
+          "median_px": 6.30362150421293,
+          "p95_px": 7.284116075305748,
+          "max_px": 7.3930599165382835
+        },
+        "points": [
+          {
+            "source_id": 0,
+            "primary_xy": [
+              1520.232748687748,
+              186.01933171168864
+            ],
+            "role": "anchor",
+            "predicted_xy": [
+              1442.413536563237,
+              1022.1079658864091
+            ],
+            "error_px": 2.5421149729252077e-13,
+            "name": "anchor_0"
+          },
+          {
+            "source_id": 1,
+            "primary_xy": [
+              1692.2695940770998,
+              469.7801889200919
+            ],
+            "role": "anchor",
+            "predicted_xy": [
+              1558.39826551034,
+              1299.0577051367582
+            ],
+            "error_px": 3.2155493553843715e-13,
+            "name": "anchor_2"
+          },
+          {
+            "source_id": 2,
+            "primary_xy": [
+              1439.1560486757337,
+              767.1284896206156
+            ],
+            "role": "anchor",
+            "predicted_xy": [
+              1243.5003479471118,
+              1559.890396659708
+            ],
+            "error_px": 3.2155493553843715e-13,
+            "name": "anchor_3"
+          },
+          {
+            "source_id": 3,
+            "primary_xy": [
+              2712.2338782108855,
+              434.81291539428776
+            ],
+            "role": "anchor",
+            "predicted_xy": [
+              2540.6253733965905,
+              1403.8840274117028
+            ],
+            "error_px": 5.084229945850415e-13,
+            "name": "anchor_visual"
+          },
+          {
+            "source_id": 4,
+            "primary_xy": [
+              2030.0408163265306,
+              212.32397959183675
+            ],
+            "role": "held_out",
+            "predicted_xy": [
+              1912.1313204764606,
+              1112.7775295179522
+            ],
+            "error_px": 7.3930599165382835,
+            "name": "control_15"
+          },
+          {
+            "source_id": 5,
+            "primary_xy": [
+              1775.410290237467,
+              127.46833773087072
+            ],
+            "role": "held_out",
+            "predicted_xy": [
+              1687.3263980734441,
+              1007.0328953797626
+            ],
+            "error_px": 3.6474268883938357,
+            "name": "control_21"
+          },
+          {
+            "source_id": 6,
+            "primary_xy": [
+              1759.5124792013312,
+              73.93843594009984
+            ],
+            "role": "held_out",
+            "predicted_xy": [
+              1679.8371909014247,
+              960.7450477905055
+            ],
+            "error_px": 6.30362150421293,
+            "name": "control_47"
+          }
+        ],
+        "measured": {
+          "anchor_0": {
+            "source_xy": [
+              1520.232748687748,
+              186.01933171168864
+            ],
+            "target_xy": [
+              1442.4135365632371,
+              1022.107965886409
+            ]
+          },
+          "anchor_2": {
+            "source_xy": [
+              1692.2695940770998,
+              469.7801889200919
+            ],
+            "target_xy": [
+              1558.3982655103403,
+              1299.057705136758
+            ]
+          },
+          "anchor_3": {
+            "source_xy": [
+              1439.1560486757337,
+              767.1284896206156
+            ],
+            "target_xy": [
+              1243.500347947112,
+              1559.8903966597077
+            ]
+          },
+          "anchor_visual": {
+            "source_xy": [
+              2712.2338782108855,
+              434.81291539428776
+            ],
+            "target_xy": [
+              2540.625373396591,
+              1403.8840274117026
+            ]
+          },
+          "control_15": {
+            "source_xy": [
+              2030.0408163265306,
+              212.32397959183675
+            ],
+            "target_xy": [
+              1919.057392996109,
+              1110.191634241245
+            ]
+          },
+          "control_21": {
+            "source_xy": [
+              1775.410290237467,
+              127.46833773087072
+            ],
+            "target_xy": [
+              1690.5058448459085,
+              1005.2454835281616
+            ]
+          },
+          "control_47": {
+            "source_xy": [
+              1759.5124792013312,
+              73.93843594009984
+            ],
+            "target_xy": [
+              1684.2089397089396,
+              956.2037422037422
+            ]
+          }
+        }
+      },
+      "probes": [
+        {
+          "id": 5,
+          "source_xy": [
+            1795.5860812987771,
+            277.37068996415167
+          ],
+          "predicted_xy": [
+            1686.1500951938958,
+            1138.016399446051
+          ],
+          "inside_target": true,
+          "inside_anchor_hull": true,
+          "source_contrast": {
+            "status": "measured",
+            "background": 33.0,
+            "robust_scale": 2.9652,
+            "peak_over_scale": 21.583704303251046,
+            "sum_over_scale_sqrt_n": 17.343907066623817
+          },
+          "registered_contrast": {
+            "status": "measured",
+            "background": 42.0,
+            "robust_scale": 2.9652,
+            "peak_over_scale": 2.3607176581680833,
+            "sum_over_scale_sqrt_n": 2.7755016846158767
+          },
+          "registered_search_contrast": {
+            "status": "measured",
+            "background": 42.0,
+            "robust_scale": 2.9652,
+            "peak_over_scale": 4.384189936597869,
+            "sum_over_scale_sqrt_n": -3.465177847114862
+          },
+          "same_sensor_contrast": {
+            "status": "measured",
+            "background": 34.0,
+            "robust_scale": 2.9652,
+            "peak_over_scale": 3.3724537973829762,
+            "sum_over_scale_sqrt_n": 5.375504469145031
+          }
+        },
+        {
+          "id": 1,
+          "source_xy": [
+            1152.2300008328764,
+            2113.4651003183526
+          ],
+          "predicted_xy": [
+            394.48993277243443,
+            3451.5968774810904
+          ],
+          "inside_target": false,
+          "inside_anchor_hull": false,
+          "source_contrast": {
+            "status": "measured",
+            "background": 45.0,
+            "robust_scale": 2.9652,
+            "peak_over_scale": 70.4842843653042,
+            "sum_over_scale_sqrt_n": 95.53053092526476
+          },
+          "registered_contrast": {
+            "status": "outside_measurement_margin"
+          },
+          "registered_search_contrast": {
+            "status": "outside_measurement_margin"
+          },
+          "same_sensor_contrast": {
+            "status": "measured",
+            "background": 36.5,
+            "robust_scale": 2.2239,
+            "peak_over_scale": 3.822114303700706,
+            "sum_over_scale_sqrt_n": -0.3274668500783112
+          }
+        },
+        {
+          "id": 10,
+          "source_xy": [
+            2902.6972286672053,
+            279.2740491308943
+          ],
+          "predicted_xy": [
+            2711.928043309401,
+            1286.435819755675
+          ],
+          "inside_target": true,
+          "inside_anchor_hull": false,
+          "source_contrast": {
+            "status": "measured",
+            "background": 36.0,
+            "robust_scale": 2.9652,
+            "peak_over_scale": 5.058680696074464,
+            "sum_over_scale_sqrt_n": 3.191933207842649
+          },
+          "registered_contrast": {
+            "status": "measured",
+            "background": 41.0,
+            "robust_scale": 2.9652,
+            "peak_over_scale": 2.697963037906381,
+            "sum_over_scale_sqrt_n": 2.7570596087238464
+          },
+          "registered_search_contrast": {
+            "status": "measured",
+            "background": 41.0,
+            "robust_scale": 2.9652,
+            "peak_over_scale": 3.3724537973829762,
+            "sum_over_scale_sqrt_n": 4.064920166807819
+          },
+          "same_sensor_contrast": {
+            "status": "measured",
+            "background": 31.0,
+            "robust_scale": 2.9652,
+            "peak_over_scale": 2.3607176581680833,
+            "sum_over_scale_sqrt_n": -6.73323223942927
+          }
+        },
+        {
+          "id": 14,
+          "source_xy": [
+            295.06341881788603,
+            1086.2291317004788
+          ],
+          "predicted_xy": [
+            -139.56414488282292,
+            1749.0483567172237
+          ],
+          "inside_target": false,
+          "inside_anchor_hull": false,
+          "source_contrast": {
+            "status": "measured",
+            "background": 33.0,
+            "robust_scale": 2.9652,
+            "peak_over_scale": 3.7096991771212737,
+            "sum_over_scale_sqrt_n": 16.14622839821609
+          },
+          "registered_contrast": {
+            "status": "outside_measurement_margin"
+          },
+          "registered_search_contrast": {
+            "status": "outside_measurement_margin"
+          },
+          "same_sensor_contrast": {
+            "status": "measured",
+            "background": 30.0,
+            "robust_scale": 2.9652,
+            "peak_over_scale": 4.046944556859572,
+            "sum_over_scale_sqrt_n": 12.406768239257307
+          }
+        }
+      ]
+    },
+    "r12": {
+      "registration": {
+        "homography": [
+          [
+            0.5765878843139787,
+            -0.2636684264333457,
+            48.512310844562876
+          ],
+          [
+            0.0891078839464913,
+            0.40308365964149884,
+            410.41323570503704
+          ],
+          [
+            7.736370049891109e-06,
+            -0.00010877754468056243,
+            0.6158418766849734
+          ]
+        ],
+        "held_out_error": {
+          "count": 3,
+          "rms_px": 6.362060288071841,
+          "median_px": 6.734624090363124,
+          "p95_px": 7.73665389852294,
+          "max_px": 7.8479905438740305
+        },
+        "points": [
+          {
+            "source_id": 0,
+            "primary_xy": [
+              1520.2989349981638,
+              185.95017750030604
+            ],
+            "role": "anchor",
+            "predicted_xy": [
+              1442.3827742837173,
+              1022.1626484975541
+            ],
+            "error_px": 4.687428401686771e-13,
+            "name": "anchor_0"
+          },
+          {
+            "source_id": 1,
+            "primary_xy": [
+              1692.344420853975,
+              469.78060863411184
+            ],
+            "role": "anchor",
+            "predicted_xy": [
+              1558.2901023890788,
+              1298.948805460751
+            ],
+            "error_px": 2.2737367544323206e-13,
+            "name": "anchor_2"
+          },
+          {
+            "source_id": 2,
+            "primary_xy": [
+              1438.9852700490999,
+              767.0039279869067
+            ],
+            "role": "anchor",
+            "predicted_xy": [
+              1243.6565489937313,
+              1559.7792807654241
+            ],
+            "error_px": 2.2737367544323206e-13,
+            "name": "anchor_3"
+          },
+          {
+            "source_id": 3,
+            "primary_xy": [
+              2712.3711580130007,
+              435.43503731642727
+            ],
+            "role": "anchor",
+            "predicted_xy": [
+              2540.6670584284757,
+              1404.03643384822
+            ],
+            "error_px": 2.2737367544323206e-13,
+            "name": "anchor_visual"
+          },
+          {
+            "source_id": 4,
+            "primary_xy": [
+              2030.1820866141732,
+              212.16732283464566
+            ],
+            "role": "held_out",
+            "predicted_xy": [
+              1911.5990054434062,
+              1112.3649055621584
+            ],
+            "error_px": 7.8479905438740305,
+            "name": "control_15"
+          },
+          {
+            "source_id": 5,
+            "primary_xy": [
+              1776.1719077568134,
+              127.56498951781971
+            ],
+            "role": "held_out",
+            "predicted_xy": [
+              1687.4860960600865,
+              1007.1409399819322
+            ],
+            "error_px": 3.8054324474291645,
+            "name": "control_21"
+          },
+          {
+            "source_id": 6,
+            "primary_xy": [
+              1759.4302461899179,
+              73.77373974208675
+            ],
+            "role": "held_out",
+            "predicted_xy": [
+              1679.238364113739,
+              960.5759619066696
+            ],
+            "error_px": 6.734624090363124,
+            "name": "control_47"
+          }
+        ],
+        "measured": {
+          "anchor_0": {
+            "source_xy": [
+              1520.2989349981638,
+              185.95017750030604
+            ],
+            "target_xy": [
+              1442.3827742837177,
+              1022.1626484975542
+            ]
+          },
+          "anchor_2": {
+            "source_xy": [
+              1692.344420853975,
+              469.78060863411184
+            ],
+            "target_xy": [
+              1558.2901023890786,
+              1298.948805460751
+            ]
+          },
+          "anchor_3": {
+            "source_xy": [
+              1438.9852700490999,
+              767.0039279869067
+            ],
+            "target_xy": [
+              1243.6565489937313,
+              1559.779280765424
+            ]
+          },
+          "anchor_visual": {
+            "source_xy": [
+              2712.3711580130007,
+              435.43503731642727
+            ],
+            "target_xy": [
+              2540.6670584284757,
+              1404.0364338482202
+            ]
+          },
+          "control_15": {
+            "source_xy": [
+              2030.1820866141732,
+              212.16732283464566
+            ],
+            "target_xy": [
+              1919.140350877193,
+              1110.1925647451963
+            ]
+          },
+          "control_21": {
+            "source_xy": [
+              1776.1719077568134,
+              127.56498951781971
+            ],
+            "target_xy": [
+              1690.939308398024,
+              1005.5419901199717
+            ]
+          },
+          "control_47": {
+            "source_xy": [
+              1759.4302461899179,
+              73.77373974208675
+            ],
+            "target_xy": [
+              1684.1619984859954,
+              955.9810749432248
+            ]
+          }
+        }
+      },
+      "probes": [
+        {
+          "id": 5,
+          "source_xy": [
+            1795.5860812987771,
+            277.37068996415167
+          ],
+          "predicted_xy": [
+            1685.7179954635603,
+            1137.8611088889925
+          ],
+          "inside_target": true,
+          "inside_anchor_hull": true,
+          "source_contrast": {
+            "status": "measured",
+            "background": 33.0,
+            "robust_scale": 2.9652,
+            "peak_over_scale": 21.583704303251046,
+            "sum_over_scale_sqrt_n": 17.343907066623817
+          },
+          "registered_contrast": {
+            "status": "measured",
+            "background": 42.0,
+            "robust_scale": 2.9652,
+            "peak_over_scale": 2.3607176581680833,
+            "sum_over_scale_sqrt_n": 2.6432275561674308
+          },
+          "registered_search_contrast": {
+            "status": "measured",
+            "background": 42.0,
+            "robust_scale": 2.9652,
+            "peak_over_scale": 4.384189936597869,
+            "sum_over_scale_sqrt_n": -3.2695771236136904
+          },
+          "same_sensor_contrast": {
+            "status": "measured",
+            "background": 34.0,
+            "robust_scale": 2.9652,
+            "peak_over_scale": 3.3724537973829762,
+            "sum_over_scale_sqrt_n": 5.375504469145031
+          }
+        },
+        {
+          "id": 1,
+          "source_xy": [
+            1152.2300008328764,
+            2113.4651003183526
+          ],
+          "predicted_xy": [
+            394.11634148977413,
+            3456.908161464964
+          ],
+          "inside_target": false,
+          "inside_anchor_hull": false,
+          "source_contrast": {
+            "status": "measured",
+            "background": 45.0,
+            "robust_scale": 2.9652,
+            "peak_over_scale": 70.4842843653042,
+            "sum_over_scale_sqrt_n": 95.53053092526476
+          },
+          "registered_contrast": {
+            "status": "outside_measurement_margin"
+          },
+          "registered_search_contrast": {
+            "status": "outside_measurement_margin"
+          },
+          "same_sensor_contrast": {
+            "status": "measured",
+            "background": 36.5,
+            "robust_scale": 2.2239,
+            "peak_over_scale": 3.822114303700706,
+            "sum_over_scale_sqrt_n": -0.3274668500783112
+          }
+        },
+        {
+          "id": 10,
+          "source_xy": [
+            2902.6972286672053,
+            279.2740491308943
+          ],
+          "predicted_xy": [
+            2711.7680772897133,
+            1285.7578778853235
+          ],
+          "inside_target": true,
+          "inside_anchor_hull": false,
+          "source_contrast": {
+            "status": "measured",
+            "background": 36.0,
+            "robust_scale": 2.9652,
+            "peak_over_scale": 5.058680696074464,
+            "sum_over_scale_sqrt_n": 3.191933207842649
+          },
+          "registered_contrast": {
+            "status": "measured",
+            "background": 41.0,
+            "robust_scale": 2.9652,
+            "peak_over_scale": 2.697963037906381,
+            "sum_over_scale_sqrt_n": 2.7570596087238464
+          },
+          "registered_search_contrast": {
+            "status": "measured",
+            "background": 41.0,
+            "robust_scale": 2.9652,
+            "peak_over_scale": 3.3724537973829762,
+            "sum_over_scale_sqrt_n": 4.110881288424041
+          },
+          "same_sensor_contrast": {
+            "status": "measured",
+            "background": 31.0,
+            "robust_scale": 2.9652,
+            "peak_over_scale": 2.3607176581680833,
+            "sum_over_scale_sqrt_n": -6.73323223942927
+          }
+        },
+        {
+          "id": 14,
+          "source_xy": [
+            295.06341881788603,
+            1086.2291317004788
+          ],
+          "predicted_xy": [
+            -135.53292040671334,
+            1749.2083955554892
+          ],
+          "inside_target": false,
+          "inside_anchor_hull": false,
+          "source_contrast": {
+            "status": "measured",
+            "background": 33.0,
+            "robust_scale": 2.9652,
+            "peak_over_scale": 3.7096991771212737,
+            "sum_over_scale_sqrt_n": 16.14622839821609
+          },
+          "registered_contrast": {
+            "status": "outside_measurement_margin"
+          },
+          "registered_search_contrast": {
+            "status": "outside_measurement_margin"
+          },
+          "same_sensor_contrast": {
+            "status": "measured",
+            "background": 30.0,
+            "robust_scale": 2.9652,
+            "peak_over_scale": 4.046944556859572,
+            "sum_over_scale_sqrt_n": 12.406768239257307
+          }
+        }
+      ]
+    }
+  },
+  "centroid_aperture_sensitivity": [
+    {
+      "id": 5,
+      "displacement_px": 0.45915719973401176
+    },
+    {
+      "id": 1,
+      "displacement_px": 5.324406821781406
+    },
+    {
+      "id": 10,
+      "displacement_px": 0.6965589042072807
+    },
+    {
+      "id": 14,
+      "displacement_px": 4.034399980980849
+    }
+  ],
+  "second_neighbor": {
+    "id": "20260831_214748",
+    "status": "not_registered",
+    "reason": "no independently reviewed four-anchor image-only correspondence set; foreground dominates existing default detections",
+    "manual_detections_preview_source": "prototype/artifacts/automatic-sky/extended-hinted-run-1/manual/solve-reports/20260831_214748.json"
+  },
+  "accepted_ground_truth": false,
+  "automatic_improvement_confirmed": false,
+  "limitations": [
+    "manual diagnostic registration; no catalog identity certification",
+    "controls not fitted but chosen after provisional alignment, spatial coverage sparse",
+    "contrast is descriptive for correlated processed JPEG noise, not Gaussian significance",
+    "absence at prediction can reflect visibility or model error; not proof of a false source"
+  ]
+}

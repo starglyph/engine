@@ -1,0 +1,57 @@
+{
+  "iteration": 22,
+  "production_changed": false,
+  "holdout_run": false,
+  "collection_run": false,
+  "python_tests_passed": 183,
+  "rust_tests": {
+    "passed": 97,
+    "ignored": 7,
+    "failed": 0
+  },
+  "replay": {
+    "cases": 28,
+    "baseline_reproduced": true,
+    "errors": 0,
+    "timeouts": 0,
+    "process_elapsed_s": 0.6224816404283047,
+    "full_detections_per_case": 50,
+    "verification_catalog_count": 12495
+  },
+  "rustfmt": "passed",
+  "clippy": "passed: release core all-targets no-deps -D warnings",
+  "broader_clippy": "failed on unchanged simulator-core build_frame_metadata: too_many_arguments",
+  "preflight_failures": [
+    {
+      "stage": "build",
+      "reason": "rank field expected u32, test harness supplied usize",
+      "solves": 0
+    },
+    {
+      "stage": "replay setup",
+      "reason": "filename timestamp parser does not support this smartphone stem; corrected EXIF fallback before final protocol",
+      "cases_measured": 0
+    }
+  ],
+  "source_guards": "iteration18/19/20/21/22 frozen inputs validated; no production Rust diff",
+  "protected_inputs": {
+    "manifest.json": "97e229270c7b0f97fce4e1f738917cd91cdff01df3508db29584af70a0ea4871",
+    "robustness-results.json": "09e6efe61468b4afe896967d583553751d80fe82e65e0ac064528523bbc525e8",
+    "collection-wcs-review.json": "97c182c51955baee9adce93cde8e93fb98ece6a69bdc606cf871d3a1eef19841"
+  },
+  "target_cache_removed_bytes": 450910637,
+  "preserved_test_binary_sha256": "9674273245b86b82ba73721869099b43d7979cb8e65e367600bc6e33bca07511",
+  "hashes": {
+    "prototype/artifacts/robustness-iteration-22/fixed/run.log": "d3dc3dc0f0041bbdb7b4439a1b2822bf1fad54dc6857468acb479bebb17fa6a8",
+    "prototype/artifacts/robustness-iteration-22/fixed/run.json": "4b504b16193babc92220f5e5fb529e653547d15369e48613c3c0bae9816eea9c",
+    "prototype/artifacts/robustness-iteration-22/fixed/build.json": "6fe0481a1578f87cd45b7e1be569c87c4781b5c48e4a0c75d5893f3ed3b57106",
+    "prototype/artifacts/robustness-iteration-22/fixed/build-artifact.json": "4dfe4fcedb78555e9d54689e4bb2d4211682d3579902ee860fdca40e69b35a15",
+    "prototype/artifacts/robustness-iteration-22/fixed/python-tests.log": "bad9538794c5bace981c43ec480836a3c14d1597784fd1944760c0a057cd5c0a",
+    "prototype/artifacts/robustness-iteration-22/fixed/rust-tests.log": "cda81adf5843cc54edd76fa67ba515e4f3894857c7aa354d473af1bff9496cc9",
+    "prototype/artifacts/robustness-iteration-22/fixed/clippy.log": "f9838970adc2a6544d9133a8428784ca0f56ba1b1ae6a5521b6a4e200bee40bb",
+    "prototype/artifacts/robustness-iteration-22/fixed/clippy-no-deps.log": "d63f641e6d69623fa9dd02e44e6f97e362f5702103addd71bd2ee3ee8b17888b",
+    "docs/experiments/robustness-iteration-22-protocol.json": "189b5f1ff4417fe3a9b8ef980e2c81f06e445ecb50bf62dc8326ac276a51d179",
+    "docs/experiments/robustness-iteration-22-results.json": "d6a1a4e70da418f961ec17043143e7d175b8e2eb08bb2882753f5c758e5530ae",
+    "prototype/eval/test_robustness_roll_influence.py": "5043e186d0625bc471dd757f646bdf264b072931af8f2594553c4ce6e02fa0e7"
+  }
+}

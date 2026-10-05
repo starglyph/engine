@@ -1,0 +1,28 @@
+{
+  "iteration": 20,
+  "base_commit": "93a329924cecf28a453b53b2e317e97f293b52e1",
+  "holdout_run": false,
+  "solve_runs": 0,
+  "wcs_runs": 0,
+  "production_changed": false,
+  "ground_truth_promoted": false,
+  "protocol_sha256": "f9d4b4f3d5a8deb1ecdd8bde73af02e5be545deba7e999bc9bb6f5b09c401e56",
+  "results_sha256": "805cb08ce866ccd0e0c33d94a5ff59afc85d5abf83700a462f516af36876dcc4",
+  "frozen_hash_count": 13,
+  "frozen_inputs_verified": true,
+  "iteration19_hashes_preserved": true,
+  "protected_inputs_sha256": {
+    "manifest.json": "97e229270c7b0f97fce4e1f738917cd91cdff01df3508db29584af70a0ea4871",
+    "robustness-results.json": "09e6efe61468b4afe896967d583553751d80fe82e65e0ac064528523bbc525e8",
+    "collection-wcs-review.json": "97c182c51955baee9adce93cde8e93fb98ece6a69bdc606cf871d3a1eef19841"
+  },
+  "python_tests_passed": 176,
+  "python_log_sha256": "ffcef94acbcbb4560662efb13bdc3720cb51a8b498ba851d610dff5427700fcb",
+  "test_source_sha256": "1a614a1ac90e499afc5bd623768909ee63adf2922db17c85e178ef3096fa49d4",
+  "native_TAN_max_crosscheck_px": 1.3642420526593924e-12,
+  "max_epoch_shift_px": 0.07447453840204948,
+  "all_linear_LOO_rms_exceed_native_rms": true,
+  "identity_certification": "none; pending model consistency only, unresolved components retained",
+  "preview_sha256": "88a113189ebb4de29b307af0f73eefc069773ba15bf804343eca5494647a63c0",
+  "build_cache_created": false
+}

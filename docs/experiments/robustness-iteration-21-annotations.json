@@ -1,0 +1,144 @@
+{
+  "iteration": 21,
+  "source": "20260831_214709",
+  "target": "20260831_214642",
+  "coordinates": "exif_oriented_top_left_zero_based",
+  "source_size": [
+    4000,
+    2252
+  ],
+  "target_size": [
+    4000,
+    2252
+  ],
+  "points": [
+    {
+      "id": "anchor_0",
+      "source_xy": [
+        1519.7395300133394,
+        185.25638345885406
+      ],
+      "target_xy": [
+        1442.41,
+        1022.09
+      ],
+      "role": "anchor"
+    },
+    {
+      "id": "anchor_2",
+      "source_xy": [
+        1691.7089717363333,
+        468.98694784069875
+      ],
+      "target_xy": [
+        1558.46,
+        1298.99
+      ],
+      "role": "anchor"
+    },
+    {
+      "id": "anchor_3",
+      "source_xy": [
+        1438.6258160142715,
+        766.4774011320308
+      ],
+      "target_xy": [
+        1243.56,
+        1559.94
+      ],
+      "role": "anchor"
+    },
+    {
+      "id": "anchor_visual",
+      "source_xy": [
+        2711.4285714285716,
+        434.2857142857143
+      ],
+      "target_xy": [
+        2540.0,
+        1405.7142857142858
+      ],
+      "role": "anchor"
+    },
+    {
+      "id": "control_15",
+      "source_xy": [
+        2029.3967348099477,
+        211.73330556995333
+      ],
+      "target_xy": [
+        1919.1,
+        1110.18
+      ],
+      "role": "held_out"
+    },
+    {
+      "id": "control_21",
+      "source_xy": [
+        1774.6661830276162,
+        126.82464269342813
+      ],
+      "target_xy": [
+        1690.76,
+        1005.02
+      ],
+      "role": "held_out"
+    },
+    {
+      "id": "control_47",
+      "source_xy": [
+        1758.6801611662354,
+        73.38749229169288
+      ],
+      "target_xy": [
+        1684.02,
+        956.12
+      ],
+      "role": "held_out"
+    }
+  ],
+  "probes": [
+    {
+      "id": 5,
+      "source_xy": [
+        1795.5860812987771,
+        277.37068996415167
+      ]
+    },
+    {
+      "id": 1,
+      "source_xy": [
+        1152.2300008328764,
+        2113.4651003183526
+      ]
+    },
+    {
+      "id": 10,
+      "source_xy": [
+        2902.6972286672053,
+        279.2740491308943
+      ]
+    },
+    {
+      "id": 14,
+      "source_xy": [
+        295.06341881788603,
+        1086.2291317004788
+      ]
+    }
+  ],
+  "anchor_hull_ids": [
+    "anchor_0",
+    "anchor_visual",
+    "anchor_3"
+  ],
+  "selection": "manual image-pattern comparison, provisional alignment inspected before freezing; controls not used in fit, not blindly sampled",
+  "catalog_or_solved_pose_used_for_registration": false,
+  "target_detections_source": "prototype/artifacts/robustness-iteration-18/fixed/gate-smartphone/run-rn57t8yp/solve-reports/20260831_214642.json",
+  "second_neighbor": {
+    "id": "20260831_214748",
+    "status": "not_registered",
+    "reason": "no independently reviewed four-anchor image-only correspondence set; foreground dominates existing default detections",
+    "manual_detections_preview_source": "prototype/artifacts/automatic-sky/extended-hinted-run-1/manual/solve-reports/20260831_214748.json"
+  }
+}

@@ -1,0 +1,2364 @@
+{
+  "split": "development",
+  "frames": [
+    {
+      "id": "wm_r_132162731",
+      "image": "data/samples/sky-samples/images/wm_r_132162731.png",
+      "source_sha256": "58dfbce4f8a236cab8158a4a0f9ed677c68aa8873afd9568df48d370f01ef188",
+      "width": 3648,
+      "height": 5472,
+      "points": [
+        {
+          "id": 0,
+          "detection_index": 23,
+          "hyg_id": 104184,
+          "name": "5Gam Equ",
+          "mag": 4.7,
+          "world": [
+            0.72677114863111,
+            -0.6639725952534896,
+            0.17590932399893616
+          ],
+          "radec": [
+            317.58541491666625,
+            10.131579479297626
+          ],
+          "review_center": [
+            584.4427918928557,
+            1295.7239659495292
+          ],
+          "detection": {
+            "area": 119,
+            "elongation": 1.2934702634811401,
+            "flux": 77.8097915649414,
+            "peak": 0.8784313797950745,
+            "rank": 23,
+            "snr": 156.4935760498047,
+            "x": 584.4427918928557,
+            "y": 1295.7239659495292
+          },
+          "choices": [
+            {
+              "row": 43,
+              "x": 584.3319091796875,
+              "y": 1295.6510009765625
+            },
+            {
+              "row": 2536,
+              "x": 578.0150756835938,
+              "y": 1328.3880615234375
+            },
+            {
+              "row": 4844,
+              "x": 610.707275390625,
+              "y": 1316.998046875
+            }
+          ],
+          "prior_probes": [],
+          "previous_review": [],
+          "catalogue_neighbours": [
+            {
+              "hyg_id": 104201,
+              "mag": 6.07,
+              "separation_deg": 0.09381074067486875
+            }
+          ],
+          "label": "blend",
+          "selected_row": 43,
+          "note": "Two partially overlapping bright lobes. HYG104201 is 0.09381deg away; individual-component centroid is not securely resolved. Physical stellar light is visible; do not call the match false from shape alone."
+        },
+        {
+          "id": 1,
+          "detection_index": 11,
+          "hyg_id": 93452,
+          "name": "Okab",
+          "mag": 2.99,
+          "world": [
+            0.27334501440294956,
+            -0.9315953621274051,
+            0.23960923263463826
+          ],
+          "radec": [
+            286.3525343223326,
+            13.863478112180498
+          ],
+          "review_center": [
+            2190.858087624614,
+            1257.2083068656825
+          ],
+          "detection": {
+            "area": 156,
+            "elongation": 1.1538066864013672,
+            "flux": 99.88731384277344,
+            "peak": 0.8156613707542419,
+            "rank": 11,
+            "snr": 175.46229553222656,
+            "x": 2190.858087624614,
+            "y": 1257.2083068656825
+          },
+          "choices": [
+            {
+              "row": 8,
+              "x": 2190.802978515625,
+              "y": 1257.3502197265625
+            },
+            {
+              "row": 10804,
+              "x": 2187.241455078125,
+              "y": 1222.208740234375
+            },
+            {
+              "row": 854,
+              "x": 2154.949462890625,
+              "y": 1221.740234375
+            }
+          ],
+          "prior_probes": [
+            {
+              "source_id": 11,
+              "hyg_id": 93452,
+              "name": "Okab",
+              "xy": [
+                2190.802978515625,
+                1257.3502197265625
+              ],
+              "world": [
+                0.27334502555350276,
+                -0.9315953593445672,
+                0.23960923073375456
+              ],
+              "radec": [
+                286.352535,
+                13.863478
+              ],
+              "outside_both_inputs": false
+            }
+          ],
+          "previous_review": [],
+          "catalogue_neighbours": [],
+          "label": "visible_source",
+          "selected_row": 8,
+          "note": "Compact bright stellar core; separated neighbouring sources."
+        },
+        {
+          "id": 2,
+          "detection_index": 19,
+          "hyg_id": 92951,
+          "name": "13Eps Aql",
+          "mag": 4.02,
+          "world": [
+            0.24838387807900544,
+            -0.9331242722496427,
+            0.25997027070226436
+          ],
+          "radec": [
+            284.90565992458914,
+            15.068298121454145
+          ],
+          "review_center": [
+            2270.3169537481635,
+            1188.1200632269702
+          ],
+          "detection": {
+            "area": 131,
+            "elongation": 1.3418395519256592,
+            "flux": 83.92757415771484,
+            "peak": 0.8597866892814636,
+            "rank": 19,
+            "snr": 160.88101196289062,
+            "x": 2270.3169537481635,
+            "y": 1188.1200632269702
+          },
+          "choices": [
+            {
+              "row": 28,
+              "x": 2269.81298828125,
+              "y": 1188.5311279296875
+            },
+            {
+              "row": 9333,
+              "x": 2272.476806640625,
+              "y": 1163.0242919921875
+            },
+            {
+              "row": 1582,
+              "x": 2298.75244140625,
+              "y": 1204.1448974609375
+            }
+          ],
+          "prior_probes": [
+            {
+              "source_id": 28,
+              "hyg_id": 92951,
+              "name": "13Eps Aql",
+              "xy": [
+                2269.81298828125,
+                1188.5311279296875
+              ],
+              "world": [
+                0.24838396087936057,
+                -0.9331242507796764,
+                0.2599702686553747
+              ],
+              "radec": [
+                284.905665,
+                15.068298
+              ],
+              "outside_both_inputs": false
+            }
+          ],
+          "previous_review": [
+            {
+              "id": 19,
+              "hyg_id": 92951,
+              "name": "13Eps Aql",
+              "mag": 4.02,
+              "world": [
+                0.24838387807900544,
+                -0.9331242722496427,
+                0.25997027070226436
+              ],
+              "radec": [
+                284.90565992458914,
+                15.068298121454145
+              ],
+              "detection": {
+                "area": 131,
+                "elongation": 1.3418395519256592,
+                "flux": 83.92757415771484,
+                "peak": 0.8597866892814636,
+                "rank": 19,
+                "snr": 160.88101196289062,
+                "x": 2270.3169537481635,
+                "y": 1188.1200632269702
+              },
+              "review_center": [
+                2270.3169537481635,
+                1188.1200632269702
+              ],
+              "choices": [
+                {
+                  "row": 28,
+                  "x": 2269.81298828125,
+                  "y": 1188.5311279296875
+                },
+                {
+                  "row": 9333,
+                  "x": 2272.476806640625,
+                  "y": 1163.0242919921875
+                },
+                {
+                  "row": 1582,
+                  "x": 2298.75244140625,
+                  "y": 1204.1448974609375
+                }
+              ],
+              "prior_probes": [
+                {
+                  "source_id": 28,
+                  "hyg_id": 92951,
+                  "name": "13Eps Aql",
+                  "xy": [
+                    2269.81298828125,
+                    1188.5311279296875
+                  ],
+                  "world": [
+                    0.24838396087936057,
+                    -0.9331242507796764,
+                    0.2599702686553747
+                  ],
+                  "radec": [
+                    284.905665,
+                    15.068298
+                  ],
+                  "outside_both_inputs": false
+                }
+              ],
+              "catalogue_neighbours": [],
+              "label": "visible_source",
+              "selected_row": 28,
+              "note": "Visible bright stellar core with asymmetric coloured halo; same conditional Epsilon Aql source as iteration13."
+            }
+          ],
+          "catalogue_neighbours": [],
+          "label": "visible_source",
+          "selected_row": 28,
+          "note": "Bright core with coloured asymmetric halo; agrees with prior conditional Epsilon Aql source."
+        },
+        {
+          "id": 3,
+          "detection_index": 38,
+          "hyg_id": 98026,
+          "name": "12Gam Sge",
+          "mag": 3.51,
+          "world": [
+            0.4669092192983614,
+            -0.8189352809195886,
+            0.33367766871540766
+          ],
+          "radec": [
+            299.68927116047945,
+            19.492147712638808
+          ],
+          "review_center": [
+            1548.9809376017063,
+            848.5505004839106
+          ],
+          "detection": {
+            "area": 106,
+            "elongation": 1.2215265035629272,
+            "flux": 68.15100860595703,
+            "peak": 0.7885904908180237,
+            "rank": 38,
+            "snr": 145.22958374023438,
+            "x": 1548.9809376017063,
+            "y": 848.5505004839106
+          },
+          "choices": [
+            {
+              "row": 20,
+              "x": 1548.9478759765625,
+              "y": 848.7476196289062
+            },
+            {
+              "row": 3313,
+              "x": 1571.3953857421875,
+              "y": 845.8153686523438
+            },
+            {
+              "row": 2308,
+              "x": 1534.9017333984375,
+              "y": 819.7093505859375
+            }
+          ],
+          "prior_probes": [
+            {
+              "source_id": 21,
+              "hyg_id": 98026,
+              "name": "12Gam Sge",
+              "xy": [
+                1548.9478759765625,
+                848.7476196289062
+              ],
+              "world": [
+                0.4669092733481853,
+                -0.8189352481771046,
+                0.3336776734433602
+              ],
+              "radec": [
+                299.689275,
+                19.492148
+              ],
+              "outside_both_inputs": false
+            }
+          ],
+          "previous_review": [],
+          "catalogue_neighbours": [],
+          "label": "visible_source",
+          "selected_row": 20,
+          "note": "Compact core with weaker lower halo; nearby sources separated."
+        },
+        {
+          "id": 4,
+          "detection_index": 17,
+          "hyg_id": 105936,
+          "name": "Sadalsuud",
+          "mag": 2.9,
+          "world": [
+            0.7937087560991599,
+            -0.6005010132140823,
+            -0.09708214882451255
+          ],
+          "radec": [
+            322.8897244081365,
+            -5.571172207817377
+          ],
+          "review_center": [
+            349.76868189746165,
+            2151.5698889590926
+          ],
+          "detection": {
+            "area": 132,
+            "elongation": 1.2877064943313599,
+            "flux": 89.071044921875,
+            "peak": 0.8538976311683655,
+            "rank": 17,
+            "snr": 170.0925750732422,
+            "x": 349.76868189746165,
+            "y": 2151.5698889590926
+          },
+          "choices": [
+            {
+              "row": 9,
+              "x": 349.7533264160156,
+              "y": 2151.559814453125
+            },
+            {
+              "row": 3033,
+              "x": 315.342529296875,
+              "y": 2143.171875
+            },
+            {
+              "row": 4997,
+              "x": 339.9506530761719,
+              "y": 2189.74560546875
+            }
+          ],
+          "prior_probes": [
+            {
+              "source_id": 10,
+              "hyg_id": 105936,
+              "name": "Sadalsuud",
+              "xy": [
+                349.7533264160156,
+                2151.559814453125
+              ],
+              "world": [
+                0.7937088149867226,
+                -0.6005009359633953,
+                -0.09708214521454814
+              ],
+              "radec": [
+                322.88973,
+                -5.571172
+              ],
+              "outside_both_inputs": false
+            }
+          ],
+          "previous_review": [],
+          "catalogue_neighbours": [],
+          "label": "visible_source",
+          "selected_row": 9,
+          "note": "Bright elongated but distinguishable single core; prior conditional Sadalsuud source."
+        },
+        {
+          "id": 5,
+          "detection_index": 25,
+          "hyg_id": 101442,
+          "name": "Rotanev",
+          "mag": 3.64,
+          "world": [
+            0.6140817592884462,
+            -0.7479347950901325,
+            0.25198637900229526
+          ],
+          "radec": [
+            309.38724434996925,
+            14.595087049557746
+          ],
+          "review_center": [
+            1037.9704638037338,
+            1091.2622833926043
+          ],
+          "detection": {
+            "area": 111,
+            "elongation": 1.2786248922348022,
+            "flux": 75.56681060791016,
+            "peak": 0.8797171711921692,
+            "rank": 25,
+            "snr": 157.36398315429688,
+            "x": 1037.9704638037338,
+            "y": 1091.2622833926043
+          },
+          "choices": [
+            {
+              "row": 14,
+              "x": 1037.9873046875,
+              "y": 1091.4061279296875
+            },
+            {
+              "row": 5976,
+              "x": 1013.9194946289062,
+              "y": 1082.4053955078125
+            },
+            {
+              "row": 64,
+              "x": 1068.30810546875,
+              "y": 1091.3197021484375
+            }
+          ],
+          "prior_probes": [
+            {
+              "source_id": 22,
+              "hyg_id": 101442,
+              "name": "Rotanev",
+              "xy": [
+                1037.9873046875,
+                1091.4061279296875
+              ],
+              "world": [
+                0.6140817026425783,
+                -0.7479348418804583,
+                0.25198637816526054
+              ],
+              "radec": [
+                309.38724,
+                14.595087
+              ],
+              "outside_both_inputs": false
+            }
+          ],
+          "previous_review": [],
+          "catalogue_neighbours": [],
+          "label": "visible_source",
+          "selected_row": 14,
+          "note": "Compact asymmetric core; nearest bright neighbours spatially separated; prior conditional Rotanev source."
+        },
+        {
+          "id": 6,
+          "detection_index": 14,
+          "hyg_id": 95473,
+          "name": "Anser",
+          "mag": 4.44,
+          "world": [
+            0.3430215616340787,
+            -0.841539153845877,
+            0.4173105088522015
+          ],
+          "radec": [
+            292.1764047679069,
+            24.664904737271524
+          ],
+          "review_center": [
+            1954.3969275141242,
+            514.7336875355944
+          ],
+          "detection": {
+            "area": 146,
+            "elongation": 2.3499975204467773,
+            "flux": 92.24925231933594,
+            "peak": 0.8276625871658325,
+            "rank": 14,
+            "snr": 167.5028533935547,
+            "x": 1954.3969275141242,
+            "y": 514.7336875355944
+          },
+          "choices": [
+            {
+              "row": 44,
+              "x": 1954.5850830078125,
+              "y": 516.6400146484375
+            },
+            {
+              "row": 842,
+              "x": 1960.1534423828125,
+              "y": 492.50836181640625
+            },
+            {
+              "row": 2754,
+              "x": 1931.2718505859375,
+              "y": 535.1033325195312
+            }
+          ],
+          "prior_probes": [],
+          "previous_review": [],
+          "catalogue_neighbours": [
+            {
+              "hyg_id": 95487,
+              "mag": 5.82,
+              "separation_deg": 0.11786829391961644
+            }
+          ],
+          "label": "blend",
+          "selected_row": 44,
+          "note": "Two close bright cores straddle the detection centre; HYG95487 at0.11787deg is a plausible companion. The combined centroid is not an isolated Anser measurement."
+        },
+        {
+          "id": 7,
+          "detection_index": 28,
+          "hyg_id": 102673,
+          "name": "31    Vul",
+          "mag": 4.56,
+          "world": [
+            0.6075037402243021,
+            -0.65073865647596,
+            0.4554979764843595
+          ],
+          "radec": [
+            313.03201355457304,
+            27.096979488978338
+          ],
+          "review_center": [
+            788.9024766227147,
+            84.3476268480492
+          ],
+          "detection": {
+            "area": 111,
+            "elongation": 1.4338386058807373,
+            "flux": 73.52253723144531,
+            "peak": 0.8523217439651489,
+            "rank": 28,
+            "snr": 153.10690307617188,
+            "x": 788.9024766227147,
+            "y": 84.3476268480492
+          },
+          "choices": [
+            {
+              "row": 19,
+              "x": 788.6720581054688,
+              "y": 84.65689086914062
+            },
+            {
+              "row": 3343,
+              "x": 766.1602172851562,
+              "y": 69.93033599853516
+            },
+            {
+              "row": 883,
+              "x": 798.5746459960938,
+              "y": 57.600914001464844
+            }
+          ],
+          "prior_probes": [],
+          "previous_review": [],
+          "catalogue_neighbours": [],
+          "label": "visible_source",
+          "selected_row": 19,
+          "note": "Isolated elongated stellar core; visible sky source despite non-circular shape."
+        },
+        {
+          "id": 8,
+          "detection_index": 20,
+          "hyg_id": 105311,
+          "name": "",
+          "mag": 5.7,
+          "world": [
+            0.7083884227668511,
+            -0.5737423256325241,
+            0.41110289012323387
+          ],
+          "radec": [
+            320.99508165133966,
+            24.274135482675693
+          ],
+          "review_center": [
+            268.1704808084261,
+            170.11323737653368
+          ],
+          "detection": {
+            "area": 130,
+            "elongation": 2.192776918411255,
+            "flux": 83.75080871582031,
+            "peak": 0.8452234864234924,
+            "rank": 20,
+            "snr": 161.158447265625,
+            "x": 268.1704808084261,
+            "y": 170.11323737653368
+          },
+          "choices": [
+            {
+              "row": 66,
+              "x": 267.1701965332031,
+              "y": 169.8628387451172
+            },
+            {
+              "row": 9177,
+              "x": 262.9212646484375,
+              "y": 189.91986083984375
+            },
+            {
+              "row": 8106,
+              "x": 293.62091064453125,
+              "y": 157.5131378173828
+            }
+          ],
+          "prior_probes": [],
+          "previous_review": [],
+          "catalogue_neighbours": [],
+          "label": "ambiguous",
+          "selected_row": 66,
+          "note": "Stellar feature with a bright head and an asymmetric attached lobe in the strongly distorted upper-left field. Physical sky source visible, but a clean single centroid and independent catalogue identity are not established."
+        },
+        {
+          "id": 9,
+          "detection_index": 37,
+          "hyg_id": 101095,
+          "name": "Aldulfin",
+          "mag": 4.03,
+          "world": [
+            0.607800631178135,
+            -0.769520379384784,
+            0.19600198583422215
+          ],
+          "radec": [
+            308.3032122952896,
+            11.303262755357803
+          ],
+          "review_center": [
+            1100.7287042933508,
+            1301.1384188394222
+          ],
+          "detection": {
+            "area": 101,
+            "elongation": 1.2830199003219604,
+            "flux": 68.26891326904297,
+            "peak": 0.8718185424804688,
+            "rank": 37,
+            "snr": 149.03836059570312,
+            "x": 1100.7287042933508,
+            "y": 1301.1384188394222
+          },
+          "choices": [
+            {
+              "row": 24,
+              "x": 1100.6837158203125,
+              "y": 1301.23095703125
+            },
+            {
+              "row": 847,
+              "x": 1127.026611328125,
+              "y": 1307.2950439453125
+            },
+            {
+              "row": 4743,
+              "x": 1072.760986328125,
+              "y": 1329.1534423828125
+            }
+          ],
+          "prior_probes": [],
+          "previous_review": [
+            {
+              "id": 37,
+              "hyg_id": 101095,
+              "name": "Aldulfin",
+              "mag": 4.03,
+              "world": [
+                0.607800631178135,
+                -0.769520379384784,
+                0.19600198583422215
+              ],
+              "radec": [
+                308.3032122952896,
+                11.303262755357803
+              ],
+              "detection": {
+                "area": 101,
+                "elongation": 1.2830199003219604,
+                "flux": 68.26891326904297,
+                "peak": 0.8718185424804688,
+                "rank": 37,
+                "snr": 149.03836059570312,
+                "x": 1100.7287042933508,
+                "y": 1301.1384188394222
+              },
+              "review_center": [
+                1100.7287042933508,
+                1301.1384188394222
+              ],
+              "choices": [
+                {
+                  "row": 24,
+                  "x": 1100.6837158203125,
+                  "y": 1301.23095703125
+                },
+                {
+                  "row": 847,
+                  "x": 1127.026611328125,
+                  "y": 1307.2950439453125
+                },
+                {
+                  "row": 4743,
+                  "x": 1072.760986328125,
+                  "y": 1329.1534423828125
+                }
+              ],
+              "prior_probes": [],
+              "catalogue_neighbours": [],
+              "label": "visible_source",
+              "selected_row": 24,
+              "note": "Visible compact stellar core; a nearby bright source is separated. Proposed Aldulfin identity remains conditional and is not independently confirmed by a WCS or image transfer."
+            }
+          ],
+          "catalogue_neighbours": [],
+          "label": "visible_source",
+          "selected_row": 24,
+          "note": "Compact core with distinct neighbouring source; physical source already reviewed in iteration26; Aldulfin identity remains conditional."
+        },
+        {
+          "id": 10,
+          "detection_index": 39,
+          "hyg_id": 96450,
+          "name": "Sham",
+          "mag": 4.39,
+          "world": [
+            0.40226512481558396,
+            -0.8617126669622722,
+            0.30924755286642275
+          ],
+          "radec": [
+            295.0241301033665,
+            18.01389039315905
+          ],
+          "review_center": [
+            1781.661177406416,
+            974.6794079320642
+          ],
+          "detection": {
+            "area": 104,
+            "elongation": 1.7473024129867554,
+            "flux": 67.85164642333984,
+            "peak": 0.8014562129974365,
+            "rank": 39,
+            "snr": 145.975341796875,
+            "x": 1781.661177406416,
+            "y": 974.6794079320642
+          },
+          "choices": [
+            {
+              "row": 59,
+              "x": 1781.7110595703125,
+              "y": 973.8786010742188
+            },
+            {
+              "row": 2665,
+              "x": 1747.6953125,
+              "y": 973.479248046875
+            },
+            {
+              "row": 53,
+              "x": 1768.0592041015625,
+              "y": 1007.1041259765625
+            }
+          ],
+          "prior_probes": [],
+          "previous_review": [
+            {
+              "id": 39,
+              "hyg_id": 96450,
+              "name": "Sham",
+              "mag": 4.39,
+              "world": [
+                0.40226512481558396,
+                -0.8617126669622722,
+                0.30924755286642275
+              ],
+              "radec": [
+                295.0241301033665,
+                18.01389039315905
+              ],
+              "detection": {
+                "area": 104,
+                "elongation": 1.7473024129867554,
+                "flux": 67.85164642333984,
+                "peak": 0.8014562129974365,
+                "rank": 39,
+                "snr": 145.975341796875,
+                "x": 1781.661177406416,
+                "y": 974.6794079320642
+              },
+              "review_center": [
+                1781.661177406416,
+                974.6794079320642
+              ],
+              "choices": [
+                {
+                  "row": 59,
+                  "x": 1781.7110595703125,
+                  "y": 973.8786010742188
+                },
+                {
+                  "row": 2665,
+                  "x": 1747.6953125,
+                  "y": 973.479248046875
+                },
+                {
+                  "row": 53,
+                  "x": 1768.0592041015625,
+                  "y": 1007.1041259765625
+                }
+              ],
+              "prior_probes": [],
+              "catalogue_neighbours": [],
+              "label": "visible_source",
+              "selected_row": 59,
+              "note": "Visible vertically extended stellar core amid separate neighbouring sources. Proposed Sham identity remains conditional and is not independently confirmed by a WCS or image transfer."
+            }
+          ],
+          "catalogue_neighbours": [],
+          "label": "visible_source",
+          "selected_row": 59,
+          "note": "Vertically extended core amid separated neighbours; physical source already reviewed in iteration26; Sham identity remains conditional."
+        },
+        {
+          "id": 11,
+          "detection_index": 6,
+          "hyg_id": 96970,
+          "name": "Tarazed",
+          "mag": 2.72,
+          "world": [
+            0.43956088644902086,
+            -0.8791270553997472,
+            0.18417884669071252
+          ],
+          "radec": [
+            296.5649134652809,
+            10.613261144340122
+          ],
+          "review_center": [
+            1685.067855347577,
+            1407.8127063929103
+          ],
+          "detection": {
+            "area": 183,
+            "elongation": 1.2079882621765137,
+            "flux": 121.95042419433594,
+            "peak": 0.827548623085022,
+            "rank": 6,
+            "snr": 197.7850799560547,
+            "x": 1685.067855347577,
+            "y": 1407.8127063929103
+          },
+          "choices": [
+            {
+              "row": 11,
+              "x": 1685.5533447265625,
+              "y": 1407.1236572265625
+            },
+            {
+              "row": 1853,
+              "x": 1704.2999267578125,
+              "y": 1392.233154296875
+            },
+            {
+              "row": 1205,
+              "x": 1658.642822265625,
+              "y": 1400.0672607421875
+            }
+          ],
+          "prior_probes": [
+            {
+              "source_id": 7,
+              "hyg_id": 96970,
+              "name": "Tarazed",
+              "xy": [
+                1685.5533447265625,
+                1407.1236572265625
+              ],
+              "world": [
+                0.43956083348642283,
+                -0.8791270823996357,
+                0.18417884421459893
+              ],
+              "radec": [
+                296.56491000000005,
+                10.613261
+              ],
+              "outside_both_inputs": false
+            }
+          ],
+          "previous_review": [],
+          "catalogue_neighbours": [],
+          "label": "visible_source",
+          "selected_row": 11,
+          "note": "Bright compact core with halo; prior conditional Tarazed source."
+        },
+        {
+          "id": 12,
+          "detection_index": 29,
+          "hyg_id": 88494,
+          "name": "72    Oph",
+          "mag": 3.71,
+          "world": [
+            0.03161815916318566,
+            -0.9855940397858572,
+            0.1661465640623529
+          ],
+          "radec": [
+            271.83743602720966,
+            9.56384717685075
+          ],
+          "review_center": [
+            2896.458117751871,
+            1520.530127317677
+          ],
+          "detection": {
+            "area": 122,
+            "elongation": 1.2712125778198242,
+            "flux": 73.22957611083984,
+            "peak": 0.7271953821182251,
+            "rank": 29,
+            "snr": 145.4595947265625,
+            "x": 2896.458117751871,
+            "y": 1520.530127317677
+          },
+          "choices": [
+            {
+              "row": 83,
+              "x": 2896.3994140625,
+              "y": 1520.5263671875
+            },
+            {
+              "row": 377,
+              "x": 2888.9423828125,
+              "y": 1567.2855224609375
+            },
+            {
+              "row": 10480,
+              "x": 2826.771728515625,
+              "y": 1523.8824462890625
+            }
+          ],
+          "prior_probes": [
+            {
+              "source_id": 26,
+              "hyg_id": 88494,
+              "name": "72    Oph",
+              "xy": [
+                2896.3994140625,
+                1520.5263671875
+              ],
+              "world": [
+                0.03161822751901749,
+                -0.9855940381060753,
+                0.16614656101862588
+              ],
+              "radec": [
+                271.83744,
+                9.563847
+              ],
+              "outside_both_inputs": false
+            }
+          ],
+          "previous_review": [],
+          "catalogue_neighbours": [],
+          "label": "visible_source",
+          "selected_row": 83,
+          "note": "Isolated bright core and diffuse halo; prior conditional72Oph source."
+        },
+        {
+          "id": 13,
+          "detection_index": 31,
+          "hyg_id": 99706,
+          "name": "5Alp1Cap",
+          "mag": 4.3,
+          "world": [
+            0.5517255489380437,
+            -0.8054143156210187,
+            -0.21657954391340906
+          ],
+          "radec": [
+            304.4119540411327,
+            -12.508212186018914
+          ],
+          "review_center": [
+            1296.9812567406757,
+            2495.7051185620453
+          ],
+          "detection": {
+            "area": 109,
+            "elongation": 1.5398818254470825,
+            "flux": 72.1843032836914,
+            "peak": 0.8431985378265381,
+            "rank": 31,
+            "snr": 151.6929168701172,
+            "x": 1296.9812567406757,
+            "y": 2495.7051185620453
+          },
+          "choices": [
+            {
+              "row": 30,
+              "x": 1296.624755859375,
+              "y": 2495.767333984375
+            },
+            {
+              "row": 2183,
+              "x": 1313.4083251953125,
+              "y": 2487.59814453125
+            },
+            {
+              "row": 342,
+              "x": 1266.0423583984375,
+              "y": 2505.257568359375
+            }
+          ],
+          "prior_probes": [],
+          "previous_review": [],
+          "catalogue_neighbours": [
+            {
+              "hyg_id": 99743,
+              "mag": 3.58,
+              "separation_deg": 0.10573820363717099
+            }
+          ],
+          "label": "blend",
+          "selected_row": 30,
+          "note": "Horizontally extended/partly merged core; nearby brighter HYG99743 at0.10574deg makes an individual Alpha1Cap centroid uncertain."
+        },
+        {
+          "id": 14,
+          "detection_index": 0,
+          "hyg_id": 97338,
+          "name": "Altair",
+          "mag": 0.76,
+          "world": [
+            0.45922104601892144,
+            -0.8748425292268573,
+            0.1541641331478984
+          ],
+          "radec": [
+            297.6958129596444,
+            8.868321945068327
+          ],
+          "review_center": [
+            1627.5606997010116,
+            1497.1263230071963
+          ],
+          "detection": {
+            "area": 396,
+            "elongation": 1.1941388845443726,
+            "flux": 220.12962341308594,
+            "peak": 0.777675986289978,
+            "rank": 0,
+            "snr": 242.69827270507812,
+            "x": 1627.5606997010116,
+            "y": 1497.1263230071963
+          },
+          "choices": [
+            {
+              "row": 2,
+              "x": 1627.43896484375,
+              "y": 1497.023193359375
+            },
+            {
+              "row": 7207,
+              "x": 1667.1231689453125,
+              "y": 1498.0213623046875
+            },
+            {
+              "row": 977,
+              "x": 1622.6458740234375,
+              "y": 1455.5369873046875
+            }
+          ],
+          "prior_probes": [
+            {
+              "source_id": 0,
+              "hyg_id": 97338,
+              "name": "Altair",
+              "xy": [
+                1627.43896484375,
+                1497.023193359375
+              ],
+              "world": [
+                0.4592211534485852,
+                -0.8748424726681002,
+                0.15416413409517546
+              ],
+              "radec": [
+                297.69582,
+                8.868322
+              ],
+              "outside_both_inputs": false
+            }
+          ],
+          "previous_review": [],
+          "catalogue_neighbours": [],
+          "label": "visible_source",
+          "selected_row": 2,
+          "note": "Bright broad core and halo, neighbours separated; prior conditional Altair source."
+        },
+        {
+          "id": 15,
+          "detection_index": 36,
+          "hyg_id": 105003,
+          "name": "",
+          "mag": 6.29,
+          "world": [
+            0.7107422637727193,
+            -0.5951451131823825,
+            0.3750303037653881
+          ],
+          "radec": [
+            320.0586370910683,
+            22.026185806697306
+          ],
+          "review_center": [
+            352.42484121763647,
+            392.56484021257506
+          ],
+          "detection": {
+            "area": 111,
+            "elongation": 2.165091037750244,
+            "flux": 68.72565460205078,
+            "peak": 0.8314619660377502,
+            "rank": 36,
+            "snr": 143.1176300048828,
+            "x": 352.42484121763647,
+            "y": 392.56484021257506
+          },
+          "choices": [
+            {
+              "row": 187,
+              "x": 351.8179626464844,
+              "y": 392.43157958984375
+            },
+            {
+              "row": 6421,
+              "x": 350.42327880859375,
+              "y": 412.9603576660156
+            },
+            {
+              "row": 10929,
+              "x": 378.1047058105469,
+              "y": 403.33526611328125
+            }
+          ],
+          "prior_probes": [],
+          "previous_review": [],
+          "catalogue_neighbours": [],
+          "label": "ambiguous",
+          "selected_row": 187,
+          "note": "Strongly asymmetric comet-like stellar feature with nearby structure. Treat centre/individual-source identity as ambiguous; no nonstellar feature is demonstrated."
+        },
+        {
+          "id": 16,
+          "detection_index": 15,
+          "hyg_id": 105798,
+          "name": "2    Peg",
+          "mag": 4.52,
+          "world": [
+            0.7266579749821556,
+            -0.5578451144776585,
+            0.40097009320925797
+          ],
+          "radec": [
+            322.4870573401289,
+            23.63883770647701
+          ],
+          "review_center": [
+            162.37433051001227,
+            191.64342087956757
+          ],
+          "detection": {
+            "area": 136,
+            "elongation": 1.4026508331298828,
+            "flux": 91.8733139038086,
+            "peak": 0.8623075485229492,
+            "rank": 15,
+            "snr": 172.84454345703125,
+            "x": 162.37433051001227,
+            "y": 191.64342087956757
+          },
+          "choices": [
+            {
+              "row": 18,
+              "x": 162.1416778564453,
+              "y": 191.26304626464844
+            },
+            {
+              "row": 7068,
+              "x": 137.9537811279297,
+              "y": 191.76431274414062
+            },
+            {
+              "row": 525,
+              "x": 154.64549255371094,
+              "y": 162.7027587890625
+            }
+          ],
+          "prior_probes": [],
+          "previous_review": [],
+          "catalogue_neighbours": [],
+          "label": "visible_source",
+          "selected_row": 18,
+          "note": "Elongated bright stellar core with a tail; centre visible but shape may bias centroid."
+        },
+        {
+          "id": 17,
+          "detection_index": 27,
+          "hyg_id": 107213,
+          "name": "Deneb Algedi",
+          "mag": 2.85,
+          "world": [
+            0.8034691704510923,
+            -0.5265737481718936,
+            -0.2777721725998425
+          ],
+          "radec": [
+            326.76016140150404,
+            -16.12728590376644
+          ],
+          "review_center": [
+            185.83060339790092,
+            2706.792362706958
+          ],
+          "detection": {
+            "area": 111,
+            "elongation": 1.2874555587768555,
+            "flux": 73.85314178466797,
+            "peak": 0.8052552342414856,
+            "rank": 27,
+            "snr": 153.7953643798828,
+            "x": 185.83060339790092,
+            "y": 2706.792362706958
+          },
+          "choices": [
+            {
+              "row": 29,
+              "x": 185.93626403808594,
+              "y": 2706.7666015625
+            },
+            {
+              "row": 9747,
+              "x": 158.63511657714844,
+              "y": 2714.19775390625
+            },
+            {
+              "row": 4215,
+              "x": 183.7317657470703,
+              "y": 2739.719970703125
+            }
+          ],
+          "prior_probes": [
+            {
+              "source_id": 9,
+              "hyg_id": 107213,
+              "name": "Deneb Algedi",
+              "xy": [
+                185.93626403808594,
+                2706.7666015625
+              ],
+              "world": [
+                0.8034692031326626,
+                -0.5265736974537935,
+                -0.277772174213338
+              ],
+              "radec": [
+                326.760165,
+                -16.127286
+              ],
+              "outside_both_inputs": false
+            }
+          ],
+          "previous_review": [],
+          "catalogue_neighbours": [],
+          "label": "visible_source",
+          "selected_row": 29,
+          "note": "Isolated bright core; prior conditional Deneb Algedi source."
+        },
+        {
+          "id": 18,
+          "detection_index": 24,
+          "hyg_id": 92654,
+          "name": "Alya",
+          "mag": 4.62,
+          "world": [
+            0.24219864689008364,
+            -0.9674537776629685,
+            0.07330077441790239
+          ],
+          "radec": [
+            284.0549259797213,
+            4.203595077551282
+          ],
+          "review_center": [
+            2247.4532154443564,
+            1780.8768867102397
+          ],
+          "detection": {
+            "area": 118,
+            "elongation": 1.3774529695510864,
+            "flux": 76.42463684082031,
+            "peak": 0.8734097480773926,
+            "rank": 24,
+            "snr": 154.35765075683594,
+            "x": 2247.4532154443564,
+            "y": 1780.8768867102397
+          },
+          "choices": [
+            {
+              "row": 69,
+              "x": 2246.85498046875,
+              "y": 1781.0191650390625
+            },
+            {
+              "row": 6192,
+              "x": 2242.630126953125,
+              "y": 1757.032470703125
+            },
+            {
+              "row": 6212,
+              "x": 2226.3251953125,
+              "y": 1801.5159912109375
+            }
+          ],
+          "prior_probes": [],
+          "previous_review": [],
+          "catalogue_neighbours": [
+            {
+              "hyg_id": 92659,
+              "mag": 4.98,
+              "separation_deg": 0.00624526522924388
+            },
+            {
+              "hyg_id": 92692,
+              "mag": 6.71,
+              "separation_deg": 0.11714880388346093
+            }
+          ],
+          "label": "blend",
+          "selected_row": 69,
+          "note": "Visible compact core, but HYG92659 at0.006245deg is unresolved at this image scale. Photocentre cannot independently certify the selected component."
+        },
+        {
+          "id": 19,
+          "detection_index": 26,
+          "hyg_id": 106263,
+          "name": "",
+          "mag": 6.22,
+          "world": [
+            0.735169204767234,
+            -0.5368290657660095,
+            0.41393332133413263
+          ],
+          "radec": [
+            323.86264838976734,
+            24.45216059323962
+          ],
+          "review_center": [
+            48.13015642939726,
+            74.21148880589786
+          ],
+          "detection": {
+            "area": 119,
+            "elongation": 1.6829864978790283,
+            "flux": 74.57620239257812,
+            "peak": 0.7919213771820068,
+            "rank": 26,
+            "snr": 149.99008178710938,
+            "x": 48.13015642939726,
+            "y": 74.21148880589786
+          },
+          "choices": [
+            {
+              "row": 58,
+              "x": 47.9981803894043,
+              "y": 74.18824005126953
+            },
+            {
+              "row": 6942,
+              "x": 63.972747802734375,
+              "y": 58.300785064697266
+            },
+            {
+              "row": 3941,
+              "x": 80.09148406982422,
+              "y": 51.48664474487305
+            }
+          ],
+          "prior_probes": [],
+          "previous_review": [],
+          "catalogue_neighbours": [],
+          "label": "ambiguous",
+          "selected_row": 58,
+          "note": "Elongated asymmetric stellar feature close to the upper-left image corner in a crowded patch. No clean isolated centre is established; proposed catalogue identity remains conditional."
+        },
+        {
+          "id": 20,
+          "detection_index": 8,
+          "hyg_id": 86475,
+          "name": "Cebalrai",
+          "mag": 2.76,
+          "world": [
+            -0.07182330574330477,
+            -0.9942336062731959,
+            0.07963007540558753
+          ],
+          "radec": [
+            265.8681379130974,
+            4.567302782268614
+          ],
+          "review_center": [
+            3173.2877985889386,
+            1805.1285969382386
+          ],
+          "detection": {
+            "area": 232,
+            "elongation": 1.1808816194534302,
+            "flux": 120.17919921875,
+            "peak": 0.8277094960212708,
+            "rank": 8,
+            "snr": 173.1095733642578,
+            "x": 3173.2877985889386,
+            "y": 1805.1285969382386
+          },
+          "choices": [
+            {
+              "row": 7,
+              "x": 3173.243896484375,
+              "y": 1805.191650390625
+            },
+            {
+              "row": 2321,
+              "x": 3192.762939453125,
+              "y": 1816.4249267578125
+            },
+            {
+              "row": 4029,
+              "x": 3207.72509765625,
+              "y": 1828.7548828125
+            }
+          ],
+          "prior_probes": [
+            {
+              "source_id": 8,
+              "hyg_id": 86475,
+              "name": "Cebalrai",
+              "xy": [
+                3173.243896484375,
+                1805.191650390625
+              ],
+              "world": [
+                -0.07182318274496119,
+                -0.9942336148551792,
+                0.07963007919364973
+              ],
+              "radec": [
+                265.868145,
+                4.567303
+              ],
+              "outside_both_inputs": false
+            }
+          ],
+          "previous_review": [
+            {
+              "id": 8,
+              "hyg_id": 86475,
+              "name": "Cebalrai",
+              "mag": 2.76,
+              "world": [
+                -0.07182330574330477,
+                -0.9942336062731959,
+                0.07963007540558753
+              ],
+              "radec": [
+                265.8681379130974,
+                4.567302782268614
+              ],
+              "detection": {
+                "area": 232,
+                "elongation": 1.1808816194534302,
+                "flux": 120.17919921875,
+                "peak": 0.8277094960212708,
+                "rank": 8,
+                "snr": 173.1095733642578,
+                "x": 3173.2877985889386,
+                "y": 1805.1285969382386
+              },
+              "review_center": [
+                3173.2877985889386,
+                1805.1285969382386
+              ],
+              "choices": [
+                {
+                  "row": 7,
+                  "x": 3173.243896484375,
+                  "y": 1805.191650390625
+                },
+                {
+                  "row": 2321,
+                  "x": 3192.762939453125,
+                  "y": 1816.4249267578125
+                },
+                {
+                  "row": 4029,
+                  "x": 3207.72509765625,
+                  "y": 1828.7548828125
+                }
+              ],
+              "prior_probes": [
+                {
+                  "source_id": 8,
+                  "hyg_id": 86475,
+                  "name": "Cebalrai",
+                  "xy": [
+                    3173.243896484375,
+                    1805.191650390625
+                  ],
+                  "world": [
+                    -0.07182318274496119,
+                    -0.9942336148551792,
+                    0.07963007919364973
+                  ],
+                  "radec": [
+                    265.868145,
+                    4.567303
+                  ],
+                  "outside_both_inputs": false
+                }
+              ],
+              "catalogue_neighbours": [],
+              "label": "visible_source",
+              "selected_row": 7,
+              "note": "Visible compact bright stellar core with a halo and separated neighbours; same conditional Cebalrai identity as iteration13."
+            }
+          ],
+          "catalogue_neighbours": [],
+          "label": "visible_source",
+          "selected_row": 7,
+          "note": "Compact bright core; neighbouring stars separated; prior conditional Cebalrai source."
+        },
+        {
+          "id": 21,
+          "detection_index": 35,
+          "hyg_id": 98232,
+          "name": "15    Vul",
+          "mag": 4.66,
+          "world": [
+            0.4461550656805437,
+            -0.7642626382547811,
+            0.46566970820038445
+          ],
+          "radec": [
+            300.2751826921333,
+            27.75357302641893
+          ],
+          "review_center": [
+            1534.559828215783,
+            209.78997768996084
+          ],
+          "detection": {
+            "area": 107,
+            "elongation": 1.4965529441833496,
+            "flux": 69.36082458496094,
+            "peak": 0.8836923837661743,
+            "rank": 35,
+            "snr": 147.1154022216797,
+            "x": 1534.559828215783,
+            "y": 209.78997768996084
+          },
+          "choices": [
+            {
+              "row": 50,
+              "x": 1534.1351318359375,
+              "y": 209.60935974121094
+            },
+            {
+              "row": 4048,
+              "x": 1517.7423095703125,
+              "y": 216.74078369140625
+            },
+            {
+              "row": 7327,
+              "x": 1534.00732421875,
+              "y": 186.3333740234375
+            }
+          ],
+          "prior_probes": [],
+          "previous_review": [],
+          "catalogue_neighbours": [],
+          "label": "visible_source",
+          "selected_row": 50,
+          "note": "Vertically extended single dominant core; distant neighbouring sources separated."
+        },
+        {
+          "id": 22,
+          "detection_index": 33,
+          "hyg_id": 86839,
+          "name": "Bake-eo",
+          "mag": 3.75,
+          "world": [
+            -0.05274467066820909,
+            -0.9974903583046678,
+            0.04723330186772314
+          ],
+          "radec": [
+            266.9731685654706,
+            2.707276135187272
+          ],
+          "review_center": [
+            3090.6109377141797,
+            1902.6384879164111
+          ],
+          "detection": {
+            "area": 116,
+            "elongation": 1.1341021060943604,
+            "flux": 70.70034790039062,
+            "peak": 0.7487055659294128,
+            "rank": 33,
+            "snr": 144.02183532714844,
+            "x": 3090.6109377141797,
+            "y": 1902.6384879164111
+          },
+          "choices": [
+            {
+              "row": 104,
+              "x": 3090.471435546875,
+              "y": 1902.652099609375
+            },
+            {
+              "row": 1156,
+              "x": 3135.17529296875,
+              "y": 1911.5997314453125
+            },
+            {
+              "row": 3116,
+              "x": 3063.18017578125,
+              "y": 1940.6788330078125
+            }
+          ],
+          "prior_probes": [],
+          "previous_review": [],
+          "catalogue_neighbours": [],
+          "label": "visible_source",
+          "selected_row": 104,
+          "note": "Compact central core with halo; isolated at the core scale."
+        },
+        {
+          "id": 23,
+          "detection_index": 10,
+          "hyg_id": 95648,
+          "name": "Albireo",
+          "mag": 3.05,
+          "world": [
+            0.34058255974967133,
+            -0.8149742861185902,
+            0.468850117798701
+          ],
+          "radec": [
+            292.6803376151922,
+            27.95968105221719
+          ],
+          "review_center": [
+            1945.2860354663535,
+            245.27525646821746
+          ],
+          "detection": {
+            "area": 195,
+            "elongation": 1.303446888923645,
+            "flux": 105.90513610839844,
+            "peak": 0.7823041081428528,
+            "rank": 10,
+            "snr": 166.39317321777344,
+            "x": 1945.2860354663535,
+            "y": 245.27525646821746
+          },
+          "choices": [
+            {
+              "row": 13,
+              "x": 1945.6640625,
+              "y": 245.78872680664062
+            },
+            {
+              "row": 3064,
+              "x": 1923.3984375,
+              "y": 246.96243286132812
+            },
+            {
+              "row": 3002,
+              "x": 1967.17041015625,
+              "y": 250.80911254882812
+            }
+          ],
+          "prior_probes": [
+            {
+              "source_id": 12,
+              "hyg_id": 95648,
+              "name": "Albireo",
+              "xy": [
+                1945.6640625,
+                245.78872680664062
+              ],
+              "world": [
+                0.3405826649558201,
+                -0.8149742426154161,
+                0.4688501169937153
+              ],
+              "radec": [
+                292.680345,
+                27.959681
+              ],
+              "outside_both_inputs": false
+            }
+          ],
+          "previous_review": [],
+          "catalogue_neighbours": [
+            {
+              "hyg_id": 95652,
+              "mag": 5.12,
+              "separation_deg": 0.009584462621755798
+            }
+          ],
+          "label": "blend",
+          "selected_row": 13,
+          "note": "Bright saturated-looking core/halo; HYG95652 at0.009584deg is unresolved. Individual Albireo component versus combined-light centroid is uncertain."
+        },
+        {
+          "id": 24,
+          "detection_index": 2,
+          "hyg_id": 85769,
+          "name": "Rasalhague",
+          "mag": 2.08,
+          "world": [
+            -0.10653892245312915,
+            -0.9702368451367525,
+            0.21746246191379226
+          ],
+          "radec": [
+            263.733620316376,
+            12.560034753719908
+          ],
+          "review_center": [
+            3407.0964793541057,
+            1330.391608961908
+          ],
+          "detection": {
+            "area": 309,
+            "elongation": 1.330912709236145,
+            "flux": 149.00083923339844,
+            "peak": 0.7192736864089966,
+            "rank": 2,
+            "snr": 185.97100830078125,
+            "x": 3407.0964793541057,
+            "y": 1330.391608961908
+          },
+          "choices": [
+            {
+              "row": 0,
+              "x": 3406.705810546875,
+              "y": 1330.2852783203125
+            },
+            {
+              "row": 1110,
+              "x": 3384.843505859375,
+              "y": 1363.6395263671875
+            },
+            {
+              "row": 541,
+              "x": 3424.505615234375,
+              "y": 1290.726806640625
+            }
+          ],
+          "prior_probes": [
+            {
+              "source_id": 2,
+              "hyg_id": 85769,
+              "name": "Rasalhague",
+              "xy": [
+                3406.705810546875,
+                1330.2852783203125
+              ],
+              "world": [
+                -0.10653901237769516,
+                -0.9702368343220311,
+                0.2174624661093244
+              ],
+              "radec": [
+                263.733615,
+                12.560035
+              ],
+              "outside_both_inputs": false
+            }
+          ],
+          "previous_review": [
+            {
+              "id": 2,
+              "hyg_id": 85769,
+              "name": "Rasalhague",
+              "mag": 2.08,
+              "world": [
+                -0.10653892245312915,
+                -0.9702368451367525,
+                0.21746246191379226
+              ],
+              "radec": [
+                263.733620316376,
+                12.560034753719908
+              ],
+              "detection": {
+                "area": 309,
+                "elongation": 1.330912709236145,
+                "flux": 149.00083923339844,
+                "peak": 0.7192736864089966,
+                "rank": 2,
+                "snr": 185.97100830078125,
+                "x": 3407.0964793541057,
+                "y": 1330.391608961908
+              },
+              "review_center": [
+                3407.0964793541057,
+                1330.391608961908
+              ],
+              "choices": [
+                {
+                  "row": 0,
+                  "x": 3406.705810546875,
+                  "y": 1330.2852783203125
+                },
+                {
+                  "row": 1110,
+                  "x": 3384.843505859375,
+                  "y": 1363.6395263671875
+                },
+                {
+                  "row": 541,
+                  "x": 3424.505615234375,
+                  "y": 1290.726806640625
+                }
+              ],
+              "prior_probes": [
+                {
+                  "source_id": 2,
+                  "hyg_id": 85769,
+                  "name": "Rasalhague",
+                  "xy": [
+                    3406.705810546875,
+                    1330.2852783203125
+                  ],
+                  "world": [
+                    -0.10653901237769516,
+                    -0.9702368343220311,
+                    0.2174624661093244
+                  ],
+                  "radec": [
+                    263.733615,
+                    12.560035
+                  ],
+                  "outside_both_inputs": false
+                }
+              ],
+              "catalogue_neighbours": [],
+              "label": "visible_source",
+              "selected_row": 0,
+              "note": "Visible bright compact stellar core with a diffuse halo; same conditional Rasalhague source as iteration13. Nearby small sources are separated."
+            }
+          ],
+          "catalogue_neighbours": [],
+          "label": "visible_source",
+          "selected_row": 0,
+          "note": "Bright broad core with halo, surrounding sources separated; prior conditional Rasalhague source."
+        },
+        {
+          "id": 25,
+          "detection_index": 18,
+          "hyg_id": 89860,
+          "name": "Tusizuo",
+          "mag": 3.85,
+          "world": [
+            0.09585660048469527,
+            -0.9237214459269354,
+            0.3708776111848348
+          ],
+          "radec": [
+            275.92450310094944,
+            21.769752017200158
+          ],
+          "review_center": [
+            2800.3757813305338,
+            740.1635727017103
+          ],
+          "detection": {
+            "area": 134,
+            "elongation": 1.379285216331482,
+            "flux": 86.08153533935547,
+            "peak": 0.8307358622550964,
+            "rank": 18,
+            "snr": 163.15235900878906,
+            "x": 2800.3757813305338,
+            "y": 740.1635727017103
+          },
+          "choices": [
+            {
+              "row": 10,
+              "x": 2800.34033203125,
+              "y": 740.2146606445312
+            },
+            {
+              "row": 1355,
+              "x": 2777.9951171875,
+              "y": 721.6359252929688
+            },
+            {
+              "row": 1101,
+              "x": 2824.29345703125,
+              "y": 758.0903930664062
+            }
+          ],
+          "prior_probes": [],
+          "previous_review": [],
+          "catalogue_neighbours": [],
+          "label": "visible_source",
+          "selected_row": 10,
+          "note": "Compact bright core, background/nearby sources distinct."
+        },
+        {
+          "id": 26,
+          "detection_index": 12,
+          "hyg_id": 99213,
+          "name": "20    Vul",
+          "mag": 5.91,
+          "world": [
+            0.48754431862525716,
+            -0.7506686212773303,
+            0.4458667496078012
+          ],
+          "radec": [
+            303.00292125420384,
+            26.478806498330275
+          ],
+          "review_center": [
+            1382.9934139828933,
+            293.5595635548928
+          ],
+          "detection": {
+            "area": 185,
+            "elongation": 2.385253667831421,
+            "flux": 96.45096588134766,
+            "peak": 0.8243528008460999,
+            "rank": 12,
+            "snr": 155.58096313476562,
+            "x": 1382.9934139828933,
+            "y": 293.5595635548928
+          },
+          "choices": [
+            {
+              "row": 172,
+              "x": 1381.6767578125,
+              "y": 291.43914794921875
+            },
+            {
+              "row": 68,
+              "x": 1384.630859375,
+              "y": 264.3603210449219
+            },
+            {
+              "row": 115,
+              "x": 1402.0421142578125,
+              "y": 259.0128173828125
+            }
+          ],
+          "prior_probes": [],
+          "previous_review": [],
+          "catalogue_neighbours": [],
+          "label": "ambiguous",
+          "selected_row": 172,
+          "note": "Multiple bright lobes along a vertical crowded chain near the marked centre; component association and centroid are ambiguous."
+        },
+        {
+          "id": 27,
+          "detection_index": 32,
+          "hyg_id": 89684,
+          "name": "58Eta Ser",
+          "mag": 3.23,
+          "world": [
+            0.09272975759885585,
+            -0.9944061636498073,
+            -0.05057246040020234
+          ],
+          "radec": [
+            275.3275044198219,
+            -2.898825096948348
+          ],
+          "review_center": [
+            2613.3399325129826,
+            2152.152043990571
+          ],
+          "detection": {
+            "area": 105,
+            "elongation": 1.1908953189849854,
+            "flux": 70.98046112060547,
+            "peak": 0.8620126843452454,
+            "rank": 32,
+            "snr": 151.97772216796875,
+            "x": 2613.3399325129826,
+            "y": 2152.152043990571
+          },
+          "choices": [
+            {
+              "row": 26,
+              "x": 2613.208251953125,
+              "y": 2152.3046875
+            },
+            {
+              "row": 8186,
+              "x": 2619.3037109375,
+              "y": 2127.111328125
+            },
+            {
+              "row": 5032,
+              "x": 2638.673095703125,
+              "y": 2167.26123046875
+            }
+          ],
+          "prior_probes": [
+            {
+              "source_id": 14,
+              "hyg_id": 89684,
+              "name": "58Eta Ser",
+              "xy": [
+                2613.208251953125,
+                2152.3046875
+              ],
+              "world": [
+                0.09272976767617692,
+                -0.9944061627960263,
+                -0.050572458710299646
+              ],
+              "radec": [
+                275.32750500000003,
+                -2.898825
+              ],
+              "outside_both_inputs": false
+            }
+          ],
+          "previous_review": [],
+          "catalogue_neighbours": [],
+          "label": "visible_source",
+          "selected_row": 26,
+          "note": "Compact isolated core; prior conditional Eta Ser source."
+        },
+        {
+          "id": 28,
+          "detection_index": 7,
+          "hyg_id": 106972,
+          "name": "Enif",
+          "mag": 2.38,
+          "world": [
+            0.8172014773333081,
+            -0.5502451152643005,
+            0.17149944190006966
+          ],
+          "radec": [
+            326.0464905966536,
+            9.8750112246331
+          ],
+          "review_center": [
+            30.355548020369216,
+            1214.3710247279955
+          ],
+          "detection": {
+            "area": 221,
+            "elongation": 1.6537457704544067,
+            "flux": 121.29505920410156,
+            "peak": 0.8715475797653198,
+            "rank": 7,
+            "snr": 179.01223754882812,
+            "x": 30.355548020369216,
+            "y": 1214.3710247279955
+          },
+          "choices": [
+            {
+              "row": 5,
+              "x": 30.319442749023438,
+              "y": 1215.0673828125
+            },
+            {
+              "row": 1089,
+              "x": 56.80483627319336,
+              "y": 1198.4306640625
+            },
+            {
+              "row": 3057,
+              "x": 67.48040771484375,
+              "y": 1213.4200439453125
+            }
+          ],
+          "prior_probes": [
+            {
+              "source_id": 3,
+              "hyg_id": 106972,
+              "name": "Enif",
+              "xy": [
+                30.319442749023438,
+                1215.0673828125
+              ],
+              "world": [
+                0.8172015201789665,
+                -0.5502450528355382,
+                0.171499438037569
+              ],
+              "radec": [
+                326.04649500000005,
+                9.875011
+              ],
+              "outside_both_inputs": false
+            }
+          ],
+          "previous_review": [
+            {
+              "id": 7,
+              "hyg_id": 106972,
+              "name": "Enif",
+              "mag": 2.38,
+              "world": [
+                0.8172014773333081,
+                -0.5502451152643005,
+                0.17149944190006966
+              ],
+              "radec": [
+                326.0464905966536,
+                9.8750112246331
+              ],
+              "detection": {
+                "area": 221,
+                "elongation": 1.6537457704544067,
+                "flux": 121.29505920410156,
+                "peak": 0.8715475797653198,
+                "rank": 7,
+                "snr": 179.01223754882812,
+                "x": 30.355548020369216,
+                "y": 1214.3710247279955
+              },
+              "review_center": [
+                30.355548020369216,
+                1214.3710247279955
+              ],
+              "choices": [
+                {
+                  "row": 5,
+                  "x": 30.319442749023438,
+                  "y": 1215.0673828125
+                },
+                {
+                  "row": 1089,
+                  "x": 56.80483627319336,
+                  "y": 1198.4306640625
+                },
+                {
+                  "row": 3057,
+                  "x": 67.48040771484375,
+                  "y": 1213.4200439453125
+                }
+              ],
+              "prior_probes": [
+                {
+                  "source_id": 3,
+                  "hyg_id": 106972,
+                  "name": "Enif",
+                  "xy": [
+                    30.319442749023438,
+                    1215.0673828125
+                  ],
+                  "world": [
+                    0.8172015201789665,
+                    -0.5502450528355382,
+                    0.171499438037569
+                  ],
+                  "radec": [
+                    326.04649500000005,
+                    9.875011
+                  ],
+                  "outside_both_inputs": false
+                }
+              ],
+              "catalogue_neighbours": [],
+              "label": "visible_source",
+              "selected_row": 5,
+              "note": "Visible elongated stellar core near left image edge; core itself is inside frame. Same conditional Enif identity as iteration13. Elongation and halo may affect centroid."
+            }
+          ],
+          "catalogue_neighbours": [],
+          "label": "visible_source",
+          "selected_row": 5,
+          "note": "Elongated stellar core near left edge; core itself is within the image; prior conditional Enif source."
+        },
+        {
+          "id": 29,
+          "detection_index": 22,
+          "hyg_id": 88610,
+          "name": "Ramus",
+          "mag": 4.37,
+          "world": [
+            0.03571201566126037,
+            -0.934052979295034,
+            0.35534445796646486
+          ],
+          "radec": [
+            272.1895456464847,
+            20.814556885095985
+          ],
+          "review_center": [
+            3004.3420105010523,
+            796.247024862761
+          ],
+          "detection": {
+            "area": 131,
+            "elongation": 1.334762454032898,
+            "flux": 80.67738342285156,
+            "peak": 0.7743968367576599,
+            "rank": 22,
+            "snr": 154.6507110595703,
+            "x": 3004.3420105010523,
+            "y": 796.247024862761
+          },
+          "choices": [
+            {
+              "row": 67,
+              "x": 3004.26806640625,
+              "y": 796.2713012695312
+            },
+            {
+              "row": 4149,
+              "x": 2979.638427734375,
+              "y": 782.8323974609375
+            },
+            {
+              "row": 9357,
+              "x": 2972.5751953125,
+              "y": 811.5543212890625
+            }
+          ],
+          "prior_probes": [],
+          "previous_review": [],
+          "catalogue_neighbours": [],
+          "label": "visible_source",
+          "selected_row": 67,
+          "note": "Compact dominant core with coloured halo; neighbouring sources distinct."
+        },
+        {
+          "id": 30,
+          "detection_index": 21,
+          "hyg_id": 87994,
+          "name": "Bodu",
+          "mag": 4.26,
+          "world": [
+            0.006113042491110719,
+            -0.9297834862448622,
+            0.36805610906199093
+          ],
+          "radec": [
+            270.3766968259906,
+            21.595782348089134
+          ],
+          "review_center": [
+            3124.3626968097506,
+            727.2490267565374
+          ],
+          "detection": {
+            "area": 122,
+            "elongation": 1.8847088813781738,
+            "flux": 81.0188980102539,
+            "peak": 0.834675133228302,
+            "rank": 21,
+            "snr": 160.93191528320312,
+            "x": 3124.3626968097506,
+            "y": 727.2490267565374
+          },
+          "choices": [
+            {
+              "row": 31,
+              "x": 3123.57421875,
+              "y": 728.0272827148438
+            },
+            {
+              "row": 5193,
+              "x": 3146.24072265625,
+              "y": 703.1947021484375
+            },
+            {
+              "row": 2799,
+              "x": 3125.027587890625,
+              "y": 679.8197631835938
+            }
+          ],
+          "prior_probes": [],
+          "previous_review": [],
+          "catalogue_neighbours": [],
+          "label": "visible_source",
+          "selected_row": 31,
+          "note": "Elongated dominant stellar core; weaker nearby sources separated."
+        }
+      ]
+    }
+  ]
+}

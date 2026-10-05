@@ -1,0 +1,72 @@
+{
+  "iteration": 26,
+  "source_sha256": "1a744ac5c48f6d26d3ce7e491b5c16876a511d18ac44da1268817e1eb651c7b2",
+  "formula": "Euclidean distance between saved stage predicted_xy and image-only native/external centroids; no fit or rematch",
+  "radius_px": 3,
+  "points": [
+    {
+      "detection_index": 2,
+      "arm": "control",
+      "detector": 3.683019113350243,
+      "r8": 3.7273743506412855,
+      "r12": 3.869210355148617,
+      "external": 4.052653779260422
+    },
+    {
+      "detection_index": 2,
+      "arm": "huber",
+      "detector": 2.984964960985509,
+      "r8": 3.029514287396704,
+      "r12": 3.1688761898369777,
+      "external": 3.360222501431426
+    },
+    {
+      "detection_index": 19,
+      "arm": "control",
+      "detector": 2.6392290844835795,
+      "r8": 2.6749829217088794,
+      "r12": 2.471624346923746,
+      "external": 2.0616140486758043
+    },
+    {
+      "detection_index": 19,
+      "arm": "huber",
+      "detector": 3.1105991931424537,
+      "r8": 3.152538503042919,
+      "r12": 2.976611682910248,
+      "external": 2.561629924953085
+    },
+    {
+      "detection_index": 37,
+      "arm": "control",
+      "detector": 2.906302695163167,
+      "r8": 2.8237917883098382,
+      "r12": 2.861098281743333,
+      "external": 2.8374771387847053
+    },
+    {
+      "detection_index": 37,
+      "arm": "huber",
+      "detector": 3.4355370553572286,
+      "r8": 3.3511272952203393,
+      "r12": 3.380033528666525,
+      "external": 3.364478750027871
+    },
+    {
+      "detection_index": 39,
+      "arm": "control",
+      "detector": 2.8002792671000996,
+      "r8": 2.675914839017752,
+      "r12": 2.2397045005493768,
+      "external": 2.43267141255038
+    },
+    {
+      "detection_index": 39,
+      "arm": "huber",
+      "detector": 3.273637230055225,
+      "r8": 3.1720268461452115,
+      "r12": 2.685607236387356,
+      "external": 2.9792030981154327
+    }
+  ]
+}

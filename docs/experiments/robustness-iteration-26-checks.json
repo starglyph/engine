@@ -1,0 +1,57 @@
+{
+  "iteration": 26,
+  "checks": {
+    "python": {
+      "command": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "eval",
+        "-p",
+        "test_*.py"
+      ],
+      "exit_code": 0,
+      "elapsed_s": 4.535799069330096
+    },
+    "replay": {
+      "command": [
+        "/home/agent/work/starglyph/engine/prototype/artifacts/robustness-iteration-25/fixed/replay-test",
+        "--exact",
+        "solve::refinement_trace::replay::export",
+        "--ignored"
+      ],
+      "exit_code": 0,
+      "elapsed_s": 0.08087789081037045
+    }
+  },
+  "all_frozen_hashes_valid": true,
+  "protected_hashes": {
+    "data/samples/sky-samples/manifest.json": "97e229270c7b0f97fce4e1f738917cd91cdff01df3508db29584af70a0ea4871",
+    "data/samples/sky-samples/robustness-results.json": "09e6efe61468b4afe896967d583553751d80fe82e65e0ac064528523bbc525e8",
+    "data/samples/sky-samples/collection-wcs-review.json": "97c182c51955baee9adce93cde8e93fb98ece6a69bdc606cf871d3a1eef19841"
+  },
+  "artifact_hashes": {
+    "prototype/artifacts/robustness-iteration-26/protocol.json": "b34060a7cec00f446be31104664fd1c07c34f125326e2a5ecd2b63bf71eae6e7",
+    "prototype/artifacts/robustness-iteration-26/candidates.json": "c65c6004bd581c3fca36d42175998fb13b0c70409d0d3abca146cb0cf6eab162",
+    "prototype/artifacts/robustness-iteration-26/review.json": "21256017560041fcbc840af634f3949d8824e9fba5cf28d54559e0bb19180c22",
+    "prototype/artifacts/robustness-iteration-26/results.json": "1a744ac5c48f6d26d3ce7e491b5c16876a511d18ac44da1268817e1eb651c7b2",
+    "prototype/artifacts/robustness-iteration-26/centroid-sensitivity.json": "4059e39434433d41f30a5f1acee424364063d79750575796fde81dc2fea581df",
+    "prototype/artifacts/robustness-iteration-26/sources.png": "7d317bb7576efe8f3f0a0c2bdce9b27887a91b6aaa7b5040631313d94e9a6a6c",
+    "prototype/artifacts/robustness-iteration-26/overview.png": "b3fe0761213e857dc958060a3ab6faec805cb5e31ecddf6112e48db737cb4d6c",
+    "prototype/artifacts/robustness-iteration-26/foreground-5.png": "488713724b2fc816b39348401a2bc951ef2b70511445c37555176b2390958cf9",
+    "prototype/artifacts/robustness-iteration-26/drop-5/protocol.json": "cc641dfa336aad33591a5b8343f3bbfab4d7ac7e8853b80875a8e6d4f345449c",
+    "prototype/artifacts/robustness-iteration-26/drop-5/results.json": "34217362ea83500e4557e211b7fe7f851008b74ae3d16defeade33a98f22c0df",
+    "prototype/eval/test_robustness_changed_sources.py": "5250ef3520d1b1299a5ab928812b26a928bf830f7a72191b34472b79b319ff43"
+  },
+  "ignored_gate_reruns": "no Rust source or algorithm changes; use iteration24/25 gates; current tests cover offline observation and one manually reviewed exclusion",
+  "preparation_corrections": [
+    "external reference is unresolved: axy extraction is not WCS; record absent reference explicitly",
+    "catalogue identity lookup must use rarad/decrad as production does, not rounded ra/dec columns"
+  ],
+  "original_first_lm_exact_for_all_four_cases": true,
+  "new_searches": 0,
+  "new_wcs_runs": 0,
+  "holdout": false
+}

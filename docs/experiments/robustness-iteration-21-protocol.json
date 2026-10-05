@@ -1,0 +1,44 @@
+{
+  "iteration": 21,
+  "ids": [
+    "20260831_214709",
+    "20260831_214642",
+    "20260831_214748"
+  ],
+  "holdout": false,
+  "hashes": {
+    "docs/experiments/robustness-iteration-21-annotations.json": "2c5c0d5d321bf7b19c32a023f8be0571ed00b70f5d224b7f4fbd8f728075ef00",
+    "prototype/eval/robustness_image_transfer.py": "14ee2564b575e3da2217744dfdf41b1c83a5e4124b4d8773075a3ad2b9095d54",
+    "data/input/smartphone/manifest.json": "685ac5f435f18e85fa9c5bb81c6179bd0d0f8246329bc0da204f4f5fc5999814",
+    "docs/experiments/robustness-iteration-19-results.json": "9712d9297727f094efce4461c21f37efee8261b5bf7c78c5c82fa7e8266e809d",
+    "prototype/artifacts/robustness-iteration-18/fixed/gate-smartphone/run-rn57t8yp/solve-reports/20260831_214642.json": "fadabf0e8a692f10a49d8ac644f2b797793fddcc3c63e3e2a8b42cbf97156e01",
+    "prototype/artifacts/automatic-sky/extended-hinted-run-1/manual/solve-reports/20260831_214748.json": "76fc8721272912ea5b645cbaf69c20c49cdab0ffd54ee5a06d8b4faa26bf6bf6",
+    "data/input/smartphone/20260831_214709.jpg": "58017256429cb019f20fb52cca1ad99ca889d622821995df0b80d54a3c91e4c5",
+    "data/input/smartphone/20260831_214642.jpg": "9db284c3e1be361691b50d36947d3025b39424a6552f6ee2c40c6ace953ae7f7",
+    "data/input/smartphone/20260831_214748.jpg": "09bd7b0b93e6cb2f7aff1fb5fced161c3aa7a25269fd9d943a77b864dd60eaba",
+    "prototype/eval/review_external_stars.py": "089f7dc7e406b93843e392a3712d307d28cf01753826ae40b27e3334705fab56",
+    "prototype/eval/robustness_geometry.py": "b15495e6ba97832a84d06c4e83bfa16aec704784875fdeccb3f831ceec976034",
+    "prototype/eval/sky_statistics_experiment.py": "730165ad8d7797f84a8c5d4645a31fea08d2f304ebb2884ac5846da06031d7f5",
+    "prototype/eval/compare_local_wcs.py": "1a8c83f6d0a19f3cbbe2a96f0db79a0ab60ac33fd09ad6c5c69472672ef31a3b",
+    "prototype/eval/collection_run.py": "6bf1108b48c21a40bdd00023eae564c27c5062fd63beb45d32ddde86154bd5b5"
+  },
+  "source": "four visual image anchors; no catalogue or camera pose",
+  "controls": "three visually matched sources excluded from homography fitting; selected after provisional review",
+  "centroid_radii_px": [
+    8,
+    12
+  ],
+  "background_annulus_px": [
+    16,
+    22
+  ],
+  "photometry": "8-bit luminance; median annulus; scale=max(1,1.4826*MAD); descriptive contrast, not calibrated probability",
+  "contrast_aperture_px": 12,
+  "search_aperture_px": 20,
+  "criteria": [
+    "retain all four disputed sources, including out-of-frame and extrapolated predictions",
+    "report each control residual and aperture sensitivity without tuning anchor membership",
+    "absence cannot certify a false catalog match; changes in visibility remain possible",
+    "no algorithm change, reference promotion, new images, solve or WCS run"
+  ]
+}

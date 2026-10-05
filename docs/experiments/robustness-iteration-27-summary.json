@@ -1,0 +1,89 @@
+{
+  "all31": {
+    "count": 31,
+    "xy_min": [
+      30.355548020369216,
+      74.21148880589786
+    ],
+    "xy_max": [
+      3407.0964793541057,
+      2706.792362706958
+    ],
+    "width_fraction": 0.9256417026682392,
+    "height_fraction": 0.48110030590297154,
+    "offsets": {
+      "native_r8": {
+        "median_px": 0.11176124466819534,
+        "max_px": 0.5953748911641114
+      },
+      "native_r12": {
+        "median_px": 0.2991520888288673,
+        "max_px": 1.2208664893356183
+      },
+      "external": {
+        "median_px": 0.3618889845571864,
+        "max_px": 2.495945875178573
+      }
+    }
+  },
+  "single22": {
+    "count": 22,
+    "xy_min": [
+      30.355548020369216,
+      84.3476268480492
+    ],
+    "xy_max": [
+      3407.0964793541057,
+      2706.792362706958
+    ],
+    "width_fraction": 0.9256417026682392,
+    "height_fraction": 0.4792479414946837,
+    "offsets": {
+      "native_r8": {
+        "median_px": 0.08108521881518699,
+        "max_px": 0.554869119345468
+      },
+      "native_r12": {
+        "median_px": 0.2474870089620788,
+        "max_px": 1.2208664893356183
+      },
+      "external": {
+        "median_px": 0.17970953721242472,
+        "max_px": 1.1078718280321473
+      }
+    }
+  },
+  "final_six_inliers": [
+    {
+      "pair_id": 0,
+      "detection_index": 23,
+      "label": "blend"
+    },
+    {
+      "pair_id": 3,
+      "detection_index": 38,
+      "label": "visible_source"
+    },
+    {
+      "pair_id": 4,
+      "detection_index": 17,
+      "label": "visible_source"
+    },
+    {
+      "pair_id": 6,
+      "detection_index": 14,
+      "label": "blend"
+    },
+    {
+      "pair_id": 7,
+      "detection_index": 28,
+      "label": "visible_source"
+    },
+    {
+      "pair_id": 8,
+      "detection_index": 20,
+      "label": "ambiguous"
+    }
+  ],
+  "source_sha256": "347cb8123d4ad5a0e5cf5e6e9825974af553413290e6ab77ac87a9486f86e34a"
+}

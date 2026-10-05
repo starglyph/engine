@@ -1,0 +1,464 @@
+{
+  "iteration": 16,
+  "split": "development",
+  "protocol_sha256": "d32312f27349196c796e37cada533cac64878553723271919a94977c31d2f90e",
+  "frames": [
+    {
+      "id": "wm_r_132162731",
+      "normalization": {
+        "checks": {
+          "raw_file_hash": true,
+          "normalized_file_hash": true,
+          "replay_pixels_identical": true,
+          "replay_pixel_hash_matches_manifest": true,
+          "dimensions_match_manifest": true,
+          "orientation_matches_manifest": true,
+          "raw_dimensions_match_manifest": true
+        },
+        "metadata": {
+          "exif": {
+            "Make": "Canon",
+            "Model": "Canon EOS R6",
+            "Software": "Adobe Photoshop Camera Raw 13.3 (Macintosh)",
+            "FocalLength": "16.0"
+          },
+          "xmp": {
+            "status": "parsed",
+            "fields": {
+              "{http://ns.adobe.com/exif/1.0/aux/}DistortionCorrectionAlreadyApplied": [
+                "True"
+              ]
+            }
+          },
+          "raw_size": [
+            3648,
+            5472
+          ],
+          "raw_mode": "RGB",
+          "orientation": 1,
+          "normalized_size": [
+            3648,
+            5472
+          ],
+          "normalized_mode": "RGB",
+          "normalized_orientation": null,
+          "normalized_pixel_sha256": "d8b40d3d663e6d34b83768aa406cc69d8bdafc250ac80e4765b27fa1bdff17a6"
+        },
+        "physical_principal_point": null,
+        "pre_upload_crop": "unknown",
+        "pre_upload_resampling": "unknown"
+      },
+      "resize": {
+        "working_size": [
+          1067,
+          1600
+        ],
+        "scales": [
+          3.4189315838800374,
+          3.42
+        ],
+        "geometric_centre_roundtrip_max_abs_px": 0.0,
+        "pixel_area_boundary_max_abs_px": 0.0,
+        "fixed_centre_seed_offset_px": [
+          1.2094657919400187,
+          1.21
+        ],
+        "relative_axis_scale_difference": 0.00031249999999993783,
+        "focal_x_only_max_vertical_seed_error_px": 0.8547328959700451,
+        "production_refits_after_lift": true
+      },
+      "fixed_camera_shift": [
+        {
+          "name": "k1",
+          "groups": {
+            "all_reviewed": {
+              "count": 35,
+              "before_rms_px": 5.816929581605214,
+              "shifted_rms_px": 5.99753507823758,
+              "change_px": 0.18060549663236625
+            },
+            "outside_both_inputs": {
+              "count": 18,
+              "before_rms_px": 6.953712894599701,
+              "shifted_rms_px": 7.1959191959980116,
+              "change_px": 0.24220630139831023
+            },
+            "left_10pct": {
+              "count": 5,
+              "before_rms_px": 6.240501476334153,
+              "shifted_rms_px": 5.831847440897723,
+              "change_px": -0.4086540354364301
+            },
+            "right_10pct": {
+              "count": 4,
+              "before_rms_px": 4.970972722295768,
+              "shifted_rms_px": 4.731379871979502,
+              "change_px": -0.23959285031626543
+            },
+            "top_10pct": {
+              "count": 3,
+              "before_rms_px": 2.111712012190257,
+              "shifted_rms_px": 2.0470639284039445,
+              "change_px": -0.0646480837863126
+            },
+            "bottom_10pct": {
+              "count": 0
+            }
+          },
+          "fit_or_rematch": false,
+          "motion_per_probe_px": 0.7071067811865476
+        },
+        {
+          "name": "k1_k2",
+          "groups": {
+            "all_reviewed": {
+              "count": 35,
+              "before_rms_px": 5.513874842292645,
+              "shifted_rms_px": 5.693473419892933,
+              "change_px": 0.17959857760028797
+            },
+            "outside_both_inputs": {
+              "count": 18,
+              "before_rms_px": 6.516381020281054,
+              "shifted_rms_px": 6.761966435205327,
+              "change_px": 0.24558541492427288
+            },
+            "left_10pct": {
+              "count": 5,
+              "before_rms_px": 5.58141537779348,
+              "shifted_rms_px": 5.132536422121927,
+              "change_px": -0.4488789556715531
+            },
+            "right_10pct": {
+              "count": 4,
+              "before_rms_px": 5.042651026934567,
+              "shifted_rms_px": 4.799865512365668,
+              "change_px": -0.24278551456889907
+            },
+            "top_10pct": {
+              "count": 3,
+              "before_rms_px": 2.4321430322643725,
+              "shifted_rms_px": 2.4663633102642453,
+              "change_px": 0.03422027799987282
+            },
+            "bottom_10pct": {
+              "count": 0
+            }
+          },
+          "fit_or_rematch": false,
+          "motion_per_probe_px": 0.7071067811865476
+        }
+      ],
+      "status": "completed",
+      "elapsed_s": 8.098632000386715
+    },
+    {
+      "id": "wm_r_143159342",
+      "normalization": {
+        "checks": {
+          "raw_file_hash": true,
+          "normalized_file_hash": true,
+          "replay_pixels_identical": true,
+          "replay_pixel_hash_matches_manifest": true,
+          "dimensions_match_manifest": true,
+          "orientation_matches_manifest": true,
+          "raw_dimensions_match_manifest": true
+        },
+        "metadata": {
+          "exif": {
+            "Make": "vivo",
+            "Model": "I2012 (2012)",
+            "Software": "Snapseed 2.24.554500229",
+            "Orientation": "1",
+            "ExifImageWidth": "3000",
+            "ExifImageHeight": "4000",
+            "FocalLengthIn35mmFilm": "41",
+            "FocalLength": "4.71"
+          },
+          "xmp": {
+            "status": "absent",
+            "fields": {}
+          },
+          "raw_size": [
+            3000,
+            4000
+          ],
+          "raw_mode": "RGB",
+          "orientation": 1,
+          "normalized_size": [
+            3000,
+            4000
+          ],
+          "normalized_mode": "RGB",
+          "normalized_orientation": null,
+          "normalized_pixel_sha256": "8a701ad389b8fb4811450c8773ad007237ff0bb2e516677b990fef3e7ec290fc"
+        },
+        "physical_principal_point": null,
+        "pre_upload_crop": "unknown",
+        "pre_upload_resampling": "unknown"
+      },
+      "resize": {
+        "working_size": [
+          1200,
+          1600
+        ],
+        "scales": [
+          2.5,
+          2.5
+        ],
+        "geometric_centre_roundtrip_max_abs_px": 0.0,
+        "pixel_area_boundary_max_abs_px": 0.0,
+        "fixed_centre_seed_offset_px": [
+          0.75,
+          0.75
+        ],
+        "relative_axis_scale_difference": 0.0,
+        "focal_x_only_max_vertical_seed_error_px": 0.0,
+        "production_refits_after_lift": true
+      },
+      "fixed_camera_shift": [
+        {
+          "name": "k1",
+          "groups": {
+            "all_reviewed": {
+              "count": 40,
+              "before_rms_px": 9.09772908620669,
+              "shifted_rms_px": 9.172601738453084,
+              "change_px": 0.07487265224639295
+            },
+            "outside_both_inputs": {
+              "count": 14,
+              "before_rms_px": 12.116166791031151,
+              "shifted_rms_px": 12.298849263177674,
+              "change_px": 0.18268247214652256
+            },
+            "left_10pct": {
+              "count": 2,
+              "before_rms_px": 14.214430804457058,
+              "shifted_rms_px": 14.841979127954277,
+              "change_px": 0.6275483234972192
+            },
+            "right_10pct": {
+              "count": 3,
+              "before_rms_px": 14.700018362954966,
+              "shifted_rms_px": 14.826953397682747,
+              "change_px": 0.12693503472778112
+            },
+            "top_10pct": {
+              "count": 4,
+              "before_rms_px": 11.08931134926395,
+              "shifted_rms_px": 11.304172564421961,
+              "change_px": 0.21486121515801138
+            },
+            "bottom_10pct": {
+              "count": 2,
+              "before_rms_px": 21.83602307568449,
+              "shifted_rms_px": 22.373317131737096,
+              "change_px": 0.5372940560526054
+            }
+          },
+          "fit_or_rematch": false,
+          "motion_per_probe_px": 0.7071067811865476
+        },
+        {
+          "name": "k1_k2",
+          "groups": {
+            "all_reviewed": {
+              "count": 40,
+              "before_rms_px": 8.479985622046005,
+              "shifted_rms_px": 8.532174192677784,
+              "change_px": 0.052188570631779285
+            },
+            "outside_both_inputs": {
+              "count": 14,
+              "before_rms_px": 11.119624349582976,
+              "shifted_rms_px": 11.258792353406685,
+              "change_px": 0.13916800382370909
+            },
+            "left_10pct": {
+              "count": 2,
+              "before_rms_px": 14.031147393358077,
+              "shifted_rms_px": 14.681406231839814,
+              "change_px": 0.6502588384817365
+            },
+            "right_10pct": {
+              "count": 3,
+              "before_rms_px": 14.264240255591798,
+              "shifted_rms_px": 14.339674955416626,
+              "change_px": 0.07543469982482875
+            },
+            "top_10pct": {
+              "count": 4,
+              "before_rms_px": 11.901124615415865,
+              "shifted_rms_px": 12.123225343607933,
+              "change_px": 0.22210072819206772
+            },
+            "bottom_10pct": {
+              "count": 2,
+              "before_rms_px": 18.504999174565768,
+              "shifted_rms_px": 19.01649793249105,
+              "change_px": 0.5114987579252812
+            }
+          },
+          "fit_or_rematch": false,
+          "motion_per_probe_px": 0.7071067811865476
+        }
+      ],
+      "status": "completed",
+      "elapsed_s": 4.635626705363393
+    },
+    {
+      "id": "wm_r_149276071",
+      "normalization": {
+        "checks": {
+          "raw_file_hash": true,
+          "normalized_file_hash": true,
+          "replay_pixels_identical": true,
+          "replay_pixel_hash_matches_manifest": true,
+          "dimensions_match_manifest": true,
+          "orientation_matches_manifest": true,
+          "raw_dimensions_match_manifest": true
+        },
+        "metadata": {
+          "exif": {},
+          "xmp": {
+            "status": "absent",
+            "fields": {}
+          },
+          "raw_size": [
+            1989,
+            1498
+          ],
+          "raw_mode": "RGB",
+          "orientation": 1,
+          "normalized_size": [
+            1989,
+            1498
+          ],
+          "normalized_mode": "RGB",
+          "normalized_orientation": null,
+          "normalized_pixel_sha256": "6e09a92b3f65bc3e1d7cefa0d0895e1d89f347944aabac08b0c4406bf612c146"
+        },
+        "physical_principal_point": null,
+        "pre_upload_crop": "unknown",
+        "pre_upload_resampling": "unknown"
+      },
+      "resize": {
+        "working_size": [
+          1600,
+          1205
+        ],
+        "scales": [
+          1.243125,
+          1.2431535269709544
+        ],
+        "geometric_centre_roundtrip_max_abs_px": 0.0,
+        "pixel_area_boundary_max_abs_px": 0.0,
+        "fixed_centre_seed_offset_px": [
+          0.12156250000000002,
+          0.12157676348547719
+        ],
+        "relative_axis_scale_difference": 2.2947789606320157e-05,
+        "focal_x_only_max_vertical_seed_error_px": 0.01718749999999325,
+        "production_refits_after_lift": true
+      },
+      "fixed_camera_shift": [
+        {
+          "name": "k1",
+          "groups": {
+            "all_reviewed": {
+              "count": 42,
+              "before_rms_px": 3.138034496427191,
+              "shifted_rms_px": 3.3301554917179415,
+              "change_px": 0.19212099529075033
+            },
+            "outside_both_inputs": {
+              "count": 23,
+              "before_rms_px": 3.764173983526779,
+              "shifted_rms_px": 3.9862451328150135,
+              "change_px": 0.22207114928823435
+            },
+            "left_10pct": {
+              "count": 3,
+              "before_rms_px": 2.573276598362707,
+              "shifted_rms_px": 3.1049469024732277,
+              "change_px": 0.5316703041105209
+            },
+            "right_10pct": {
+              "count": 4,
+              "before_rms_px": 2.426408548474916,
+              "shifted_rms_px": 2.642729644905812,
+              "change_px": 0.21632109643089592
+            },
+            "top_10pct": {
+              "count": 0
+            },
+            "bottom_10pct": {
+              "count": 1,
+              "before_rms_px": 6.296958554792661,
+              "shifted_rms_px": 6.49979283102224,
+              "change_px": 0.20283427622957895
+            }
+          },
+          "fit_or_rematch": false,
+          "motion_per_probe_px": 0.7071067811865476
+        },
+        {
+          "name": "k1_k2",
+          "groups": {
+            "all_reviewed": {
+              "count": 42,
+              "before_rms_px": 2.9359648111629797,
+              "shifted_rms_px": 3.135479343946124,
+              "change_px": 0.19951453278314446
+            },
+            "outside_both_inputs": {
+              "count": 23,
+              "before_rms_px": 3.733674311461308,
+              "shifted_rms_px": 3.956030721058344,
+              "change_px": 0.22235640959703584
+            },
+            "left_10pct": {
+              "count": 3,
+              "before_rms_px": 3.647220710332738,
+              "shifted_rms_px": 4.084190443833021,
+              "change_px": 0.43696973350028356
+            },
+            "right_10pct": {
+              "count": 4,
+              "before_rms_px": 1.148816785308641,
+              "shifted_rms_px": 1.6005559844967303,
+              "change_px": 0.45173919918808925
+            },
+            "top_10pct": {
+              "count": 0
+            },
+            "bottom_10pct": {
+              "count": 1,
+              "before_rms_px": 6.767200747783541,
+              "shifted_rms_px": 6.901434296140949,
+              "change_px": 0.13423354835740842
+            }
+          },
+          "fit_or_rematch": false,
+          "motion_per_probe_px": 0.7071067811865476
+        }
+      ],
+      "status": "completed",
+      "elapsed_s": 0.3719183672219515
+    }
+  ],
+  "elapsed_s": 13.106315039098263,
+  "solve_runs": 0,
+  "fit_runs": 0,
+  "acceptance_changed": false,
+  "physical_centre_hypothesis": "unresolved",
+  "normalization_geometry_change": false,
+  "limitations": [
+    "physical optical centre",
+    "crop and resampling before source upload",
+    "full upstream lens/editor processing",
+    "certified astrometric ground truth",
+    "direct projection difference is not a bound on rematching or refitted solve outcomes"
+  ]
+}

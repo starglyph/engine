@@ -1,0 +1,42 @@
+{
+  "iteration": 17,
+  "split": "synthetic",
+  "base_commit": "93a329924cecf28a453b53b2e317e97f293b52e1",
+  "frozen_inputs_verified": true,
+  "production_functions_unmodified": true,
+  "previous_iteration_16_hashes_preserved": true,
+  "case_count": 144,
+  "controls_pass": true,
+  "control_count": 72,
+  "control_max_probe_error_px": 3.287578559263799e-08,
+  "mismatched_count": 72,
+  "mismatched_large_error_count": 0,
+  "real_image_solve_runs": 0,
+  "holdout_accessed": false,
+  "tests": [
+    {
+      "command": "PYTHONPATH=artifacts/robustness-wcs-python python3 -m unittest discover -s eval -p 'test_robustness*.py'",
+      "passed": 83
+    },
+    {
+      "command": "cargo test --offline --locked --release --manifest-path artifacts/robustness-iteration-17/fixed/pipeline/Cargo.toml -p starglyph-core solve::centre_transfer -- --include-ignored --nocapture",
+      "passed": 3,
+      "environment": "see results.run.command"
+    },
+    {
+      "command": "cargo test --offline --locked --release --manifest-path artifacts/robustness-iteration-17/fixed/pipeline/Cargo.toml -p starglyph-core --lib solve::tests::refine",
+      "passed": 2
+    }
+  ],
+  "rustfmt": "passed",
+  "clippy": "passed: isolated starglyph-core, release, all-targets, no-deps, -D warnings",
+  "command_elapsed_s": 53.26321496069431,
+  "adapter_total_ms": 0.35015200000000024,
+  "fit_total_ms": 1.601721,
+  "checks_cwd": "prototype",
+  "checks_cargo_target_dir": "artifacts/robustness-iteration-17/fixed/pipeline/target",
+  "json_and_links": "passed",
+  "protected_inputs_and_iteration_16_hashes": "passed",
+  "disposable_build_removed": true,
+  "removed_build_bytes": 451932160
+}

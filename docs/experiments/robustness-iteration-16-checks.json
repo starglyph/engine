@@ -1,0 +1,51 @@
+{
+  "iteration": 16,
+  "split": "development",
+  "base_commit": "93a329924cecf28a453b53b2e317e97f293b52e1",
+  "frozen_inputs_verified": true,
+  "normalization_exact_frames": 3,
+  "cameras_evaluated": 6,
+  "reviewed_sources": 117,
+  "fixed_shift_projections": 234,
+  "max_group_rms_change_px": 0.6502588384817365,
+  "fit_runs": 0,
+  "solve_runs": 0,
+  "holdout_accessed": false,
+  "production_code_changed": false,
+  "checks": [
+    {
+      "command": "PYTHONPATH=artifacts/robustness-wcs-python python3 -m unittest discover -s eval -p 'test_robustness*.py'",
+      "cwd": "prototype",
+      "passed": 79,
+      "exit_code": 0
+    },
+    {
+      "command": "python3 data/samples/sky-samples/test_collection.py",
+      "cwd": ".",
+      "passed": 17,
+      "exit_code": 0
+    },
+    {
+      "command": "cargo test --offline --locked -p starglyph-core --lib image_input::tests",
+      "cwd": "prototype",
+      "passed": 15,
+      "exit_code": 0
+    },
+    {
+      "command": "cargo test --offline --locked -p starglyph-core --lib geom::tests",
+      "cwd": "prototype",
+      "passed": 5,
+      "exit_code": 0
+    }
+  ],
+  "preliminary_invocation_issues": [
+    "Unqualified Python discovery could not import Astropy; rerun with existing artifacts/robustness-wcs-python dependencies passed.",
+    "Recursive discovery under sample directory attempted to import local .tetra3_src; direct test_collection.py invocation passed."
+  ],
+  "preservation": {
+    "data/samples/sky-samples/manifest.json": "97e229270c7b0f97fce4e1f738917cd91cdff01df3508db29584af70a0ea4871",
+    "data/samples/sky-samples/robustness-results.json": "09e6efe61468b4afe896967d583553751d80fe82e65e0ac064528523bbc525e8",
+    "data/samples/sky-samples/collection-wcs-review.json": "97c182c51955baee9adce93cde8e93fb98ece6a69bdc606cf871d3a1eef19841"
+  },
+  "elapsed_measure_s": 13.106315039098263
+}
