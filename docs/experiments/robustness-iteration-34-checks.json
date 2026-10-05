@@ -1,0 +1,79 @@
+{
+  "iteration": 34,
+  "python_tests": {
+    "command": [
+      "python3",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "eval",
+      "-p",
+      "test_*.py"
+    ],
+    "exit_code": 0,
+    "elapsed_s": 4.690799288451672
+  },
+  "python_test_count": 240,
+  "measurement": {
+    "command": [
+      "python3",
+      "eval/robustness_tangential_basis.py",
+      "measure",
+      "--out-dir",
+      "/home/agent/work/starglyph/engine/prototype/artifacts/robustness-iteration-34"
+    ],
+    "exit_code": 0,
+    "elapsed_s": 1.120425045490265
+  },
+  "summary_repeat_identical": true,
+  "public_local_semantically_equal": true,
+  "frozen_hashes_valid": true,
+  "protected_hashes": {
+    "data/samples/sky-samples/manifest.json": "97e229270c7b0f97fce4e1f738917cd91cdff01df3508db29584af70a0ea4871",
+    "data/samples/sky-samples/robustness-results.json": "09e6efe61468b4afe896967d583553751d80fe82e65e0ac064528523bbc525e8",
+    "data/samples/sky-samples/collection-wcs-review.json": "97c182c51955baee9adce93cde8e93fb98ece6a69bdc606cf871d3a1eef19841"
+  },
+  "five_parameter_controls": 6,
+  "max_control_probe_coordinate_difference_px": 0.0,
+  "max_control_fit_rms_difference_px": 0.0,
+  "all_seven_parameter_systems_full_rank": true,
+  "normalized_data_condition_range": [
+    17.56848088696235,
+    22.426253118522254
+  ],
+  "descriptive_transfer_passed": false,
+  "passing_cases": [
+    "coverage22_external",
+    "coverage22_native_r8",
+    "coverage22_native_r12"
+  ],
+  "failing_cases": [
+    "original22_external",
+    "original22_native_r8",
+    "original22_native_r12"
+  ],
+  "linear_systems": 12,
+  "nonlinear_fits": 0,
+  "new_searches": 0,
+  "holdout": false,
+  "production_changed": false,
+  "ground_truth_promoted": false,
+  "automatic_improvement_confirmed": false,
+  "measurement_errors": 0,
+  "measurement_timeouts": 0,
+  "gate_scope": "Offline first-order diagnostic. No nonlinear physical camera, Rust changes, collection or negative trials; production gates not affected.",
+  "artifact_hashes": {
+    "prototype/artifacts/robustness-iteration-34/protocol.json": "ed0492f2f1a961e08dcd91c89994ea9124f7be5b8e3c6b893ee18d79025ebc9e",
+    "prototype/artifacts/robustness-iteration-34/input.json": "b1bb8b1882d1f48ba2747044aa81f651db76387b000a19bad2c42ed507cc3ea6",
+    "prototype/artifacts/robustness-iteration-34/results.json": "8cac7ebcd2eb8236ba74eef53d9435189147b72c4db52ab7fa3a18d199cbf728",
+    "prototype/artifacts/robustness-iteration-34/measurement.json": "54d3d4513f441da0d7268fef61c86e0d159be9f7321e89ed4d255b36c2eace9c",
+    "prototype/artifacts/robustness-iteration-34/python-tests.json": "0f12357c2f0d6926a159b608d183e6b54bd2e8f5e5d06b542618ea845786b3e8",
+    "prototype/artifacts/robustness-iteration-34/python-tests.log": "3e93c0a2aff54804d8a3d7d41871ea8c208fe78d38b2f9042a22f8596b30c0ed",
+    "prototype/artifacts/robustness-iteration-34/measurement.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "prototype/eval/test_robustness_tangential_basis.py": "4a01d47ca9673262a234553f085e1dd61986cd8129dc26872cf6023bd181f481",
+    "docs/experiments/robustness-iteration-34-protocol.json": "ed0492f2f1a961e08dcd91c89994ea9124f7be5b8e3c6b893ee18d79025ebc9e",
+    "docs/experiments/robustness-iteration-34-input.json": "74f0db4876e942d9d2a6243266ab3f601e4f3efa059cf9a16d8bbb7fb2ae70e8",
+    "docs/experiments/robustness-iteration-34-results.json": "11bc14af81befc02ea29b6e300753153a1b51c9e579862019b95926b9f851bd3"
+  }
+}

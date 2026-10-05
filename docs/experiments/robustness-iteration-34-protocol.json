@@ -1,0 +1,55 @@
+{
+  "iteration": 34,
+  "id": "wm_r_132162731",
+  "split": "development",
+  "holdout": false,
+  "names": [
+    "original22_external",
+    "coverage22_external",
+    "original22_native_r8",
+    "coverage22_native_r8",
+    "original22_native_r12",
+    "coverage22_native_r12"
+  ],
+  "parameter_order": [
+    "ra_deg",
+    "dec_deg",
+    "roll_deg",
+    "focal_px",
+    "k1",
+    "p1",
+    "p2"
+  ],
+  "formula_source": "https://docs.opencv.org/4.13.0/d9/d0c/group__calib3d.html",
+  "coordinates": "x=Xc/Zc, y=-Yc/Zc; y down; undistorted normalized camera plane",
+  "added_basis": "dx=f*(2*p1*x*y+p2*(r2+2*x*x)); dy=f*(p1*(r2+2*y*y)+2*p2*x*y)",
+  "estimation": "one linear correction on each frozen22; reuse production5 Jacobian, add analytic p1/p2 at zero, preserve nonzero k1 prior residual; no prior on p1/p2",
+  "budget": "12 small SVD corrections:6 five-parameter controls and6 seven-parameter variants; no nonlinear iterations, LOO, rematches or threshold search",
+  "scoring": "same frozen19/strict15 and all prior spatial groups; neither values nor residuals enter estimation; report all35 with in_fit labels",
+  "rcond": 1e-12,
+  "criteria": [
+    "five-parameter controls reproduce iteration31 stationary step and geometry to1e-8px",
+    "all six data/augmented matrices have full rank7",
+    "strict15 RMS decreases at least10percent against five-parameter control and no nonempty group RMS increases more than0.5px in each of six cases",
+    "retain both left-edge sources and empty bottom group; descriptive tangent prediction only, not physical camera or automatic improvement"
+  ],
+  "hashes": {
+    "prototype/eval/robustness_tangential_basis.py": "79e079b24ee99d81c7db670eb5bc5033e3614cc838b49ff66889a3a7d53fe739",
+    "prototype/artifacts/robustness-iteration-34/input.json": "b1bb8b1882d1f48ba2747044aa81f651db76387b000a19bad2c42ed507cc3ea6",
+    "docs/experiments/robustness-iteration-31-input.json": "f435fd69e5a68fa1b43ddb438e7c24e9bd05f172d02ab85afbfa68b480614c8c",
+    "docs/experiments/robustness-iteration-31-results.json": "f466bedf0fe2b714bed6e2886dc06915981db427b59bc665fe82a59e40ce1f3b",
+    "docs/experiments/robustness-iteration-31-protocol.json": "06770fe9065f3e3d4403561a37426241a93fc57cf0b9d07184935bda49a5b650",
+    "docs/experiments/robustness-iteration-31-checks.json": "1c87f213fb879842f33b9e79c37877e5e5e2d8589cefcc3664dd6a3a215079ee",
+    "docs/experiments/robustness-iteration-30-input.json": "ed2e7aadef5b2f25e5a844a18d6e7d1cb4f868545f69e3b05de7c97dd87cb1f2",
+    "docs/experiments/robustness-iteration-13-geometry.json": "85ebf434154c458f52c339daa86b712b9d494633ff0d5c4d37f85e169d88aabd",
+    "prototype/eval/robustness_tangent_fit.py": "6deb6ed61fd19e464f6eec34988d262dedb79d2294caf85917b4041bff76f8da",
+    "prototype/eval/robustness_observability.py": "9205b8d9390ebcbc82a4d8372140b79feefa7722694a0df299e2097562c2c599",
+    "prototype/eval/robustness_geometry.py": "b15495e6ba97832a84d06c4e83bfa16aec704784875fdeccb3f831ceec976034",
+    "prototype/eval/robustness_single22_residuals.py": "aa95c86649647ce9e85c7bda644777b41634aad19e5b0eebdf4296da771464f7",
+    "prototype/eval/collection_run.py": "6bf1108b48c21a40bdd00023eae564c27c5062fd63beb45d32ddde86154bd5b5",
+    "prototype/eval/compare_local_wcs.py": "1a8c83f6d0a19f3cbbe2a96f0db79a0ab60ac33fd09ad6c5c69472672ef31a3b",
+    "data/samples/sky-samples/manifest.json": "97e229270c7b0f97fce4e1f738917cd91cdff01df3508db29584af70a0ea4871",
+    "data/samples/sky-samples/robustness-results.json": "09e6efe61468b4afe896967d583553751d80fe82e65e0ac064528523bbc525e8",
+    "data/samples/sky-samples/collection-wcs-review.json": "97c182c51955baee9adce93cde8e93fb98ece6a69bdc606cf871d3a1eef19841"
+  }
+}

@@ -166,3 +166,8 @@ and HYG v4.2 by Astronexus, **CC BY-SA 4.0** (source and license above).
 The annotated figure and HYG-derived tables are distributed under
 **CC BY-SA 4.0**. Changes: cropped views, display brightness ×2, coordinate
 annotations and source measurements. No new photograph or ground truth.
+
+Iteration 34 linear tangential-distortion measurements
+(`docs/experiments/robustness-iteration-34-*.json`) reuse the same photograph's
+reviewed coordinates (oliwok, **CC BY 4.0**) and HYG/Astronexus identities.
+HYG-derived tables retain **CC BY-SA 4.0**. No new photographs or annotations.
