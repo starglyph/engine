@@ -1,0 +1,129 @@
+{
+  "iteration": 33,
+  "python_tests": {
+    "command": [
+      "python3",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "eval",
+      "-p",
+      "test_*.py"
+    ],
+    "exit_code": 0,
+    "elapsed_s": 4.6365107502788305
+  },
+  "python_test_count": 235,
+  "measurement": {
+    "command": [
+      "python3",
+      "eval/robustness_left_source_audit.py",
+      "measure",
+      "--out-dir",
+      "/home/agent/work/starglyph/engine/prototype/artifacts/robustness-iteration-33"
+    ],
+    "exit_code": 0,
+    "elapsed_s": 2.0234905797988176
+  },
+  "summary_repeat_identical": true,
+  "public_local_semantically_equal": true,
+  "frozen_hashes_valid": true,
+  "protected_hashes": {
+    "data/samples/sky-samples/manifest.json": "97e229270c7b0f97fce4e1f738917cd91cdff01df3508db29584af70a0ea4871",
+    "data/samples/sky-samples/robustness-results.json": "09e6efe61468b4afe896967d583553751d80fe82e65e0ac064528523bbc525e8",
+    "data/samples/sky-samples/collection-wcs-review.json": "97c182c51955baee9adce93cde8e93fb98ece6a69bdc606cf871d3a1eef19841"
+  },
+  "luma_centroids_reproduced": 4,
+  "luma_tolerance_px": 1e-08,
+  "new_refinements": 0,
+  "new_searches": 0,
+  "holdout": false,
+  "production_changed": false,
+  "ground_truth_promoted": false,
+  "automatic_improvement_confirmed": false,
+  "measurement_errors": 0,
+  "measurement_timeouts": 0,
+  "setup_issue": "Initial prepare saved protocol and inputs but render failed: matplotlib absent from WCS PYTHONPATH. Render succeeded with existing /tmp/starglyph-iteration-29-plot; no source or input changes.",
+  "gate_scope": "Offline catalogue and pixel diagnostics only. No Rust changes or solver gates affected.",
+  "target_summary": [
+    {
+      "source_id": 24,
+      "external_error_px": 4.757259454530569,
+      "same_camera_alternate_centroid_errors_px": {
+        "luma_r8": 4.897719939768452,
+        "luma_r12": 4.981723433700646,
+        "R_r8": 4.430331190407625,
+        "R_r12": 4.520364390080446,
+        "G_r8": 4.976327032198948,
+        "G_r12": 5.079446155139774,
+        "B_r8": 5.679301231002671,
+        "B_r12": 5.870949514979096
+      },
+      "max_centroid_shift_px": 1.1281348538147682,
+      "visually_reviewed_pattern_rows": [
+        3414,
+        3687,
+        5423,
+        3855,
+        3399,
+        29
+      ],
+      "pattern_distances_px": [
+        0.282241915548697,
+        0.4226280723907578,
+        0.7344810060171373,
+        0.9274099967063707,
+        1.034663953623474,
+        1.4997710046333461
+      ]
+    },
+    {
+      "source_id": 29,
+      "external_error_px": 13.000890693325974,
+      "same_camera_alternate_centroid_errors_px": {
+        "luma_r8": 12.837635204658383,
+        "luma_r12": 12.649411083570604,
+        "R_r8": 12.964358649375114,
+        "R_r12": 12.657003689229608,
+        "G_r8": 12.77061301696781,
+        "G_r12": 12.636909324057951,
+        "B_r8": 13.059356873191696,
+        "B_r12": 12.83921025460269
+      },
+      "max_centroid_shift_px": 0.36542453700270966,
+      "visually_reviewed_pattern_rows": [
+        910,
+        314,
+        1184,
+        1118,
+        673,
+        1333
+      ],
+      "pattern_distances_px": [
+        1.479646273630315,
+        0.5372396418362737,
+        1.176696853586296,
+        0.596876782035676,
+        1.117089295924011,
+        0.16865286985652414
+      ]
+    }
+  ],
+  "artifact_hashes": {
+    "prototype/artifacts/robustness-iteration-33/protocol.json": "2c7ecd2c32bca91aa764c803f5ba96c8ced5ea9b9015aceb3e0f256bcacff621",
+    "prototype/artifacts/robustness-iteration-33/input.json": "7f63003e507f9fc0b620eeee26ef3e821dbd8b41710aa5afc4a6b56074be4ec6",
+    "prototype/artifacts/robustness-iteration-33/review.json": "aad059ce4c8f1946203ae8d4fb0e1c2224fe1bf45eb98bb9ace88fc66130c9c4",
+    "prototype/artifacts/robustness-iteration-33/results.json": "d1d86cb3fb595c685b318a9eefea5984a622ac02bded38206193d137fff0fb55",
+    "prototype/artifacts/robustness-iteration-33/measurement.json": "f5f507b89d093166688ce541f00b4c0699eed0c8d159e59da3e6026e2585da22",
+    "prototype/artifacts/robustness-iteration-33/python-tests.json": "4e8d0ceb9dec345e181ab3e6b675a88f1c4617ead8a0575a7e32ff0b987dbf1a",
+    "prototype/artifacts/robustness-iteration-33/python-tests.log": "b85ad4e4df6d70201e2dc612cc31ac16229ca38f701e9d300988eddd1211460d",
+    "prototype/artifacts/robustness-iteration-33/measurement.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "docs/images/robustness-iteration-33-sources.png": "3ad2f185c075f46a7a599da289764d8e48d66661dfb878abe6311afa89218f68",
+    "prototype/eval/test_robustness_left_source_audit.py": "5579e920b4dcfb8df11bf73636698b2d70babfdc6e88eac3cd4151210a4894bc",
+    "docs/experiments/robustness-iteration-33-protocol.json": "2c7ecd2c32bca91aa764c803f5ba96c8ced5ea9b9015aceb3e0f256bcacff621",
+    "docs/experiments/robustness-iteration-33-input.json": "bed4f183d442e5a4ce556afb00a07ff348e480ed7000363ae3d91200b9699503",
+    "docs/experiments/robustness-iteration-33-review.json": "df6e0758184361bfb5cfbc091bbe8886aa945486339f888d2be267803ac78a5a",
+    "docs/experiments/robustness-iteration-33-results.json": "5596de80421bbb3e2fc7252392c2a21e1d48db39b9a10e2e51744f592ceb45b6"
+  }
+}

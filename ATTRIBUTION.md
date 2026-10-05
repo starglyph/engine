@@ -158,3 +158,11 @@ reuse those same three photographs' reviewed coordinates and HYG identities.
 Photograph credits remain oliwok, Aruncmohan1987, Harukkaaario, **CC BY 4.0**;
 HYG retains its existing license. Injected coordinate shifts are diagnostic
 inputs, not edits to the photographs or new ground truth.
+
+Iteration 33 source audit (`docs/experiments/robustness-iteration-33-*.json`,
+`docs/images/robustness-iteration-33-sources.png`) reuses `wm_r_132162731` by
+oliwok, **CC BY 4.0**, with its original link in the collection attribution,
+and HYG v4.2 by Astronexus, **CC BY-SA 4.0** (source and license above).
+The annotated figure and HYG-derived tables are distributed under
+**CC BY-SA 4.0**. Changes: cropped views, display brightness ×2, coordinate
+annotations and source measurements. No new photograph or ground truth.

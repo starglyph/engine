@@ -1,0 +1,41 @@
+{
+  "iteration": 33,
+  "id": "wm_r_132162731",
+  "split": "development",
+  "holdout": false,
+  "source_ids": [
+    24,
+    29
+  ],
+  "selection": "both left-edge probes singled out by iteration32; targeted diagnostic, not unbiased sample",
+  "neighbours": "six closest HYG entries without magnitude cut; separate six closest <=8mag within3deg for pattern review",
+  "pattern": "saved original22_external projection translated to target centroid; no refit; three nearest existing extractions within20px are candidates only",
+  "morphology": "unchanged native_centroid r8/r12 and annulus16-22 on Rec709 luma and each RGB channel; peak and clipping within radius12",
+  "criteria": [
+    "retain both source IDs and old labels regardless of findings",
+    "compare measured centroid variation to frozen camera residual vectors; no fitted correction",
+    "visual morphology and local pattern evidence remain conditional; no absolute identity/GT promotion",
+    "no LM, rematch, holdout, detection or acceptance change"
+  ],
+  "hashes": {
+    "prototype/eval/robustness_left_source_audit.py": "3aa9cb885dc7569c76ef7c4d6498e00840d620e9215385b852796f862af9541d",
+    "data/samples/sky-samples/images/wm_r_132162731.png": "58dfbce4f8a236cab8158a4a0f9ed677c68aa8873afd9568df48d370f01ef188",
+    "data/catalogs/hyg_v42.csv.gz": "5ca9431ff364c8002a4a3efa91b2b9296746aea1543374db4cb6b4fab049d601",
+    "prototype/artifacts/robustness-baseline/wcs-run/wm_r_132162731/downsample-2/field.axy": "2564a957ebe704cdf8a2ca06f6cdca6269cc031597033fd18c6bc6baae67448d",
+    "prototype/artifacts/robustness-iteration-33/input.json": "7f63003e507f9fc0b620eeee26ef3e821dbd8b41710aa5afc4a6b56074be4ec6",
+    "docs/experiments/robustness-iteration-5-review.json": "6a23870a2373e17cac7e1976b5725fabd94ba0efda1898a3980a04b2183aca3f",
+    "docs/experiments/robustness-iteration-5-protocol.json": "3f6c49f51d6666e6aad72d0a07b3c864eb331ec39835b461857f776b3e80b5bc",
+    "docs/experiments/robustness-iteration-5-geometry.json": "dc93a959d0a8930da1984a721fb9fd9fd606b882611a56af58c1663f1a69f531",
+    "docs/experiments/robustness-iteration-13-geometry.json": "85ebf434154c458f52c339daa86b712b9d494633ff0d5c4d37f85e169d88aabd",
+    "docs/experiments/robustness-iteration-30-results.json": "f1a9a3966a33b414b03883e2d9c9f4749427ba7a6b2c7261645d7f8e1e62ad10",
+    "docs/experiments/robustness-iteration-32-protocol.json": "002d693d764c84d0e1b116fdcb43d3c47f398a575278b51e1fe77e48093e1782",
+    "docs/experiments/robustness-iteration-32-results.json": "c1eede91236856bce0e4f32f12ee861bf7fcb1fa5fda6f891727618495f47c4b",
+    "prototype/eval/robustness_geometry.py": "b15495e6ba97832a84d06c4e83bfa16aec704784875fdeccb3f831ceec976034",
+    "prototype/eval/robustness_single22_residuals.py": "aa95c86649647ce9e85c7bda644777b41634aad19e5b0eebdf4296da771464f7",
+    "prototype/eval/compare_local_wcs.py": "1a8c83f6d0a19f3cbbe2a96f0db79a0ab60ac33fd09ad6c5c69472672ef31a3b",
+    "prototype/eval/collection_run.py": "6bf1108b48c21a40bdd00023eae564c27c5062fd63beb45d32ddde86154bd5b5",
+    "data/samples/sky-samples/manifest.json": "97e229270c7b0f97fce4e1f738917cd91cdff01df3508db29584af70a0ea4871",
+    "data/samples/sky-samples/robustness-results.json": "09e6efe61468b4afe896967d583553751d80fe82e65e0ac064528523bbc525e8",
+    "data/samples/sky-samples/collection-wcs-review.json": "97c182c51955baee9adce93cde8e93fb98ece6a69bdc606cf871d3a1eef19841"
+  }
+}
