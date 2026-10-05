@@ -1,0 +1,1195 @@
+{
+  "split": "development",
+  "frames": [
+    {
+      "id": "wm_r_154807046",
+      "image": "data/samples/sky-samples/images/wm_r_154807046.png",
+      "source_sha256": "da420889b2818f3176320feb2d8fd4c4794f4c0f0800cf10e82de7473c262cb9",
+      "width": 4485,
+      "height": 2920,
+      "points": [
+        {
+          "hyg_id": 32263,
+          "name": "Sirius",
+          "mag": -1.44,
+          "radec": [
+            101.287215,
+            -16.716116
+          ],
+          "review_center": [
+            2347.2160328540263,
+            2648.9378455602673
+          ],
+          "choices": [
+            {
+              "row": 0,
+              "x": 2348.210693359375,
+              "y": 2651.53662109375
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 0,
+          "id": 0,
+          "note": "Visible dominant source; identity supported conditionally by Orion/Gemini/Lepus field pattern. Mild elongation and bright-core clipping; not absolute ground truth."
+        },
+        {
+          "hyg_id": 24378,
+          "name": "Rigel",
+          "mag": 0.18,
+          "radec": [
+            78.63447,
+            -8.20164
+          ],
+          "review_center": [
+            3341.2073999485956,
+            1458.8116004121337
+          ],
+          "choices": [
+            {
+              "row": 2,
+              "x": 3339.89404296875,
+              "y": 1458.165283203125
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 2,
+          "id": 1,
+          "note": "Visible dominant source; identity supported conditionally by Orion/Gemini/Lepus field pattern. Mild elongation and bright-core clipping; not absolute ground truth."
+        },
+        {
+          "hyg_id": 37173,
+          "name": "Procyon",
+          "mag": 0.4,
+          "radec": [
+            114.825495,
+            5.224993
+          ],
+          "review_center": [
+            767.1658247971454,
+            1859.013756387991
+          ],
+          "choices": [
+            {
+              "row": 1,
+              "x": 761.67724609375,
+              "y": 1861.519287109375
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 1,
+          "id": 2,
+          "note": "Visible dominant source; identity supported conditionally by Orion/Gemini/Lepus field pattern. Mild elongation and bright-core clipping; not absolute ground truth."
+        },
+        {
+          "hyg_id": 27919,
+          "name": "Betelgeuse",
+          "mag": 0.45,
+          "radec": [
+            88.792935,
+            7.407063
+          ],
+          "review_center": [
+            2280.181766226556,
+            878.7933985669596
+          ],
+          "choices": [
+            {
+              "row": 3,
+              "x": 2279.299560546875,
+              "y": 877.92578125
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 3,
+          "id": 3,
+          "note": "Visible dominant source; identity supported conditionally by Orion/Gemini/Lepus field pattern. Mild elongation and bright-core clipping; not absolute ground truth."
+        },
+        {
+          "hyg_id": 25273,
+          "name": "Bellatrix",
+          "mag": 1.64,
+          "radec": [
+            81.282765,
+            6.349702
+          ],
+          "review_center": [
+            2742.1516275686276,
+            702.5412825174365
+          ],
+          "choices": [
+            {
+              "row": 4,
+              "x": 2741.236572265625,
+              "y": 702.4782104492188
+            },
+            {
+              "row": 407,
+              "x": 2702.463134765625,
+              "y": 682.7096557617188
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 4,
+          "id": 4,
+          "note": "Visible dominant source; identity supported conditionally by Orion/Gemini/Lepus field pattern. Mild elongation and bright-core clipping; not absolute ground truth."
+        },
+        {
+          "hyg_id": 26246,
+          "name": "Alnilam",
+          "mag": 1.69,
+          "radec": [
+            84.05338499999999,
+            -1.20192
+          ],
+          "review_center": [
+            2815.9056070019838,
+            1221.827131233727
+          ],
+          "choices": [
+            {
+              "row": 6,
+              "x": 2815.12158203125,
+              "y": 1220.9793701171875
+            },
+            {
+              "row": 165,
+              "x": 2849.66845703125,
+              "y": 1197.4305419921875
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 6,
+          "id": 5,
+          "note": "Visible dominant source; identity supported conditionally by Orion/Gemini/Lepus field pattern. Mild elongation and bright-core clipping; not absolute ground truth."
+        },
+        {
+          "hyg_id": 31601,
+          "name": "Alhena",
+          "mag": 1.93,
+          "radec": [
+            99.42792,
+            16.399252
+          ],
+          "review_center": [
+            1355.4564212211837,
+            667.6767451084972
+          ],
+          "choices": [
+            {
+              "row": 7,
+              "x": 1353.75341796875,
+              "y": 667.6830444335938
+            },
+            {
+              "row": 662,
+              "x": 1375.52783203125,
+              "y": 649.306884765625
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 7,
+          "id": 6,
+          "note": "Visible dominant source; identity supported conditionally by Orion/Gemini/Lepus field pattern. Mild elongation and bright-core clipping; not absolute ground truth."
+        },
+        {
+          "hyg_id": 30251,
+          "name": "Mirzam",
+          "mag": 1.98,
+          "radec": [
+            95.674935,
+            -17.955918
+          ],
+          "review_center": [
+            2694.0361915060794,
+            2534.322314319731
+          ],
+          "choices": [
+            {
+              "row": 10,
+              "x": 2694.914306640625,
+              "y": 2535.07958984375
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 10,
+          "id": 7,
+          "note": "Visible dominant source; identity supported conditionally by Orion/Gemini/Lepus field pattern. Mild elongation and bright-core clipping; not absolute ground truth."
+        },
+        {
+          "hyg_id": 27298,
+          "name": "Saiph",
+          "mag": 2.07,
+          "radec": [
+            86.939115,
+            -9.669605
+          ],
+          "review_center": [
+            2911.0484836247824,
+            1786.2994912710478
+          ],
+          "choices": [
+            {
+              "row": 9,
+              "x": 2910.65673828125,
+              "y": 1785.48876953125
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 9,
+          "id": 8,
+          "note": "Visible dominant source; identity supported conditionally by Orion/Gemini/Lepus field pattern. Mild elongation and bright-core clipping; not absolute ground truth."
+        },
+        {
+          "hyg_id": 25920,
+          "name": "Arneb",
+          "mag": 2.58,
+          "radec": [
+            83.18256000000001,
+            -17.822289
+          ],
+          "review_center": [
+            3377.6079982141346,
+            2154.584222925848
+          ],
+          "choices": [
+            {
+              "row": 18,
+              "x": 3376.74560546875,
+              "y": 2153.58154296875
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 18,
+          "id": 9,
+          "note": "Visible dominant source; identity supported conditionally by Orion/Gemini/Lepus field pattern. Mild elongation and bright-core clipping; not absolute ground truth."
+        },
+        {
+          "hyg_id": 26176,
+          "name": "Hatysa",
+          "mag": 2.75,
+          "radec": [
+            83.85826499999999,
+            -5.909901
+          ],
+          "review_center": [
+            2969.9153903134993,
+            1481.8018448797532
+          ],
+          "choices": [
+            {
+              "row": 13,
+              "x": 2970.191162109375,
+              "y": 1481.2669677734375
+            },
+            {
+              "row": 15,
+              "x": 2956.094970703125,
+              "y": 1450.544677734375
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 13,
+          "id": 10,
+          "note": "Visible dominant source; identity supported conditionally by Orion/Gemini/Lepus field pattern. Mild elongation and bright-core clipping; not absolute ground truth."
+        },
+        {
+          "hyg_id": 25542,
+          "name": "Nihal",
+          "mag": 2.81,
+          "radec": [
+            82.06134,
+            -20.759441
+          ],
+          "review_center": [
+            3537.1902332151526,
+            2304.698408308106
+          ],
+          "choices": [
+            {
+              "row": 22,
+              "x": 3535.48681640625,
+              "y": 2303.234375
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 22,
+          "id": 11,
+          "note": "Visible dominant source; identity supported conditionally by Orion/Gemini/Lepus field pattern. Mild elongation and bright-core clipping; not absolute ground truth."
+        },
+        {
+          "hyg_id": 30270,
+          "name": "Tejat",
+          "mag": 2.87,
+          "radec": [
+            95.740095,
+            22.513586
+          ],
+          "review_center": [
+            1346.7478161371698,
+            154.21977858739785
+          ],
+          "choices": [
+            {
+              "row": 11,
+              "x": 1345.220458984375,
+              "y": 153.7774658203125
+            },
+            {
+              "row": 586,
+              "x": 1312.3065185546875,
+              "y": 177.1662139892578
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 11,
+          "id": 12,
+          "note": "Visible dominant source; identity supported conditionally by Orion/Gemini/Lepus field pattern. Mild elongation and bright-core clipping; not absolute ground truth."
+        },
+        {
+          "hyg_id": 36087,
+          "name": "Gomeisa",
+          "mag": 2.89,
+          "radec": [
+            111.78768,
+            8.289315
+          ],
+          "review_center": [
+            862.0503969553703,
+            1562.142727334661
+          ],
+          "choices": [
+            {
+              "row": 17,
+              "x": 857.306884765625,
+              "y": 1563.6259765625
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 17,
+          "id": 13,
+          "note": "Visible dominant source; identity supported conditionally by Orion/Gemini/Lepus field pattern. Mild elongation and bright-core clipping; not absolute ground truth."
+        },
+        {
+          "hyg_id": 32161,
+          "name": "Mebsuta",
+          "mag": 3.06,
+          "radec": [
+            100.98303,
+            25.131124
+          ],
+          "review_center": [
+            913.7394071558919,
+            124.20875632640278
+          ],
+          "choices": [
+            {
+              "row": 12,
+              "x": 910.5040283203125,
+              "y": 121.57328033447266
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 12,
+          "id": 14,
+          "note": "Visible dominant source; identity supported conditionally by Orion/Gemini/Lepus field pattern. Mild elongation and bright-core clipping; not absolute ground truth."
+        },
+        {
+          "hyg_id": 22396,
+          "name": "Tabit",
+          "mag": 3.19,
+          "radec": [
+            72.460035,
+            6.961276
+          ],
+          "review_center": [
+            3246.9887328610075,
+            369.7922454818061
+          ],
+          "choices": [
+            {
+              "row": 19,
+              "x": 3244.322265625,
+              "y": 372.6749572753906
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 19,
+          "id": 15,
+          "note": "Visible dominant source; identity supported conditionally by Orion/Gemini/Lepus field pattern. Mild elongation and bright-core clipping; not absolute ground truth."
+        },
+        {
+          "hyg_id": 23630,
+          "name": "2Eps Lep",
+          "mag": 3.19,
+          "radec": [
+            76.36527,
+            -22.371032
+          ],
+          "review_center": [
+            3926.5209635663837,
+            2260.112756192512
+          ],
+          "choices": [
+            {
+              "row": 25,
+              "x": 3921.488037109375,
+              "y": 2257.536376953125
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 25,
+          "id": 16,
+          "note": "Visible dominant source; identity supported conditionally by Orion/Gemini/Lepus field pattern. Mild elongation and bright-core clipping; not absolute ground truth."
+        },
+        {
+          "hyg_id": 24249,
+          "name": "5Mu  Lep",
+          "mag": 3.29,
+          "radec": [
+            78.23292,
+            -16.205468
+          ],
+          "review_center": [
+            3613.0592521884787,
+            1921.0446169177933
+          ],
+          "choices": [
+            {
+              "row": 29,
+              "x": 3610.561767578125,
+              "y": 1920.29736328125
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 29,
+          "id": 17,
+          "note": "Visible dominant source; identity supported conditionally by Orion/Gemini/Lepus field pattern. Mild elongation and bright-core clipping; not absolute ground truth."
+        },
+        {
+          "hyg_id": 29582,
+          "name": "Propus",
+          "mag": 3.31,
+          "radec": [
+            93.719415,
+            22.506799
+          ],
+          "review_center": [
+            1468.036656382684,
+            93.04281249787785
+          ],
+          "choices": [
+            {
+              "row": 16,
+              "x": 1466.6444091796875,
+              "y": 92.87602233886719
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 16,
+          "id": 18,
+          "note": "Visible dominant source; identity supported conditionally by Orion/Gemini/Lepus field pattern. Mild elongation and bright-core clipping; not absolute ground truth."
+        },
+        {
+          "hyg_id": 32276,
+          "name": "Alzirr",
+          "mag": 3.35,
+          "radec": [
+            101.32236,
+            12.895591
+          ],
+          "review_center": [
+            1366.2324259481218,
+            943.009508635628
+          ],
+          "choices": [
+            {
+              "row": 20,
+              "x": 1364.5111083984375,
+              "y": 943.0458984375
+            },
+            {
+              "row": 65,
+              "x": 1372.6131591796875,
+              "y": 912.6362915039062
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 20,
+          "id": 19,
+          "note": "Visible dominant source; identity supported conditionally by Orion/Gemini/Lepus field pattern. Mild elongation and bright-core clipping; not absolute ground truth."
+        },
+        {
+          "hyg_id": 26142,
+          "name": "Meissa",
+          "mag": 3.39,
+          "radec": [
+            83.78449499999999,
+            9.934158
+          ],
+          "review_center": [
+            2484.4919983782656,
+            572.0857363357749
+          ],
+          "choices": [
+            {
+              "row": 24,
+              "x": 2483.8017578125,
+              "y": 572.410400390625
+            },
+            {
+              "row": 54,
+              "x": 2502.031982421875,
+              "y": 596.185546875
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 24,
+          "id": 20,
+          "note": "Visible localized source at option 0; association conditional on the WCS-proposed field pattern, not independently certified astrometry."
+        },
+        {
+          "hyg_id": 35453,
+          "name": "Wasat",
+          "mag": 3.5,
+          "radec": [
+            110.030745,
+            21.98232
+          ],
+          "review_center": [
+            438.74198619495564,
+            609.9510943469579
+          ],
+          "choices": [
+            {
+              "row": 21,
+              "x": 432.935302734375,
+              "y": 606.2431640625
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 21,
+          "id": 21,
+          "note": "Visible localized source at option 0; association conditional on the WCS-proposed field pattern, not independently certified astrometry."
+        },
+        {
+          "hyg_id": 27220,
+          "name": "14Zet Lep",
+          "mag": 3.55,
+          "radec": [
+            86.738925,
+            -14.82195
+          ],
+          "review_center": [
+            3082.3548921026845,
+            2077.2193517439814
+          ],
+          "choices": [
+            {
+              "row": 38,
+              "x": 3082.199462890625,
+              "y": 2076.50146484375
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 38,
+          "id": 22,
+          "note": "Visible localized source at option 0; association conditional on the WCS-proposed field pattern, not independently certified astrometry."
+        },
+        {
+          "hyg_id": 35253,
+          "name": "54Lam Gem",
+          "mag": 3.58,
+          "radec": [
+            109.52324999999999,
+            16.540383
+          ],
+          "review_center": [
+            700.757521020401,
+            966.5394231999989
+          ],
+          "choices": [
+            {
+              "row": 23,
+              "x": 696.7928466796875,
+              "y": 965.97900390625
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 23,
+          "id": 23,
+          "note": "Visible localized source at option 0; association conditional on the WCS-proposed field pattern, not independently certified astrometry."
+        },
+        {
+          "hyg_id": 27006,
+          "name": "13Gam Lep",
+          "mag": 3.59,
+          "radec": [
+            86.115855,
+            -22.448382
+          ],
+          "review_center": [
+            3365.012714425555,
+            2522.0040220301757
+          ],
+          "choices": [
+            {
+              "row": 36,
+              "x": 3364.918212890625,
+              "y": 2520.062255859375
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 36,
+          "id": 24,
+          "note": "Visible localized source at option 0; association conditional on the WCS-proposed field pattern, not independently certified astrometry."
+        },
+        {
+          "hyg_id": 27585,
+          "name": "15Del Lep",
+          "mag": 3.76,
+          "radec": [
+            87.830355,
+            -20.879089
+          ],
+          "review_center": [
+            3217.6712621533366,
+            2472.6074256810552
+          ],
+          "choices": [
+            {
+              "row": 47,
+              "x": 3217.89111328125,
+              "y": 2471.948486328125
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 47,
+          "id": 25,
+          "note": "Visible localized source at option 0; association conditional on the WCS-proposed field pattern, not independently certified astrometry."
+        },
+        {
+          "hyg_id": 35946,
+          "name": "60Iot Gem",
+          "mag": 3.78,
+          "radec": [
+            111.43168499999999,
+            27.79808
+          ],
+          "review_center": [
+            63.96282121604159,
+            209.60305704044595
+          ],
+          "choices": [
+            {
+              "row": 33,
+              "x": 47.87965393066406,
+              "y": 194.65357971191406
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 33,
+          "id": 26,
+          "note": "Visible localized source at option 0; association conditional on the WCS-proposed field pattern, not independently certified astrometry."
+        },
+        {
+          "hyg_id": 21541,
+          "name": "Sceptrum",
+          "mag": 3.86,
+          "radec": [
+            69.54509999999999,
+            -14.30402
+          ],
+          "review_center": [
+            4094.769590223221,
+            1569.1503910997262
+          ],
+          "choices": [
+            {
+              "row": 40,
+              "x": 4086.595458984375,
+              "y": 1569.603759765625
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 40,
+          "id": 27,
+          "note": "Visible localized source at option 0; association conditional on the WCS-proposed field pattern, not independently certified astrometry."
+        },
+        {
+          "hyg_id": 21391,
+          "name": "48Nu  Eri",
+          "mag": 3.93,
+          "radec": [
+            69.079755,
+            -3.352459
+          ],
+          "review_center": [
+            3783.144556652072,
+            881.5820953119235
+          ],
+          "choices": [
+            {
+              "row": 34,
+              "x": 3777.83740234375,
+              "y": 884.2763061523438
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 34,
+          "id": 28,
+          "note": "Visible localized source at option 0; association conditional on the WCS-proposed field pattern, not independently certified astrometry."
+        },
+        {
+          "hyg_id": 37340,
+          "name": "26Alp Mon",
+          "mag": 3.94,
+          "radec": [
+            115.31181,
+            -9.551131
+          ],
+          "review_center": [
+            1276.0760654684364,
+            2770.3630647839805
+          ],
+          "choices": [],
+          "label": "not_visible",
+          "selected_row": null,
+          "id": 29,
+          "note": "No isolated source visible in the frozen crop; no extraction within 45 px. Retain unresolved identity/visibility, do not infer a catalog error."
+        },
+        {
+          "hyg_id": 22056,
+          "name": "57Mu  Eri",
+          "mag": 4.01,
+          "radec": [
+            71.375625,
+            -3.254657
+          ],
+          "review_center": [
+            3632.560693430516,
+            948.9314889080507
+          ],
+          "choices": [
+            {
+              "row": 39,
+              "x": 3629.06640625,
+              "y": 950.3837890625
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 39,
+          "id": 30,
+          "note": "Visible localized source at option 0; association conditional on the WCS-proposed field pattern, not independently certified astrometry."
+        },
+        {
+          "hyg_id": 19538,
+          "name": "Beid",
+          "mag": 4.04,
+          "radec": [
+            62.966415,
+            -6.837581
+          ],
+          "review_center": [
+            4313.15290478741,
+            902.0383724348823
+          ],
+          "choices": [
+            {
+              "row": 46,
+              "x": 4301.36083984375,
+              "y": 906.5396728515625
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 46,
+          "id": 31,
+          "note": "Visible localized source at option 0; association conditional on the WCS-proposed field pattern, not independently certified astrometry."
+        },
+        {
+          "hyg_id": 33073,
+          "name": "14The CMa",
+          "mag": 4.08,
+          "radec": [
+            103.547505,
+            -12.038628
+          ],
+          "review_center": [
+            2065.0250796462774,
+            2453.947228623692
+          ],
+          "choices": [
+            {
+              "row": 83,
+              "x": 2064.12744140625,
+              "y": 2456.723388671875
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 83,
+          "id": 32,
+          "note": "Visible localized source at option 0; association conditional on the WCS-proposed field pattern, not independently certified astrometry."
+        },
+        {
+          "hyg_id": 33956,
+          "name": "Muliphein",
+          "mag": 4.11,
+          "radec": [
+            105.939555,
+            -15.633286
+          ],
+          "review_center": [
+            2051.819066401319,
+            2753.831017125724
+          ],
+          "choices": [
+            {
+              "row": 84,
+              "x": 2051.4267578125,
+              "y": 2756.705078125
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 84,
+          "id": 33,
+          "note": "Visible localized source at option 0; association conditional on the WCS-proposed field pattern, not independently certified astrometry."
+        },
+        {
+          "hyg_id": 28543,
+          "name": "61Mu  Ori",
+          "mag": 4.12,
+          "radec": [
+            90.59583,
+            9.647276
+          ],
+          "review_center": [
+            2105.3063676579545,
+            804.6674801399928
+          ],
+          "choices": [
+            {
+              "row": 41,
+              "x": 2104.58447265625,
+              "y": 804.1880493164062
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 41,
+          "id": 34,
+          "note": "Visible localized source at option 0; association conditional on the WCS-proposed field pattern, not independently certified astrometry."
+        },
+        {
+          "hyg_id": 34677,
+          "name": "22Del Mon",
+          "mag": 4.15,
+          "radec": [
+            107.966085,
+            -0.492764
+          ],
+          "review_center": [
+            1419.453027454001,
+            1947.8881596652454
+          ],
+          "choices": [
+            {
+              "row": 60,
+              "x": 1415.8394775390625,
+              "y": 1950.264404296875
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 60,
+          "id": 35,
+          "note": "Visible localized source at option 0; association conditional on the WCS-proposed field pattern, not independently certified astrometry."
+        },
+        {
+          "hyg_id": 21349,
+          "name": "88    Tau",
+          "mag": 4.25,
+          "radec": [
+            68.913585,
+            10.16079
+          ],
+          "review_center": [
+            3365.758341222484,
+            38.21614800701606
+          ],
+          "choices": [
+            {
+              "row": 44,
+              "x": 3362.58251953125,
+              "y": 42.784671783447266
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 44,
+          "id": 36,
+          "note": "Visible localized source at option 0; association conditional on the WCS-proposed field pattern, not independently certified astrometry."
+        },
+        {
+          "hyg_id": 36182,
+          "name": "4Gam CMi",
+          "mag": 4.33,
+          "radec": [
+            112.040805,
+            8.92553
+          ],
+          "review_center": [
+            821.1119603045178,
+            1531.799344934886
+          ],
+          "choices": [
+            {
+              "row": 63,
+              "x": 816.143798828125,
+              "y": 1533.2459716796875
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 63,
+          "id": 37,
+          "note": "Visible localized source at option 0; association conditional on the WCS-proposed field pattern, not independently certified astrometry."
+        },
+        {
+          "hyg_id": 39750,
+          "name": "29Zet Mon",
+          "mag": 4.36,
+          "radec": [
+            122.14854,
+            -2.983786
+          ],
+          "review_center": [
+            550.7607248057541,
+            2678.55331323155
+          ],
+          "choices": [
+            {
+              "row": 124,
+              "x": 542.7599487304688,
+              "y": 2680.04150390625
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 124,
+          "id": 38,
+          "note": "Visible localized source at option 0; association conditional on the WCS-proposed field pattern, not independently certified astrometry."
+        },
+        {
+          "hyg_id": 30346,
+          "name": "8Eps Mon",
+          "mag": 4.39,
+          "radec": [
+            95.942025,
+            4.592865
+          ],
+          "review_center": [
+            1962.864280368542,
+            1262.1491803772235
+          ],
+          "choices": [
+            {
+              "row": 50,
+              "x": 1961.634521484375,
+              "y": 1261.42041015625
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 50,
+          "id": 39,
+          "note": "Visible localized source at option 0; association conditional on the WCS-proposed field pattern, not independently certified astrometry."
+        },
+        {
+          "hyg_id": 39200,
+          "name": "CMi",
+          "mag": 4.39,
+          "radec": [
+            120.5664,
+            2.334571
+          ],
+          "review_center": [
+            459.70120128325016,
+            2269.6912169163625
+          ],
+          "choices": [
+            {
+              "row": 118,
+              "x": 451.508056640625,
+              "y": 2271.264892578125
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 118,
+          "id": 40,
+          "note": "Visible localized source at option 0; association conditional on the WCS-proposed field pattern, not independently certified astrometry."
+        },
+        {
+          "hyg_id": 32492,
+          "name": "18    Mon",
+          "mag": 4.48,
+          "radec": [
+            101.9652,
+            2.412159
+          ],
+          "review_center": [
+            1683.7025031075805,
+            1577.8366564363398
+          ],
+          "choices": [
+            {
+              "row": 80,
+              "x": 1681.3878173828125,
+              "y": 1578.569091796875
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 80,
+          "id": 41,
+          "note": "Visible localized source at option 0; association conditional on the WCS-proposed field pattern, not independently certified astrometry."
+        },
+        {
+          "hyg_id": 36322,
+          "name": "6    CMi",
+          "mag": 4.55,
+          "radec": [
+            112.44909,
+            12.006564
+          ],
+          "review_center": [
+            675.5962484173738,
+            1353.072578596005
+          ],
+          "choices": [
+            {
+              "row": 66,
+              "x": 670.6541137695312,
+              "y": 1353.630859375
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 66,
+          "id": 42,
+          "note": "Visible localized source at option 0; association conditional on the WCS-proposed field pattern, not independently certified astrometry."
+        },
+        {
+          "hyg_id": 39100,
+          "name": "28    Mon",
+          "mag": 4.69,
+          "radec": [
+            120.30556500000002,
+            -1.392608
+          ],
+          "review_center": [
+            625.8952715224178,
+            2492.2812941758625
+          ],
+          "choices": [
+            {
+              "row": 114,
+              "x": 618.794189453125,
+              "y": 2495.606689453125
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 114,
+          "id": 43,
+          "note": "Visible localized source at option 0; association conditional on the WCS-proposed field pattern, not independently certified astrometry."
+        },
+        {
+          "hyg_id": 37800,
+          "name": "81    Gem",
+          "mag": 4.89,
+          "radec": [
+            116.53103999999999,
+            18.510043
+          ],
+          "review_center": [
+            103.23509538795415,
+            1053.0953160533281
+          ],
+          "choices": [
+            {
+              "row": 88,
+              "x": 94.85761260986328,
+              "y": 1049.123779296875
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 88,
+          "id": 44,
+          "note": "Visible localized source at option 0; association conditional on the WCS-proposed field pattern, not independently certified astrometry."
+        },
+        {
+          "hyg_id": 21087,
+          "name": "45    Eri",
+          "mag": 4.91,
+          "radec": [
+            67.96944,
+            -0.044011
+          ],
+          "review_center": [
+            3753.136400867261,
+            642.4943138639454
+          ],
+          "choices": [
+            {
+              "row": 97,
+              "x": 3747.218505859375,
+              "y": 645.4559326171875
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 97,
+          "id": 45,
+          "note": "Visible localized source at option 0; association conditional on the WCS-proposed field pattern, not independently certified astrometry."
+        },
+        {
+          "hyg_id": 34530,
+          "name": "20    Mon",
+          "mag": 4.91,
+          "radec": [
+            107.557005,
+            -4.237106
+          ],
+          "review_center": [
+            1571.2148878863354,
+            2148.9307320026014
+          ],
+          "choices": [
+            {
+              "row": 182,
+              "x": 1568.8023681640625,
+              "y": 2152.7666015625
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 182,
+          "id": 46,
+          "note": "Visible localized source at option 0; association conditional on the WCS-proposed field pattern, not independently certified astrometry."
+        },
+        {
+          "hyg_id": 18741,
+          "name": "35    Eri",
+          "mag": 5.28,
+          "radec": [
+            60.383535,
+            -1.54966
+          ],
+          "review_center": [
+            4334.967502317511,
+            468.907082114752
+          ],
+          "choices": [
+            {
+              "row": 102,
+              "x": 4322.37890625,
+              "y": 475.78314208984375
+            }
+          ],
+          "label": "visible_source",
+          "selected_row": 102,
+          "id": 47,
+          "note": "Visible localized source at option 0; association conditional on the WCS-proposed field pattern, not independently certified astrometry."
+        }
+      ]
+    }
+  ]
+}

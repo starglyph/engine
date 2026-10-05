@@ -1,0 +1,15 @@
+{
+  "id": "wm_r_154807046",
+  "split": "development",
+  "holdout": false,
+  "scope": "post-measurement descriptive inlier coverage, no new fit, no hypothesis tuning",
+  "hashes": {
+    "prototype/eval/robustness_reference_coverage.py": "50fe04f79f4392181a18466d6ad46cadb074c9f52018beb00d14fb9023ae6323",
+    "prototype/artifacts/robustness-iteration-40/protocol.json": "7d64c862a6a0c2ae818b74df5dd6d391a88d0fc8da0eeba0a01155bcf0dfdf9f",
+    "prototype/artifacts/robustness-iteration-40/review.json": "397fa7248d961ab99c83a0d9ae81031345fac3cd3b92e1b269d6406b6296a58d",
+    "prototype/artifacts/robustness-iteration-40/review-protocol.json": "8afbf82df468a5bdb52c881c1e08a3d2f8b1eb887ee394a956fe16d2dda076f0",
+    "prototype/artifacts/robustness-iteration-40/results.json": "cfec4a85393328cb4a5981e8ae55b632d4e4617a95f19b895b16255a909faebd",
+    "prototype/artifacts/robustness-iteration-2/development-final/control/wm_r_154807046/solve-reports/wm_r_154807046.json": "9c20eef5f4f59a4a1104aa6e0f610313106ee8b09fb16eef2c002eca934d27a1",
+    "prototype/artifacts/robustness-iteration-2/development-final/blob/wm_r_154807046/solve-reports/wm_r_154807046.json": "29289d3a9a24a5c32f7ff76498bee87904697f649c84c3c701a095e66f5de812"
+  }
+}

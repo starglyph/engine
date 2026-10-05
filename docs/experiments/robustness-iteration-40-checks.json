@@ -1,0 +1,40 @@
+{
+  "iteration": 40,
+  "python_tests": 269,
+  "tests_passed": true,
+  "development_id": "wm_r_154807046",
+  "candidate_count": 48,
+  "reviewed_visible": 47,
+  "not_visible": 1,
+  "geometry_frozen_before_measurement": true,
+  "coverage_frozen_after_primary_measurement": true,
+  "protected_hashes": {
+    "data/samples/sky-samples/manifest.json": "97e229270c7b0f97fce4e1f738917cd91cdff01df3508db29584af70a0ea4871",
+    "data/samples/sky-samples/robustness-results.json": "09e6efe61468b4afe896967d583553751d80fe82e65e0ac064528523bbc525e8",
+    "data/samples/sky-samples/collection-wcs-review.json": "97c182c51955baee9adce93cde8e93fb98ece6a69bdc606cf871d3a1eef19841"
+  },
+  "artifact_hashes": {
+    "docs/experiments/robustness-iteration-40-protocol.json": "7d64c862a6a0c2ae818b74df5dd6d391a88d0fc8da0eeba0a01155bcf0dfdf9f",
+    "docs/experiments/robustness-iteration-40-candidates.json": "29b9bc91da1d69de452f8e40b9346355452e73b7b67453651f53f20f435837bf",
+    "docs/experiments/robustness-iteration-40-review.json": "397fa7248d961ab99c83a0d9ae81031345fac3cd3b92e1b269d6406b6296a58d",
+    "docs/experiments/robustness-iteration-40-review-protocol.json": "8afbf82df468a5bdb52c881c1e08a3d2f8b1eb887ee394a956fe16d2dda076f0",
+    "docs/experiments/robustness-iteration-40-coverage-protocol.json": "ce3af1f874b7bb3157e14181a71a30255d76b9b360c8c8c5361e8fc1e442d85a",
+    "docs/experiments/robustness-iteration-40-results.json": "90d512bec63155f242e5feb1fc0786ab7137a669e49df4be35ca8fab0d6a646f",
+    "docs/experiments/robustness-iteration-40-coverage.json": "813755d10c3275565c79fd203d5e4961e28d604737dafd27af383090fb241f93",
+    "docs/images/robustness-iteration-40-sources.jpg": "40f91bd4ddbe49730617f5e8d9909b177ff106d2edecfe732000e4f1a159e854",
+    "prototype/eval/robustness_reference_audit.py": "fa1fe937e19c1da93404acc930f9b755fbd0d59b9db1a6be138521e5a357dac0",
+    "prototype/eval/robustness_reference_coverage.py": "50fe04f79f4392181a18466d6ad46cadb074c9f52018beb00d14fb9023ae6323",
+    "prototype/eval/test_robustness_reference_audit.py": "3fec680a8ec1e87f16fe01230805ed9543065cc667f22426f95607ed039d86e6",
+    "prototype/artifacts/robustness-iteration-40/python-tests.log": "ceb366b4c0375870436d741018fe05b8599f48fbaf961382f2d8bd2ea2e7377d",
+    "prototype/artifacts/robustness-iteration-40/wm_r_154807046-sources-0.jpg": "af854d7d69cc434a813c873e20e51e9fe402dbcf5626df4339690f5c79059704",
+    "prototype/artifacts/robustness-iteration-40/wm_r_154807046-sources-1.jpg": "f2a04cd4ee7ed25b99d2dc585f58b68fa0b266a5f90cab242854223814d969bd",
+    "prototype/artifacts/robustness-iteration-40/wm_r_154807046-sources-2.jpg": "c5b71b57b0bc0066a7aff74ece6aeda6f5ab634922b844fdbec5cc4253fb6fe7"
+  },
+  "production_changed": false,
+  "holdout": false,
+  "new_solver_calls": 0,
+  "new_wcs_calls": 0,
+  "new_fit_calls": 0,
+  "independent_ground_truth": false,
+  "automatic_improvement_confirmed": false
+}

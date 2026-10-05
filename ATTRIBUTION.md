@@ -204,3 +204,11 @@ source coordinates. Original photograph links are in the collection attribution.
 HYG/Astronexus-derived tables retain **CC BY-SA 4.0**; existing catalog
 identifiers retain their documented source licenses. No new photograph or
 independently confirmed star identity is added.
+
+Iteration 40 reference audit (`docs/experiments/robustness-iteration-40-*.json`,
+`docs/images/robustness-iteration-40-sources.jpg`) reuses “Orion, Sirius, Lepus.jpg”
+(`wm_r_154807046`) by Davydushta, **CC BY 4.0**, with its original source
+in the collection attribution. Changes: brightness ×2, uniform resizing,
+HYG-proposed position markers and labels; no change to collection pixels.
+The annotated figure and HYG/Astronexus-derived tables retain **CC BY-SA 4.0**.
+Existing Tycho-2 reference attribution remains applicable. No accepted ground truth.
