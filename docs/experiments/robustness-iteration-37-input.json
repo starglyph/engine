@@ -1,0 +1,220 @@
+{
+  "id": "wm_r_134291495",
+  "split": "development",
+  "image": "/home/agent/work/starglyph/engine/data/samples/sky-samples/images/wm_r_134291495.png",
+  "image_sha256": "efe2f4460cb419479ff3bd251815db7f7c78cd30258afc9a88cc1f7818cc145d",
+  "probes": [
+    [
+      3906,
+      415
+    ],
+    [
+      2146,
+      465
+    ],
+    [
+      2934,
+      484
+    ],
+    [
+      3012,
+      563
+    ],
+    [
+      3082,
+      953
+    ],
+    [
+      3633,
+      960
+    ],
+    [
+      3766,
+      1008
+    ],
+    [
+      3694,
+      1277
+    ],
+    [
+      3659,
+      1366
+    ],
+    [
+      2067,
+      1123
+    ],
+    [
+      2542,
+      1655
+    ],
+    [
+      4154,
+      1565
+    ],
+    [
+      4304,
+      1196
+    ]
+  ],
+  "radius_original_px": 12,
+  "review": [
+    {
+      "id": "P00",
+      "seed_xy": [
+        3907,
+        412
+      ],
+      "xy": [
+        3906,
+        415
+      ],
+      "visual_class": "selected_positive_control"
+    },
+    {
+      "id": "P01",
+      "seed_xy": [
+        2144,
+        468
+      ],
+      "xy": [
+        2146,
+        465
+      ],
+      "visual_class": "bright_compact"
+    },
+    {
+      "id": "P02",
+      "seed_xy": [
+        2924,
+        484
+      ],
+      "xy": [
+        2934,
+        484
+      ],
+      "visual_class": "faint_ambiguous"
+    },
+    {
+      "id": "P03",
+      "seed_xy": [
+        3014,
+        562
+      ],
+      "xy": [
+        3012,
+        563
+      ],
+      "visual_class": "bright_compact"
+    },
+    {
+      "id": "P04",
+      "seed_xy": [
+        3084,
+        950
+      ],
+      "xy": [
+        3082,
+        953
+      ],
+      "visual_class": "bright_compact"
+    },
+    {
+      "id": "P05",
+      "seed_xy": [
+        3632,
+        956
+      ],
+      "xy": [
+        3633,
+        960
+      ],
+      "visual_class": "bright_compact"
+    },
+    {
+      "id": "P06",
+      "seed_xy": [
+        3766,
+        1008
+      ],
+      "xy": [
+        3766,
+        1008
+      ],
+      "visual_class": "bright_compact"
+    },
+    {
+      "id": "P07",
+      "seed_xy": [
+        3694,
+        1278
+      ],
+      "xy": [
+        3694,
+        1277
+      ],
+      "visual_class": "bright_compact"
+    },
+    {
+      "id": "P08",
+      "seed_xy": [
+        3660,
+        1368
+      ],
+      "xy": [
+        3659,
+        1366
+      ],
+      "visual_class": "bright_complex"
+    },
+    {
+      "id": "P09",
+      "seed_xy": [
+        2070,
+        1122
+      ],
+      "xy": [
+        2067,
+        1123
+      ],
+      "visual_class": "bright_compact"
+    },
+    {
+      "id": "P10",
+      "seed_xy": [
+        2542,
+        1654
+      ],
+      "xy": [
+        2542,
+        1655
+      ],
+      "visual_class": "bright_compact"
+    },
+    {
+      "id": "P11",
+      "seed_xy": [
+        4152,
+        1570
+      ],
+      "xy": [
+        4154,
+        1565
+      ],
+      "visual_class": "faint_ambiguous"
+    },
+    {
+      "id": "P12",
+      "seed_xy": [
+        4308,
+        1202
+      ],
+      "xy": [
+        4304,
+        1196
+      ],
+      "visual_class": "faint_ambiguous"
+    }
+  ],
+  "provenance": "manual central-field inspection; brightest 8-bit luma pixel in fixed +/-10px seed box; no catalogue/WCS identities"
+}

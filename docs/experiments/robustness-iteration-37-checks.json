@@ -1,0 +1,39 @@
+{
+  "iteration": 37,
+  "python_tests": 253,
+  "python_passed": true,
+  "exact_trace_comparisons": 12,
+  "exact_prior_control_lists": 4,
+  "exact_control_matcher_outcomes": 192,
+  "protected_hashes": {
+    "data/samples/sky-samples/manifest.json": "97e229270c7b0f97fce4e1f738917cd91cdff01df3508db29584af70a0ea4871",
+    "data/samples/sky-samples/robustness-results.json": "09e6efe61468b4afe896967d583553751d80fe82e65e0ac064528523bbc525e8",
+    "data/samples/sky-samples/collection-wcs-review.json": "97c182c51955baee9adce93cde8e93fb98ece6a69bdc606cf871d3a1eef19841"
+  },
+  "artifact_hashes": {
+    "docs/experiments/robustness-iteration-37-protocol.json": "ed7cc88b1928feb386f61b26350c779386b2235ce96e768d9e7d8253c8efbb16",
+    "docs/experiments/robustness-iteration-37-input.json": "cccbda77801978e5ed03c9a8bf8fda7f8a417fb7b10ed585d9cf629e27cde52e",
+    "docs/experiments/robustness-iteration-37-results.json": "803486ab6582b4c0c3e2e64d29b7bf1910199c2e9ed56e09a2c9421b8a58b8aa",
+    "docs/experiments/robustness-iteration-37-replay-protocol.json": "733d28ed206edf356c19f72601c712c4d6443996f32fd77b62b338a3f83f8e26",
+    "docs/experiments/robustness-iteration-37-replay-input.json": "3d2a8f363e69c894cfe0e1f61d4429ace85e4d707fc3413d7c2691d1b062d541",
+    "docs/experiments/robustness-iteration-37-replay-results.json": "93b74e9b27a603cdea03713447d1e87ca1a1e1c5a68133f08617984e1de0f114",
+    "docs/images/robustness-iteration-37-sources.jpg": "30529557bcbc34de582b1e3e4b3bef2e22dfa96d4b04c3d54fe65c66a95a7cbb",
+    "prototype/eval/robustness_central_sources.py": "274d5bb88c0f5acb2d158cd5406b7feaadf4c81ec78477fe8d61a196f44e3234",
+    "prototype/eval/robustness_central_replay.py": "8cfc2194a7ef99f5b412a720e2e97e00cf168f97f5d85b51892dc73ab5d643f2",
+    "prototype/eval/test_robustness_central_sources.py": "a1a72db1311f9d71f2d665230c0533469c69de1d86b770b680806d90ce5e062e",
+    "prototype/artifacts/robustness-iteration-37/trace.json": "ed556487365b066a7e73f4bd895a1e43cd4944e950a5773c1a5551a3fa9dc131",
+    "prototype/artifacts/robustness-iteration-37/run.json": "096e338a75ba898fe47c9302f7896c3bab195f9f3222dd34f4a4a4b7c3b85ed5",
+    "prototype/artifacts/robustness-iteration-37/run.log": "f8eab57244eebb35e8b7f6f2d8b34301d0b0cc75b9e8bcf7e6c003550b1dce65",
+    "prototype/artifacts/robustness-iteration-37/replay-raw.json": "03b66775a5ccd1b78d524d077135fa4558bba4525503722aba644dcaf8582ba9",
+    "prototype/artifacts/robustness-iteration-37/replay-run.log": "e5dbf5047143dfd5ffd6fc7441282294923ef194e026c71f3b266882bd73d039",
+    "prototype/artifacts/robustness-iteration-37/replay-run.json": "cac389e1fe659d1900d9c43ee1dbe78a2625c20e473e2f3355aa8e967bb1e98e",
+    "prototype/artifacts/robustness-iteration-37/python-tests.log": "0e7b8e9721b3dc42fdd8e8d0513c299552c2a75262e2163465fda01e1f0313fb",
+    "docs/experiments/robustness-iteration-2-development.json": "cce09d1b2bd9275beb2391c47e030d3f64ddfeeb9eb9429b931755c400484eda"
+  },
+  "holdout": false,
+  "production_changed": false,
+  "automatic_improvement_confirmed": false,
+  "manual_variant_tetra3_candidates": 0,
+  "manual_variant_timeouts": 0,
+  "gate_scope": "Existing unchanged Rust source-trace test and tetra3 replay binaries; no automatic production change or new collection gate."
+}

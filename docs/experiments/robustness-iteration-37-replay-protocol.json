@@ -1,0 +1,54 @@
+{
+  "iteration": 37,
+  "id": "wm_r_134291495",
+  "split": "development",
+  "holdout": false,
+  "intervention": "manual promotion of five visually reviewed, filter-passing sources; replace last five slots; measured coordinates and flux unchanged",
+  "probes": [
+    "P01",
+    "P03",
+    "P04",
+    "P05",
+    "P09"
+  ],
+  "case_names": [
+    "1600-default-control",
+    "1600-default-manual_promotion",
+    "1600-deep-control",
+    "1600-deep-manual_promotion",
+    "6016-default-control",
+    "6016-default-manual_promotion",
+    "6016-deep-control",
+    "6016-deep-manual_promotion"
+  ],
+  "budget": {
+    "attempts": 384,
+    "per_attempt_ms": 2500,
+    "wall_s": 180
+  },
+  "criteria": [
+    "192 control outcomes match iteration36 in order",
+    "retain all 192 paired variant statuses, timing, tetra3 matches and post-thinning source indices",
+    "record whether removing short-prefix TooFew suffices to obtain a tetra3 candidate",
+    "manual intervention cannot establish automatic improvement; raw candidate is not an accepted solve"
+  ],
+  "hashes": {
+    "prototype/eval/robustness_central_replay.py": "8cfc2194a7ef99f5b412a720e2e97e00cf168f97f5d85b51892dc73ab5d643f2",
+    "prototype/artifacts/robustness-iteration-37/protocol.json": "ed7cc88b1928feb386f61b26350c779386b2235ce96e768d9e7d8253c8efbb16",
+    "prototype/artifacts/robustness-iteration-37/input.json": "cccbda77801978e5ed03c9a8bf8fda7f8a417fb7b10ed585d9cf629e27cde52e",
+    "prototype/artifacts/robustness-iteration-37/results.json": "2c76bd39a0b28153da88d141f495914b275544b7671791fe79994f0ed706e19b",
+    "prototype/artifacts/robustness-iteration-37/trace.json": "ed556487365b066a7e73f4bd895a1e43cd4944e950a5773c1a5551a3fa9dc131",
+    "prototype/artifacts/robustness-iteration-37/replay-input.json": "3d2a8f363e69c894cfe0e1f61d4429ace85e4d707fc3413d7c2691d1b062d541",
+    "prototype/artifacts/robustness-iteration-36/trace": "7994c694f43089aae403337dd5e69755ae95695d6ebf430278ed6cddd967680f",
+    "prototype/artifacts/robustness-iteration-36/binary.json": "c252e7e8115fa0b906d8e71a33a78660e665ef110b4ad9eec70ebb680d85c96b",
+    "prototype/artifacts/robustness-iteration-36/protocol.json": "84b05ee1c41b55363dcfb7cb0744516230abc3a23d8406154f5aa0ccf6386fcd",
+    "prototype/artifacts/robustness-iteration-36/results.json": "19c53d309134e33a60ea464fd02055905030c40cc3055ab258d915a1b0189cb4",
+    "data/samples/sky-samples/manifest.json": "97e229270c7b0f97fce4e1f738917cd91cdff01df3508db29584af70a0ea4871",
+    "prototype/artifacts/robustness-iteration-1/diagnosis/wm_r_134291495/solve-reports/wm_r_134291495.json": "9adfa5b55f509aecf263d7ad584d8bb66675319bff84652154060df838d119ed",
+    "prototype/eval/robustness_thinning_trace.py": "4bdfdc720beb48494b87cd71a8ea9749df747a00cbf53465b43da6db880e7122",
+    "prototype/artifacts/cache/tetra3-bootstrap-10-70-mag65-v0.8.0.bin": "3dab6ebaa5c8dea2a5a5b2690a8c42c4b79fca7ed3129ed4f7decd1ea2d3d3fe",
+    "prototype/artifacts/cache/tetra3-dense-16-30-mag65-v0.8.0.bin": "9666a53166adb3c9411b87ce5d995c12acecc4e72963c50fc9870c28334f15d9",
+    "prototype/artifacts/cache/tetra3-dense-30-54-mag65-v0.8.0.bin": "27c39a71201c72f9bb58e04daf4f526b4ad8da11eeafc05fbcf2ac0b95334893",
+    "prototype/artifacts/cache/tetra3-dense-48-88-mag65-v0.8.0.bin": "8238a8f7e15052a5e2a5de9d8671178815f07c86478df23fab2ec5ce1c125b20"
+  }
+}

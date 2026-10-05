@@ -183,3 +183,10 @@ reuse coordinates from `wm_r_134291495` by NOIRLab/AURA/NSF and
 in the collection attribution. No new photograph, annotation or ground truth.
 Catalog identifiers from the existing tetra3 databases retain their documented
 source attribution; the source and licensing references are in `docs/data-sources.md`.
+
+Iteration 37 central-source diagnostics (`docs/experiments/robustness-iteration-37-*.json`,
+`docs/images/robustness-iteration-37-sources.jpg`) reuse `wm_r_134291495` by
+NOIRLab/AURA/NSF, **CC BY 4.0**, with its original source in the collection
+attribution. The figure retains **CC BY 4.0**. Changes: crops, uniform resizing,
+display brightness ×1.5, probe circles and coordinate labels. No new photograph
+or independent star identity is supplied.
