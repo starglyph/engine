@@ -1,0 +1,80 @@
+{
+  "iteration": 32,
+  "python_tests": {
+    "command": [
+      "python3",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "eval",
+      "-p",
+      "test_*.py"
+    ],
+    "exit_code": 0,
+    "elapsed_s": 4.483941204845905
+  },
+  "python_test_count": 231,
+  "rust_export_test": {
+    "command": [
+      "/home/agent/work/starglyph/engine/prototype/artifacts/robustness-iteration-32/pair-test",
+      "--exact",
+      "solve::pair_refit::fixed_pairs",
+      "--ignored"
+    ],
+    "exit_code": 0,
+    "elapsed_s": 0.016608651727437973
+  },
+  "rust_export_test_count": 1,
+  "exact_control_cameras": 6,
+  "exact_control_max_abs_delta": 0.0,
+  "nonlinear_fits": 12,
+  "target19_fits": 6,
+  "fit19_residual_vectors_checked": 114,
+  "residual_tolerance_px": 1e-08,
+  "summary_repeat_identical": true,
+  "public_local_semantically_equal": true,
+  "frozen_input_hashes_valid": true,
+  "prior_lineage_valid": true,
+  "protected_hashes": {
+    "data/samples/sky-samples/manifest.json": "97e229270c7b0f97fce4e1f738917cd91cdff01df3508db29584af70a0ea4871",
+    "data/samples/sky-samples/robustness-results.json": "09e6efe61468b4afe896967d583553751d80fe82e65e0ac064528523bbc525e8",
+    "data/samples/sky-samples/collection-wcs-review.json": "97c182c51955baee9adce93cde8e93fb98ece6a69bdc606cf871d3a1eef19841"
+  },
+  "errors": 0,
+  "timeouts": 0,
+  "linear_agreement_confirmed": true,
+  "linear_agreement_maxima": {
+    "fit19": {
+      "rms_px": 0.06213897112651921,
+      "max_px": 0.10672395320960501
+    },
+    "former22": {
+      "rms_px": 0.0540652617929738,
+      "max_px": 0.08945909169490422
+    }
+  },
+  "starts_converged": true,
+  "max_paired_start_projection_difference_px": 1.9129077691411647e-07,
+  "nonlinear_loo": false,
+  "new_searches": 0,
+  "production_changed": false,
+  "holdout": false,
+  "ground_truth_promoted": false,
+  "automatic_improvement_confirmed": false,
+  "gate_scope": "Offline fixed-pair diagnostic only; existing unchanged Rust binary. No new build, collection, CLI or negative trials.",
+  "artifact_hashes": {
+    "prototype/artifacts/robustness-iteration-32/protocol.json": "002d693d764c84d0e1b116fdcb43d3c47f398a575278b51e1fe77e48093e1782",
+    "prototype/artifacts/robustness-iteration-32/input.json": "ce687fc63a99cd3556d1f1286d4781b580c970f08aa7c8e5b1adbf0201983d22",
+    "prototype/artifacts/robustness-iteration-32/fits.json": "6b543597342d57b521eaa402339f24b9e2ab35f932515c06243859ecef13e2d7",
+    "prototype/artifacts/robustness-iteration-32/results.json": "c94bed5fb4c5498e82b4f61f60526da430a4db5439694530b7a5c553cf09f2c2",
+    "prototype/artifacts/robustness-iteration-32/run.json": "5931dcb0d087f34c89cf3dd545a1a16654f4f864525ec6575d649f0451a1292f",
+    "prototype/artifacts/robustness-iteration-32/python-tests.json": "eaf15a6c5fea66f332e9b7fd803b5e1e5091c39c0be72bdb923caa50cfa36750",
+    "prototype/artifacts/robustness-iteration-32/run.log": "651c8af61d92df5d529697d450395eb3a3a0bea9a65abd41331314596aeb211c",
+    "prototype/artifacts/robustness-iteration-32/python-tests.log": "f8ea6be2a6d9b6559dc5316c47047df4884665992917338bd1f373ae7cac6ff6",
+    "prototype/eval/test_robustness_probe19_fit.py": "e5ec05877f8198df541c8b1cba3a0c7d818695fd5cf5443d49d79e5e8026677f",
+    "docs/experiments/robustness-iteration-32-protocol.json": "002d693d764c84d0e1b116fdcb43d3c47f398a575278b51e1fe77e48093e1782",
+    "docs/experiments/robustness-iteration-32-input.json": "07a7f7f2762128677398c571471701f446eca50215a3d9e4d9b2c12f6f419c9b",
+    "docs/experiments/robustness-iteration-32-results.json": "c1eede91236856bce0e4f32f12ee861bf7fcb1fa5fda6f891727618495f47c4b"
+  }
+}
