@@ -171,3 +171,8 @@ Iteration 34 linear tangential-distortion measurements
 (`docs/experiments/robustness-iteration-34-*.json`) reuse the same photograph's
 reviewed coordinates (oliwok, **CC BY 4.0**) and HYG/Astronexus identities.
 HYG-derived tables retain **CC BY-SA 4.0**. No new photographs or annotations.
+
+Iteration 35 nonlinear validation (`docs/experiments/robustness-iteration-35-*.json`)
+uses the same frozen photograph-derived coordinates (oliwok, **CC BY 4.0**)
+and HYG/Astronexus identities. HYG-derived tables retain **CC BY-SA 4.0**.
+No new photograph, visual annotation or independent ground truth is added.

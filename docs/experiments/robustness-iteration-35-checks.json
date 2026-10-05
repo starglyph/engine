@@ -1,0 +1,291 @@
+{
+  "iteration": 35,
+  "python_tests": {
+    "command": [
+      "python3",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "eval",
+      "-p",
+      "test_*.py"
+    ],
+    "exit_code": 0,
+    "elapsed_s": 4.601480359211564
+  },
+  "python_test_count": 244,
+  "rust_tests": {
+    "command": [
+      "/home/agent/work/starglyph/engine/prototype/artifacts/robustness-iteration-35/tangential-test"
+    ],
+    "exit_code": 0,
+    "elapsed_s": 2.674527632072568
+  },
+  "rust_passed": 101,
+  "rust_ignored": 7,
+  "fit_export": {
+    "command": [
+      "/home/agent/work/starglyph/engine/prototype/artifacts/robustness-iteration-35/tangential-test",
+      "--exact",
+      "solve::tangential_refit::fixed_pairs",
+      "--ignored"
+    ],
+    "exit_code": 0,
+    "elapsed_s": 0.008481945842504501
+  },
+  "export_tests_passed": 1,
+  "clippy_all_dependencies": {
+    "command": [
+      "cargo",
+      "clippy",
+      "--offline",
+      "--locked",
+      "--release",
+      "--manifest-path",
+      "/home/agent/work/starglyph/engine/prototype/artifacts/robustness-iteration-35/pipeline/Cargo.toml",
+      "-p",
+      "starglyph-core",
+      "--features",
+      "serde_json/float_roundtrip",
+      "--tests",
+      "--",
+      "-D",
+      "warnings"
+    ],
+    "exit_code": 101,
+    "elapsed_s": 15.260941674932837
+  },
+  "clippy_all_dependencies_limitation": "Pre-existing simulator-core/src/dataset.rs:289 too_many_arguments; unchanged dependency. Reused prior core gate with --no-deps.",
+  "clippy_core": {
+    "command": [
+      "cargo",
+      "clippy",
+      "--offline",
+      "--locked",
+      "--release",
+      "--manifest-path",
+      "/home/agent/work/starglyph/engine/prototype/artifacts/robustness-iteration-35/pipeline/Cargo.toml",
+      "-p",
+      "starglyph-core",
+      "--features",
+      "serde_json/float_roundtrip",
+      "--all-targets",
+      "--no-deps",
+      "--",
+      "-D",
+      "warnings"
+    ],
+    "exit_code": 0,
+    "elapsed_s": 3.9824814666062593
+  },
+  "rustfmt": {
+    "command": [
+      "rustfmt",
+      "--edition",
+      "2021",
+      "--check",
+      "/home/agent/work/starglyph/engine/prototype/eval/tangential_refit.rs",
+      "/home/agent/work/starglyph/engine/prototype/artifacts/robustness-iteration-35/pipeline/crates/starglyph-core/src/solve/tangential_optimizer.rs"
+    ],
+    "exit_code": 0,
+    "elapsed_s": 0.03379219211637974
+  },
+  "exact_replay_controls": 6,
+  "nonlinear_fits": 18,
+  "fit_failures": 0,
+  "fit_timeouts": 0,
+  "projection_crosscheck_points": 1026,
+  "projection_crosscheck_max_abs_px": 9.094947017729282e-13,
+  "linear_agreement_confirmed": true,
+  "linear_agreement_maxima": {
+    "fit22": {
+      "rms_px": 0.040866025616199106,
+      "max_px": 0.08326935199577602
+    },
+    "common19": {
+      "rms_px": 0.08654644613000764,
+      "max_px": 0.1323860647696844
+    }
+  },
+  "max_control_projection_shift_px": 5.158014469464819e-08,
+  "min_final_seven_ray_margin": 0.9767584377888882,
+  "descriptive_transfer_passed": false,
+  "passing_cases": [
+    "coverage22_external",
+    "coverage22_native_r8",
+    "coverage22_native_r12"
+  ],
+  "failing_cases": [
+    "original22_external",
+    "original22_native_r8",
+    "original22_native_r12"
+  ],
+  "budgets": [
+    {
+      "name": "replay_original22_external",
+      "iterations": 4,
+      "residual_evaluations": 29,
+      "elapsed_ms": 0.071164,
+      "stop": "small_improvement"
+    },
+    {
+      "name": "five_original22_external",
+      "iterations": 1,
+      "residual_evaluations": 14,
+      "elapsed_ms": 0.017092,
+      "stop": "small_improvement"
+    },
+    {
+      "name": "seven_original22_external",
+      "iterations": 5,
+      "residual_evaluations": 46,
+      "elapsed_ms": 0.15803999999999999,
+      "stop": "small_improvement"
+    },
+    {
+      "name": "replay_coverage22_external",
+      "iterations": 4,
+      "residual_evaluations": 33,
+      "elapsed_ms": 0.041679,
+      "stop": "small_improvement"
+    },
+    {
+      "name": "five_coverage22_external",
+      "iterations": 1,
+      "residual_evaluations": 17,
+      "elapsed_ms": 0.021891,
+      "stop": "small_improvement"
+    },
+    {
+      "name": "seven_coverage22_external",
+      "iterations": 5,
+      "residual_evaluations": 55,
+      "elapsed_ms": 0.128213,
+      "stop": "no_accepted_step"
+    },
+    {
+      "name": "replay_original22_native_r8",
+      "iterations": 4,
+      "residual_evaluations": 31,
+      "elapsed_ms": 0.032452,
+      "stop": "small_improvement"
+    },
+    {
+      "name": "five_original22_native_r8",
+      "iterations": 1,
+      "residual_evaluations": 13,
+      "elapsed_ms": 0.013965,
+      "stop": "small_improvement"
+    },
+    {
+      "name": "seven_original22_native_r8",
+      "iterations": 5,
+      "residual_evaluations": 46,
+      "elapsed_ms": 0.098748,
+      "stop": "small_improvement"
+    },
+    {
+      "name": "replay_coverage22_native_r8",
+      "iterations": 4,
+      "residual_evaluations": 29,
+      "elapsed_ms": 0.031408,
+      "stop": "small_improvement"
+    },
+    {
+      "name": "five_coverage22_native_r8",
+      "iterations": 1,
+      "residual_evaluations": 15,
+      "elapsed_ms": 0.01616,
+      "stop": "small_improvement"
+    },
+    {
+      "name": "seven_coverage22_native_r8",
+      "iterations": 5,
+      "residual_evaluations": 46,
+      "elapsed_ms": 0.09761500000000001,
+      "stop": "small_improvement"
+    },
+    {
+      "name": "replay_original22_native_r12",
+      "iterations": 4,
+      "residual_evaluations": 32,
+      "elapsed_ms": 0.034364,
+      "stop": "small_improvement"
+    },
+    {
+      "name": "five_original22_native_r12",
+      "iterations": 1,
+      "residual_evaluations": 9,
+      "elapsed_ms": 0.009297999999999999,
+      "stop": "small_improvement"
+    },
+    {
+      "name": "seven_original22_native_r12",
+      "iterations": 5,
+      "residual_evaluations": 46,
+      "elapsed_ms": 0.101081,
+      "stop": "small_improvement"
+    },
+    {
+      "name": "replay_coverage22_native_r12",
+      "iterations": 4,
+      "residual_evaluations": 29,
+      "elapsed_ms": 0.030579,
+      "stop": "small_improvement"
+    },
+    {
+      "name": "five_coverage22_native_r12",
+      "iterations": 1,
+      "residual_evaluations": 17,
+      "elapsed_ms": 0.018906000000000003,
+      "stop": "no_accepted_step"
+    },
+    {
+      "name": "seven_coverage22_native_r12",
+      "iterations": 5,
+      "residual_evaluations": 53,
+      "elapsed_ms": 0.120309,
+      "stop": "small_improvement"
+    }
+  ],
+  "summary_repeat_identical": true,
+  "public_local_semantically_equal": true,
+  "frozen_hashes_valid": true,
+  "protected_hashes": {
+    "data/samples/sky-samples/manifest.json": "97e229270c7b0f97fce4e1f738917cd91cdff01df3508db29584af70a0ea4871",
+    "data/samples/sky-samples/robustness-results.json": "09e6efe61468b4afe896967d583553751d80fe82e65e0ac064528523bbc525e8",
+    "data/samples/sky-samples/collection-wcs-review.json": "97c182c51955baee9adce93cde8e93fb98ece6a69bdc606cf871d3a1eef19841"
+  },
+  "new_searches": 0,
+  "holdout": false,
+  "production_changed": false,
+  "automatic_improvement_confirmed": false,
+  "independent_ground_truth": false,
+  "gate_scope": "Isolated test-only model and generated production LM. Core unit tests and fixed-pair exports only; no changed production behavior or collection/negative/holdout runs.",
+  "artifact_hashes": {
+    "prototype/artifacts/robustness-iteration-35/protocol.json": "9fd9d8b286865977a36f5dc349a2dfdbc7f3cfeb1807a5acecca18d157adcaea",
+    "prototype/artifacts/robustness-iteration-35/input.json": "26e837f3104160c4b2997268a988762e3b2554d4c8854613a73a76c89c1a9b9c",
+    "prototype/artifacts/robustness-iteration-35/results.json": "6c3656c3d6e8fb6c9a4322e70471ec83df6a8ee2ea253f9c6682a772cebc0a63",
+    "prototype/artifacts/robustness-iteration-35/fits.json": "a174b3d6544200e2ebb2edaccb4ce96fa02a0d6cf3fefab62beb6e9229923f70",
+    "prototype/artifacts/robustness-iteration-35/binary.json": "d7d191660f503d979d71ff3e9fba4e4e37a0cfed42306162d1dc31ff6b5fd162",
+    "prototype/artifacts/robustness-iteration-35/build.json": "44f3327ef2b773b09d8d5ed94a07514768ce41954b4e4da9db55ced5eda467df",
+    "prototype/artifacts/robustness-iteration-35/run.json": "69a29f9559def423f2b6912c2c6baf1692f02a8215db4ea14e25efb289db88a0",
+    "prototype/artifacts/robustness-iteration-35/python-tests.json": "516a7f33731704a537aba2f61a0cdec9b1e13d3a49e063d27f7c2b0010a58f2d",
+    "prototype/artifacts/robustness-iteration-35/rust-tests.json": "65199763bb9f48d08577e0e21144ddeb092d7842f7b7576f26d50b5f6c7b62f3",
+    "prototype/artifacts/robustness-iteration-35/clippy.json": "55b4b2d894d09e2a5e20ceebc3dd960a85e4ea791f69e154ee4f397895a9cefc",
+    "prototype/artifacts/robustness-iteration-35/clippy-core.json": "8b30a21855c36de1277a040d17913cbec13ba1c66e8cff672b1676f068e69b46",
+    "prototype/artifacts/robustness-iteration-35/rustfmt-check.json": "1925b8c5e3b6e1705072ec5f2ce84232b5e3682205a10beec1d254a68ca54536",
+    "prototype/artifacts/robustness-iteration-35/run.log": "ea5df88d82c92bf321ea80e702582c71567fca958814a564ca40f9ffb21db534",
+    "prototype/artifacts/robustness-iteration-35/python-tests.log": "a44199d2f3c791640db85c3460a0b2ba74a14f61bbf1618e24992ef902d2e3eb",
+    "prototype/artifacts/robustness-iteration-35/rust-tests.log": "e161588c3caed68d60b605fe91f8a2280c960ec36e3d74c162f30c13302a85ea",
+    "prototype/artifacts/robustness-iteration-35/clippy.log": "195e16a4de5d12b5c96c60a573dbcd269ca25abe6af606338bae16c3c9d605a4",
+    "prototype/artifacts/robustness-iteration-35/clippy-core.log": "c4168b93e77fe84158d318da15af97653962cb50e3a605ee97487742239e6219",
+    "prototype/artifacts/robustness-iteration-35/tangential-test": "d67dd13b27e88e0f8683e4918c453b4c854bc11db7d12cf7c7bc2d510bcb307a",
+    "prototype/eval/test_robustness_tangential_fit.py": "da2fc18953d81c4071285cd67c0de8978fd09f6dd298fbf215c1c76189f9a50e",
+    "docs/experiments/robustness-iteration-35-protocol.json": "9fd9d8b286865977a36f5dc349a2dfdbc7f3cfeb1807a5acecca18d157adcaea",
+    "docs/experiments/robustness-iteration-35-input.json": "658ea20128b58c87355138ad6e70dabeebdf1f9bff7a2da3baad8887aa9cc864",
+    "docs/experiments/robustness-iteration-35-results.json": "6f03ac2b8398cc8fc493a0369dce98977e320870a500a1cf94abfab46aee33d7"
+  },
+  "removed_build_cache": "prototype/artifacts/robustness-iteration-35/pipeline/target"
+}
