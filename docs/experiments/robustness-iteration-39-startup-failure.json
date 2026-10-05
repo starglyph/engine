@@ -1,0 +1,218 @@
+{
+  "classification": "tool_startup_failure_not_recognition_failure",
+  "reason": "Missing astrometry.util.removelines Python module; solver search never started.",
+  "results": {
+    "iteration": 39,
+    "id": "wm_r_134291495",
+    "split": "development",
+    "holdout": false,
+    "protocol_sha256": "066d75718a7eb3373c3b74eaf91b225881789076dda6ade07710447422360c3c",
+    "completed": 3,
+    "cases": [
+      {
+        "name": "left",
+        "elapsed_s": 0.31931598484516144,
+        "result": {
+          "source": "/home/agent/work/starglyph/engine/data/samples/sky-samples/images/wm_r_134291495.png",
+          "source_sha256": "efe2f4460cb419479ff3bd251815db7f7c78cd30258afc9a88cc1f7818cc145d",
+          "width": 6016,
+          "height": 3760,
+          "pixel_convention": "top_left_zero_based",
+          "status": "unresolved",
+          "attempts": [
+            {
+              "extraction_sha256": "c3df66091378ba9f8b9aec34c4c5274b178eef293759b1214ea1c830ba44da9e",
+              "selected_xy_sha256": "b5784f78d68c9bb74eb1d967d0e50a584de8122aa1898d9d7e78fe1de2ec3b16",
+              "n_extracted": 1990,
+              "n_in_sky": 1990,
+              "n_selected": 661,
+              "command": [
+                "/tmp/starglyph39-astrometry/root/usr/bin/solve-field",
+                "/home/agent/work/starglyph/engine/prototype/artifacts/robustness-iteration-39/external/left/wm_r_134291495/downsample-4/sky.xyls",
+                "--width",
+                "2000",
+                "--height",
+                "1800",
+                "--x-column",
+                "X",
+                "--y-column",
+                "Y",
+                "--sort-column",
+                "FLUX",
+                "--dir",
+                "/home/agent/work/starglyph/engine/prototype/artifacts/robustness-iteration-39/external/left/wm_r_134291495/downsample-4",
+                "--out",
+                "field",
+                "--overwrite",
+                "--no-plots",
+                "--no-verify",
+                "--new-fits",
+                "none",
+                "--uniformize",
+                "0",
+                "--resort",
+                "--pixel-error",
+                "4",
+                "--code-tolerance",
+                "0.01",
+                "--depth",
+                "10,20,30,50",
+                "--cpulimit",
+                "30",
+                "--tweak-order",
+                "2",
+                "--crpix-center",
+                "--config",
+                "/home/agent/work/starglyph/engine/prototype/artifacts/robustness-iteration-39/external-backend.cfg"
+              ],
+              "exit_code": 255
+            }
+          ],
+          "solve_region_xyxy": [
+            0,
+            0,
+            2000,
+            1800
+          ]
+        }
+      },
+      {
+        "name": "center",
+        "elapsed_s": 0.43558368273079395,
+        "result": {
+          "source": "/home/agent/work/starglyph/engine/data/samples/sky-samples/images/wm_r_134291495.png",
+          "source_sha256": "efe2f4460cb419479ff3bd251815db7f7c78cd30258afc9a88cc1f7818cc145d",
+          "width": 6016,
+          "height": 3760,
+          "pixel_convention": "top_left_zero_based",
+          "status": "unresolved",
+          "attempts": [
+            {
+              "extraction_sha256": "c3df66091378ba9f8b9aec34c4c5274b178eef293759b1214ea1c830ba44da9e",
+              "selected_xy_sha256": "7bf506c83e9c4b6550d6bafaf89bf3c80625bc3d297156ae957957b880431670",
+              "n_extracted": 1990,
+              "n_in_sky": 1990,
+              "n_selected": 507,
+              "command": [
+                "/tmp/starglyph39-astrometry/root/usr/bin/solve-field",
+                "/home/agent/work/starglyph/engine/prototype/artifacts/robustness-iteration-39/external/center/wm_r_134291495/downsample-4/sky.xyls",
+                "--width",
+                "2400",
+                "--height",
+                "1900",
+                "--x-column",
+                "X",
+                "--y-column",
+                "Y",
+                "--sort-column",
+                "FLUX",
+                "--dir",
+                "/home/agent/work/starglyph/engine/prototype/artifacts/robustness-iteration-39/external/center/wm_r_134291495/downsample-4",
+                "--out",
+                "field",
+                "--overwrite",
+                "--no-plots",
+                "--no-verify",
+                "--new-fits",
+                "none",
+                "--uniformize",
+                "0",
+                "--resort",
+                "--pixel-error",
+                "4",
+                "--code-tolerance",
+                "0.01",
+                "--depth",
+                "10,20,30,50",
+                "--cpulimit",
+                "30",
+                "--tweak-order",
+                "2",
+                "--crpix-center",
+                "--config",
+                "/home/agent/work/starglyph/engine/prototype/artifacts/robustness-iteration-39/external-backend.cfg"
+              ],
+              "exit_code": 255
+            }
+          ],
+          "solve_region_xyxy": [
+            1800,
+            0,
+            4200,
+            1900
+          ]
+        }
+      },
+      {
+        "name": "right",
+        "elapsed_s": 0.591603634878993,
+        "result": {
+          "source": "/home/agent/work/starglyph/engine/data/samples/sky-samples/images/wm_r_134291495.png",
+          "source_sha256": "efe2f4460cb419479ff3bd251815db7f7c78cd30258afc9a88cc1f7818cc145d",
+          "width": 6016,
+          "height": 3760,
+          "pixel_convention": "top_left_zero_based",
+          "status": "unresolved",
+          "attempts": [
+            {
+              "extraction_sha256": "c3df66091378ba9f8b9aec34c4c5274b178eef293759b1214ea1c830ba44da9e",
+              "selected_xy_sha256": "687988ad7425ecb64968e1f476d3f972f1c998bc8409abcb4722569df614bc0c",
+              "n_extracted": 1990,
+              "n_in_sky": 1990,
+              "n_selected": 697,
+              "command": [
+                "/tmp/starglyph39-astrometry/root/usr/bin/solve-field",
+                "/home/agent/work/starglyph/engine/prototype/artifacts/robustness-iteration-39/external/right/wm_r_134291495/downsample-4/sky.xyls",
+                "--width",
+                "2000",
+                "--height",
+                "1800",
+                "--x-column",
+                "X",
+                "--y-column",
+                "Y",
+                "--sort-column",
+                "FLUX",
+                "--dir",
+                "/home/agent/work/starglyph/engine/prototype/artifacts/robustness-iteration-39/external/right/wm_r_134291495/downsample-4",
+                "--out",
+                "field",
+                "--overwrite",
+                "--no-plots",
+                "--no-verify",
+                "--new-fits",
+                "none",
+                "--uniformize",
+                "0",
+                "--resort",
+                "--pixel-error",
+                "4",
+                "--code-tolerance",
+                "0.01",
+                "--depth",
+                "10,20,30,50",
+                "--cpulimit",
+                "30",
+                "--tweak-order",
+                "2",
+                "--crpix-center",
+                "--config",
+                "/home/agent/work/starglyph/engine/prototype/artifacts/robustness-iteration-39/external-backend.cfg"
+              ],
+              "exit_code": 255
+            }
+          ],
+          "solve_region_xyxy": [
+            4016,
+            0,
+            6016,
+            1800
+          ]
+        }
+      }
+    ],
+    "independent_ground_truth": false
+  },
+  "protocol_sha256": "066d75718a7eb3373c3b74eaf91b225881789076dda6ade07710447422360c3c",
+  "archived_runner_sha256": "e3d381edb9a1bb76f9a28892ad537e42f12e0e8939522ea74907341bf541cf36"
+}

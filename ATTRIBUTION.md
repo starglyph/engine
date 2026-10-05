@@ -197,3 +197,10 @@ reuse the iteration 36/37 photograph-derived coordinates: NOIRLab/AURA/NSF
 source links are in the collection attribution. Catalog identifiers remain
 subject to the existing catalog attribution and license; derived HYG/Astronexus
 tables retain **CC BY-SA 4.0**. No new photograph or confirmed star identity.
+
+Iteration 39 local-field diagnostics (`docs/experiments/robustness-iteration-39-*.json`)
+reuse `wm_r_134291495` by NOIRLab/AURA/NSF, **CC BY 4.0**, and its saved
+source coordinates. Original photograph links are in the collection attribution.
+HYG/Astronexus-derived tables retain **CC BY-SA 4.0**; existing catalog
+identifiers retain their documented source licenses. No new photograph or
+independently confirmed star identity is added.

@@ -1,0 +1,67 @@
+{
+  "iteration": 39,
+  "id": "wm_r_134291495",
+  "split": "development",
+  "holdout": false,
+  "scope": "three predefined rectangular local fields; fixed native-default detections translated only, same top40 and matching thresholds",
+  "regions": [
+    [
+      "left",
+      [
+        0,
+        0,
+        2000,
+        1800
+      ]
+    ],
+    [
+      "center",
+      [
+        1800,
+        0,
+        4200,
+        1900
+      ]
+    ],
+    [
+      "right",
+      [
+        4016,
+        0,
+        6016,
+        1800
+      ]
+    ]
+  ],
+  "budget": {
+    "attempts": 192,
+    "per_attempt_ms": 2500,
+    "wall_s": 180
+  },
+  "criteria": [
+    "48 full-frame control outcomes reproduce iteration38",
+    "retain every local candidate and failure; do not tune regions or rerun successful settings",
+    "local solver hypotheses are leads only; require visual identities and unused neighbouring stars before a conditional identification",
+    "no accepted ground truth or whole-field projection claim; no full WCS run"
+  ],
+  "hashes": {
+    "prototype/eval/robustness_subfield_identity.py": "bacacec180d0b0590ff855217d47e2de49f72bf769062d54e048d9c0da215696",
+    "prototype/eval/robustness_matcher_funnel.py": "2018cd5d003ee5c630efbb49b7c53280bdb44f575194a47cffbd51ff9a3412fc",
+    "prototype/eval/collection_run.py": "6bf1108b48c21a40bdd00023eae564c27c5062fd63beb45d32ddde86154bd5b5",
+    "prototype/eval/robustness_candidate_trace.py": "6ee7661eb7875c9307760bf3d038a94eccf18269e388f9fe11511c125ca72c17",
+    "prototype/artifacts/robustness-iteration-38/trace": "a6661b3117654f4e8f180813dec28d6702519df519caababf43a9e28c5884476",
+    "data/samples/sky-samples/manifest.json": "97e229270c7b0f97fce4e1f738917cd91cdff01df3508db29584af70a0ea4871",
+    "data/samples/sky-samples/images/wm_r_134291495.png": "efe2f4460cb419479ff3bd251815db7f7c78cd30258afc9a88cc1f7818cc145d",
+    "prototype/artifacts/robustness-iteration-1/diagnosis/wm_r_134291495/solve-reports/wm_r_134291495.json": "9adfa5b55f509aecf263d7ad584d8bb66675319bff84652154060df838d119ed",
+    "docs/experiments/robustness-iteration-38-input.json": "01805a97fe03f0a63e00e6b161c79d51c10b1dabc51045cfa862a410dcf0bb08",
+    "prototype/artifacts/robustness-iteration-39/input.json": "46228bbe15d7199502783f34918b1ab0898c5847aded0f3aa0a89187f585e631",
+    "data/catalogs/hyg_v42.csv.gz": "5ca9431ff364c8002a4a3efa91b2b9296746aea1543374db4cb6b4fab049d601",
+    "prototype/artifacts/robustness-collection/noirlab-new.html": "d8c48d2af5566d7f8bb249ea7c9b24c4465afad41d168282ac35684627ca0144",
+    "prototype/artifacts/cache/tetra3-bootstrap-10-70-mag65-v0.8.0.bin": "3dab6ebaa5c8dea2a5a5b2690a8c42c4b79fca7ed3129ed4f7decd1ea2d3d3fe",
+    "prototype/artifacts/cache/tetra3-dense-16-30-mag65-v0.8.0.bin": "9666a53166adb3c9411b87ce5d995c12acecc4e72963c50fc9870c28334f15d9",
+    "prototype/artifacts/cache/tetra3-dense-30-54-mag65-v0.8.0.bin": "27c39a71201c72f9bb58e04daf4f526b4ad8da11eeafc05fbcf2ac0b95334893",
+    "prototype/artifacts/cache/tetra3-dense-48-88-mag65-v0.8.0.bin": "8238a8f7e15052a5e2a5de9d8671178815f07c86478df23fab2ec5ce1c125b20",
+    "data/samples/sky-samples/robustness-results.json": "09e6efe61468b4afe896967d583553751d80fe82e65e0ac064528523bbc525e8",
+    "data/samples/sky-samples/collection-wcs-review.json": "97c182c51955baee9adce93cde8e93fb98ece6a69bdc606cf871d3a1eef19841"
+  }
+}
