@@ -1,0 +1,51 @@
+{
+  "iteration": 41,
+  "python_tests": 273,
+  "tests_passed": true,
+  "exact_reproduction": {
+    "camera": 0.0,
+    "source_sha256": 0.0,
+    "quality": 0.0,
+    "detections": 0.0,
+    "status": 0.0
+  },
+  "solver_processes": 1,
+  "internal_attempt_timeouts": 0,
+  "process_errors": 0,
+  "wall_timeouts": 0,
+  "source_count": 47,
+  "stage_count": 7,
+  "native_quality": {
+    "confidence": 1.0,
+    "log_odds": 77.65,
+    "n_detections": 40,
+    "n_inliers": 17,
+    "rms_px": 3.66
+  },
+  "observer_cache_link": "prototype/artifacts/robustness-iteration-25/fixed/pipeline/artifacts/cache",
+  "observer_cache_resolved": "prototype/artifacts/cache",
+  "protected_hashes": {
+    "data/samples/sky-samples/manifest.json": "97e229270c7b0f97fce4e1f738917cd91cdff01df3508db29584af70a0ea4871",
+    "data/samples/sky-samples/robustness-results.json": "09e6efe61468b4afe896967d583553751d80fe82e65e0ac064528523bbc525e8",
+    "data/samples/sky-samples/collection-wcs-review.json": "97c182c51955baee9adce93cde8e93fb98ece6a69bdc606cf871d3a1eef19841"
+  },
+  "artifact_hashes": {
+    "docs/experiments/robustness-iteration-41-protocol.json": "9883df2877131d8b95690d34e04a64447dee5eba5a6dc2751bb7bde939ece9ae",
+    "docs/experiments/robustness-iteration-41-input.json": "f5fe480fdb8762a999dd66f4a3836a6e620946c3c3ce48e561d300061ba31bca",
+    "docs/experiments/robustness-iteration-41-results.json": "ea53626511988089ed98e81dd898554d402078484effe288054470e71bbe2fa2",
+    "docs/experiments/robustness-iteration-41-trace.json": "9113635b3025a642c572000207ef2c80c8370d6a7c89bcd02e0f858a3fbd3fd3",
+    "docs/experiments/robustness-iteration-41-native-report.json": "6a3e67bfeb5840ce9687763de9508fac08568c6df352835ca54844cc1e687912",
+    "prototype/eval/robustness_orion_refinement.py": "6e3267d88f7c634429745336ba58b95612b9d171de14783238e34694b0d8441c",
+    "prototype/eval/test_robustness_orion_refinement.py": "67737a4313c9cf8ae3ccf4ce9413873b6d7a39e4439de3db7102e8f5110d1f7c",
+    "prototype/artifacts/robustness-iteration-41/run.json": "c06eda723ad3d3d1c9579a0a543bb97a46836e450ad2991be5605d6e3f4b1035",
+    "prototype/artifacts/robustness-iteration-41/run.log": "fc308d8d0f15d3ab7eb55ba5088bf297ab493074990eef50117b3585158bc7eb",
+    "prototype/artifacts/robustness-iteration-41/trace.json": "0e972877dfef7ddb9b9d8970a3992109133c0be081175050fe10347321bf228a",
+    "prototype/artifacts/robustness-iteration-41/identity-disagreements.json": "31f937db8d72048473bc359b36a1c5ed3be3a7776c5fc1ccc95290b77755c46c",
+    "prototype/artifacts/robustness-iteration-41/python-tests.log": "66198058dbda885173c0bffedee418fb3c81a7edc719f63e1078550b8c7a83a9"
+  },
+  "production_changed": false,
+  "holdout": false,
+  "new_wcs_calls": 0,
+  "automatic_improvement_confirmed": false,
+  "independent_ground_truth": false
+}

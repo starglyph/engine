@@ -212,3 +212,10 @@ in the collection attribution. Changes: brightness ×2, uniform resizing,
 HYG-proposed position markers and labels; no change to collection pixels.
 The annotated figure and HYG/Astronexus-derived tables retain **CC BY-SA 4.0**.
 Existing Tycho-2 reference attribution remains applicable. No accepted ground truth.
+
+Iteration 41 refinement trace (`docs/experiments/robustness-iteration-41-*.json`)
+reuses the same `wm_r_154807046` photograph-derived coordinates from Davydushta
+(**CC BY 4.0**) and HYG/Astronexus identities (**CC BY-SA 4.0**) as iteration 40.
+Original source links remain in the collection attribution. No new photograph,
+visual annotation or accepted ground truth is added. HYG-derived tables retain
+**CC BY-SA 4.0**.

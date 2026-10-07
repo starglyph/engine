@@ -1,0 +1,51 @@
+{
+  "iteration": 41,
+  "id": "wm_r_154807046",
+  "split": "development",
+  "holdout": false,
+  "experiment": "observation only: one original control solve, chosen candidate and existing refinement stages",
+  "budget": {
+    "processes": 1,
+    "wall_s": 120,
+    "per_match_attempt_ms": 2500
+  },
+  "criteria": [
+    "final camera, quality and ordered detector DTO exactly reproduce iteration40 control",
+    "retain every candidate trace and timeout; no alternative choice or parameter tuning",
+    "all 47 frozen reviewed sources at every stage, same three centroid methods and groups",
+    "fit identities bound to HYG units; proximity alone never certifies catalog identity",
+    "scale intermediate projections with existing pixel-center lift; native report measured directly",
+    "no WCS run, no holdout, no new algorithm or accepted ground truth"
+  ],
+  "hashes": {
+    "prototype/eval/robustness_orion_refinement.py": "6e3267d88f7c634429745336ba58b95612b9d171de14783238e34694b0d8441c",
+    "data/samples/sky-samples/manifest.json": "97e229270c7b0f97fce4e1f738917cd91cdff01df3508db29584af70a0ea4871",
+    "data/catalogs/hyg_v42.csv.gz": "5ca9431ff364c8002a4a3efa91b2b9296746aea1543374db4cb6b4fab049d601",
+    "data/samples/sky-samples/images/wm_r_154807046.png": "da420889b2818f3176320feb2d8fd4c4794f4c0f0800cf10e82de7473c262cb9",
+    "docs/experiments/robustness-iteration-25-protocol.json": "b0270fe47fe95ca630ed6f0d06b4eca5fbbe943fc58542802986deb146615494",
+    "prototype/artifacts/robustness-iteration-25/fixed/binaries/control": "b2c42f5cfff5dafc6d24dfbd84692b586b5fb9b58bb646a9142f1c8e223a3c79",
+    "prototype/artifacts/robustness-iteration-25/fixed/solve-control.rs": "0728679b6fe350ae081f51c562cfaf4fb90da7b4a200c91d783c536e6a6f081f",
+    "prototype/artifacts/robustness-iteration-25/fixed/pipeline/crates/starglyph-core/src/solve/refinement_trace.rs": "d3b2554ce8244b28c3332d9105d69c5f5a50a9ba6dbf7c8532153b62aba8f15a",
+    "docs/experiments/robustness-iteration-40-results.json": "90d512bec63155f242e5feb1fc0786ab7137a669e49df4be35ca8fab0d6a646f",
+    "prototype/artifacts/robustness-iteration-2/development-final/control/wm_r_154807046/solve-reports/wm_r_154807046.json": "9c20eef5f4f59a4a1104aa6e0f610313106ee8b09fb16eef2c002eca934d27a1",
+    "prototype/artifacts/robustness-iteration-41/input.json": "f5fe480fdb8762a999dd66f4a3836a6e620946c3c3ce48e561d300061ba31bca",
+    "docs/experiments/robustness-iteration-40-checks.json": "898f5e6a13f9480a228e041c1be30e34c3036e4f82ce507c8f922053a338944f",
+    "data/samples/sky-samples/robustness-results.json": "09e6efe61468b4afe896967d583553751d80fe82e65e0ac064528523bbc525e8",
+    "data/samples/sky-samples/collection-wcs-review.json": "97c182c51955baee9adce93cde8e93fb98ece6a69bdc606cf871d3a1eef19841",
+    "prototype/eval/robustness_candidate_trace.py": "6ee7661eb7875c9307760bf3d038a94eccf18269e388f9fe11511c125ca72c17",
+    "prototype/eval/robustness_refinement_trace.py": "e6ce1abf706ba4c51eced0d9ebe2ea6d9d6fb751cf9a13ad46f2a11a5da23209",
+    "prototype/eval/robustness_refinement_crossover_report.py": "8b564b11688f8d8390b0c8f959a322af65c0c64a42caa742a8181654bf9bb727",
+    "prototype/eval/robustness_refinement_report.py": "dda0cc3acdfd078769c11548c864212e522951a071f90b52d6087e7c0f19e825",
+    "prototype/eval/robustness_reference_audit.py": "fa1fe937e19c1da93404acc930f9b755fbd0d59b9db1a6be138521e5a357dac0",
+    "prototype/eval/robustness_reference_coverage.py": "50fe04f79f4392181a18466d6ad46cadb074c9f52018beb00d14fb9023ae6323",
+    "prototype/eval/compare_local_wcs.py": "1a8c83f6d0a19f3cbbe2a96f0db79a0ab60ac33fd09ad6c5c69472672ef31a3b",
+    "prototype/eval/collection_run.py": "6bf1108b48c21a40bdd00023eae564c27c5062fd63beb45d32ddde86154bd5b5",
+    "prototype/artifacts/cache/tetra3-dense-16-30-mag65-v0.8.0.bin": "9666a53166adb3c9411b87ce5d995c12acecc4e72963c50fc9870c28334f15d9",
+    "prototype/artifacts/cache/tetra3-dense-30-54-mag65-v0.8.0.bin": "27c39a71201c72f9bb58e04daf4f526b4ad8da11eeafc05fbcf2ac0b95334893",
+    "prototype/artifacts/cache/tetra3-dense-48-88-mag65-v0.8.0.bin": "8238a8f7e15052a5e2a5de9d8671178815f07c86478df23fab2ec5ce1c125b20",
+    "prototype/artifacts/cache/tetra3-dense-37-68-mag65-v0.8.0.bin": "732939f14218d45a40de66184c36d8887b3d4983db16009f2b34e8dcb007b705",
+    "prototype/artifacts/cache/tetra3-bootstrap-10-70-mag65-v0.8.0.bin": "3dab6ebaa5c8dea2a5a5b2690a8c42c4b79fca7ed3129ed4f7decd1ea2d3d3fe",
+    "prototype/artifacts/cache/tetra3-dense-59-90-mag65-v0.8.0.bin": "1b1df82113802746d1356f9907d6647c4bef0a72a9212cc16aba805f89c4e434",
+    "prototype/artifacts/cache/tetra3-dense-17-32-mag65-v0.8.0.bin": "b30da6edf2dc95b106eff4b9bb90202fe4a911e6a442c7d255614c4a6f58f57b"
+  }
+}
