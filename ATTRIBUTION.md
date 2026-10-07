@@ -230,3 +230,10 @@ Iteration 43 convergence diagnostics (`docs/experiments/robustness-iteration-43-
 reuse the same reviewed photograph coordinates and HYG/Astronexus identities as
 iteration 42, with the same **CC BY 4.0** photograph attribution and **CC BY-SA 4.0**
 license for HYG-derived tables. No new photograph or accepted ground truth.
+
+Iteration 44 vector diagnostics (`docs/experiments/robustness-iteration-44-*.json`,
+`docs/images/robustness-iteration-44-vectors.*`) reuse the reviewed coordinates
+of “Orion, Sirius, Lepus.jpg” (`wm_r_154807046`) by Davydushta (**CC BY 4.0**),
+with original links in the collection attribution. HYG/Astronexus-derived tables
+and vector plots retain **CC BY-SA 4.0**. Plots contain coordinates and residual
+arrows, no photograph pixels. No new photograph or accepted ground truth.
