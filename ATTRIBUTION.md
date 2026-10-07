@@ -219,3 +219,9 @@ reuses the same `wm_r_154807046` photograph-derived coordinates from Davydushta
 Original source links remain in the collection attribution. No new photograph,
 visual annotation or accepted ground truth is added. HYG-derived tables retain
 **CC BY-SA 4.0**.
+
+Iteration 42 fixed-pair diagnostics (`docs/experiments/robustness-iteration-42-*.json`)
+reuse the same reviewed coordinates of `wm_r_154807046` by Davydushta
+(**CC BY 4.0**) and HYG/Astronexus identities (**CC BY-SA 4.0**) from iterations
+40–41. Original source links remain in the collection attribution. HYG-derived
+tables retain **CC BY-SA 4.0**. No new photograph or accepted ground truth.
