@@ -282,3 +282,11 @@ of `wm_r_154807046` by Davydushta (**CC BY 4.0**) and HYG/Astronexus identities
 (**CC BY-SA 4.0**). Original source links remain in the collection attribution.
 Derived tables and coordinate-only plots retain **CC BY-SA 4.0**.
 No new photograph, visual annotation or accepted ground truth is added.
+
+Iteration 52 neighbourhood audit (`docs/experiments/robustness-iteration-52-*.json`,
+`docs/images/robustness-iteration-52-*.png`) reuses “Orion, Sirius, Lepus.jpg”
+(`wm_r_154807046`) by Davydushta (**CC BY 4.0**), with original links in the
+collection attribution. Changes: fixed crops, brightness ×2 for display,
+centroid/aperture markers, extraction labels, and separate HYG neighbourhood
+charts; collection pixels are unchanged. HYG/Astronexus-derived tables and
+annotated figures retain **CC BY-SA 4.0**. No new photograph or accepted ground truth.
