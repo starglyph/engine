@@ -256,3 +256,9 @@ of `wm_r_154807046` by Davydushta (**CC BY 4.0**) and HYG/Astronexus identities
 (**CC BY-SA 4.0**). Original links remain in the collection attribution.
 Derived tables and coordinate-only plots retain **CC BY-SA 4.0**.
 No new photograph, visual annotation or accepted ground truth is added.
+
+Iteration 48 pattern-order diagnostics (`docs/experiments/robustness-iteration-48-*.json`)
+reuse `wm_r_154807046` by Davydushta (**CC BY 4.0**) and the same reviewed
+coordinates and HYG/Astronexus identities (**CC BY-SA 4.0**).
+Original links remain in the collection attribution. HYG-derived tables retain
+**CC BY-SA 4.0**. No new photograph, annotation or accepted ground truth is added.
