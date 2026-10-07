@@ -237,3 +237,9 @@ of “Orion, Sirius, Lepus.jpg” (`wm_r_154807046`) by Davydushta (**CC BY 4.0*
 with original links in the collection attribution. HYG/Astronexus-derived tables
 and vector plots retain **CC BY-SA 4.0**. Plots contain coordinates and residual
 arrows, no photograph pixels. No new photograph or accepted ground truth.
+
+Iteration 45 linear/nonlinear diagnostics (`docs/experiments/robustness-iteration-45-*.json`)
+reuse the reviewed coordinates of `wm_r_154807046` by Davydushta (**CC BY 4.0**)
+and HYG/Astronexus-derived identities (**CC BY-SA 4.0**) from iterations 40–44.
+Original links remain in the collection attribution; derived tables retain
+**CC BY-SA 4.0**. No new photograph or accepted ground truth.
