@@ -269,3 +269,9 @@ of `wm_r_154807046` by Davydushta (**CC BY 4.0**) and HYG/Astronexus identities
 (**CC BY-SA 4.0**). Original source links remain in the collection attribution.
 Derived tables and coordinate-only plots retain **CC BY-SA 4.0**.
 No new photograph, visual annotation or accepted ground truth is added.
+
+Iteration 50 pre-search correction diagnostics (`docs/experiments/robustness-iteration-50-*.json`)
+reuse the reviewed coordinates of `wm_r_154807046` by Davydushta
+(**CC BY 4.0**) and HYG/Astronexus identities (**CC BY-SA 4.0**).
+Original source links remain in the collection attribution. HYG-derived
+tables retain **CC BY-SA 4.0**. No new photograph or accepted ground truth.
