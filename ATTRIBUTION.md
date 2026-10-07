@@ -290,3 +290,11 @@ collection attribution. Changes: fixed crops, brightness ×2 for display,
 centroid/aperture markers, extraction labels, and separate HYG neighbourhood
 charts; collection pixels are unchanged. HYG/Astronexus-derived tables and
 annotated figures retain **CC BY-SA 4.0**. No new photograph or accepted ground truth.
+
+Iteration 53 wider bright-pattern diagnostics (`docs/experiments/robustness-iteration-53-*.json`,
+`docs/images/robustness-iteration-53-*.png`) reuse “Orion, Sirius, Lepus.jpg”
+(`wm_r_154807046`) by Davydushta (**CC BY 4.0**), with original links in the
+collection attribution. Changes: wider crops, brightness ×2 for display,
+measured-source labels, and separate HYG catalogue charts; collection pixels
+are unchanged. HYG/Astronexus-derived tables and annotated figures retain
+**CC BY-SA 4.0**. No new photograph or accepted ground truth.
