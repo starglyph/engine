@@ -1,0 +1,4590 @@
+{
+  "iteration": 56,
+  "id": "wm_r_16053617",
+  "split": "development",
+  "holdout": false,
+  "protocol_sha256": "4a3c0e38a8994e299e8d47d2594ab38dd223dcf6454423f79e2feb90523dea41",
+  "unchanged_trace_passes": 12,
+  "exact_saved_control_lists": 4,
+  "exact_native_probe_associations": 8,
+  "comparison_valid": true,
+  "elapsed_s": 13.808661911636591,
+  "tiers": [
+    {
+      "mode": "control",
+      "width": 1600,
+      "height": 1117,
+      "tier": "default",
+      "detections": 40,
+      "stats": {
+        "accepted": 265,
+        "background_median": 0.33725491166114807,
+        "blob_concentration": false,
+        "candidates": 430,
+        "quantile_threshold": false,
+        "rejected_border": 17,
+        "rejected_diffuse": 29,
+        "rejected_elongated": 49,
+        "rejected_faint": 0,
+        "rejected_large": 12,
+        "rejected_mask": 0,
+        "rejected_small": 58,
+        "sigma": 0.015113737434148788,
+        "sigma_convolved": 0.009148901328444481,
+        "statistics_pixels": 1787200,
+        "threshold": 0.09148901700973511,
+        "threshold_doublings": 2,
+        "threshold_fill": 0.00969337485730648,
+        "threshold_region_fill": 0.00969337485730648,
+        "threshold_region_pixels": 1787200
+      },
+      "outcomes": {
+        "border": 1,
+        "selected": 2,
+        "top_k": 4,
+        "core_area": 1
+      },
+      "probes": [
+        {
+          "id": "P00",
+          "visual_class": "compact_control",
+          "xy": [
+            2731.6779077302667,
+            19.38587372086362
+          ],
+          "working_xy": [
+            1576.5146653565753,
+            10.97933899028665
+          ],
+          "distance_to_component_working_px": 0.4857742206319482,
+          "component": {
+            "area": 73,
+            "bounds": [
+              1572,
+              7,
+              1581,
+              15
+            ],
+            "centroid": null,
+            "component": 229,
+            "concentration": null,
+            "concentration_screened": false,
+            "core_area": null,
+            "elongation": null,
+            "measured_area": null,
+            "outcome": "border",
+            "peak": null,
+            "photometry_flux": null,
+            "positive_blob_flux": null,
+            "rank_before_top_k": null
+          },
+          "outcome": "border",
+          "native_default_rank": 0
+        },
+        {
+          "id": "P01",
+          "visual_class": "compact_control",
+          "xy": [
+            1912.9763224957824,
+            220.16543088965824
+          ],
+          "working_xy": [
+            1103.9596378042033,
+            126.88154330943063
+          ],
+          "distance_to_component_working_px": 0.12514429427735188,
+          "component": {
+            "area": 41,
+            "bounds": [
+              1101,
+              124,
+              1107,
+              130
+            ],
+            "centroid": [
+              1103.949623818824,
+              126.89419278450228
+            ],
+            "component": 255,
+            "concentration": 2.312546730041504,
+            "concentration_screened": false,
+            "core_area": 41,
+            "elongation": 1.2505793571472168,
+            "measured_area": 41,
+            "outcome": "selected",
+            "peak": 0.7646445631980896,
+            "photometry_flux": 13.556668281555176,
+            "positive_blob_flux": 11.18043041229248,
+            "rank_before_top_k": 1
+          },
+          "outcome": "selected",
+          "centroid_original_xy": [
+            1912.9589732661127,
+            220.18734381200707
+          ],
+          "centroid_offset_original_px": 0.027949453232516817,
+          "native_default_rank": 2
+        },
+        {
+          "id": "P02",
+          "visual_class": "compact_control",
+          "xy": [
+            2626.122541969498,
+            246.33372098184103
+          ],
+          "working_xy": [
+            1515.5880473128414,
+            141.9874761430059
+          ],
+          "distance_to_component_working_px": 0.41214301334759756,
+          "component": {
+            "area": 41,
+            "bounds": [
+              1512,
+              139,
+              1519,
+              145
+            ],
+            "centroid": [
+              1515.5967258337573,
+              141.96703670548573
+            ],
+            "component": 402,
+            "concentration": 2.442276954650879,
+            "concentration_screened": false,
+            "core_area": 40,
+            "elongation": 1.456989049911499,
+            "measured_area": 41,
+            "outcome": "selected",
+            "peak": 0.8002451062202454,
+            "photometry_flux": 13.434206008911133,
+            "positive_blob_flux": 10.59712028503418,
+            "rank_before_top_k": 2
+          },
+          "outcome": "selected",
+          "centroid_original_xy": [
+            2626.1375775069846,
+            246.29831336178592
+          ],
+          "centroid_offset_original_px": 0.03846773902221627,
+          "native_default_rank": 3
+        },
+        {
+          "id": "P18",
+          "visual_class": "compact_control",
+          "xy": [
+            1899.888766167548,
+            111.46252802697661
+          ],
+          "working_xy": [
+            1096.4054927374013,
+            64.13159886621854
+          ],
+          "distance_to_component_working_px": 0.42631282138265775,
+          "component": {
+            "area": 9,
+            "bounds": [
+              1095,
+              63,
+              1098,
+              65
+            ],
+            "centroid": [
+              1096.4234397931316,
+              64.1237121042323
+            ],
+            "component": 369,
+            "concentration": 1.882151484489441,
+            "concentration_screened": false,
+            "core_area": 9,
+            "elongation": 1.5915899276733398,
+            "measured_area": 9,
+            "outcome": "top_k",
+            "peak": 0.5362745523452759,
+            "photometry_flux": 2.5643370151519775,
+            "positive_blob_flux": 2.096813917160034,
+            "rank_before_top_k": 133
+          },
+          "outcome": "top_k",
+          "centroid_original_xy": [
+            1899.9198594416007,
+            111.44886564161996
+          ],
+          "centroid_offset_original_px": 0.03396251558624706,
+          "native_default_rank": 34
+        },
+        {
+          "id": "P19",
+          "visual_class": "compact_on_bright_background",
+          "xy": [
+            1915.2110245515992,
+            766.546520252264
+          ],
+          "working_xy": [
+            1105.249509120692,
+            442.2860274531157
+          ],
+          "distance_to_component_working_px": 0.3795609374584593,
+          "component": {
+            "area": 8,
+            "bounds": [
+              1104,
+              441,
+              1106,
+              443
+            ],
+            "centroid": [
+              1105.2189998689673,
+              442.2533279817892
+            ],
+            "component": 186,
+            "concentration": 0.89432293176651,
+            "concentration_screened": false,
+            "core_area": 8,
+            "elongation": 1.3321336507797241,
+            "measured_area": 8,
+            "outcome": "top_k",
+            "peak": 0.34742647409439087,
+            "photometry_flux": 3.1078391075134277,
+            "positive_blob_flux": 1.6546567678451538,
+            "rank_before_top_k": 102
+          },
+          "outcome": "top_k",
+          "centroid_original_xy": [
+            1915.158167272986,
+            766.4898743462508
+          ],
+          "centroid_offset_original_px": 0.0774767743937002,
+          "native_default_rank": 35
+        },
+        {
+          "id": "P20",
+          "visual_class": "on_linear_trail_identity_ambiguous",
+          "xy": [
+            310.22129008923326,
+            515.1008105331721
+          ],
+          "working_xy": [
+            178.8485079880134,
+            297.1362301630766
+          ],
+          "distance_to_component_working_px": 0.20373631739978837,
+          "component": {
+            "area": 1,
+            "bounds": [
+              179,
+              297,
+              179,
+              297
+            ],
+            "centroid": null,
+            "component": 67,
+            "concentration": null,
+            "concentration_screened": false,
+            "core_area": 1,
+            "elongation": null,
+            "measured_area": null,
+            "outcome": "core_area",
+            "peak": null,
+            "photometry_flux": null,
+            "positive_blob_flux": null,
+            "rank_before_top_k": null
+          },
+          "outcome": "core_area",
+          "native_default_rank": 37
+        },
+        {
+          "id": "P22",
+          "visual_class": "compact_on_bright_background",
+          "xy": [
+            2480.424204389784,
+            828.2231124191417
+          ],
+          "working_xy": [
+            1431.490882764666,
+            477.8895176083624
+          ],
+          "distance_to_component_working_px": 0.5031622476975166,
+          "component": {
+            "area": 8,
+            "bounds": [
+              1430,
+              477,
+              1433,
+              479
+            ],
+            "centroid": [
+              1431.4232339111188,
+              477.87498461553355
+            ],
+            "component": 57,
+            "concentration": 0.9075235724449158,
+            "concentration_screened": false,
+            "core_area": 8,
+            "elongation": 1.2806488275527954,
+            "measured_area": 8,
+            "outcome": "top_k",
+            "peak": 0.35289233922958374,
+            "photometry_flux": 3.1108157634735107,
+            "positive_blob_flux": 1.5405638217926025,
+            "rank_before_top_k": 101
+          },
+          "outcome": "top_k",
+          "centroid_original_xy": [
+            2480.3070027510134,
+            828.1979366437398
+          ],
+          "centroid_offset_original_px": 0.11987511750801946,
+          "native_default_rank": 40
+        },
+        {
+          "id": "P23",
+          "visual_class": "compact_on_bright_background",
+          "xy": [
+            1343.467618239354,
+            795.281535698195
+          ],
+          "working_xy": [
+            775.23888498664,
+            458.87363068469443
+          ],
+          "distance_to_component_working_px": 0.27025032968115226,
+          "component": {
+            "area": 6,
+            "bounds": [
+              774,
+              458,
+              776,
+              460
+            ],
+            "centroid": [
+              775.204168687813,
+              458.91517123617285
+            ],
+            "component": 135,
+            "concentration": 0.8657693862915039,
+            "concentration_screened": false,
+            "core_area": 6,
+            "elongation": 1.3986867666244507,
+            "measured_area": 6,
+            "outcome": "top_k",
+            "peak": 0.3818388283252716,
+            "photometry_flux": 2.6462392807006836,
+            "positive_blob_flux": 1.3616094589233398,
+            "rank_before_top_k": 127
+          },
+          "outcome": "top_k",
+          "centroid_original_xy": [
+            1343.4074722516361,
+            795.3534971727793
+          ],
+          "centroid_offset_original_px": 0.09378695891698252,
+          "native_default_rank": 41
+        }
+      ]
+    },
+    {
+      "mode": "control",
+      "width": 1600,
+      "height": 1117,
+      "tier": "deep",
+      "detections": 50,
+      "stats": {
+        "accepted": 451,
+        "background_median": 0.33725491166114807,
+        "blob_concentration": false,
+        "candidates": 716,
+        "quantile_threshold": false,
+        "rejected_border": 27,
+        "rejected_diffuse": 44,
+        "rejected_elongated": 109,
+        "rejected_faint": 0,
+        "rejected_large": 16,
+        "rejected_mask": 0,
+        "rejected_small": 69,
+        "sigma": 0.015113737434148788,
+        "sigma_convolved": 0.009148901328444481,
+        "statistics_pixels": 1787200,
+        "threshold": 0.07319121062755585,
+        "threshold_doublings": 2,
+        "threshold_fill": 0.014917748048901558,
+        "threshold_region_fill": 0.014917748048901558,
+        "threshold_region_pixels": 1787200
+      },
+      "outcomes": {
+        "border": 1,
+        "selected": 2,
+        "top_k": 5
+      },
+      "probes": [
+        {
+          "id": "P00",
+          "visual_class": "compact_control",
+          "xy": [
+            2731.6779077302667,
+            19.38587372086362
+          ],
+          "working_xy": [
+            1576.5146653565753,
+            10.97933899028665
+          ],
+          "distance_to_component_working_px": 0.4857742206319482,
+          "component": {
+            "area": 76,
+            "bounds": [
+              1572,
+              7,
+              1581,
+              15
+            ],
+            "centroid": null,
+            "component": 604,
+            "concentration": null,
+            "concentration_screened": false,
+            "core_area": null,
+            "elongation": null,
+            "measured_area": null,
+            "outcome": "border",
+            "peak": null,
+            "photometry_flux": null,
+            "positive_blob_flux": null,
+            "rank_before_top_k": null
+          },
+          "outcome": "border",
+          "native_default_rank": 0
+        },
+        {
+          "id": "P01",
+          "visual_class": "compact_control",
+          "xy": [
+            1912.9763224957824,
+            220.16543088965824
+          ],
+          "working_xy": [
+            1103.9596378042033,
+            126.88154330943063
+          ],
+          "distance_to_component_working_px": 0.12514429427735188,
+          "component": {
+            "area": 43,
+            "bounds": [
+              1101,
+              124,
+              1107,
+              130
+            ],
+            "centroid": [
+              1103.9486126085362,
+              126.8933744890681
+            ],
+            "component": 82,
+            "concentration": 2.4168050289154053,
+            "concentration_screened": false,
+            "core_area": 41,
+            "elongation": 1.228872537612915,
+            "measured_area": 43,
+            "outcome": "selected",
+            "peak": 0.7646445631980896,
+            "photometry_flux": 13.604619979858398,
+            "positive_blob_flux": 11.23169994354248,
+            "rank_before_top_k": 2
+          },
+          "outcome": "selected",
+          "centroid_original_xy": [
+            1912.957221344289,
+            220.18592626351546
+          ],
+          "centroid_offset_original_px": 0.02801632270508575,
+          "native_default_rank": 2
+        },
+        {
+          "id": "P02",
+          "visual_class": "compact_control",
+          "xy": [
+            2626.122541969498,
+            246.33372098184103
+          ],
+          "working_xy": [
+            1515.5880473128414,
+            141.9874761430059
+          ],
+          "distance_to_component_working_px": 0.41214301334759756,
+          "component": {
+            "area": 47,
+            "bounds": [
+              1512,
+              139,
+              1519,
+              145
+            ],
+            "centroid": [
+              1515.5949084183653,
+              141.971213558083
+            ],
+            "component": 205,
+            "concentration": 2.8554787635803223,
+            "concentration_screened": false,
+            "core_area": 44,
+            "elongation": 1.420649528503418,
+            "measured_area": 47,
+            "outcome": "selected",
+            "peak": 0.8002451062202454,
+            "photometry_flux": 13.171703338623047,
+            "positive_blob_flux": 10.952635765075684,
+            "rank_before_top_k": 3
+          },
+          "outcome": "selected",
+          "centroid_original_xy": [
+            2626.134428834818,
+            246.30554900169258
+          ],
+          "centroid_offset_original_px": 0.03057708345522346,
+          "native_default_rank": 3
+        },
+        {
+          "id": "P18",
+          "visual_class": "compact_control",
+          "xy": [
+            1899.888766167548,
+            111.46252802697661
+          ],
+          "working_xy": [
+            1096.4054927374013,
+            64.13159886621854
+          ],
+          "distance_to_component_working_px": 0.42631282138265775,
+          "component": {
+            "area": 11,
+            "bounds": [
+              1095,
+              63,
+              1098,
+              65
+            ],
+            "centroid": [
+              1096.4204291976814,
+              64.12558070929876
+            ],
+            "component": 550,
+            "concentration": 2.483670949935913,
+            "concentration_screened": false,
+            "core_area": 10,
+            "elongation": 1.6593654155731201,
+            "measured_area": 11,
+            "outcome": "top_k",
+            "peak": 0.5362745523452759,
+            "photometry_flux": 2.3751213550567627,
+            "positive_blob_flux": 2.2159316539764404,
+            "rank_before_top_k": 172
+          },
+          "outcome": "top_k",
+          "centroid_original_xy": [
+            1899.9146435849832,
+            111.45210266113975
+          ],
+          "centroid_offset_original_px": 0.027898548097436793,
+          "native_default_rank": 34
+        },
+        {
+          "id": "P19",
+          "visual_class": "compact_on_bright_background",
+          "xy": [
+            1915.2110245515992,
+            766.546520252264
+          ],
+          "working_xy": [
+            1105.249509120692,
+            442.2860274531157
+          ],
+          "distance_to_component_working_px": 0.3795609374584593,
+          "component": {
+            "area": 13,
+            "bounds": [
+              1104,
+              441,
+              1107,
+              444
+            ],
+            "centroid": [
+              1105.2240130912162,
+              442.25566494772784
+            ],
+            "component": 712,
+            "concentration": 1.3241939544677734,
+            "concentration_screened": false,
+            "core_area": 12,
+            "elongation": 1.0476109981536865,
+            "measured_area": 13,
+            "outcome": "top_k",
+            "peak": 0.34742647409439087,
+            "photometry_flux": 3.410787582397461,
+            "positive_blob_flux": 1.9129899740219116,
+            "rank_before_top_k": 99
+          },
+          "outcome": "top_k",
+          "centroid_original_xy": [
+            1915.1668526805322,
+            766.4939227160728
+          ],
+          "centroid_offset_original_px": 0.0686851876822374,
+          "native_default_rank": 35
+        },
+        {
+          "id": "P20",
+          "visual_class": "on_linear_trail_identity_ambiguous",
+          "xy": [
+            310.22129008923326,
+            515.1008105331721
+          ],
+          "working_xy": [
+            178.8485079880134,
+            297.1362301630766
+          ],
+          "distance_to_component_working_px": 0.20373631739978837,
+          "component": {
+            "area": 6,
+            "bounds": [
+              178,
+              296,
+              180,
+              298
+            ],
+            "centroid": [
+              178.7894476053252,
+              296.92307091892593
+            ],
+            "component": 363,
+            "concentration": 0.4747712314128876,
+            "concentration_screened": false,
+            "core_area": 5,
+            "elongation": 1.5016785860061646,
+            "measured_area": 6,
+            "outcome": "top_k",
+            "peak": 0.1929534524679184,
+            "photometry_flux": 2.438481092453003,
+            "positive_blob_flux": 0.816666841506958,
+            "rank_before_top_k": 165
+          },
+          "outcome": "top_k",
+          "centroid_original_xy": [
+            310.1189679762259,
+            514.731550786143
+          ],
+          "centroid_offset_original_px": 0.3831743409810823,
+          "native_default_rank": 37
+        },
+        {
+          "id": "P22",
+          "visual_class": "compact_on_bright_background",
+          "xy": [
+            2480.424204389784,
+            828.2231124191417
+          ],
+          "working_xy": [
+            1431.490882764666,
+            477.8895176083624
+          ],
+          "distance_to_component_working_px": 0.5031622476975166,
+          "component": {
+            "area": 13,
+            "bounds": [
+              1430,
+              476,
+              1433,
+              479
+            ],
+            "centroid": [
+              1431.4184836839302,
+              477.86849595465816
+            ],
+            "component": 555,
+            "concentration": 1.461492657661438,
+            "concentration_screened": false,
+            "core_area": 12,
+            "elongation": 1.356184482574463,
+            "measured_area": 13,
+            "outcome": "top_k",
+            "peak": 0.35289233922958374,
+            "photometry_flux": 3.1389827728271484,
+            "positive_blob_flux": 1.9298839569091797,
+            "rank_before_top_k": 110
+          },
+          "outcome": "top_k",
+          "centroid_original_xy": [
+            2480.298772982409,
+            828.1866962150972
+          ],
+          "centroid_offset_original_px": 0.1306107877361408,
+          "native_default_rank": 40
+        },
+        {
+          "id": "P23",
+          "visual_class": "compact_on_bright_background",
+          "xy": [
+            1343.467618239354,
+            795.281535698195
+          ],
+          "working_xy": [
+            775.23888498664,
+            458.87363068469443
+          ],
+          "distance_to_component_working_px": 0.27025032968115226,
+          "component": {
+            "area": 9,
+            "bounds": [
+              774,
+              458,
+              776,
+              460
+            ],
+            "centroid": [
+              775.2075182890733,
+              458.9114729091839
+            ],
+            "component": 102,
+            "concentration": 1.329520583152771,
+            "concentration_screened": false,
+            "core_area": 7,
+            "elongation": 1.4383941888809204,
+            "measured_area": 9,
+            "outcome": "top_k",
+            "peak": 0.3818388283252716,
+            "photometry_flux": 2.584803581237793,
+            "positive_blob_flux": 1.5973336696624756,
+            "rank_before_top_k": 154
+          },
+          "outcome": "top_k",
+          "centroid_original_xy": [
+            1343.4132754358195,
+            795.3470904917375
+          ],
+          "centroid_offset_original_px": 0.08515028627306054,
+          "native_default_rank": 41
+        }
+      ]
+    },
+    {
+      "mode": "control",
+      "width": 2772,
+      "height": 1935,
+      "tier": "default",
+      "detections": 40,
+      "stats": {
+        "accepted": 755,
+        "background_median": 0.33725491166114807,
+        "blob_concentration": false,
+        "candidates": 1154,
+        "quantile_threshold": false,
+        "rejected_border": 26,
+        "rejected_diffuse": 105,
+        "rejected_elongated": 146,
+        "rejected_faint": 0,
+        "rejected_large": 30,
+        "rejected_mask": 0,
+        "rejected_small": 92,
+        "sigma": 0.015526077710092068,
+        "sigma_convolved": 0.010249664075672626,
+        "statistics_pixels": 5363820,
+        "threshold": 0.10249663889408112,
+        "threshold_doublings": 2,
+        "threshold_fill": 0.007475642487406731,
+        "threshold_region_fill": 0.007475642487406731,
+        "threshold_region_pixels": 5363820
+      },
+      "outcomes": {
+        "selected": 6,
+        "top_k": 2
+      },
+      "probes": [
+        {
+          "id": "P00",
+          "visual_class": "compact_control",
+          "xy": [
+            2731.6779077302667,
+            19.38587372086362
+          ],
+          "working_xy": [
+            2731.6779077302667,
+            19.38587372086362
+          ],
+          "distance_to_component_working_px": 0.5026350153690737,
+          "component": {
+            "area": 170,
+            "bounds": [
+              2724,
+              13,
+              2739,
+              26
+            ],
+            "centroid": [
+              2731.6779077302667,
+              19.38587372086362
+            ],
+            "component": 544,
+            "concentration": 1.645589828491211,
+            "concentration_screened": false,
+            "core_area": 168,
+            "elongation": 1.4376332759857178,
+            "measured_area": 78,
+            "outcome": "selected",
+            "peak": 0.8443713784217834,
+            "photometry_flux": 87.22898864746094,
+            "positive_blob_flux": 57.5571403503418,
+            "rank_before_top_k": 0
+          },
+          "outcome": "selected",
+          "centroid_original_xy": [
+            2731.6779077302667,
+            19.38587372086362
+          ],
+          "centroid_offset_original_px": 0.0,
+          "native_default_rank": 0,
+          "saved_source_reproduced": true
+        },
+        {
+          "id": "P01",
+          "visual_class": "compact_control",
+          "xy": [
+            1912.9763224957824,
+            220.16543088965824
+          ],
+          "working_xy": [
+            1912.9763224957824,
+            220.16543088965824
+          ],
+          "distance_to_component_working_px": 0.16711673602333324,
+          "component": {
+            "area": 95,
+            "bounds": [
+              1908,
+              215,
+              1918,
+              225
+            ],
+            "centroid": [
+              1912.9763224957824,
+              220.16543088965824
+            ],
+            "component": 636,
+            "concentration": 1.863561987876892,
+            "concentration_screened": false,
+            "core_area": 95,
+            "elongation": 1.258141279220581,
+            "measured_area": 95,
+            "outcome": "selected",
+            "peak": 0.7501838207244873,
+            "photometry_flux": 38.24260330200195,
+            "positive_blob_flux": 31.106563568115234,
+            "rank_before_top_k": 2
+          },
+          "outcome": "selected",
+          "centroid_original_xy": [
+            1912.9763224957824,
+            220.16543088965824
+          ],
+          "centroid_offset_original_px": 0.0,
+          "native_default_rank": 2,
+          "saved_source_reproduced": true
+        },
+        {
+          "id": "P02",
+          "visual_class": "compact_control",
+          "xy": [
+            2626.122541969498,
+            246.33372098184103
+          ],
+          "working_xy": [
+            2626.122541969498,
+            246.33372098184103
+          ],
+          "distance_to_component_working_px": 0.35550840778997006,
+          "component": {
+            "area": 99,
+            "bounds": [
+              2620,
+              242,
+              2632,
+              251
+            ],
+            "centroid": [
+              2626.122541969498,
+              246.33372098184103
+            ],
+            "component": 97,
+            "concentration": 2.0859482288360596,
+            "concentration_screened": false,
+            "core_area": 99,
+            "elongation": 1.5622437000274658,
+            "measured_area": 99,
+            "outcome": "selected",
+            "peak": 0.7929534316062927,
+            "photometry_flux": 37.6339111328125,
+            "positive_blob_flux": 30.442588806152344,
+            "rank_before_top_k": 3
+          },
+          "outcome": "selected",
+          "centroid_original_xy": [
+            2626.122541969498,
+            246.33372098184103
+          ],
+          "centroid_offset_original_px": 0.0,
+          "native_default_rank": 3,
+          "saved_source_reproduced": true
+        },
+        {
+          "id": "P18",
+          "visual_class": "compact_control",
+          "xy": [
+            1899.888766167548,
+            111.46252802697661
+          ],
+          "working_xy": [
+            1899.888766167548,
+            111.46252802697661
+          ],
+          "distance_to_component_working_px": 0.47571539939424523,
+          "component": {
+            "area": 22,
+            "bounds": [
+              1897,
+              109,
+              1902,
+              114
+            ],
+            "centroid": [
+              1899.888766167548,
+              111.46252802697661
+            ],
+            "component": 821,
+            "concentration": 1.8561327457427979,
+            "concentration_screened": false,
+            "core_area": 19,
+            "elongation": 1.7635401487350464,
+            "measured_area": 22,
+            "outcome": "selected",
+            "peak": 0.6435048580169678,
+            "photometry_flux": 7.627205848693848,
+            "positive_blob_flux": 5.826225757598877,
+            "rank_before_top_k": 34
+          },
+          "outcome": "selected",
+          "centroid_original_xy": [
+            1899.888766167548,
+            111.46252802697661
+          ],
+          "centroid_offset_original_px": 0.0,
+          "native_default_rank": 34,
+          "saved_source_reproduced": true
+        },
+        {
+          "id": "P19",
+          "visual_class": "compact_on_bright_background",
+          "xy": [
+            1915.2110245515992,
+            766.546520252264
+          ],
+          "working_xy": [
+            1915.2110245515992,
+            766.546520252264
+          ],
+          "distance_to_component_working_px": 0.5001752122849624,
+          "component": {
+            "area": 23,
+            "bounds": [
+              1913,
+              764,
+              1917,
+              769
+            ],
+            "centroid": [
+              1915.2110245515992,
+              766.546520252264
+            ],
+            "component": 222,
+            "concentration": 1.3705651760101318,
+            "concentration_screened": false,
+            "core_area": 22,
+            "elongation": 1.4142978191375732,
+            "measured_area": 23,
+            "outcome": "selected",
+            "peak": 0.45368504524230957,
+            "photometry_flux": 7.61346960067749,
+            "positive_blob_flux": 4.7258219718933105,
+            "rank_before_top_k": 35
+          },
+          "outcome": "selected",
+          "centroid_original_xy": [
+            1915.2110245515992,
+            766.546520252264
+          ],
+          "centroid_offset_original_px": 0.0,
+          "native_default_rank": 35,
+          "saved_source_reproduced": true
+        },
+        {
+          "id": "P20",
+          "visual_class": "on_linear_trail_identity_ambiguous",
+          "xy": [
+            310.22129008923326,
+            515.1008105331721
+          ],
+          "working_xy": [
+            310.22129008923326,
+            515.1008105331721
+          ],
+          "distance_to_component_working_px": 0.24317086007847447,
+          "component": {
+            "area": 15,
+            "bounds": [
+              308,
+              512,
+              312,
+              518
+            ],
+            "centroid": [
+              310.22129008923326,
+              515.1008105331721
+            ],
+            "component": 185,
+            "concentration": 0.5244849324226379,
+            "concentration_screened": false,
+            "core_area": 14,
+            "elongation": 1.4187980890274048,
+            "measured_area": 15,
+            "outcome": "selected",
+            "peak": 0.2623056471347809,
+            "photometry_flux": 7.501806735992432,
+            "positive_blob_flux": 2.6620051860809326,
+            "rank_before_top_k": 37
+          },
+          "outcome": "selected",
+          "centroid_original_xy": [
+            310.22129008923326,
+            515.1008105331721
+          ],
+          "centroid_offset_original_px": 0.0,
+          "native_default_rank": 37,
+          "saved_source_reproduced": true
+        },
+        {
+          "id": "P22",
+          "visual_class": "compact_on_bright_background",
+          "xy": [
+            2480.424204389784,
+            828.2231124191417
+          ],
+          "working_xy": [
+            2480.424204389784,
+            828.2231124191417
+          ],
+          "distance_to_component_working_px": 0.4793000270051774,
+          "component": {
+            "area": 23,
+            "bounds": [
+              2478,
+              826,
+              2483,
+              830
+            ],
+            "centroid": [
+              2480.424204389784,
+              828.2231124191417
+            ],
+            "component": 814,
+            "concentration": 1.2672178745269775,
+            "concentration_screened": false,
+            "core_area": 23,
+            "elongation": 1.6447944641113281,
+            "measured_area": 23,
+            "outcome": "top_k",
+            "peak": 0.40623944997787476,
+            "photometry_flux": 7.373244762420654,
+            "positive_blob_flux": 4.6534576416015625,
+            "rank_before_top_k": 40
+          },
+          "outcome": "top_k",
+          "centroid_original_xy": [
+            2480.424204389784,
+            828.2231124191417
+          ],
+          "centroid_offset_original_px": 0.0,
+          "native_default_rank": 40,
+          "saved_source_reproduced": true
+        },
+        {
+          "id": "P23",
+          "visual_class": "compact_on_bright_background",
+          "xy": [
+            1343.467618239354,
+            795.281535698195
+          ],
+          "working_xy": [
+            1343.467618239354,
+            795.281535698195
+          ],
+          "distance_to_component_working_px": 0.5458288808175621,
+          "component": {
+            "area": 22,
+            "bounds": [
+              1341,
+              793,
+              1346,
+              798
+            ],
+            "centroid": [
+              1343.467618239354,
+              795.281535698195
+            ],
+            "component": 562,
+            "concentration": 1.2277467250823975,
+            "concentration_screened": false,
+            "core_area": 22,
+            "elongation": 1.5602991580963135,
+            "measured_area": 22,
+            "outcome": "top_k",
+            "peak": 0.41103798151016235,
+            "photometry_flux": 7.365391731262207,
+            "positive_blob_flux": 4.400005340576172,
+            "rank_before_top_k": 41
+          },
+          "outcome": "top_k",
+          "centroid_original_xy": [
+            1343.467618239354,
+            795.281535698195
+          ],
+          "centroid_offset_original_px": 0.0,
+          "native_default_rank": 41,
+          "saved_source_reproduced": true
+        }
+      ]
+    },
+    {
+      "mode": "control",
+      "width": 2772,
+      "height": 1935,
+      "tier": "deep",
+      "detections": 50,
+      "stats": {
+        "accepted": 1165,
+        "background_median": 0.33725491166114807,
+        "blob_concentration": false,
+        "candidates": 1864,
+        "quantile_threshold": false,
+        "rejected_border": 34,
+        "rejected_diffuse": 162,
+        "rejected_elongated": 282,
+        "rejected_faint": 0,
+        "rejected_large": 44,
+        "rejected_mask": 0,
+        "rejected_small": 177,
+        "sigma": 0.015526077710092068,
+        "sigma_convolved": 0.010249664075672626,
+        "statistics_pixels": 5363820,
+        "threshold": 0.08199731260538101,
+        "threshold_doublings": 2,
+        "threshold_fill": 0.01230708695948124,
+        "threshold_region_fill": 0.01230708695948124,
+        "threshold_region_pixels": 5363820
+      },
+      "outcomes": {
+        "selected": 4,
+        "concentration": 3,
+        "elongation": 1
+      },
+      "probes": [
+        {
+          "id": "P00",
+          "visual_class": "compact_control",
+          "xy": [
+            2731.6779077302667,
+            19.38587372086362
+          ],
+          "working_xy": [
+            2731.6779077302667,
+            19.38587372086362
+          ],
+          "distance_to_component_working_px": 0.5026350153690737,
+          "component": {
+            "area": 185,
+            "bounds": [
+              2724,
+              13,
+              2740,
+              26
+            ],
+            "centroid": [
+              2731.6779077302667,
+              19.38587372086362
+            ],
+            "component": 905,
+            "concentration": 1.790789008140564,
+            "concentration_screened": false,
+            "core_area": 180,
+            "elongation": 1.4376332759857178,
+            "measured_area": 78,
+            "outcome": "selected",
+            "peak": 0.8443713784217834,
+            "photometry_flux": 87.22898864746094,
+            "positive_blob_flux": 57.5571403503418,
+            "rank_before_top_k": 0
+          },
+          "outcome": "selected",
+          "centroid_original_xy": [
+            2731.6779077302667,
+            19.38587372086362
+          ],
+          "centroid_offset_original_px": 0.0,
+          "native_default_rank": 0
+        },
+        {
+          "id": "P01",
+          "visual_class": "compact_control",
+          "xy": [
+            1912.9763224957824,
+            220.16543088965824
+          ],
+          "working_xy": [
+            1912.9763224957824,
+            220.16543088965824
+          ],
+          "distance_to_component_working_px": 0.16711673602333324,
+          "component": {
+            "area": 109,
+            "bounds": [
+              1907,
+              215,
+              1918,
+              226
+            ],
+            "centroid": [
+              1912.9504314333017,
+              220.18984711089732
+            ],
+            "component": 766,
+            "concentration": 2.148249864578247,
+            "concentration_screened": false,
+            "core_area": 109,
+            "elongation": 1.2621428966522217,
+            "measured_area": 109,
+            "outcome": "selected",
+            "peak": 0.7501838207244873,
+            "photometry_flux": 38.06355667114258,
+            "positive_blob_flux": 32.218326568603516,
+            "rank_before_top_k": 4
+          },
+          "outcome": "selected",
+          "centroid_original_xy": [
+            1912.9504314333017,
+            220.18984711089732
+          ],
+          "centroid_offset_original_px": 0.03558790491128904,
+          "native_default_rank": 2
+        },
+        {
+          "id": "P02",
+          "visual_class": "compact_control",
+          "xy": [
+            2626.122541969498,
+            246.33372098184103
+          ],
+          "working_xy": [
+            2626.122541969498,
+            246.33372098184103
+          ],
+          "distance_to_component_working_px": 0.35550840778997006,
+          "component": {
+            "area": 110,
+            "bounds": [
+              2620,
+              241,
+              2632,
+              251
+            ],
+            "centroid": [
+              2626.108644645072,
+              246.33069910639983
+            ],
+            "component": 1257,
+            "concentration": 2.3069064617156982,
+            "concentration_screened": false,
+            "core_area": 109,
+            "elongation": 1.4544214010238647,
+            "measured_area": 110,
+            "outcome": "selected",
+            "peak": 0.7929534316062927,
+            "photometry_flux": 37.81032180786133,
+            "positive_blob_flux": 31.297183990478516,
+            "rank_before_top_k": 5
+          },
+          "outcome": "selected",
+          "centroid_original_xy": [
+            2626.108644645072,
+            246.33069910639983
+          ],
+          "centroid_offset_original_px": 0.014222072893021374,
+          "native_default_rank": 3
+        },
+        {
+          "id": "P18",
+          "visual_class": "compact_control",
+          "xy": [
+            1899.888766167548,
+            111.46252802697661
+          ],
+          "working_xy": [
+            1899.888766167548,
+            111.46252802697661
+          ],
+          "distance_to_component_working_px": 0.47571539939424523,
+          "component": {
+            "area": 30,
+            "bounds": [
+              1897,
+              109,
+              1903,
+              114
+            ],
+            "centroid": [
+              1899.9007262089867,
+              111.45614710198672
+            ],
+            "component": 587,
+            "concentration": 2.5143635272979736,
+            "concentration_screened": true,
+            "core_area": 24,
+            "elongation": 1.7885448932647705,
+            "measured_area": 30,
+            "outcome": "selected",
+            "peak": 0.6435048580169678,
+            "photometry_flux": 7.677945137023926,
+            "positive_blob_flux": 6.188603401184082,
+            "rank_before_top_k": 31
+          },
+          "outcome": "selected",
+          "centroid_original_xy": [
+            1899.9007262089867,
+            111.45614710198672
+          ],
+          "centroid_offset_original_px": 0.013555766114144897,
+          "native_default_rank": 34
+        },
+        {
+          "id": "P19",
+          "visual_class": "compact_on_bright_background",
+          "xy": [
+            1915.2110245515992,
+            766.546520252264
+          ],
+          "working_xy": [
+            1915.2110245515992,
+            766.546520252264
+          ],
+          "distance_to_component_working_px": 0.5001752122849624,
+          "component": {
+            "area": 30,
+            "bounds": [
+              1913,
+              764,
+              1918,
+              769
+            ],
+            "centroid": [
+              1915.2161369423493,
+              766.5343607981731
+            ],
+            "component": 1054,
+            "concentration": 1.7027804851531982,
+            "concentration_screened": true,
+            "core_area": 27,
+            "elongation": 1.2823457717895508,
+            "measured_area": 30,
+            "outcome": "concentration",
+            "peak": 0.45368504524230957,
+            "photometry_flux": 7.993133544921875,
+            "positive_blob_flux": 5.1655802726745605,
+            "rank_before_top_k": null
+          },
+          "outcome": "concentration",
+          "centroid_original_xy": [
+            1915.2161369423493,
+            766.5343607981731
+          ],
+          "centroid_offset_original_px": 0.013190483803529867,
+          "native_default_rank": 35
+        },
+        {
+          "id": "P20",
+          "visual_class": "on_linear_trail_identity_ambiguous",
+          "xy": [
+            310.22129008923326,
+            515.1008105331721
+          ],
+          "working_xy": [
+            310.22129008923326,
+            515.1008105331721
+          ],
+          "distance_to_component_working_px": 0.24317086007847447,
+          "component": {
+            "area": 462,
+            "bounds": [
+              264,
+              392,
+              313,
+              523
+            ],
+            "centroid": null,
+            "component": 1310,
+            "concentration": null,
+            "concentration_screened": false,
+            "core_area": 440,
+            "elongation": 9.450325012207031,
+            "measured_area": 83,
+            "outcome": "elongation",
+            "peak": 0.5812298655509949,
+            "photometry_flux": null,
+            "positive_blob_flux": null,
+            "rank_before_top_k": null
+          },
+          "outcome": "elongation",
+          "native_default_rank": 37
+        },
+        {
+          "id": "P22",
+          "visual_class": "compact_on_bright_background",
+          "xy": [
+            2480.424204389784,
+            828.2231124191417
+          ],
+          "working_xy": [
+            2480.424204389784,
+            828.2231124191417
+          ],
+          "distance_to_component_working_px": 0.4793000270051774,
+          "component": {
+            "area": 30,
+            "bounds": [
+              2477,
+              826,
+              2483,
+              831
+            ],
+            "centroid": [
+              2480.390719770295,
+              828.2435870254556
+            ],
+            "component": 783,
+            "concentration": 1.5496957302093506,
+            "concentration_screened": true,
+            "core_area": 27,
+            "elongation": 1.5207772254943848,
+            "measured_area": 30,
+            "outcome": "concentration",
+            "peak": 0.40623944997787476,
+            "photometry_flux": 7.864243030548096,
+            "positive_blob_flux": 5.049370765686035,
+            "rank_before_top_k": null
+          },
+          "outcome": "concentration",
+          "centroid_original_xy": [
+            2480.390719770295,
+            828.2435870254556
+          ],
+          "centroid_offset_original_px": 0.0392483024602683,
+          "native_default_rank": 40
+        },
+        {
+          "id": "P23",
+          "visual_class": "compact_on_bright_background",
+          "xy": [
+            1343.467618239354,
+            795.281535698195
+          ],
+          "working_xy": [
+            1343.467618239354,
+            795.281535698195
+          ],
+          "distance_to_component_working_px": 0.5458288808175621,
+          "component": {
+            "area": 29,
+            "bounds": [
+              1341,
+              793,
+              1346,
+              798
+            ],
+            "centroid": [
+              1343.4673876685017,
+              795.2758172823317
+            ],
+            "component": 1762,
+            "concentration": 1.6538127660751343,
+            "concentration_screened": true,
+            "core_area": 28,
+            "elongation": 1.4365408420562744,
+            "measured_area": 29,
+            "outcome": "concentration",
+            "peak": 0.41103798151016235,
+            "photometry_flux": 7.207648754119873,
+            "positive_blob_flux": 4.869137287139893,
+            "rank_before_top_k": null
+          },
+          "outcome": "concentration",
+          "centroid_original_xy": [
+            1343.4673876685017,
+            795.2758172823317
+          ],
+          "centroid_offset_original_px": 0.005723062371072253,
+          "native_default_rank": 41
+        }
+      ]
+    },
+    {
+      "mode": "quantile",
+      "width": 1600,
+      "height": 1117,
+      "tier": "default",
+      "detections": 40,
+      "stats": {
+        "accepted": 636,
+        "background_median": 0.33725491166114807,
+        "blob_concentration": false,
+        "candidates": 983,
+        "quantile_threshold": true,
+        "rejected_border": 30,
+        "rejected_diffuse": 45,
+        "rejected_elongated": 151,
+        "rejected_faint": 0,
+        "rejected_large": 20,
+        "rejected_mask": 0,
+        "rejected_small": 101,
+        "sigma": 0.015113737434148788,
+        "sigma_convolved": 0.009148901328444481,
+        "statistics_pixels": 1787200,
+        "threshold": 0.06239093840122223,
+        "threshold_doublings": 0,
+        "threshold_fill": 0.019999999552965164,
+        "threshold_region_fill": 0.019999999552965164,
+        "threshold_region_pixels": 1787200
+      },
+      "outcomes": {
+        "border": 1,
+        "selected": 2,
+        "top_k": 5
+      },
+      "probes": [
+        {
+          "id": "P00",
+          "visual_class": "compact_control",
+          "xy": [
+            2731.6779077302667,
+            19.38587372086362
+          ],
+          "working_xy": [
+            1576.5146653565753,
+            10.97933899028665
+          ],
+          "distance_to_component_working_px": 0.4857742206319482,
+          "component": {
+            "area": 79,
+            "bounds": [
+              1572,
+              7,
+              1581,
+              15
+            ],
+            "centroid": null,
+            "component": 722,
+            "concentration": null,
+            "concentration_screened": false,
+            "core_area": null,
+            "elongation": null,
+            "measured_area": null,
+            "outcome": "border",
+            "peak": null,
+            "photometry_flux": null,
+            "positive_blob_flux": null,
+            "rank_before_top_k": null
+          },
+          "outcome": "border",
+          "native_default_rank": 0
+        },
+        {
+          "id": "P01",
+          "visual_class": "compact_control",
+          "xy": [
+            1912.9763224957824,
+            220.16543088965824
+          ],
+          "working_xy": [
+            1103.9596378042033,
+            126.88154330943063
+          ],
+          "distance_to_component_working_px": 0.12514429427735188,
+          "component": {
+            "area": 52,
+            "bounds": [
+              1100,
+              123,
+              1108,
+              130
+            ],
+            "centroid": [
+              1103.9495823655086,
+              126.8901196539269
+            ],
+            "component": 554,
+            "concentration": 2.89896297454834,
+            "concentration_screened": false,
+            "core_area": 44,
+            "elongation": 1.2534980773925781,
+            "measured_area": 52,
+            "outcome": "selected",
+            "peak": 0.7646445631980896,
+            "photometry_flux": 13.71577262878418,
+            "positive_blob_flux": 11.610690116882324,
+            "rank_before_top_k": 1
+          },
+          "outcome": "selected",
+          "centroid_original_xy": [
+            1912.9589014482438,
+            220.1802878516997
+          ],
+          "centroid_offset_original_px": 0.02289589959892125,
+          "native_default_rank": 2
+        },
+        {
+          "id": "P02",
+          "visual_class": "compact_control",
+          "xy": [
+            2626.122541969498,
+            246.33372098184103
+          ],
+          "working_xy": [
+            1515.5880473128414,
+            141.9874761430059
+          ],
+          "distance_to_component_working_px": 0.41214301334759756,
+          "component": {
+            "area": 48,
+            "bounds": [
+              1512,
+              139,
+              1519,
+              145
+            ],
+            "centroid": [
+              1515.5946649650757,
+              141.9714098856138
+            ],
+            "component": 452,
+            "concentration": 2.9176862239837646,
+            "concentration_screened": false,
+            "core_area": 44,
+            "elongation": 1.4097884893417358,
+            "measured_area": 48,
+            "outcome": "selected",
+            "peak": 0.8002451062202454,
+            "photometry_flux": 13.165146827697754,
+            "positive_blob_flux": 10.972917556762695,
+            "rank_before_top_k": 2
+          },
+          "outcome": "selected",
+          "centroid_original_xy": [
+            2626.1340070519936,
+            246.30588910354766
+          ],
+          "centroid_offset_original_px": 0.030100856565412438,
+          "native_default_rank": 3
+        },
+        {
+          "id": "P18",
+          "visual_class": "compact_control",
+          "xy": [
+            1899.888766167548,
+            111.46252802697661
+          ],
+          "working_xy": [
+            1096.4054927374013,
+            64.13159886621854
+          ],
+          "distance_to_component_working_px": 0.42631282138265775,
+          "component": {
+            "area": 13,
+            "bounds": [
+              1095,
+              63,
+              1098,
+              66
+            ],
+            "centroid": [
+              1096.4197861313078,
+              64.12574104457202
+            ],
+            "component": 615,
+            "concentration": 2.8579776287078857,
+            "concentration_screened": false,
+            "core_area": 10,
+            "elongation": 1.6593654155731201,
+            "measured_area": 13,
+            "outcome": "top_k",
+            "peak": 0.5362745523452759,
+            "photometry_flux": 2.4393365383148193,
+            "positive_blob_flux": 2.2159316539764404,
+            "rank_before_top_k": 178
+          },
+          "outcome": "top_k",
+          "centroid_original_xy": [
+            1899.9135294724908,
+            111.45238041293364
+          ],
+          "centroid_offset_original_px": 0.026761826216728596,
+          "native_default_rank": 34
+        },
+        {
+          "id": "P19",
+          "visual_class": "compact_on_bright_background",
+          "xy": [
+            1915.2110245515992,
+            766.546520252264
+          ],
+          "working_xy": [
+            1105.249509120692,
+            442.2860274531157
+          ],
+          "distance_to_component_working_px": 0.3795609374584593,
+          "component": {
+            "area": 16,
+            "bounds": [
+              1103,
+              441,
+              1107,
+              444
+            ],
+            "centroid": [
+              1105.2227509403297,
+              442.25540750087896
+            ],
+            "component": 153,
+            "concentration": 1.6070882081985474,
+            "concentration_screened": false,
+            "core_area": 15,
+            "elongation": 1.17804753780365,
+            "measured_area": 16,
+            "outcome": "top_k",
+            "peak": 0.34742647409439087,
+            "photometry_flux": 3.4589412212371826,
+            "positive_blob_flux": 2.069403648376465,
+            "rank_before_top_k": 108
+          },
+          "outcome": "top_k",
+          "centroid_original_xy": [
+            1915.1646660041213,
+            766.4934767360795
+          ],
+          "centroid_offset_original_px": 0.07044664316684768,
+          "native_default_rank": 35
+        },
+        {
+          "id": "P20",
+          "visual_class": "on_linear_trail_identity_ambiguous",
+          "xy": [
+            310.22129008923326,
+            515.1008105331721
+          ],
+          "working_xy": [
+            178.8485079880134,
+            297.1362301630766
+          ],
+          "distance_to_component_working_px": 0.20373631739978837,
+          "component": {
+            "area": 13,
+            "bounds": [
+              177,
+              294,
+              180,
+              299
+            ],
+            "centroid": [
+              178.68849774581838,
+              296.75957807728287
+            ],
+            "component": 84,
+            "concentration": 0.8855074644088745,
+            "concentration_screened": false,
+            "core_area": 11,
+            "elongation": 2.0748817920684814,
+            "measured_area": 13,
+            "outcome": "top_k",
+            "peak": 0.1929534524679184,
+            "photometry_flux": 2.8327202796936035,
+            "positive_blob_flux": 1.6815567016601562,
+            "rank_before_top_k": 150
+          },
+          "outcome": "top_k",
+          "centroid_original_xy": [
+            309.94407234463034,
+            514.4483290774775
+          ],
+          "centroid_offset_original_px": 0.7089299880439657,
+          "native_default_rank": 37
+        },
+        {
+          "id": "P22",
+          "visual_class": "compact_on_bright_background",
+          "xy": [
+            2480.424204389784,
+            828.2231124191417
+          ],
+          "working_xy": [
+            1431.490882764666,
+            477.8895176083624
+          ],
+          "distance_to_component_working_px": 0.5031622476975166,
+          "component": {
+            "area": 15,
+            "bounds": [
+              1430,
+              476,
+              1433,
+              480
+            ],
+            "centroid": [
+              1431.4155855219365,
+              477.87895737024985
+            ],
+            "component": 294,
+            "concentration": 1.5763976573944092,
+            "concentration_screened": false,
+            "core_area": 12,
+            "elongation": 1.3080205917358398,
+            "measured_area": 15,
+            "outcome": "top_k",
+            "peak": 0.35289233922958374,
+            "photometry_flux": 3.3578996658325195,
+            "positive_blob_flux": 1.9759050607681274,
+            "rank_before_top_k": 113
+          },
+          "outcome": "top_k",
+          "centroid_original_xy": [
+            2480.293751916755,
+            828.2048187210685
+          ],
+          "centroid_offset_original_px": 0.13172891523340757,
+          "native_default_rank": 40
+        },
+        {
+          "id": "P23",
+          "visual_class": "compact_on_bright_background",
+          "xy": [
+            1343.467618239354,
+            795.281535698195
+          ],
+          "working_xy": [
+            775.23888498664,
+            458.87363068469443
+          ],
+          "distance_to_component_working_px": 0.27025032968115226,
+          "component": {
+            "area": 12,
+            "bounds": [
+              774,
+              457,
+              777,
+              460
+            ],
+            "centroid": [
+              775.211645432962,
+              458.9081594436203
+            ],
+            "component": 253,
+            "concentration": 1.7174657583236694,
+            "concentration_screened": false,
+            "core_area": 9,
+            "elongation": 1.3874083757400513,
+            "measured_area": 12,
+            "outcome": "top_k",
+            "peak": 0.3818388283252716,
+            "photometry_flux": 2.6679227352142334,
+            "positive_blob_flux": 1.73486328125,
+            "rank_before_top_k": 163
+          },
+          "outcome": "top_k",
+          "centroid_original_xy": [
+            1343.4204257126066,
+            795.3413505133441
+          ],
+          "centroid_offset_original_px": 0.07619020076175902,
+          "native_default_rank": 41
+        }
+      ]
+    },
+    {
+      "mode": "quantile",
+      "width": 1600,
+      "height": 1117,
+      "tier": "deep",
+      "detections": 50,
+      "stats": {
+        "accepted": 636,
+        "background_median": 0.33725491166114807,
+        "blob_concentration": false,
+        "candidates": 983,
+        "quantile_threshold": true,
+        "rejected_border": 30,
+        "rejected_diffuse": 45,
+        "rejected_elongated": 151,
+        "rejected_faint": 0,
+        "rejected_large": 20,
+        "rejected_mask": 0,
+        "rejected_small": 101,
+        "sigma": 0.015113737434148788,
+        "sigma_convolved": 0.009148901328444481,
+        "statistics_pixels": 1787200,
+        "threshold": 0.06239093840122223,
+        "threshold_doublings": 0,
+        "threshold_fill": 0.019999999552965164,
+        "threshold_region_fill": 0.019999999552965164,
+        "threshold_region_pixels": 1787200
+      },
+      "outcomes": {
+        "border": 1,
+        "selected": 2,
+        "top_k": 5
+      },
+      "probes": [
+        {
+          "id": "P00",
+          "visual_class": "compact_control",
+          "xy": [
+            2731.6779077302667,
+            19.38587372086362
+          ],
+          "working_xy": [
+            1576.5146653565753,
+            10.97933899028665
+          ],
+          "distance_to_component_working_px": 0.4857742206319482,
+          "component": {
+            "area": 79,
+            "bounds": [
+              1572,
+              7,
+              1581,
+              15
+            ],
+            "centroid": null,
+            "component": 125,
+            "concentration": null,
+            "concentration_screened": false,
+            "core_area": null,
+            "elongation": null,
+            "measured_area": null,
+            "outcome": "border",
+            "peak": null,
+            "photometry_flux": null,
+            "positive_blob_flux": null,
+            "rank_before_top_k": null
+          },
+          "outcome": "border",
+          "native_default_rank": 0
+        },
+        {
+          "id": "P01",
+          "visual_class": "compact_control",
+          "xy": [
+            1912.9763224957824,
+            220.16543088965824
+          ],
+          "working_xy": [
+            1103.9596378042033,
+            126.88154330943063
+          ],
+          "distance_to_component_working_px": 0.12514429427735188,
+          "component": {
+            "area": 52,
+            "bounds": [
+              1100,
+              123,
+              1108,
+              130
+            ],
+            "centroid": [
+              1103.9495823655086,
+              126.8901196539269
+            ],
+            "component": 697,
+            "concentration": 2.89896297454834,
+            "concentration_screened": false,
+            "core_area": 44,
+            "elongation": 1.2534980773925781,
+            "measured_area": 52,
+            "outcome": "selected",
+            "peak": 0.7646445631980896,
+            "photometry_flux": 13.71577262878418,
+            "positive_blob_flux": 11.610690116882324,
+            "rank_before_top_k": 1
+          },
+          "outcome": "selected",
+          "centroid_original_xy": [
+            1912.9589014482438,
+            220.1802878516997
+          ],
+          "centroid_offset_original_px": 0.02289589959892125,
+          "native_default_rank": 2
+        },
+        {
+          "id": "P02",
+          "visual_class": "compact_control",
+          "xy": [
+            2626.122541969498,
+            246.33372098184103
+          ],
+          "working_xy": [
+            1515.5880473128414,
+            141.9874761430059
+          ],
+          "distance_to_component_working_px": 0.41214301334759756,
+          "component": {
+            "area": 48,
+            "bounds": [
+              1512,
+              139,
+              1519,
+              145
+            ],
+            "centroid": [
+              1515.5946649650757,
+              141.9714098856138
+            ],
+            "component": 523,
+            "concentration": 2.9176862239837646,
+            "concentration_screened": false,
+            "core_area": 44,
+            "elongation": 1.4097884893417358,
+            "measured_area": 48,
+            "outcome": "selected",
+            "peak": 0.8002451062202454,
+            "photometry_flux": 13.165146827697754,
+            "positive_blob_flux": 10.972917556762695,
+            "rank_before_top_k": 2
+          },
+          "outcome": "selected",
+          "centroid_original_xy": [
+            2626.1340070519936,
+            246.30588910354766
+          ],
+          "centroid_offset_original_px": 0.030100856565412438,
+          "native_default_rank": 3
+        },
+        {
+          "id": "P18",
+          "visual_class": "compact_control",
+          "xy": [
+            1899.888766167548,
+            111.46252802697661
+          ],
+          "working_xy": [
+            1096.4054927374013,
+            64.13159886621854
+          ],
+          "distance_to_component_working_px": 0.42631282138265775,
+          "component": {
+            "area": 13,
+            "bounds": [
+              1095,
+              63,
+              1098,
+              66
+            ],
+            "centroid": [
+              1096.4197861313078,
+              64.12574104457202
+            ],
+            "component": 592,
+            "concentration": 2.8579776287078857,
+            "concentration_screened": false,
+            "core_area": 10,
+            "elongation": 1.6593654155731201,
+            "measured_area": 13,
+            "outcome": "top_k",
+            "peak": 0.5362745523452759,
+            "photometry_flux": 2.4393365383148193,
+            "positive_blob_flux": 2.2159316539764404,
+            "rank_before_top_k": 178
+          },
+          "outcome": "top_k",
+          "centroid_original_xy": [
+            1899.9135294724908,
+            111.45238041293364
+          ],
+          "centroid_offset_original_px": 0.026761826216728596,
+          "native_default_rank": 34
+        },
+        {
+          "id": "P19",
+          "visual_class": "compact_on_bright_background",
+          "xy": [
+            1915.2110245515992,
+            766.546520252264
+          ],
+          "working_xy": [
+            1105.249509120692,
+            442.2860274531157
+          ],
+          "distance_to_component_working_px": 0.3795609374584593,
+          "component": {
+            "area": 16,
+            "bounds": [
+              1103,
+              441,
+              1107,
+              444
+            ],
+            "centroid": [
+              1105.2227509403297,
+              442.25540750087896
+            ],
+            "component": 272,
+            "concentration": 1.6070882081985474,
+            "concentration_screened": false,
+            "core_area": 15,
+            "elongation": 1.17804753780365,
+            "measured_area": 16,
+            "outcome": "top_k",
+            "peak": 0.34742647409439087,
+            "photometry_flux": 3.4589412212371826,
+            "positive_blob_flux": 2.069403648376465,
+            "rank_before_top_k": 108
+          },
+          "outcome": "top_k",
+          "centroid_original_xy": [
+            1915.1646660041213,
+            766.4934767360795
+          ],
+          "centroid_offset_original_px": 0.07044664316684768,
+          "native_default_rank": 35
+        },
+        {
+          "id": "P20",
+          "visual_class": "on_linear_trail_identity_ambiguous",
+          "xy": [
+            310.22129008923326,
+            515.1008105331721
+          ],
+          "working_xy": [
+            178.8485079880134,
+            297.1362301630766
+          ],
+          "distance_to_component_working_px": 0.20373631739978837,
+          "component": {
+            "area": 13,
+            "bounds": [
+              177,
+              294,
+              180,
+              299
+            ],
+            "centroid": [
+              178.68849774581838,
+              296.75957807728287
+            ],
+            "component": 885,
+            "concentration": 0.8855074644088745,
+            "concentration_screened": false,
+            "core_area": 11,
+            "elongation": 2.0748817920684814,
+            "measured_area": 13,
+            "outcome": "top_k",
+            "peak": 0.1929534524679184,
+            "photometry_flux": 2.8327202796936035,
+            "positive_blob_flux": 1.6815567016601562,
+            "rank_before_top_k": 150
+          },
+          "outcome": "top_k",
+          "centroid_original_xy": [
+            309.94407234463034,
+            514.4483290774775
+          ],
+          "centroid_offset_original_px": 0.7089299880439657,
+          "native_default_rank": 37
+        },
+        {
+          "id": "P22",
+          "visual_class": "compact_on_bright_background",
+          "xy": [
+            2480.424204389784,
+            828.2231124191417
+          ],
+          "working_xy": [
+            1431.490882764666,
+            477.8895176083624
+          ],
+          "distance_to_component_working_px": 0.5031622476975166,
+          "component": {
+            "area": 15,
+            "bounds": [
+              1430,
+              476,
+              1433,
+              480
+            ],
+            "centroid": [
+              1431.4155855219365,
+              477.87895737024985
+            ],
+            "component": 527,
+            "concentration": 1.5763976573944092,
+            "concentration_screened": false,
+            "core_area": 12,
+            "elongation": 1.3080205917358398,
+            "measured_area": 15,
+            "outcome": "top_k",
+            "peak": 0.35289233922958374,
+            "photometry_flux": 3.3578996658325195,
+            "positive_blob_flux": 1.9759050607681274,
+            "rank_before_top_k": 113
+          },
+          "outcome": "top_k",
+          "centroid_original_xy": [
+            2480.293751916755,
+            828.2048187210685
+          ],
+          "centroid_offset_original_px": 0.13172891523340757,
+          "native_default_rank": 40
+        },
+        {
+          "id": "P23",
+          "visual_class": "compact_on_bright_background",
+          "xy": [
+            1343.467618239354,
+            795.281535698195
+          ],
+          "working_xy": [
+            775.23888498664,
+            458.87363068469443
+          ],
+          "distance_to_component_working_px": 0.27025032968115226,
+          "component": {
+            "area": 12,
+            "bounds": [
+              774,
+              457,
+              777,
+              460
+            ],
+            "centroid": [
+              775.211645432962,
+              458.9081594436203
+            ],
+            "component": 649,
+            "concentration": 1.7174657583236694,
+            "concentration_screened": false,
+            "core_area": 9,
+            "elongation": 1.3874083757400513,
+            "measured_area": 12,
+            "outcome": "top_k",
+            "peak": 0.3818388283252716,
+            "photometry_flux": 2.6679227352142334,
+            "positive_blob_flux": 1.73486328125,
+            "rank_before_top_k": 163
+          },
+          "outcome": "top_k",
+          "centroid_original_xy": [
+            1343.4204257126066,
+            795.3413505133441
+          ],
+          "centroid_offset_original_px": 0.07619020076175902,
+          "native_default_rank": 41
+        }
+      ]
+    },
+    {
+      "mode": "quantile",
+      "width": 2772,
+      "height": 1935,
+      "tier": "default",
+      "detections": 40,
+      "stats": {
+        "accepted": 1875,
+        "background_median": 0.33725491166114807,
+        "blob_concentration": false,
+        "candidates": 2898,
+        "quantile_threshold": true,
+        "rejected_border": 41,
+        "rejected_diffuse": 216,
+        "rejected_elongated": 493,
+        "rejected_faint": 0,
+        "rejected_large": 63,
+        "rejected_mask": 0,
+        "rejected_small": 210,
+        "sigma": 0.015526077710092068,
+        "sigma_convolved": 0.010249664075672626,
+        "statistics_pixels": 5363820,
+        "threshold": 0.06552604585886002,
+        "threshold_doublings": 0,
+        "threshold_fill": 0.019999925047159195,
+        "threshold_region_fill": 0.019999925047159195,
+        "threshold_region_pixels": 5363820
+      },
+      "outcomes": {
+        "selected": 3,
+        "top_k": 1,
+        "concentration": 3,
+        "elongation": 1
+      },
+      "probes": [
+        {
+          "id": "P00",
+          "visual_class": "compact_control",
+          "xy": [
+            2731.6779077302667,
+            19.38587372086362
+          ],
+          "working_xy": [
+            2731.6779077302667,
+            19.38587372086362
+          ],
+          "distance_to_component_working_px": 0.5026350153690737,
+          "component": {
+            "area": 200,
+            "bounds": [
+              2723,
+              13,
+              2740,
+              26
+            ],
+            "centroid": [
+              2731.6779077302667,
+              19.38587372086362
+            ],
+            "component": 2395,
+            "concentration": 1.9359880685806274,
+            "concentration_screened": false,
+            "core_area": 193,
+            "elongation": 1.4376332759857178,
+            "measured_area": 78,
+            "outcome": "selected",
+            "peak": 0.8443713784217834,
+            "photometry_flux": 87.22898864746094,
+            "positive_blob_flux": 57.5571403503418,
+            "rank_before_top_k": 0
+          },
+          "outcome": "selected",
+          "centroid_original_xy": [
+            2731.6779077302667,
+            19.38587372086362
+          ],
+          "centroid_offset_original_px": 0.0,
+          "native_default_rank": 0
+        },
+        {
+          "id": "P01",
+          "visual_class": "compact_control",
+          "xy": [
+            1912.9763224957824,
+            220.16543088965824
+          ],
+          "working_xy": [
+            1912.9763224957824,
+            220.16543088965824
+          ],
+          "distance_to_component_working_px": 0.16711673602333324,
+          "component": {
+            "area": 125,
+            "bounds": [
+              1907,
+              214,
+              1919,
+              226
+            ],
+            "centroid": [
+              1912.9664373358767,
+              220.1707872029621
+            ],
+            "component": 237,
+            "concentration": 2.4742648601531982,
+            "concentration_screened": false,
+            "core_area": 125,
+            "elongation": 1.2487854957580566,
+            "measured_area": 125,
+            "outcome": "selected",
+            "peak": 0.7501838207244873,
+            "photometry_flux": 37.899330139160156,
+            "positive_blob_flux": 33.24369812011719,
+            "rank_before_top_k": 4
+          },
+          "outcome": "selected",
+          "centroid_original_xy": [
+            1912.9664373358767,
+            220.1707872029621
+          ],
+          "centroid_offset_original_px": 0.011243063575840555,
+          "native_default_rank": 2
+        },
+        {
+          "id": "P02",
+          "visual_class": "compact_control",
+          "xy": [
+            2626.122541969498,
+            246.33372098184103
+          ],
+          "working_xy": [
+            2626.122541969498,
+            246.33372098184103
+          ],
+          "distance_to_component_working_px": 0.35550840778997006,
+          "component": {
+            "area": 125,
+            "bounds": [
+              2620,
+              241,
+              2633,
+              252
+            ],
+            "centroid": [
+              2626.1301406219904,
+              246.3364781069963
+            ],
+            "component": 1031,
+            "concentration": 2.618612289428711,
+            "concentration_screened": false,
+            "core_area": 122,
+            "elongation": 1.4182361364364624,
+            "measured_area": 125,
+            "outcome": "selected",
+            "peak": 0.7929534316062927,
+            "photometry_flux": 37.8517951965332,
+            "positive_blob_flux": 32.301170349121094,
+            "rank_before_top_k": 5
+          },
+          "outcome": "selected",
+          "centroid_original_xy": [
+            2626.1301406219904,
+            246.3364781069963
+          ],
+          "centroid_offset_original_px": 0.008083394016414518,
+          "native_default_rank": 3
+        },
+        {
+          "id": "P18",
+          "visual_class": "compact_control",
+          "xy": [
+            1899.888766167548,
+            111.46252802697661
+          ],
+          "working_xy": [
+            1899.888766167548,
+            111.46252802697661
+          ],
+          "distance_to_component_working_px": 0.47571539939424523,
+          "component": {
+            "area": 34,
+            "bounds": [
+              1897,
+              109,
+              1903,
+              114
+            ],
+            "centroid": [
+              1899.8866943825717,
+              111.46505472662723
+            ],
+            "component": 2012,
+            "concentration": 2.941681385040283,
+            "concentration_screened": true,
+            "core_area": 26,
+            "elongation": 1.7231746912002563,
+            "measured_area": 34,
+            "outcome": "top_k",
+            "peak": 0.6435048580169678,
+            "photometry_flux": 7.437639236450195,
+            "positive_blob_flux": 6.3691182136535645,
+            "rank_before_top_k": 59
+          },
+          "outcome": "top_k",
+          "centroid_original_xy": [
+            1899.8866943825717,
+            111.46505472662723
+          ],
+          "centroid_offset_original_px": 0.0032674920218202707,
+          "native_default_rank": 34
+        },
+        {
+          "id": "P19",
+          "visual_class": "compact_on_bright_background",
+          "xy": [
+            1915.2110245515992,
+            766.546520252264
+          ],
+          "working_xy": [
+            1915.2110245515992,
+            766.546520252264
+          ],
+          "distance_to_component_working_px": 0.5001752122849624,
+          "component": {
+            "area": 38,
+            "bounds": [
+              1912,
+              763,
+              1918,
+              769
+            ],
+            "centroid": [
+              1915.1875219171886,
+              766.5512801885367
+            ],
+            "component": 1860,
+            "concentration": 2.012557029724121,
+            "concentration_screened": true,
+            "core_area": 33,
+            "elongation": 1.1350535154342651,
+            "measured_area": 38,
+            "outcome": "concentration",
+            "peak": 0.45368504524230957,
+            "photometry_flux": 8.566232681274414,
+            "positive_blob_flux": 5.680942535400391,
+            "rank_before_top_k": null
+          },
+          "outcome": "concentration",
+          "centroid_original_xy": [
+            1915.1875219171886,
+            766.5512801885367
+          ],
+          "centroid_offset_original_px": 0.023979800198393516,
+          "native_default_rank": 35
+        },
+        {
+          "id": "P20",
+          "visual_class": "on_linear_trail_identity_ambiguous",
+          "xy": [
+            310.22129008923326,
+            515.1008105331721
+          ],
+          "working_xy": [
+            310.22129008923326,
+            515.1008105331721
+          ],
+          "distance_to_component_working_px": 0.24317086007847447,
+          "component": {
+            "area": 564,
+            "bounds": [
+              264,
+              391,
+              313,
+              524
+            ],
+            "centroid": null,
+            "component": 800,
+            "concentration": null,
+            "concentration_screened": false,
+            "core_area": 495,
+            "elongation": 9.450325012207031,
+            "measured_area": 83,
+            "outcome": "elongation",
+            "peak": 0.5812298655509949,
+            "photometry_flux": null,
+            "positive_blob_flux": null,
+            "rank_before_top_k": null
+          },
+          "outcome": "elongation",
+          "native_default_rank": 37
+        },
+        {
+          "id": "P22",
+          "visual_class": "compact_on_bright_background",
+          "xy": [
+            2480.424204389784,
+            828.2231124191417
+          ],
+          "working_xy": [
+            2480.424204389784,
+            828.2231124191417
+          ],
+          "distance_to_component_working_px": 0.4793000270051774,
+          "component": {
+            "area": 38,
+            "bounds": [
+              2477,
+              825,
+              2484,
+              831
+            ],
+            "centroid": [
+              2480.388215059548,
+              828.2432974301495
+            ],
+            "component": 1566,
+            "concentration": 1.852500319480896,
+            "concentration_screened": true,
+            "core_area": 31,
+            "elongation": 1.5059419870376587,
+            "measured_area": 38,
+            "outcome": "concentration",
+            "peak": 0.40623944997787476,
+            "photometry_flux": 8.333115577697754,
+            "positive_blob_flux": 5.48757791519165,
+            "rank_before_top_k": null
+          },
+          "outcome": "concentration",
+          "centroid_original_xy": [
+            2480.388215059548,
+            828.2432974301495
+          ],
+          "centroid_offset_original_px": 0.041263380377742395,
+          "native_default_rank": 40
+        },
+        {
+          "id": "P23",
+          "visual_class": "compact_on_bright_background",
+          "xy": [
+            1343.467618239354,
+            795.281535698195
+          ],
+          "working_xy": [
+            1343.467618239354,
+            795.281535698195
+          ],
+          "distance_to_component_working_px": 0.5458288808175621,
+          "component": {
+            "area": 33,
+            "bounds": [
+              1341,
+              792,
+              1346,
+              798
+            ],
+            "centroid": [
+              1343.4668293298073,
+              795.2737651716363
+            ],
+            "component": 1195,
+            "concentration": 1.832596778869629,
+            "concentration_screened": true,
+            "core_area": 30,
+            "elongation": 1.4940348863601685,
+            "measured_area": 33,
+            "outcome": "concentration",
+            "peak": 0.41103798151016235,
+            "photometry_flux": 7.401657581329346,
+            "positive_blob_flux": 5.082320690155029,
+            "rank_before_top_k": null
+          },
+          "outcome": "concentration",
+          "centroid_original_xy": [
+            1343.4668293298073,
+            795.2737651716363
+          ],
+          "centroid_offset_original_px": 0.007810471257910986,
+          "native_default_rank": 41
+        }
+      ]
+    },
+    {
+      "mode": "quantile",
+      "width": 2772,
+      "height": 1935,
+      "tier": "deep",
+      "detections": 50,
+      "stats": {
+        "accepted": 1875,
+        "background_median": 0.33725491166114807,
+        "blob_concentration": false,
+        "candidates": 2898,
+        "quantile_threshold": true,
+        "rejected_border": 41,
+        "rejected_diffuse": 216,
+        "rejected_elongated": 493,
+        "rejected_faint": 0,
+        "rejected_large": 63,
+        "rejected_mask": 0,
+        "rejected_small": 210,
+        "sigma": 0.015526077710092068,
+        "sigma_convolved": 0.010249664075672626,
+        "statistics_pixels": 5363820,
+        "threshold": 0.06552604585886002,
+        "threshold_doublings": 0,
+        "threshold_fill": 0.019999925047159195,
+        "threshold_region_fill": 0.019999925047159195,
+        "threshold_region_pixels": 5363820
+      },
+      "outcomes": {
+        "selected": 3,
+        "top_k": 1,
+        "concentration": 3,
+        "elongation": 1
+      },
+      "probes": [
+        {
+          "id": "P00",
+          "visual_class": "compact_control",
+          "xy": [
+            2731.6779077302667,
+            19.38587372086362
+          ],
+          "working_xy": [
+            2731.6779077302667,
+            19.38587372086362
+          ],
+          "distance_to_component_working_px": 0.5026350153690737,
+          "component": {
+            "area": 200,
+            "bounds": [
+              2723,
+              13,
+              2740,
+              26
+            ],
+            "centroid": [
+              2731.6779077302667,
+              19.38587372086362
+            ],
+            "component": 1942,
+            "concentration": 1.9359880685806274,
+            "concentration_screened": false,
+            "core_area": 193,
+            "elongation": 1.4376332759857178,
+            "measured_area": 78,
+            "outcome": "selected",
+            "peak": 0.8443713784217834,
+            "photometry_flux": 87.22898864746094,
+            "positive_blob_flux": 57.5571403503418,
+            "rank_before_top_k": 0
+          },
+          "outcome": "selected",
+          "centroid_original_xy": [
+            2731.6779077302667,
+            19.38587372086362
+          ],
+          "centroid_offset_original_px": 0.0,
+          "native_default_rank": 0
+        },
+        {
+          "id": "P01",
+          "visual_class": "compact_control",
+          "xy": [
+            1912.9763224957824,
+            220.16543088965824
+          ],
+          "working_xy": [
+            1912.9763224957824,
+            220.16543088965824
+          ],
+          "distance_to_component_working_px": 0.16711673602333324,
+          "component": {
+            "area": 125,
+            "bounds": [
+              1907,
+              214,
+              1919,
+              226
+            ],
+            "centroid": [
+              1912.9664373358767,
+              220.1707872029621
+            ],
+            "component": 955,
+            "concentration": 2.4742648601531982,
+            "concentration_screened": false,
+            "core_area": 125,
+            "elongation": 1.2487854957580566,
+            "measured_area": 125,
+            "outcome": "selected",
+            "peak": 0.7501838207244873,
+            "photometry_flux": 37.899330139160156,
+            "positive_blob_flux": 33.24369812011719,
+            "rank_before_top_k": 4
+          },
+          "outcome": "selected",
+          "centroid_original_xy": [
+            1912.9664373358767,
+            220.1707872029621
+          ],
+          "centroid_offset_original_px": 0.011243063575840555,
+          "native_default_rank": 2
+        },
+        {
+          "id": "P02",
+          "visual_class": "compact_control",
+          "xy": [
+            2626.122541969498,
+            246.33372098184103
+          ],
+          "working_xy": [
+            2626.122541969498,
+            246.33372098184103
+          ],
+          "distance_to_component_working_px": 0.35550840778997006,
+          "component": {
+            "area": 125,
+            "bounds": [
+              2620,
+              241,
+              2633,
+              252
+            ],
+            "centroid": [
+              2626.1301406219904,
+              246.3364781069963
+            ],
+            "component": 544,
+            "concentration": 2.618612289428711,
+            "concentration_screened": false,
+            "core_area": 122,
+            "elongation": 1.4182361364364624,
+            "measured_area": 125,
+            "outcome": "selected",
+            "peak": 0.7929534316062927,
+            "photometry_flux": 37.8517951965332,
+            "positive_blob_flux": 32.301170349121094,
+            "rank_before_top_k": 5
+          },
+          "outcome": "selected",
+          "centroid_original_xy": [
+            2626.1301406219904,
+            246.3364781069963
+          ],
+          "centroid_offset_original_px": 0.008083394016414518,
+          "native_default_rank": 3
+        },
+        {
+          "id": "P18",
+          "visual_class": "compact_control",
+          "xy": [
+            1899.888766167548,
+            111.46252802697661
+          ],
+          "working_xy": [
+            1899.888766167548,
+            111.46252802697661
+          ],
+          "distance_to_component_working_px": 0.47571539939424523,
+          "component": {
+            "area": 34,
+            "bounds": [
+              1897,
+              109,
+              1903,
+              114
+            ],
+            "centroid": [
+              1899.8866943825717,
+              111.46505472662723
+            ],
+            "component": 1419,
+            "concentration": 2.941681385040283,
+            "concentration_screened": true,
+            "core_area": 26,
+            "elongation": 1.7231746912002563,
+            "measured_area": 34,
+            "outcome": "top_k",
+            "peak": 0.6435048580169678,
+            "photometry_flux": 7.437639236450195,
+            "positive_blob_flux": 6.3691182136535645,
+            "rank_before_top_k": 59
+          },
+          "outcome": "top_k",
+          "centroid_original_xy": [
+            1899.8866943825717,
+            111.46505472662723
+          ],
+          "centroid_offset_original_px": 0.0032674920218202707,
+          "native_default_rank": 34
+        },
+        {
+          "id": "P19",
+          "visual_class": "compact_on_bright_background",
+          "xy": [
+            1915.2110245515992,
+            766.546520252264
+          ],
+          "working_xy": [
+            1915.2110245515992,
+            766.546520252264
+          ],
+          "distance_to_component_working_px": 0.5001752122849624,
+          "component": {
+            "area": 38,
+            "bounds": [
+              1912,
+              763,
+              1918,
+              769
+            ],
+            "centroid": [
+              1915.1875219171886,
+              766.5512801885367
+            ],
+            "component": 2521,
+            "concentration": 2.012557029724121,
+            "concentration_screened": true,
+            "core_area": 33,
+            "elongation": 1.1350535154342651,
+            "measured_area": 38,
+            "outcome": "concentration",
+            "peak": 0.45368504524230957,
+            "photometry_flux": 8.566232681274414,
+            "positive_blob_flux": 5.680942535400391,
+            "rank_before_top_k": null
+          },
+          "outcome": "concentration",
+          "centroid_original_xy": [
+            1915.1875219171886,
+            766.5512801885367
+          ],
+          "centroid_offset_original_px": 0.023979800198393516,
+          "native_default_rank": 35
+        },
+        {
+          "id": "P20",
+          "visual_class": "on_linear_trail_identity_ambiguous",
+          "xy": [
+            310.22129008923326,
+            515.1008105331721
+          ],
+          "working_xy": [
+            310.22129008923326,
+            515.1008105331721
+          ],
+          "distance_to_component_working_px": 0.24317086007847447,
+          "component": {
+            "area": 564,
+            "bounds": [
+              264,
+              391,
+              313,
+              524
+            ],
+            "centroid": null,
+            "component": 1375,
+            "concentration": null,
+            "concentration_screened": false,
+            "core_area": 495,
+            "elongation": 9.450325012207031,
+            "measured_area": 83,
+            "outcome": "elongation",
+            "peak": 0.5812298655509949,
+            "photometry_flux": null,
+            "positive_blob_flux": null,
+            "rank_before_top_k": null
+          },
+          "outcome": "elongation",
+          "native_default_rank": 37
+        },
+        {
+          "id": "P22",
+          "visual_class": "compact_on_bright_background",
+          "xy": [
+            2480.424204389784,
+            828.2231124191417
+          ],
+          "working_xy": [
+            2480.424204389784,
+            828.2231124191417
+          ],
+          "distance_to_component_working_px": 0.4793000270051774,
+          "component": {
+            "area": 38,
+            "bounds": [
+              2477,
+              825,
+              2484,
+              831
+            ],
+            "centroid": [
+              2480.388215059548,
+              828.2432974301495
+            ],
+            "component": 1217,
+            "concentration": 1.852500319480896,
+            "concentration_screened": true,
+            "core_area": 31,
+            "elongation": 1.5059419870376587,
+            "measured_area": 38,
+            "outcome": "concentration",
+            "peak": 0.40623944997787476,
+            "photometry_flux": 8.333115577697754,
+            "positive_blob_flux": 5.48757791519165,
+            "rank_before_top_k": null
+          },
+          "outcome": "concentration",
+          "centroid_original_xy": [
+            2480.388215059548,
+            828.2432974301495
+          ],
+          "centroid_offset_original_px": 0.041263380377742395,
+          "native_default_rank": 40
+        },
+        {
+          "id": "P23",
+          "visual_class": "compact_on_bright_background",
+          "xy": [
+            1343.467618239354,
+            795.281535698195
+          ],
+          "working_xy": [
+            1343.467618239354,
+            795.281535698195
+          ],
+          "distance_to_component_working_px": 0.5458288808175621,
+          "component": {
+            "area": 33,
+            "bounds": [
+              1341,
+              792,
+              1346,
+              798
+            ],
+            "centroid": [
+              1343.4668293298073,
+              795.2737651716363
+            ],
+            "component": 2782,
+            "concentration": 1.832596778869629,
+            "concentration_screened": true,
+            "core_area": 30,
+            "elongation": 1.4940348863601685,
+            "measured_area": 33,
+            "outcome": "concentration",
+            "peak": 0.41103798151016235,
+            "photometry_flux": 7.401657581329346,
+            "positive_blob_flux": 5.082320690155029,
+            "rank_before_top_k": null
+          },
+          "outcome": "concentration",
+          "centroid_original_xy": [
+            1343.4668293298073,
+            795.2737651716363
+          ],
+          "centroid_offset_original_px": 0.007810471257910986,
+          "native_default_rank": 41
+        }
+      ]
+    },
+    {
+      "mode": "blob_concentration",
+      "width": 1600,
+      "height": 1117,
+      "tier": "default",
+      "detections": 40,
+      "stats": {
+        "accepted": 276,
+        "background_median": 0.33725491166114807,
+        "blob_concentration": true,
+        "candidates": 430,
+        "quantile_threshold": false,
+        "rejected_border": 17,
+        "rejected_diffuse": 18,
+        "rejected_elongated": 49,
+        "rejected_faint": 0,
+        "rejected_large": 12,
+        "rejected_mask": 0,
+        "rejected_small": 58,
+        "sigma": 0.015113737434148788,
+        "sigma_convolved": 0.009148901328444481,
+        "statistics_pixels": 1787200,
+        "threshold": 0.09148901700973511,
+        "threshold_doublings": 2,
+        "threshold_fill": 0.00969337485730648,
+        "threshold_region_fill": 0.00969337485730648,
+        "threshold_region_pixels": 1787200
+      },
+      "outcomes": {
+        "border": 1,
+        "selected": 2,
+        "top_k": 4,
+        "core_area": 1
+      },
+      "probes": [
+        {
+          "id": "P00",
+          "visual_class": "compact_control",
+          "xy": [
+            2731.6779077302667,
+            19.38587372086362
+          ],
+          "working_xy": [
+            1576.5146653565753,
+            10.97933899028665
+          ],
+          "distance_to_component_working_px": 0.4857742206319482,
+          "component": {
+            "area": 73,
+            "bounds": [
+              1572,
+              7,
+              1581,
+              15
+            ],
+            "centroid": null,
+            "component": 159,
+            "concentration": null,
+            "concentration_screened": false,
+            "core_area": null,
+            "elongation": null,
+            "measured_area": null,
+            "outcome": "border",
+            "peak": null,
+            "photometry_flux": null,
+            "positive_blob_flux": null,
+            "rank_before_top_k": null
+          },
+          "outcome": "border",
+          "native_default_rank": 0
+        },
+        {
+          "id": "P01",
+          "visual_class": "compact_control",
+          "xy": [
+            1912.9763224957824,
+            220.16543088965824
+          ],
+          "working_xy": [
+            1103.9596378042033,
+            126.88154330943063
+          ],
+          "distance_to_component_working_px": 0.12514429427735188,
+          "component": {
+            "area": 41,
+            "bounds": [
+              1101,
+              124,
+              1107,
+              130
+            ],
+            "centroid": [
+              1103.949623818824,
+              126.89419278450228
+            ],
+            "component": 314,
+            "concentration": 2.312546730041504,
+            "concentration_screened": false,
+            "core_area": 41,
+            "elongation": 1.2505793571472168,
+            "measured_area": 41,
+            "outcome": "selected",
+            "peak": 0.7646445631980896,
+            "photometry_flux": 13.556668281555176,
+            "positive_blob_flux": 11.18043041229248,
+            "rank_before_top_k": 1
+          },
+          "outcome": "selected",
+          "centroid_original_xy": [
+            1912.9589732661127,
+            220.18734381200707
+          ],
+          "centroid_offset_original_px": 0.027949453232516817,
+          "native_default_rank": 2
+        },
+        {
+          "id": "P02",
+          "visual_class": "compact_control",
+          "xy": [
+            2626.122541969498,
+            246.33372098184103
+          ],
+          "working_xy": [
+            1515.5880473128414,
+            141.9874761430059
+          ],
+          "distance_to_component_working_px": 0.41214301334759756,
+          "component": {
+            "area": 41,
+            "bounds": [
+              1512,
+              139,
+              1519,
+              145
+            ],
+            "centroid": [
+              1515.5967258337573,
+              141.96703670548573
+            ],
+            "component": 230,
+            "concentration": 2.442276954650879,
+            "concentration_screened": false,
+            "core_area": 40,
+            "elongation": 1.456989049911499,
+            "measured_area": 41,
+            "outcome": "selected",
+            "peak": 0.8002451062202454,
+            "photometry_flux": 13.434206008911133,
+            "positive_blob_flux": 10.59712028503418,
+            "rank_before_top_k": 2
+          },
+          "outcome": "selected",
+          "centroid_original_xy": [
+            2626.1375775069846,
+            246.29831336178592
+          ],
+          "centroid_offset_original_px": 0.03846773902221627,
+          "native_default_rank": 3
+        },
+        {
+          "id": "P18",
+          "visual_class": "compact_control",
+          "xy": [
+            1899.888766167548,
+            111.46252802697661
+          ],
+          "working_xy": [
+            1096.4054927374013,
+            64.13159886621854
+          ],
+          "distance_to_component_working_px": 0.42631282138265775,
+          "component": {
+            "area": 9,
+            "bounds": [
+              1095,
+              63,
+              1098,
+              65
+            ],
+            "centroid": [
+              1096.4234397931316,
+              64.1237121042323
+            ],
+            "component": 2,
+            "concentration": 1.882151484489441,
+            "concentration_screened": false,
+            "core_area": 9,
+            "elongation": 1.5915899276733398,
+            "measured_area": 9,
+            "outcome": "top_k",
+            "peak": 0.5362745523452759,
+            "photometry_flux": 2.5643370151519775,
+            "positive_blob_flux": 2.096813917160034,
+            "rank_before_top_k": 144
+          },
+          "outcome": "top_k",
+          "centroid_original_xy": [
+            1899.9198594416007,
+            111.44886564161996
+          ],
+          "centroid_offset_original_px": 0.03396251558624706,
+          "native_default_rank": 34
+        },
+        {
+          "id": "P19",
+          "visual_class": "compact_on_bright_background",
+          "xy": [
+            1915.2110245515992,
+            766.546520252264
+          ],
+          "working_xy": [
+            1105.249509120692,
+            442.2860274531157
+          ],
+          "distance_to_component_working_px": 0.3795609374584593,
+          "component": {
+            "area": 8,
+            "bounds": [
+              1104,
+              441,
+              1106,
+              443
+            ],
+            "centroid": [
+              1105.2189998689673,
+              442.2533279817892
+            ],
+            "component": 119,
+            "concentration": 0.89432293176651,
+            "concentration_screened": false,
+            "core_area": 8,
+            "elongation": 1.3321336507797241,
+            "measured_area": 8,
+            "outcome": "top_k",
+            "peak": 0.34742647409439087,
+            "photometry_flux": 3.1078391075134277,
+            "positive_blob_flux": 1.6546567678451538,
+            "rank_before_top_k": 113
+          },
+          "outcome": "top_k",
+          "centroid_original_xy": [
+            1915.158167272986,
+            766.4898743462508
+          ],
+          "centroid_offset_original_px": 0.0774767743937002,
+          "native_default_rank": 35
+        },
+        {
+          "id": "P20",
+          "visual_class": "on_linear_trail_identity_ambiguous",
+          "xy": [
+            310.22129008923326,
+            515.1008105331721
+          ],
+          "working_xy": [
+            178.8485079880134,
+            297.1362301630766
+          ],
+          "distance_to_component_working_px": 0.20373631739978837,
+          "component": {
+            "area": 1,
+            "bounds": [
+              179,
+              297,
+              179,
+              297
+            ],
+            "centroid": null,
+            "component": 332,
+            "concentration": null,
+            "concentration_screened": false,
+            "core_area": 1,
+            "elongation": null,
+            "measured_area": null,
+            "outcome": "core_area",
+            "peak": null,
+            "photometry_flux": null,
+            "positive_blob_flux": null,
+            "rank_before_top_k": null
+          },
+          "outcome": "core_area",
+          "native_default_rank": 37
+        },
+        {
+          "id": "P22",
+          "visual_class": "compact_on_bright_background",
+          "xy": [
+            2480.424204389784,
+            828.2231124191417
+          ],
+          "working_xy": [
+            1431.490882764666,
+            477.8895176083624
+          ],
+          "distance_to_component_working_px": 0.5031622476975166,
+          "component": {
+            "area": 8,
+            "bounds": [
+              1430,
+              477,
+              1433,
+              479
+            ],
+            "centroid": [
+              1431.4232339111188,
+              477.87498461553355
+            ],
+            "component": 388,
+            "concentration": 0.9075235724449158,
+            "concentration_screened": false,
+            "core_area": 8,
+            "elongation": 1.2806488275527954,
+            "measured_area": 8,
+            "outcome": "top_k",
+            "peak": 0.35289233922958374,
+            "photometry_flux": 3.1108157634735107,
+            "positive_blob_flux": 1.5405638217926025,
+            "rank_before_top_k": 112
+          },
+          "outcome": "top_k",
+          "centroid_original_xy": [
+            2480.3070027510134,
+            828.1979366437398
+          ],
+          "centroid_offset_original_px": 0.11987511750801946,
+          "native_default_rank": 40
+        },
+        {
+          "id": "P23",
+          "visual_class": "compact_on_bright_background",
+          "xy": [
+            1343.467618239354,
+            795.281535698195
+          ],
+          "working_xy": [
+            775.23888498664,
+            458.87363068469443
+          ],
+          "distance_to_component_working_px": 0.27025032968115226,
+          "component": {
+            "area": 6,
+            "bounds": [
+              774,
+              458,
+              776,
+              460
+            ],
+            "centroid": [
+              775.204168687813,
+              458.91517123617285
+            ],
+            "component": 186,
+            "concentration": 0.8657693862915039,
+            "concentration_screened": false,
+            "core_area": 6,
+            "elongation": 1.3986867666244507,
+            "measured_area": 6,
+            "outcome": "top_k",
+            "peak": 0.3818388283252716,
+            "photometry_flux": 2.6462392807006836,
+            "positive_blob_flux": 1.3616094589233398,
+            "rank_before_top_k": 138
+          },
+          "outcome": "top_k",
+          "centroid_original_xy": [
+            1343.4074722516361,
+            795.3534971727793
+          ],
+          "centroid_offset_original_px": 0.09378695891698252,
+          "native_default_rank": 41
+        }
+      ]
+    },
+    {
+      "mode": "blob_concentration",
+      "width": 1600,
+      "height": 1117,
+      "tier": "deep",
+      "detections": 50,
+      "stats": {
+        "accepted": 462,
+        "background_median": 0.33725491166114807,
+        "blob_concentration": true,
+        "candidates": 716,
+        "quantile_threshold": false,
+        "rejected_border": 27,
+        "rejected_diffuse": 33,
+        "rejected_elongated": 109,
+        "rejected_faint": 0,
+        "rejected_large": 16,
+        "rejected_mask": 0,
+        "rejected_small": 69,
+        "sigma": 0.015113737434148788,
+        "sigma_convolved": 0.009148901328444481,
+        "statistics_pixels": 1787200,
+        "threshold": 0.07319121062755585,
+        "threshold_doublings": 2,
+        "threshold_fill": 0.014917748048901558,
+        "threshold_region_fill": 0.014917748048901558,
+        "threshold_region_pixels": 1787200
+      },
+      "outcomes": {
+        "border": 1,
+        "selected": 2,
+        "top_k": 5
+      },
+      "probes": [
+        {
+          "id": "P00",
+          "visual_class": "compact_control",
+          "xy": [
+            2731.6779077302667,
+            19.38587372086362
+          ],
+          "working_xy": [
+            1576.5146653565753,
+            10.97933899028665
+          ],
+          "distance_to_component_working_px": 0.4857742206319482,
+          "component": {
+            "area": 76,
+            "bounds": [
+              1572,
+              7,
+              1581,
+              15
+            ],
+            "centroid": null,
+            "component": 614,
+            "concentration": null,
+            "concentration_screened": false,
+            "core_area": null,
+            "elongation": null,
+            "measured_area": null,
+            "outcome": "border",
+            "peak": null,
+            "photometry_flux": null,
+            "positive_blob_flux": null,
+            "rank_before_top_k": null
+          },
+          "outcome": "border",
+          "native_default_rank": 0
+        },
+        {
+          "id": "P01",
+          "visual_class": "compact_control",
+          "xy": [
+            1912.9763224957824,
+            220.16543088965824
+          ],
+          "working_xy": [
+            1103.9596378042033,
+            126.88154330943063
+          ],
+          "distance_to_component_working_px": 0.12514429427735188,
+          "component": {
+            "area": 43,
+            "bounds": [
+              1101,
+              124,
+              1107,
+              130
+            ],
+            "centroid": [
+              1103.9486126085362,
+              126.8933744890681
+            ],
+            "component": 649,
+            "concentration": 2.4168050289154053,
+            "concentration_screened": false,
+            "core_area": 41,
+            "elongation": 1.228872537612915,
+            "measured_area": 43,
+            "outcome": "selected",
+            "peak": 0.7646445631980896,
+            "photometry_flux": 13.604619979858398,
+            "positive_blob_flux": 11.23169994354248,
+            "rank_before_top_k": 2
+          },
+          "outcome": "selected",
+          "centroid_original_xy": [
+            1912.957221344289,
+            220.18592626351546
+          ],
+          "centroid_offset_original_px": 0.02801632270508575,
+          "native_default_rank": 2
+        },
+        {
+          "id": "P02",
+          "visual_class": "compact_control",
+          "xy": [
+            2626.122541969498,
+            246.33372098184103
+          ],
+          "working_xy": [
+            1515.5880473128414,
+            141.9874761430059
+          ],
+          "distance_to_component_working_px": 0.41214301334759756,
+          "component": {
+            "area": 47,
+            "bounds": [
+              1512,
+              139,
+              1519,
+              145
+            ],
+            "centroid": [
+              1515.5949084183653,
+              141.971213558083
+            ],
+            "component": 417,
+            "concentration": 2.8554787635803223,
+            "concentration_screened": false,
+            "core_area": 44,
+            "elongation": 1.420649528503418,
+            "measured_area": 47,
+            "outcome": "selected",
+            "peak": 0.8002451062202454,
+            "photometry_flux": 13.171703338623047,
+            "positive_blob_flux": 10.952635765075684,
+            "rank_before_top_k": 3
+          },
+          "outcome": "selected",
+          "centroid_original_xy": [
+            2626.134428834818,
+            246.30554900169258
+          ],
+          "centroid_offset_original_px": 0.03057708345522346,
+          "native_default_rank": 3
+        },
+        {
+          "id": "P18",
+          "visual_class": "compact_control",
+          "xy": [
+            1899.888766167548,
+            111.46252802697661
+          ],
+          "working_xy": [
+            1096.4054927374013,
+            64.13159886621854
+          ],
+          "distance_to_component_working_px": 0.42631282138265775,
+          "component": {
+            "area": 11,
+            "bounds": [
+              1095,
+              63,
+              1098,
+              65
+            ],
+            "centroid": [
+              1096.4204291976814,
+              64.12558070929876
+            ],
+            "component": 456,
+            "concentration": 2.483670949935913,
+            "concentration_screened": false,
+            "core_area": 10,
+            "elongation": 1.6593654155731201,
+            "measured_area": 11,
+            "outcome": "top_k",
+            "peak": 0.5362745523452759,
+            "photometry_flux": 2.3751213550567627,
+            "positive_blob_flux": 2.2159316539764404,
+            "rank_before_top_k": 183
+          },
+          "outcome": "top_k",
+          "centroid_original_xy": [
+            1899.9146435849832,
+            111.45210266113975
+          ],
+          "centroid_offset_original_px": 0.027898548097436793,
+          "native_default_rank": 34
+        },
+        {
+          "id": "P19",
+          "visual_class": "compact_on_bright_background",
+          "xy": [
+            1915.2110245515992,
+            766.546520252264
+          ],
+          "working_xy": [
+            1105.249509120692,
+            442.2860274531157
+          ],
+          "distance_to_component_working_px": 0.3795609374584593,
+          "component": {
+            "area": 13,
+            "bounds": [
+              1104,
+              441,
+              1107,
+              444
+            ],
+            "centroid": [
+              1105.2240130912162,
+              442.25566494772784
+            ],
+            "component": 616,
+            "concentration": 1.3241939544677734,
+            "concentration_screened": false,
+            "core_area": 12,
+            "elongation": 1.0476109981536865,
+            "measured_area": 13,
+            "outcome": "top_k",
+            "peak": 0.34742647409439087,
+            "photometry_flux": 3.410787582397461,
+            "positive_blob_flux": 1.9129899740219116,
+            "rank_before_top_k": 110
+          },
+          "outcome": "top_k",
+          "centroid_original_xy": [
+            1915.1668526805322,
+            766.4939227160728
+          ],
+          "centroid_offset_original_px": 0.0686851876822374,
+          "native_default_rank": 35
+        },
+        {
+          "id": "P20",
+          "visual_class": "on_linear_trail_identity_ambiguous",
+          "xy": [
+            310.22129008923326,
+            515.1008105331721
+          ],
+          "working_xy": [
+            178.8485079880134,
+            297.1362301630766
+          ],
+          "distance_to_component_working_px": 0.20373631739978837,
+          "component": {
+            "area": 6,
+            "bounds": [
+              178,
+              296,
+              180,
+              298
+            ],
+            "centroid": [
+              178.7894476053252,
+              296.92307091892593
+            ],
+            "component": 53,
+            "concentration": 0.4747712314128876,
+            "concentration_screened": false,
+            "core_area": 5,
+            "elongation": 1.5016785860061646,
+            "measured_area": 6,
+            "outcome": "top_k",
+            "peak": 0.1929534524679184,
+            "photometry_flux": 2.438481092453003,
+            "positive_blob_flux": 0.816666841506958,
+            "rank_before_top_k": 176
+          },
+          "outcome": "top_k",
+          "centroid_original_xy": [
+            310.1189679762259,
+            514.731550786143
+          ],
+          "centroid_offset_original_px": 0.3831743409810823,
+          "native_default_rank": 37
+        },
+        {
+          "id": "P22",
+          "visual_class": "compact_on_bright_background",
+          "xy": [
+            2480.424204389784,
+            828.2231124191417
+          ],
+          "working_xy": [
+            1431.490882764666,
+            477.8895176083624
+          ],
+          "distance_to_component_working_px": 0.5031622476975166,
+          "component": {
+            "area": 13,
+            "bounds": [
+              1430,
+              476,
+              1433,
+              479
+            ],
+            "centroid": [
+              1431.4184836839302,
+              477.86849595465816
+            ],
+            "component": 541,
+            "concentration": 1.461492657661438,
+            "concentration_screened": false,
+            "core_area": 12,
+            "elongation": 1.356184482574463,
+            "measured_area": 13,
+            "outcome": "top_k",
+            "peak": 0.35289233922958374,
+            "photometry_flux": 3.1389827728271484,
+            "positive_blob_flux": 1.9298839569091797,
+            "rank_before_top_k": 121
+          },
+          "outcome": "top_k",
+          "centroid_original_xy": [
+            2480.298772982409,
+            828.1866962150972
+          ],
+          "centroid_offset_original_px": 0.1306107877361408,
+          "native_default_rank": 40
+        },
+        {
+          "id": "P23",
+          "visual_class": "compact_on_bright_background",
+          "xy": [
+            1343.467618239354,
+            795.281535698195
+          ],
+          "working_xy": [
+            775.23888498664,
+            458.87363068469443
+          ],
+          "distance_to_component_working_px": 0.27025032968115226,
+          "component": {
+            "area": 9,
+            "bounds": [
+              774,
+              458,
+              776,
+              460
+            ],
+            "centroid": [
+              775.2075182890733,
+              458.9114729091839
+            ],
+            "component": 421,
+            "concentration": 1.329520583152771,
+            "concentration_screened": false,
+            "core_area": 7,
+            "elongation": 1.4383941888809204,
+            "measured_area": 9,
+            "outcome": "top_k",
+            "peak": 0.3818388283252716,
+            "photometry_flux": 2.584803581237793,
+            "positive_blob_flux": 1.5973336696624756,
+            "rank_before_top_k": 165
+          },
+          "outcome": "top_k",
+          "centroid_original_xy": [
+            1343.4132754358195,
+            795.3470904917375
+          ],
+          "centroid_offset_original_px": 0.08515028627306054,
+          "native_default_rank": 41
+        }
+      ]
+    },
+    {
+      "mode": "blob_concentration",
+      "width": 2772,
+      "height": 1935,
+      "tier": "default",
+      "detections": 40,
+      "stats": {
+        "accepted": 780,
+        "background_median": 0.33725491166114807,
+        "blob_concentration": true,
+        "candidates": 1154,
+        "quantile_threshold": false,
+        "rejected_border": 26,
+        "rejected_diffuse": 80,
+        "rejected_elongated": 146,
+        "rejected_faint": 0,
+        "rejected_large": 30,
+        "rejected_mask": 0,
+        "rejected_small": 92,
+        "sigma": 0.015526077710092068,
+        "sigma_convolved": 0.010249664075672626,
+        "statistics_pixels": 5363820,
+        "threshold": 0.10249663889408112,
+        "threshold_doublings": 2,
+        "threshold_fill": 0.007475642487406731,
+        "threshold_region_fill": 0.007475642487406731,
+        "threshold_region_pixels": 5363820
+      },
+      "outcomes": {
+        "selected": 3,
+        "top_k": 5
+      },
+      "probes": [
+        {
+          "id": "P00",
+          "visual_class": "compact_control",
+          "xy": [
+            2731.6779077302667,
+            19.38587372086362
+          ],
+          "working_xy": [
+            2731.6779077302667,
+            19.38587372086362
+          ],
+          "distance_to_component_working_px": 0.5026350153690737,
+          "component": {
+            "area": 170,
+            "bounds": [
+              2724,
+              13,
+              2739,
+              26
+            ],
+            "centroid": [
+              2731.6779077302667,
+              19.38587372086362
+            ],
+            "component": 590,
+            "concentration": 1.645589828491211,
+            "concentration_screened": false,
+            "core_area": 168,
+            "elongation": 1.4376332759857178,
+            "measured_area": 78,
+            "outcome": "selected",
+            "peak": 0.8443713784217834,
+            "photometry_flux": 87.22898864746094,
+            "positive_blob_flux": 57.5571403503418,
+            "rank_before_top_k": 0
+          },
+          "outcome": "selected",
+          "centroid_original_xy": [
+            2731.6779077302667,
+            19.38587372086362
+          ],
+          "centroid_offset_original_px": 0.0,
+          "native_default_rank": 0
+        },
+        {
+          "id": "P01",
+          "visual_class": "compact_control",
+          "xy": [
+            1912.9763224957824,
+            220.16543088965824
+          ],
+          "working_xy": [
+            1912.9763224957824,
+            220.16543088965824
+          ],
+          "distance_to_component_working_px": 0.16711673602333324,
+          "component": {
+            "area": 95,
+            "bounds": [
+              1908,
+              215,
+              1918,
+              225
+            ],
+            "centroid": [
+              1912.9763224957824,
+              220.16543088965824
+            ],
+            "component": 1146,
+            "concentration": 1.863561987876892,
+            "concentration_screened": false,
+            "core_area": 95,
+            "elongation": 1.258141279220581,
+            "measured_area": 95,
+            "outcome": "selected",
+            "peak": 0.7501838207244873,
+            "photometry_flux": 38.24260330200195,
+            "positive_blob_flux": 31.106563568115234,
+            "rank_before_top_k": 2
+          },
+          "outcome": "selected",
+          "centroid_original_xy": [
+            1912.9763224957824,
+            220.16543088965824
+          ],
+          "centroid_offset_original_px": 0.0,
+          "native_default_rank": 2
+        },
+        {
+          "id": "P02",
+          "visual_class": "compact_control",
+          "xy": [
+            2626.122541969498,
+            246.33372098184103
+          ],
+          "working_xy": [
+            2626.122541969498,
+            246.33372098184103
+          ],
+          "distance_to_component_working_px": 0.35550840778997006,
+          "component": {
+            "area": 99,
+            "bounds": [
+              2620,
+              242,
+              2632,
+              251
+            ],
+            "centroid": [
+              2626.122541969498,
+              246.33372098184103
+            ],
+            "component": 132,
+            "concentration": 2.0859482288360596,
+            "concentration_screened": false,
+            "core_area": 99,
+            "elongation": 1.5622437000274658,
+            "measured_area": 99,
+            "outcome": "selected",
+            "peak": 0.7929534316062927,
+            "photometry_flux": 37.6339111328125,
+            "positive_blob_flux": 30.442588806152344,
+            "rank_before_top_k": 3
+          },
+          "outcome": "selected",
+          "centroid_original_xy": [
+            2626.122541969498,
+            246.33372098184103
+          ],
+          "centroid_offset_original_px": 0.0,
+          "native_default_rank": 3
+        },
+        {
+          "id": "P18",
+          "visual_class": "compact_control",
+          "xy": [
+            1899.888766167548,
+            111.46252802697661
+          ],
+          "working_xy": [
+            1899.888766167548,
+            111.46252802697661
+          ],
+          "distance_to_component_working_px": 0.47571539939424523,
+          "component": {
+            "area": 22,
+            "bounds": [
+              1897,
+              109,
+              1902,
+              114
+            ],
+            "centroid": [
+              1899.888766167548,
+              111.46252802697661
+            ],
+            "component": 531,
+            "concentration": 1.8561327457427979,
+            "concentration_screened": false,
+            "core_area": 19,
+            "elongation": 1.7635401487350464,
+            "measured_area": 22,
+            "outcome": "top_k",
+            "peak": 0.6435048580169678,
+            "photometry_flux": 7.627205848693848,
+            "positive_blob_flux": 5.826225757598877,
+            "rank_before_top_k": 59
+          },
+          "outcome": "top_k",
+          "centroid_original_xy": [
+            1899.888766167548,
+            111.46252802697661
+          ],
+          "centroid_offset_original_px": 0.0,
+          "native_default_rank": 34
+        },
+        {
+          "id": "P19",
+          "visual_class": "compact_on_bright_background",
+          "xy": [
+            1915.2110245515992,
+            766.546520252264
+          ],
+          "working_xy": [
+            1915.2110245515992,
+            766.546520252264
+          ],
+          "distance_to_component_working_px": 0.5001752122849624,
+          "component": {
+            "area": 23,
+            "bounds": [
+              1913,
+              764,
+              1917,
+              769
+            ],
+            "centroid": [
+              1915.2110245515992,
+              766.546520252264
+            ],
+            "component": 29,
+            "concentration": 1.3705651760101318,
+            "concentration_screened": false,
+            "core_area": 22,
+            "elongation": 1.4142978191375732,
+            "measured_area": 23,
+            "outcome": "top_k",
+            "peak": 0.45368504524230957,
+            "photometry_flux": 7.61346960067749,
+            "positive_blob_flux": 4.7258219718933105,
+            "rank_before_top_k": 60
+          },
+          "outcome": "top_k",
+          "centroid_original_xy": [
+            1915.2110245515992,
+            766.546520252264
+          ],
+          "centroid_offset_original_px": 0.0,
+          "native_default_rank": 35
+        },
+        {
+          "id": "P20",
+          "visual_class": "on_linear_trail_identity_ambiguous",
+          "xy": [
+            310.22129008923326,
+            515.1008105331721
+          ],
+          "working_xy": [
+            310.22129008923326,
+            515.1008105331721
+          ],
+          "distance_to_component_working_px": 0.24317086007847447,
+          "component": {
+            "area": 15,
+            "bounds": [
+              308,
+              512,
+              312,
+              518
+            ],
+            "centroid": [
+              310.22129008923326,
+              515.1008105331721
+            ],
+            "component": 704,
+            "concentration": 0.5244849324226379,
+            "concentration_screened": false,
+            "core_area": 14,
+            "elongation": 1.4187980890274048,
+            "measured_area": 15,
+            "outcome": "top_k",
+            "peak": 0.2623056471347809,
+            "photometry_flux": 7.501806735992432,
+            "positive_blob_flux": 2.6620051860809326,
+            "rank_before_top_k": 62
+          },
+          "outcome": "top_k",
+          "centroid_original_xy": [
+            310.22129008923326,
+            515.1008105331721
+          ],
+          "centroid_offset_original_px": 0.0,
+          "native_default_rank": 37
+        },
+        {
+          "id": "P22",
+          "visual_class": "compact_on_bright_background",
+          "xy": [
+            2480.424204389784,
+            828.2231124191417
+          ],
+          "working_xy": [
+            2480.424204389784,
+            828.2231124191417
+          ],
+          "distance_to_component_working_px": 0.4793000270051774,
+          "component": {
+            "area": 23,
+            "bounds": [
+              2478,
+              826,
+              2483,
+              830
+            ],
+            "centroid": [
+              2480.424204389784,
+              828.2231124191417
+            ],
+            "component": 1153,
+            "concentration": 1.2672178745269775,
+            "concentration_screened": false,
+            "core_area": 23,
+            "elongation": 1.6447944641113281,
+            "measured_area": 23,
+            "outcome": "top_k",
+            "peak": 0.40623944997787476,
+            "photometry_flux": 7.373244762420654,
+            "positive_blob_flux": 4.6534576416015625,
+            "rank_before_top_k": 65
+          },
+          "outcome": "top_k",
+          "centroid_original_xy": [
+            2480.424204389784,
+            828.2231124191417
+          ],
+          "centroid_offset_original_px": 0.0,
+          "native_default_rank": 40
+        },
+        {
+          "id": "P23",
+          "visual_class": "compact_on_bright_background",
+          "xy": [
+            1343.467618239354,
+            795.281535698195
+          ],
+          "working_xy": [
+            1343.467618239354,
+            795.281535698195
+          ],
+          "distance_to_component_working_px": 0.5458288808175621,
+          "component": {
+            "area": 22,
+            "bounds": [
+              1341,
+              793,
+              1346,
+              798
+            ],
+            "centroid": [
+              1343.467618239354,
+              795.281535698195
+            ],
+            "component": 201,
+            "concentration": 1.2277467250823975,
+            "concentration_screened": false,
+            "core_area": 22,
+            "elongation": 1.5602991580963135,
+            "measured_area": 22,
+            "outcome": "top_k",
+            "peak": 0.41103798151016235,
+            "photometry_flux": 7.365391731262207,
+            "positive_blob_flux": 4.400005340576172,
+            "rank_before_top_k": 66
+          },
+          "outcome": "top_k",
+          "centroid_original_xy": [
+            1343.467618239354,
+            795.281535698195
+          ],
+          "centroid_offset_original_px": 0.0,
+          "native_default_rank": 41
+        }
+      ]
+    },
+    {
+      "mode": "blob_concentration",
+      "width": 2772,
+      "height": 1935,
+      "tier": "deep",
+      "detections": 50,
+      "stats": {
+        "accepted": 1220,
+        "background_median": 0.33725491166114807,
+        "blob_concentration": true,
+        "candidates": 1864,
+        "quantile_threshold": false,
+        "rejected_border": 34,
+        "rejected_diffuse": 107,
+        "rejected_elongated": 282,
+        "rejected_faint": 0,
+        "rejected_large": 44,
+        "rejected_mask": 0,
+        "rejected_small": 177,
+        "sigma": 0.015526077710092068,
+        "sigma_convolved": 0.010249664075672626,
+        "statistics_pixels": 5363820,
+        "threshold": 0.08199731260538101,
+        "threshold_doublings": 2,
+        "threshold_fill": 0.01230708695948124,
+        "threshold_region_fill": 0.01230708695948124,
+        "threshold_region_pixels": 5363820
+      },
+      "outcomes": {
+        "selected": 3,
+        "top_k": 2,
+        "elongation": 1,
+        "concentration": 2
+      },
+      "probes": [
+        {
+          "id": "P00",
+          "visual_class": "compact_control",
+          "xy": [
+            2731.6779077302667,
+            19.38587372086362
+          ],
+          "working_xy": [
+            2731.6779077302667,
+            19.38587372086362
+          ],
+          "distance_to_component_working_px": 0.5026350153690737,
+          "component": {
+            "area": 185,
+            "bounds": [
+              2724,
+              13,
+              2740,
+              26
+            ],
+            "centroid": [
+              2731.6779077302667,
+              19.38587372086362
+            ],
+            "component": 120,
+            "concentration": 1.790789008140564,
+            "concentration_screened": false,
+            "core_area": 180,
+            "elongation": 1.4376332759857178,
+            "measured_area": 78,
+            "outcome": "selected",
+            "peak": 0.8443713784217834,
+            "photometry_flux": 87.22898864746094,
+            "positive_blob_flux": 57.5571403503418,
+            "rank_before_top_k": 0
+          },
+          "outcome": "selected",
+          "centroid_original_xy": [
+            2731.6779077302667,
+            19.38587372086362
+          ],
+          "centroid_offset_original_px": 0.0,
+          "native_default_rank": 0
+        },
+        {
+          "id": "P01",
+          "visual_class": "compact_control",
+          "xy": [
+            1912.9763224957824,
+            220.16543088965824
+          ],
+          "working_xy": [
+            1912.9763224957824,
+            220.16543088965824
+          ],
+          "distance_to_component_working_px": 0.16711673602333324,
+          "component": {
+            "area": 109,
+            "bounds": [
+              1907,
+              215,
+              1918,
+              226
+            ],
+            "centroid": [
+              1912.9504314333017,
+              220.18984711089732
+            ],
+            "component": 1844,
+            "concentration": 2.148249864578247,
+            "concentration_screened": false,
+            "core_area": 109,
+            "elongation": 1.2621428966522217,
+            "measured_area": 109,
+            "outcome": "selected",
+            "peak": 0.7501838207244873,
+            "photometry_flux": 38.06355667114258,
+            "positive_blob_flux": 32.218326568603516,
+            "rank_before_top_k": 4
+          },
+          "outcome": "selected",
+          "centroid_original_xy": [
+            1912.9504314333017,
+            220.18984711089732
+          ],
+          "centroid_offset_original_px": 0.03558790491128904,
+          "native_default_rank": 2
+        },
+        {
+          "id": "P02",
+          "visual_class": "compact_control",
+          "xy": [
+            2626.122541969498,
+            246.33372098184103
+          ],
+          "working_xy": [
+            2626.122541969498,
+            246.33372098184103
+          ],
+          "distance_to_component_working_px": 0.35550840778997006,
+          "component": {
+            "area": 110,
+            "bounds": [
+              2620,
+              241,
+              2632,
+              251
+            ],
+            "centroid": [
+              2626.108644645072,
+              246.33069910639983
+            ],
+            "component": 1767,
+            "concentration": 2.3069064617156982,
+            "concentration_screened": false,
+            "core_area": 109,
+            "elongation": 1.4544214010238647,
+            "measured_area": 110,
+            "outcome": "selected",
+            "peak": 0.7929534316062927,
+            "photometry_flux": 37.81032180786133,
+            "positive_blob_flux": 31.297183990478516,
+            "rank_before_top_k": 5
+          },
+          "outcome": "selected",
+          "centroid_original_xy": [
+            2626.108644645072,
+            246.33069910639983
+          ],
+          "centroid_offset_original_px": 0.014222072893021374,
+          "native_default_rank": 3
+        },
+        {
+          "id": "P18",
+          "visual_class": "compact_control",
+          "xy": [
+            1899.888766167548,
+            111.46252802697661
+          ],
+          "working_xy": [
+            1899.888766167548,
+            111.46252802697661
+          ],
+          "distance_to_component_working_px": 0.47571539939424523,
+          "component": {
+            "area": 30,
+            "bounds": [
+              1897,
+              109,
+              1903,
+              114
+            ],
+            "centroid": [
+              1899.9007262089867,
+              111.45614710198672
+            ],
+            "component": 1373,
+            "concentration": 3.119467258453369,
+            "concentration_screened": true,
+            "core_area": 24,
+            "elongation": 1.7885448932647705,
+            "measured_area": 30,
+            "outcome": "top_k",
+            "peak": 0.6435048580169678,
+            "photometry_flux": 7.677945137023926,
+            "positive_blob_flux": 6.188603401184082,
+            "rank_before_top_k": 72
+          },
+          "outcome": "top_k",
+          "centroid_original_xy": [
+            1899.9007262089867,
+            111.45614710198672
+          ],
+          "centroid_offset_original_px": 0.013555766114144897,
+          "native_default_rank": 34
+        },
+        {
+          "id": "P19",
+          "visual_class": "compact_on_bright_background",
+          "xy": [
+            1915.2110245515992,
+            766.546520252264
+          ],
+          "working_xy": [
+            1915.2110245515992,
+            766.546520252264
+          ],
+          "distance_to_component_working_px": 0.5001752122849624,
+          "component": {
+            "area": 30,
+            "bounds": [
+              1913,
+              764,
+              1918,
+              769
+            ],
+            "centroid": [
+              1915.2161369423493,
+              766.5343607981731
+            ],
+            "component": 914,
+            "concentration": 2.634854316711426,
+            "concentration_screened": true,
+            "core_area": 27,
+            "elongation": 1.2823457717895508,
+            "measured_area": 30,
+            "outcome": "top_k",
+            "peak": 0.45368504524230957,
+            "photometry_flux": 7.993133544921875,
+            "positive_blob_flux": 5.1655802726745605,
+            "rank_before_top_k": 68
+          },
+          "outcome": "top_k",
+          "centroid_original_xy": [
+            1915.2161369423493,
+            766.5343607981731
+          ],
+          "centroid_offset_original_px": 0.013190483803529867,
+          "native_default_rank": 35
+        },
+        {
+          "id": "P20",
+          "visual_class": "on_linear_trail_identity_ambiguous",
+          "xy": [
+            310.22129008923326,
+            515.1008105331721
+          ],
+          "working_xy": [
+            310.22129008923326,
+            515.1008105331721
+          ],
+          "distance_to_component_working_px": 0.24317086007847447,
+          "component": {
+            "area": 462,
+            "bounds": [
+              264,
+              392,
+              313,
+              523
+            ],
+            "centroid": null,
+            "component": 595,
+            "concentration": null,
+            "concentration_screened": false,
+            "core_area": 440,
+            "elongation": 9.450325012207031,
+            "measured_area": 83,
+            "outcome": "elongation",
+            "peak": 0.5812298655509949,
+            "photometry_flux": null,
+            "positive_blob_flux": null,
+            "rank_before_top_k": null
+          },
+          "outcome": "elongation",
+          "native_default_rank": 37
+        },
+        {
+          "id": "P22",
+          "visual_class": "compact_on_bright_background",
+          "xy": [
+            2480.424204389784,
+            828.2231124191417
+          ],
+          "working_xy": [
+            2480.424204389784,
+            828.2231124191417
+          ],
+          "distance_to_component_working_px": 0.4793000270051774,
+          "component": {
+            "area": 30,
+            "bounds": [
+              2477,
+              826,
+              2483,
+              831
+            ],
+            "centroid": [
+              2480.390719770295,
+              828.2435870254556
+            ],
+            "component": 1207,
+            "concentration": 2.413604259490967,
+            "concentration_screened": true,
+            "core_area": 27,
+            "elongation": 1.5207772254943848,
+            "measured_area": 30,
+            "outcome": "concentration",
+            "peak": 0.40623944997787476,
+            "photometry_flux": 7.864243030548096,
+            "positive_blob_flux": 5.049370765686035,
+            "rank_before_top_k": null
+          },
+          "outcome": "concentration",
+          "centroid_original_xy": [
+            2480.390719770295,
+            828.2435870254556
+          ],
+          "centroid_offset_original_px": 0.0392483024602683,
+          "native_default_rank": 40
+        },
+        {
+          "id": "P23",
+          "visual_class": "compact_on_bright_background",
+          "xy": [
+            1343.467618239354,
+            795.281535698195
+          ],
+          "working_xy": [
+            1343.467618239354,
+            795.281535698195
+          ],
+          "distance_to_component_working_px": 0.5458288808175621,
+          "component": {
+            "area": 29,
+            "bounds": [
+              1341,
+              793,
+              1346,
+              798
+            ],
+            "centroid": [
+              1343.4673876685017,
+              795.2758172823317
+            ],
+            "component": 1282,
+            "concentration": 2.4480929374694824,
+            "concentration_screened": true,
+            "core_area": 28,
+            "elongation": 1.4365408420562744,
+            "measured_area": 29,
+            "outcome": "concentration",
+            "peak": 0.41103798151016235,
+            "photometry_flux": 7.207648754119873,
+            "positive_blob_flux": 4.869137287139893,
+            "rank_before_top_k": null
+          },
+          "outcome": "concentration",
+          "centroid_original_xy": [
+            1343.4673876685017,
+            795.2758172823317
+          ],
+          "centroid_offset_original_px": 0.005723062371072253,
+          "native_default_rank": 41
+        }
+      ]
+    }
+  ],
+  "independent_ground_truth": false,
+  "production_changed": false,
+  "automatic_improvement_confirmed": false,
+  "new_matcher_calls": 0,
+  "new_wcs_calls": 0
+}

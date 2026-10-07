@@ -314,3 +314,11 @@ and brightness ×2 for display; source pixels are unchanged. The derived photo
 figures retain **CC BY 4.0**. Catalogue-derived rejected hypotheses and the
 reused positive-control results retain **CC BY-SA 4.0** for HYG/Astronexus.
 No new photograph, accepted WCS or ground truth is added.
+
+Iteration 56 source diagnostics (`docs/experiments/robustness-iteration-56-*.json`,
+`docs/images/robustness-iteration-56-sources.jpg`) reuse “Snow at Paranal
+Observatory” (`wm_r_16053617`) by **ESO/Y. Beletsky, CC BY 4.0**.
+Original source links remain in the collection attribution. Changes:
+square source crops, enlargement and detection labels; no brightness
+adjustment. Derived figures retain **CC BY 4.0**. No new photograph,
+catalogue identity or accepted ground truth is added.

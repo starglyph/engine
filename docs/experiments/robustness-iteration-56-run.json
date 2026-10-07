@@ -1,0 +1,10 @@
+{
+  "command": [
+    "/home/agent/work/starglyph/engine/prototype/artifacts/robustness-iteration-54/replay-test",
+    "--exact",
+    "solve::replay::source_traces",
+    "--ignored"
+  ],
+  "exit_code": 0,
+  "elapsed_s": 13.808661911636591
+}

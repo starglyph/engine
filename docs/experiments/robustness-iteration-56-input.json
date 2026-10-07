@@ -1,0 +1,205 @@
+{
+  "id": "wm_r_16053617",
+  "split": "development",
+  "image": "/home/agent/work/starglyph/engine/data/samples/sky-samples/images/wm_r_16053617.png",
+  "width": 2772,
+  "height": 1935,
+  "probes": [
+    [
+      2731.6779077302667,
+      19.38587372086362
+    ],
+    [
+      1912.9763224957824,
+      220.16543088965824
+    ],
+    [
+      2626.122541969498,
+      246.33372098184103
+    ],
+    [
+      1899.888766167548,
+      111.46252802697661
+    ],
+    [
+      1915.2110245515992,
+      766.546520252264
+    ],
+    [
+      310.22129008923326,
+      515.1008105331721
+    ],
+    [
+      2480.424204389784,
+      828.2231124191417
+    ],
+    [
+      1343.467618239354,
+      795.281535698195
+    ]
+  ],
+  "radius_original_px": 12,
+  "review": [
+    {
+      "id": "P00",
+      "manual_position": 0,
+      "native_default_rank": 0,
+      "xy": [
+        2731.6779077302667,
+        19.38587372086362
+      ],
+      "visual_class": "compact_control",
+      "saved_detection": {
+        "area": 170,
+        "elongation": 1.4376332759857178,
+        "flux": 87.22898864746094,
+        "peak": 0.8443713784217834,
+        "rank": 0,
+        "snr": 430.89813232421875,
+        "x": 2731.6779077302667,
+        "y": 19.38587372086362
+      }
+    },
+    {
+      "id": "P01",
+      "manual_position": 1,
+      "native_default_rank": 2,
+      "xy": [
+        1912.9763224957824,
+        220.16543088965824
+      ],
+      "visual_class": "compact_control",
+      "saved_detection": {
+        "area": 95,
+        "elongation": 1.258141279220581,
+        "flux": 38.24260330200195,
+        "peak": 0.7501838207244873,
+        "rank": 2,
+        "snr": 252.71084594726562,
+        "x": 1912.9763224957824,
+        "y": 220.16543088965824
+      }
+    },
+    {
+      "id": "P02",
+      "manual_position": 2,
+      "native_default_rank": 3,
+      "xy": [
+        2626.122541969498,
+        246.33372098184103
+      ],
+      "visual_class": "compact_control",
+      "saved_detection": {
+        "area": 99,
+        "elongation": 1.5622437000274658,
+        "flux": 37.6339111328125,
+        "peak": 0.7929534316062927,
+        "rank": 3,
+        "snr": 243.61276245117188,
+        "x": 2626.122541969498,
+        "y": 246.33372098184103
+      }
+    },
+    {
+      "id": "P18",
+      "manual_position": 18,
+      "native_default_rank": 34,
+      "xy": [
+        1899.888766167548,
+        111.46252802697661
+      ],
+      "visual_class": "compact_control",
+      "saved_detection": {
+        "area": 22,
+        "elongation": 1.7635401487350464,
+        "flux": 7.627205848693848,
+        "peak": 0.6435048580169678,
+        "rank": 34,
+        "snr": 104.73512268066406,
+        "x": 1899.888766167548,
+        "y": 111.46252802697661
+      }
+    },
+    {
+      "id": "P19",
+      "manual_position": 19,
+      "native_default_rank": 35,
+      "xy": [
+        1915.2110245515992,
+        766.546520252264
+      ],
+      "visual_class": "compact_on_bright_background",
+      "saved_detection": {
+        "area": 23,
+        "elongation": 1.4142978191375732,
+        "flux": 7.61346960067749,
+        "peak": 0.45368504524230957,
+        "rank": 35,
+        "snr": 102.24849700927734,
+        "x": 1915.2110245515992,
+        "y": 766.546520252264
+      }
+    },
+    {
+      "id": "P20",
+      "manual_position": 20,
+      "native_default_rank": 37,
+      "xy": [
+        310.22129008923326,
+        515.1008105331721
+      ],
+      "visual_class": "on_linear_trail_identity_ambiguous",
+      "saved_detection": {
+        "area": 15,
+        "elongation": 1.4187980890274048,
+        "flux": 7.501806735992432,
+        "peak": 0.2623056471347809,
+        "rank": 37,
+        "snr": 124.7551498413086,
+        "x": 310.22129008923326,
+        "y": 515.1008105331721
+      }
+    },
+    {
+      "id": "P22",
+      "manual_position": 22,
+      "native_default_rank": 40,
+      "xy": [
+        2480.424204389784,
+        828.2231124191417
+      ],
+      "visual_class": "compact_on_bright_background",
+      "saved_detection": {
+        "area": 23,
+        "elongation": 1.6447944641113281,
+        "flux": 7.373244762420654,
+        "peak": 0.40623944997787476,
+        "rank": 40,
+        "snr": 99.02229309082031,
+        "x": 2480.424204389784,
+        "y": 828.2231124191417
+      }
+    },
+    {
+      "id": "P23",
+      "manual_position": 23,
+      "native_default_rank": 41,
+      "xy": [
+        1343.467618239354,
+        795.281535698195
+      ],
+      "visual_class": "compact_on_bright_background",
+      "saved_detection": {
+        "area": 22,
+        "elongation": 1.5602991580963135,
+        "flux": 7.365391731262207,
+        "peak": 0.41103798151016235,
+        "rank": 41,
+        "snr": 101.13995361328125,
+        "x": 1343.467618239354,
+        "y": 795.281535698195
+      }
+    }
+  ],
+  "provenance": "exact iteration55 centroids; neutral square crops reviewed before trace; no catalogue identities"
+}

@@ -1,0 +1,64 @@
+{
+  "iteration": 56,
+  "id": "wm_r_16053617",
+  "split": "development",
+  "holdout": false,
+  "binary": "prototype/artifacts/robustness-iteration-54/replay-test",
+  "probe_count": 8,
+  "radius_original_px": 12,
+  "wall_limit_s": 180,
+  "modes": [
+    "control",
+    "quantile",
+    "blob_concentration"
+  ],
+  "widths": [
+    1600,
+    2772
+  ],
+  "tiers": [
+    "default",
+    "deep"
+  ],
+  "criteria": [
+    "12 trace passes equal uninstrumented detector, asserted by saved Rust harness",
+    "four control lists exactly reproduce iteration1 top-K detections",
+    "all eight native default control associations must reproduce saved centroid and rank",
+    "retain every association, outcome, measurement and offset; no nearest-component identity assumption",
+    "no parameter selection, matcher, WCS, holdout, production change or solve-rate claim"
+  ],
+  "hashes": {
+    "prototype/eval/robustness_snow_sources.py": "19a51a3650a51cf61e096ba321facaeaf7f11b05d75a414ac6da50ad77644197",
+    "prototype/eval/test_robustness_snow_sources.py": "c4f089545ea80a3e402dda9019b67ec37c4dc94670dfb5343e2d65ac46fb299b",
+    "prototype/eval/collection_run.py": "6bf1108b48c21a40bdd00023eae564c27c5062fd63beb45d32ddde86154bd5b5",
+    "prototype/eval/robustness_candidate_trace.py": "6ee7661eb7875c9307760bf3d038a94eccf18269e388f9fe11511c125ca72c17",
+    "prototype/eval/robustness_central_sources.py": "274d5bb88c0f5acb2d158cd5406b7feaadf4c81ec78477fe8d61a196f44e3234",
+    "data/samples/sky-samples/manifest.json": "97e229270c7b0f97fce4e1f738917cd91cdff01df3508db29584af70a0ea4871",
+    "data/samples/sky-samples/images/wm_r_16053617.png": "1e294faf829dcb2ea61a2ff39ef7ab20919781d7eeecfd8824a02e7c4520034f",
+    "docs/experiments/robustness-iteration-55-input.json": "522dd53e928520839052d1a574b212f8bd337b64a777f8762c75a339b5e13a03",
+    "prototype/artifacts/robustness-iteration-1/diagnosis/wm_r_16053617/solve-reports/wm_r_16053617.json": "a411133f6d5d4c246f57425b19668c4ab4ee0cba1554f30763798e498b1a3a5c",
+    "prototype/artifacts/robustness-iteration-54/replay-test": "945a3a2b8ed6d3ffb5f13cf55b5a43a22cc5b4990eda2bfa040566b11d2760c8",
+    "prototype/artifacts/robustness-iteration-54/binary.json": "b7f209e01b044fd54bdeca6ebce8bc26f993ca029e5ffb1f8d780a746f3bbc98",
+    "prototype/artifacts/robustness-iteration-54/protocol.json": "477cb14c33f2940330d3072f79ead635d36c6da010e6ceb575a2e17694bc743f",
+    "prototype/artifacts/robustness-iteration-56/input.json": "8212b710b012bedc3f67b19d0819fa9c1d6317a7ffb3d4ec90a0229ee5f09e6d",
+    "prototype/crates/starglyph-core/src/catalog.rs": "42652f59e641f0e0fa5cfe9e9120925bc92773b1f1ebaf4d242d346fbb0d58d9",
+    "prototype/crates/starglyph-core/src/constellations.rs": "a44c2290e116721b3260a1bcaf3efb4dcda71df98f66e19b4b473b82305f545b",
+    "prototype/crates/starglyph-core/src/contracts.rs": "8373569d33bf3c3d8a82f2c626035a99f1617995fb45b587c1f439f3288dd581",
+    "prototype/crates/starglyph-core/src/detect/trace.rs": "c914c89eec3e83e998982d3ede631b27a172ea4eecaadf6acb52e501648f1181",
+    "prototype/crates/starglyph-core/src/detect.rs": "9a622b14303bf01c3993a76c5d1bc65b9c1da1ea565def48bebdfdafa1a7a8c8",
+    "prototype/crates/starglyph-core/src/engine.rs": "e48f2069648a6bf0f373d44870ea1acad157c2a3ca760327e67e2f014fefa017",
+    "prototype/crates/starglyph-core/src/ephem.rs": "68091771cc86bad1c08d57d5b1337d0a8984f59d952cea46cfa4ad00a9096515",
+    "prototype/crates/starglyph-core/src/eval.rs": "adbb4fd469aef3e70cfa8e02fcb2cfa0ae516c32ff224421ddfeaa5c744ddd00",
+    "prototype/crates/starglyph-core/src/geom.rs": "31c5a253674025564ab839c7f58ffa2c59e1c7e2f5f31a50f3e9e705477ff528",
+    "prototype/crates/starglyph-core/src/image_input.rs": "0acc60b8fbf4cb91ffb1b2659136a3af2489921651bd448c8bbc967619d95f82",
+    "prototype/crates/starglyph-core/src/lib.rs": "87fd4fe1e39a3535be1abd95b74e1d31aa7e33df9d824e19ab025713322bc70c",
+    "prototype/crates/starglyph-core/src/overlay.rs": "c6a28dae451b3253e41530b39bbc4cab35e68ae41de5f3a17db60e4e01a622ea",
+    "prototype/crates/starglyph-core/src/render.rs": "bb3ba3641d5f6b2580a4339ac8b9fa78c3abc89375eb767e612b0c3b4c091985",
+    "prototype/crates/starglyph-core/src/sky_mask.rs": "4442221e88941432c4745579d3dd7481603a6aaf53c2d6106d331c8255275b41",
+    "prototype/crates/starglyph-core/src/solve/catalog_replay.rs": "bb26cb945ad8a9a62cdadfe5c74c413a53973da66bc499146eb5861d6daa69fc",
+    "prototype/crates/starglyph-core/src/solve/replay.rs": "06dfb8d26877d75e8fe9af34644fbaa5bb817c45c0abea48f61994ebb495431a",
+    "prototype/crates/starglyph-core/src/solve.rs": "e80d51157981eed6c910ed6a230d575a271720aced59d1d77c1997f758014ed9",
+    "data/samples/sky-samples/robustness-results.json": "09e6efe61468b4afe896967d583553751d80fe82e65e0ac064528523bbc525e8",
+    "data/samples/sky-samples/collection-wcs-review.json": "97c182c51955baee9adce93cde8e93fb98ece6a69bdc606cf871d3a1eef19841"
+  }
+}
