@@ -298,3 +298,10 @@ collection attribution. Changes: wider crops, brightness ×2 for display,
 measured-source labels, and separate HYG catalogue charts; collection pixels
 are unchanged. HYG/Astronexus-derived tables and annotated figures retain
 **CC BY-SA 4.0**. No new photograph or accepted ground truth.
+
+Iteration 54 rematch diagnostics (`docs/experiments/robustness-iteration-54-*.json`)
+reuse the saved automatic detections and conditionally reviewed coordinates
+of `wm_r_154807046` by Davydushta (**CC BY 4.0**) and HYG/Astronexus
+identities (**CC BY-SA 4.0**). Original source links remain in the collection
+attribution. Derived tables retain **CC BY-SA 4.0**. No new photograph,
+visual annotation, or accepted ground truth is added.
