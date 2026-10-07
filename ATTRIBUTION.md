@@ -322,3 +322,16 @@ Original source links remain in the collection attribution. Changes:
 square source crops, enlargement and detection labels; no brightness
 adjustment. Derived figures retain **CC BY 4.0**. No new photograph,
 catalogue identity or accepted ground truth is added.
+
+Iteration 57 component-growth diagnostics (`docs/experiments/robustness-iteration-57-*.json`,
+`docs/images/robustness-iteration-57-*.jpg`) reuse these existing collection images:
+“Snow at Paranal Observatory” (`wm_r_16053617`) by **ESO/Y. Beletsky, CC BY 4.0**;
+“Night Sky Over the Maple Trees” (`wm_r_112929230`) by **Mmfgh, CC BY 4.0**;
+“Venus and Starlink Satellites” (`wm_r_152165509`) by **Mike Lewinski, CC BY 2.0**;
+and “Back Yard Astrophotography (39444049002)” (`wm_r_124355480`) by
+**John Brighenti, CC BY 2.0**. Original source links remain in the collection
+attribution. Changes: neutral square crops, enlargement and source labels;
+source pixels are unchanged. Derived figures retain each source's license.
+Reused solver inlier flags are conditional diagnostics, not accepted ground truth;
+catalogue-derived results retain **CC BY-SA 4.0** for HYG/Astronexus.
+No new photograph or accepted WCS is added.

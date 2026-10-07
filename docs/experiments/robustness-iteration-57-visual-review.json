@@ -1,0 +1,446 @@
+{
+  "iteration": 57,
+  "split": "development",
+  "holdout": false,
+  "reviewed_vetoes": [
+    {
+      "id": "wm_r_16053617",
+      "width": 1600,
+      "rank": 8,
+      "xy": [
+        1350.1433662019203,
+        1011.91267955888
+      ],
+      "observation": "foreground_surface_or_boundary",
+      "saved_inlier_control": false,
+      "catalogue_identity_verified": false
+    },
+    {
+      "id": "wm_r_16053617",
+      "width": 1600,
+      "rank": 19,
+      "xy": [
+        960.4977446796211,
+        1570.698705475052
+      ],
+      "observation": "foreground_surface_or_boundary",
+      "saved_inlier_control": false,
+      "catalogue_identity_verified": false
+    },
+    {
+      "id": "wm_r_16053617",
+      "width": 1600,
+      "rank": 30,
+      "xy": [
+        1857.2314688441793,
+        1145.8113166791973
+      ],
+      "observation": "foreground_surface_or_boundary",
+      "saved_inlier_control": false,
+      "catalogue_identity_verified": false
+    },
+    {
+      "id": "wm_r_16053617",
+      "width": 2772,
+      "rank": 37,
+      "xy": [
+        310.22129008923326,
+        515.1008105331721
+      ],
+      "observation": "linear_trail_fragment_physical_origin_unresolved",
+      "saved_inlier_control": false,
+      "catalogue_identity_verified": false
+    },
+    {
+      "id": "wm_r_112929230",
+      "width": 1600,
+      "rank": 8,
+      "xy": [
+        661.0607919753613,
+        2442.1277188037757
+      ],
+      "observation": "vegetation_or_star_overlap_unresolved",
+      "saved_inlier_control": false,
+      "catalogue_identity_verified": false
+    },
+    {
+      "id": "wm_r_112929230",
+      "width": 1600,
+      "rank": 15,
+      "xy": [
+        4164.1138835971315,
+        3132.1959771038755
+      ],
+      "observation": "vegetation_or_star_overlap_unresolved",
+      "saved_inlier_control": false,
+      "catalogue_identity_verified": false
+    },
+    {
+      "id": "wm_r_112929230",
+      "width": 1600,
+      "rank": 24,
+      "xy": [
+        2310.5597735927436,
+        860.5711869480793
+      ],
+      "observation": "compact_stellar_source_with_neighbors",
+      "saved_inlier_control": true,
+      "catalogue_identity_verified": false
+    },
+    {
+      "id": "wm_r_112929230",
+      "width": 1600,
+      "rank": 32,
+      "xy": [
+        676.0823515279438,
+        2152.8404016761237
+      ],
+      "observation": "vegetation_or_star_overlap_unresolved",
+      "saved_inlier_control": false,
+      "catalogue_identity_verified": false
+    },
+    {
+      "id": "wm_r_152165509",
+      "width": 1600,
+      "rank": 4,
+      "xy": [
+        5053.513466497313,
+        3094.477372686484
+      ],
+      "observation": "elongated_foreground_light",
+      "saved_inlier_control": false,
+      "catalogue_identity_verified": false
+    },
+    {
+      "id": "wm_r_152165509",
+      "width": 1600,
+      "rank": 7,
+      "xy": [
+        1321.2658904121968,
+        1170.2608172079567
+      ],
+      "observation": "linear_trail_fragment_physical_origin_unresolved",
+      "saved_inlier_control": false,
+      "catalogue_identity_verified": false
+    },
+    {
+      "id": "wm_r_152165509",
+      "width": 1600,
+      "rank": 8,
+      "xy": [
+        1812.7282462518324,
+        968.4183385815539
+      ],
+      "observation": "linear_trail_fragment_physical_origin_unresolved",
+      "saved_inlier_control": false,
+      "catalogue_identity_verified": false
+    },
+    {
+      "id": "wm_r_152165509",
+      "width": 1600,
+      "rank": 9,
+      "xy": [
+        451.4207706490282,
+        397.7752096781162
+      ],
+      "observation": "linear_trail_fragment_physical_origin_unresolved",
+      "saved_inlier_control": false,
+      "catalogue_identity_verified": false
+    },
+    {
+      "id": "wm_r_152165509",
+      "width": 1600,
+      "rank": 10,
+      "xy": [
+        5019.62043348029,
+        1248.8367480484762
+      ],
+      "observation": "linear_trail_fragment_physical_origin_unresolved",
+      "saved_inlier_control": false,
+      "catalogue_identity_verified": false
+    },
+    {
+      "id": "wm_r_152165509",
+      "width": 1600,
+      "rank": 11,
+      "xy": [
+        489.67451238585835,
+        870.855538055503
+      ],
+      "observation": "linear_trail_fragment_physical_origin_unresolved",
+      "saved_inlier_control": false,
+      "catalogue_identity_verified": false
+    },
+    {
+      "id": "wm_r_152165509",
+      "width": 1600,
+      "rank": 12,
+      "xy": [
+        1806.9698154268378,
+        1819.7000999595057
+      ],
+      "observation": "linear_trail_fragment_physical_origin_unresolved",
+      "saved_inlier_control": false,
+      "catalogue_identity_verified": false
+    },
+    {
+      "id": "wm_r_152165509",
+      "width": 1600,
+      "rank": 13,
+      "xy": [
+        1341.965974968599,
+        1187.0417752407388
+      ],
+      "observation": "linear_trail_fragment_physical_origin_unresolved",
+      "saved_inlier_control": false,
+      "catalogue_identity_verified": false
+    },
+    {
+      "id": "wm_r_152165509",
+      "width": 1600,
+      "rank": 15,
+      "xy": [
+        1606.2888280036743,
+        1643.4145043874018
+      ],
+      "observation": "linear_trail_fragment_physical_origin_unresolved",
+      "saved_inlier_control": false,
+      "catalogue_identity_verified": false
+    },
+    {
+      "id": "wm_r_152165509",
+      "width": 1600,
+      "rank": 16,
+      "xy": [
+        1437.8447219646985,
+        285.89930982842964
+      ],
+      "observation": "linear_trail_fragment_physical_origin_unresolved",
+      "saved_inlier_control": false,
+      "catalogue_identity_verified": false
+    },
+    {
+      "id": "wm_r_152165509",
+      "width": 1600,
+      "rank": 17,
+      "xy": [
+        755.2152630996202,
+        1240.997767282844
+      ],
+      "observation": "linear_trail_fragment_physical_origin_unresolved",
+      "saved_inlier_control": false,
+      "catalogue_identity_verified": false
+    },
+    {
+      "id": "wm_r_152165509",
+      "width": 1600,
+      "rank": 18,
+      "xy": [
+        2894.72228446952,
+        1594.4710110662588
+      ],
+      "observation": "linear_trail_fragment_physical_origin_unresolved",
+      "saved_inlier_control": false,
+      "catalogue_identity_verified": false
+    },
+    {
+      "id": "wm_r_152165509",
+      "width": 1600,
+      "rank": 19,
+      "xy": [
+        3574.4956728032626,
+        811.8298370242519
+      ],
+      "observation": "linear_trail_fragment_physical_origin_unresolved",
+      "saved_inlier_control": false,
+      "catalogue_identity_verified": false
+    },
+    {
+      "id": "wm_r_152165509",
+      "width": 1600,
+      "rank": 22,
+      "xy": [
+        5145.701857413586,
+        590.5723305958877
+      ],
+      "observation": "linear_trail_fragment_physical_origin_unresolved",
+      "saved_inlier_control": false,
+      "catalogue_identity_verified": false
+    },
+    {
+      "id": "wm_r_152165509",
+      "width": 1600,
+      "rank": 25,
+      "xy": [
+        562.0258317395928,
+        996.2202339664339
+      ],
+      "observation": "linear_trail_fragment_physical_origin_unresolved",
+      "saved_inlier_control": false,
+      "catalogue_identity_verified": false
+    },
+    {
+      "id": "wm_r_152165509",
+      "width": 1600,
+      "rank": 26,
+      "xy": [
+        505.34543307853534,
+        438.07420882804223
+      ],
+      "observation": "linear_trail_fragment_physical_origin_unresolved",
+      "saved_inlier_control": false,
+      "catalogue_identity_verified": false
+    },
+    {
+      "id": "wm_r_152165509",
+      "width": 1600,
+      "rank": 27,
+      "xy": [
+        1919.123832985793,
+        614.6972957548572
+      ],
+      "observation": "linear_trail_fragment_physical_origin_unresolved",
+      "saved_inlier_control": false,
+      "catalogue_identity_verified": false
+    },
+    {
+      "id": "wm_r_152165509",
+      "width": 1600,
+      "rank": 28,
+      "xy": [
+        1480.3601775351294,
+        835.5466713894448
+      ],
+      "observation": "linear_trail_fragment_physical_origin_unresolved",
+      "saved_inlier_control": false,
+      "catalogue_identity_verified": false
+    },
+    {
+      "id": "wm_r_152165509",
+      "width": 1600,
+      "rank": 29,
+      "xy": [
+        4716.404190787928,
+        255.1080326114686
+      ],
+      "observation": "linear_trail_fragment_physical_origin_unresolved",
+      "saved_inlier_control": false,
+      "catalogue_identity_verified": false
+    },
+    {
+      "id": "wm_r_152165509",
+      "width": 1600,
+      "rank": 30,
+      "xy": [
+        1754.0465715038608,
+        873.6273242212211
+      ],
+      "observation": "linear_trail_fragment_physical_origin_unresolved",
+      "saved_inlier_control": false,
+      "catalogue_identity_verified": false
+    },
+    {
+      "id": "wm_r_152165509",
+      "width": 1600,
+      "rank": 32,
+      "xy": [
+        434.97440558881,
+        385.61286262960516
+      ],
+      "observation": "linear_trail_fragment_physical_origin_unresolved",
+      "saved_inlier_control": false,
+      "catalogue_identity_verified": false
+    },
+    {
+      "id": "wm_r_152165509",
+      "width": 6000,
+      "rank": 5,
+      "xy": [
+        4559.166403677278,
+        3108.999028659839
+      ],
+      "observation": "elongated_foreground_light",
+      "saved_inlier_control": false,
+      "catalogue_identity_verified": false
+    },
+    {
+      "id": "wm_r_152165509",
+      "width": 6000,
+      "rank": 6,
+      "xy": [
+        514.7778598214295,
+        1947.36086496225
+      ],
+      "observation": "linear_trail_fragment_physical_origin_unresolved",
+      "saved_inlier_control": false,
+      "catalogue_identity_verified": false
+    },
+    {
+      "id": "wm_r_152165509",
+      "width": 6000,
+      "rank": 14,
+      "xy": [
+        2818.367681477588,
+        1517.3303580156582
+      ],
+      "observation": "linear_trail_fragment_physical_origin_unresolved",
+      "saved_inlier_control": false,
+      "catalogue_identity_verified": false
+    },
+    {
+      "id": "wm_r_152165509",
+      "width": 6000,
+      "rank": 22,
+      "xy": [
+        3946.5769246325262,
+        1009.2712234564694
+      ],
+      "observation": "linear_trail_fragment_physical_origin_unresolved",
+      "saved_inlier_control": false,
+      "catalogue_identity_verified": false
+    },
+    {
+      "id": "wm_r_152165509",
+      "width": 6000,
+      "rank": 24,
+      "xy": [
+        3557.303031956716,
+        71.6710215401563
+      ],
+      "observation": "linear_trail_fragment_physical_origin_unresolved",
+      "saved_inlier_control": false,
+      "catalogue_identity_verified": false
+    },
+    {
+      "id": "wm_r_152165509",
+      "width": 6000,
+      "rank": 28,
+      "xy": [
+        5115.533818163468,
+        1543.9333669095965
+      ],
+      "observation": "linear_trail_fragment_physical_origin_unresolved",
+      "saved_inlier_control": false,
+      "catalogue_identity_verified": false
+    },
+    {
+      "id": "wm_r_152165509",
+      "width": 6000,
+      "rank": 30,
+      "xy": [
+        524.9041378109905,
+        1953.4907214493792
+      ],
+      "observation": "linear_trail_fragment_physical_origin_unresolved",
+      "saved_inlier_control": false,
+      "catalogue_identity_verified": false
+    }
+  ],
+  "all_vetoes_reviewed": true,
+  "numerical_safety_gate_passed": false,
+  "decision": "reject",
+  "reason": "one of21 frozen positive inlier controls removed; compact stellar-looking source merges with neighbors",
+  "full_solver_regression_measured": false,
+  "independent_ground_truth": false,
+  "production_changed": false
+}

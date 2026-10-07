@@ -1,0 +1,533 @@
+{
+  "results_sha256": "d3b76b39695d1485ac97e1cc4051a14a710b5d772272e8f93376e068ff725521",
+  "frames": [
+    {
+      "id": "wm_r_16053617",
+      "track": "solver",
+      "negative": false,
+      "scales": [
+        {
+          "width": 1600,
+          "before": 40,
+          "after": 37,
+          "vetoed_ranks": [
+            8,
+            19,
+            30
+          ],
+          "decisions": {
+            "retain_lower_component": 37,
+            "veto_elongation": 3
+          },
+          "saved_inlier_controls": 0,
+          "retained_inlier_controls": 0
+        },
+        {
+          "width": 2772,
+          "before": 40,
+          "after": 39,
+          "vetoed_ranks": [
+            37
+          ],
+          "decisions": {
+            "retain_lower_component": 39,
+            "veto_elongation": 1
+          },
+          "saved_inlier_controls": 0,
+          "retained_inlier_controls": 0
+        }
+      ],
+      "elapsed_s": 35.858035407960415,
+      "process_exit_codes": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "wm_r_112929230",
+      "track": "solver",
+      "negative": false,
+      "scales": [
+        {
+          "width": 1600,
+          "before": 40,
+          "after": 36,
+          "vetoed_ranks": [
+            8,
+            15,
+            24,
+            32
+          ],
+          "decisions": {
+            "retain_lower_component": 36,
+            "veto_elongation": 4
+          },
+          "saved_inlier_controls": 21,
+          "retained_inlier_controls": 20
+        },
+        {
+          "width": 4898,
+          "before": 40,
+          "after": 40,
+          "vetoed_ranks": [],
+          "decisions": {
+            "retain_lower_component": 40
+          },
+          "saved_inlier_controls": 0,
+          "retained_inlier_controls": 0
+        }
+      ],
+      "elapsed_s": 81.6330005377531,
+      "process_exit_codes": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "wm_r_152165509",
+      "track": "stress",
+      "negative": false,
+      "scales": [
+        {
+          "width": 1600,
+          "before": 33,
+          "after": 12,
+          "vetoed_ranks": [
+            4,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            15,
+            16,
+            17,
+            18,
+            19,
+            22,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            32
+          ],
+          "decisions": {
+            "retain_lower_component": 12,
+            "veto_elongation": 21
+          },
+          "saved_inlier_controls": 0,
+          "retained_inlier_controls": 0
+        },
+        {
+          "width": 6000,
+          "before": 40,
+          "after": 33,
+          "vetoed_ranks": [
+            5,
+            6,
+            14,
+            22,
+            24,
+            28,
+            30
+          ],
+          "decisions": {
+            "retain_lower_component": 33,
+            "veto_elongation": 7
+          },
+          "saved_inlier_controls": 0,
+          "retained_inlier_controls": 0
+        }
+      ],
+      "elapsed_s": 107.76796289533377,
+      "process_exit_codes": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "wm_r_124355480",
+      "track": "stress",
+      "negative": true,
+      "scales": [
+        {
+          "width": 1600,
+          "before": 40,
+          "after": 40,
+          "vetoed_ranks": [],
+          "decisions": {
+            "retain_threshold_not_lower": 40
+          },
+          "saved_inlier_controls": 0,
+          "retained_inlier_controls": 0
+        },
+        {
+          "width": 1920,
+          "before": 40,
+          "after": 40,
+          "vetoed_ranks": [],
+          "decisions": {
+            "retain_threshold_not_lower": 40
+          },
+          "saved_inlier_controls": 0,
+          "retained_inlier_controls": 0
+        }
+      ],
+      "elapsed_s": 19.385728714987636,
+      "process_exit_codes": [
+        0,
+        0,
+        0
+      ]
+    }
+  ],
+  "pages": [
+    {
+      "file": "wm_r_16053617-veto-00.jpg",
+      "id": "wm_r_16053617",
+      "rows": [
+        {
+          "width": 1600,
+          "rank": 8,
+          "xy": [
+            1350.1433662019203,
+            1011.91267955888
+          ]
+        },
+        {
+          "width": 1600,
+          "rank": 19,
+          "xy": [
+            960.4977446796211,
+            1570.698705475052
+          ]
+        },
+        {
+          "width": 1600,
+          "rank": 30,
+          "xy": [
+            1857.2314688441793,
+            1145.8113166791973
+          ]
+        },
+        {
+          "width": 2772,
+          "rank": 37,
+          "xy": [
+            310.22129008923326,
+            515.1008105331721
+          ]
+        }
+      ]
+    },
+    {
+      "file": "wm_r_112929230-veto-00.jpg",
+      "id": "wm_r_112929230",
+      "rows": [
+        {
+          "width": 1600,
+          "rank": 8,
+          "xy": [
+            661.0607919753613,
+            2442.1277188037757
+          ]
+        },
+        {
+          "width": 1600,
+          "rank": 15,
+          "xy": [
+            4164.1138835971315,
+            3132.1959771038755
+          ]
+        },
+        {
+          "width": 1600,
+          "rank": 24,
+          "xy": [
+            2310.5597735927436,
+            860.5711869480793
+          ]
+        },
+        {
+          "width": 1600,
+          "rank": 32,
+          "xy": [
+            676.0823515279438,
+            2152.8404016761237
+          ]
+        }
+      ]
+    },
+    {
+      "file": "wm_r_112929230-lost-inlier-24.jpg",
+      "id": "wm_r_112929230",
+      "rows": [
+        {
+          "width": 1600,
+          "rank": 24,
+          "xy": [
+            2310.5597735927436,
+            860.5711869480793
+          ]
+        }
+      ],
+      "purpose": "saved inlier loss; rectangles are component bounding boxes, not masks"
+    },
+    {
+      "file": "wm_r_152165509-veto-00.jpg",
+      "id": "wm_r_152165509",
+      "rows": [
+        {
+          "width": 1600,
+          "rank": 4,
+          "xy": [
+            5053.513466497313,
+            3094.477372686484
+          ]
+        },
+        {
+          "width": 1600,
+          "rank": 7,
+          "xy": [
+            1321.2658904121968,
+            1170.2608172079567
+          ]
+        },
+        {
+          "width": 1600,
+          "rank": 8,
+          "xy": [
+            1812.7282462518324,
+            968.4183385815539
+          ]
+        },
+        {
+          "width": 1600,
+          "rank": 9,
+          "xy": [
+            451.4207706490282,
+            397.7752096781162
+          ]
+        },
+        {
+          "width": 1600,
+          "rank": 10,
+          "xy": [
+            5019.62043348029,
+            1248.8367480484762
+          ]
+        },
+        {
+          "width": 1600,
+          "rank": 11,
+          "xy": [
+            489.67451238585835,
+            870.855538055503
+          ]
+        },
+        {
+          "width": 1600,
+          "rank": 12,
+          "xy": [
+            1806.9698154268378,
+            1819.7000999595057
+          ]
+        },
+        {
+          "width": 1600,
+          "rank": 13,
+          "xy": [
+            1341.965974968599,
+            1187.0417752407388
+          ]
+        }
+      ]
+    },
+    {
+      "file": "wm_r_152165509-veto-01.jpg",
+      "id": "wm_r_152165509",
+      "rows": [
+        {
+          "width": 1600,
+          "rank": 15,
+          "xy": [
+            1606.2888280036743,
+            1643.4145043874018
+          ]
+        },
+        {
+          "width": 1600,
+          "rank": 16,
+          "xy": [
+            1437.8447219646985,
+            285.89930982842964
+          ]
+        },
+        {
+          "width": 1600,
+          "rank": 17,
+          "xy": [
+            755.2152630996202,
+            1240.997767282844
+          ]
+        },
+        {
+          "width": 1600,
+          "rank": 18,
+          "xy": [
+            2894.72228446952,
+            1594.4710110662588
+          ]
+        },
+        {
+          "width": 1600,
+          "rank": 19,
+          "xy": [
+            3574.4956728032626,
+            811.8298370242519
+          ]
+        },
+        {
+          "width": 1600,
+          "rank": 22,
+          "xy": [
+            5145.701857413586,
+            590.5723305958877
+          ]
+        },
+        {
+          "width": 1600,
+          "rank": 25,
+          "xy": [
+            562.0258317395928,
+            996.2202339664339
+          ]
+        },
+        {
+          "width": 1600,
+          "rank": 26,
+          "xy": [
+            505.34543307853534,
+            438.07420882804223
+          ]
+        }
+      ]
+    },
+    {
+      "file": "wm_r_152165509-veto-02.jpg",
+      "id": "wm_r_152165509",
+      "rows": [
+        {
+          "width": 1600,
+          "rank": 27,
+          "xy": [
+            1919.123832985793,
+            614.6972957548572
+          ]
+        },
+        {
+          "width": 1600,
+          "rank": 28,
+          "xy": [
+            1480.3601775351294,
+            835.5466713894448
+          ]
+        },
+        {
+          "width": 1600,
+          "rank": 29,
+          "xy": [
+            4716.404190787928,
+            255.1080326114686
+          ]
+        },
+        {
+          "width": 1600,
+          "rank": 30,
+          "xy": [
+            1754.0465715038608,
+            873.6273242212211
+          ]
+        },
+        {
+          "width": 1600,
+          "rank": 32,
+          "xy": [
+            434.97440558881,
+            385.61286262960516
+          ]
+        },
+        {
+          "width": 6000,
+          "rank": 5,
+          "xy": [
+            4559.166403677278,
+            3108.999028659839
+          ]
+        },
+        {
+          "width": 6000,
+          "rank": 6,
+          "xy": [
+            514.7778598214295,
+            1947.36086496225
+          ]
+        },
+        {
+          "width": 6000,
+          "rank": 14,
+          "xy": [
+            2818.367681477588,
+            1517.3303580156582
+          ]
+        }
+      ]
+    },
+    {
+      "file": "wm_r_152165509-veto-03.jpg",
+      "id": "wm_r_152165509",
+      "rows": [
+        {
+          "width": 6000,
+          "rank": 22,
+          "xy": [
+            3946.5769246325262,
+            1009.2712234564694
+          ]
+        },
+        {
+          "width": 6000,
+          "rank": 24,
+          "xy": [
+            3557.303031956716,
+            71.6710215401563
+          ]
+        },
+        {
+          "width": 6000,
+          "rank": 28,
+          "xy": [
+            5115.533818163468,
+            1543.9333669095965
+          ]
+        },
+        {
+          "width": 6000,
+          "rank": 30,
+          "xy": [
+            524.9041378109905,
+            1953.4907214493792
+          ]
+        }
+      ]
+    }
+  ],
+  "display": "neutral square 128px crops enlarged to224px, yellow source marker, no brightness adjustment"
+}
