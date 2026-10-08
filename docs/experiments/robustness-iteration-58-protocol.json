@@ -1,0 +1,40 @@
+{
+  "iteration": 58,
+  "id": "wm_r_16053617",
+  "split": "development",
+  "holdout": false,
+  "scope": "read-only audit of existing evidence; no new detector, matcher, WCS or image download",
+  "coverage": "existing y<0.45*height region; extent and fixed4x2 grid; detections never equated with verified stars",
+  "visual_selection": "all40 saved native default manual_sky sources, no reselection or coordinate adjustment",
+  "stop_rule": "without independently confirmed stellar identities/field geometry, close snow heuristic direction; no further algorithm iteration",
+  "wcs_inventory": [
+    "prototype/artifacts/robustness-baseline/wcs-run/wm_r_16053617/downsample-2/field.axy",
+    "prototype/artifacts/robustness-baseline/wcs-run/wm_r_16053617/downsample-2/solve.log",
+    "prototype/artifacts/robustness-baseline/wcs-run/wm_r_16053617/downsample-4/field.axy",
+    "prototype/artifacts/robustness-baseline/wcs-run/wm_r_16053617/downsample-4/solve.log",
+    "prototype/artifacts/robustness-baseline/wcs-run/wm_r_16053617/reference.json"
+  ],
+  "hashes": {
+    "prototype/eval/robustness_snow_closure.py": "d98e84bca779cbd1106228dd68d42e625627912096b933d34558f791fa551aa0",
+    "prototype/eval/test_robustness_snow_closure.py": "559ecc6a5dd0484003854b44b04db04ec145b670535e6aaf71e3cfb8f9bc7828",
+    "prototype/eval/collection_run.py": "6bf1108b48c21a40bdd00023eae564c27c5062fd63beb45d32ddde86154bd5b5",
+    "prototype/eval/robustness_central_sources.py": "274d5bb88c0f5acb2d158cd5406b7feaadf4c81ec78477fe8d61a196f44e3234",
+    "prototype/eval/robustness_component_growth.py": "d3597461de4b93d12cc6b199abcec646d3f19875d77b2484e676b5512e035e20",
+    "prototype/eval/robustness_reference_coverage.py": "50fe04f79f4392181a18466d6ad46cadb074c9f52018beb00d14fb9023ae6323",
+    "prototype/eval/robustness_snow_foreground.py": "99b0cf8ecf8c9aa38e090a557eefda6ee0a4e7c1003e9e7731076f1cc8aab8dd",
+    "data/samples/sky-samples/manifest.json": "97e229270c7b0f97fce4e1f738917cd91cdff01df3508db29584af70a0ea4871",
+    "data/samples/sky-samples/images/wm_r_16053617.png": "1e294faf829dcb2ea61a2ff39ef7ab20919781d7eeecfd8824a02e7c4520034f",
+    "docs/experiments/robustness-iteration-55-input.json": "522dd53e928520839052d1a574b212f8bd337b64a777f8762c75a339b5e13a03",
+    "docs/experiments/robustness-iteration-55-results.json": "468058c5f7d1a0236b3810e18d419d5bd509a89bba7ce10bd34f1f840f70fee1",
+    "prototype/artifacts/robustness-baseline/wcs-run/wm_r_16053617/downsample-2/field.axy": "b84c0f5d2ad40e6406f058dd2dbf204be6866068e37e8b562d7e72620c700d4b",
+    "prototype/artifacts/robustness-baseline/wcs-run/wm_r_16053617/downsample-2/solve.log": "1ba6a02b97c9830fe14b4155aab50c6ed61f8a9062d860c2d3b1c2d1c02df267",
+    "prototype/artifacts/robustness-baseline/wcs-run/wm_r_16053617/downsample-4/field.axy": "470e0b3213661493e00c86582fec57dbdda55243715296d66d370c3046fd57b8",
+    "prototype/artifacts/robustness-baseline/wcs-run/wm_r_16053617/downsample-4/solve.log": "cd71346e9f4fd4d22a3b0bc9b68bd2b3078ef2a149bd14cd6cf973ac0cb3630a",
+    "prototype/artifacts/robustness-baseline/wcs-run/wm_r_16053617/reference.json": "d2c4fe4043101e6d2100b630d91a8ecd66b2867e4821c6014b6dcc5fd4a39062",
+    "prototype/artifacts/robustness-iteration-58/publisher-review.json": "ed570a62614fcbc5c2014357f5112dabae4ebc46ebf4ad37a243e69011fef30e",
+    "docs/experiments/robustness-iteration-56-results.json": "b2307859db5af8bafd22c9441629908a9ff8e8faa6c22eed736e3aab0ce43d0a",
+    "docs/experiments/robustness-iteration-57-results.json": "d3b76b39695d1485ac97e1cc4051a14a710b5d772272e8f93376e068ff725521",
+    "data/samples/sky-samples/robustness-results.json": "09e6efe61468b4afe896967d583553751d80fe82e65e0ac064528523bbc525e8",
+    "data/samples/sky-samples/collection-wcs-review.json": "97c182c51955baee9adce93cde8e93fb98ece6a69bdc606cf871d3a1eef19841"
+  }
+}

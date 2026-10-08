@@ -335,3 +335,12 @@ source pixels are unchanged. Derived figures retain each source's license.
 Reused solver inlier flags are conditional diagnostics, not accepted ground truth;
 catalogue-derived results retain **CC BY-SA 4.0** for HYG/Astronexus.
 No new photograph or accepted WCS is added.
+
+Iteration 58 evidence/coverage diagnostics (`docs/experiments/robustness-iteration-58-*.json`,
+`docs/images/robustness-iteration-58-sources-*.jpg`) reuse “Snow at Paranal
+Observatory” (`wm_r_16053617`) by **ESO/Y. Beletsky, CC BY 4.0**.
+Changes: neutral square crops, enlargement and source labels; source pixels
+are unchanged. Derived figures retain **CC BY 4.0**. The publisher's page
+is linked in the report; no new image was downloaded. Reused, rejected
+catalogue hypotheses retain **CC BY-SA 4.0** for HYG/Astronexus and are
+not accepted star identities or ground truth.

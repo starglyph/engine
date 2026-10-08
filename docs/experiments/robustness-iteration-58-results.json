@@ -1,0 +1,498 @@
+{
+  "iteration": 58,
+  "id": "wm_r_16053617",
+  "split": "development",
+  "holdout": false,
+  "protocol_sha256": "8d3ce3d04f024304b9d4486224cd58f61b97dabfc4e2c4117f060e98b83d3712",
+  "cases": [
+    {
+      "name": "1600-default-control",
+      "coverage": {
+        "all_detections": 40,
+        "conservative_sky": {
+          "count": 27,
+          "bounds_xyxy": [
+            253.48527683214317,
+            28.910676444421053,
+            2689.7676791045246,
+            809.4113366478564
+          ],
+          "width_fraction": 0.8788897555095172,
+          "height_fraction": 0.8963544762600464
+        },
+        "sky_grid_4x2": [
+          [
+            4,
+            6,
+            4,
+            7
+          ],
+          [
+            1,
+            3,
+            0,
+            2
+          ]
+        ],
+        "occupied_sky_cells": 7,
+        "catalogue_verified_star_coverage": null
+      },
+      "statuses": {
+        "NoMatch": 46,
+        "Timeout": 2
+      },
+      "best_rejected": {
+        "probability_ratio": 920.7990460635582,
+        "pair_count": 7,
+        "catalog_ids_unverified": [
+          32521,
+          26569,
+          42452,
+          27559,
+          30365,
+          34389,
+          39318
+        ],
+        "finalized": 0,
+        "probability_pass": 0
+      },
+      "verified_catalogue_identities": [],
+      "independent_edge_residual_px": null
+    },
+    {
+      "name": "1600-deep-control",
+      "coverage": {
+        "all_detections": 50,
+        "conservative_sky": {
+          "count": 33,
+          "bounds_xyxy": [
+            175.22062704561256,
+            28.90034390432188,
+            2626.1344288348178,
+            853.0214694529716
+          ],
+          "width_fraction": 0.8841680381634939,
+          "height_fraction": 0.9464497565875966
+        },
+        "sky_grid_4x2": [
+          [
+            6,
+            7,
+            5,
+            7
+          ],
+          [
+            0,
+            2,
+            2,
+            4
+          ]
+        ],
+        "occupied_sky_cells": 7,
+        "catalogue_verified_star_coverage": null
+      },
+      "statuses": {
+        "NoMatch": 48
+      },
+      "best_rejected": {
+        "probability_ratio": 7295.485582523736,
+        "pair_count": 5,
+        "catalog_ids_unverified": [
+          38062,
+          32263,
+          30049,
+          30251,
+          34354
+        ],
+        "finalized": 0,
+        "probability_pass": 0
+      },
+      "verified_catalogue_identities": [],
+      "independent_edge_residual_px": null
+    },
+    {
+      "name": "2772-default-control",
+      "coverage": {
+        "all_detections": 40,
+        "conservative_sky": {
+          "count": 22,
+          "bounds_xyxy": [
+            310.22129008923326,
+            19.38587372086362,
+            2731.6779077302667,
+            766.546520252264
+          ],
+          "width_fraction": 0.8735413483553512,
+          "height_fraction": 0.8580656290914733
+        },
+        "sky_grid_4x2": [
+          [
+            1,
+            8,
+            4,
+            7
+          ],
+          [
+            1,
+            0,
+            1,
+            0
+          ]
+        ],
+        "occupied_sky_cells": 6,
+        "catalogue_verified_star_coverage": null
+      },
+      "statuses": {
+        "NoMatch": 48
+      },
+      "best_rejected": {
+        "probability_ratio": 16748.98657827834,
+        "pair_count": 5,
+        "catalog_ids_unverified": [
+          111458,
+          108663,
+          110930,
+          110350,
+          109231
+        ],
+        "finalized": 0,
+        "probability_pass": 0
+      },
+      "verified_catalogue_identities": [],
+      "independent_edge_residual_px": null
+    },
+    {
+      "name": "2772-deep-control",
+      "coverage": {
+        "all_detections": 50,
+        "conservative_sky": {
+          "count": 26,
+          "bounds_xyxy": [
+            67.74684388339097,
+            19.38587372086362,
+            2731.6779077302667,
+            398.7673279318234
+          ],
+          "width_fraction": 0.9610140922968529,
+          "height_fraction": 0.4356950378535283
+        },
+        "sky_grid_4x2": [
+          [
+            3,
+            7,
+            5,
+            11
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "occupied_sky_cells": 4,
+        "catalogue_verified_star_coverage": null
+      },
+      "statuses": {
+        "NoMatch": 48
+      },
+      "best_rejected": {
+        "probability_ratio": 2383.9515571500815,
+        "pair_count": 7,
+        "catalog_ids_unverified": [
+          43113,
+          43689,
+          46641,
+          47373,
+          42195,
+          48300,
+          50272
+        ],
+        "finalized": 0,
+        "probability_pass": 0
+      },
+      "verified_catalogue_identities": [],
+      "independent_edge_residual_px": null
+    },
+    {
+      "name": "1600-default-manual_sky",
+      "coverage": {
+        "all_detections": 40,
+        "conservative_sky": {
+          "count": 40,
+          "bounds_xyxy": [
+            175.2229598114064,
+            28.910676444421053,
+            2720.8858666122974,
+            853.022291148219
+          ],
+          "width_fraction": 0.9183488119772334,
+          "height_fraction": 0.9464388339980453
+        },
+        "sky_grid_4x2": [
+          [
+            5,
+            7,
+            7,
+            8
+          ],
+          [
+            1,
+            4,
+            3,
+            5
+          ]
+        ],
+        "occupied_sky_cells": 8,
+        "catalogue_verified_star_coverage": null
+      },
+      "statuses": {
+        "TooFew": 14,
+        "NoMatch": 34
+      },
+      "best_rejected": {
+        "probability_ratio": 7227.383815519246,
+        "pair_count": 7,
+        "catalog_ids_unverified": [
+          117004,
+          107075,
+          114727,
+          108573,
+          104930,
+          109128,
+          113504
+        ],
+        "finalized": 0,
+        "probability_pass": 0
+      },
+      "verified_catalogue_identities": [],
+      "independent_edge_residual_px": null
+    },
+    {
+      "name": "1600-deep-manual_sky",
+      "coverage": {
+        "all_detections": 50,
+        "conservative_sky": {
+          "count": 50,
+          "bounds_xyxy": [
+            131.45158265814314,
+            28.90034390432188,
+            2720.890624400686,
+            853.0214694529716
+          ],
+          "width_fraction": 0.9341410684496908,
+          "height_fraction": 0.9464497565875966
+        },
+        "sky_grid_4x2": [
+          [
+            10,
+            9,
+            9,
+            8
+          ],
+          [
+            0,
+            3,
+            5,
+            6
+          ]
+        ],
+        "occupied_sky_cells": 7,
+        "catalogue_verified_star_coverage": null
+      },
+      "statuses": {
+        "NoMatch": 48
+      },
+      "best_rejected": {
+        "probability_ratio": 7021.487037026708,
+        "pair_count": 5,
+        "catalog_ids_unverified": [
+          108728,
+          110614,
+          113529,
+          114609,
+          108528
+        ],
+        "finalized": 0,
+        "probability_pass": 0
+      },
+      "verified_catalogue_identities": [],
+      "independent_edge_residual_px": null
+    },
+    {
+      "name": "2772-default-manual_sky",
+      "coverage": {
+        "all_detections": 40,
+        "conservative_sky": {
+          "count": 40,
+          "bounds_xyxy": [
+            211.30012483412943,
+            19.38587372086362,
+            2731.6779077302667,
+            828.2231124191417
+          ],
+          "width_fraction": 0.909227194406976,
+          "height_fraction": 0.9288972020652059
+        },
+        "sky_grid_4x2": [
+          [
+            4,
+            9,
+            11,
+            7
+          ],
+          [
+            2,
+            2,
+            2,
+            3
+          ]
+        ],
+        "occupied_sky_cells": 8,
+        "catalogue_verified_star_coverage": null
+      },
+      "statuses": {
+        "TooFew": 5,
+        "NoMatch": 43
+      },
+      "best_rejected": {
+        "probability_ratio": 4021.8508120072142,
+        "pair_count": 6,
+        "catalog_ids_unverified": [
+          109442,
+          111458,
+          108663,
+          110930,
+          110350,
+          109231
+        ],
+        "finalized": 0,
+        "probability_pass": 0
+      },
+      "verified_catalogue_identities": [],
+      "independent_edge_residual_px": null
+    },
+    {
+      "name": "2772-deep-manual_sky",
+      "coverage": {
+        "all_detections": 50,
+        "conservative_sky": {
+          "count": 50,
+          "bounds_xyxy": [
+            67.74684388339097,
+            19.38587372086362,
+            2731.6779077302667,
+            788.2926892942002
+          ],
+          "width_fraction": 0.9610140922968529,
+          "height_fraction": 0.8830396963230968
+        },
+        "sky_grid_4x2": [
+          [
+            8,
+            9,
+            14,
+            14
+          ],
+          [
+            0,
+            1,
+            2,
+            2
+          ]
+        ],
+        "occupied_sky_cells": 7,
+        "catalogue_verified_star_coverage": null
+      },
+      "statuses": {
+        "TooFew": 5,
+        "NoMatch": 43
+      },
+      "best_rejected": {
+        "probability_ratio": 7227.383815519246,
+        "pair_count": 7,
+        "catalog_ids_unverified": [
+          95473,
+          90979,
+          92133,
+          95648,
+          92725,
+          97368,
+          95652
+        ],
+        "finalized": 0,
+        "probability_pass": 0
+      },
+      "verified_catalogue_identities": [],
+      "independent_edge_residual_px": null
+    }
+  ],
+  "external_reference_status": "unresolved",
+  "external_extractions": [
+    {
+      "path": "prototype/artifacts/robustness-baseline/wcs-run/wm_r_16053617/downsample-2/field.axy",
+      "tables": [
+        {
+          "columns": [
+            "X",
+            "Y",
+            "FLUX",
+            "BACKGROUND"
+          ],
+          "rows": 915
+        }
+      ],
+      "celestial_header_keys": [],
+      "cpu_limit_reached": true
+    },
+    {
+      "path": "prototype/artifacts/robustness-baseline/wcs-run/wm_r_16053617/downsample-4/field.axy",
+      "tables": [
+        {
+          "columns": [
+            "X",
+            "Y",
+            "FLUX",
+            "BACKGROUND"
+          ],
+          "rows": 93
+        }
+      ],
+      "celestial_header_keys": [],
+      "cpu_limit_reached": true
+    }
+  ],
+  "wcs_or_correspondence_files": [],
+  "publisher_review": {
+    "id": "wm_r_16053617",
+    "url": "https://www.eso.org/public/images/potw1132a/",
+    "accessed_utc": "2026-10-08",
+    "publisher": "ESO",
+    "image_id": "potw1132a",
+    "dimensions": [
+      2772,
+      1935
+    ],
+    "release_date": "2011-08-08",
+    "credit": "ESO/Y. Beletsky",
+    "observations": [
+      "Publisher caption identifies the left trail as a satellite and the right trail as a meteor.",
+      "Caption describes a pre-sunrise photograph at Cerro Paranal.",
+      "Reviewed page supplies no named star correspondences or celestial WCS."
+    ],
+    "limits": [
+      "Release date is not an exact exposure timestamp.",
+      "No original image or new photograph downloaded; only publisher page text consulted.",
+      "No embedded metadata inspection of remote image binaries."
+    ],
+    "independent_star_identifications": []
+  },
+  "prior55_comparison_valid": false,
+  "conclusion": "independent_stellar_identities_not_established; stop_this_heuristic_direction",
+  "accepted_ground_truth": false,
+  "automatic_improvement_confirmed": false,
+  "production_changed": false,
+  "new_detector_calls": 0,
+  "new_matcher_calls": 0,
+  "new_wcs_calls": 0
+}

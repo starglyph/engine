@@ -1,0 +1,24 @@
+{
+  "id": "wm_r_16053617",
+  "url": "https://www.eso.org/public/images/potw1132a/",
+  "accessed_utc": "2026-10-08",
+  "publisher": "ESO",
+  "image_id": "potw1132a",
+  "dimensions": [
+    2772,
+    1935
+  ],
+  "release_date": "2011-08-08",
+  "credit": "ESO/Y. Beletsky",
+  "observations": [
+    "Publisher caption identifies the left trail as a satellite and the right trail as a meteor.",
+    "Caption describes a pre-sunrise photograph at Cerro Paranal.",
+    "Reviewed page supplies no named star correspondences or celestial WCS."
+  ],
+  "limits": [
+    "Release date is not an exact exposure timestamp.",
+    "No original image or new photograph downloaded; only publisher page text consulted.",
+    "No embedded metadata inspection of remote image binaries."
+  ],
+  "independent_star_identifications": []
+}

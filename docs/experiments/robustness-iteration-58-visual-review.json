@@ -1,0 +1,377 @@
+{
+  "id": "wm_r_16053617",
+  "split": "development",
+  "holdout": false,
+  "input_sha256": "522dd53e928520839052d1a574b212f8bd337b64a777f8762c75a339b5e13a03",
+  "method": "all40 fixed native default manual-sky coordinates; neutral square128px crops, no recentering or brightness enhancement",
+  "sources": [
+    {
+      "source": "S00",
+      "xy": [
+        2731.6779077302667,
+        19.38587372086362
+      ],
+      "observation": "stellar_looking_unidentified",
+      "catalogue_identity": null
+    },
+    {
+      "source": "S01",
+      "xy": [
+        1912.9763224957824,
+        220.16543088965824
+      ],
+      "observation": "stellar_looking_unidentified",
+      "catalogue_identity": null
+    },
+    {
+      "source": "S02",
+      "xy": [
+        2626.122541969498,
+        246.33372098184103
+      ],
+      "observation": "stellar_looking_unidentified",
+      "catalogue_identity": null
+    },
+    {
+      "source": "S03",
+      "xy": [
+        2246.982990558744,
+        58.316631493325175
+      ],
+      "observation": "stellar_looking_unidentified",
+      "catalogue_identity": null
+    },
+    {
+      "source": "S04",
+      "xy": [
+        2292.4523308130133,
+        188.32698309611698
+      ],
+      "observation": "stellar_looking_unidentified",
+      "catalogue_identity": null
+    },
+    {
+      "source": "S05",
+      "xy": [
+        381.2267047819394,
+        89.91158019115177
+      ],
+      "observation": "stellar_looking_unidentified",
+      "catalogue_identity": null
+    },
+    {
+      "source": "S06",
+      "xy": [
+        1720.7011234474953,
+        165.66620103349658
+      ],
+      "observation": "stellar_looking_unidentified",
+      "catalogue_identity": null
+    },
+    {
+      "source": "S07",
+      "xy": [
+        2125.384874248795,
+        85.9040048496618
+      ],
+      "observation": "stellar_looking_unidentified",
+      "catalogue_identity": null
+    },
+    {
+      "source": "S08",
+      "xy": [
+        900.3928456206024,
+        90.21108314660925
+      ],
+      "observation": "stellar_looking_unidentified",
+      "catalogue_identity": null
+    },
+    {
+      "source": "S09",
+      "xy": [
+        807.6152753831152,
+        172.5751545017894
+      ],
+      "observation": "stellar_looking_unidentified",
+      "catalogue_identity": null
+    },
+    {
+      "source": "S10",
+      "xy": [
+        909.0763397507134,
+        28.921243016150335
+      ],
+      "observation": "stellar_looking_unidentified",
+      "catalogue_identity": null
+    },
+    {
+      "source": "S11",
+      "xy": [
+        932.974770182769,
+        76.49853196359017
+      ],
+      "observation": "stellar_looking_unidentified",
+      "catalogue_identity": null
+    },
+    {
+      "source": "S12",
+      "xy": [
+        2477.1007865210017,
+        384.63156593208345
+      ],
+      "observation": "stellar_looking_unidentified",
+      "catalogue_identity": null
+    },
+    {
+      "source": "S13",
+      "xy": [
+        1382.3714921283058,
+        104.24980700630358
+      ],
+      "observation": "stellar_looking_unidentified",
+      "catalogue_identity": null
+    },
+    {
+      "source": "S14",
+      "xy": [
+        2065.250684928638,
+        200.25011382504294
+      ],
+      "observation": "stellar_looking_unidentified",
+      "catalogue_identity": null
+    },
+    {
+      "source": "S15",
+      "xy": [
+        893.2256519659865,
+        46.911785494043485
+      ],
+      "observation": "stellar_looking_unidentified",
+      "catalogue_identity": null
+    },
+    {
+      "source": "S16",
+      "xy": [
+        2339.4019265634624,
+        249.7410727364257
+      ],
+      "observation": "stellar_looking_unidentified",
+      "catalogue_identity": null
+    },
+    {
+      "source": "S17",
+      "xy": [
+        1097.1346176585325,
+        40.203016165002175
+      ],
+      "observation": "stellar_looking_unidentified",
+      "catalogue_identity": null
+    },
+    {
+      "source": "S18",
+      "xy": [
+        1899.888766167548,
+        111.46252802697661
+      ],
+      "observation": "stellar_looking_unidentified",
+      "catalogue_identity": null
+    },
+    {
+      "source": "S19",
+      "xy": [
+        1915.2110245515992,
+        766.546520252264
+      ],
+      "observation": "stellar_looking_unidentified",
+      "catalogue_identity": null
+    },
+    {
+      "source": "S20",
+      "xy": [
+        310.22129008923326,
+        515.1008105331721
+      ],
+      "observation": "on_satellite_trail_stellar_overlap_unresolved",
+      "catalogue_identity": null
+    },
+    {
+      "source": "S21",
+      "xy": [
+        1174.286043924685,
+        292.08523703953153
+      ],
+      "observation": "stellar_looking_unidentified",
+      "catalogue_identity": null
+    },
+    {
+      "source": "S22",
+      "xy": [
+        2480.424204389784,
+        828.2231124191417
+      ],
+      "observation": "stellar_looking_unidentified",
+      "catalogue_identity": null
+    },
+    {
+      "source": "S23",
+      "xy": [
+        1343.467618239354,
+        795.281535698195
+      ],
+      "observation": "stellar_looking_unidentified",
+      "catalogue_identity": null
+    },
+    {
+      "source": "S24",
+      "xy": [
+        1896.3667098034803,
+        230.35526058911046
+      ],
+      "observation": "stellar_looking_unidentified",
+      "catalogue_identity": null
+    },
+    {
+      "source": "S25",
+      "xy": [
+        318.8259573483931,
+        57.908018884354306
+      ],
+      "observation": "stellar_looking_unidentified",
+      "catalogue_identity": null
+    },
+    {
+      "source": "S26",
+      "xy": [
+        901.9014005937877,
+        439.3290945851947
+      ],
+      "observation": "stellar_looking_unidentified",
+      "catalogue_identity": null
+    },
+    {
+      "source": "S27",
+      "xy": [
+        1467.373531319108,
+        262.2665392838144
+      ],
+      "observation": "stellar_looking_unidentified",
+      "catalogue_identity": null
+    },
+    {
+      "source": "S28",
+      "xy": [
+        1779.4417319950599,
+        577.994613325216
+      ],
+      "observation": "stellar_looking_unidentified",
+      "catalogue_identity": null
+    },
+    {
+      "source": "S29",
+      "xy": [
+        211.30012483412946,
+        412.4849714478284
+      ],
+      "observation": "stellar_looking_unidentified",
+      "catalogue_identity": null
+    },
+    {
+      "source": "S30",
+      "xy": [
+        1819.2424012739145,
+        162.6780351852762
+      ],
+      "observation": "stellar_looking_unidentified",
+      "catalogue_identity": null
+    },
+    {
+      "source": "S31",
+      "xy": [
+        1334.5631533009002,
+        57.640734876210836
+      ],
+      "observation": "stellar_looking_unidentified",
+      "catalogue_identity": null
+    },
+    {
+      "source": "S32",
+      "xy": [
+        2662.279065137066,
+        573.2544031278862
+      ],
+      "observation": "stellar_looking_unidentified",
+      "catalogue_identity": null
+    },
+    {
+      "source": "S33",
+      "xy": [
+        1820.334240181507,
+        92.86798212106659
+      ],
+      "observation": "stellar_looking_unidentified",
+      "catalogue_identity": null
+    },
+    {
+      "source": "S34",
+      "xy": [
+        1923.1313257951224,
+        108.54430568431891
+      ],
+      "observation": "stellar_looking_unidentified",
+      "catalogue_identity": null
+    },
+    {
+      "source": "S35",
+      "xy": [
+        396.2939619404455,
+        485.4946881396705
+      ],
+      "observation": "stellar_looking_unidentified",
+      "catalogue_identity": null
+    },
+    {
+      "source": "S36",
+      "xy": [
+        1502.6508018687261,
+        381.4604558738651
+      ],
+      "observation": "stellar_looking_unidentified",
+      "catalogue_identity": null
+    },
+    {
+      "source": "S37",
+      "xy": [
+        2196.687111290861,
+        598.4828784087067
+      ],
+      "observation": "stellar_looking_unidentified",
+      "catalogue_identity": null
+    },
+    {
+      "source": "S38",
+      "xy": [
+        663.320354670798,
+        395.033062938986
+      ],
+      "observation": "stellar_looking_unidentified",
+      "catalogue_identity": null
+    },
+    {
+      "source": "S39",
+      "xy": [
+        1964.0535480425108,
+        432.692232914998
+      ],
+      "observation": "stellar_looking_unidentified",
+      "catalogue_identity": null
+    }
+  ],
+  "observations": [
+    "Numerous compact and similarly elongated peaks are spread across the sky.",
+    "S20 lies on the left trail identified as a satellite trail by the publisher; stellar overlap cannot be excluded.",
+    "Black crop padding at the image boundary is not part of the photograph.",
+    "Morphology does not supply catalogue identities, independent edge residuals, or proof of matcher-compatible patterns."
+  ],
+  "independent_stellar_identities_established": false,
+  "decision": "close_snow_heuristic_direction_without_further_tuning"
+}
