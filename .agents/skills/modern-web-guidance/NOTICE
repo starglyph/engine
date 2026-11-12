@@ -5,7 +5,7 @@ endorsed by, or sponsored by the upstream project or its trademark holders.
 
 - Source:   GoogleChrome/modern-web-guidance/skills/modern-web-guidance
 - Upstream: https://github.com/GoogleChrome/modern-web-guidance.git
-- Ref:      v0.0.174
+- Ref:      v1.0.0
 - License:  Apache-2.0
 
 Do not edit vendored skill content in place; re-vendor from upstream instead.
