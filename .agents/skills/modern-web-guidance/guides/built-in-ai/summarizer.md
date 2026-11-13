@@ -1,3 +1,5 @@
+# Summarizer
+
 The **Summarizer API** allows web developers to offer local, AI-powered text distillation directly within the browser using **Gemini Nano in Chrome or Phi in Edge**. This API supports various formats, including key points, headlines, and TL;DRs, while operating entirely on-device to ensure user privacy.
 
 ---
@@ -5,7 +7,6 @@ The **Summarizer API** allows web developers to offer local, AI-powered text dis
 ## Getting Started
 
 The Summarizer API is available starting in **Chrome and Edge 138**. It requires a one-time model download of Gemini Nano or Phi (respectively).
-
 
 ### Hardware & Software Requirements
 
@@ -91,6 +92,8 @@ const summarizer = await Summarizer.create({
 });
 ```
 
+**MANDATORY:** if the output language is different from the overall page language, you **MUST** apply the `lang` attribute to the container element for the summary, and set its value to match the BCP 47 language code set using the `outputLanguage` property.
+
 ## Summarization Methods
 
 ### 1. Batch Summarization
@@ -123,16 +126,18 @@ for await (const chunk of stream) {
   device.
 - **Cross-Origin**: Access can be granted to iframes using the Permission
   Policy.
+
   ```html
   <iframe src="https://example.com/" allow="summarizer"></iframe>
   ```
+
 - **Web Workers**: Currently not supported.
 
 ## Fallback Strategy
 
-Summarizer has limited availability.
-Supported by: Chrome 138 (Jun 2025).
-Unsupported in: Edge, Firefox, and Safari.
+Browser support for Summarizer: Limited availability.
+Supported by: Chrome 138 (Jun 2025) and Edge 138 (Jun 2025).
+Unsupported in: Firefox and Safari.
 
 Before initializing or querying availability, check if the browser supports the `Summarizer` API:
 
@@ -147,6 +152,7 @@ if ('Summarizer' in self) {
 If the `Summarizer` API is unsupported or availability checks return `'unavailable'`, you must gracefully fall back.
 
 Recommended options:
+
 1. **Remote API Fallback**: Direct the distillation request to a server endpoint or remote API (such as the Vertex AI Gemini API) so that users still get summaries.
 2. **Graceful Degradation**: Visually disable the summarization controls in the UI, or hide the button while displaying a friendly message (e.g., `"Local summarization is currently unsupported in this browser"`). Do not allow interaction to trigger generic unhandled runtime exceptions.
 3. **Polyfill Fallback**: You can use community-maintained polyfills like `built-in-ai-task-apis-polyfills` or `prompt-api-polyfill` to emulate the API surface using remote services with models in the cloud or on-device inference with local models.
